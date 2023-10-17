@@ -647,8 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 772754418}
-  _playerSpeedSetter: {fileID: 994998311}
-  _playerTargetTranslationSetter: {fileID: 994998310}
+  _playerMover: {fileID: 994998309}
 --- !u!1 &1590070408
 GameObject:
   m_ObjectHideFlags: 0

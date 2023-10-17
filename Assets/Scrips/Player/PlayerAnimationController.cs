@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private PlayerSpeedSetter _playerSpeedSetter;
-    [SerializeField] private PlayerTargetTranslationSetter _playerTargetTranslationSetter;
+    [SerializeField] private PlayerMover _playerMover;
 
     private Coroutine _checkStatusParametrs;
 
@@ -22,7 +21,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         while (true)
         {
-            if (_playerTargetTranslationSetter.IsMovingCommand & _playerSpeedSetter.CurrentSpeed != 0)
+            if (_playerMover.IsMoving)
             {
                 _animator.SetBool(_parametrIsRun, true);
             }

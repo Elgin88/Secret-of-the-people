@@ -6,87 +6,77 @@ public class PlayerTargetTranslationSetter : MonoBehaviour
 {
     [SerializeField] private PlayerKeyboardController _playerKeyboardController;
 
-    private Coroutine _calculateNextPosition;
-    private Vector3 _targetTranslation;
-    private float _diagonal = 0.7063f;
-    private float _horizontalAndVertikal = 1;
-    private bool _isMovingCommand = false;
+    private Coroutine _setTargetTranslation;
 
+    private Vector3 _targetTranslation;
+    private float _horizontalAndVertikal = 1;
+    private float _diagonal = 0.7063f;   
+        
     public Vector3 TargetTranslation => _targetTranslation;
-    public bool IsMovingCommand => _isMovingCommand;
 
     private void Start()
     {
-        StartCalculateNextPosition();
+        StartSetTargetTranslation();
     }
 
-    private IEnumerator CalculateTranlation()
+    private IEnumerator SetTargetTranslation()
     {
         while (true)
         {
-            if (_playerKeyboardController.IsMoveRight & _playerKeyboardController.IsMoveUp)
+            if (_playerKeyboardController.IsMoveUp & _playerKeyboardController.IsMoveRight)
             {
                 _targetTranslation = new Vector3(_diagonal, 0, _diagonal);
-                _isMovingCommand = true;
             }
-            else if (_playerKeyboardController.IsMoveRight & _playerKeyboardController.IsMoveDown)
-            {
-                _targetTranslation = new Vector3(_diagonal, 0, -_diagonal);
-                _isMovingCommand = true;
-            }
-            else if(_playerKeyboardController.IsMoveLeft & _playerKeyboardController.IsMoveUp)
+            else if (_playerKeyboardController.IsMoveUp & _playerKeyboardController.IsMoveLeft)
             {
                 _targetTranslation = new Vector3(-_diagonal, 0, _diagonal);
-                _isMovingCommand = true;
             }
-            else if (_playerKeyboardController.IsMoveLeft & _playerKeyboardController.IsMoveDown)
+            else if (_playerKeyboardController.IsMoveDown & _playerKeyboardController.IsMoveRight)
+            {
+                _targetTranslation = new Vector3(_diagonal, 0, - _diagonal);
+            }
+            else if (_playerKeyboardController.IsMoveDown & _playerKeyboardController.IsMoveLeft)
             {
                 _targetTranslation = new Vector3(-_diagonal, 0, -_diagonal);
-                _isMovingCommand = true;
             }
 
-            else if(_playerKeyboardController.IsMoveUp)
+            else if (_playerKeyboardController.IsMoveUp)
             {
                 _targetTranslation = new Vector3(0, 0, _horizontalAndVertikal);
-                _isMovingCommand = true;
             }
             else if (_playerKeyboardController.IsMoveDown)
             {
                 _targetTranslation = new Vector3(0, 0, -_horizontalAndVertikal);
-                _isMovingCommand = true;
-            }
-            else if (_playerKeyboardController.IsMoveLeft)
-            {
-                _targetTranslation = new Vector3(-_horizontalAndVertikal, 0, 0);
-                _isMovingCommand = true;
             }
             else if (_playerKeyboardController.IsMoveRight)
             {
                 _targetTranslation = new Vector3(_horizontalAndVertikal, 0, 0);
-                _isMovingCommand = true;
+            }
+            else if (_playerKeyboardController.IsMoveLeft)
+            {
+                _targetTranslation = new Vector3(-_horizontalAndVertikal, 0, 0);
             }
 
             else
             {
                 _targetTranslation = new Vector3(0, 0, 0);
-                _isMovingCommand = false;
             }
 
             yield return null;
         }
     }
 
-    private void StartCalculateNextPosition()
+    public void StartSetTargetTranslation()
     {
-        if (_calculateNextPosition == null)
+        if (_setTargetTranslation==null)
         {
-            _calculateNextPosition = StartCoroutine(CalculateTranlation());
+            _setTargetTranslation = StartCoroutine(SetTargetTranslation());
         }
     }
 
-    private void StopCalculateNextPosition()
+    public void StopSetTargetTranslation()
     {
-        StopCoroutine(_calculateNextPosition);
-        _calculateNextPosition = null;
+        StopCoroutine(_setTargetTranslation);
+        _setTargetTranslation = null;
     }
 }
