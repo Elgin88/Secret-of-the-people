@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMover))]
 [RequireComponent(typeof(PlayerTargetTranslationSetter))]
 [RequireComponent(typeof(PlayerSpeedSetter))]
+[RequireComponent(typeof(PlayerAnimationController))]
 
 public class PlayerRequireComponents : MonoBehaviour
 {
