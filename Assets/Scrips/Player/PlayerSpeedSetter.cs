@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSpeedSetter : MonoBehaviour
 {
-    private float _currentSpeed = 7;
+    [SerializeField] private float _currentSpeed;
 
     public float CurrentSpeed => _currentSpeed;
 

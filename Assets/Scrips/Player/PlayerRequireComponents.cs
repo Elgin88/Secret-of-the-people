@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerTargetTranslationSetter))]
 [RequireComponent(typeof(PlayerSpeedSetter))]
 [RequireComponent(typeof(PlayerAnimationController))]
+[RequireComponent(typeof(PlayerRotationSetter))]
 
 public class PlayerRequireComponents : MonoBehaviour
 {
