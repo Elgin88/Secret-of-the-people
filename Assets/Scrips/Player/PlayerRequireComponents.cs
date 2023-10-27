@@ -9,6 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerSpeedSetter))]
 [RequireComponent(typeof(PlayerAnimationController))]
 [RequireComponent(typeof(PlayerRotationSetter))]
+[RequireComponent(typeof(PlayerRotationController))]
 
 public class PlayerRequireComponents : MonoBehaviour
 {

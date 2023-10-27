@@ -8,11 +8,11 @@
       "hash": "8b3ff533346e27727613880171be328b15cb4e84"
     },
     "com.agava.yandexgames": {
-      "version": "https://github.com/forcepusher/com.agava.yandexgames.git#15.0.0",
+      "version": "https://github.com/forcepusher/com.agava.yandexgames.git#15.1.0",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "f68ebcb5e983959239896b60db5952bdf9447c72"
+      "hash": "ac2abaee4101c1c2c7b88cb0865c730b7d533047"
     },
     "com.unity.collab-proxy": {
       "version": "1.17.7",
