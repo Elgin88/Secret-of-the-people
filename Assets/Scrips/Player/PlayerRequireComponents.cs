@@ -5,11 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(PlayerKeyboardController))]
 [RequireComponent(typeof(PlayerMover))]
-[RequireComponent(typeof(PlayerTargetTranslationSetter))]
+[RequireComponent(typeof(PlayerDirectionSetter))]
 [RequireComponent(typeof(PlayerSpeedSetter))]
 [RequireComponent(typeof(PlayerAnimationController))]
 [RequireComponent(typeof(PlayerRotationSetter))]
-[RequireComponent(typeof(PlayerRotationController))]
+[RequireComponent(typeof(PlayerDirectionController))]
 
 public class PlayerRequireComponents : MonoBehaviour
 {

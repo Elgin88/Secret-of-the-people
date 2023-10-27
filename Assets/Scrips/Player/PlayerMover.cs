@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private PlayerTargetTranslationSetter _playerTargetTranslationSetter;
+    [SerializeField] private PlayerDirectionSetter _playerTargetTranslationSetter;
     [SerializeField] private PlayerSpeedSetter _playerSpeedSetter;
 
     private Coroutine _move;
@@ -23,9 +23,9 @@ public class PlayerMover : MonoBehaviour
     {
         while (true)
         {
-            transform.Translate(_playerTargetTranslationSetter.TargetTranslation * _playerSpeedSetter.CurrentSpeed * Time.deltaTime, Space.World);
+            transform.Translate(_playerTargetTranslationSetter.CurrentTranslation * _playerSpeedSetter.CurrentSpeed * Time.deltaTime, Space.World);
 
-            if (_playerTargetTranslationSetter.TargetTranslation!=new Vector3(0,0,0) & _playerSpeedSetter.CurrentSpeed != 0)
+            if (_playerTargetTranslationSetter.CurrentTranslation!=new Vector3(0,0,0) & _playerSpeedSetter.CurrentSpeed != 0)
             {
                 _isMoving = true;
             }

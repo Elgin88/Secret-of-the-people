@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerRotationSetter : MonoBehaviour
 {
     [SerializeField] private PlayerKeyboardController _playerKeyboardController;
-    [SerializeField] private PlayerRotationController _playerRotationController;
-
+    [SerializeField] private PlayerDirectionController _playerRotationController;
 
     private Coroutine _setRotation;
 
