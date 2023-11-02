@@ -5,27 +5,27 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private PlayerMover _playerMover;
+    [SerializeField] private PlayerSpeedController _playerSpeedController;
 
-    private Coroutine _checkStatusParametrs;
+    private Coroutine _setBoolAnimator;
 
     private string _parametrIsRun = "IsRun";
 
     private void Start()
     {
-        if (_animator==null || _playerMover==null)
+        if (_animator==null  || _playerSpeedController == null)
         {
             Debug.Log("No serializefield in " + gameObject.name);
         }
 
-        StartCheckStatusParametrs();
+        StartSetBoolAnimator();
     }
 
-    private IEnumerator CheckStatusParametrs()
+    private IEnumerator SetBoolAnimator()
     {
         while (true)
         {
-            if (_playerMover.IsRuning)
+            if (_playerSpeedController.CurrentSpeed > 0)
             {
                 _animator.SetBool(_parametrIsRun, true);
             }
@@ -39,18 +39,18 @@ public class PlayerAnimationController : MonoBehaviour
         }
     }
 
-    public void StartCheckStatusParametrs()
+    public void StartSetBoolAnimator()
     {
-        if (_checkStatusParametrs==null)
+        if (_setBoolAnimator==null)
         {
-            _checkStatusParametrs = StartCoroutine(CheckStatusParametrs());
+            _setBoolAnimator = StartCoroutine(SetBoolAnimator());
         }        
     }
 
-    public void StopCheckStatusParametrs()
+    public void StopSetBoolAnimator()
     {
-        StopCoroutine(_checkStatusParametrs);
-        _checkStatusParametrs = null;
+        StopCoroutine(_setBoolAnimator);
+        _setBoolAnimator = null;
     }
 
 
