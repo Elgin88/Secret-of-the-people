@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerKeyboardController: {fileID: 994998308}
-  _deltaRotation: 1
+  _deltaRotation: 10
 --- !u!1 &1590070408
 GameObject:
   m_ObjectHideFlags: 0
