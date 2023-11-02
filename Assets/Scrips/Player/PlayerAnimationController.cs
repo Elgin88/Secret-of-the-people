@@ -10,10 +10,14 @@ public class PlayerAnimationController : MonoBehaviour
     private Coroutine _checkStatusParametrs;
 
     private string _parametrIsRun = "IsRun";
-    private string _parametrIsShoot = "IsShoot";
 
     private void Start()
     {
+        if (_animator==null || _playerMover==null)
+        {
+            Debug.Log("No serializefield in " + gameObject.name);
+        }
+
         StartCheckStatusParametrs();
     }
 
@@ -21,7 +25,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         while (true)
         {
-            if (_playerMover.IsMoving)
+            if (_playerMover.IsRuning)
             {
                 _animator.SetBool(_parametrIsRun, true);
             }

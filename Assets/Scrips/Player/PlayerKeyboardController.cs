@@ -1,16 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PlayerKeyboardController : MonoBehaviour
 {
     private Coroutine _checkPressedButtons;
 
-    private bool _isMoveUp;
-    private bool _isMoveDown;
-    private bool _isMoveRight;
-    private bool _isMoveLeft;
+    private bool _isMoveUp = false;
+    private bool _isMoveDown = false;
+    private bool _isMoveRight = false;
+    private bool _isMoveLeft = false;
 
     public bool IsMoveUp => _isMoveUp;
     public bool IsMoveDown => _isMoveDown;
@@ -60,7 +58,10 @@ public class PlayerKeyboardController : MonoBehaviour
 
     private void StopCheckButtonKey()
     {
-        StopCoroutine(_checkPressedButtons);
-        _checkPressedButtons = null;
+        if (_checkPressedButtons != null)
+        {
+            StopCoroutine(_checkPressedButtons);
+            _checkPressedButtons = null;
+        }
     }
 }

@@ -6,13 +6,10 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private PlayerDirectionSetter _playerTargetTranslationSetter;
-    [SerializeField] private PlayerSpeedSetter _playerSpeedSetter;
-
     private Coroutine _move;
-    private bool _isMoving;
+    private bool _isRuninh;
 
-    public bool IsMoving => _isMoving;
+    public bool IsRuning => _isRuninh;
 
     private void Start()
     {
@@ -23,16 +20,8 @@ public class PlayerMover : MonoBehaviour
     {
         while (true)
         {
-            transform.Translate(_playerTargetTranslationSetter.CurrentTranslation * _playerSpeedSetter.CurrentSpeed * Time.deltaTime, Space.World);
 
-            if (_playerTargetTranslationSetter.CurrentTranslation!=new Vector3(0,0,0) & _playerSpeedSetter.CurrentSpeed != 0)
-            {
-                _isMoving = true;
-            }
-            else
-            {
-                _isMoving = false;
-            }
+
 
             yield return null;
         }
@@ -48,7 +37,11 @@ public class PlayerMover : MonoBehaviour
 
     public void StopMove()
     {
-        StopCoroutine(_move);
-        _move = null;
+        if (_move != null)
+        {
+            StopCoroutine(_move);
+            _move = null;
+        }
+
     }
 }
