@@ -6,13 +6,18 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
-    private Coroutine _move;
-    private bool _isRuninh;
+    [SerializeField] private PlayerDirectionController _playerDirectionController;
+    [SerializeField] private PlayerSpeedController _playerSpeedController;
 
-    public bool IsRuning => _isRuninh;
+    private Coroutine _move;
 
     private void Start()
     {
+        if (_playerDirectionController == null || _playerSpeedController == null)
+        {
+            Debug.Log("No serializefield in " + gameObject.name);
+        }
+
         StartMove();
     }
 
@@ -20,8 +25,7 @@ public class PlayerMover : MonoBehaviour
     {
         while (true)
         {
-
-
+            transform.Translate(_playerDirectionController.CurrentDirection * _playerSpeedController.CurrentSpeed/700, Space.World);
 
             yield return null;
         }

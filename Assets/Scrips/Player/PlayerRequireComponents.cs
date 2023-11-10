@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerKeyboardController))]
 [RequireComponent(typeof(PlayerAnimationController))]
 [RequireComponent(typeof(PlayerRotationController))]
+[RequireComponent(typeof(PlayerDirectionController))]
 
 
 public class PlayerRequireComponents : MonoBehaviour

@@ -7,13 +7,13 @@ public class PlayerAnimationController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private PlayerSpeedController _playerSpeedController;
 
-    private Coroutine _setBoolAnimator;
+    private Coroutine _setParametrs;
 
     private string _parametrIsRun = "IsRun";
 
     private void Start()
     {
-        if (_animator==null  || _playerSpeedController == null)
+        if (_animator == null  || _playerSpeedController == null)
         {
             Debug.Log("No serializefield in " + gameObject.name);
         }
@@ -21,7 +21,7 @@ public class PlayerAnimationController : MonoBehaviour
         StartSetBoolAnimator();
     }
 
-    private IEnumerator SetBoolAnimator()
+    private IEnumerator SetParametrs()
     {
         while (true)
         {
@@ -41,23 +41,18 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void StartSetBoolAnimator()
     {
-        if (_setBoolAnimator==null)
+        if (_setParametrs==null)
         {
-            _setBoolAnimator = StartCoroutine(SetBoolAnimator());
+            _setParametrs = StartCoroutine(SetParametrs());
         }        
     }
 
     public void StopSetBoolAnimator()
     {
-        StopCoroutine(_setBoolAnimator);
-        _setBoolAnimator = null;
-    }
-
-
-
-
-    private void ChangeStatusParametrs(string parametr, bool status)
-    {
-        _animator.SetBool(parametr, status);
+        if (_setParametrs != null)
+        {
+            StopCoroutine(_setParametrs);
+            _setParametrs = null;
+        }
     }
 }
