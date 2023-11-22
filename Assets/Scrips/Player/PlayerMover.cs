@@ -22,7 +22,7 @@ public class PlayerMover : MonoBehaviour
     {
         while (true)
         {
-            transform.Translate(_playerDirectionSetter.CurrentDirection * _playerSpeedController.CurrentSpeed/700, Space.World);
+            transform.Translate(_playerDirectionSetter.CurrentDirection * _playerSpeedController.CurrentSpeed * Time.deltaTime, Space.World);
 
             yield return null;
         }

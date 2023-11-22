@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerAnimationController))]
+[RequireComponent(typeof(PlayerAnimatorController))]
 [RequireComponent(typeof(PlayerKeyboardController))]
 [RequireComponent(typeof(PlayerDirectionSetter))]
 [RequireComponent(typeof(PlayerRotationSetter))]

@@ -4,12 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerSpeedSetter))]
 [RequireComponent(typeof(Animator))]
 
-public class PlayerAnimationController : MonoBehaviour
+public class PlayerAnimatorController : MonoBehaviour
 {
     private PlayerSpeedSetter _playerSpeedSetter;
-    private Coroutine _setParametrs;
+    private Coroutine _setAnimatorParametrs;
     private Animator _animator;
-    private string _parametrIsRun = "IsRun";
 
     private void Start()
     {
@@ -19,17 +18,17 @@ public class PlayerAnimationController : MonoBehaviour
         StartSetBoolAnimator();
     }
 
-    private IEnumerator SetParametrs()
+    private IEnumerator SetAnimatorParametrs()
     {
         while (true)
         {
             if (_playerSpeedSetter.CurrentSpeed > 0)
             {
-                _animator.SetBool(_parametrIsRun, true);
+                _animator.SetBool(StaticPlayerAnimatorValue.IsRun, true);
             }
             else
             {
-                _animator.SetBool(_parametrIsRun, false);
+                _animator.SetBool(StaticPlayerAnimatorValue.IsRun, false);
             }
 
             yield return null;
@@ -38,18 +37,18 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void StartSetBoolAnimator()
     {
-        if (_setParametrs==null)
+        if (_setAnimatorParametrs==null)
         {
-            _setParametrs = StartCoroutine(SetParametrs());
+            _setAnimatorParametrs = StartCoroutine(SetAnimatorParametrs());
         }        
     }
 
     public void StopSetBoolAnimator()
     {
-        if (_setParametrs != null)
+        if (_setAnimatorParametrs != null)
         {
-            StopCoroutine(_setParametrs);
-            _setParametrs = null;
+            StopCoroutine(_setAnimatorParametrs);
+            _setAnimatorParametrs = null;
         }
     }
 }

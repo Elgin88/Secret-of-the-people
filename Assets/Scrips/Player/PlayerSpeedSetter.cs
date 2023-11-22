@@ -7,7 +7,7 @@ public class PlayerSpeedSetter : MonoBehaviour
 {
     private PlayerKeyboardController _playerKeyboardController;
     private Coroutine _setSpeed;
-    private float _maxSpeed = 10;
+    private float _speedOfRun = 5.5f;
     private float _currentSpeed;
 
     public float CurrentSpeed => _currentSpeed;
@@ -23,12 +23,9 @@ public class PlayerSpeedSetter : MonoBehaviour
     {
         while (true)
         {
-            if (_playerKeyboardController.IsMoveUp ||
-                _playerKeyboardController.IsMoveDown ||
-                _playerKeyboardController.IsMoveRight ||
-                _playerKeyboardController.IsMoveLeft)
+            if (_playerKeyboardController.IsMoveUp || _playerKeyboardController.IsMoveDown || _playerKeyboardController.IsMoveRight || _playerKeyboardController.IsMoveLeft)
             {
-                _currentSpeed = _maxSpeed;
+                _currentSpeed = _speedOfRun;
             }
             else
             {
@@ -49,7 +46,7 @@ public class PlayerSpeedSetter : MonoBehaviour
 
     private void StopSetSpeed()
     {
-        if (_setSpeed!= null)
+        if (_setSpeed != null)
         {
             StopCoroutine(_setSpeed);
             _setSpeed = null;
