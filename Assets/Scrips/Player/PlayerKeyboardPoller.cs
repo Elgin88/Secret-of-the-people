@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerKeyboardController : MonoBehaviour
+public class PlayerKeyboardPoller : MonoBehaviour
 {
     private Coroutine _checkPressedButtons;
     private bool _isMoveUp = false;

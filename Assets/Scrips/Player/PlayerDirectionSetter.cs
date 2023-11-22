@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerKeyboardController))]
+[RequireComponent(typeof(PlayerKeyboardPoller))]
 
 public class PlayerDirectionSetter : MonoBehaviour
 {
-    private PlayerKeyboardController _playerKeycoardController;
+    private PlayerKeyboardPoller _playerKeycoardController;
     private Coroutine _setDirection;
     private Vector3 _currentDirection;
 
@@ -13,7 +13,7 @@ public class PlayerDirectionSetter : MonoBehaviour
 
     private void Start()
     {
-        _playerKeycoardController = GetComponent<PlayerKeyboardController>();
+        _playerKeycoardController = GetComponent<PlayerKeyboardPoller>();
 
         StartSetDirection();
     }

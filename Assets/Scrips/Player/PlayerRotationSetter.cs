@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerKeyboardController))]
+[RequireComponent(typeof(PlayerKeyboardPoller))]
 
 public class PlayerRotationSetter : MonoBehaviour
 {
-    private PlayerKeyboardController _playerKeyboardController;
+    private PlayerKeyboardPoller _playerKeyboardController;
     private Quaternion _currentRotation;
     private Quaternion _targetRotation;
     private Coroutine _setRotation;
@@ -15,7 +15,7 @@ public class PlayerRotationSetter : MonoBehaviour
 
     private void Start()
     {
-        _playerKeyboardController = GetComponent<PlayerKeyboardController>();
+        _playerKeyboardController = GetComponent<PlayerKeyboardPoller>();
 
         _currentRotation = transform.rotation;
 

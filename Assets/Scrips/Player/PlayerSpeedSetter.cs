@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerKeyboardController))]
+[RequireComponent(typeof(PlayerKeyboardPoller))]
 
 public class PlayerSpeedSetter : MonoBehaviour
 {
-    private PlayerKeyboardController _playerKeyboardController;
+    private PlayerKeyboardPoller _playerKeyboardController;
     private Coroutine _setSpeed;
     private float _speedOfRun = 5.5f;
     private float _currentSpeed;
@@ -14,7 +14,7 @@ public class PlayerSpeedSetter : MonoBehaviour
 
     private void Start()
     {
-        _playerKeyboardController = GetComponent<PlayerKeyboardController>();
+        _playerKeyboardController = GetComponent<PlayerKeyboardPoller>();
 
         StartSetSpeed();
     }

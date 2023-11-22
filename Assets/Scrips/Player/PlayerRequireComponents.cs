@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerAnimatorController))]
-[RequireComponent(typeof(PlayerKeyboardController))]
+[RequireComponent(typeof(PlayerKeyboardPoller))]
 [RequireComponent(typeof(PlayerDirectionSetter))]
 [RequireComponent(typeof(PlayerRotationSetter))]
 [RequireComponent(typeof(PlayerSpeedSetter))]
