@@ -524,6 +524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994998305}
+  - component: {fileID: 994998315}
   - component: {fileID: 994998306}
   - component: {fileID: 994998307}
   - component: {fileID: 994998308}
@@ -532,7 +533,6 @@ GameObject:
   - component: {fileID: 994998312}
   - component: {fileID: 994998313}
   - component: {fileID: 994998314}
-  - component: {fileID: 994998315}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 1243712034}
   - component: {fileID: 1243712038}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,10 +789,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1009,10 +1009,10 @@ RectTransform:
   m_Father: {fileID: 1243712037}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0.9082593}
+  m_AnchorMax: {x: 0.11927084, y: 1}
+  m_AnchoredPosition: {x: 845.5, y: -490.5}
+  m_SizeDelta: {x: -129, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003009886
 MonoBehaviour:
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -115.50604, w: 0}
+  m_margin: {x: 0, y: 0, z: -35.95337, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
