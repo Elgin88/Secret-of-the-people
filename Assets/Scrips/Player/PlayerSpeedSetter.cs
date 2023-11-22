@@ -1,22 +1,20 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerSpeedController : MonoBehaviour
-{
-    [SerializeField] private float _maxSpeed;
-    [SerializeField] private PlayerKeyboardController _playerKeyboardController;
+[RequireComponent(typeof(PlayerKeyboardController))]
 
+public class PlayerSpeedSetter : MonoBehaviour
+{
+    private PlayerKeyboardController _playerKeyboardController;
     private Coroutine _setSpeed;
+    private float _maxSpeed = 10;
     private float _currentSpeed;
 
     public float CurrentSpeed => _currentSpeed;
 
     private void Start()
     {
-        if (_maxSpeed == 0 || _playerKeyboardController == null)
-        {
-            Debug.Log("No serializefield in " + gameObject.name);
-        }
+        _playerKeyboardController = GetComponent<PlayerKeyboardController>();
 
         StartSetSpeed();
     }

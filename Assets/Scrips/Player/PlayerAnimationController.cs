@@ -1,22 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+[RequireComponent(typeof(PlayerSpeedSetter))]
+[RequireComponent(typeof(Animator))]
 
 public class PlayerAnimationController : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
-    [SerializeField] private PlayerSpeedController _playerSpeedController;
-
+    private PlayerSpeedSetter _playerSpeedSetter;
     private Coroutine _setParametrs;
-
+    private Animator _animator;
     private string _parametrIsRun = "IsRun";
 
     private void Start()
     {
-        if (_animator == null  || _playerSpeedController == null)
-        {
-            Debug.Log("No serializefield in " + gameObject.name);
-        }
+        _playerSpeedSetter = GetComponent<PlayerSpeedSetter>();
+        _animator = GetComponent<Animator>();
 
         StartSetBoolAnimator();
     }
@@ -25,7 +23,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         while (true)
         {
-            if (_playerSpeedController.CurrentSpeed > 0)
+            if (_playerSpeedSetter.CurrentSpeed > 0)
             {
                 _animator.SetBool(_parametrIsRun, true);
             }
@@ -33,7 +31,6 @@ public class PlayerAnimationController : MonoBehaviour
             {
                 _animator.SetBool(_parametrIsRun, false);
             }
-
 
             yield return null;
         }

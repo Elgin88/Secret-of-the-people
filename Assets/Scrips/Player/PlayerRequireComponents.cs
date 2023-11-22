@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Player))]
-[RequireComponent(typeof(PlayerMover))]
-[RequireComponent(typeof(PlayerSpeedController))]
-[RequireComponent(typeof(PlayerKeyboardController))]
 [RequireComponent(typeof(PlayerAnimationController))]
-[RequireComponent(typeof(PlayerRotationController))]
-[RequireComponent(typeof(PlayerDirectionController))]
-
+[RequireComponent(typeof(PlayerKeyboardController))]
+[RequireComponent(typeof(PlayerDirectionSetter))]
+[RequireComponent(typeof(PlayerRotationSetter))]
+[RequireComponent(typeof(PlayerSpeedSetter))]
+[RequireComponent(typeof(PlayerMover))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Player))]
 
 public class PlayerRequireComponents : MonoBehaviour
 {
-
 
 }

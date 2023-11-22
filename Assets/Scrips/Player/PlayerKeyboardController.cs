@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerKeyboardController : MonoBehaviour
 {
     private Coroutine _checkPressedButtons;
-
     private bool _isMoveUp = false;
     private bool _isMoveDown = false;
     private bool _isMoveRight = false;

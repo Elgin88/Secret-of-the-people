@@ -1,27 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDirectionController : MonoBehaviour
+[RequireComponent(typeof(PlayerKeyboardController))]
+
+public class PlayerDirectionSetter : MonoBehaviour
 {
-    [SerializeField] private PlayerKeyboardController _playerKeycoardController;
-
+    private PlayerKeyboardController _playerKeycoardController;
     private Coroutine _setDirection;
-    private Vector3 _currentDirecton;
-    private Vector3 _upDirection = new Vector3 (0, 0, 1);
-    private Vector3 _downDirection = new Vector3 (0, 0, -1);
-    private Vector3 _rigthDirection = new Vector3 (1, 0, 0);
-    private Vector3 _leftDirection = new Vector3 (-1, 0, 0);
-    private Vector3 _upAndRightDirection = new Vector3 (0.707f, 0, 0.707f);
-    private Vector3 _upAndLeftDirection = new Vector3 (-0.707f, 0, 0.707f);
-    private Vector3 _downAndRightDirection = new Vector3 (0.707f, 0, -0.707f);
-    private Vector3 _downAndLeftDirection = new Vector3 (-0.707f, 0, -0.707f);
-    private Vector3 _null = new Vector3(0, 0, 0);
+    private Vector3 _currentDirection;
 
-    public Vector3 CurrentDirection => _currentDirecton;
+    public Vector3 CurrentDirection => _currentDirection;
 
     private void Start()
     {
+        _playerKeycoardController = GetComponent<PlayerKeyboardController>();
+
         StartSetDirection();
     }
 
@@ -31,46 +24,46 @@ public class PlayerDirectionController : MonoBehaviour
         {
             if (_playerKeycoardController.IsMoveUp & _playerKeycoardController.IsMoveRight)
             {
-                _currentDirecton = _upAndRightDirection;
+                _currentDirection = StaticPlayerDirectionValue.UpAndRightDirection;
             }
             else if (_playerKeycoardController.IsMoveUp & _playerKeycoardController.IsMoveLeft)
             {
-                _currentDirecton = _upAndLeftDirection;
+                _currentDirection = StaticPlayerDirectionValue.UpAndLeftDirection;
             }
             else if (_playerKeycoardController.IsMoveDown & _playerKeycoardController.IsMoveRight)
             {
-                _currentDirecton = _downAndRightDirection;
+                _currentDirection = StaticPlayerDirectionValue.DownAndRightDirection;
             }
             else if (_playerKeycoardController.IsMoveDown & _playerKeycoardController.IsMoveLeft)
             {
-                _currentDirecton = _downAndLeftDirection;
+                _currentDirection = StaticPlayerDirectionValue.DownAndLeftDirection; 
             }
             else if(_playerKeycoardController.IsMoveUp)
             {
-                _currentDirecton = _upDirection;
+                _currentDirection = StaticPlayerDirectionValue.UpDirection;
             }
             else if (_playerKeycoardController.IsMoveDown)
             {
-                _currentDirecton = _downDirection;
+                _currentDirection = StaticPlayerDirectionValue.DownDirection;
             }
             else if (_playerKeycoardController.IsMoveRight)
             {
-                _currentDirecton = _rigthDirection;
+                _currentDirection = StaticPlayerDirectionValue.RightDirection;
             }
             else if (_playerKeycoardController.IsMoveLeft)
             {
-                _currentDirecton = _leftDirection;
+                _currentDirection = StaticPlayerDirectionValue.LeftDirection;
             }
             else
             {
-                _currentDirecton = _null;
+                _currentDirection = StaticPlayerDirectionValue.Null;
             }            
 
             yield return null;
         }
     }
 
-    private void StartSetDirection()
+    public void StartSetDirection()
     {
         if (_setDirection==null)
         {
@@ -78,7 +71,7 @@ public class PlayerDirectionController : MonoBehaviour
         }
     }
 
-    private void StopSetDirection()
+    public void StopSetDirection()
     {
         if (_setDirection!=null)
         {

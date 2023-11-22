@@ -391,11 +391,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!95 &772754418 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9517976, guid: 2599104a4a2a5214f8407d03827b5eff, type: 3}
-  m_PrefabInstance: {fileID: 408921114}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +532,7 @@ GameObject:
   - component: {fileID: 994998312}
   - component: {fileID: 994998313}
   - component: {fileID: 994998314}
+  - component: {fileID: 994998315}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -608,8 +604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900ace7ccdbb74061ae2a75888f5ffda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerDirectionController: {fileID: 994998314}
-  _playerSpeedController: {fileID: 994998311}
 --- !u!114 &994998311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,8 +616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e902d0674a13b4c90b36db1d128761cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeed: 10
-  _playerKeyboardController: {fileID: 994998308}
 --- !u!114 &994998312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,8 +628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bef27624507b4b35a4abd6065ffea21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 772754418}
-  _playerSpeedController: {fileID: 994998311}
 --- !u!114 &994998313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,8 +640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8785f4c96dbeb432c97284dcdd225acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerKeyboardController: {fileID: 994998308}
-  _speedOfRotation: 15
 --- !u!114 &994998314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +652,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3574c8e30daa14e55b787fa01b4a188d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerKeycoardController: {fileID: 994998308}
+--- !u!95 &994998315
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994998304}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f4209d51d1ad0434299f2d498ee076ba, type: 3}
+  m_Controller: {fileID: 9100000, guid: ffc7c708d512841449d9533ab4779661, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1079140838
 GameObject:
   m_ObjectHideFlags: 0

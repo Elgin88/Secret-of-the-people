@@ -1,33 +1,21 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRotationController : MonoBehaviour
-{
-    [SerializeField] private PlayerKeyboardController _playerKeyboardController;
-    [SerializeField] private float _speedOfRotation;
+[RequireComponent(typeof(PlayerKeyboardController))]
 
-    private Coroutine _setRotation;
+public class PlayerRotationSetter : MonoBehaviour
+{
+    private PlayerKeyboardController _playerKeyboardController;
     private Quaternion _currentRotation;
     private Quaternion _targetRotation;
-    private Quaternion _upAndRightRotation = new Quaternion(0, 0.38f, 0, 0.923f);
-    private Quaternion _upAndLeftRotation = new Quaternion(0, -0.38f, 0, 0.923f);
-    private Quaternion _downAndRightRotation = new Quaternion(0, 0.924f, 0, 0.383f);
-    private Quaternion _downAndLeftRotation = new Quaternion(0, 0.924f, 0, -0.383f);
-    private Quaternion _upRotation = new Quaternion(0, 0, 0, 1);
-    private Quaternion _downRotation = new Quaternion(0, 1, 0, 0);
-    private Quaternion _rightRotation = new Quaternion(0, 0.70711f, 0, 0.70711f);
-    private Quaternion _leftRotation = new Quaternion(0, 0.70711f, 0, -0.70711f);
+    private Coroutine _setRotation;
+    private float _speedOfRotation = 15;
 
     public Quaternion CurrentRotation => _currentRotation;
 
     private void Start()
     {
-        if (_playerKeyboardController == null || _speedOfRotation == 0)
-        {
-            Debug.Log("No serializefield in " + gameObject.name);
-        }
+        _playerKeyboardController = GetComponent<PlayerKeyboardController>();
 
         _currentRotation = transform.rotation;
 
@@ -40,35 +28,35 @@ public class PlayerRotationController : MonoBehaviour
         {
             if (_playerKeyboardController.IsMoveUp & _playerKeyboardController.IsMoveRight)
             {
-                _targetRotation = _upAndRightRotation;
+                _targetRotation = StaticPlayerRotationValue.UpAndRightRotation;
             }
             else if (_playerKeyboardController.IsMoveUp & _playerKeyboardController.IsMoveLeft)
             {
-                _targetRotation = _upAndLeftRotation;
+                _targetRotation = StaticPlayerRotationValue.UpAndLeftRotation;
             }
             else if (_playerKeyboardController.IsMoveDown & _playerKeyboardController.IsMoveRight)
             {
-                _targetRotation = _downAndRightRotation;
+                _targetRotation = StaticPlayerRotationValue.DownAndRightRotation;
             }
             else if (_playerKeyboardController.IsMoveDown & _playerKeyboardController.IsMoveLeft)
             {
-                _targetRotation = _downAndLeftRotation;
+                _targetRotation = StaticPlayerRotationValue.DownAndLeftRotation;
             }
             else if(_playerKeyboardController.IsMoveUp)
             {
-                _targetRotation = _upRotation;
+                _targetRotation = StaticPlayerRotationValue.UpRotation;
             }
             else if (_playerKeyboardController.IsMoveDown)
             {
-                _targetRotation = _downRotation;
+                _targetRotation = StaticPlayerRotationValue.DownRotation;
             }
             else if (_playerKeyboardController.IsMoveRight)
             {
-                _targetRotation = _rightRotation;
+                _targetRotation = StaticPlayerRotationValue.RightRotation;
             }
             else if (_playerKeyboardController.IsMoveLeft)
             {
-                _targetRotation = _leftRotation;
+                _targetRotation = StaticPlayerRotationValue.LeftRotation;
             }
             else
             {
