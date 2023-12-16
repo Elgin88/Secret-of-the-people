@@ -10,6 +10,23 @@ public class PlayerMover : MonoBehaviour
     private PlayerSpeedSetter _playerSpeedController;
     private Coroutine _move;
 
+    public void StartMove()
+    {
+        if (_move == null)
+        {
+            _move = StartCoroutine(Move());
+        }
+    }
+
+    public void StopMove()
+    {
+        if (_move != null)
+        {
+            StopCoroutine(_move);
+            _move = null;
+        }
+    }
+
     private void Start()
     {
         _playerDirectionSetter = GetComponent<PlayerDirectionSetter>();
@@ -25,23 +42,6 @@ public class PlayerMover : MonoBehaviour
             transform.Translate(_playerDirectionSetter.CurrentDirection * _playerSpeedController.CurrentSpeed * Time.deltaTime, Space.World);
 
             yield return null;
-        }
-    }
-
-    public void StartMove()
-    {
-        if (_move == null)
-        {
-            _move = StartCoroutine(Move());
-        }
-    }
-
-    public void StopMove()
-    {
-        if (_move != null)
-        {
-            StopCoroutine(_move);
-            _move = null;
         }
     }
 }

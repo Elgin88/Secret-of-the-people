@@ -13,6 +13,23 @@ public class PlayerRotationSetter : MonoBehaviour
 
     public Quaternion CurrentRotation => _currentRotation;
 
+    public void StartSetRotation()
+    {
+        if (_setRotation == null)
+        {
+            _setRotation = StartCoroutine(SetRotation());
+        }
+    }
+
+    public void StopSetRotation()
+    {
+        if (_setRotation != null)
+        {
+            StopCoroutine(_setRotation);
+            _setRotation = null;
+        }
+    }
+
     private void Start()
     {
         _playerKeyboardController = GetComponent<PlayerKeyboardPoller>();
@@ -68,23 +85,6 @@ public class PlayerRotationSetter : MonoBehaviour
             _currentRotation = transform.rotation;
 
            yield return null;
-        }
-    }
-
-    public void StartSetRotation()
-    {
-        if (_setRotation == null)
-        {
-            _setRotation = StartCoroutine(SetRotation());
-        }
-    }
-
-    public void StopSetRotation()
-    {
-        if (_setRotation != null)
-        {
-            StopCoroutine(_setRotation);
-            _setRotation = null;
         }
     }
 }

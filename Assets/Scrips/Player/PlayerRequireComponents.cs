@@ -11,5 +11,4 @@ using UnityEngine;
 
 public class PlayerRequireComponents : MonoBehaviour
 {
-
 }

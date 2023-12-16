@@ -11,6 +11,23 @@ public class PlayerDirectionSetter : MonoBehaviour
 
     public Vector3 CurrentDirection => _currentDirection;
 
+    public void StartSetDirection()
+    {
+        if (_setDirection == null)
+        {
+            _setDirection = StartCoroutine(SetDirection());
+        }
+    }
+
+    public void StopSetDirection()
+    {
+        if (_setDirection != null)
+        {
+            StopCoroutine(_setDirection);
+            _setDirection = null;
+        }
+    }
+
     private void Start()
     {
         _playerKeycoardController = GetComponent<PlayerKeyboardPoller>();
@@ -60,23 +77,6 @@ public class PlayerDirectionSetter : MonoBehaviour
             }            
 
             yield return null;
-        }
-    }
-
-    public void StartSetDirection()
-    {
-        if (_setDirection==null)
-        {
-            _setDirection = StartCoroutine(SetDirection());
-        }
-    }
-
-    public void StopSetDirection()
-    {
-        if (_setDirection!=null)
-        {
-            StopCoroutine(_setDirection);
-            _setDirection = null;
         }
     }
 }

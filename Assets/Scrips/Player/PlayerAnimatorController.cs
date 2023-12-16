@@ -10,6 +10,23 @@ public class PlayerAnimatorController : MonoBehaviour
     private Coroutine _setAnimatorParametrs;
     private Animator _animator;
 
+    public void StartSetBoolAnimator()
+    {
+        if (_setAnimatorParametrs == null)
+        {
+            _setAnimatorParametrs = StartCoroutine(SetAnimatorParametrs());
+        }
+    }
+
+    public void StopSetBoolAnimator()
+    {
+        if (_setAnimatorParametrs != null)
+        {
+            StopCoroutine(_setAnimatorParametrs);
+            _setAnimatorParametrs = null;
+        }
+    }
+
     private void Start()
     {
         _playerSpeedSetter = GetComponent<PlayerSpeedSetter>();
@@ -32,23 +49,6 @@ public class PlayerAnimatorController : MonoBehaviour
             }
 
             yield return null;
-        }
-    }
-
-    public void StartSetBoolAnimator()
-    {
-        if (_setAnimatorParametrs==null)
-        {
-            _setAnimatorParametrs = StartCoroutine(SetAnimatorParametrs());
-        }        
-    }
-
-    public void StopSetBoolAnimator()
-    {
-        if (_setAnimatorParametrs != null)
-        {
-            StopCoroutine(_setAnimatorParametrs);
-            _setAnimatorParametrs = null;
         }
     }
 }
