@@ -16,6 +16,6 @@ public class InitializeSDK : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(StaticSceneNames.Level1);
+        SceneManager.LoadScene(SceneNames.Level1);
     }
 }

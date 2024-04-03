@@ -1,4 +1,4 @@
-using CodeBase.Player;
+using CodeBase.PlayerComponents;
 using System.Collections;
 using UnityEngine;
 

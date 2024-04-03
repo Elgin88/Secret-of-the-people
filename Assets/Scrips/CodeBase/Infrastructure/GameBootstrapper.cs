@@ -10,9 +10,12 @@ namespace CodeBase.Infractructure
 
         private void Awake()
         {
-            _game = new Game();
-
             DontDestroyOnLoad(this);
+        }
+
+        internal void InitGame()
+        {
+            _game = new Game();
         }
     }
 }
