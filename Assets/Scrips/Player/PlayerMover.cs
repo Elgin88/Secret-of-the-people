@@ -1,47 +1,43 @@
-using System.Collections;
+﻿using CodeBase.Infractructure;
+using CodeBase.Services.Input;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerDirectionSetter))]
-[RequireComponent(typeof(PlayerSpeedSetter))]
-
-public class PlayerMover : MonoBehaviour
+namespace CodeBase.Player
 {
-    private PlayerDirectionSetter _playerDirectionSetter;
-    private PlayerSpeedSetter _playerSpeedController;
-    private Coroutine _move;
-
-    public void StartMove()
+    internal class PlayerMover : MonoBehaviour
     {
-        if (_move == null)
+        [SerializeField] private CharacterController _characterController;
+        [SerializeField] private float _movemenSpeed;
+
+        private IInputService _inputService;
+        private Camera _camera;
+
+        private void Awake()
         {
-            _move = StartCoroutine(Move());
+            _inputService = Game.InputService;
         }
-    }
 
-    public void StopMove()
-    {
-        if (_move != null)
+        private void Start()
         {
-            StopCoroutine(_move);
-            _move = null;
+            _camera = Camera.main;
         }
-    }
 
-    private void Awake()
-    {
-        _playerDirectionSetter = GetComponent<PlayerDirectionSetter>();
-        _playerSpeedController = GetComponent<PlayerSpeedSetter>();
-
-        StartMove();
-    }
-
-    private IEnumerator Move()
-    {
-        while (true)
+        private void Update()
         {
-            transform.Translate(_playerDirectionSetter.CurrentDirection * _playerSpeedController.CurrentSpeed * Time.deltaTime, Space.World);
+            Vector3 movementDirection = Vector3.zero;
 
-            yield return null;
+            if (_inputService.Axis.sqrMagnitude > Constants.Epsilon)
+            {
+                movementDirection = _camera.transform.TransformDirection(_inputService.Axis);
+                movementDirection.y = 0;
+                movementDirection.Normalize();
+
+                transform.forward = movementDirection;
+            }
+
+            movementDirection += Physics.gravity;
+
+            _characterController.Move(movementDirection * _movemenSpeed * Time.deltaTime) ;
         }
     }
 }
