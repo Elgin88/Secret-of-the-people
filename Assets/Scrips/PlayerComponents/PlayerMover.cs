@@ -1,43 +1,30 @@
-﻿using CodeBase.Infractructure;
-using CodeBase.Services.Input;
+﻿using Scripts.CodeBase.Infractructure;
+using Scripts.CodeBase.Services.Input;
 using UnityEngine;
 
 namespace CodeBase.PlayerComponents
 {
     internal class PlayerMover : MonoBehaviour
     {
-        [SerializeField] private CharacterController _characterController;
-        [SerializeField] private float _movemenSpeed;
+        [SerializeField] private Player _player;
+        [SerializeField] private float _movementSpeed;
 
         private IInputService _inputService;
-        private Camera _camera;
+        private Vector3 _targetPosition;
+        private Quaternion _targetRotation;
+        private float _currentSpeed;
 
         private void Awake()
         {
-            _inputService = Game.InputService;
-        }
+            _targetPosition = new Vector3();
 
-        private void Start()
-        {
-            _camera = Camera.main;
+            _inputService = Game.InputService;
+            _currentSpeed = _movementSpeed;
         }
 
         private void Update()
         {
-            Vector3 movementDirection = Vector3.zero;
-
-            if (_inputService.Axis.sqrMagnitude > Constants.Epsilon)
-            {
-                movementDirection = _camera.transform.TransformDirection(_inputService.Axis);
-                movementDirection.y = 0;
-                movementDirection.Normalize();
-
-                transform.forward = movementDirection;
-            }
-
-            movementDirection += Physics.gravity;
-
-            _characterController.Move(movementDirection * _movemenSpeed * Time.deltaTime) ;
+            _targetPosition = new Vector3(transform.position.x + _inputService.Axis.x, 0, transform.position.z + _inputService.Axis.y);
         }
     }
 }

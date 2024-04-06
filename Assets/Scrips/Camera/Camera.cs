@@ -1,26 +1,22 @@
-using CodeBase.PlayerComponents;
-using System.Collections;
 using UnityEngine;
 
-namespace Codebase.Camera
+namespace Scripts.Camera
 {
     public class Camera : MonoBehaviour
     {
-        [SerializeField] private PlayerMover _player;
+        [SerializeField] private Transform _playerTransform;
+        [SerializeField] private float _deltaX;
+        [SerializeField] private float _deltaY;
+        [SerializeField] private float _deltaZ;
 
-        private Quaternion _startMainCameraCuaternion = new Quaternion(65, 0, 0, 180);
-        private float _deltaFromPlayerPositionX = 0;
-        private float _deltaFromPlayerPositionY = 11;
-        private float _deltaFromPlayerPositionZ = -11;
-
-        private void Start()
+        private void LateUpdate()
         {
-            gameObject.transform.rotation = _startMainCameraCuaternion;
-        }
-
-        private void Update()
-        {
-            gameObject.transform.position = new Vector3(_player.transform.position.x + _deltaFromPlayerPositionX, _player.transform.position.y + _deltaFromPlayerPositionY, _player.transform.position.z + _deltaFromPlayerPositionZ);
+            if (_playerTransform == null)
+            {
+                return;
+            }
+            
+            transform.position = new Vector3(_playerTransform.position.x + _deltaX, _playerTransform.position.y + _deltaY, _playerTransform.position.z + _deltaZ);
         }
     }
 }

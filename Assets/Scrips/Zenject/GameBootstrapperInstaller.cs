@@ -1,4 +1,4 @@
-using CodeBase.Infractructure;
+using Scripts.CodeBase.Infractructure;
 using UnityEngine;
 using Zenject;
 

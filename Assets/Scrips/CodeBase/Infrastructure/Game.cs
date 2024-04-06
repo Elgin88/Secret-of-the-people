@@ -1,7 +1,7 @@
-using CodeBase.Services.Input;
+using Scripts.CodeBase.Services.Input;
 using UnityEngine;
 
-namespace CodeBase.Infractructure
+namespace Scripts.CodeBase.Infractructure
 {
     internal class Game
     {
@@ -9,10 +9,10 @@ namespace CodeBase.Infractructure
 
         public Game()
         {
-            SelectionInputService();
+            SelectInputService();
         }
 
-        private static void SelectionInputService()
+        private static void SelectInputService()
         {
             if (Application.isEditor)
             {

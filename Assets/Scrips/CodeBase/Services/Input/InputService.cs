@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CodeBase.Services.Input
+namespace Scripts.CodeBase.Services.Input
 {
     internal abstract class InputService : IInputService
     {
@@ -9,6 +9,7 @@ namespace CodeBase.Services.Input
 
         public abstract Vector2 Axis { get; }
 
-        protected Vector2 GetSimpleInputAxix() => new Vector2(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));
+        protected Vector2 GetAxisFromKeyboard => new Vector2(UnityEngine.Input.GetAxis(Horizontal), UnityEngine.Input.GetAxis(Vertical));
+        protected Vector2 GetAxisFromJoystick() => new Vector2(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));
     }
 }

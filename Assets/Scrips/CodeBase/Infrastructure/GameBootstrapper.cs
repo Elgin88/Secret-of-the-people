@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Infractructure
+namespace Scripts.CodeBase.Infractructure
 {
     internal class GameBootstrapper : MonoBehaviour
     {
@@ -10,6 +10,11 @@ namespace CodeBase.Infractructure
 
         private void Awake()
         {
+            if (_game == null)
+            {
+                _game = new Game();
+            }
+
             DontDestroyOnLoad(this);
         }
 
