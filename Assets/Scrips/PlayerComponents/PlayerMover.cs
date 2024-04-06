@@ -24,7 +24,8 @@ namespace CodeBase.PlayerComponents
 
         private void Update()
         {
-            _targetPosition = new Vector3(transform.position.x + _inputService.Axis.x, 0, transform.position.z + _inputService.Axis.y);
+            Debug.Log(_inputService.Axis.x);
+            Debug.Log(_inputService.Axis.y);
         }
     }
 }

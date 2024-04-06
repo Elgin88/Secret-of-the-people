@@ -12,7 +12,7 @@ namespace Scripts.CodeBase.Services.Input
 
                 if (axis == Vector2.zero)
                 {
-                    axis = GetAxisFromKeyboard;
+                    axis = GetAxisFromKeyboard();
                 }
 
                 return axis;

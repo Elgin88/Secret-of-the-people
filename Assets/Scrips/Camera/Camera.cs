@@ -11,11 +11,6 @@ namespace Scripts.Camera
 
         private void LateUpdate()
         {
-            if (_playerTransform == null)
-            {
-                return;
-            }
-            
             transform.position = new Vector3(_playerTransform.position.x + _deltaX, _playerTransform.position.y + _deltaY, _playerTransform.position.z + _deltaZ);
         }
     }

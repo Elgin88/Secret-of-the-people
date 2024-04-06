@@ -12,6 +12,7 @@ namespace CodeBase.PlayerComponents
 
         private void Update()
         {
+            
         }
 
         internal void PlayIdle()
