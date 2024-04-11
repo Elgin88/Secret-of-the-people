@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CodeBase.PlayerComponents
 {
-    internal class PlayerMover : MonoBehaviour
+    public class PlayerMover : MonoBehaviour
     {
         [SerializeField] private PlayerAnimation _playerAnimation;
         [SerializeField] private Player _player;
@@ -18,7 +18,7 @@ namespace CodeBase.PlayerComponents
         private float _currentMovementSpeed;
         private bool _isRun;
 
-        internal bool IsRun => _isRun;
+        public bool IsRun => _isRun;
 
         private void Awake()
         {
