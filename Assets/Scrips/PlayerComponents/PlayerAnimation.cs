@@ -2,32 +2,21 @@
 
 namespace CodeBase.PlayerComponents
 {
-    internal class PlayerAnimation : MonoBehaviour
+    public class PlayerAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
+        [SerializeField] private PlayerMover _playerMover;
 
-        private string _idle = "Idle";
-        private string _attack = "Shoot";
-        private string _run = "Run";
+        private string _run = "IsRun";
 
-        private void Update()
+        public void StartRun()
         {
-            
+            _animator.SetBool(_run, true);
         }
 
-        internal void PlayIdle()
+        public void StopRun()
         {
-            _animator.Play(_idle);
-        }
-
-        internal void PlayRun()
-        {
-            _animator.Play(_run);
-        }
-
-        internal void PlayAttack()
-        {
-            _animator.Play(_attack);
+            _animator.SetBool(_run, false);
         }
     }
 }

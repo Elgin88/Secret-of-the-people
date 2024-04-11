@@ -2,7 +2,7 @@
 
 namespace Scripts.CodeBase.Services.Input
 {
-    internal interface IInputService
+    public interface IInputService
     {
         public Vector2 Axis { get; }
     }

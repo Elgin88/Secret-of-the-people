@@ -2,25 +2,18 @@ using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure
 {
-    internal class GameBootstrapper : MonoBehaviour
+    public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
     {
         private Game _game;
 
-        internal Game Game => _game;
+        public Game Game => _game;
 
         private void Awake()
         {
-            if (_game == null)
-            {
-                _game = new Game();
-            }
+            _game = new Game(this);
+            _game.StateMachine.Enter<BootstrapState>();
 
             DontDestroyOnLoad(this);
-        }
-
-        internal void InitGame()
-        {
-            _game = new Game();
         }
     }
 }

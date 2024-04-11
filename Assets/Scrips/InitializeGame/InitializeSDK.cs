@@ -18,7 +18,7 @@ namespace Scripts.InitializeGame
 
         private void LoadNextLevel()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(SceneNames.MainMenu);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(SceneNames.InitialGame);
         }
 #endif
     }

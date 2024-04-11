@@ -2,7 +2,7 @@
 
 namespace Scripts.CodeBase.Services.Input
 {
-    internal class StandaloneInputService : InputService
+    public class StandaloneInputService : InputService
     {
         public override Vector2 Axis
         {

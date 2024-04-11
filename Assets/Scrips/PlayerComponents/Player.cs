@@ -2,7 +2,7 @@
 
 namespace CodeBase.PlayerComponents
 {
-    internal class Player: MonoBehaviour
+    public class Player: MonoBehaviour
     {
         [SerializeField] private float _rotationSpeed;
 
@@ -11,7 +11,7 @@ namespace CodeBase.PlayerComponents
             transform.position = targetPosition;
         }
 
-        internal void SetRotation(Quaternion targetRotation)
+        public void SetRotation(Quaternion targetRotation)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
         }

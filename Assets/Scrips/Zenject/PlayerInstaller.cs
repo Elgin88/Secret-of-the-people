@@ -4,7 +4,7 @@ using Zenject;
 
 namespace CodeBase.Zenject
 {
-    internal class PlayerInstaller : MonoInstaller
+    public class PlayerInstaller : MonoInstaller
     {
         [SerializeField] private Player _player;
 

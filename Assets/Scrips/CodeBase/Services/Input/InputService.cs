@@ -2,7 +2,7 @@
 
 namespace Scripts.CodeBase.Services.Input
 {
-    internal abstract class InputService : IInputService
+    public abstract class InputService : IInputService
     {
         protected string Horizontal = "Horizontal";
         protected string Vertical = "Vertical";
