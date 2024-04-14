@@ -1,29 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 namespace Scripts.CodeBase.Infractructure
 {
     public class GameStateMashine
     {
-        private Dictionary<Type, IState> _states;
-        private IState _currentState;
+        private Dictionary<Type, IExitableState> _states;
+        private IExitableState _activeState;
 
         public GameStateMashine(SceneLoader sceneLoader)
         {
-            _states = new Dictionary<Type, IState>
+            _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader),
             };
         }
 
-        public void Enter<TState>() where TState : IState
+        public void Enter<TState>() where TState : class, IState
         {
-            _currentState?.Exit();
-            IState state = _states[typeof(TState)];
-            _currentState = state;
+            IState state = ChangeState<TState>();
             state.Enter();
         }
+
+        public void Enter<TState, TPayLoad>(TPayLoad payLoad) where TState : class, IPayLoadedState<TPayLoad>
+        {
+            TState state = ChangeState<TState>();
+            state.Enter(payLoad);
+        }
+
+        private TState ChangeState<TState>() where TState : class, IExitableState
+        {
+            _activeState?.Exit();
+
+            TState state = GetState<TState>();
+            _activeState = state;
+
+            return state;
+        }
+
+
+
+        private TState GetState<TState>() where TState : class, IExitableState => _states[typeof(TState)] as TState;
     }
 }

@@ -1,8 +1,17 @@
 ﻿namespace Scripts.CodeBase.Infractructure
 {
-    public interface IState
+    public interface IState : IExitableState
     {
-        public void Enter();
+        public void Enter();        
+    }
+
+    public interface IExitableState
+    {
         public void Exit();
+    }
+
+    public interface IPayLoadedState<TPayload> : IExitableState
+    {
+        public void Enter(TPayload payload);
     }
 }
