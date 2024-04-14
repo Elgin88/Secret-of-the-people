@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CodeBase.Static;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -22,7 +23,7 @@ namespace Scripts.Canvas
 
         public override void OnButtonClick()
         {
-            SceneManager.LoadScene(SceneNames.Level1);
+            SceneManager.LoadScene(Constants.Level1);
         }
     }
 }

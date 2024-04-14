@@ -1,4 +1,5 @@
-﻿using Scripts.CodeBase.Services.Input;
+﻿using CodeBase.Static;
+using Scripts.CodeBase.Services.Input;
 using System;
 using UnityEngine;
 
@@ -8,7 +9,6 @@ namespace Scripts.CodeBase.Infractructure
     {
         private readonly GameStateMashine _stateMachine;
         private readonly SceneLoader _sceneLoader;
-        private const string _initialGame = "InitialGame";
 
         public BootstrapState(GameStateMashine state, SceneLoader sceneLoader)
         {
@@ -19,10 +19,10 @@ namespace Scripts.CodeBase.Infractructure
         public void Enter()
         {
             RegisterServices();
-            _sceneLoader.Load(_initialGame, onLoaded: EnterLoadLevel);
+            _sceneLoader.Load(Constants.InitialGame, onLoaded: EnterLoadLevel);
         }
 
-        private void EnterLoadLevel() => _stateMachine.Enter<LoadLevelState>();
+        private void EnterLoadLevel() => _stateMachine.Enter<LoadLevelState, string>("Level1");
 
         private void RegisterServices()
         {
