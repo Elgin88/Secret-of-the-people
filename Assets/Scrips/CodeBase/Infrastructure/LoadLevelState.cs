@@ -1,5 +1,5 @@
 ﻿using CodeBase.Static;
-using Scripts.CameraLogic;
+using Scripts.Logic;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure
@@ -8,17 +8,24 @@ namespace Scripts.CodeBase.Infractructure
     {
         private readonly GameStateMashine _stateMaschine;
         private readonly SceneLoader _sceneLoader;
+        private readonly LoaderCurtain _loaderCurtain;
 
-        public LoadLevelState(GameStateMashine stateMaschine, SceneLoader sceneLoader)
+        public LoadLevelState(GameStateMashine stateMaschine, SceneLoader sceneLoader, LoaderCurtain loaderCurtain)
         {
             _stateMaschine = stateMaschine;
             _sceneLoader = sceneLoader;
+            _loaderCurtain = loaderCurtain;
         }
 
-        public void Enter(string sceneName) => _sceneLoader.Load(sceneName, OnLoaded);
+        public void Enter(string sceneName)
+        {
+            _sceneLoader.Load(sceneName, OnLoaded);
+            _loaderCurtain.Show();
+        }
 
         public void Exit()
         {
+            _loaderCurtain.Hide();
         }
 
         private void OnLoaded()
@@ -28,6 +35,8 @@ namespace Scripts.CodeBase.Infractructure
             GameObject player = Instantiate(Constants.PlayerPrefabLocation, initialPoint.transform.position);
 
             CameraFollow(player.transform);
+
+            _stateMaschine.Enter<GameLoopState>();
         }
 
         private void CameraFollow(Transform transform)

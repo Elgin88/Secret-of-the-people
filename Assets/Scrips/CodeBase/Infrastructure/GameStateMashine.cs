@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Scripts.Logic;
 
 namespace Scripts.CodeBase.Infractructure
 {
@@ -8,12 +9,13 @@ namespace Scripts.CodeBase.Infractructure
         private Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMashine(SceneLoader sceneLoader)
+        public GameStateMashine(SceneLoader sceneLoader, LoaderCurtain loaderCurtain)
         {
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loaderCurtain),
+                [typeof(GameLoopState)] = new GameLoopState(this),
             };
         }
 
@@ -38,8 +40,6 @@ namespace Scripts.CodeBase.Infractructure
 
             return state;
         }
-
-
 
         private TState GetState<TState>() where TState : class, IExitableState => _states[typeof(TState)] as TState;
     }

@@ -1,4 +1,5 @@
 using Scripts.CodeBase.Services.Input;
+using Scripts.Logic;
 
 namespace Scripts.CodeBase.Infractructure
 {
@@ -8,9 +9,9 @@ namespace Scripts.CodeBase.Infractructure
 
         public GameStateMashine StateMachine;
 
-        public Game(ICoroutineRunner coroutineRunner)
+        public Game(ICoroutineRunner coroutineRunner, LoaderCurtain curtain)
         {
-            StateMachine = new GameStateMashine(new SceneLoader(coroutineRunner));
+            StateMachine = new GameStateMashine(new SceneLoader(coroutineRunner), curtain);
         }
     }
 }
