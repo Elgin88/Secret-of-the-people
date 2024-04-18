@@ -7,10 +7,8 @@ namespace Scripts.CodeBase.Infractructure.Factory
     {
         private readonly IAssetProvider _iAssetProvider;
 
-        public GameFactory(IAssetProvider iAssetProvider)
-        {
+        public GameFactory(IAssetProvider iAssetProvider) =>
             _iAssetProvider = iAssetProvider;
-        }
 
         public GameObject CreateHero(GameObject initialPoint) =>
             _iAssetProvider.Instantiate(AssetsPath.PlayerPrefabLocation, initialPoint.transform.position);

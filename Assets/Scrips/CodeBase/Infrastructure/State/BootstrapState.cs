@@ -23,10 +23,7 @@ namespace Scripts.CodeBase.Infractructure.State
 
         private void EnterLoadLevel() => _stateMachine.Enter<LoadLevelState, string>("Level1");
 
-        private void RegisterServices()
-        {
-            Game.InputService = RegisterInputService();
-        }
+        private void RegisterServices() => Game.InputService = RegisterInputService();
 
         private static IInputService RegisterInputService()
         {
