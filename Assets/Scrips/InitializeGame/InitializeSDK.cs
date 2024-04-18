@@ -1,4 +1,5 @@
 using System.Collections;
+using CodeBase.Static;
 using UnityEngine;
 
 namespace Scripts.InitializeGame
@@ -18,7 +19,7 @@ namespace Scripts.InitializeGame
 
         private void LoadNextLevel()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(SceneNames.InitialGame);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(ScenesNames.SceneNameInitialGame);
         }
 #endif
     }
