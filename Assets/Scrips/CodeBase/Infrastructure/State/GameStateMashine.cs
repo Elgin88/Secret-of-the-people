@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Scripts.Logic;
 
-namespace Scripts.CodeBase.Infractructure
+namespace Scripts.CodeBase.Infractructure.State
 {
     public class GameStateMashine
     {
@@ -41,6 +41,7 @@ namespace Scripts.CodeBase.Infractructure
             return state;
         }
 
-        private TState GetState<TState>() where TState : class, IExitableState => _states[typeof(TState)] as TState;
+        private TState GetState<TState>() where TState : class, IExitableState =>
+            _states[typeof(TState)] as TState;
     }
 }

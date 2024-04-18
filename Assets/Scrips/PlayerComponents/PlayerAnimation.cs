@@ -9,14 +9,8 @@ namespace CodeBase.PlayerComponents
 
         private string _run = "IsRun";
 
-        public void StartRun()
-        {
-            _animator.SetBool(_run, true);
-        }
+        public void StartRun() => _animator.SetBool(_run, true);
 
-        public void StopRun()
-        {
-            _animator.SetBool(_run, false);
-        }
+        public void StopRun() => _animator.SetBool(_run, false);
     }
 }

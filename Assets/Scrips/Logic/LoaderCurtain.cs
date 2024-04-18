@@ -7,8 +7,8 @@ namespace Scripts.Logic
     {
         [SerializeField] private CanvasGroup _canvasGroup;
 
-        private const float _stepAlpha = 0.03f;
-        private const float _delay = 0.1f;
+        private const float _stepChangeAlpha = 0.03f;
+        private const float _delay = 0.03f;
         private WaitForSeconds _delayWFS;
 
         private void Awake()
@@ -29,7 +29,7 @@ namespace Scripts.Logic
         {
             while (_canvasGroup.alpha > 0)
             {
-                _canvasGroup.alpha -= _stepAlpha;
+                _canvasGroup.alpha -= _stepChangeAlpha;
                 yield return _delayWFS;
             }
 

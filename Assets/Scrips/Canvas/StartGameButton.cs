@@ -23,7 +23,7 @@ namespace Scripts.Canvas
 
         public override void OnButtonClick()
         {
-            SceneManager.LoadScene(Constants.Level1);
+            SceneManager.LoadScene(ScenesNames.SceneNameLevel1);
         }
     }
 }

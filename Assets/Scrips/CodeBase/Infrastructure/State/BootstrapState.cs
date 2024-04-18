@@ -1,9 +1,8 @@
 ﻿using CodeBase.Static;
 using Scripts.CodeBase.Services.Input;
-using System;
 using UnityEngine;
 
-namespace Scripts.CodeBase.Infractructure
+namespace Scripts.CodeBase.Infractructure.State
 {
     public class BootstrapState : IState
     {
@@ -19,7 +18,7 @@ namespace Scripts.CodeBase.Infractructure
         public void Enter()
         {
             RegisterServices();
-            _sceneLoader.Load(Constants.InitialGame, onLoaded: EnterLoadLevel);
+            _sceneLoader.Load(ScenesNames.SceneNameInitialGame, onLoaded: EnterLoadLevel);
         }
 
         private void EnterLoadLevel() => _stateMachine.Enter<LoadLevelState, string>("Level1");
