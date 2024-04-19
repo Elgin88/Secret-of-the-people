@@ -8,7 +8,9 @@ namespace Scripts.Canvas
         public abstract Button Button { get; }
 
         public abstract void OnButtonClick();
+
         public abstract void OnDisable();
+
         public abstract void OnEnable();
     }
 }

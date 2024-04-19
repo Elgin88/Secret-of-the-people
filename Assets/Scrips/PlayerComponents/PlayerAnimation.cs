@@ -7,7 +7,7 @@ namespace CodeBase.PlayerComponents
         [SerializeField] private Animator _animator;
         [SerializeField] private PlayerMover _playerMover;
 
-        private string _run = "IsRun";
+        private const string _run = "IsRun";
 
         public void StartRun() => _animator.SetBool(_run, true);
 
