@@ -5,7 +5,7 @@
         public void Enter();        
     }
 
-    public interface IExitableState
+    public interface IExitableState : IService
     {
         public void Exit();
     }

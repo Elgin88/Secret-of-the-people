@@ -15,6 +15,6 @@ namespace Scripts.Canvas
 
         public override void OnDisable() => _button.onClick.RemoveListener(OnButtonClick);
 
-        public override void OnButtonClick() => SceneManager.LoadScene(ScenesNames.SceneNameLevel1);
+        public override void OnButtonClick() => SceneManager.LoadScene(ScenesNames.Level1);
     }
 }

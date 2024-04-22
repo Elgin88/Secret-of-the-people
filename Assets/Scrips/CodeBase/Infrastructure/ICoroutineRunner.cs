@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure
 {
-    public interface ICoroutineRunner
+    public interface ICoroutineRunner : IService
     {
         public Coroutine StartCoroutine(IEnumerator coroutine);
     }

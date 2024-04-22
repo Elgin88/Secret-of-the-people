@@ -1,4 +1,4 @@
-﻿using Scripts.CodeBase.Infractructure;
+﻿using Scripts.CodeBase.Infractructure.Services;
 using Scripts.CodeBase.Services.Input;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ namespace CodeBase.PlayerComponents
         private IInputService _inputService;
         private Quaternion _targetRotation;
         private Quaternion _currentRotation;
-        private Vector3 _targetPosition;
+        private Vector3 _targetPosition = new Vector3();
         private Vector3 _currentPosition;
         private float _currentMovementSpeed;
         private bool _isRun;
@@ -22,8 +22,7 @@ namespace CodeBase.PlayerComponents
 
         private void Awake()
         {
-            _inputService = Game.InputService;
-            _targetPosition = new Vector3();
+            _inputService = AllServices.Container.Single<IInputService>();
 
             _currentMovementSpeed = _movementSpeed;
         }

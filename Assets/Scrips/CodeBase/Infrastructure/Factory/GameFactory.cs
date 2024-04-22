@@ -5,9 +5,9 @@ namespace Scripts.CodeBase.Infractructure.Factory
 {
     public class GameFactory : IGameFactory
     {
-        private readonly IAssetProvider _iAssetProvider;
+        private readonly IAssets _iAssetProvider;
 
-        public GameFactory(IAssetProvider iAssetProvider) =>
+        public GameFactory(IAssets iAssetProvider) =>
             _iAssetProvider = iAssetProvider;
 
         public GameObject CreateHero(GameObject initialPoint) =>

@@ -1,4 +1,7 @@
 ﻿using CodeBase.Static;
+using Scripts.CodeBase.Infractructure.AssetManagement;
+using Scripts.CodeBase.Infractructure.Factory;
+using Scripts.CodeBase.Infractructure.Services;
 using Scripts.CodeBase.Services.Input;
 using UnityEngine;
 
@@ -17,15 +20,15 @@ namespace Scripts.CodeBase.Infractructure.State
 
         public void Enter()
         {
-            RegisterServices();
-            _sceneLoader.Load(ScenesNames.SceneNameInitialGame, onLoaded: EnterLoadLevel);
+            AllServices.Container.RegisterSingle<IInputService>(InputService());
+            AllServices.Container.RegisterSingle <IGameFactory>(new GameFactory(AllServices.Container.Single<IAssets>()));
         }
 
-        private void EnterLoadLevel() => _stateMachine.Enter<LoadLevelState, string>("Level1");
+        public void Exit()
+        {
+        }
 
-        private void RegisterServices() => Game.InputService = RegisterInputService();
-
-        private static IInputService RegisterInputService()
+        private static IInputService InputService()
         {
             if (Application.isEditor)
             {
@@ -35,10 +38,6 @@ namespace Scripts.CodeBase.Infractructure.State
             {
                 return new MobileInputService();
             }
-        }
-
-        public void Exit()
-        {
         }
     }
 }
