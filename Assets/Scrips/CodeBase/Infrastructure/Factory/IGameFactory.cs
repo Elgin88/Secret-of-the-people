@@ -4,8 +4,8 @@ namespace Scripts.CodeBase.Infractructure.Factory
 {
     public interface IGameFactory : IService
     {
-        public GameObject CreateHero(GameObject gameObject);
+        public GameObject CreatePlayer(GameObject gameObject);
 
-        public void CreateHud();
+        public void CreateCurtain();
     }
 }

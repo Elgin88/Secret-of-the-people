@@ -9,46 +9,37 @@ namespace Scripts.CodeBase.Infractructure.State
     {
         private readonly GameStateMashine _stateMaschine;
         private readonly SceneLoader _sceneLoader;
-        private readonly LoaderCurtain _loaderCurtain;
+        private readonly CurtainShower _curtainShower;
         private readonly IGameFactory _iGameFactory;
 
-        public LoadLevelState(GameStateMashine stateMaschine, SceneLoader sceneLoader, LoaderCurtain loaderCurtain)
+        public LoadLevelState(GameStateMashine stateMaschine, SceneLoader sceneLoader, CurtainShower curtainShower, IGameFactory iGameFactory)
         {
-            _stateMaschine = stateMaschine;
             _sceneLoader = sceneLoader;
-            _loaderCurtain = loaderCurtain;
+            _curtainShower = curtainShower;
+            _stateMaschine = stateMaschine;
+            _iGameFactory = iGameFactory;
         }
 
         public void Enter(string sceneName)
         {
+            _curtainShower.Show();
             _sceneLoader.Load(sceneName, OnLoaded);
-            _loaderCurtain.Show();
         }
 
-        public void Exit() => _loaderCurtain.Hide();
+        public void Exit() => _curtainShower.Hide();
 
         private void OnLoaded()
         {
-            CreatePlayer();
-            CreateHud();
+            GameObject player = _iGameFactory.CreatePlayer(GameObject.FindWithTag(Tags.PlayerInitialPointTag));
+
+            _iGameFactory.CreateCurtain();
+
+            CameraFollow(player.transform);
 
             _stateMaschine.Enter<GameLoopState>();
         }
 
-        private void CreateHud()
-        {
-            _iGameFactory.CreateHud();
-        }
-
-        private void CreatePlayer()
-        {
-            GameObject player = _iGameFactory.CreateHero(GameObject.FindWithTag(Tags.PlayerInitialPointTag));
-
-            CameraFollow(player.transform);
-        }
-
         private void CameraFollow(Transform transform) =>
             Camera.main.GetComponent<CameraFollower>().Follow(transform);
-
     }
 }

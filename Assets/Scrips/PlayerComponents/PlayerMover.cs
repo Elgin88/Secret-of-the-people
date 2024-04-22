@@ -4,17 +4,20 @@ using UnityEngine;
 
 namespace CodeBase.PlayerComponents
 {
+    [RequireComponent(typeof(PlayerAnimation))]
+    [RequireComponent(typeof(Player))]
+
     public class PlayerMover : MonoBehaviour
     {
-        [SerializeField] private PlayerAnimation _playerAnimation;
-        [SerializeField] private Player _player;
         [SerializeField] private float _movementSpeed;
 
+        private PlayerAnimation _playerAnimation;
         private IInputService _inputService;
         private Quaternion _targetRotation;
         private Quaternion _currentRotation;
         private Vector3 _targetPosition = new Vector3();
         private Vector3 _currentPosition;
+        private Player _player;
         private float _currentMovementSpeed;
         private bool _isRun;
 
@@ -23,6 +26,9 @@ namespace CodeBase.PlayerComponents
         private void Awake()
         {
             _inputService = AllServices.Container.Single<IInputService>();
+
+            _playerAnimation = GetComponent<PlayerAnimation>();
+            _player = GetComponent<Player>();
 
             _currentMovementSpeed = _movementSpeed;
         }

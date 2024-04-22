@@ -6,6 +6,6 @@
 
         public const string SceneNameMainMenu = "MainMenu";
 
-        public const string SceneNameInitialGame = "InitialGame";
+        public const string InitialGame = "InitialGame";
     }
 }

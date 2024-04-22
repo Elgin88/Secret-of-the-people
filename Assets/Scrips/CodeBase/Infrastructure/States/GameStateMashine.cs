@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Scripts.CodeBase.Infractructure.Factory;
+using Scripts.CodeBase.Infractructure.Services;
 using Scripts.Logic;
 
 namespace Scripts.CodeBase.Infractructure.State
@@ -9,14 +11,14 @@ namespace Scripts.CodeBase.Infractructure.State
         private Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMashine(SceneLoader sceneLoader, LoaderCurtain loaderCurtain)
+        public GameStateMashine(SceneLoader sceneLoader, CurtainShower loaderCurtain, AllServices allServises)
         {
             _states = new Dictionary<Type, IExitableState>
             {
-                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loaderCurtain),
+                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, allServises),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loaderCurtain, allServises.Single<IGameFactory>() ),
                 [typeof(GameLoopState)] = new GameLoopState(this),
-            };
+            }; 
         }
 
         public void Enter<TState>() where TState : class, IState
