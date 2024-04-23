@@ -1,5 +1,4 @@
-﻿using System;
-using CodeBase.Static;
+﻿using CodeBase.Static;
 using Scripts.CodeBase.Infractructure.AssetManagement;
 using Scripts.CodeBase.Infractructure.Factory;
 using Scripts.CodeBase.Infractructure.Services;
@@ -51,7 +50,7 @@ namespace Scripts.CodeBase.Infractructure.State
 
         private void RegisterServices()
         {
-            _allServices.RegisterSingle<IInputService>(InputService());
+            _allServices.RegisterSingle(InputService());
             _allServices.RegisterSingle<IAssets>(new AssetProvider());
             _allServices.RegisterSingle<IGameFactory>(new GameFactory(AllServices.Container.Single<IAssets>()));
         }

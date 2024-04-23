@@ -8,11 +8,11 @@ namespace Scripts.CodeBase.Infractructure
     {
         private Game _game;
 
-        public CurtainShower CurtainShower;
+        private CurtainShower _curtainShower;
 
         private void Awake()
         {
-            _game = new Game(this, CurtainShower);
+            _game = new Game(this, _curtainShower);
             _game.StateMachine.Enter<BootstrapState>();
 
             DontDestroyOnLoad(this);

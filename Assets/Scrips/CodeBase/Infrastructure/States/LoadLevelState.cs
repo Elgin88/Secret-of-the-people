@@ -22,11 +22,14 @@ namespace Scripts.CodeBase.Infractructure.State
 
         public void Enter(string sceneName)
         {
-            _curtainShower.Show();
-            _sceneLoader.Load(sceneName, OnLoaded);
+            //_curtainShower.Show();
+            //_sceneLoader.Load(sceneName, OnLoaded);
         }
 
-        public void Exit() => _curtainShower.Hide();
+        public void Exit()
+        {
+            //_curtainShower.Hide();
+        }
 
         private void OnLoaded()
         {
