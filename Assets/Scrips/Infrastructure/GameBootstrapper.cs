@@ -8,7 +8,7 @@ namespace Scripts.CodeBase.Infractructure
     {
         private Game _game;
 
-        private CurtainShower _curtainShower;
+        private CurtainShower _curtainShower = new CurtainShower();
 
         private void Awake()
         {
