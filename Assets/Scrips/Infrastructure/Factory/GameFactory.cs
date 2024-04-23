@@ -15,7 +15,7 @@ namespace Scripts.CodeBase.Infractructure.Factory
         public GameObject CreatePlayer(GameObject initialPoint) =>
             _iAssetProvider.Instantiate(AssetsPath.PlayerPrefabLocation, initialPoint.transform.position);
          
-        public void CreateCurtain() =>
+        public GameObject CreateCurtain() =>
             _iAssetProvider.Instantiate(AssetsPath.CurtainPrefabLocation);
     }
 } 

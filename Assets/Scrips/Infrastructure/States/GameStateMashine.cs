@@ -11,12 +11,12 @@ namespace Scripts.CodeBase.Infractructure.State
         private Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMashine(SceneLoader sceneLoader, CurtainShower loaderCurtain, AllServices allServises)
+        public GameStateMashine(SceneLoader sceneLoader, AllServices allServises)
         {
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, allServises),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loaderCurtain, allServises.Single<IGameFactory>() ),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, allServises.Single<IGameFactory>() ),
                 [typeof(GameLoopState)] = new GameLoopState(this),
             }; 
         }

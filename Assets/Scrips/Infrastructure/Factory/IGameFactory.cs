@@ -7,6 +7,6 @@ namespace Scripts.CodeBase.Infractructure.Factory
     {
         public GameObject CreatePlayer(GameObject gameObject);
 
-        public void CreateCurtain();
+        public GameObject CreateCurtain();
     }
 }

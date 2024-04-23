@@ -11,9 +11,9 @@ namespace Scripts.CodeBase.Infractructure
 
         public GameStateMashine StateMachine;
 
-        public Game(ICoroutineRunner coroutineRunner, CurtainShower curtainShower)
+        public Game(ICoroutineRunner coroutineRunner)
         {
-            StateMachine = new GameStateMashine(new SceneLoader(coroutineRunner), curtainShower, AllServices.Container);
+            StateMachine = new GameStateMashine(new SceneLoader(coroutineRunner), AllServices.Container);
         }
     }
 }

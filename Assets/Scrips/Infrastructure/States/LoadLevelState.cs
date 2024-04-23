@@ -9,20 +9,18 @@ namespace Scripts.CodeBase.Infractructure.State
     {
         private readonly GameStateMashine _stateMaschine;
         private readonly SceneLoader _sceneLoader;
-        private readonly CurtainShower _curtainShower;
+        private CurtainShower _curtainShower;
         private readonly IGameFactory _iGameFactory;
 
-        public LoadLevelState(GameStateMashine stateMaschine, SceneLoader sceneLoader, CurtainShower curtainShower, IGameFactory iGameFactory)
+        public LoadLevelState(GameStateMashine stateMaschine, SceneLoader sceneLoader, IGameFactory iGameFactory)
         {
             _sceneLoader = sceneLoader;
-            _curtainShower = curtainShower;
             _stateMaschine = stateMaschine;
             _iGameFactory = iGameFactory;
         }
 
         public void Enter(string sceneName)
         {
-            _curtainShower.Show();
             _sceneLoader.Load(sceneName, OnLoaded);
         }
 
@@ -35,8 +33,8 @@ namespace Scripts.CodeBase.Infractructure.State
         {
             GameObject player = _iGameFactory.CreatePlayer(GameObject.FindWithTag(Tags.PlayerInitialPointTag));
 
-            _iGameFactory.CreateCurtain();
-
+            _curtainShower = _iGameFactory.CreateCurtain().GetComponent<CurtainShower>();
+            _curtainShower.Show();
             CameraFollow(player.transform);
 
             _stateMaschine.Enter<GameLoopState>();
