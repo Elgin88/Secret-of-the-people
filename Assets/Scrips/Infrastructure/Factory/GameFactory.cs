@@ -1,4 +1,4 @@
-﻿using Scripts.CodeBase.Infractructure.AssetManagement;
+﻿using Scripts.Infractructure.AssetManagement;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure.Factory

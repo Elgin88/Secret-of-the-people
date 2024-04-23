@@ -1,6 +1,6 @@
-﻿using CodeBase.Static;
-using Scripts.CodeBase.Infractructure.Factory;
+﻿using Scripts.CodeBase.Infractructure.Factory;
 using Scripts.Logic;
+using Scripts.Static;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure.State
@@ -22,13 +22,13 @@ namespace Scripts.CodeBase.Infractructure.State
 
         public void Enter(string sceneName)
         {
-            //_curtainShower.Show();
-            //_sceneLoader.Load(sceneName, OnLoaded);
+            _curtainShower.Show();
+            _sceneLoader.Load(sceneName, OnLoaded);
         }
 
         public void Exit()
         {
-            //_curtainShower.Hide();
+            _curtainShower.Hide();
         }
 
         private void OnLoaded()

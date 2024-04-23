@@ -1,4 +1,4 @@
-﻿namespace Scripts.CodeBase.Infractructure.AssetManagement
+﻿namespace Scripts.Infractructure.AssetManagement
 {
     public static class AssetsPath
     {

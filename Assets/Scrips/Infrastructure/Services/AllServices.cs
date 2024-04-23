@@ -1,4 +1,4 @@
-﻿namespace Scripts.CodeBase.Infractructure.Services
+﻿namespace Scripts.Infractructure.Services
 {
     public class AllServices
     {

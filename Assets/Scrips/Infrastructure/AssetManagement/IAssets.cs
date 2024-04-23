@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Scripts.Infractructure.Services;
+using UnityEngine;
 
-namespace Scripts.CodeBase.Infractructure.AssetManagement
+namespace Scripts.Infractructure.AssetManagement
 {
     public interface IAssets : IService
     {

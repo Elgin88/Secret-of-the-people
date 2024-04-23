@@ -1,8 +1,8 @@
-﻿using Scripts.CodeBase.Infractructure.Services;
-using Scripts.CodeBase.Services.Input;
+﻿using Scripts.Infractructure.Services;
+using Scripts.Services.Input;
 using UnityEngine;
 
-namespace CodeBase.PlayerComponents
+namespace Scripts.PlayerComponents
 {
     [RequireComponent(typeof(PlayerAnimation))]
     [RequireComponent(typeof(Player))]

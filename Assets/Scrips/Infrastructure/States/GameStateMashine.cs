@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Scripts.CodeBase.Infractructure.Factory;
-using Scripts.CodeBase.Infractructure.Services;
+using Scripts.Infractructure.Services;
 using Scripts.Logic;
 
 namespace Scripts.CodeBase.Infractructure.State

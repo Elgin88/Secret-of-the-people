@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CodeBase.PlayerComponents
+namespace Scripts.PlayerComponents
 {
     public class Player: MonoBehaviour
     {

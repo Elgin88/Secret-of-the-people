@@ -1,8 +1,9 @@
-﻿using CodeBase.Static;
-using Scripts.CodeBase.Infractructure.AssetManagement;
-using Scripts.CodeBase.Infractructure.Factory;
-using Scripts.CodeBase.Infractructure.Services;
-using Scripts.CodeBase.Services.Input;
+﻿using Scripts.CodeBase.Infractructure.Factory;
+using Scripts.CodeBaseInfractructure.AssetManagement;
+using Scripts.Infractructure.AssetManagement;
+using Scripts.Infractructure.Services;
+using Scripts.Services.Input;
+using Scripts.Static;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure.State

@@ -1,4 +1,4 @@
-﻿using CodeBase.Static;
+﻿using Scripts.Static;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;

@@ -1,4 +1,4 @@
-﻿namespace CodeBase.Static
+﻿namespace Scripts.Static
 {
     public static class Tags
     {

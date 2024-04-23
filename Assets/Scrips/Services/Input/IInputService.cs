@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Scripts.Infractructure.Services;
+using UnityEngine;
 
-namespace Scripts.CodeBase.Services.Input
+namespace Scripts.Services.Input
 {
     public interface IInputService : IService
     {

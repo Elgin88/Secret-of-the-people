@@ -1,7 +1,7 @@
-using Scripts.CodeBase.Infractructure.Services;
 using Scripts.CodeBase.Infractructure.State;
-using Scripts.CodeBase.Services.Input;
+using Scripts.Infractructure.Services;
 using Scripts.Logic;
+using Scripts.Services.Input;
 
 namespace Scripts.CodeBase.Infractructure
 {

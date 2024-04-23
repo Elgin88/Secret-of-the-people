@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 
-namespace CodeBase.PlayerComponents
+namespace Scripts.PlayerComponents
 {
+    [RequireComponent(typeof(Animator))]
+
     public class PlayerAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        [SerializeField] private PlayerMover _playerMover;
 
         private const string _run = "IsRun";
 
         public void StartRun() => _animator.SetBool(_run, true);
 
         public void StopRun() => _animator.SetBool(_run, false);
+
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+        }
     }
 }

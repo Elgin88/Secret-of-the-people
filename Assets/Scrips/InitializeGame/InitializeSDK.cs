@@ -1,5 +1,5 @@
 using System.Collections;
-using CodeBase.Static;
+using Scripts.Static;
 using UnityEngine;
 
 namespace Scripts.InitializeGame

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Scripts.Infractructure.AssetManagement;
+using UnityEngine;
 
-namespace Scripts.CodeBase.Infractructure.AssetManagement
+namespace Scripts.CodeBaseInfractructure.AssetManagement
 {
     public class AssetProvider : IAssets
     {

@@ -1,4 +1,6 @@
-﻿namespace Scripts.CodeBase.Infractructure.State
+﻿using Scripts.Infractructure.Services;
+
+namespace Scripts.CodeBase.Infractructure.State
 {
     public interface IState : IExitableState
     {
