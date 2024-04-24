@@ -3,16 +3,19 @@ using UnityEngine;
 
 namespace Scripts.Logic
 {
+    [RequireComponent(typeof(CanvasGroup))]
+
     public class CurtainShower : MonoBehaviour
     {
-        [SerializeField] private CanvasGroup _canvasGroup;
-
+        private CanvasGroup _canvasGroup;
         private const float _stepChangeAlpha = 0.03f;
         private const float _delay = 0.03f;
         private WaitForSeconds _delayWFS = new WaitForSeconds(_delay);
 
         private void Awake()
         {
+            _canvasGroup = GetComponent<CanvasGroup>();
+
             DontDestroyOnLoad(this);
         }
 
