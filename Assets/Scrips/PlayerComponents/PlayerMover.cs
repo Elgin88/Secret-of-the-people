@@ -1,13 +1,16 @@
-﻿using Scripts.Infractructure.Services;
+﻿using Scripts.Data;
+using Scripts.Infractructure.Services;
 using Scripts.Services.Input;
+using Scripts.Services.PersistentProgress;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scripts.PlayerComponents
 {
     [RequireComponent(typeof(PlayerAnimation))]
     [RequireComponent(typeof(Player))]
 
-    public class PlayerMover : MonoBehaviour
+    public class PlayerMover : MonoBehaviour, ISavedProgress
     {
         [SerializeField] private float _movementSpeed;
 
@@ -23,15 +26,40 @@ namespace Scripts.PlayerComponents
 
         public bool IsRun => _isRun;
 
+        public void UpdateProgress(PlayerGameProgress playerProgress)
+        {
+            playerProgress.WorldData.PositionOnLevel = new PositionOnLevel(CurrentLevel(), transform.position.AsVectorData());
+        }
+
+        public void LoadProgress(PlayerGameProgress playerGameProgress)
+        {
+            if (CurrentLevel() == playerGameProgress.WorldData.PositionOnLevel.LevelName)
+            {
+                Vector3Data savedPosition = playerGameProgress.WorldData.PositionOnLevel.Position;
+
+                if (playerGameProgress.WorldData.PositionOnLevel.Position != null)
+                {
+                    Warp(savedPosition);
+                }
+            }
+        }
+
         private void Awake()
         {
-            _inputService = AllServices.Container.Single<IInputService>();
-
             _playerAnimation = GetComponent<PlayerAnimation>();
             _player = GetComponent<Player>();
 
+            _inputService = AllServices.Container.Single<IInputService>();
+
             _currentMovementSpeed = _movementSpeed;
         }
+
+        private void Warp(Vector3Data savedPosition)
+        {
+            _player.SetPosition(savedPosition.AsUnityVector());
+        }
+
+        private static string CurrentLevel() => SceneManager.GetActiveScene().name;
 
         private void Update()
         {
@@ -41,7 +69,6 @@ namespace Scripts.PlayerComponents
             SetTargetPosition();
             SetTargetRotation();
             SetIsRunStatus();
-
             TryPlayRunAnimation();
 
             _player.SetPosition(_targetPosition);

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using Scripts.CodeBase.Infractructure.Factory;
 using Scripts.Infractructure.Services;
-using Scripts.Logic;
+using Scripts.Services.PersistentProgress;
+using Scripts.Services.PersistentProgress.SaveAndLoad;
 
 namespace Scripts.CodeBase.Infractructure.State
 {
@@ -17,6 +18,7 @@ namespace Scripts.CodeBase.Infractructure.State
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, allServises),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, allServises.Single<IGameFactory>() ),
+                [typeof(LoadProgressState)] = new LoadProgressState(this, allServises.Single<IPersistentProgressService>(), allServises.Single<ISaveAndLoadService>()),
                 [typeof(GameLoopState)] = new GameLoopState(this),
             }; 
         }

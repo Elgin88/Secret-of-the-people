@@ -3,6 +3,7 @@ using Scripts.CodeBaseInfractructure.AssetManagement;
 using Scripts.Infractructure.AssetManagement;
 using Scripts.Infractructure.Services;
 using Scripts.Services.Input;
+using Scripts.Services.PersistentProgress;
 using Scripts.Static;
 using UnityEngine;
 
@@ -30,7 +31,7 @@ namespace Scripts.CodeBase.Infractructure.State
 
         public void Exit()
         {
-        }
+        } 
 
         private static IInputService InputService()
         {
@@ -53,6 +54,7 @@ namespace Scripts.CodeBase.Infractructure.State
         {
             _allServices.RegisterSingle(InputService());
             _allServices.RegisterSingle<IAssets>(new AssetProvider());
+            _allServices.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
             _allServices.RegisterSingle<IGameFactory>(new GameFactory(AllServices.Container.Single<IAssets>()));
         }
     }
