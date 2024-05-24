@@ -1,11 +1,7 @@
-﻿namespace Scripts.CodeBase.Infractructure.State
+﻿namespace Scripts.CodeBase.Infractructure
 {
-    internal class GameLoopState : IState
+    internal class GameLoopState : IState, IEnterableState
     {
-        public GameLoopState(GameStateMashine gameStateMashine)
-        {
-        }
-
         public void Enter()
         {
         }

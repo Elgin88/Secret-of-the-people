@@ -1,19 +1,14 @@
-using Scripts.CodeBase.Infractructure.State;
-using Scripts.Infractructure.Services;
-using Scripts.Logic;
-using Scripts.Services.Input;
-
 namespace Scripts.CodeBase.Infractructure
 {
-    public class Game 
+    public class Game
     {
-        public static IInputService InputService;
+        private GameStateMachine _gameStateMachine;
 
-        public GameStateMashine StateMachine;
-
-        public Game(ICoroutineRunner coroutineRunner)
+        public Game(GameStateMachine gameStateMachine)
         {
-            StateMachine = new GameStateMashine(new SceneLoader(coroutineRunner), AllServices.Container);
+            _gameStateMachine = gameStateMachine;
+
+            _gameStateMachine.Enter<BootStraptState>();
         }
     }
 }

@@ -1,12 +1,9 @@
-﻿using Scripts.Infractructure.Services;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Scripts.CodeBase.Infractructure.Factory
+namespace Scripts.CodeBase.Infractructure
 {
     public interface IGameFactory : IService
     {
-        public GameObject CreatePlayer(GameObject gameObject);
-
-        public GameObject CreateCurtain();
+        public GameObject CreateGraphy();
     }
 }

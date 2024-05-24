@@ -1,4 +1,4 @@
-﻿namespace Scripts.Infractructure.Services
+﻿namespace Scripts.CodeBase.Infractructure
 {
     public interface IService
     {

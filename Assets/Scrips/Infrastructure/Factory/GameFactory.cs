@@ -1,21 +1,19 @@
-﻿using Scripts.Infractructure.AssetManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Scripts.CodeBase.Infractructure.Factory
+namespace Scripts.CodeBase.Infractructure
 {
     public class GameFactory : IGameFactory
     {
-        private readonly IAssets _iAssetProvider;
+        private IAssetProvider _assetProvider;
 
-        public GameFactory(IAssets iAssetProvider)
+        public GameFactory(IAssetProvider assetProvider)
         {
-            _iAssetProvider = iAssetProvider;
+            _assetProvider = assetProvider;
         }
 
-        public GameObject CreatePlayer(GameObject initialPoint) =>
-            _iAssetProvider.Instantiate(AssetsPath.PlayerPrefabLocation, initialPoint.transform.position);
-         
-        public GameObject CreateCurtain() =>
-            _iAssetProvider.Instantiate(AssetsPath.CurtainPrefabLocation);
+        public GameObject CreateGraphy()
+        {
+            return _assetProvider.Instantiate(AssetPath.Graphy);
+        }
     }
-} 
+}

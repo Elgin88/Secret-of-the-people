@@ -7,25 +7,23 @@ namespace Scripts.CodeBase.Infractructure
 {
     public class SceneLoader
     {
-        private readonly ICoroutineRunner _coroutineRunner;
+        private ICoroutineRunner _coroutineRunner;
 
-        public SceneLoader(ICoroutineRunner coroutineRunner) =>
-            _coroutineRunner = coroutineRunner;
-
-        public void Load(string name, Action onLoaded = null) =>
-            _coroutineRunner.StartCoroutine(LoadScene(name, onLoaded));
-
-        public IEnumerator LoadScene(string nextScene, Action onLoaded = null)
+        public SceneLoader(ICoroutineRunner coroutineRunner)
         {
-            if (SceneManager.GetActiveScene().name == nextScene)
-            {
-                onLoaded?.Invoke();
-                yield break;
-            }
+            _coroutineRunner = coroutineRunner;
+        }
 
-            AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(nextScene);
+        public void Load(string sceneName, Action onLoaded)
+        {
+            _coroutineRunner.StartCoroutine(LoadingScene(sceneName, onLoaded));
+        }
 
-            while (!waitNextScene.isDone)
+        private IEnumerator LoadingScene(string sceneName, Action onLoaded = null)
+        {
+            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+
+            while (!asyncOperation.isDone)
             {
                 yield return null;
             }

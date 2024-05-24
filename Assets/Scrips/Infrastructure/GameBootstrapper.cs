@@ -1,5 +1,3 @@
-using Scripts.CodeBase.Infractructure.State;
-using Scripts.Logic;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure
@@ -12,8 +10,7 @@ namespace Scripts.CodeBase.Infractructure
 
         private void Awake()
         {
-            _game = new Game(this);
-            _game.StateMachine.Enter<BootstrapState>();
+            _game = new Game(new GameStateMachine(new SceneLoader(this), AllServices.Container));
 
             DontDestroyOnLoad(this);
         }

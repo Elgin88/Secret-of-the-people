@@ -1,4 +1,4 @@
-﻿namespace Scripts.Infractructure.Services
+﻿namespace Scripts.CodeBase.Infractructure
 {
     public class AllServices
     {
@@ -6,15 +6,19 @@
 
         public static AllServices Container => _container ?? (_container = new AllServices());
 
-        public void RegisterSingle<TService>(TService implementation) where TService : IService =>
-            Implementation<TService>.ServiceInstance = implementation;
+        public void Register<TService>(TService implementation) where TService : IService
+        {
+            Implementation<TService>.Service = implementation;
+        }
 
-        public TService Single<TService>() where TService : IService =>
-            Implementation<TService>.ServiceInstance;
+        public TService Get<TService>() where TService : IService
+        {
+            return Implementation<TService>.Service;
+        }
 
         private static class Implementation<TService> where TService : IService
         {
-            public static TService ServiceInstance;
+            public static TService Service;
         }
     }
 }

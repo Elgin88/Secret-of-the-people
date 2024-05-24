@@ -1,22 +1,16 @@
-﻿using Scripts.CodeBase.Infractructure.Factory;
-using Scripts.Logic;
-using Scripts.Static;
-using UnityEngine;
-
-namespace Scripts.CodeBase.Infractructure.State
+﻿namespace Scripts.CodeBase.Infractructure
 {
-    public class LoadLevelState : IPayLoadedState<string>
+    public class LoadLevelState : IEnterablePayloadedState<string>
     {
-        private readonly GameStateMashine _stateMaschine;
-        private readonly SceneLoader _sceneLoader;
-        private CurtainShower _curtainShower;
-        private readonly IGameFactory _iGameFactory;
+        private GameStateMachine _gameStateMachine;
+        private SceneLoader _sceneLoader;
+        private IGameFactory _gameFactory;
 
-        public LoadLevelState(GameStateMashine stateMaschine, SceneLoader sceneLoader, IGameFactory iGameFactory)
+        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader)
         {
+            _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
-            _stateMaschine = stateMaschine;
-            _iGameFactory = iGameFactory;
+            _gameFactory = AllServices.Container.Get<IGameFactory>();
         }
 
         public void Enter(string sceneName)
@@ -26,21 +20,17 @@ namespace Scripts.CodeBase.Infractructure.State
 
         public void Exit()
         {
-            _curtainShower.Hide();
         }
 
         private void OnLoaded()
         {
-            GameObject player = _iGameFactory.CreatePlayer(GameObject.FindWithTag(Tags.PlayerInitialPointTag));
-
-            _curtainShower = _iGameFactory.CreateCurtain().GetComponent<CurtainShower>();
-            _curtainShower.Show();
-            CameraFollow(player.transform);
-
-            _stateMaschine.Enter<GameLoopState>();
+            _gameFactory.CreateGraphy();
+            SetNextState();
         }
 
-        private void CameraFollow(Transform transform) =>
-            Camera.main.GetComponent<CameraFollower>().Follow(transform);
+        private void SetNextState()
+        {
+            _gameStateMachine.Enter<GameLoopState>();
+        }
     }
 }

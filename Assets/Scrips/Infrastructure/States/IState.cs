@@ -1,19 +1,7 @@
-﻿using Scripts.Infractructure.Services;
-
-namespace Scripts.CodeBase.Infractructure.State
+﻿namespace Scripts.CodeBase.Infractructure
 {
-    public interface IState : IExitableState
-    {
-        public void Enter();        
-    }
-
-    public interface IExitableState : IService
+    public interface IState
     {
         public void Exit();
-    }
-
-    public interface IPayLoadedState<TPayload> : IExitableState
-    {
-        public void Enter(TPayload payload);
     }
 }

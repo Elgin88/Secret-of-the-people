@@ -1,20 +1,19 @@
-﻿using Scripts.Infractructure.AssetManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Scripts.CodeBaseInfractructure.AssetManagement
+namespace Scripts.CodeBase.Infractructure
 {
-    public class AssetProvider : IAssets
+    public class AssetProvider : IAssetProvider
     {
         public GameObject Instantiate(string path)
         {
-            GameObject prefab = Resources.Load<GameObject>(path);
+            var prefab = Resources.Load<GameObject>(path);
             return Object.Instantiate(prefab);
         }
 
-        public GameObject Instantiate(string path, Vector3 position)
+        public GameObject Instantiate(string path, Vector3 position, Quaternion quaternion)
         {
-            GameObject prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab, position, Quaternion.identity);
+            var prefab = Resources.Load<GameObject>(path);
+            return Object.Instantiate(prefab, position, quaternion);
         }
     }
-} 
+}
