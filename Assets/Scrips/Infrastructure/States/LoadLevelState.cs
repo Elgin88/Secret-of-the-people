@@ -6,11 +6,11 @@
         private SceneLoader _sceneLoader;
         private IGameFactory _gameFactory;
 
-        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader)
+        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, AllServices allService)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
-            _gameFactory = AllServices.Container.Get<IGameFactory>();
+            _gameFactory = allService.Get<IGameFactory>();
         }
 
         public void Enter(string sceneName)

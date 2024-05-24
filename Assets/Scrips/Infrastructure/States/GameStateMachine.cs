@@ -13,7 +13,7 @@ namespace Scripts.CodeBase.Infractructure
             _states = new Dictionary<Type, IState>()
             {
                 [typeof(BootStraptState)] = new BootStraptState(this, allService),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, allService),
                 [typeof(GameLoopState)] = new GameLoopState()
             };
         }
