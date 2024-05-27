@@ -15,5 +15,10 @@ namespace Scripts.CodeBase.Infractructure
         {
             return _assetProvider.Instantiate(AssetPath.Graphy);
         }
+
+        public GameObject CreatePlayer()
+        {
+            return _assetProvider.Instantiate(AssetPath.Player);
+        }
     }
 }

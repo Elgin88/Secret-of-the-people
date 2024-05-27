@@ -28,6 +28,7 @@ namespace Scripts.CodeBase.Infractructure
         {
             SetSDKGameReady();
             _gameFactory.CreateGraphy();
+            _gameFactory.CreatePlayer();
             SetNextState();
         }
 
