@@ -6,9 +6,8 @@ namespace Scripts.PlayerComponents
 
     public class PlayerAnimation : MonoBehaviour
     {
-        [SerializeField] private Animator _animator;
-
         private const string _run = "IsRun";
+        private Animator _animator;
 
         public void StartRun() => _animator.SetBool(_run, true);
 

@@ -26,16 +26,26 @@ namespace Scripts.CodeBase.Infractructure
 
         private void OnLoaded()
         {
-            SetSDKGameReady();
-            _gameFactory.CreateGraphy();
-            _gameFactory.CreatePlayer();
+            TrySetIsGameReadyforSDK();
+            CreateObjects();
             SetNextState();
         }
 
-        private static void SetSDKGameReady()
+        private void CreateObjects()
+        {
+            _gameFactory.CreateGraphy();
+            _gameFactory.CreatePlayer();
+            _gameFactory.CreateCanvas();
+        }
+
+        private void TrySetIsGameReadyforSDK()
         {
 #if !UNITY_EDITOR
-            YandexGamesSdk.GameReady();
+            if (!Game.IsReady)
+            {
+                YandexGamesSdk.GameReady();
+                Game.SetIsReadyTrue();
+            }
 #endif
         }
 

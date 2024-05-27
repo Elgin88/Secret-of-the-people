@@ -27,7 +27,10 @@ namespace Scripts.CodeBase.Infractructure
             yield return YandexGamesSdk.Initialize(InitializeGame);
         }
 
-        private void InitializeGame() => _game = new Game(new GameStateMachine(new SceneLoader(this), AllServices.Container));
+        private void InitializeGame()
+        {
+            _game = new Game(new GameStateMachine(new SceneLoader(this), AllServices.Container));
+        }
 
         private static void SetSDKCallbacklogin(bool status) => YandexGamesSdk.CallbackLogging = status;
 

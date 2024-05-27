@@ -20,5 +20,10 @@ namespace Scripts.CodeBase.Infractructure
         {
             return _assetProvider.Instantiate(AssetPath.Player);
         }
+
+        public GameObject CreateCanvas()
+        {
+            return _assetProvider.Instantiate(AssetPath.Canvas);
+        }
     }
 }

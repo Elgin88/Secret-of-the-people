@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure
 {
@@ -26,8 +27,22 @@ namespace Scripts.CodeBase.Infractructure
 
         private void RegisterServices()
         {
+            RegisterInputSerivece();
+
             _allServices.Register<IAssetProvider>(new AssetProvider());
             _allServices.Register<IGameFactory>(new GameFactory(AllServices.Container.Get<IAssetProvider>()));
+        }
+
+        private void RegisterInputSerivece()
+        {
+            if (Application.isMobilePlatform)
+            {
+                _allServices.Register<IInputService>(new MobileInputService());
+            }
+            else
+            {
+                _allServices.Register<IInputService>(new StandAloneInputService());
+            }
         }
 
         private void SetNextState()
