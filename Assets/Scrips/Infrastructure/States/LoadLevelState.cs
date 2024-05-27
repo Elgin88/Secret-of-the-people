@@ -1,4 +1,6 @@
-﻿namespace Scripts.CodeBase.Infractructure
+﻿using Agava.YandexGames;
+
+namespace Scripts.CodeBase.Infractructure
 {
     public class LoadLevelState : IEnterablePayloadedState<string>
     {
@@ -24,13 +26,18 @@
 
         private void OnLoaded()
         {
+            SetSDKGameReady();
             _gameFactory.CreateGraphy();
             SetNextState();
         }
 
-        private void SetNextState()
+        private static void SetSDKGameReady()
         {
-            _gameStateMachine.Enter<GameLoopState>();
+#if !UNITY_EDITOR
+            YandexGamesSdk.GameReady();
+#endif
         }
+
+        private void SetNextState() => _gameStateMachine.Enter<GameLoopState>();
     }
 }
