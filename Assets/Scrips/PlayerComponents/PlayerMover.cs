@@ -4,33 +4,41 @@ using UnityEngine;
 namespace Scripts.PlayerComponents
 {
     [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(Transform))]
 
     public class PlayerMover : MonoBehaviour
     {
-        private float _baseSpeed = 4;
+        private float _speed = 7;
         private float _currentSpeed = 0;
         private float _deltaRotation = 2500;
         private Vector3 _targetDirection = Vector3.zero;
         private Vector2 _axis = Vector2.zero;
         private Quaternion _targetRotaion = Quaternion.identity;
+        private Transform _transform;
         private CharacterController _characterController;
         private AllServices _allServices;
 
+        public float CurrentSpeed => _currentSpeed;
+
+        public float Speed => _speed;
+
         private void Awake()
         {
+            _transform = GetComponent<Transform>();
             _characterController = GetComponent<CharacterController>();
             _allServices = AllServices.Container;
-
-            _currentSpeed = _baseSpeed;
         }
 
         private void LateUpdate()
         {
             _targetDirection = Vector3.zero;
+            _currentSpeed = 0;
             _axis = _allServices.Get<IInputService>().Axis;
 
             if (_axis != Vector2.zero)
             {
+                _currentSpeed = _speed;
+
                 SetTargetDirection(_axis);
                 SetTargetRotation(_axis);
                 ChangePlayerPosition(_targetDirection, _currentSpeed);
@@ -44,6 +52,6 @@ namespace Scripts.PlayerComponents
 
         private void ChangePlayerPosition(Vector3 targetDirection, float currentSpeed) => _characterController.Move(targetDirection * currentSpeed * Time.deltaTime);
 
-        private void ChangePlayerRotation(Quaternion targetRotation, float deltaRotation) => transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
+        private void ChangePlayerRotation(Quaternion targetRotation, float deltaRotation) => _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
     }
 }

@@ -12,11 +12,11 @@ namespace Scripts.CodeBase.Infractructure
 
                 if (GetMobileAxis() == Vector2.zero)
                 {
-                    axis = GetUnityAxis();
+                    axis = GetUnityAxis().normalized;
                 }
                 else
                 {
-                    axis = GetMobileAxis();
+                    axis = GetMobileAxis().normalized;
                 }
 
                 return axis;
