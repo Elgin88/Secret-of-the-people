@@ -1,88 +1,64 @@
 ﻿using Scripts.CodeBase.Infractructure;
-using Scripts.CodeBase.Services.Input;
 using UnityEngine;
 
-namespace CodeBase.PlayerComponents
+namespace Scripts.PlayerComponents
 {
+    [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(Transform))]
+    [RequireComponent(typeof(PlayerAnimator))]
+
     public class PlayerMover : MonoBehaviour
     {
-        [SerializeField] private PlayerAnimation _playerAnimation;
-        [SerializeField] private Player _player;
-        [SerializeField] private float _movementSpeed;
+        private float _speed = 7;
+        private float _currentSpeed = 0;
+        private float _deltaRotation = 2500;
+        private Vector3 _targetDirection = Vector3.zero;
+        private Vector2 _axis = Vector2.zero;
+        private Quaternion _targetRotaion = Quaternion.identity;
+        private Transform _transform;
+        private CharacterController _characterController;
+        private AllServices _allServices;
+        private PlayerAnimator _animator;
 
-        private IInputService _inputService;
-        private Quaternion _targetRotation;
-        private Quaternion _currentRotation;
-        private Vector3 _targetPosition;
-        private Vector3 _currentPosition;
-        private float _currentMovementSpeed;
-        private bool _isRun;
+        public float CurrentSpeed => _currentSpeed;
 
-        public bool IsRun => _isRun;
+        public float Speed => _speed;
 
         private void Awake()
         {
-            _inputService = Game.InputService;
-            _targetPosition = new Vector3();
-
-            _currentMovementSpeed = _movementSpeed;
+            _transform = GetComponent<Transform>();
+            _characterController = GetComponent<CharacterController>();
+            _animator = GetComponent<PlayerAnimator>();
+            _allServices = AllServices.Container;
         }
 
-        private void Update()
+        private void LateUpdate()
         {
-            _currentPosition = transform.position;
-            _currentRotation = transform.rotation;
+            _targetDirection = Vector3.zero;
+            _currentSpeed = 0;
+            _axis = _allServices.Get<IInputService>().Axis;
 
-            SetTargetPosition();
-            SetTargetRotation();
-            SetIsRunStatus();
-
-            TryPlayRunAnimation();
-
-            _player.SetPosition(_targetPosition);
-            _player.SetRotation(_targetRotation);
-        }
-
-        private void SetTargetPosition()
-        {
-            _targetPosition = new Vector3(transform.position.x + _inputService.Axis.x, 0, transform.position.z + _inputService.Axis.y);
-            _targetPosition = Vector3.MoveTowards(_currentPosition, _targetPosition, _currentMovementSpeed * Time.deltaTime);
-        }
-
-        private void SetTargetRotation()
-        {
-            if (_targetPosition != _currentPosition)
+            if (_axis != Vector2.zero)
             {
-                _targetRotation = Quaternion.LookRotation(_targetPosition - transform.position, Vector3.up);
+                _currentSpeed = _speed;
+                _animator.PlayRun();
+                SetTargetDirection(_axis);
+                SetTargetRotation(_axis);
+                ChangePlayerPosition(_targetDirection, _currentSpeed);
+                ChangePlayerRotation(_targetRotaion, _deltaRotation);
             }
             else
             {
-                _targetRotation = _currentRotation;
+                _animator.StopPlayRun();
             }
         }
 
-        private void SetIsRunStatus()
-        {
-            if (_currentPosition == _targetPosition)
-            {
-                _isRun = false;
-            }
-            else
-            {
-                _isRun = true;
-            }
-        }
+        private void SetTargetRotation(Vector2 axis) => _targetRotaion = Quaternion.LookRotation(new Vector3(axis.x, 0, axis.y));
 
-        private void TryPlayRunAnimation()
-        {
-            if (_isRun)
-            {
-                _playerAnimation.StartRun();
-            }
-            else
-            {
-                _playerAnimation.StopRun();
-            }
-        }
+        private void SetTargetDirection(Vector2 axis) => _targetDirection = new Vector3(axis.x, 0, axis.y);
+
+        private void ChangePlayerPosition(Vector3 targetDirection, float currentSpeed) => _characterController.Move(targetDirection * currentSpeed * Time.deltaTime);
+
+        private void ChangePlayerRotation(Quaternion targetRotation, float deltaRotation) => _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
     }
 }

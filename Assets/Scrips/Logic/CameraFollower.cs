@@ -1,33 +1,28 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.Logic
 {
     public class CameraFollower : MonoBehaviour
     {
-        [SerializeField] private float _rotationAngleX;
-        [SerializeField] private float _distance;
-        [SerializeField] private float _offsetY;
+        private float _diagonalOffset = 12;
+        private float _verticalOffset = 0;
+        private float _angleInRadian = 45 * Mathf.PI / 180;
+        private float _horizontal;
+        private float _vertical;
+        private Camera _camera;
 
-        private Transform _playerTransform;
-
-        internal void Follow(Transform transform) => _playerTransform = transform;
+        private void Awake()
+        {
+            _camera = Camera.main;
+            _horizontal = Mathf.Cos(_angleInRadian) * _diagonalOffset;
+            _vertical = Mathf.Sin(_angleInRadian) * _diagonalOffset * -1;
+        }
 
         private void LateUpdate()
         {
-            if (_playerTransform == null)
-            {
-                return;
-            }
+            _camera.transform.position = new Vector3(transform.position.x, transform.position.y + _horizontal + _verticalOffset, transform.position.z + _vertical);
 
-            Quaternion rotation = Quaternion.Euler(_rotationAngleX, 0, 0);
-
-            Vector3 playerPosition = _playerTransform.position;
-            playerPosition.y += _offsetY;
-
-            Vector3 position = rotation * new Vector3(0, 0, -_distance) + playerPosition;
-
-            transform.rotation = rotation;
-            transform.position = position;
+            _camera.transform.rotation.SetLookRotation(transform.position);
         }
     }
 }
