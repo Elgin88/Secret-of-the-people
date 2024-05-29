@@ -5,6 +5,7 @@ namespace Scripts.PlayerComponents
 {
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(Transform))]
+    [RequireComponent(typeof(PlayerAnimator))]
 
     public class PlayerMover : MonoBehaviour
     {
@@ -17,6 +18,7 @@ namespace Scripts.PlayerComponents
         private Transform _transform;
         private CharacterController _characterController;
         private AllServices _allServices;
+        private PlayerAnimator _animator;
 
         public float CurrentSpeed => _currentSpeed;
 
@@ -26,6 +28,7 @@ namespace Scripts.PlayerComponents
         {
             _transform = GetComponent<Transform>();
             _characterController = GetComponent<CharacterController>();
+            _animator = GetComponent<PlayerAnimator>();
             _allServices = AllServices.Container;
         }
 
@@ -38,11 +41,15 @@ namespace Scripts.PlayerComponents
             if (_axis != Vector2.zero)
             {
                 _currentSpeed = _speed;
-
+                _animator.PlayRun();
                 SetTargetDirection(_axis);
                 SetTargetRotation(_axis);
                 ChangePlayerPosition(_targetDirection, _currentSpeed);
                 ChangePlayerRotation(_targetRotaion, _deltaRotation);
+            }
+            else
+            {
+                _animator.StopPlayRun();
             }
         }
 

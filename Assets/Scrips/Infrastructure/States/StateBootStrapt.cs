@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure
 {
-    public class BootStraptState : IState, IEnterableState
+    public class StateBootStrapt : IState, IEnterableState
     {
         private GameStateMachine _gameStateMachine;
         private AllServices _allServices;
 
-        public BootStraptState(GameStateMachine gameStateMachine, AllServices allServices)
+        public StateBootStrapt(GameStateMachine gameStateMachine, AllServices allServices)
         {
             _gameStateMachine = gameStateMachine;
             _allServices = allServices;
@@ -47,7 +47,7 @@ namespace Scripts.CodeBase.Infractructure
 
         private void SetNextState()
         {
-            _gameStateMachine.Enter<LoadLevelState, string>(ScenesNames.Level1);
+            _gameStateMachine.Enter<StateLoadLevel, string>(ScenesNames.Level1);
         }
     }
 }

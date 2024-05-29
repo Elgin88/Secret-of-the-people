@@ -10,7 +10,7 @@ namespace Scripts.CodeBase.Infractructure
 
         public Game(GameStateMachine gameStateMachine)
         {
-            gameStateMachine.Enter<BootStraptState>();
+            gameStateMachine.Enter<StateBootStrapt>();
         }
 
         public static void SetIsReadyTrue()

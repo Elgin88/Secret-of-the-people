@@ -20,29 +20,12 @@ namespace Scripts.PlayerComponents
             _playerMover = GetComponent<PlayerMover>();
         }
 
-        private void Update()
-        {
-            PlayRunAnimation();
-        }
-
-        private void PlayRunAnimation()
-        {
-            if (_playerMover.CurrentSpeed > 0)
-            {
-                StartRun();
-            }
-            else
-            {
-                StopRun();
-            }
-        }
-
-        private void StartRun()
+        public void PlayRun()
         {
             _animator.SetBool(_run, true);
             _animator.SetFloat(_speedParametr, _playerMover.Speed / _baseRunSpeed);
         }
 
-        private void StopRun() => _animator.SetBool(_run, false);
+        public void StopPlayRun() => _animator.SetBool(_run, false);
     }
 }

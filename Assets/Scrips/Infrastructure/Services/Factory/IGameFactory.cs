@@ -7,5 +7,6 @@ namespace Scripts.CodeBase.Infractructure
         public GameObject CreateGraphy();
         public GameObject CreatePlayer();
         public GameObject CreateCanvas();
+        public GameObject CreateSkeleton();
     }
 }

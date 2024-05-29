@@ -2,13 +2,13 @@
 
 namespace Scripts.CodeBase.Infractructure
 {
-    public class LoadLevelState : IEnterablePayloadedState<string>
+    public class StateLoadLevel : IEnterablePayloadedState<string>
     {
         private GameStateMachine _gameStateMachine;
         private SceneLoader _sceneLoader;
         private IGameFactory _gameFactory;
 
-        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, AllServices allService)
+        public StateLoadLevel(GameStateMachine gameStateMachine, SceneLoader sceneLoader, AllServices allService)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
@@ -36,6 +36,7 @@ namespace Scripts.CodeBase.Infractructure
             _gameFactory.CreateGraphy();
             _gameFactory.CreatePlayer();
             _gameFactory.CreateCanvas();
+            _gameFactory.CreateSkeleton();
         }
 
         private void TrySetIsGameReadyforSDK()
@@ -49,6 +50,6 @@ namespace Scripts.CodeBase.Infractructure
 #endif
         }
 
-        private void SetNextState() => _gameStateMachine.Enter<GameLoopState>();
+        private void SetNextState() => _gameStateMachine.Enter<StateGameLoop>();
     }
 }

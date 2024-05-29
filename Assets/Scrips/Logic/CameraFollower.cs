@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Logic
 {
-    public class PlayerCameraFollower : MonoBehaviour
+    public class CameraFollower : MonoBehaviour
     {
         private float _diagonalOffset = 12;
         private float _verticalOffset = 0;

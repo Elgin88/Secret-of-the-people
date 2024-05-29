@@ -1,6 +1,6 @@
 ﻿namespace Scripts.CodeBase.Infractructure
 {
-    internal class GameLoopState : IState, IEnterableState
+    internal class StateGameLoop : IState, IEnterableState
     {
         public void Enter()
         {
