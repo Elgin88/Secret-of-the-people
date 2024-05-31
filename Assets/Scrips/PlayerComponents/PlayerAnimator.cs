@@ -7,7 +7,7 @@ namespace Scripts.PlayerComponents
 
     public class PlayerAnimator : MonoBehaviour
     {
-        private const float _baseRunSpeed = 6;
+        private const float _baseRunSpeed = 6.5f;
         private static readonly int _run = Animator.StringToHash("IsRun");
         private static readonly int _speedParametr = Animator.StringToHash("SpeedParametr");
 

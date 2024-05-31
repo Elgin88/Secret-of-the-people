@@ -1324,6 +1324,7 @@ GameObject:
   - component: {fileID: 7422760298607704428}
   - component: {fileID: 3327770237539775674}
   - component: {fileID: 1300594072033752894}
+  - component: {fileID: 8793591761097549484}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1388,7 +1389,7 @@ NavMeshAgent:
   m_AngularSpeed: 1600
   m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
@@ -1466,6 +1467,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52780a0dc3d8b4374a92009f6d55b642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8793591761097549484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b080d5eb897452ca8b45e5b4c57e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7816076442647639175

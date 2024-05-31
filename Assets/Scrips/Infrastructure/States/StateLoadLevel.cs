@@ -36,7 +36,6 @@ namespace Scripts.CodeBase.Infractructure
             _gameFactory.CreateGraphy();
             _gameFactory.CreatePlayer();
             _gameFactory.CreateCanvas();
-            _gameFactory.CreateSkeleton();
         }
 
         private void TrySetIsGameReadyforSDK()
