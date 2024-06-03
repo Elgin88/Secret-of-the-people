@@ -23,7 +23,7 @@ namespace Scripts.PlayerComponents
         public void PlayRun()
         {
             _animator.SetBool(_run, true);
-            _animator.SetFloat(_speedParametr, _playerMover.Speed / _baseRunSpeed);
+            _animator.SetFloat(_speedParametr, _playerMover.NormalizeSpeed);
         }
 
         public void StopPlayRun() => _animator.SetBool(_run, false);

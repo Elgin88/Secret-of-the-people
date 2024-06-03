@@ -9,67 +9,70 @@ namespace Scripts.EnemyComponents
 
     public class AgentMoveToPlayer : MonoBehaviour
     {
+        private const float _currentSpeed = 3;
+        private const float _minDistance = 1.5f;
+        private const float _baseSpeed = 0.8f;
         private EnemyAnimator _enemyAnimator;
         private NavMeshAgent _navMeshAgent;
-        private GameObject _player;
-        private IGameFactory _gameFactory;
-        private float _minDistance = 5;
+        private GameObject _player = null;
+        private IGameFactory _gameFactory = null;
+
+        public float NormalizeSpeed => _currentSpeed / _baseSpeed;
 
         private void Awake()
         {
             _enemyAnimator = GetComponent<EnemyAnimator>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
+            _navMeshAgent.speed = _currentSpeed;
         }
 
         private void Start()
         {
-            TryGetGameFactory();
+            SetGameFactory();
 
-            if (IsGameFactoryInittialize())
+            if (IsGameFactoryInittialized())
             {
-                if (IsPlayerInitialize())
+                if (IsPlayerCreate())
                 {
                     SetPlayer();
                 }
                 else
                 {
-                    SetPlayerAfterInitialize();
+                    SetPlayerAfterCreate();
                 }
             }
         }
 
         private void Update()
         {
-            if (IsOnNavMesh() & IsInitializePlayer())
+            if (!IsOnNavMesh() || !IsInitializePlayer())
             {
-                if (CheckMinDistance())
-                {
-                    Move();
-                    _enemyAnimator.PlayMove();
-                }
-                else
-                {
-                    StopMove();
-                    _enemyAnimator.StopPlayMove();
-                }
+                return;
+            }
+
+            if (CheckMinDistance())
+            {
+                Move();
+                _enemyAnimator.PlayMove();
+            }
+            else
+            {
+                _enemyAnimator.StopPlayMove();
             }
         }
 
         private void Move()
         {
             _navMeshAgent.destination = _player.transform.position;
-            _navMeshAgent.isStopped = false;
         }
 
-        private void StopMove() => _navMeshAgent.isStopped = true;
         private bool CheckMinDistance() => Vector3.Distance(transform.position, _player.transform.position) > _minDistance;
         private bool IsInitializePlayer() => _player != null;
-        private void TryGetGameFactory() => _gameFactory = AllServices.Container.Get<IGameFactory>();
-        private void SetPlayerAfterInitialize() => _gameFactory.PlayerLoaded += SetPlayer;
-        private bool IsPlayerInitialize() => _gameFactory.Player != null;
-        private bool IsGameFactoryInittialize() => _gameFactory != null;
+        private void SetGameFactory() => _gameFactory = AllServices.Container.Get<IGameFactory>();
+        private void SetPlayerAfterCreate() => _gameFactory.PlayerLoaded += SetPlayer;
+        private bool IsPlayerCreate() => _gameFactory.Player != null;
+        private bool IsGameFactoryInittialized() => _gameFactory != null;
         private void SetPlayer() => _player = _gameFactory.Player;
         private bool IsOnNavMesh() => _navMeshAgent.isOnNavMesh;
-        private bool IsMoving() => !_navMeshAgent.isStopped;
     }
 }

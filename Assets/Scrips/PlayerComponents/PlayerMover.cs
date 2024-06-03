@@ -9,9 +9,10 @@ namespace Scripts.PlayerComponents
 
     public class PlayerMover : MonoBehaviour
     {
-        private float _speed = 7;
+        private const float _startSpeed = 7;
+        private const float _deltaRotation = 2500;
+        private const float _baseSpeed = 6.5f;
         private float _currentSpeed = 0;
-        private float _deltaRotation = 2500;
         private Vector3 _targetDirection = Vector3.zero;
         private Vector2 _axis = Vector2.zero;
         private Quaternion _targetRotaion = Quaternion.identity;
@@ -20,9 +21,7 @@ namespace Scripts.PlayerComponents
         private AllServices _allServices;
         private PlayerAnimator _animator;
 
-        public float CurrentSpeed => _currentSpeed;
-
-        public float Speed => _speed;
+        public float NormalizeSpeed => _startSpeed / _baseSpeed;
 
         private void Awake()
         {
@@ -40,7 +39,7 @@ namespace Scripts.PlayerComponents
 
             if (_axis != Vector2.zero)
             {
-                _currentSpeed = _speed;
+                _currentSpeed = _startSpeed;
                 _animator.PlayRun();
                 SetTargetDirection(_axis);
                 SetTargetRotation(_axis);
