@@ -28,7 +28,6 @@ namespace Scripts.CodeBase.Infractructure
         private void RegisterServices()
         {
             RegisterInputSerivece();
-
             _allServices.Register<IAssetProvider>(new AssetProvider());
             _allServices.Register<IGameFactory>(new GameFactory(AllServices.Container.Get<IAssetProvider>()));
         }

@@ -24,7 +24,10 @@ namespace Scripts.EnemyComponents
             _enemyAnimator = GetComponent<EnemyAnimator>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _navMeshAgent.speed = _currentSpeed;
+            DisableAgentMover();
         }
+
+        private void DisableAgentMover() => enabled = false;
 
         private void Start()
         {
