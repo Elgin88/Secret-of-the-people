@@ -1,10 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Scripts.CodeBase.Infractructure
 {
     public class GameFactory : IGameFactory
     {
         private IAssetProvider _assetProvider;
+        private GameObject _player;
+
+        public GameObject Player => _player;
+
+        public Action PlayerLoaded { get; set; }
 
         public GameFactory(IAssetProvider assetProvider)
         {
@@ -19,8 +25,10 @@ namespace Scripts.CodeBase.Infractructure
         public GameObject CreatePlayer()
         {
             Vector3 position = FindObjectByTag(ObjectsTags.Player);
+            _player = CreateGameObject(AssetPath.Player, position);
+            PlayerLoaded?.Invoke();
 
-            return CreateGameObject(AssetPath.Player, position);
+            return _player;
         }
 
         public GameObject CreateCanvas()
