@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +13,7 @@ namespace Scripts.EnemyComponents
     {
         [SerializeField] private TriggerObserver _triggerObserver;
 
+        private const int _delay = 1;
         private AgentMoveToPlayer _agentMoveToPlayer;
         private EnemyAnimator _enemyAnimator;
         private NavMeshAgent _navMeshAgent;
@@ -35,10 +37,21 @@ namespace Scripts.EnemyComponents
         private void TriggerEnter(Collider collider)
         {
             AgentMoverOn();
-            _navMeshAgent.isStopped = false;
         }
 
         private void TriggerExit(Collider collider)
+        {
+            StartCoroutine(SetAgroOffDuration());
+        }
+
+        private IEnumerator SetAgroOffDuration()
+        {
+            yield return new WaitForSeconds(_delay);
+
+            StopAgro();
+        }
+
+        private void StopAgro()
         {
             _agentMoveToPlayer.enabled = false;
             _enemyAnimator.StopPlayMove();

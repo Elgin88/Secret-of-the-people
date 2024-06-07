@@ -9,7 +9,7 @@ namespace Scripts.EnemyComponents
 
     public class AgentMoveToPlayer : MonoBehaviour
     {
-        private const float _currentSpeed = 3;
+        private const float _currentSpeed = 2;
         private const float _minDistance = 1.5f;
         private const float _baseSpeed = 0.8f;
         private EnemyAnimator _enemyAnimator;
