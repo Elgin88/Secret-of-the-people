@@ -9,7 +9,6 @@ namespace Scripts.EnemyComponents
         public event Action<Collider> TriggeredExit;
 
         private void OnTriggerEnter(Collider other) => TriggeredEnter?.Invoke(other);
-
         private void OnTriggerExit(Collider other) => TriggeredExit?.Invoke(other);
     }
 }
