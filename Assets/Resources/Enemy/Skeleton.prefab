@@ -658,7 +658,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5
+  m_Radius: 8
   m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!114 &8401141017624183562
 MonoBehaviour:
@@ -1392,6 +1392,7 @@ GameObject:
   - component: {fileID: 1300594072033752894}
   - component: {fileID: 8793591761097549484}
   - component: {fileID: 5151931385641743655}
+  - component: {fileID: 84307021098974875}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1562,6 +1563,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerObserver: {fileID: 8401141017624183562}
+--- !u!114 &84307021098974875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0029479e97c74959a3484cffcb12304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0

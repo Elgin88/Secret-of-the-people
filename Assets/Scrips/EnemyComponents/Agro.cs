@@ -1,51 +1,63 @@
-﻿using System;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Scripts.EnemyComponents
 {
     [RequireComponent(typeof(AgentMoveToPlayer))]
-    [RequireComponent(typeof(EnemyAnimator))]
-    [RequireComponent(typeof(NavMeshAgent))]
 
     public class Agro : MonoBehaviour
     {
         [SerializeField] private TriggerObserver _triggerObserver;
 
+        private const int _delayToStopMove = 1;
         private AgentMoveToPlayer _agentMoveToPlayer;
-        private EnemyAnimator _enemyAnimator;
-        private NavMeshAgent _navMeshAgent;
+        private Coroutine _agentOffAfterDelay;
 
         private void OnEnable()
         {
-            _agentMoveToPlayer = GetComponent<AgentMoveToPlayer>();
-            _enemyAnimator = GetComponent<EnemyAnimator>();
-            _navMeshAgent = GetComponent<NavMeshAgent>();
+            GetComponents();
 
-            _triggerObserver.TriggeredEnter += TriggerEnter;
-            _triggerObserver.TriggeredExit += TriggerExit;
+            _triggerObserver.TriggeredEnter += OnTriggerEnter;
+            _triggerObserver.TriggeredExit += OnTriggerExit;
         }
 
         private void OnDisable()
         {
-            _triggerObserver.TriggeredEnter -= TriggerEnter;
-            _triggerObserver.TriggeredExit -= TriggerExit;
+            _triggerObserver.TriggeredEnter -= OnTriggerEnter;
+            _triggerObserver.TriggeredExit -= OnTriggerExit;
         }
 
-        private void TriggerEnter(Collider collider)
+        private void OnTriggerEnter(Collider collider)
         {
-            AgentMoverOn();
-            _navMeshAgent.isStopped = false;
+            AgentMoveToPlayerOn();
+            StopSwitchFollowAfterCooldawn();
         }
 
-        private void TriggerExit(Collider collider)
+        private void OnTriggerExit(Collider collider)
         {
-            _agentMoveToPlayer.enabled = false;
-            _enemyAnimator.StopPlayMove();
-            _navMeshAgent.isStopped = true;
+            if (_agentOffAfterDelay == null)
+            {
+                _agentOffAfterDelay = StartCoroutine(SwitchFollowAfterCooldown());
+            }
         }
 
-        private void AgentMoverOn() => AgentMoverOff();
-        private void AgentMoverOff() => _agentMoveToPlayer.enabled = true;
+        private void GetComponents() => _agentMoveToPlayer = GetComponent<AgentMoveToPlayer>();
+        private void AgentMoveToPlayerOn() => _agentMoveToPlayer.AgentOn();
+        private void AgentMoveToPlayerOff() => _agentMoveToPlayer.AgentOff();
+
+        private IEnumerator SwitchFollowAfterCooldown()
+        {
+            yield return new WaitForSeconds(_delayToStopMove);
+            AgentMoveToPlayerOff();
+        }
+
+        private void StopSwitchFollowAfterCooldawn()
+        {
+            if (_agentOffAfterDelay != null)
+            {
+                StopCoroutine(_agentOffAfterDelay);
+                _agentOffAfterDelay = null;
+            }
+        }
     }
 }
