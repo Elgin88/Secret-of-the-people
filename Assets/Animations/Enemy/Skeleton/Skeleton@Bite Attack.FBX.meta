@@ -31,21 +31,7 @@ ModelImporter:
       and has rotation animation that will be discarded.\n\t'RigSpine3' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'RigRibcage'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tRightLowerLeg
-      average position error 2.7 mm and maximum position error 7.5 mm at time 0:16
-      (64.0%) Frame 16\n\tLeftUpperArm average position error 125.9 mm and maximum
-      position error 182.9 mm at time 0: 5 (20.0%) Frame 5\n\tLeftLowerArm average
-      position error 93.5 mm and maximum position error 137.7 mm at time 0: 3 (12.0%)
-      Frame 3\n\tLeftHand average position error 72.3 mm and maximum position error
-      116.1 mm at time 0: 3 (12.0%) Frame 3\n\tRightUpperArm average position error
-      123.3 mm and maximum position error 189.6 mm at time 0: 5 (20.0%) Frame 5\n\tRightLowerArm
-      average position error 90.0 mm and maximum position error 146.2 mm at time
-      0: 9 (36.0%) Frame 9\n\tRightHand average position error 52.3 mm and maximum
-      position error 141.2 mm at time 0: 3 (12.0%) Frame 3\n\tHead average position
-      error 121.2 mm and maximum position error 179.2 mm at time 0: 5 (20.0%) Frame
-      5\n\tLeftFoot average orientation error 0.2 deg and maximum orientation error
-      0.7 deg at time 0: 5 (20.0%) Frame 5\n\tRightFoot average orientation error
-      0.2 deg and maximum orientation error 0.9 deg at time 0: 8 (32.0%) Frame 8\n"
+    animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
@@ -82,8 +68,8 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.48085108
-        functionName: IsAttack
+      - time: 0.5009314
+        functionName: OnAttack
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

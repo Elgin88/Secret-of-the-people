@@ -20,8 +20,8 @@ TagManager:
   - 
   - 
   - Player
-  - Agro
-  - 
+  - AgroOfEnemy
+  - AttackOfEnemy
   - 
   - 
   - 

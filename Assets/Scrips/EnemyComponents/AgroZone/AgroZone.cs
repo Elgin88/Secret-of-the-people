@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scripts.EnemyComponents
 {
-    public class TriggerObserver : MonoBehaviour
+    public class AgroZone : MonoBehaviour
     {
         public event Action<Collider> TriggeredEnter;
         public event Action<Collider> TriggeredExit;

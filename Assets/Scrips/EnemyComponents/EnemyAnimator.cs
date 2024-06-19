@@ -1,44 +1,27 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.EnemyComponents
 {
-    [RequireComponent(typeof(Animator))]
-    [RequireComponent(typeof(AgentMoveToPlayer))]
-
     public class EnemyAnimator : MonoBehaviour
     {
-        private static readonly int _attack = Animator.StringToHash("IsAttack");
-        private static readonly int _move = Animator.StringToHash("IsMove");
-        private static readonly int _speedParametr = Animator.StringToHash("IsMoveParametr");
-        private Animator _animator;
-        private AgentMoveToPlayer _agentMoveToPlayer;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
+
+        private const float _baseAnimationMoveSpeed = 4f;
+        private static readonly int _attack = Animator.StringToHash(StaticEnemyParametrs.IsAttack);
+        private static readonly int _move = Animator.StringToHash(StaticEnemyParametrs.IsMove);
+        private static readonly int _speedParametr = Animator.StringToHash(StaticEnemyParametrs.IsMoveParametr);
 
         public void PlayMove()
         {
-            _animator.SetFloat(_speedParametr, _agentMoveToPlayer.NormalizeSpeed);
+            _animator.SetFloat(_speedParametr, GetNormalizeMoveSpeed());
             _animator.SetBool(_move, true);
         }
 
-        public void StopPlayMove()
-        {
-            _animator.SetBool(_move, false);
-        }
+        public void StopPlayMove() => _animator.SetBool(_move, false);
 
-        public void PlayAttack()
-        {
-            _animator.SetTrigger(_attack);
-        }
+        public void PlayAttack() => _animator.SetTrigger(_attack);
 
-        private void GetComponents()
-        {
-            _animator = GetComponent<Animator>();
-            _agentMoveToPlayer = GetComponent<AgentMoveToPlayer>();
-        }
-
-        private void Awake()
-        {
-            GetComponents();
-        }
+        private float GetNormalizeMoveSpeed() => _baseAnimationMoveSpeed / _agentMoveToPlayer.CurrentSpeed;
     }
 }

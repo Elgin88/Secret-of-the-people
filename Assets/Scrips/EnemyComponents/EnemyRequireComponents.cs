@@ -2,11 +2,8 @@
 
 namespace Scripts.EnemyComponents
 {
-    [RequireComponent(typeof(AgentMoveToPlayer))]
-    [RequireComponent(typeof(Agro))]
     [RequireComponent(typeof(EnemyAnimator))]
-    [RequireComponent(typeof(EnemyRequireComponents))]
-    [RequireComponent(typeof(Attack))]
+    [RequireComponent(typeof(AgentMoveToPlayer))]
 
     public class EnemyRequireComponents : MonoBehaviour
     {
