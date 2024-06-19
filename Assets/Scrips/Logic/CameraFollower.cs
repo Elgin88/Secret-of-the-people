@@ -25,4 +25,11 @@ namespace Scripts.Logic
             _camera.transform.rotation.SetLookRotation(transform.position);
         }
     }
+
+    public static class LayersNames
+    {
+        public const string Player = "Player";
+        public const string AgroOfEnemy = "AgroOfEnemy";
+        public const string AttackOfEnemy = "AttackOfEnemy";
+    }
 }
