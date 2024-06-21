@@ -1,4 +1,5 @@
-﻿using Scripts.Logic;
+﻿using System;
+using Scripts.Logic;
 using UnityEngine;
 
 namespace Scripts.EnemyComponents

@@ -9,7 +9,29 @@ namespace Scripts.EnemyComponents
         public Action<Collider> PlayerEnter;
         public Action<Collider> PlayerExit;
 
-        private void OnTriggerEnter(Collider other) => PlayerEnter?.Invoke(other);
-        private void OnTriggerExit(Collider other) => PlayerExit?.Invoke(other);
+        private bool _isAttacking = false;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!_isAttacking)
+            {
+                PlayerEnter?.Invoke(other);
+                SetIsAttackingTrue();
+                Debug.Log("1");
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (_isAttacking)
+            {
+                PlayerExit?.Invoke(other);
+                SetIsAttackingFalse();
+                Debug.Log("2");
+            }
+        }
+
+        private void SetIsAttackingTrue() => _isAttacking = true;
+        private void SetIsAttackingFalse() => _isAttacking = false;
     }
 }
