@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Scripts.EnemyComponents
@@ -8,12 +9,7 @@ namespace Scripts.EnemyComponents
         public Action<Collider> PlayerEnter;
         public Action<Collider> PlayerExit;
 
-        private void OnTriggerEnter(Collider other)
-        {
-            PlayerEnter?.Invoke(other);
-            Debug.Log("1");
-        }
-
+        private void OnTriggerEnter(Collider other) => PlayerEnter?.Invoke(other);
         private void OnTriggerExit(Collider other) => PlayerExit?.Invoke(other);
     }
 }
