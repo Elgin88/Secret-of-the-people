@@ -1,4 +1,4 @@
-﻿using Scripts.CodeBase.Infractructure;
+﻿using Scripts.CodeBase.Logic;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents

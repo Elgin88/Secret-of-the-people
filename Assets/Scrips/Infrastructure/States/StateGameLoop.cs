@@ -1,4 +1,4 @@
-﻿namespace Scripts.CodeBase.Infractructure
+﻿namespace Scripts.CodeBase.Logic
 {
     internal class StateGameLoop : IState, IEnterableState
     {

@@ -5,10 +5,15 @@ namespace Scripts.EnemyComponents
 {
     public class AttackZone : MonoBehaviour
     {
-        public Action<Collider> InAttackZoneEnter;
-        public Action<Collider> InAttackZoneExit;
+        public Action<Collider> PlayerEnter;
+        public Action<Collider> PlayerExit;
 
-        private void OnTriggerEnter(Collider other) => InAttackZoneEnter?.Invoke(other);
-        private void OnTriggerExit(Collider other) => InAttackZoneExit?.Invoke(other);
+        private void OnTriggerEnter(Collider other)
+        {
+            PlayerEnter?.Invoke(other);
+            Debug.Log("1");
+        }
+
+        private void OnTriggerExit(Collider other) => PlayerExit?.Invoke(other);
     }
 }

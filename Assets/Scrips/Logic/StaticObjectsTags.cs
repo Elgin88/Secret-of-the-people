@@ -1,6 +1,6 @@
-﻿namespace Scripts.CodeBase.Infractructure
+﻿namespace Scripts.CodeBase.Logic
 {
-    public static class ObjectsTags
+    public static class StaticObjectsTags
     {
         public static string Player = "PlayerInitialPoint";
         public static string Enemy = "EnemyInitialPoint";

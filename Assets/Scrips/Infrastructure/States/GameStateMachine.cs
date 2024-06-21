@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Scripts.CodeBase.Infractructure
+namespace Scripts.CodeBase.Logic
 {
     public class GameStateMachine
     {

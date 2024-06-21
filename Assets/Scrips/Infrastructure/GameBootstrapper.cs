@@ -3,7 +3,7 @@ using System.Collections;
 using Agava.YandexGames;
 using UnityEngine;
 
-namespace Scripts.CodeBase.Infractructure
+namespace Scripts.CodeBase.Logic
 {
     public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
     {

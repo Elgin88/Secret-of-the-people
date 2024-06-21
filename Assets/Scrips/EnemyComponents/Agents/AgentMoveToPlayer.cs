@@ -1,4 +1,4 @@
-﻿using Scripts.CodeBase.Infractructure;
+﻿using Scripts.CodeBase.Logic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,34 +9,33 @@ namespace Scripts.EnemyComponents
         [SerializeField] private EnemyAnimator _enemyAnimator;
         [SerializeField] private NavMeshAgent _navMeshAgent;
 
-        private const float _minDistanceToPlayer = 1.5f;
+        private const float _minDistanceToPlayer = 0.1f;
         private const float _currentSpeed = 2;
-        private Transform _playerTransform;
         private IGameFactory _gameFactory;
+        private Transform _playerTransform;
         private bool _isMoving = false;
 
         public float CurrentSpeed => _currentSpeed;
 
-        public void AgentOn()
+        public void EnableAgent()
         {
             Enable();
             NavMeshMoveOn();
         }
 
-        public void AgentOff()
+        public void DisableAgent()
         {
             NavMeshMoveOff();
             StopPlayAnimationMove();
             Disable();
         }
 
-        private void Start()
+        private void Awake()
         {
             SetComponents();
-            Disable();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             CheckInterrupts();
 
@@ -89,7 +88,6 @@ namespace Scripts.EnemyComponents
                 SetIsMovingFalse();
             }
         }
-
 
         private void SetPlayer()
         {

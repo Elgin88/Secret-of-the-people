@@ -6,20 +6,46 @@ namespace Scripts.EnemyComponents
     {
         [SerializeField] private AgentAttack _agentAttack;
         [SerializeField] private AttackZone _attackZone;
+        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
 
         private void OnEnable()
         {
-            _attackZone.InAttackZoneEnter += OnAttackZoneEnter;
-            _attackZone.InAttackZoneExit += OnAttackZoneExit;
+            Subscriptions();
+            DisableAttack();
         }
 
         private void OnDisable()
         {
-            _attackZone.InAttackZoneEnter -= OnAttackZoneEnter;
-            _attackZone.InAttackZoneExit -= OnAttackZoneExit;
+            Unsubscriptions();
         }
 
-        private void OnAttackZoneEnter(Collider collider) => _agentAttack.AgentOn();
-        private void OnAttackZoneExit(Collider collider) => _agentAttack.AgentOff();
+        private void OnPlayerEnter(Collider collider)
+        {
+            DisableMove();
+            EnableAttack();
+        }
+
+        private void OnPlayerExit(Collider collider)
+        {
+            DisableAttack();
+            EnableMove();
+        }
+
+        private void Subscriptions()
+        {
+            _attackZone.PlayerEnter += OnPlayerEnter;
+            _attackZone.PlayerExit += OnPlayerExit;
+        }
+
+        private void Unsubscriptions()
+        {
+            _attackZone.PlayerEnter -= OnPlayerEnter;
+            _attackZone.PlayerExit -= OnPlayerExit;
+        }
+
+        private void EnableAttack() => _agentAttack.EnableAgent();
+        private void DisableAttack() => _agentAttack.DisableAgent();
+        private void DisableMove() => _agentMoveToPlayer.DisableAgent();
+        private void EnableMove() => _agentMoveToPlayer.EnableAgent();
     }
 }

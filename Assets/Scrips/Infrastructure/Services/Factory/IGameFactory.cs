@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Scripts.CodeBase.Infractructure
+namespace Scripts.CodeBase.Logic
 {
     public interface IGameFactory : IService
     {

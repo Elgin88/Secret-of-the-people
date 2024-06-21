@@ -9,27 +9,28 @@ namespace Scripts.EnemyComponents
 
         private void OnEnable()
         {
-            _agroTrigger.TriggeredEnter += OnTriggerEnter;
-            _agroTrigger.TriggeredExit += OnTriggerExit;
+            DisableMove();
+            Subscriptions();
         }
 
-        private void OnDisable()
+        private void OnDisable() => Unsubscriptions();
+
+        private void Subscriptions()
         {
-            _agroTrigger.TriggeredEnter -= OnTriggerEnter;
-            _agroTrigger.TriggeredExit -= OnTriggerExit;
+            _agroTrigger.TriggeredEnter += OnPlayerEnter;
+            _agroTrigger.TriggeredExit += OnPlayerExit;
         }
 
-        private void OnTriggerEnter(Collider collider)
+        private void Unsubscriptions()
         {
-            AgentMoveToPlayerOn();
+            _agroTrigger.TriggeredEnter -= OnPlayerEnter;
+            _agroTrigger.TriggeredExit -= OnPlayerExit;
         }
 
-        private void OnTriggerExit(Collider collider)
-        {
-            AgentMoveToPlayerOff();
-        }
 
-        private void AgentMoveToPlayerOn() => _agentMoveToPlayer.AgentOn();
-        private void AgentMoveToPlayerOff() => _agentMoveToPlayer.AgentOff();
+        private void OnPlayerEnter(Collider collider) => EnableMove();
+        private void OnPlayerExit(Collider collider) => DisableMove();
+        private void EnableMove() => _agentMoveToPlayer.EnableAgent();
+        private void DisableMove() => _agentMoveToPlayer.DisableAgent();
     }
 }

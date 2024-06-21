@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Scripts.CodeBase.Infractructure
+namespace Scripts.CodeBase.Logic
 {
     public class GameFactory : IGameFactory
     {
@@ -24,7 +24,7 @@ namespace Scripts.CodeBase.Infractructure
 
         public GameObject CreatePlayer()
         {
-            Vector3 position = FindObjectByTag(ObjectsTags.Player);
+            Vector3 position = FindObjectByTag(StaticObjectsTags.Player);
             _player = CreateGameObject(AssetPath.Player, position);
             PlayerLoaded?.Invoke();
 
@@ -38,7 +38,7 @@ namespace Scripts.CodeBase.Infractructure
 
         public GameObject CreateSkeleton()
         {
-            Vector3 position = FindObjectByTag(ObjectsTags.Enemy);
+            Vector3 position = FindObjectByTag(StaticObjectsTags.Enemy);
 
             return CreateGameObject(AssetPath.Sceleton, position);
         }

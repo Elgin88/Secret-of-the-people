@@ -1,6 +1,6 @@
 ﻿using Agava.YandexGames;
 
-namespace Scripts.CodeBase.Infractructure
+namespace Scripts.CodeBase.Logic
 {
     public class StateLoadLevel : IEnterablePayloadedState<string>
     {
