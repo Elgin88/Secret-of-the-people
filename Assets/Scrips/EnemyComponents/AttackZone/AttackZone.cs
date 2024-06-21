@@ -1,23 +1,22 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 namespace Scripts.EnemyComponents
 {
     public class AttackZone : MonoBehaviour
     {
-        public Action<Collider> PlayerEnter;
-        public Action<Collider> PlayerExit;
-
         private bool _isAttacking = false;
+        
+        public Action<Collider> PlayerEnter;
+        
+        public Action<Collider> PlayerExit;
 
         private void OnTriggerEnter(Collider other)
         {
             if (!_isAttacking)
             {
-                PlayerEnter?.Invoke(other);
+                InvokePlayerEnter(other);
                 SetIsAttackingTrue();
-                Debug.Log("1");
             }
         }
 
@@ -25,12 +24,13 @@ namespace Scripts.EnemyComponents
         {
             if (_isAttacking)
             {
-                PlayerExit?.Invoke(other);
+                InvokePlayerExit(other);
                 SetIsAttackingFalse();
-                Debug.Log("2");
             }
         }
 
+        private void InvokePlayerEnter(Collider other) => PlayerEnter?.Invoke(other);
+        private void InvokePlayerExit(Collider other) => PlayerExit?.Invoke(other);
         private void SetIsAttackingTrue() => _isAttacking = true;
         private void SetIsAttackingFalse() => _isAttacking = false;
     }
