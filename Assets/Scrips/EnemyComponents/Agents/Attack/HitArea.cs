@@ -2,7 +2,7 @@
 
 namespace Scripts.EnemyComponents
 {
-    public class HitZone : MonoBehaviour
+    public class HitArea : MonoBehaviour
     {
     }
 }

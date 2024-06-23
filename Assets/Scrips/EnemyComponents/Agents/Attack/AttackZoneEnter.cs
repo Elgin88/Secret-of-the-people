@@ -8,12 +8,12 @@ namespace Scripts.EnemyComponents
         [SerializeField] private AgentAttack _agentAttack;
 
         public Action<Collider> IsPlayerEnter;
-        
+
         private void OnTriggerEnter(Collider collider)
         {
             InvokeIsPlayerEnter(collider);
         }
-        
+
         private void InvokeIsPlayerEnter(Collider other) => IsPlayerEnter?.Invoke(other);
     }
 }
