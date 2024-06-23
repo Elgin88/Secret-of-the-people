@@ -1,4 +1,5 @@
 ﻿using Scripts.Static;
+using System;
 using UnityEngine;
 
 namespace Scripts.EnemyComponents
@@ -14,21 +15,21 @@ namespace Scripts.EnemyComponents
         private Transform _hitZoneTransform;
         private int _layerMask;
 
+        public Action IsAttackEnded;
+
         public void EnableAgent()
         {
             Enable();
             PlayAnimatironAttack();
         }
 
-        public void DisableAgent()
-        {
-            Disable();
-        }
+        public void DisableAgent() => Disable();
 
         private void Awake()
         {
             SetPlayerLayerMask();
             SetHitZoneTransform();
+            Disable();
         }
 
         private void OnAttack()
@@ -38,9 +39,7 @@ namespace Scripts.EnemyComponents
             }
         }
 
-        private void OnAttackEnded()
-        {
-        }
+        private void OnAttackEnded() => IsAttackEnded?.Invoke();
 
         private bool IsHit(out Collider collider)
         {

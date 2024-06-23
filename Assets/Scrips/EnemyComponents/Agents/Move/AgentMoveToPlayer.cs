@@ -63,8 +63,10 @@ namespace Scripts.EnemyComponents
         {
             _enemyAnimator = GetComponent<EnemyAnimator>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
-            _navMeshAgent.speed = _currentSpeed;
+
             _gameFactory = AllServices.Container.Get<IGameFactory>();
+
+            _navMeshAgent.speed = _currentSpeed;
 
             SetPlayer();
         }
