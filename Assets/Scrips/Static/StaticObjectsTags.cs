@@ -1,4 +1,4 @@
-﻿namespace Scripts.CodeBase.Logic
+﻿namespace Scripts.Static
 {
     public static class StaticObjectsTags
     {

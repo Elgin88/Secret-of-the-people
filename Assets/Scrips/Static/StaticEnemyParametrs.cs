@@ -1,4 +1,4 @@
-﻿namespace Scripts.Logic
+﻿namespace Scripts.Static
 {
     public static class StaticEnemyParametrs
     {

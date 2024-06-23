@@ -1,4 +1,4 @@
-﻿using Scripts.Logic;
+﻿using Scripts.Static;
 using UnityEngine;
 
 namespace Scripts.EnemyComponents

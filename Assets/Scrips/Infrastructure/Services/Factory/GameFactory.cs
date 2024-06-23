@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Scripts.Static;
+using System;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Logic
