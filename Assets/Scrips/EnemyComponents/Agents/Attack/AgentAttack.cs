@@ -1,4 +1,5 @@
 ﻿using Scripts.Static;
+using System.Collections;
 using UnityEngine;
 
 namespace Scripts.EnemyComponents
@@ -10,16 +11,18 @@ namespace Scripts.EnemyComponents
         [SerializeField] private HitArea _hitZone;
 
         private const float _radiusOfSphereHit = 0.3f;
-        private const float _attackCooldown = 1;
-        private float _currentAttackColldown;
+        private const float _cooldown = 3;
+        private float _currentColldown;
+        private bool _isAtacking = false;
         private int _layerMask;
         private WaitForSeconds _attackCooldownWFS;
         private Transform _hitZoneTransform;
         private Collider[] _resultOfHit = new Collider[1];
 
+        public bool IsAtacking => _isAtacking;
+
         public void EnableAgent()
         {
-            Enable();
             PlayAttackAnimation();
         }
 
@@ -33,9 +36,43 @@ namespace Scripts.EnemyComponents
             SetPlayerLayerMask();
             SetHitZoneTransform();
             SetAttackCooldown();
+            ResetColldown();
             Disable();
         }
-        
+
+        private void FixedUpdate()
+        {
+            Debug.Log(_currentColldown);
+
+            if (!_isAtacking)
+            {
+                PlayAttackAnimation();
+                SetIsAttackingTrue();
+                StartCoroutine(ReduceCoolDown());
+            }
+        }
+
+        private IEnumerator ReduceCoolDown()
+        {
+            while (_currentColldown > 0)
+            {
+                _currentColldown -= Time.deltaTime;
+            }
+
+            ResetColldown();
+
+            yield return null;
+        }
+
+        private void TrySetIsAttackingFalse()
+        {
+            if (_currentColldown <= 0)
+            {
+                SetIsAttackingFalse();
+                ResetColldown();
+            }
+        }
+
         private void OnAttack()
         {
             if (IsHit(out Collider collider))
@@ -56,11 +93,15 @@ namespace Scripts.EnemyComponents
             return count > 0;
         }
 
-        private void SetAttackCooldown() => _attackCooldownWFS = new WaitForSeconds(_attackCooldown);
+        private void UpdateCooldown() => _currentColldown -= Time.deltaTime;
+        private void PlayAttackAnimation() => _enemyAnimator.PlayAttack();
+        private void SetAttackCooldown() => _attackCooldownWFS = new WaitForSeconds(_cooldown);
         private void SetPlayerLayerMask() => _layerMask = 1 << LayerMask.NameToLayer(StaticLayersNames.Player);
         private void SetHitZoneTransform() => _hitZoneTransform = _hitZone.transform;
-        private void PlayAttackAnimation() => _enemyAnimator.PlayAttack();
+        private void ResetColldown() => _currentColldown = _cooldown;
+        private void SetIsAttackingTrue() => _isAtacking = true;
+        private void SetIsAttackingFalse() => _isAtacking = false;
         private void Enable() => enabled = true;
-        private void Disable() => enabled = true;
+        private void Disable() => enabled = false;
     }
 }
