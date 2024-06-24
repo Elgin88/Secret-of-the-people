@@ -4,21 +4,22 @@ namespace Scripts.EnemyComponents
 {
     public class AgroChecker : MonoBehaviour
     {
-        [SerializeField] private AgroZone _agroTrigger;
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
+        [SerializeField] private AgroZoneEnter _agroTriggerEnter;
+        [SerializeField] private AgroZoneExit _agroTriggerExit;
 
         private void Awake()
         {
             DisableAgentMove();
 
-            _agroTrigger.TriggeredEnter += OnPlayerEnter;
-            _agroTrigger.TriggeredExit += OnPlayerExit;
+            _agroTriggerEnter.TriggeredEnter += OnPlayerEnter;
+            _agroTriggerExit.TriggeredExit += OnPlayerExit;
         }
 
         private void OnDisable()
         {
-            _agroTrigger.TriggeredEnter -= OnPlayerEnter;
-            _agroTrigger.TriggeredExit -= OnPlayerExit;
+            _agroTriggerEnter.TriggeredEnter -= OnPlayerEnter;
+            _agroTriggerExit.TriggeredExit -= OnPlayerExit;
         }
 
         private void OnPlayerEnter(Collider collider) => EnableAgentMove();

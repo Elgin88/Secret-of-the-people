@@ -66,7 +66,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0d83ac6d3a145f991f81202b0875d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agentAttack: {fileID: 84307021098974875}
 --- !u!1 &343301900546964085
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,10 +682,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9115283724332310692}
   - component: {fileID: 4206345260115878526}
-  - component: {fileID: 8401141017624183562}
-  - component: {fileID: 1166507777406022891}
+  - component: {fileID: 3534666128362834738}
   m_Layer: 13
-  m_Name: AgroZone
+  m_Name: AgroZoneEnter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -728,7 +726,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 8
   m_Center: {x: 0, y: 0.8, z: 0}
---- !u!114 &8401141017624183562
+--- !u!114 &3534666128362834738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -737,23 +735,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3372880269063273216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fae4b33141414d3888624c0421e8cf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f367b51371ef904aab84de338525ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1166507777406022891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3372880269063273216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 793227f1f109243aab207bfe909b0c6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _agroTrigger: {fileID: 8401141017624183562}
-  _agentMoveToPlayer: {fileID: 5211133151828398334}
 --- !u!1 &3402871146048972335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1070,72 @@ Transform:
   - {fileID: 6919837936159204660}
   m_Father: {fileID: 3892688673962406862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5596378912000831933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4775879602757380648}
+  - component: {fileID: 8318622163344977666}
+  - component: {fileID: 3666812677596297419}
+  m_Layer: 13
+  m_Name: AgroZoneExit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4775879602757380648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596378912000831933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7171436434876198669}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8318622163344977666
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596378912000831933}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 8.1
+  m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!114 &3666812677596297419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596378912000831933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52188065c499a94a8ef83bb44273ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5761832317020329231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d7473f2fe3a6d4886e27c1ddabb1d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agentAttack: {fileID: 84307021098974875}
 --- !u!1 &5789293460099171396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1634,7 @@ GameObject:
   - component: {fileID: 5211133151828398334}
   - component: {fileID: 84307021098974875}
   - component: {fileID: 5126608844793043368}
+  - component: {fileID: 3736759000335435549}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1606,6 +1656,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9115283724332310692}
+  - {fileID: 4775879602757380648}
   - {fileID: 4990489052717280113}
   - {fileID: 7271987816308127633}
   - {fileID: 9044219706593725082}
@@ -1747,7 +1798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agentMoverToPlayer: {fileID: 5211133151828398334}
   _enemyAnimator: {fileID: 3327770237539775674}
-  _hitZone: {fileID: 4483631623858313544}
+  _hitArea: {fileID: 4483631623858313544}
 --- !u!114 &5126608844793043368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1764,6 +1815,21 @@ MonoBehaviour:
   _attackZoneEnter: {fileID: 8988328773512262240}
   _attackZoneExit: {fileID: 6499047443404438914}
   _agentMoveToPlayer: {fileID: 5211133151828398334}
+--- !u!114 &3736759000335435549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793227f1f109243aab207bfe909b0c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agentMoveToPlayer: {fileID: 5211133151828398334}
+  _agroTriggerEnter: {fileID: 3534666128362834738}
+  _agroTriggerExit: {fileID: 3666812677596297419}
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0

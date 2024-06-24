@@ -12,7 +12,7 @@ namespace Scripts.PlayerComponents
         private static readonly int _run = Animator.StringToHash(StaticPlayerParametrs.IsRun);
         private static readonly int _speedParametr = Animator.StringToHash(StaticPlayerParametrs.RunParametr);
         private static readonly int _hit = Animator.StringToHash(StaticPlayerParametrs.Hit);
-        private bool _isHiting = false;
+        private bool _isHiting;
 
         public bool IsHiting => _isHiting;
 

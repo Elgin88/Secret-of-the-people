@@ -5,8 +5,6 @@ namespace Scripts.EnemyComponents
 {
     public class AttackZoneEnter : MonoBehaviour
     {
-        [SerializeField] private AgentAttack _agentAttack;
-
         public Action<Collider> IsPlayerEnter;
 
         private void OnTriggerEnter(Collider collider) => InvokeIsPlayerEnter(collider);
