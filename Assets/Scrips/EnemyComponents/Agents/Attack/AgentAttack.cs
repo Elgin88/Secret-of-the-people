@@ -24,6 +24,7 @@ namespace Scripts.EnemyComponents
             SetPlayerLayerMask();
             SetHitZoneTransform();
             ResetCooldown();
+
             Disable();
         }
 
@@ -33,10 +34,7 @@ namespace Scripts.EnemyComponents
             PlayAttackAnimation();
         }
 
-        public void DisableAgent()
-        {
-            Disable();
-        }
+        public void DisableAgent() => Disable();
 
         private void OnAttack()
         {
@@ -46,10 +44,7 @@ namespace Scripts.EnemyComponents
             }
         }
 
-        private void OnAttackEnded()
-        {
-            StartCoroutine(AttackAfterCooldown());
-        }
+        private void OnAttackEnded() => StartCoroutine(AttackAfterCooldown());
 
         private IEnumerator AttackAfterCooldown()
         {
@@ -63,7 +58,7 @@ namespace Scripts.EnemyComponents
             SetIsAttacingFalse();
             PlayAttackAnimation();
         }
-
+        
         private bool IsHit(out Collider hitCollider)
         {
             int count = Physics.OverlapSphereNonAlloc(_hitZoneTransform.position, _hitArea.RadiusOfHitArea, _resultOfHit, _layerMask);

@@ -27,7 +27,7 @@ namespace Scripts.PlayerComponents
         {
             _currentHealth -= damage;
             InvokeOnHealthChanged();
-            _playerAnimator.PlayTakeDamage();
+            _playerAnimator.PlayHit();
         }
 
         private void ResetHealth()

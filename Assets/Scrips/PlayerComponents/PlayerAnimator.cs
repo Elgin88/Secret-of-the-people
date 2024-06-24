@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using Scripts.Static;
+﻿using Scripts.Static;
+using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
@@ -10,7 +10,7 @@ namespace Scripts.PlayerComponents
 
         private float _baseRunAnimationSpeed = 6.5f;
         private static readonly int _run = Animator.StringToHash(StaticPlayerParametrs.IsRun);
-        private static readonly int _speedParametr = Animator.StringToHash(StaticPlayerParametrs.RunParametr);
+        private static readonly int _runParametr = Animator.StringToHash(StaticPlayerParametrs.RunParametr);
         private static readonly int _hit = Animator.StringToHash(StaticPlayerParametrs.Hit);
         private bool _isHiting;
 
@@ -18,26 +18,24 @@ namespace Scripts.PlayerComponents
 
         public void PlayAnimationRun()
         {
-            AnimatorRunOn();
-            SetSpeedOfAnimation();
+            RunOn();
+            SetSpeedOfRunAnimation();
         }
 
-        public void PlayTakeDamage()
+        public void StopPlayAnimationRun() => _animator.SetBool(_run, false);
+
+        public void PlayHit()
         {
             PlayAnimationHit();
             SetIsHitingTrue();
         }
 
-        private void OnHitEnded()
-        {
-            SetIsHitingFalse();
-        }
+        private void OnHitEnded() => SetIsHitingFalse();
 
+        private void RunOn() => _animator.SetBool(_run, true);
         private void PlayAnimationHit() => _animator.Play(_hit);
-        private void SetSpeedOfAnimation() => _animator.SetFloat(_speedParametr, _playerMover.StartSpeed / _baseRunAnimationSpeed);
+        private void SetSpeedOfRunAnimation() => _animator.SetFloat(_runParametr, _playerMover.StartSpeed / _baseRunAnimationSpeed);
         private void SetIsHitingTrue() => _isHiting = true;
         private void SetIsHitingFalse() => _isHiting = false;
-        private void AnimatorRunOn() => _animator.SetBool(_run, true);
-        public void AnimatorRunOff() => _animator.SetBool(_run, false);
     }
 }

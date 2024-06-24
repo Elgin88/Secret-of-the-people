@@ -1798,6 +1798,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agentMoverToPlayer: {fileID: 5211133151828398334}
   _enemyAnimator: {fileID: 3327770237539775674}
+  _agroZoneEnter: {fileID: 3534666128362834738}
+  _agroZoneExit: {fileID: 3666812677596297419}
   _hitArea: {fileID: 4483631623858313544}
 --- !u!114 &5126608844793043368
 MonoBehaviour:

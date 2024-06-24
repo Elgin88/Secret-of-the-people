@@ -15,16 +15,16 @@ namespace Scripts.EnemyComponents
 
         public void PlayMove()
         {
-            _animator.SetFloat(_speedParametr, GetNormalizeMoveSpeed());
-            _animator.SetBool(_move, true);
+            AnimationMoveOn();
+            SetMoveAnimationSpeed();
         }
 
         public void StopPlayMove() => _animator.SetBool(_move, false);
 
         public void PlayAttack() => _animator.SetTrigger(_attack);
 
-        public void StopPlayAttack() => _animator.ResetTrigger(_attack);
-
+        private void AnimationMoveOn() => _animator.SetBool(_move, true);
+        private void SetMoveAnimationSpeed() => _animator.SetFloat(_speedParametr, GetNormalizeMoveSpeed());
         private float GetNormalizeMoveSpeed() => _baseAnimationMoveSpeed / _agentMoveToPlayer.CurrentSpeed;
     }
 }

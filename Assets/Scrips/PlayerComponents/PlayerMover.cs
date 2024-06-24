@@ -54,7 +54,7 @@ namespace Scripts.PlayerComponents
         private void SetAllServices() => _allServices = AllServices.Container;
         private void GetAxis() => _axis = _allServices.Get<IInputService>().Axis;
         private void ResetCurrentSpeed() => _currentSpeed = 0;
-        private void AnimatorStopPlayRun() => _playerAnimator.AnimatorRunOff();
+        private void AnimatorStopPlayRun() => _playerAnimator.StopPlayAnimationRun();
         private void SetCurrentSpeed() => _currentSpeed = _startSpeed;
         private void AnimatorPlayRun() => _playerAnimator.PlayAnimationRun();
         private bool PlayerIsHiting() => _playerAnimator.IsHiting;
