@@ -8,27 +8,36 @@ namespace Scripts.PlayerComponents
         [SerializeField] private PlayerMover _playerMover;
         [SerializeField] private Animator _animator;
 
+        private float _baseRunAnimationSpeed = 6.5f;
         private static readonly int _run = Animator.StringToHash(StaticPlayerParametrs.IsRun);
-        private static readonly int _speedParametr = Animator.StringToHash(StaticPlayerParametrs.SpeedParametr);
-        private static readonly int _takeDamdage = Animator.StringToHash(StaticPlayerParametrs.TakeDamage);
+        private static readonly int _speedParametr = Animator.StringToHash(StaticPlayerParametrs.RunParametr);
+        private static readonly int _hit = Animator.StringToHash(StaticPlayerParametrs.Hit);
+        private bool _isHiting = false;
 
-        public bool IsHit { get; internal set; }
+        public bool IsHiting => _isHiting;
 
-        public void PlayRun()
+        public void PlayAnimationRun()
         {
-            Debug.Log("Дописать здесь IsHit");
-            Debug.Log("Перенести сюда NormalizeSpeed");
-
-            AnimationRunOn();
+            AnimatorRunOn();
             SetSpeedOfAnimation();
         }
 
-        public void AnimationRunOff() => _animator.SetBool(_run, false);
+        public void PlayTakeDamage()
+        {
+            PlayAnimationHit();
+            SetIsHitingTrue();
+        }
 
-        public void PlayTakeDamage() => _animator.Play(_takeDamdage);
+        private void OnHitEnded()
+        {
+            SetIsHitingFalse();
+        }
 
-        private void OnTakeDamageEnded() => PlayRun();
-        private void SetSpeedOfAnimation() => _animator.SetFloat(_speedParametr, _playerMover.NormalizeSpeed);
-        private void AnimationRunOn() => _animator.SetBool(_run, true);
+        private void PlayAnimationHit() => _animator.Play(_hit);
+        private void SetSpeedOfAnimation() => _animator.SetFloat(_speedParametr, _playerMover.StartSpeed / _baseRunAnimationSpeed);
+        private void SetIsHitingTrue() => _isHiting = true;
+        private void SetIsHitingFalse() => _isHiting = false;
+        private void AnimatorRunOn() => _animator.SetBool(_run, true);
+        public void AnimatorRunOff() => _animator.SetBool(_run, false);
     }
 }

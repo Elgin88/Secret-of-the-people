@@ -3,7 +3,7 @@
     public static class StaticPlayerParametrs
     {
         public const string IsRun = "IsRun";
-        public const string SpeedParametr = "SpeedParametr";
-        public const string TakeDamage = "TakeDamage";
+        public const string RunParametr = "RunParametr";
+        public const string Hit = "Hit";
     }
 }

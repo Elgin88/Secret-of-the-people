@@ -11,7 +11,6 @@ namespace Scripts.PlayerComponents
 
         private const float _startSpeed = 7;
         private const float _deltaRotation = 2500;
-        private const float _baseAnimationSpeed = 6.5f;
         private const float _hitSpeedCoefficient = 0.5f;
         private float _currentSpeed;
         private AllServices _allServices;
@@ -19,7 +18,7 @@ namespace Scripts.PlayerComponents
         private Vector3 _targetDirection;
         private Vector2 _axis;
 
-        public float NormalizeSpeed => _startSpeed / _baseAnimationSpeed;
+        public float StartSpeed => _startSpeed;
 
         private void Awake()
         {
@@ -54,10 +53,10 @@ namespace Scripts.PlayerComponents
         private void SetAllServices() => _allServices = AllServices.Container;
         private void GetAxis() => _axis = _allServices.Get<IInputService>().Axis;
         private void ResetCurrentSpeed() => _currentSpeed = 0;
-        private void AnimatorStopPlayRun() => _playerAnimator.AnimationRunOff();
+        private void AnimatorStopPlayRun() => _playerAnimator.AnimatorRunOff();
         private void SetCurrentSpeed() => _currentSpeed = _startSpeed;
-        private void AnimatorPlayRun() => _playerAnimator.PlayRun();
-        private bool PlayerIsHit() => _playerAnimator.IsHit;
+        private void AnimatorPlayRun() => _playerAnimator.PlayAnimationRun();
+        private bool PlayerIsHit() => _playerAnimator.IsHiting;
         private void SetHitSpeed() => _currentSpeed = _currentSpeed * _hitSpeedCoefficient;
         private void SetTargetRotation(Vector2 axis) => _targetRotaion = Quaternion.LookRotation(new Vector3(axis.x, 0, axis.y));
         private void SetTargetDirection(Vector2 axis) => _targetDirection = new Vector3(axis.x, 0, axis.y);
