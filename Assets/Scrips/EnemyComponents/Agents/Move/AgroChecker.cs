@@ -7,30 +7,23 @@ namespace Scripts.EnemyComponents
         [SerializeField] private AgroZone _agroTrigger;
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
 
-        private void OnEnable()
+        private void Awake()
         {
-            DisableMove();
-            Subscriptions();
-        }
+            DisableAgentMove();
 
-        private void OnDisable() => Unsubscriptions();
-
-        private void Subscriptions()
-        {
             _agroTrigger.TriggeredEnter += OnPlayerEnter;
             _agroTrigger.TriggeredExit += OnPlayerExit;
         }
 
-        private void Unsubscriptions()
+        private void OnDisable()
         {
             _agroTrigger.TriggeredEnter -= OnPlayerEnter;
             _agroTrigger.TriggeredExit -= OnPlayerExit;
         }
 
-
-        private void OnPlayerEnter(Collider collider) => EnableMove();
-        private void OnPlayerExit(Collider collider) => DisableMove();
-        private void EnableMove() => _agentMoveToPlayer.EnableAgent();
-        private void DisableMove() => _agentMoveToPlayer.DisableAgent();
+        private void OnPlayerEnter(Collider collider) => EnableAgentMove();
+        private void OnPlayerExit(Collider collider) => DisableAgentMove();
+        private void EnableAgentMove() => _agentMoveToPlayer.EnableAgent();
+        private void DisableAgentMove() => _agentMoveToPlayer.DisableAgent();
     }
 }

@@ -4,25 +4,35 @@ namespace Scripts.Logic
 {
     public class CameraFollower : MonoBehaviour
     {
-        private float _diagonalOffset = 12;
-        private float _verticalOffset = 0;
-        private float _angleInRadian = 45 * Mathf.PI / 180;
+        private const float _diagonalOffset = 12;
+        private const float _verticalOffset = 0;
+        private const float _angleInRadian = 45 * Mathf.PI / 180;
         private float _horizontal;
         private float _vertical;
         private Camera _camera;
 
         private void Awake()
         {
-            _camera = Camera.main;
-            _horizontal = Mathf.Cos(_angleInRadian) * _diagonalOffset;
-            _vertical = Mathf.Sin(_angleInRadian) * _diagonalOffset * -1;
+            Enabled();
+            SetCamera();
+            CalculateOffsets();
         }
 
         private void LateUpdate()
         {
-            _camera.transform.position = new Vector3(transform.position.x, transform.position.y + _horizontal + _verticalOffset, transform.position.z + _vertical);
+            SetCameraPosition();
+            SetCameraRotation();
+        }
 
-            _camera.transform.rotation.SetLookRotation(transform.position);
+        private void SetCameraRotation() => _camera.transform.rotation.SetLookRotation(transform.position);
+        private void SetCameraPosition() => _camera.transform.position = new Vector3(transform.position.x, transform.position.y + _horizontal + _verticalOffset, transform.position.z + _vertical);
+        private void SetCamera() => _camera = Camera.main;
+        private void Enabled() => enabled = true;
+
+        private void CalculateOffsets()
+        {
+            _horizontal = Mathf.Cos(_angleInRadian) * _diagonalOffset;
+            _vertical = Mathf.Sin(_angleInRadian) * _diagonalOffset * -1;
         }
     }
 }

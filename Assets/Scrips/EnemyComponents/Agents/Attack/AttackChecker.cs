@@ -9,15 +9,15 @@ namespace Scripts.EnemyComponents
         [SerializeField] private AttackZoneExit _attackZoneExit;
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
 
-        private void OnEnable()
+        private void Awake()
         {
             _attackZoneEnter.IsPlayerEnter += OnPlayerEnter;
             _attackZoneExit.IsPlayerExit += OnPlayerExit;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
-            _attackZoneExit.IsPlayerExit += OnPlayerExit;
+            _attackZoneExit.IsPlayerExit -= OnPlayerExit;
             _attackZoneEnter.IsPlayerEnter -= OnPlayerEnter;
         }
 
@@ -32,7 +32,7 @@ namespace Scripts.EnemyComponents
             DisableAgentAttack();
             EnableAgentMove();
         }
-        
+
         private void EnableAgentAttack() => _agentAttack.EnableAgent();
         private void DisableAgentAttack() => _agentAttack.DisableAgent();
         private void DisableAgentMove() => _agentMoveToPlayer.DisableAgent();

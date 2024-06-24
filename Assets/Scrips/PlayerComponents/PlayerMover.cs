@@ -3,44 +3,38 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
-    [RequireComponent(typeof(CharacterController))]
-    [RequireComponent(typeof(Transform))]
-    [RequireComponent(typeof(PlayerAnimator))]
-
     public class PlayerMover : MonoBehaviour
     {
+        [SerializeField] private Transform _transform;
+        [SerializeField] private CharacterController _characterController;
+        [SerializeField] private PlayerAnimator _playerAnimator;
+
         private const float _startSpeed = 7;
         private const float _deltaRotation = 2500;
-        private const float _baseSpeed = 6.5f;
-        private float _currentSpeed = 0;
-        private Vector3 _targetDirection = Vector3.zero;
-        private Vector2 _axis = Vector2.zero;
-        private Quaternion _targetRotaion = Quaternion.identity;
-        private Transform _transform;
-        private CharacterController _characterController;
+        private const float _baseAnimationSpeed = 6.5f;
+        private const float _hitSpeedCoefficient = 0.5f;
+        private float _currentSpeed;
         private AllServices _allServices;
-        private PlayerAnimator _animator;
+        private Quaternion _targetRotaion;
+        private Vector3 _targetDirection;
+        private Vector2 _axis;
 
-        public float NormalizeSpeed => _startSpeed / _baseSpeed;
+        public float NormalizeSpeed => _startSpeed / _baseAnimationSpeed;
 
         private void Awake()
         {
-            _transform = GetComponent<Transform>();
-            _characterController = GetComponent<CharacterController>();
-            _animator = GetComponent<PlayerAnimator>();
-            _allServices = AllServices.Container;
+            SetAllServices();
         }
 
         private void LateUpdate()
         {
-            _targetDirection = Vector3.zero;
-            _currentSpeed = 0;
-            _axis = _allServices.Get<IInputService>().Axis;
+            ResetCurrentSpeed();
+            GetAxis();
 
             if (_axis != Vector2.zero)
             {
-                _currentSpeed = _startSpeed;
-                _animator.PlayRun();
+                SetCurrentSpeed();
+                AnimatorPlayRun();
                 SetTargetDirection(_axis);
                 SetTargetRotation(_axis);
                 ChangePlayerPosition(_targetDirection, _currentSpeed);
@@ -48,16 +42,26 @@ namespace Scripts.PlayerComponents
             }
             else
             {
-                _animator.StopPlayRun();
+                AnimatorStopPlayRun();
+            }
+
+            if (PlayerIsHit())
+            {
+                SetHitSpeed();
             }
         }
 
+        private void SetAllServices() => _allServices = AllServices.Container;
+        private void GetAxis() => _axis = _allServices.Get<IInputService>().Axis;
+        private void ResetCurrentSpeed() => _currentSpeed = 0;
+        private void AnimatorStopPlayRun() => _playerAnimator.AnimationRunOff();
+        private void SetCurrentSpeed() => _currentSpeed = _startSpeed;
+        private void AnimatorPlayRun() => _playerAnimator.PlayRun();
+        private bool PlayerIsHit() => _playerAnimator.IsHit;
+        private void SetHitSpeed() => _currentSpeed = _currentSpeed * _hitSpeedCoefficient;
         private void SetTargetRotation(Vector2 axis) => _targetRotaion = Quaternion.LookRotation(new Vector3(axis.x, 0, axis.y));
-
         private void SetTargetDirection(Vector2 axis) => _targetDirection = new Vector3(axis.x, 0, axis.y);
-
         private void ChangePlayerPosition(Vector3 targetDirection, float currentSpeed) => _characterController.Move(targetDirection * currentSpeed * Time.deltaTime);
-
         private void ChangePlayerRotation(Quaternion targetRotation, float deltaRotation) => _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
     }
 }
