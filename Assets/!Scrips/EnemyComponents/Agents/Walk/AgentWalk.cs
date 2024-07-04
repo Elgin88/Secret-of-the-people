@@ -8,7 +8,7 @@ namespace Scripts.EnemyComponents
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private EnemyAnimator _enemyAnimator;
 
-        private float _walkSpeed = 1;
+        private const float _speed = 5;
         private const int _minRange = -10;
         private const int _maxRange = 10;
         private const int _minDistanceToTarget = 2;
@@ -16,30 +16,30 @@ namespace Scripts.EnemyComponents
 
         public void EnableAgent()
         {
-            Enable();
-            NavMeshMove();
+            SetEnable();
+            IsMoveInNavMesh();
+            SetSpeedInNavMesh(_speed);
             SetTargetPosition();
-            SetNavMeshSpeed();
-            PlayAnimationMove();
+            PlayAnimationMove(_speed);
         }
-
+        
         public void DisableAgent()
         {
-            Disable();
-            NavMeshStop();
+            IsStopInNavMesh();
             StopAnimationMove();
+            SetDisable();
         }
 
-        private void Awake() => EnableAgent();
-        private void Update() => Move();
+        private void Start() => EnableAgent();
 
-        private void Move()
+        private void Update()
         {
-            ChangePosition();
-            TrySetTargetPosition();
+            Debug.Log(_navMeshAgent.speed);
+            TrySetNextPosition();
+            Move();
         }
-
-        private void TrySetTargetPosition()
+        
+        private void TrySetNextPosition()
         {
             if (IsMinDistance())
             {
@@ -56,14 +56,14 @@ namespace Scripts.EnemyComponents
         }
 
         private int GetRandomDelta() => Random.Range(_minRange, _maxRange);
-        private void Enable() => enabled = true;
-        private void Disable() => enabled = false;
+        private void SetEnable() => enabled = true;
+        private void SetDisable() => enabled = false;
         private bool IsMinDistance() => Vector3.Distance(transform.position, _targetPosition) < _minDistanceToTarget;
-        private void ChangePosition() => _navMeshAgent.destination = _targetPosition;
-        private void NavMeshMove() => _navMeshAgent.isStopped = false;
-        private void NavMeshStop() => _navMeshAgent.isStopped = true;
-        private void SetNavMeshSpeed() => _navMeshAgent.speed = _walkSpeed;
-        private void PlayAnimationMove() => _enemyAnimator.PlayMove(_walkSpeed);
+        private void Move() => _navMeshAgent.destination = _targetPosition;
+        private void IsMoveInNavMesh() => _navMeshAgent.isStopped = false;
+        private void IsStopInNavMesh() => _navMeshAgent.isStopped = true;
+        private void SetSpeedInNavMesh(float walkSpeed) => _navMeshAgent.speed = walkSpeed;
+        private void PlayAnimationMove(float walkSpeed) => _enemyAnimator.PlayMove(walkSpeed);
         private void StopAnimationMove() => _enemyAnimator.StopPlayMove();
     }
 }

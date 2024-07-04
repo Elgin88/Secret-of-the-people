@@ -7,11 +7,11 @@ namespace Scripts.EnemyComponents
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
-        [SerializeField] public const float _baseAnimationMoveSpeed = 1f;
 
-        private static readonly int _attack = Animator.StringToHash(StaticEnemyParametrs.IsAttack);
-        private static readonly int _move = Animator.StringToHash(StaticEnemyParametrs.IsMove);
-        private static readonly int _speedParametr = Animator.StringToHash(StaticEnemyParametrs.MoveParametr);
+        private const float _baseAnimationMoveSpeed = 1f;
+        private readonly int _attack = Animator.StringToHash(StaticEnemyParametrs.IsAttack);
+        private readonly int _move = Animator.StringToHash(StaticEnemyParametrs.IsMove);
+        private readonly int _speedParametr = Animator.StringToHash(StaticEnemyParametrs.MoveParametr);
 
         public void PlayMove(float speed)
         {
@@ -25,6 +25,6 @@ namespace Scripts.EnemyComponents
 
         private void AnimationMoveOn() => _animator.SetBool(_move, true);
         private void SetMoveAnimationSpeed(float speed) => _animator.SetFloat(_speedParametr, GetNormalizeMoveSpeed(speed));
-        private float GetNormalizeMoveSpeed(float speed) => speed / _baseAnimationMoveSpeed;
+        private float GetNormalizeMoveSpeed(float speed) => _baseAnimationMoveSpeed / speed;
     }
 }
