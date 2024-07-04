@@ -25,7 +25,7 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreatePlayer()
         {
-            Vector3 position = FindObjectByTag(StaticObjectsTags.Player);
+            Vector3 position = FindObjectByTag(StaticTags.Player);
             _player = CreateGameObject(AssetPath.Player, position);
             PlayerLoaded?.Invoke();
 
@@ -39,7 +39,7 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreateSkeleton()
         {
-            Vector3 position = FindObjectByTag(StaticObjectsTags.Enemy);
+            Vector3 position = FindObjectByTag(StaticTags.Enemy);
 
             return CreateGameObject(AssetPath.Sceleton, position);
         }
