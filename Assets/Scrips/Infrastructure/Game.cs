@@ -8,14 +8,8 @@ namespace Scripts.CodeBase.Logic
 
         public static IInputService InputService { get; set; }
 
-        public Game(GameStateMachine gameStateMachine)
-        {
-            gameStateMachine.Enter<StateBootStrapt>();
-        }
+        public Game(GameStateMachine gameStateMachine) => gameStateMachine.Enter<StateBootStrapt>();
 
-        public static void SetIsReadyTrue()
-        {
-            _isReadyGame = true;
-        }
+        public static void SetIsReadyTrue() => _isReadyGame = true;
     }
 }

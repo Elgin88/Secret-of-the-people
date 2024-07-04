@@ -1633,8 +1633,10 @@ GameObject:
   - component: {fileID: 3327770237539775674}
   - component: {fileID: 5211133151828398334}
   - component: {fileID: 84307021098974875}
-  - component: {fileID: 5126608844793043368}
+  - component: {fileID: 1111474936639502434}
   - component: {fileID: 3736759000335435549}
+  - component: {fileID: 5126608844793043368}
+  - component: {fileID: 2271985347427505455}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1798,9 +1800,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agentMoverToPlayer: {fileID: 5211133151828398334}
   _enemyAnimator: {fileID: 3327770237539775674}
-  _agroZoneEnter: {fileID: 3534666128362834738}
-  _agroZoneExit: {fileID: 3666812677596297419}
   _hitArea: {fileID: 4483631623858313544}
+--- !u!114 &1111474936639502434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22741b2e89784b599a8abd1e50ad240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _navMeshAgent: {fileID: 6423952209126061127}
+  _enemyAnimator: {fileID: 3327770237539775674}
+--- !u!114 &3736759000335435549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793227f1f109243aab207bfe909b0c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agentMoveToPlayer: {fileID: 5211133151828398334}
+  _agroTriggerEnter: {fileID: 3534666128362834738}
+  _agroTriggerExit: {fileID: 3666812677596297419}
 --- !u!114 &5126608844793043368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,7 +1846,7 @@ MonoBehaviour:
   _attackZoneEnter: {fileID: 8988328773512262240}
   _attackZoneExit: {fileID: 6499047443404438914}
   _agentMoveToPlayer: {fileID: 5211133151828398334}
---- !u!114 &3736759000335435549
+--- !u!114 &2271985347427505455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1826,12 +1855,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7551938292944909751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 793227f1f109243aab207bfe909b0c6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 138ce7a9660fc4cc4967172b40a2e4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agentMoveToPlayer: {fileID: 5211133151828398334}
-  _agroTriggerEnter: {fileID: 3534666128362834738}
-  _agroTriggerExit: {fileID: 3666812677596297419}
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0

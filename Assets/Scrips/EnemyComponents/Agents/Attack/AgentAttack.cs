@@ -10,7 +10,7 @@ namespace Scripts.EnemyComponents
         [SerializeField] private AgentMoveToPlayer _agentMoverToPlayer;
         [SerializeField] private EnemyAnimator _enemyAnimator;
         [SerializeField] private HitArea _hitArea;
-        
+
         private const float _startCooldown = 0.5f;
         private const float _damage = 10f;
         private float _currentColldown;
@@ -40,7 +40,7 @@ namespace Scripts.EnemyComponents
         {
             if (IsHit(out Collider collider))
             {
-                collider.GetComponent<PlayerChangerHealth>().RemoveHealth(_damage);
+                PlayerTakeHit(collider);
             }
         }
 
@@ -55,10 +55,10 @@ namespace Scripts.EnemyComponents
             }
 
             ResetCooldown();
-            SetIsAttacingFalse();
+            SetIsAttackingFalse();
             PlayAttackAnimation();
         }
-        
+
         private bool IsHit(out Collider hitCollider)
         {
             int count = Physics.OverlapSphereNonAlloc(_hitZoneTransform.position, _hitArea.RadiusOfHitArea, _resultOfHit, _layerMask);
@@ -77,9 +77,10 @@ namespace Scripts.EnemyComponents
             }
         }
 
+        private static void PlayerTakeHit(Collider collider) => collider.GetComponent<PlayerChangerHealth>().RemoveHealth(_damage);
         private void UpdateCooldown() => _currentColldown -= Time.deltaTime;
         private void SetIsAttackingTrue() => _isAtacking = true;
-        private void SetIsAttacingFalse() => _isAtacking = false;
+        private void SetIsAttackingFalse() => _isAtacking = false;
         private void SetPlayerLayerMask() => _layerMask = 1 << LayerMask.NameToLayer(StaticLayersNames.Player);
         private void SetHitZoneTransform() => _hitZoneTransform = _hitArea.transform;
         private void ResetCooldown() => _currentColldown = _startCooldown;

@@ -113,7 +113,7 @@ namespace Scripts.EnemyComponents
         private void NavMeshMoveOff() => _navMeshAgent.isStopped = true;
         private void Enable() => enabled = true;
         private void Disable() => enabled = false;
-        private void PlayAnimationMove() => _enemyAnimator.PlayMove();
+        private void PlayAnimationMove() => _enemyAnimator.PlayMove(_currentSpeed);
         private void StopPlayAnimationMove() => _enemyAnimator.StopPlayMove();
         private void MoveToTarget() => _navMeshAgent.destination = _playerTransform.position;
         private void SetIsMovingTrue() => _isMoving = true;
