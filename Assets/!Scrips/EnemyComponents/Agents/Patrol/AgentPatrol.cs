@@ -3,12 +3,12 @@ using UnityEngine.AI;
 
 namespace Scripts.EnemyComponents
 {
-    public class AgentWalk : MonoBehaviour, IAgent
+    public class AgentPatrol : MonoBehaviour, IAgent
     {
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private EnemyAnimator _enemyAnimator;
 
-        private const float _maxSpeed = 5;
+        private const float _maxSpeed = 2;
         private const int _minRange = -10;
         private const int _maxRange = 10;
         private const int _minDistanceToTarget = 2;
@@ -17,19 +17,15 @@ namespace Scripts.EnemyComponents
         public void EnableAgent()
         {
             Enable();
-
             SetIsMovedInNavMesh();
             SetMaxSpeedInNavMesh(_maxSpeed);
-
             SetTargetPosition();
         }
-        
+
         public void DisableAgent()
         {
             SetIsStopedInNavMesh();
-
             StopAnimationOfMove();
-
             Disable();
         }
 
@@ -41,8 +37,6 @@ namespace Scripts.EnemyComponents
             PlayAnimationOfMove(CurrentSpeed());
             TryChangeTargetPosition();
         }
-
-        private float CurrentSpeed() => _navMeshAgent.speed;
 
         private void TryChangeTargetPosition()
         {
@@ -60,6 +54,7 @@ namespace Scripts.EnemyComponents
             _targetPosition = new Vector3(transform.position.x + deltaX, transform.position.y, transform.position.z + deltaZ);
         }
 
+        private float CurrentSpeed() => _navMeshAgent.speed;
         private int GetRandomDelta() => Random.Range(_minRange, _maxRange);
         private bool IsMinDistanceToTarget() => Vector3.Distance(transform.position, _targetPosition) < _minDistanceToTarget;
         private void Enable() => enabled = true;
@@ -67,8 +62,8 @@ namespace Scripts.EnemyComponents
         private void Move() => _navMeshAgent.destination = _targetPosition;
         private void SetIsMovedInNavMesh() => _navMeshAgent.isStopped = false;
         private void SetIsStopedInNavMesh() => _navMeshAgent.isStopped = true;
-        private void SetMaxSpeedInNavMesh(float walkSpeed) => _navMeshAgent.speed = walkSpeed;
-        private void PlayAnimationOfMove(float walkSpeed) => _enemyAnimator.PlayMove(walkSpeed);
+        private void SetMaxSpeedInNavMesh(float speed) => _navMeshAgent.speed = speed;
+        private void PlayAnimationOfMove(float speed) => _enemyAnimator.PlayMove(speed);
         private void StopAnimationOfMove() => _enemyAnimator.StopPlayMove();
     }
 }

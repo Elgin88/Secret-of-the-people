@@ -26,19 +26,18 @@ namespace Scripts.EnemyComponents
         public void DisableAgent()
         {
             NavMeshMoveOff();
-            StopPlayAnimationMove();
+            PlayAnimationIdle();
             Disable();
         }
 
         private void Awake()
         {
             SetComponents();
+            Disable();
         }
 
         private void FixedUpdate()
         {
-            CheckInterrupts();
-
             if (!IsMinDistance())
             {
                 Move();
@@ -47,15 +46,7 @@ namespace Scripts.EnemyComponents
             else
             {
                 StopMove();
-                StopPlayAnimationMove();
-            }
-        }
-
-        private void CheckInterrupts()
-        {
-            if (!IsOnNavMesh() || !IsPlayerInitialized())
-            {
-                return;
+                PlayAnimationIdle();
             }
         }
 
@@ -73,12 +64,6 @@ namespace Scripts.EnemyComponents
 
         private void Move()
         {
-            if (!_isMoving)
-            {
-                NavMeshMoveOn();
-                SetIsMovingTrue();
-            }
-
             MoveToTarget();
         }
 
@@ -114,7 +99,7 @@ namespace Scripts.EnemyComponents
         private void Enable() => enabled = true;
         private void Disable() => enabled = false;
         private void PlayAnimationMove() => _enemyAnimator.PlayMove(_currentSpeed);
-        private void StopPlayAnimationMove() => _enemyAnimator.StopPlayMove();
+        private void PlayAnimationIdle() => _enemyAnimator.StopPlayMove();
         private void MoveToTarget() => _navMeshAgent.destination = _playerTransform.position;
         private void SetIsMovingTrue() => _isMoving = true;
         private void SetIsMovingFalse() => _isMoving = false;

@@ -8,7 +8,6 @@ namespace Scripts.EnemyComponents
         public Action<Collider> IsPlayerExit;
 
         private void OnTriggerExit(Collider collider) => InvokeIsPlayerEnter(collider);
-
         private void InvokeIsPlayerEnter(Collider collider) => IsPlayerExit?.Invoke(collider);
     }
 }
