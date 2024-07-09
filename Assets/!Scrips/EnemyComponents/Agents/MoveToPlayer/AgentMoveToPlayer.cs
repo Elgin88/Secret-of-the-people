@@ -9,7 +9,7 @@ namespace Scripts.EnemyComponents
         [SerializeField] private EnemyAnimator _enemyAnimator;
         [SerializeField] private NavMeshAgent _navMeshAgent;
 
-        private const float _moveSpeed = 4;
+        private const float _moveSpeed = 2;
         private IGameFactory _gameFactory;
         private Transform _playerTransform;
 
@@ -34,6 +34,8 @@ namespace Scripts.EnemyComponents
         {
             SetComponents();
             Disable();
+
+            Debug.Log("Сделать прохождение урона через UI");
         }
 
         private void FixedUpdate()

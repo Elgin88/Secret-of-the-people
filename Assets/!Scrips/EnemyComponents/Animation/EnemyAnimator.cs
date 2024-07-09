@@ -7,7 +7,7 @@ namespace Scripts.EnemyComponents
     {
         [SerializeField] private Animator _animator;
 
-        private const float _baseAnimationMoveSpeed = 1f;
+        private const float _baseAnimationMoveSpeed = 0.6f;
         private readonly int _attack = Animator.StringToHash(StaticEnemyParametrs.IsAttack);
         private readonly int _move = Animator.StringToHash(StaticEnemyParametrs.IsMove);
         private readonly int _speedParametr = Animator.StringToHash(StaticEnemyParametrs.MoveParametr);
