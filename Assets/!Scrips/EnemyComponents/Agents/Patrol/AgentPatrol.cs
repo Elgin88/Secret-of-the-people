@@ -8,7 +8,7 @@ namespace Scripts.EnemyComponents
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private EnemyAnimator _enemyAnimator;
 
-        private const float _maxSpeed = 2;
+        private const float _maxSpeed = 1.5f;
         private const int _minRange = -10;
         private const int _maxRange = 10;
         private const int _minDistanceToTarget = 2;
@@ -34,7 +34,7 @@ namespace Scripts.EnemyComponents
         private void Update()
         {
             Move();
-            PlayAnimationOfMove(CurrentSpeed());
+            PlayAnimationMove(CurrentSpeed());
             TryChangeTargetPosition();
         }
 
@@ -63,7 +63,7 @@ namespace Scripts.EnemyComponents
         private void SetIsMovedInNavMesh() => _navMeshAgent.isStopped = false;
         private void SetIsStopedInNavMesh() => _navMeshAgent.isStopped = true;
         private void SetMaxSpeedInNavMesh(float speed) => _navMeshAgent.speed = speed;
-        private void PlayAnimationOfMove(float speed) => _enemyAnimator.PlayMove(speed);
+        private void PlayAnimationMove(float speed) => _enemyAnimator.PlayMove(speed);
         private void StopAnimationOfMove() => _enemyAnimator.StopPlayMove();
     }
 }

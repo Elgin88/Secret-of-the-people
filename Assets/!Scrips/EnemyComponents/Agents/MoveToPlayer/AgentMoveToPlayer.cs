@@ -9,18 +9,18 @@ namespace Scripts.EnemyComponents
         [SerializeField] private EnemyAnimator _enemyAnimator;
         [SerializeField] private NavMeshAgent _navMeshAgent;
 
-        private const float _minDistanceToPlayer = 0.1f;
-        private const float _currentSpeed = 2;
+        private const float _moveSpeed = 4;
         private IGameFactory _gameFactory;
         private Transform _playerTransform;
-        private bool _isMoving = false;
 
-        public float CurrentSpeed => _currentSpeed;
+        public float MoveSpeed => _moveSpeed;
 
         public void EnableAgent()
         {
             Enable();
+            SetMoveSpeed();
             NavMeshMoveOn();
+            PlayAnimationMove();
         }
 
         public void DisableAgent()
@@ -38,16 +38,7 @@ namespace Scripts.EnemyComponents
 
         private void FixedUpdate()
         {
-            if (!IsMinDistance())
-            {
-                Move();
-                PlayAnimationMove();
-            }
-            else
-            {
-                StopMove();
-                PlayAnimationIdle();
-            }
+            MoveToTarget();
         }
 
         private void SetComponents()
@@ -56,24 +47,9 @@ namespace Scripts.EnemyComponents
             _navMeshAgent = GetComponent<NavMeshAgent>();
 
             _gameFactory = AllServices.Container.Get<IGameFactory>();
-
-            _navMeshAgent.speed = _currentSpeed;
+            _navMeshAgent.speed = _moveSpeed;
 
             SetPlayer();
-        }
-
-        private void Move()
-        {
-            MoveToTarget();
-        }
-
-        private void StopMove()
-        {
-            if (_isMoving)
-            {
-                NavMeshMoveOff();
-                SetIsMovingFalse();
-            }
         }
 
         private void SetPlayer()
@@ -88,20 +64,16 @@ namespace Scripts.EnemyComponents
             }
         }
 
-        private bool IsMinDistance() => _minDistanceToPlayer > Vector3.Distance(transform.position, _playerTransform.position);
-        private bool IsPlayerInitialized() => _playerTransform.gameObject.transform != null;
         private void SetPlayerAfterCreate() => _gameFactory.PlayerLoaded += SetPlayerTransfromFromGameFactory;
         private bool IsPlayerCreate() => _gameFactory.Player != null;
         private void SetPlayerTransfromFromGameFactory() => _playerTransform = _gameFactory.Player.transform;
-        private bool IsOnNavMesh() => _navMeshAgent.isOnNavMesh;
         private void NavMeshMoveOn() => _navMeshAgent.isStopped = false;
         private void NavMeshMoveOff() => _navMeshAgent.isStopped = true;
         private void Enable() => enabled = true;
         private void Disable() => enabled = false;
-        private void PlayAnimationMove() => _enemyAnimator.PlayMove(_currentSpeed);
+        private void PlayAnimationMove() => _enemyAnimator.PlayMove(_moveSpeed);
         private void PlayAnimationIdle() => _enemyAnimator.StopPlayMove();
         private void MoveToTarget() => _navMeshAgent.destination = _playerTransform.position;
-        private void SetIsMovingTrue() => _isMoving = true;
-        private void SetIsMovingFalse() => _isMoving = false;
+        private void SetMoveSpeed() => _navMeshAgent.speed = _moveSpeed;
     }
 }

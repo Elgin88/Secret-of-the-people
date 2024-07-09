@@ -7,7 +7,7 @@ namespace Scripts.EnemyComponents
     {
         [SerializeField] private Animator _animator;
 
-        private const float _baseMoveSpeedForAnimation = 0.8f;
+        private const float _baseAnimationMoveSpeed = 1f;
         private readonly int _attack = Animator.StringToHash(StaticEnemyParametrs.IsAttack);
         private readonly int _move = Animator.StringToHash(StaticEnemyParametrs.IsMove);
         private readonly int _speedParametr = Animator.StringToHash(StaticEnemyParametrs.MoveParametr);
@@ -30,6 +30,6 @@ namespace Scripts.EnemyComponents
 
         private void PlayAnimationMove() => _animator.SetBool(_move, true);
         private void SetMoveAnimationSpeed(float currentSpeed) => _animator.SetFloat(_speedParametr, GetNormalizeMoveSpeed(currentSpeed));
-        private float GetNormalizeMoveSpeed(float currentMoveSpeed) => currentMoveSpeed / _baseMoveSpeedForAnimation;
+        private float GetNormalizeMoveSpeed(float currentMoveSpeed) => currentMoveSpeed / _baseAnimationMoveSpeed;
     }
 }
