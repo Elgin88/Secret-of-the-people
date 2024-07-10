@@ -1,6 +1,6 @@
+using Agava.YandexGames;
 using System;
 using System.Collections;
-using Agava.YandexGames;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Logic
@@ -15,6 +15,8 @@ namespace Scripts.CodeBase.Logic
         {
             SetSDKCallbacklogin(true);
             DontDestroyOnLoad(this);
+
+            Debug.Log("Сделать анимацию врага по скорости");
         }
 
         private IEnumerator Start()
