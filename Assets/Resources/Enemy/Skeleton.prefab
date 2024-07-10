@@ -878,6 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b81804f9a554322802d65caea266cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RadiusOfHitArea: 0.8
 --- !u!1 &4081714235084392569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1637,6 @@ GameObject:
   - component: {fileID: 1111474936639502434}
   - component: {fileID: 3736759000335435549}
   - component: {fileID: 5126608844793043368}
-  - component: {fileID: 2271985347427505455}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1771,7 +1771,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3847802125550302583}
-  _agentMoveToPlayer: {fileID: 5211133151828398334}
 --- !u!114 &5211133151828398334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1830,6 +1829,7 @@ MonoBehaviour:
   _agentMoveToPlayer: {fileID: 5211133151828398334}
   _agroTriggerEnter: {fileID: 3534666128362834738}
   _agroTriggerExit: {fileID: 3666812677596297419}
+  _agentPatrol: {fileID: 1111474936639502434}
 --- !u!114 &5126608844793043368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1846,18 +1846,6 @@ MonoBehaviour:
   _attackZoneEnter: {fileID: 8988328773512262240}
   _attackZoneExit: {fileID: 6499047443404438914}
   _agentMoveToPlayer: {fileID: 5211133151828398334}
---- !u!114 &2271985347427505455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7551938292944909751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 138ce7a9660fc4cc4967172b40a2e4be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0
