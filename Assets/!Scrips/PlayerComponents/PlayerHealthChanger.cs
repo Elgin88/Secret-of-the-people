@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerChangerHealth : MonoBehaviour
+    public class PlayerHealthChanger : MonoBehaviour
     {
         [SerializeField] private PlayerAnimator _playerAnimator;
 
-        private float _maxtHealth = 100;
+        private float _starttHealth = 100;
         private float _currentHealth;
 
         public Action<float, float> OnHealthChanged;
@@ -29,10 +29,10 @@ namespace Scripts.PlayerComponents
 
         private void ResetHealth()
         {
-            _currentHealth = _maxtHealth;
+            _currentHealth = _starttHealth;
             InvokeOnHealthChanged();
         }
 
-        private void InvokeOnHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, _maxtHealth);
+        private void InvokeOnHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, _starttHealth);
     }
 }

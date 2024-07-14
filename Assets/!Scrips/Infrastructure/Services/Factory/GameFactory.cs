@@ -20,7 +20,7 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreateGraphy()
         {
-            return _assetProvider.Instantiate(AssetPath.Graphy);
+            return _assetProvider.Instantiate(AssetPath.CanvasGraphy);
         }
 
         public GameObject CreatePlayer()
@@ -34,12 +34,12 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreateCanvas()
         {
-            return _assetProvider.Instantiate(AssetPath.Canvas);
+            return _assetProvider.Instantiate(AssetPath.CanvasJoystick);
         }
 
         public GameObject CreateHealthBar()
         {
-            return _assetProvider.Instantiate(AssetPath.HealthBar);
+            return _assetProvider.Instantiate(AssetPath.CanvasHealthBar);
         }
 
         public GameObject CreateSkeleton()

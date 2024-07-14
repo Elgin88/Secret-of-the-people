@@ -77,7 +77,7 @@ namespace Scripts.EnemyComponents
             }
         }
 
-        private static void PlayerTakeHit(Collider collider) => collider.GetComponent<PlayerChangerHealth>().RemoveHealth(_damage);
+        private static void PlayerTakeHit(Collider collider) => collider.GetComponent<PlayerHealthChanger>().RemoveHealth(_damage);
         private void UpdateCooldown() => _currentColldown -= Time.deltaTime;
         private void SetIsAttackingTrue() => _isAtacking = true;
         private void SetIsAttackingFalse() => _isAtacking = false;
