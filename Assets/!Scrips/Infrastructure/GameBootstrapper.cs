@@ -15,8 +15,6 @@ namespace Scripts.CodeBase.Logic
         {
             SetSDKCallbacklogin(true);
             DontDestroyOnLoad(this);
-
-            Debug.Log("Сделать анимацию врага по скорости");
         }
 
         private IEnumerator Start()
