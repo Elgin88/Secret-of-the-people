@@ -32,7 +32,10 @@ namespace Scripts.CodeBase.Logic
             _game = new Game(new GameStateMachine(new SceneLoader(this), AllServices.Container));
         }
 
-        private static void SetSDKCallbacklogin(bool status) => YandexGamesSdk.CallbackLogging = status;
+        private static void SetSDKCallbacklogin(bool status)
+        {
+            YandexGamesSdk.CallbackLogging = status;
+        }
 
         private bool CheckIsEditor(Action onInitializeGame)
         {

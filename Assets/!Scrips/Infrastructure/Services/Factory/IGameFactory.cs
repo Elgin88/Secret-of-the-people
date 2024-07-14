@@ -16,5 +16,7 @@ namespace Scripts.CodeBase.Logic
         public GameObject CreateCanvas();
 
         public GameObject CreateSkeleton();
+
+        public GameObject CreateHealthBar();
     }
 }

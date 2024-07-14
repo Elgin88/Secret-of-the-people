@@ -12,10 +12,7 @@ namespace Scripts.PlayerComponents
 
         public Action<float, float> OnHealthChanged;
 
-        private void Awake()
-        {
-            ResetHealth();
-        }
+        private void Awake() => ResetHealth();
 
         public void AddHealth(float heal)
         {

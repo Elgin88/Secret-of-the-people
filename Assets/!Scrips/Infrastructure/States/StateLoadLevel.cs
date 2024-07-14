@@ -6,13 +6,13 @@ namespace Scripts.CodeBase.Logic
     {
         private GameStateMachine _gameStateMachine;
         private SceneLoader _sceneLoader;
-        private IGameFactory _gameFactory;
+        private IGameFactory _iGameFactory;
 
         public StateLoadLevel(GameStateMachine gameStateMachine, SceneLoader sceneLoader, AllServices allService)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
-            _gameFactory = allService.Get<IGameFactory>();
+            _iGameFactory = allService.Get<IGameFactory>();
         }
 
         public void Enter(string sceneName)
@@ -33,9 +33,10 @@ namespace Scripts.CodeBase.Logic
 
         private void CreateObjects()
         {
-            _gameFactory.CreateGraphy();
-            _gameFactory.CreatePlayer();
-            _gameFactory.CreateCanvas();
+            _iGameFactory.CreateGraphy();
+            _iGameFactory.CreatePlayer();
+            _iGameFactory.CreateCanvas();
+            _iGameFactory.CreateHealthBar();
         }
 
         private void TrySetIsGameReadyforSDK()

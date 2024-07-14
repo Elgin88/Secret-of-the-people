@@ -37,6 +37,11 @@ namespace Scripts.CodeBase.Logic
             return _assetProvider.Instantiate(AssetPath.Canvas);
         }
 
+        public GameObject CreateHealthBar()
+        {
+            return _assetProvider.Instantiate(AssetPath.HealthBar);
+        }
+
         public GameObject CreateSkeleton()
         {
             Vector3 position = FindObjectByTag(StaticTags.Enemy);
@@ -56,9 +61,6 @@ namespace Scripts.CodeBase.Logic
             }
         }
 
-        private static Vector3 FindObjectByTag(string path)
-        {
-            return GameObject.FindGameObjectWithTag(path).transform.position;
-        }
+        private static Vector3 FindObjectByTag(string path) => GameObject.FindGameObjectWithTag(path).transform.position;
     }
 }
