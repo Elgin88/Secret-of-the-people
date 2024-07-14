@@ -36,6 +36,7 @@ namespace Scripts.EnemyComponents
             Disable();
 
             Debug.Log("Сделать прохождение урона через UI");
+            Debug.Log("Сделать Hit игрока в отдельном крипте");
         }
 
         private void FixedUpdate()
