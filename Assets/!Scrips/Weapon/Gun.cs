@@ -4,7 +4,7 @@ namespace Scripts.Weapons
 {
     public class Gun : Weapon
     {
-        public override float IntervelBetweenBullets => throw new System.NotImplementedException();
+        public override float IntervelBullets => throw new System.NotImplementedException();
 
         public override float DurationReload => throw new System.NotImplementedException();
 
