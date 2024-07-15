@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9044219706593725082}
   - component: {fileID: 4483631623858313544}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: HitZone
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
