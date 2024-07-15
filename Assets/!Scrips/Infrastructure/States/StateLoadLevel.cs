@@ -26,7 +26,7 @@ namespace Scripts.CodeBase.Logic
 
         private void OnLoaded()
         {
-            TrySetIsGameReadyforSDK();
+            SetIsGameReadyforSDK();
             CreateObjects();
             SetNextState();
         }
@@ -39,7 +39,7 @@ namespace Scripts.CodeBase.Logic
             _iGameFactory.CreateHealthBar();
         }
 
-        private void TrySetIsGameReadyforSDK()
+        private void SetIsGameReadyforSDK()
         {
 #if !UNITY_EDITOR
             if (!Game.IsReady)

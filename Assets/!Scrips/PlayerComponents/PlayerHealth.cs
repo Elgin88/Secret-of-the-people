@@ -3,16 +3,21 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerHealthChanger : MonoBehaviour
+    public class PlayerHealth : MonoBehaviour
     {
         [SerializeField] private PlayerAnimator _playerAnimator;
 
-        private float _starttHealth = 100;
+        private float _startHealth = 100;
         private float _currentHealth;
 
         public Action<float, float> OnHealthChanged;
 
-        private void Awake() => ResetHealth();
+        public float StartHealth => _startHealth;
+
+        private void Awake()
+        {
+            ResetHealth();
+        }
 
         public void AddHealth(float heal)
         {
@@ -29,10 +34,10 @@ namespace Scripts.PlayerComponents
 
         private void ResetHealth()
         {
-            _currentHealth = _starttHealth;
+            _currentHealth = StartHealth;
             InvokeOnHealthChanged();
         }
 
-        private void InvokeOnHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, _starttHealth);
+        private void InvokeOnHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, StartHealth);
     }
 }

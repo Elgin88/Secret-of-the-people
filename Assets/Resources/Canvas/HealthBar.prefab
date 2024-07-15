@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2664003563148951314}
   - component: {fileID: 5301576693972313872}
   - component: {fileID: 7936369999776133646}
-  - component: {fileID: 912786071983715770}
+  - component: {fileID: 6069329239002910388}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &912786071983715770
+--- !u!114 &6069329239002910388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,9 +112,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 56401529780979112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73aa5e7b1e00149a7a9260db66714f66, type: 3}
+  m_Script: {fileID: 11500000, guid: 422ac7b8a4d7b684d945a56def6f49a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _slider: {fileID: 8142982179575829235}
+  _text: {fileID: 4789662245923744922}
 --- !u!1 &730992601141905707
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +559,7 @@ GameObject:
   - component: {fileID: 1932698445958597306}
   - component: {fileID: 8142982179575829235}
   m_Layer: 5
-  m_Name: BarSlider
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
