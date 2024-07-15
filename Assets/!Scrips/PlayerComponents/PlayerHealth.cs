@@ -5,8 +5,6 @@ namespace Scripts.PlayerComponents
 {
     public class PlayerHealth : MonoBehaviour
     {
-        [SerializeField] private PlayerAnimator _playerAnimator;
-
         private float _startHealth = 100;
         private float _currentHealth;
 
@@ -29,7 +27,6 @@ namespace Scripts.PlayerComponents
         {
             _currentHealth -= damage;
             InvokeOnHealthChanged();
-            _playerAnimator.PlayHit();
         }
 
         private void ResetHealth()

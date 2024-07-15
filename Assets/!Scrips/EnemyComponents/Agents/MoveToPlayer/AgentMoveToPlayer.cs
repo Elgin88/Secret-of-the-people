@@ -10,7 +10,7 @@ namespace Scripts.EnemyComponents
         [SerializeField] private NavMeshAgent _navMeshAgent;
 
         private const float _moveSpeed = 2;
-        private IGameFactory _gameFactory;
+        private IGameFactory _iGameFactory;
         private Transform _playerTransform;
 
         public float MoveSpeed => _moveSpeed;
@@ -34,9 +34,6 @@ namespace Scripts.EnemyComponents
         {
             SetComponents();
             Disable();
-
-            Debug.Log("Сделать Hit игрока в отдельном крипте");
-            Debug.Log("Сделать прохождение урона через UI");
         }
 
         private void FixedUpdate()
@@ -49,13 +46,13 @@ namespace Scripts.EnemyComponents
             _enemyAnimator = GetComponent<EnemyAnimator>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
 
-            _gameFactory = AllServices.Container.Get<IGameFactory>();
+            _iGameFactory = AllServices.Container.Get<IGameFactory>();
             _navMeshAgent.speed = _moveSpeed;
 
-            SetPlayer();
+            SetPlayerTransform();
         }
 
-        private void SetPlayer()
+        private void SetPlayerTransform()
         {
             if (IsPlayerCreate())
             {
@@ -67,9 +64,9 @@ namespace Scripts.EnemyComponents
             }
         }
 
-        private void SetPlayerAfterCreate() => _gameFactory.PlayerLoaded += SetPlayerTransfromFromGameFactory;
-        private bool IsPlayerCreate() => _gameFactory.Player != null;
-        private void SetPlayerTransfromFromGameFactory() => _playerTransform = _gameFactory.Player.transform;
+        private void SetPlayerAfterCreate() => _iGameFactory.PlayerLoaded += SetPlayerTransfromFromGameFactory;
+        private bool IsPlayerCreate() => _iGameFactory.Player != null;
+        private void SetPlayerTransfromFromGameFactory() => _playerTransform = _iGameFactory.Player.transform;
         private void NavMeshMoveOn() => _navMeshAgent.isStopped = false;
         private void NavMeshMoveOff() => _navMeshAgent.isStopped = true;
         private void Enable() => enabled = true;
