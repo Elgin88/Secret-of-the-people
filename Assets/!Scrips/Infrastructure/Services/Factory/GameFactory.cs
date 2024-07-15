@@ -8,8 +8,11 @@ namespace Scripts.CodeBase.Logic
     {
         private IAssetProvider _assetProvider;
         private GameObject _player;
+        private GameObject _healthBar;
 
         public GameObject Player => _player;
+
+        public GameObject HealthBar => _healthBar;
 
         public Action PlayerLoaded { get; set; }
 
@@ -25,8 +28,7 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreatePlayer()
         {
-            Vector3 position = FindObjectByTag(StaticTags.Player);
-            _player = CreateGameObject(AssetPath.Player, position);
+            _player = CreateGameObject(AssetPath.Player, GetPosition(StaticTags.Player));
             PlayerLoaded?.Invoke();
 
             return _player;
@@ -39,14 +41,14 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreateHealthBar()
         {
-            return _assetProvider.Instantiate(AssetPath.CanvasHealthBar);
+            _healthBar = _assetProvider.Instantiate(AssetPath.CanvasHealthBar);
+
+            return _healthBar;
         }
 
         public GameObject CreateSkeleton()
         {
-            Vector3 position = FindObjectByTag(StaticTags.Enemy);
-
-            return CreateGameObject(AssetPath.Sceleton, position);
+            return CreateGameObject(AssetPath.Sceleton, GetPosition(StaticTags.Enemy));
         }
 
         private GameObject CreateGameObject(string path, Vector3 position)
@@ -61,6 +63,6 @@ namespace Scripts.CodeBase.Logic
             }
         }
 
-        private static Vector3 FindObjectByTag(string path) => GameObject.FindGameObjectWithTag(path).transform.position;
+        private static Vector3 GetPosition(string path) => GameObject.FindGameObjectWithTag(path).transform.position;
     }
 }

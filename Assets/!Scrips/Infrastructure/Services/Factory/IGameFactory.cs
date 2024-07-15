@@ -7,6 +7,8 @@ namespace Scripts.CodeBase.Logic
     {
         public GameObject Player { get; }
 
+        public GameObject HealthBar { get; }
+
         public Action PlayerLoaded { get; set; }
 
         public GameObject CreateGraphy();
