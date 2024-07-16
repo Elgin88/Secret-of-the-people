@@ -22,6 +22,8 @@ namespace Scripts.PlayerComponents
             ResetMinDistance();
             ResetNearestTarget();
             SetNearestTarget();
+
+            Debug.Log("Ближайшая цель - " + _nearestTarget);
         }
 
         private void SetNearestTarget()
