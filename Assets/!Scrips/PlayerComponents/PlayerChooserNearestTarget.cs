@@ -1,32 +1,49 @@
-﻿using Scripts.Static;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
     public class PlayerChooserNearestTarget : MonoBehaviour
     {
-        private const int _radius = 3;
-        private Collider[] _results = new Collider[10];
-        private int _layerMask;
+        [SerializeField] private LayerMask _targetLayerMask;
+        [SerializeField] private int _range;
 
-        private void Awake()
-        {
-            _layerMask = 1 << StaticLayersNames.Enemy;
-        }
+        private const int maxTargetsCount = 10;
+        private float _minDistance;
+        private Collider[] _targets;
+        private Collider _nearestTarget;
+
+        public Collider NearestTargetCollider => _nearestTarget;
+
+        private void Awake() => _targets = new Collider[maxTargetsCount];
 
         public void FixedUpdate()
         {
-            Debug.Log("Дописать выбор цели");
+            SetTargets();
+            ResetMinDistance();
+            ResetNearestTarget();
+            SetNearestTarget();
+        }
 
-            int countOfEnemy = Physics.OverlapSphereNonAlloc(transform.position, _radius, _results, _layerMask);
-
-            Debug.Log(countOfEnemy);
-
-            if (countOfEnemy == 0)
+        private void SetNearestTarget()
+        {
+            foreach (Collider target in _targets)
             {
-                _results = new Collider[10];
+                if (target != null)
+                {
+                    float distance = CalculateDistance(target);
+
+                    if (distance < _minDistance)
+                    {
+                        _minDistance = distance;
+                        _nearestTarget = target;
+                    }
+                }
             }
         }
 
+        private void SetTargets() => Physics.OverlapSphereNonAlloc(transform.position, _range, _targets, _targetLayerMask);
+        private float CalculateDistance(Collider target) => Vector3.Distance(transform.position, target.transform.position);
+        private void ResetMinDistance() => _minDistance = _range;
+        private void ResetNearestTarget() => _nearestTarget = null;
     }
 }

@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerHit : MonoBehaviour
+    public class PlayerHiter : MonoBehaviour
     {
         [SerializeField] private PlayerAnimator _playerAnimator;
         [SerializeField] private PlayerHealth _playerHealth;
