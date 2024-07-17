@@ -3,7 +3,7 @@ using Scripts.PlayerComponents;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Scrips.Canvas
+namespace Scripts.Canvas
 {
     public class HealthBar : MonoBehaviour
     {
@@ -24,7 +24,7 @@ namespace Scrips.Canvas
         {
             UnsubscribeOnHealthChanged();
         }
-        
+
         private void OnHealthChanged(float current, float max)
         {
             SetSlider(current, max);
