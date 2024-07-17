@@ -49,5 +49,10 @@ namespace Scripts.PlayerComponents
         private void SetSpeedOfRunAnimation() => _animator.SetFloat(_runParametr, _playerMover.StartSpeed / _baseRunSpeedInAnimation);
         private void SetIsHitingTrue() => _isHiting = true;
         private void SetIsHitingFalse() => _isHiting = false;
+
+        internal void SetPlayDeadSpeedZero()
+        {
+            _animator.SetFloat(StaticPlayerParametrs.DeadParametr, 0);
+        }
     }
 }

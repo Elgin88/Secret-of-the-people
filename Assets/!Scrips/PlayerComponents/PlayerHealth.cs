@@ -12,6 +12,8 @@ namespace Scripts.PlayerComponents
 
         public float StartHealth => _startHealth;
 
+        public float CurrentHealth => _currentHealth;
+
         private void Awake()
         {
             ResetHealth();

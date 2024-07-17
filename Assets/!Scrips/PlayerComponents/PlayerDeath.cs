@@ -18,5 +18,10 @@ namespace Scripts.PlayerComponents
                 _playerAnimator.PlayDead();
             }
         }
+
+        private void Fell()
+        {
+            _playerAnimator.SetPlayDeadSpeedZero();
+        }
     }
 }

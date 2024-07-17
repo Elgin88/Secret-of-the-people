@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Scripts.PlayerComponents;
+using UnityEngine;
 
 namespace Scripts.EnemyComponents
 {
@@ -21,7 +22,7 @@ namespace Scripts.EnemyComponents
             _attackZoneEnter.IsPlayerEnter -= OnPlayerEnter;
         }
 
-        private void OnPlayerEnter(Collider collider)
+        private void OnPlayerEnter(Collider player)
         {
             DisableAgentMove();
             EnableAgentAttack();
