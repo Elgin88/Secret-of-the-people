@@ -515,7 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7649062014016374016}
   m_Layer: 12
-  m_Name: BulletPoint
+  m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1198,6 +1198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6940bba4e2b01e4799774d0c620c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weapon:
+  - {fileID: 6803005542469047186, guid: a86d999ca4e1444c98b16dfbcf69bd9b, type: 3}
+  _shootPoint: {fileID: 7649062014016374016}
 --- !u!114 &2421022248477797470
 MonoBehaviour:
   m_ObjectHideFlags: 0

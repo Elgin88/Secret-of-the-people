@@ -1,4 +1,4 @@
-﻿using Scripts.Bullets;
+﻿using System.Collections.Generic;
 using Scripts.Weapons;
 using UnityEngine;
 
@@ -6,11 +6,16 @@ namespace Scripts.PlayerComponents
 {
     public class PlayerShooter : MonoBehaviour
     {
-        private Bullet _bullet;
+        [SerializeField] private Transform _shootPoint;
+        [SerializeField] private List<Weapon> _weapon;
 
-        public void Shoot(Weapon weapon)
+        public Transform ShootPoint => _shootPoint;
+
+        private void FixedUpdate()
         {
-            weapon.Shoot(_bullet);
+            //Shoot(_weapon[0]);
         }
+
+        public void Shoot(Weapon weapon) => weapon.Shoot();
     }
 }
