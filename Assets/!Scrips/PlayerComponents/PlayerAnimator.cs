@@ -1,4 +1,5 @@
-﻿using Scripts.Static;
+﻿using System;
+using Scripts.Static;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
@@ -36,6 +37,11 @@ namespace Scripts.PlayerComponents
         private void OnHitEnded()
         {
             SetIsHitingFalse();
+        }
+
+        public void PlayDead()
+        {
+            _animator.Play(StaticPlayerParametrs.Dead);
         }
 
         private void RunOn() => _animator.SetBool(_run, true);

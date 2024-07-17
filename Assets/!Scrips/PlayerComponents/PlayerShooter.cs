@@ -13,7 +13,6 @@ namespace Scripts.PlayerComponents
 
         private void FixedUpdate()
         {
-            //Shoot(_weapon[0]);
         }
 
         public void Shoot(Weapon weapon) => weapon.Shoot();

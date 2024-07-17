@@ -47,4 +47,4 @@ MonoBehaviour:
   _intervalBetweenBullets: 1
   _durationReload: 2
   _numberBulletsInClip: 8
-  _bullet: {fileID: 8365293725231920729, guid: d461d4dc1412f4181b66fce25eec2a20, type: 3}
+  _gunBullet: {fileID: 8365293725231920729, guid: d461d4dc1412f4181b66fce25eec2a20, type: 3}
