@@ -78,13 +78,21 @@ namespace Scripts.EnemyComponents
         }
 
         private static void PlayerTakeHit(Collider collider) => collider.GetComponent<PlayerHealth>().RemoveHealth(_damage);
+
         private void UpdateCooldown() => _currentColldown -= Time.deltaTime;
+
         private void SetIsAttackingTrue() => _isAtacking = true;
+
         private void SetIsAttackingFalse() => _isAtacking = false;
+
         private void SetPlayerLayerMask() => _layerMask = 1 << StaticLayersNames.Player;
+
         private void SetHitZoneTransform() => _hitZoneTransform = _hitArea.transform;
+
         private void ResetCooldown() => _currentColldown = _startCooldown;
+
         private void Enable() => enabled = true;
+
         private void Disable() => enabled = false;
     }
 }

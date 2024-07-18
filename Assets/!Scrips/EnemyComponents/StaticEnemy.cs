@@ -1,6 +1,6 @@
 ﻿namespace Scripts.EnemyComponents
 {
-    public static class StaticEnemyParametrs
+    public static class StaticEnemy
     {
         public const string IsAttack = "IsAttack";
         public const string IsMove = "IsMove";

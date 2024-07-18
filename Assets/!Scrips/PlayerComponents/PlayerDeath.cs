@@ -21,7 +21,6 @@ namespace Scripts.PlayerComponents
 
         private void Fell()
         {
-            _playerAnimator.SetPlayDeadSpeedZero();
         }
     }
 }

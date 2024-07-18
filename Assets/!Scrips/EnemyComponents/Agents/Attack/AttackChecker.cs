@@ -1,25 +1,23 @@
-﻿using Scripts.PlayerComponents;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.EnemyComponents
 {
     public class AttackChecker : MonoBehaviour
     {
         [SerializeField] private AgentAttack _agentAttack;
-        [SerializeField] private AttackZoneEnter _attackZoneEnter;
-        [SerializeField] private AttackZoneExit _attackZoneExit;
+        [SerializeField] private AttackZone _attackZone;
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
 
         private void Awake()
         {
-            _attackZoneEnter.IsPlayerEnter += OnPlayerEnter;
-            _attackZoneExit.IsPlayerExit += OnPlayerExit;
+            _attackZone.IsPlayerEnter += OnPlayerEnter;
+            _attackZone.IsPlayerExit += OnPlayerExit;
         }
 
         private void OnDestroy()
         {
-            _attackZoneExit.IsPlayerExit -= OnPlayerExit;
-            _attackZoneEnter.IsPlayerEnter -= OnPlayerEnter;
+            _attackZone.IsPlayerExit -= OnPlayerExit;
+            _attackZone.IsPlayerEnter -= OnPlayerEnter;
         }
 
         private void OnPlayerEnter(Collider player)
@@ -35,8 +33,11 @@ namespace Scripts.EnemyComponents
         }
 
         private void EnableAgentAttack() => _agentAttack.EnableAgent();
+
         private void DisableAgentAttack() => _agentAttack.DisableAgent();
+
         private void DisableAgentMove() => _agentMoveToPlayer.DisableAgent();
+
         private void EnableAgentMove() => _agentMoveToPlayer.EnableAgent();
     }
 }

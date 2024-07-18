@@ -7,20 +7,20 @@ namespace Scripts.PlayerComponents
         [SerializeField] private LayerMask _targetLayerMask;
         [SerializeField] private int _range;
 
-        private const int maxTargetsCount = 10;
-        private float _minDistance;
         private Collider[] _targets;
         private Collider _nearestTarget;
+        private const int maxTargetsCount = 10;
+        private float _minDistance;
 
-        public Collider NearestTargetCollider => _nearestTarget;
+        public Collider NearestTarget => _nearestTarget;
 
         private void Awake() => _targets = new Collider[maxTargetsCount];
 
         public void FixedUpdate()
         {
-            SetTargets();
             ResetMinDistance();
             ResetNearestTarget();
+            FindTargets();
             SetNearestTarget();
         }
 
@@ -41,9 +41,12 @@ namespace Scripts.PlayerComponents
             }
         }
 
-        private void SetTargets() => Physics.OverlapSphereNonAlloc(transform.position, _range, _targets, _targetLayerMask);
+        private void FindTargets() => Physics.OverlapSphereNonAlloc(transform.position, _range, _targets, _targetLayerMask);
+
         private float CalculateDistance(Collider target) => Vector3.Distance(transform.position, target.transform.position);
+
         private void ResetMinDistance() => _minDistance = _range;
+
         private void ResetNearestTarget() => _nearestTarget = null;
     }
 }

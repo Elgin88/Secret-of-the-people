@@ -20,10 +20,7 @@ namespace Scripts.Canvas
             SubscribeOnHealthChanged();
         }
 
-        private void OnDestroy()
-        {
-            UnsubscribeOnHealthChanged();
-        }
+        private void OnDestroy() => UnsubscribeOnHealthChanged();
 
         private void OnHealthChanged(float current, float max)
         {
@@ -32,11 +29,17 @@ namespace Scripts.Canvas
         }
 
         private void SubscribeOnHealthChanged() => _playerHealth.OnHealthChanged += OnHealthChanged;
+
         private void UnsubscribeOnHealthChanged() => _playerHealth.OnHealthChanged -= OnHealthChanged;
+
         private void SetPlayerHealth() => _playerHealth = AllServices.Container.Get<IGameFactory>().Player.GetComponent<PlayerHealth>();
+
         private void ResetSlider() => _slider.value = 1;
+
         private void ResetValues() => _text.text = _playerHealth.StartHealth + "/" + _playerHealth.StartHealth;
+
         private void SetSlider(float current, float max) => _slider.value = current / max;
+
         private void SetValues(float current, float max) => _text.text = current + "/" + max;
     }
 }

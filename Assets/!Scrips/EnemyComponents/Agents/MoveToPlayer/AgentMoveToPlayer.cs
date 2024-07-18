@@ -65,15 +65,25 @@ namespace Scripts.EnemyComponents
         }
 
         private void SetPlayerAfterCreate() => _iGameFactory.PlayerLoaded += SetPlayerTransfromFromGameFactory;
+
         private bool IsPlayerCreate() => _iGameFactory.Player != null;
+
         private void SetPlayerTransfromFromGameFactory() => _playerTransform = _iGameFactory.Player.transform;
+
         private void NavMeshMoveOn() => _navMeshAgent.isStopped = false;
+
         private void NavMeshMoveOff() => _navMeshAgent.isStopped = true;
+
         private void Enable() => enabled = true;
+
         private void Disable() => enabled = false;
+
         private void PlayAnimationMove() => _enemyAnimator.PlayMove(_moveSpeed);
+
         private void PlayAnimationIdle() => _enemyAnimator.StopPlayMove();
+
         private void MoveToTarget() => _navMeshAgent.destination = _playerTransform.position;
+
         private void SetMoveSpeed() => _navMeshAgent.speed = _moveSpeed;
     }
 }
