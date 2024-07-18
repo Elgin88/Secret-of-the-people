@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0d83ac6d3a145f991f81202b0875d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 6221118972931903433}
 --- !u!1 &343301900546964085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,6 +1203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d7473f2fe3a6d4886e27c1ddabb1d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 1447010852039920532}
+  _attackZoneEnter: {fileID: 8988328773512262240}
 --- !u!1 &5789293460099171396
 GameObject:
   m_ObjectHideFlags: 0

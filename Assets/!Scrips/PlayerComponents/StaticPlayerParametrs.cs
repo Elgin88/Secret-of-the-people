@@ -1,4 +1,4 @@
-﻿namespace Scripts.Static
+﻿namespace Scripts.PlayerComponents
 {
     public static class StaticPlayerParametrs
     {
