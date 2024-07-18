@@ -52,15 +52,25 @@ namespace Scripts.PlayerComponents
         }
 
         private void SetAllServices() => _allServices = AllServices.Container;
+
         private void GetAxis() => _axis = _allServices.Get<IInputService>().Axis;
+
         private void ResetCurrentSpeed() => _currentSpeed = 0;
+
         private void AnimatorStopPlayRun() => _playerAnimator.StopPlayAnimationRun();
+
         private void SetCurrentSpeed() => _currentSpeed = _startSpeed;
+
         private void AnimatorPlayRun() => _playerAnimator.PlayAnimationRun();
+
         private bool PlayerIsHiting() => _playerAnimator.IsHiting;
+
         private void SetTargetRotation(Vector2 axis) => _targetRotaion = Quaternion.LookRotation(new Vector3(axis.x, 0, axis.y));
+
         private void SetTargetDirection(Vector2 axis) => _targetDirection = new Vector3(axis.x, 0, axis.y);
+
         private void ChangePlayerPosition(Vector3 targetDirection, float currentSpeed) => _characterController.Move(targetDirection * currentSpeed * Time.deltaTime);
+
         private void ChangePlayerRotation(Quaternion targetRotation, float deltaRotation) => _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
     }
 }

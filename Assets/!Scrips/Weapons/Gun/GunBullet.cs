@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Bullets
+namespace Scripts.Weapons
 {
     public class GunBullet : Bullet
     {

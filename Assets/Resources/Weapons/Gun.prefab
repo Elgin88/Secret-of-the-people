@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8870472843019841283}
-  - component: {fileID: 6803005542469047186}
+  - component: {fileID: 3602750998542159501}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6803005542469047186
+--- !u!114 &3602750998542159501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
