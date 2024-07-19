@@ -38,7 +38,7 @@ namespace Scripts.PlayerComponents
 
         private void PlayAnimationHit() => _animator.Play(_hit);
 
-        private void SetSpeedOfRunAnimation() => _animator.SetFloat(_runParametr, _playerMover.StartSpeed / _baseRunSpeedInAnimation);
+        private void SetSpeedOfRunAnimation() => _animator.SetFloat(_runParametr, _playerMover.StartMoveSpeed / _baseRunSpeedInAnimation);
 
         private void SetIsHitingTrue() => _isHiting = true;
 

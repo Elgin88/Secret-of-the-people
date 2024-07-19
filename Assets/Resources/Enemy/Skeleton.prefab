@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 6221118972931903433}
+  _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
 --- !u!1 &343301900546964085
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 4206345260115878526}
+  _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
 --- !u!1 &3402871146048972335
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +849,7 @@ GameObject:
   - component: {fileID: 9044219706593725082}
   - component: {fileID: 4483631623858313544}
   m_Layer: 15
-  m_Name: HitZone
+  m_Name: HitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -880,6 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b81804f9a554322802d65caea266cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
 --- !u!1 &4081714235084392569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyAnimator: {fileID: 3327770237539775674}
   _navMeshAgent: {fileID: 6423952209126061127}
+  _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
 --- !u!114 &84307021098974875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1665,7 +1669,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agentMoverToPlayer: {fileID: 5211133151828398334}
+  _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
   _enemyAnimator: {fileID: 3327770237539775674}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4096
   _hitArea: {fileID: 4483631623858313544}
 --- !u!114 &1111474936639502434
 MonoBehaviour:
@@ -1681,6 +1689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _navMeshAgent: {fileID: 6423952209126061127}
   _enemyAnimator: {fileID: 3327770237539775674}
+  _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
 --- !u!114 &3736759000335435549
 MonoBehaviour:
   m_ObjectHideFlags: 0

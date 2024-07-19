@@ -1,4 +1,5 @@
 using System;
+using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.EnemyComponents
@@ -6,19 +7,26 @@ namespace Scripts.EnemyComponents
     public class AttackZone : MonoBehaviour
     {
         [SerializeField] private SphereCollider _collider;
+        [SerializeField] private MonsterStaticData _staticData;
 
-        private float _radius = 1;
+        private float _radius;
 
         public Action<Collider> IsPlayerEnter;
 
         public Action<Collider> IsPlayerExit;
 
-        private void Awake() => SetRadius();
-
-        private void SetRadius() => _collider.radius = _radius;
+        private void Awake()
+        {
+            SetRadius();
+            SetRadiusCollider();
+        }
 
         private void OnTriggerEnter(Collider collider) => IsPlayerEnter?.Invoke(collider);
 
         private void OnTriggerExit(Collider collider) => IsPlayerExit?.Invoke(collider);
+
+        private void SetRadius() => _radius = _staticData.AttackRange;
+
+        private void SetRadiusCollider() => _collider.radius = _radius;
     }
 }

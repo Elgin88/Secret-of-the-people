@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Scripts.StaticData;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace Scripts.EnemyComponents
@@ -7,18 +8,27 @@ namespace Scripts.EnemyComponents
     {
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private EnemyAnimator _enemyAnimator;
+        [SerializeField] private MonsterStaticData _staticData;
 
-        private const float _maxSpeed = 1.5f;
-        private const int _minRange = -10;
-        private const int _maxRange = 10;
-        private const int _minDistanceToTarget = 2;
+        private float _patrolSpeed;
+        private int _maxPatrolRange;
+        private int _minPatrolRange;
+        private int _minDistanceToPlayer;
         private Vector3 _targetPosition;
+
+        private void Awake()
+        {
+            _patrolSpeed = _staticData.PatrolSpeed;
+            _maxPatrolRange = _staticData.MaxPatrolRange;
+            _minPatrolRange = _staticData.MinPatrolRange;
+            _minDistanceToPlayer = _staticData.MinDistanceToPlayer;
+        }
 
         public void EnableAgent()
         {
             Enable();
             SetIsMovedInNavMesh();
-            SetMaxSpeedInNavMesh(_maxSpeed);
+            SetMaxSpeedInNavMesh(_patrolSpeed);
             SetTargetPosition();
         }
 
@@ -55,15 +65,25 @@ namespace Scripts.EnemyComponents
         }
 
         private float CurrentSpeed() => _navMeshAgent.speed;
-        private int GetRandomDelta() => Random.Range(_minRange, _maxRange);
-        private bool IsMinDistanceToTarget() => Vector3.Distance(transform.position, _targetPosition) < _minDistanceToTarget;
+
+        private int GetRandomDelta() => Random.Range(_minPatrolRange, _maxPatrolRange);
+
+        private bool IsMinDistanceToTarget() => Vector3.Distance(transform.position, _targetPosition) < _minDistanceToPlayer;
+
         private void Enable() => enabled = true;
+
         private void Disable() => enabled = false;
+
         private void Move() => _navMeshAgent.destination = _targetPosition;
+
         private void SetIsMovedInNavMesh() => _navMeshAgent.isStopped = false;
+
         private void SetIsStopedInNavMesh() => _navMeshAgent.isStopped = true;
+
         private void SetMaxSpeedInNavMesh(float speed) => _navMeshAgent.speed = speed;
+
         private void PlayAnimationMove(float speed) => _enemyAnimator.PlayMove(speed);
+
         private void StopAnimationOfMove() => _enemyAnimator.StopPlayMove();
     }
 }

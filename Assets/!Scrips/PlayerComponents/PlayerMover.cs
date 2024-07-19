@@ -1,4 +1,5 @@
 ﻿using Scripts.CodeBase.Logic;
+using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
@@ -8,19 +9,26 @@ namespace Scripts.PlayerComponents
         [SerializeField] private Transform _transform;
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private PlayerAnimator _playerAnimator;
+        [SerializeField] private PlayerStaticData _staticData;
 
-        private const float _startSpeed = 7;
-        private const float _deltaRotation = 2500;
-        private const float _hitSpeedCoefficient = 0.2f;
+        private float _startMoveSpeed;
+        private float _deltaRotation;
+        private float _hitSpeedCoefficient;
         private float _currentSpeed;
         private AllServices _allServices;
         private Quaternion _targetRotaion;
         private Vector3 _targetDirection;
         private Vector2 _axis;
 
-        public float StartSpeed => _startSpeed;
+        public float StartMoveSpeed => _startMoveSpeed;
 
-        private void Awake() => SetAllServices();
+        private void Awake()
+        {
+            SetStartMoveSpeed();
+            SetDeltaRotation();
+            SetHitSpeedCoefficient();
+            SetAllServices();
+        }
 
         private void LateUpdate()
         {
@@ -59,7 +67,7 @@ namespace Scripts.PlayerComponents
 
         private void AnimatorStopPlayRun() => _playerAnimator.StopPlayAnimationRun();
 
-        private void SetCurrentSpeed() => _currentSpeed = _startSpeed;
+        private void SetCurrentSpeed() => _currentSpeed = _startMoveSpeed;
 
         private void AnimatorPlayRun() => _playerAnimator.PlayAnimationRun();
 
@@ -72,5 +80,11 @@ namespace Scripts.PlayerComponents
         private void ChangePlayerPosition(Vector3 targetDirection, float currentSpeed) => _characterController.Move(targetDirection * currentSpeed * Time.deltaTime);
 
         private void ChangePlayerRotation(Quaternion targetRotation, float deltaRotation) => _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
+
+        private void SetHitSpeedCoefficient() => _hitSpeedCoefficient = _staticData.HitSpeedCoefficient;
+
+        private void SetDeltaRotation() => _deltaRotation = _staticData.DeltaRotation;
+
+        private void SetStartMoveSpeed() => _startMoveSpeed = _staticData.StartMoveSpeed;
     }
 }

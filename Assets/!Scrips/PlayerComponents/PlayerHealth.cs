@@ -1,11 +1,14 @@
 ﻿using System;
+using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
     public class PlayerHealth : MonoBehaviour
     {
-        private float _startHealth = 100;
+        [SerializeField] private PlayerStaticData _staticData;
+
+        private float _startHealth;
         private float _currentHealth;
 
         public Action<float, float> OnHealthChanged;
@@ -14,7 +17,11 @@ namespace Scripts.PlayerComponents
 
         public float CurrentHealth => _currentHealth;
 
-        private void Awake() => ResetHealth();
+        private void Awake()
+        {
+            SetStartHealth();
+            ResetHealth();
+        }
 
         public void AddHealth(float heal)
         {
@@ -35,5 +42,7 @@ namespace Scripts.PlayerComponents
         }
 
         private void InvokeOnHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, StartHealth);
+
+        private void SetStartHealth() => _startHealth = _staticData.StartHealth;
     }
 }

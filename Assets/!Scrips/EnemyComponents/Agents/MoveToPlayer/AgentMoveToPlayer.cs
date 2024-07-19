@@ -1,4 +1,5 @@
 ﻿using Scripts.CodeBase.Logic;
+using Scripts.StaticData;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,12 +9,13 @@ namespace Scripts.EnemyComponents
     {
         [SerializeField] private EnemyAnimator _enemyAnimator;
         [SerializeField] private NavMeshAgent _navMeshAgent;
+        [SerializeField] private MonsterStaticData _staticData;
 
-        private const float _moveSpeed = 2;
+        private float _moveToPlayerSpeed;
         private IGameFactory _iGameFactory;
         private Transform _playerTransform;
 
-        public float MoveSpeed => _moveSpeed;
+        public float MoveToPlayerSpeed => _moveToPlayerSpeed;
 
         public void EnableAgent()
         {
@@ -36,18 +38,18 @@ namespace Scripts.EnemyComponents
             Disable();
         }
 
-        private void FixedUpdate()
-        {
-            MoveToTarget();
-        }
+        private void FixedUpdate() => MoveToTarget();
 
         private void SetComponents()
         {
+
             _enemyAnimator = GetComponent<EnemyAnimator>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
 
             _iGameFactory = AllServices.Container.Get<IGameFactory>();
-            _navMeshAgent.speed = _moveSpeed;
+
+            _moveToPlayerSpeed = _staticData.MoveToPlayerSpeed;
+            _navMeshAgent.speed = _moveToPlayerSpeed;
 
             SetPlayerTransform();
         }
@@ -78,12 +80,12 @@ namespace Scripts.EnemyComponents
 
         private void Disable() => enabled = false;
 
-        private void PlayAnimationMove() => _enemyAnimator.PlayMove(_moveSpeed);
+        private void PlayAnimationMove() => _enemyAnimator.PlayMove(_moveToPlayerSpeed);
 
         private void PlayAnimationIdle() => _enemyAnimator.StopPlayMove();
 
         private void MoveToTarget() => _navMeshAgent.destination = _playerTransform.position;
 
-        private void SetMoveSpeed() => _navMeshAgent.speed = _moveSpeed;
+        private void SetMoveSpeed() => _navMeshAgent.speed = _moveToPlayerSpeed;
     }
 }

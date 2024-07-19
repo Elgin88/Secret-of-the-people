@@ -1,6 +1,6 @@
-﻿using Scripts.PlayerComponents;
-using Scripts.Static;
-using System.Collections;
+﻿using System.Collections;
+using Scripts.PlayerComponents;
+using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.EnemyComponents
@@ -8,22 +8,22 @@ namespace Scripts.EnemyComponents
     public class AgentAttack : MonoBehaviour, IAgent
     {
         [SerializeField] private AgentMoveToPlayer _agentMoverToPlayer;
+        [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private EnemyAnimator _enemyAnimator;
-        [SerializeField] private HitArea _hitArea;
+        [SerializeField] private LayerMask _layerMask;
+        [SerializeField] private HitSphere _hitArea;
 
-        private const float _startCooldown = 0.5f;
-        private const float _damage = 10f;
-        private float _currentColldown;
+        private float _attackCooldown;
+        private float _damage;
+        private float _currentAttackColldown;
         private bool _isAtacking = false;
-        private int _layerMask;
-        private Transform _hitZoneTransform;
         private Collider[] _resultOfHit = new Collider[1];
 
         private void Awake()
         {
-            SetPlayerLayerMask();
-            SetHitZoneTransform();
-            ResetCooldown();
+            _attackCooldown = _staticData.AttackCooldawn;
+            _damage = _staticData.Damage;
+            _currentAttackColldown = _attackCooldown;
 
             Disable();
         }
@@ -34,7 +34,7 @@ namespace Scripts.EnemyComponents
             PlayAttackAnimation();
         }
 
-        public void DisableAgent() => Disable();
+        public void DisableAgent() => enabled = false;
 
         private void OnAttack()
         {
@@ -48,20 +48,20 @@ namespace Scripts.EnemyComponents
 
         private IEnumerator AttackAfterCooldown()
         {
-            while (_currentColldown > 0)
+            while (_currentAttackColldown > 0)
             {
                 UpdateCooldown();
                 yield return null;
             }
 
             ResetCooldown();
-            SetIsAttackingFalse();
             PlayAttackAnimation();
+            ResetIsAttacking();
         }
 
         private bool IsHit(out Collider hitCollider)
         {
-            int count = Physics.OverlapSphereNonAlloc(_hitZoneTransform.position, _hitArea.RadiusOfHitArea, _resultOfHit, _layerMask);
+            int count = Physics.OverlapSphereNonAlloc(_hitArea.transform.position, _hitArea.RadiusOfHitSphere, _resultOfHit, _layerMask);
 
             hitCollider = _resultOfHit[0];
 
@@ -73,26 +73,22 @@ namespace Scripts.EnemyComponents
             if (!_isAtacking)
             {
                 _enemyAnimator.PlayAttack();
-                SetIsAttackingTrue();
+                SetIsAttacking();
             }
         }
-
-        private static void PlayerTakeHit(Collider collider) => collider.GetComponent<PlayerHealth>().RemoveHealth(_damage);
-
-        private void UpdateCooldown() => _currentColldown -= Time.deltaTime;
-
-        private void SetIsAttackingTrue() => _isAtacking = true;
-
-        private void SetIsAttackingFalse() => _isAtacking = false;
-
-        private void SetPlayerLayerMask() => _layerMask = 1 << StaticLayersNames.Player;
-
-        private void SetHitZoneTransform() => _hitZoneTransform = _hitArea.transform;
-
-        private void ResetCooldown() => _currentColldown = _startCooldown;
 
         private void Enable() => enabled = true;
 
         private void Disable() => enabled = false;
+
+        private void PlayerTakeHit(Collider collider) => collider.GetComponent<PlayerHealth>().RemoveHealth(_damage);
+
+        private void UpdateCooldown() => _currentAttackColldown -= Time.deltaTime;
+
+        private void ResetCooldown() => _currentAttackColldown = _attackCooldown;
+
+        private void SetIsAttacking() => _isAtacking = true;
+
+        private void ResetIsAttacking() => _isAtacking = false;
     }
 }

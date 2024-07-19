@@ -1148,6 +1148,7 @@ MonoBehaviour:
   _transform: {fileID: 6420625687517408906}
   _characterController: {fileID: 439951020451176731}
   _playerAnimator: {fileID: 2980337302151610088}
+  _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
 --- !u!114 &2980337302151610088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69aa60bed6b3156499b3ae8d72b23db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
 --- !u!114 &1530984592792637890
 MonoBehaviour:
   m_ObjectHideFlags: 0
