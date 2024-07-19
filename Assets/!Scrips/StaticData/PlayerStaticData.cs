@@ -6,13 +6,13 @@ namespace Scripts.StaticData
 
     public class PlayerStaticData : ScriptableObject
     {
-        [Range(1, 100)] public int StartHealth;
+        [Range(1, 100)] public int Health;
 
-        [Range(1, 10)] public float StartRunSpeed;
+        [Range(1, 10)] public float RunSpeed;
 
-        [Range(1, 2000)] public int DeltaRotation;
+        [Range(1, 2000)] public int RotationSpeed;
 
-        [Range(0, 1f)] public float HitSpeedCoefficient;
+        [Range(0, 1f)] public float CoefficientDownSpeedAfterHit;
 
         [Range(0f, 10f)] public float AnimationBaseRunSpeed;
     }

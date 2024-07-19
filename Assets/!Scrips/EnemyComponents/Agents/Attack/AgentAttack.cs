@@ -21,10 +21,7 @@ namespace Scripts.EnemyComponents
 
         private void Awake()
         {
-            _attackCooldown = _staticData.AttackCooldawn;
-            _damage = _staticData.Damage;
-            _currentAttackColldown = _attackCooldown;
-
+            SetParametrs();
             Disable();
         }
 
@@ -51,12 +48,15 @@ namespace Scripts.EnemyComponents
             while (_currentAttackColldown > 0)
             {
                 UpdateCooldown();
+
                 yield return null;
             }
 
             ResetCooldown();
-            PlayAttackAnimation();
+
             ResetIsAttacking();
+
+            PlayAttackAnimation();
         }
 
         private bool IsHit(out Collider hitCollider)
@@ -75,6 +75,13 @@ namespace Scripts.EnemyComponents
                 _enemyAnimator.PlayAttack();
                 SetIsAttacking();
             }
+        }
+
+        private void SetParametrs()
+        {
+            _attackCooldown = _staticData.AttackCooldawn;
+            _damage = _staticData.Damage;
+            _currentAttackColldown = _attackCooldown;
         }
 
         private void Enable() => enabled = true;

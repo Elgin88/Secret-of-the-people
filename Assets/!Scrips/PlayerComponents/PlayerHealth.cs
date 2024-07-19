@@ -43,6 +43,6 @@ namespace Scripts.PlayerComponents
 
         private void InvokeOnHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, StartHealth);
 
-        private void SetStartHealth() => _startHealth = _staticData.StartHealth;
+        private void SetStartHealth() => _startHealth = _staticData.Health;
     }
 }

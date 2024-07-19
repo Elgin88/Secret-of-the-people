@@ -81,10 +81,10 @@ namespace Scripts.PlayerComponents
 
         private void ChangePlayerRotation(Quaternion targetRotation, float deltaRotation) => _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
 
-        private void SetHitSpeedCoefficient() => _hitSpeedCoefficient = _staticData.HitSpeedCoefficient;
+        private void SetHitSpeedCoefficient() => _hitSpeedCoefficient = _staticData.CoefficientDownSpeedAfterHit;
 
-        private void SetDeltaRotation() => _deltaRotation = _staticData.DeltaRotation;
+        private void SetDeltaRotation() => _deltaRotation = _staticData.RotationSpeed;
 
-        private void SetStartMoveSpeed() => _startMoveSpeed = _staticData.StartRunSpeed;
+        private void SetStartMoveSpeed() => _startMoveSpeed = _staticData.RunSpeed;
     }
 }

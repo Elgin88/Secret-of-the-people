@@ -11,11 +11,17 @@ namespace Scripts.EnemyComponents
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private MonsterStaticData _staticData;
 
-        private float _moveToPlayerSpeed;
         private IGameFactory _iGameFactory;
         private Transform _playerTransform;
+        private float _moveToPlayerSpeed;
 
         public float MoveToPlayerSpeed => _moveToPlayerSpeed;
+
+        private void Awake()
+        {
+            SetComponents();
+            Disable();
+        }
 
         public void EnableAgent()
         {
@@ -32,17 +38,10 @@ namespace Scripts.EnemyComponents
             Disable();
         }
 
-        private void Awake()
-        {
-            SetComponents();
-            Disable();
-        }
-
         private void FixedUpdate() => MoveToTarget();
 
         private void SetComponents()
         {
-
             _enemyAnimator = GetComponent<EnemyAnimator>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
 

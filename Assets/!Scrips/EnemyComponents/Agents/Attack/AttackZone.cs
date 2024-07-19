@@ -18,7 +18,7 @@ namespace Scripts.EnemyComponents
         private void Awake()
         {
             SetRadius();
-            SetRadiusCollider();
+            SetRadiusOfRadius();
         }
 
         private void OnTriggerEnter(Collider collider) => IsPlayerEnter?.Invoke(collider);
@@ -27,6 +27,6 @@ namespace Scripts.EnemyComponents
 
         private void SetRadius() => _radius = _staticData.AttackRange;
 
-        private void SetRadiusCollider() => _collider.radius = _radius;
+        private void SetRadiusOfRadius() => _collider.radius = _radius;
     }
 }
