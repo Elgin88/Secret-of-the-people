@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Scripts.StaticData;
+using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
@@ -6,42 +7,47 @@ namespace Scripts.PlayerComponents
     {
         [SerializeField] private PlayerMover _playerMover;
         [SerializeField] private Animator _animator;
+        [SerializeField] private PlayerStaticData _staticData;
 
-        private float _baseRunSpeedInAnimation = 6.5f;
-        private static readonly int _run = Animator.StringToHash(PlayerStatic
+        private float _baseSrunSpeedAnimation;
+        private readonly int _runHash = Animator.StringToHash(PlayerStatic
             .IsRun);
-        private static readonly int _runParametr = Animator.StringToHash(PlayerStatic.RunParametr);
-        private static readonly int _hit = Animator.StringToHash(PlayerStatic.Hit);
+        private readonly int _runParametrHash
+            = Animator.StringToHash(PlayerStatic.RunParametr);
+        private readonly int _hitHash = Animator.StringToHash(PlayerStatic.Hit);
+        private int _deadHash = Animator.StringToHash(PlayerStatic.Dead);
         private bool _isHiting;
 
         public bool IsHiting => _isHiting;
 
-        public void PlayAnimationRun()
+        private void Awake() => _baseSrunSpeedAnimation = _staticData.AnimationBaseRunSpeed;
+
+        public void PlayRunAnimation()
         {
-            RunOn();
-            SetSpeedOfRunAnimation();
+            SetRunParametr();
+            PlayRun();
         }
 
-        public void StopPlayAnimationRun() => _animator.SetBool(_run, false);
+        public void StopPlayRunAnimation() => _animator.SetBool(_runHash, false);
 
-        public void PlayHit()
+        public void PlayHitAnimation()
         {
-            PlayAnimationHit();
-            SetIsHitingTrue();
+            SetIsHiting();
+            PlayHit();
         }
 
-        public void PlayDead() => _animator.Play(PlayerStatic.Dead);
+        public void PlayDead() => _animator.Play(_deadHash);
 
-        private void OnHitEnded() => SetIsHitingFalse();
+        private void OnHitEnded() => ResetIsHiting();
 
-        private void RunOn() => _animator.SetBool(_run, true);
+        private void PlayHit() => _animator.Play(_hitHash);
 
-        private void PlayAnimationHit() => _animator.Play(_hit);
+        private void SetIsHiting() => _isHiting = true;
 
-        private void SetSpeedOfRunAnimation() => _animator.SetFloat(_runParametr, _playerMover.StartMoveSpeed / _baseRunSpeedInAnimation);
+        private void ResetIsHiting() => _isHiting = false;
 
-        private void SetIsHitingTrue() => _isHiting = true;
+        private void PlayRun() => _animator.SetBool(_runHash, true);
 
-        private void SetIsHitingFalse() => _isHiting = false;
+        private void SetRunParametr() => _animator.SetFloat(_runParametrHash, _playerMover.StartMoveSpeed / _baseSrunSpeedAnimation);
     }
 }

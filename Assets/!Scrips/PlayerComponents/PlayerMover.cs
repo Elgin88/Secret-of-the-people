@@ -65,11 +65,11 @@ namespace Scripts.PlayerComponents
 
         private void ResetCurrentSpeed() => _currentSpeed = 0;
 
-        private void AnimatorStopPlayRun() => _playerAnimator.StopPlayAnimationRun();
+        private void AnimatorStopPlayRun() => _playerAnimator.StopPlayRunAnimation();
 
         private void SetCurrentSpeed() => _currentSpeed = _startMoveSpeed;
 
-        private void AnimatorPlayRun() => _playerAnimator.PlayAnimationRun();
+        private void AnimatorPlayRun() => _playerAnimator.PlayRunAnimation();
 
         private bool PlayerIsHiting() => _playerAnimator.IsHiting;
 
@@ -85,6 +85,6 @@ namespace Scripts.PlayerComponents
 
         private void SetDeltaRotation() => _deltaRotation = _staticData.DeltaRotation;
 
-        private void SetStartMoveSpeed() => _startMoveSpeed = _staticData.StartMoveSpeed;
+        private void SetStartMoveSpeed() => _startMoveSpeed = _staticData.StartRunSpeed;
     }
 }

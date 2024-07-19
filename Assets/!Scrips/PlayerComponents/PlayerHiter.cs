@@ -12,6 +12,6 @@ namespace Scripts.PlayerComponents
         private void OnDestroy() => _playerHealth.OnHealthChanged -= OnPlayerHealthChanged;
 
         private void OnPlayerHealthChanged(float current, float start) => Hit();
-        private void Hit() => _playerAnimator.PlayHit();
+        private void Hit() => _playerAnimator.PlayHitAnimation();
     }
 }
