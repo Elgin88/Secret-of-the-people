@@ -1,9 +1,8 @@
-﻿using Scripts.Canvas;
-using Scripts.EnemyComponents;
-using Scripts.PlayerComponents;
-using Scripts.Static;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Scripts.Canvas;
+using Scripts.EnemyComponents;
+using Scripts.Static;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Logic
@@ -13,12 +12,13 @@ namespace Scripts.CodeBase.Logic
         private IAssetProvider _assetProvider;
         private GameObject _player;
         private GameObject _healthBar;
+        private List<GameObject> _skeletons;
 
         public GameObject Player => _player;
 
         public GameObject HealthBar => _healthBar;
 
-        public Action PlayerLoaded { get; set; }
+        public List<GameObject> Skeletons => _skeletons;
 
         public GameFactory(IAssetProvider assetProvider)
         {
@@ -33,7 +33,6 @@ namespace Scripts.CodeBase.Logic
         public GameObject CreatePlayer()
         {
             _player = CreateGameObject(AssetPath.Player, GetPosition(StaticTags.PlayerInitialPoint));
-            PlayerLoaded?.Invoke();
 
             return _player;
         }
@@ -51,7 +50,7 @@ namespace Scripts.CodeBase.Logic
 
         public List<GameObject> CreateSkeletons(IGameFactory iGameFactory)
         {
-            List<GameObject> skeletons = new List<GameObject>();
+            _skeletons = new List<GameObject>();
 
             GameObject[] skeletonInitialPoints = GameObject.FindGameObjectsWithTag(StaticTags.SkeletonInitialPoint);
 
@@ -65,10 +64,11 @@ namespace Scripts.CodeBase.Logic
                 GameObject skeleton = CreateGameObject(AssetPath.Sceleton, sceletonInitialPoint.transform.position);
 
                 skeleton.GetComponent<AgentMoveToPlayer>().Construct(iGameFactory);
-                skeletons.Add(skeleton);
+
+                _skeletons.Add(skeleton);
             }
 
-            return skeletons;
+            return _skeletons;
         }
 
         private GameObject CreateGameObject(string path, Vector3 position)

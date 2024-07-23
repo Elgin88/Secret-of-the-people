@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Logic
@@ -10,7 +9,7 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject HealthBar { get; }
 
-        public Action PlayerLoaded { get; set; }
+        public List<GameObject> Skeletons { get; }
 
         public GameObject CreateGraphy();
 
@@ -18,8 +17,8 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreateCanvasJoystick();
 
-        public List<GameObject> CreateSkeletons(IGameFactory _iGameFactory);
+        public List<GameObject> CreateSkeletons(IGameFactory iGameFactory);
 
-        public GameObject CreateHealthBar(IGameFactory _iGameFactory);
+        public GameObject CreateHealthBar(IGameFactory iGameFactory);
     }
 }
