@@ -8,5 +8,6 @@
         public const string CanvasJoystick = "Canvas/Canvas";
         public const string CanvasHealthBar = "Canvas/HealthBar";
         public const string CanvasCurtain = "Canvas/Curtain";
+
     }
 }
