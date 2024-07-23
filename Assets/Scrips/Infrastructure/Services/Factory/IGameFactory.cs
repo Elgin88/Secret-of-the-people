@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Logic
@@ -15,10 +16,10 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreatePlayer();
 
-        public GameObject CreateCanvas();
+        public GameObject CreateCanvasJoystick();
 
-        public GameObject CreateSkeleton();
+        public List<GameObject> CreateSkeletons(IGameFactory _iGameFactory);
 
-        public GameObject CreateHealthBar();
+        public GameObject CreateHealthBar(IGameFactory _iGameFactory);
     }
 }

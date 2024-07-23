@@ -17,10 +17,17 @@ namespace Scripts.EnemyComponents
 
         public float MoveToPlayerSpeed => _moveToPlayerSpeed;
 
-        private void Awake()
+        private void Start()
         {
             SetComponents();
             Disable();
+        }
+
+        private void FixedUpdate() => MoveToTarget();
+
+        public void Construct(IGameFactory iGameFactory)
+        {
+            _iGameFactory = iGameFactory;
         }
 
         public void EnableAgent()
@@ -38,14 +45,10 @@ namespace Scripts.EnemyComponents
             Disable();
         }
 
-        private void FixedUpdate() => MoveToTarget();
-
         private void SetComponents()
         {
             _enemyAnimator = GetComponent<EnemyAnimator>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
-
-            _iGameFactory = AllServices.Container.Get<IGameFactory>();
 
             _moveToPlayerSpeed = _staticData.MoveToPlayerSpeed;
             _navMeshAgent.speed = _moveToPlayerSpeed;
@@ -53,23 +56,7 @@ namespace Scripts.EnemyComponents
             SetPlayerTransform();
         }
 
-        private void SetPlayerTransform()
-        {
-            if (IsPlayerCreate())
-            {
-                SetPlayerTransfromFromGameFactory();
-            }
-            else
-            {
-                SetPlayerAfterCreate();
-            }
-        }
-
-        private void SetPlayerAfterCreate() => _iGameFactory.PlayerLoaded += SetPlayerTransfromFromGameFactory;
-
-        private bool IsPlayerCreate() => _iGameFactory.Player != null;
-
-        private void SetPlayerTransfromFromGameFactory() => _playerTransform = _iGameFactory.Player.transform;
+        private void SetPlayerTransform() => _playerTransform = _iGameFactory.Player.transform;
 
         private void NavMeshMoveOn() => _navMeshAgent.isStopped = false;
 

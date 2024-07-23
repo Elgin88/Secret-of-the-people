@@ -1,4 +1,5 @@
 ﻿using Agava.YandexGames;
+using UnityEngine;
 
 namespace Scripts.CodeBase.Logic
 {
@@ -33,10 +34,11 @@ namespace Scripts.CodeBase.Logic
 
         private void CreateObjects()
         {
+            _iGameFactory.CreateSkeletons(_iGameFactory);
             _iGameFactory.CreateGraphy();
+            _iGameFactory.CreateCanvasJoystick();
             _iGameFactory.CreatePlayer();
-            _iGameFactory.CreateCanvas();
-            _iGameFactory.CreateHealthBar();
+            _iGameFactory.CreateHealthBar(_iGameFactory);
         }
 
         private void SetIsGameReadyforSDK()

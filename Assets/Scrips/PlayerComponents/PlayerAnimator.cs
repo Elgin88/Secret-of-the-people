@@ -15,7 +15,7 @@ namespace Scripts.PlayerComponents
         private readonly int _runParametrHash
             = Animator.StringToHash(PlayerStatic.RunParametr);
         private readonly int _hitHash = Animator.StringToHash(PlayerStatic.Hit);
-        private int _deadHash = Animator.StringToHash(PlayerStatic.Dead);
+        private readonly int _deadHash = Animator.StringToHash(PlayerStatic.Dead);
         private bool _isHiting;
 
         public bool IsHiting => _isHiting;
