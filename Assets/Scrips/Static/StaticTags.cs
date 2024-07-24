@@ -2,7 +2,7 @@
 {
     public static class StaticTags
     {
-        public static string PlayerInitialPoint = "PlayerInitialPoint";
-        public static string SkeletonInitialPoint = "SkeletonInitialPoint";
+        public static string PlayerSpawnPoint = "PlayerSpawnPoint";
+        public static string SkeletonSpawnPoint = "SkeletonSpawnPoint";
     }
 }

@@ -13,10 +13,7 @@ namespace Scripts.Canvas
         private PlayerHealth _playerHealth;
         private IGameFactory _iGameFactory;
 
-        public void Construct(IGameFactory iGameFactory)
-        {
-            _iGameFactory = iGameFactory;
-        }
+        public void Construct(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
 
         private void Start()
         {
@@ -24,6 +21,9 @@ namespace Scripts.Canvas
             ResetValues();
             ResetSlider();
             SubscribeOnHealthChanged();
+
+            Debug.Log("Добавить физику на игрока и скелетов");
+            Debug.Log("Починить падение игрока");
         }
 
         private void OnDestroy() => UnsubscribeOnHealthChanged();

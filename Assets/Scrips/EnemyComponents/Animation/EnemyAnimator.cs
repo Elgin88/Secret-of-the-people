@@ -1,4 +1,4 @@
-﻿using Scripts.Static;
+﻿using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.EnemyComponents
@@ -6,11 +6,17 @@ namespace Scripts.EnemyComponents
     public class EnemyAnimator : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
+        [SerializeField] private MonsterStaticData _staticData;
 
-        private const float _baseAnimationMoveSpeed = 0.6f;
+        private float _baseAnimationMoveSpeed;
         private readonly int _attack = Animator.StringToHash(StaticEnemy.IsAttack);
         private readonly int _move = Animator.StringToHash(StaticEnemy.IsMove);
         private readonly int _speedParametr = Animator.StringToHash(StaticEnemy.MoveParametr);
+
+        private void Awake()
+        {
+            _baseAnimationMoveSpeed = _staticData.AnimationBaseMoveSpeed;
+        }
 
         public void PlayMove(float speed)
         {

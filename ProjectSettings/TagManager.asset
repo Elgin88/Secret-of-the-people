@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - PlayerSpawnPoint
+  - SkeletonSpawnPoint
   - PlayerInitialPoint
   - SkeletonInitialPoint
-  - EnemyInitialPoint
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Enemy
   - EnemyAgro
   - EnemyAttack
-  - 
+  - Ground
   - 
   - 
   - 
