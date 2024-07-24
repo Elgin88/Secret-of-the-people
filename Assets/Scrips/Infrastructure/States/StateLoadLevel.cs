@@ -1,4 +1,6 @@
-﻿using Agava.YandexGames;
+﻿using System.Collections.Generic;
+using Agava.YandexGames;
+using Scripts.EnemyComponents;
 using Scripts.PlayerComponents;
 using UnityEngine;
 
@@ -35,12 +37,25 @@ namespace Scripts.CodeBase.Logic
 
         private void CreateObjects()
         {
-            _iGameFactory.CreateSkeletons(_iGameFactory);
+            CreateCkeletons();
+
             _iGameFactory.CreateGraphy();
             _iGameFactory.CreateCanvasJoystick();
             _iGameFactory.CreatePlayer();
-            _iGameFactory.CreateHealthBar(_iGameFactory.Player.GetComponent<PlayerHealth>());
+            _iGameFactory.CreateHealthBar(GetPlayerHealth());
         }
+
+        private void CreateCkeletons()
+        {
+            List<GameObject> skeletons = _iGameFactory.CreateSkeletons(_iGameFactory);
+
+            foreach (var skeleton in skeletons)
+            {
+                skeleton.GetComponent<AgentAttack>().Construct(_iGameFactory);
+            }
+        }
+
+        private PlayerHealth GetPlayerHealth() => _iGameFactory.Player.GetComponent<PlayerHealth>();
 
         private void SetIsGameReadyforSDK()
         {

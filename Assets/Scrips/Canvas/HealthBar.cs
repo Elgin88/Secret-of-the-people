@@ -1,5 +1,4 @@
-﻿using Scripts.CodeBase.Logic;
-using Scripts.PlayerComponents;
+﻿using Scripts.PlayerComponents;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +19,7 @@ namespace Scripts.Canvas
             ResetBarSlider();
             SubscribeOnHealthChanged();
 
-            Debug.Log("Починить падение игрока");
+            Debug.Log("Отключить перемещение игрока при падении");
         }
 
         private void OnDestroy() => UnsubscribeOnHealthChanged();
