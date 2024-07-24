@@ -27,5 +27,7 @@ namespace Scripts.StaticData
         [Range(-10f, 0f)] public int MinPatrolRange;
 
         [Range(0f, 3f)] public int MinDistanceToPlayer;
+
+        [Range(0f, 1f)] public float AnimationBaseMoveSpeed;
     }
 }

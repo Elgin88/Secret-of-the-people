@@ -1,4 +1,5 @@
-﻿using Scripts.StaticData;
+﻿using System.Collections;
+using Scripts.StaticData;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,19 +10,28 @@ namespace Scripts.EnemyComponents
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private EnemyAnimator _enemyAnimator;
         [SerializeField] private MonsterStaticData _staticData;
+        [SerializeField] private LayerMask _groundMask;
 
+        private const int rayLength = 5;
         private float _patrolSpeed;
         private int _maxPatrolRange;
         private int _minPatrolRange;
         private int _minDistanceToPlayer;
         private Vector3 _targetPosition;
 
-        private void Awake()
+        private void Awake() => SetParametrs();
+
+        private void Start() => EnableAgent();
+
+        private void Update()
         {
-            _patrolSpeed = _staticData.PatrolSpeed;
-            _maxPatrolRange = _staticData.MaxPatrolRange;
-            _minPatrolRange = _staticData.MinPatrolRange;
-            _minDistanceToPlayer = _staticData.MinDistanceToPlayer;
+            Move();
+            PlayAnimationMove(GetCurrentSpeed());
+
+            if (IsMinDistanceToTarget())
+            {
+                StartCoroutine(SetTargetPosition());
+            }
         }
 
         public void EnableAgent()
@@ -39,24 +49,27 @@ namespace Scripts.EnemyComponents
             Disable();
         }
 
-        private void Start() => EnableAgent();
-
-        private void Update()
+        private void SetParametrs()
         {
-            Move();
-            PlayAnimationMove(CurrentSpeed());
-            TryChangeTargetPosition();
+            _patrolSpeed = _staticData.PatrolSpeed;
+            _maxPatrolRange = _staticData.MaxPatrolRange;
+            _minPatrolRange = _staticData.MinPatrolRange;
+            _minDistanceToPlayer = _staticData.MinDistanceToPlayer;
         }
 
-        private void TryChangeTargetPosition()
+        private IEnumerator SetTargetPosition()
         {
-            if (IsMinDistanceToTarget())
+            SetRandomTargetPosition();
+
+            while (!TargetIsOnGround())
             {
-                SetTargetPosition();
+                SetRandomTargetPosition();
+
+                yield return null;
             }
         }
 
-        private void SetTargetPosition()
+        private void SetRandomTargetPosition()
         {
             float deltaX = GetRandomDelta();
             float deltaZ = GetRandomDelta();
@@ -64,7 +77,9 @@ namespace Scripts.EnemyComponents
             _targetPosition = new Vector3(transform.position.x + deltaX, transform.position.y, transform.position.z + deltaZ);
         }
 
-        private float CurrentSpeed() => _navMeshAgent.speed;
+        private bool TargetIsOnGround() => Physics.Raycast(_targetPosition, Vector3.down, rayLength, _groundMask);
+
+        private float GetCurrentSpeed() => _navMeshAgent.speed;
 
         private int GetRandomDelta() => Random.Range(_minPatrolRange, _maxPatrolRange);
 

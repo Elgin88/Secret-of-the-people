@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Scripts.Canvas;
 using Scripts.EnemyComponents;
 using Scripts.Static;
@@ -9,16 +8,14 @@ namespace Scripts.CodeBase.Logic
 {
     public class GameFactory : IGameFactory
     {
-        private IAssetProvider _assetProvider;
         private GameObject _player;
         private GameObject _healthBar;
         private List<GameObject> _skeletons;
+        private IAssetProvider _assetProvider;
 
         public GameObject Player => _player;
 
         public GameObject HealthBar => _healthBar;
-
-        public List<GameObject> Skeletons => _skeletons;
 
         public GameFactory(IAssetProvider assetProvider)
         {
@@ -32,7 +29,7 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreatePlayer()
         {
-            _player = CreateGameObject(AssetPath.Player, GetPosition(StaticTags.PlayerInitialPoint));
+            _player = CreateGameObject(AssetPath.Player, GetPosition(StaticTags.PlayerSpawnPoint));
 
             return _player;
         }
@@ -52,7 +49,7 @@ namespace Scripts.CodeBase.Logic
         {
             _skeletons = new List<GameObject>();
 
-            GameObject[] skeletonInitialPoints = GameObject.FindGameObjectsWithTag(StaticTags.SkeletonInitialPoint);
+            GameObject[] skeletonInitialPoints = GameObject.FindGameObjectsWithTag(StaticTags.SkeletonSpawnPoint);
 
             if (skeletonInitialPoints.Length == 0)
             {
@@ -83,6 +80,6 @@ namespace Scripts.CodeBase.Logic
             }
         }
 
-        private static Vector3 GetPosition(string path) => GameObject.FindGameObjectWithTag(path).transform.position;
+        private static Vector3 GetPosition(string tag) => GameObject.FindGameObjectWithTag(tag).transform.position;
     }
 }

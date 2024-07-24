@@ -18,8 +18,9 @@ MonoBehaviour:
   AgroRange: 8
   AttackCooldawn: 0.5
   RadiusOfHitSphere: 0.5
-  MoveToPlayerSpeed: 3
-  PatrolSpeed: 2
+  MoveToPlayerSpeed: 2
+  PatrolSpeed: 1
   MaxPatrolRange: 10
   MinPatrolRange: -10
   MinDistanceToPlayer: 2
+  AnimationBaseMoveSpeed: 0.6

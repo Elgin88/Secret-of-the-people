@@ -1565,7 +1565,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7551938292944909751}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.1
+  m_Radius: 0.25
   m_Speed: 0.8
   m_Acceleration: 15
   avoidancePriority: 50
@@ -1597,7 +1597,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.85, z: 0}
@@ -1609,7 +1609,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7551938292944909751}
   serializedVersion: 4
-  m_Mass: 30
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1624,7 +1624,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1641,6 +1641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3847802125550302583}
+  _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
 --- !u!114 &5211133151828398334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1690,6 +1691,9 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 6423952209126061127}
   _enemyAnimator: {fileID: 3327770237539775674}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
+  _groundMask:
+    serializedVersion: 2
+    m_Bits: 65536
 --- !u!114 &3736759000335435549
 MonoBehaviour:
   m_ObjectHideFlags: 0
