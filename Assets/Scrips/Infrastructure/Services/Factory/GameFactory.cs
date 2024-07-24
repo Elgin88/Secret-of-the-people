@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Scripts.Canvas;
 using Scripts.EnemyComponents;
+using Scripts.PlayerComponents;
 using Scripts.Static;
 using UnityEngine;
 
@@ -36,11 +37,11 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreateCanvasJoystick() => _assetProvider.Instantiate(AssetPath.CanvasJoystick);
 
-        public GameObject CreateHealthBar(IGameFactory iGameFactory)
+        public GameObject CreateHealthBar(PlayerHealth playerHealth)
         {
             _healthBar = _assetProvider.Instantiate(AssetPath.CanvasHealthBar);
 
-            _healthBar.GetComponent<HealthBar>().Construct(iGameFactory);
+            _healthBar.GetComponent<HealthBar>().Construct(playerHealth);
 
             return _healthBar;
         }

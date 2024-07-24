@@ -11,18 +11,15 @@ namespace Scripts.Canvas
         [SerializeField] private Text _text;
 
         private PlayerHealth _playerHealth;
-        private IGameFactory _iGameFactory;
 
-        public void Construct(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
+        public void Construct(PlayerHealth playerHealth) => _playerHealth = playerHealth;
 
         private void Start()
         {
-            SetPlayerHealth();
-            ResetValues();
-            ResetSlider();
+            ResetBarValues();
+            ResetBarSlider();
             SubscribeOnHealthChanged();
 
-            Debug.Log("Добавить физику на игрока и скелетов");
             Debug.Log("Починить падение игрока");
         }
 
@@ -38,11 +35,9 @@ namespace Scripts.Canvas
 
         private void UnsubscribeOnHealthChanged() => _playerHealth.OnHealthChanged -= OnHealthChanged;
 
-        private void SetPlayerHealth() => _playerHealth = _iGameFactory.Player.GetComponent<PlayerHealth>();
+        private void ResetBarSlider() => _slider.value = 1;
 
-        private void ResetSlider() => _slider.value = 1;
-
-        private void ResetValues() => _text.text = _playerHealth.StartHealth + "/" + _playerHealth.StartHealth;
+        private void ResetBarValues() => _text.text = _playerHealth.StartHealth + "/" + _playerHealth.StartHealth;
 
         private void SetSlider(float current, float max) => _slider.value = current / max;
 
