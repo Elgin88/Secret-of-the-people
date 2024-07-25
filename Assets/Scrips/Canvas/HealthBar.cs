@@ -18,8 +18,6 @@ namespace Scripts.Canvas
             ResetBarValues();
             ResetBarSlider();
             SubscribeOnHealthChanged();
-
-            Debug.Log("Отключить перемещение игрока при падении");
         }
 
         private void OnDestroy() => UnsubscribeOnHealthChanged();

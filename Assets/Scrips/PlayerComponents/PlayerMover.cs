@@ -10,15 +10,16 @@ namespace Scripts.PlayerComponents
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private PlayerAnimator _playerAnimator;
         [SerializeField] private PlayerStaticData _staticData;
+        [SerializeField] private PlayerHealth _playerHealth;
 
-        private float _startMoveSpeed;
-        private float _deltaRotation;
-        private float _hitSpeedCoefficient;
-        private float _currentSpeed;
         private AllServices _allServices;
         private Quaternion _targetRotaion;
         private Vector3 _targetDirection;
         private Vector2 _axis;
+        private float _startMoveSpeed;
+        private float _deltaRotation;
+        private float _hitSpeedCoefficient;
+        private float _currentSpeed;
 
         public float StartMoveSpeed => _startMoveSpeed;
 
@@ -35,7 +36,7 @@ namespace Scripts.PlayerComponents
             ResetCurrentSpeed();
             GetAxis();
 
-            if (_axis != Vector2.zero)
+            if (_axis != Vector2.zero & IsPlayerAlive())
             {
                 SetCurrentSpeed();
                 SetCurrentHitSpeed();
@@ -58,6 +59,8 @@ namespace Scripts.PlayerComponents
                 _currentSpeed = _currentSpeed * _hitSpeedCoefficient;
             }
         }
+
+        private bool IsPlayerAlive() => !_playerHealth.IsDead;
 
         private void SetAllServices() => _allServices = AllServices.Container;
 

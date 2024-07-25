@@ -1149,6 +1149,7 @@ MonoBehaviour:
   _characterController: {fileID: 439951020451176731}
   _playerAnimator: {fileID: 2980337302151610088}
   _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
+  _playerHealth: {fileID: 8273102346166442749}
 --- !u!114 &2980337302151610088
 MonoBehaviour:
   m_ObjectHideFlags: 0
