@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using Scripts.CodeBase.Logic;
-using Scripts.StaticData;
+﻿using Scripts.CodeBase.Logic;
+using System.Collections;
 using UnityEngine;
 
 namespace Scripts.Weapons
 {
-    public class Gun : Weapon
+    public class Gun : MonoBehaviour, IWeapon
     {
         private Transform _shootPoint;
         private float _delayBetweenShoots;
@@ -14,20 +13,17 @@ namespace Scripts.Weapons
         private int _countBulletsInClip;
         private IGameFactory _iGameFactory;
 
-        public override float DelayBetweenShoots => _delayBetweenShoots;
+        public float DelayBetweenShoots => _delayBetweenShoots;
 
-        public override float DurationReload => _durationReload;
+        public float DurationReload => _durationReload;
 
-        public override int CountBulletsInClip => _countBulletsInClip;
+        public int CountBulletsInClip => _countBulletsInClip;
 
-        public override bool IsCanShoot => _isCanShoot;
+        public bool IsCanShoot => _isCanShoot;
 
-        public void Construct(IGameFactory gameFactory)
-        {
-            _iGameFactory = gameFactory;
-        }
+        public void Construct(IGameFactory gameFactory) => _iGameFactory = gameFactory;
 
-        public override void Shoot()
+        public void Shoot()
         {
             if (_isCanShoot)
             {
@@ -35,7 +31,7 @@ namespace Scripts.Weapons
             }
         }
 
-        public override void Reload()
+        public void Reload()
         {
         }
 
@@ -56,6 +52,9 @@ namespace Scripts.Weapons
 
         private void ResetIsCanShoot() => _isCanShoot = false;
 
-        private void StartCalculateDelay() => StartCoroutine(CalculateDelay());
+        private void StartCalculateDelay()
+        {
+            StartCoroutine(CalculateDelay());
+        }
     }
 }

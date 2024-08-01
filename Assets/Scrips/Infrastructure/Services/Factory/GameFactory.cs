@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using Scripts.Canvas;
+﻿using Scripts.Canvas;
 using Scripts.EnemyComponents;
 using Scripts.PlayerComponents;
 using Scripts.Static;
 using Scripts.Weapons;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Logic
@@ -32,24 +32,23 @@ namespace Scripts.CodeBase.Logic
         public GameObject CreatePlayer()
         {
             _player = CreateGameObject(StaticAssetPath.Player, GetPosition(StaticTags.PlayerSpawnPoint));
-
-            _player.GetComponent<PlayerChooserWeapon>().Construct(this);
+            _player.GetComponent<PlayerInventory>().Construct(this);
 
             return _player;
         }
 
         public GameObject CreateCanvasJoystick() => _assetProvider.Instantiate(StaticAssetPath.CanvasJoystick);
 
-        public GameObject CreateHealthBar(PlayerHealth playerHealth)
+        public GameObject CreatePlayerHealthBar()
         {
             _healthBar = _assetProvider.Instantiate(StaticAssetPath.CanvasHealthBar);
 
-            _healthBar.GetComponent<HealthBar>().Construct(playerHealth);
+            _healthBar.GetComponent<HealthBar>().Construct(this);
 
             return _healthBar;
         }
 
-        public List<GameObject> CreateSkeletons(IGameFactory iGameFactory)
+        public List<GameObject> CreateSkeletons()
         {
             _skeletons = new List<GameObject>();
 
@@ -64,7 +63,7 @@ namespace Scripts.CodeBase.Logic
             {
                 GameObject skeleton = CreateGameObject(StaticAssetPath.Sceleton, sceletonInitialPoint.transform.position);
 
-                skeleton.GetComponent<AgentMoveToPlayer>().Construct(iGameFactory);
+                skeleton.GetComponent<AgentMoveToPlayer>().Construct(this);
 
                 _skeletons.Add(skeleton);
             }

@@ -1,4 +1,5 @@
-﻿using Scripts.PlayerComponents;
+﻿using Scripts.CodeBase.Logic;
+using Scripts.PlayerComponents;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +10,14 @@ namespace Scripts.Canvas
         [SerializeField] private Slider _slider;
         [SerializeField] private Text _text;
 
+        private IGameFactory _gameFactory;
         private PlayerHealth _playerHealth;
 
-        public void Construct(PlayerHealth playerHealth) => _playerHealth = playerHealth;
+        public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
         private void Start()
         {
+            SetPlayerHealth();
             ResetBarValues();
             ResetBarSlider();
             SubscribeOnHealthChanged();
@@ -27,6 +30,8 @@ namespace Scripts.Canvas
             SetSlider(current, max);
             SetValues(current, max);
         }
+
+        private void SetPlayerHealth() => _playerHealth = _gameFactory.Player.GetComponent<PlayerHealth>();
 
         private void SubscribeOnHealthChanged() => _playerHealth.OnHealthChanged += OnHealthChanged;
 

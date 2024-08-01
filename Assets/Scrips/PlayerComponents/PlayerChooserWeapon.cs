@@ -1,28 +1,15 @@
-﻿using System.Collections.Generic;
-using Scripts.CodeBase.Logic;
-using Scripts.Weapons;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
     public class PlayerChooserWeapon : MonoBehaviour
     {
-        private IGameFactory _iGameFactory;
-        private Weapon _startWeapon;
-        private Weapon _currentWeapon;
+        [SerializeField] private PlayerInventory _playerInventory;
 
-        public Weapon CurrentWeapon => _currentWeapon;
+        private GameObject _currentWeapon;
 
-        private void Awake()
-        {
-            SetStartWeapon();
-            SetCurrentWeapon();
-        }
+        private void Start() => SetStartWeapon();
 
-        public void Construct(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
-
-        private void SetStartWeapon() => _startWeapon = _iGameFactory.Gun.GetComponent<Weapon>();
-
-        private void SetCurrentWeapon() => _currentWeapon = _startWeapon;
+        private void SetStartWeapon() => _currentWeapon = _playerInventory.GetStartWeapon();
     }
 }
