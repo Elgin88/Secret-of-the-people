@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Scripts.CodeBase.Logic;
 using Scripts.PlayerComponents;
 using Scripts.StaticData;
 using UnityEngine;
@@ -18,12 +19,16 @@ namespace Scripts.EnemyComponents
         private float _currentAttackColldown;
         private bool _isAtacking = false;
         private Collider[] _resultOfHit = new Collider[1];
+        private IGameFactory _iGameFactory;
+        private PlayerHealth _playerHealth;
 
-        private void Awake()
+        private void Start()
         {
             SetParametrs();
             Disable();
         }
+
+        public void Construct(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
 
         public void EnableAgent()
         {
@@ -70,7 +75,7 @@ namespace Scripts.EnemyComponents
 
         private void PlayAttackAnimation()
         {
-            if (!_isAtacking)
+            if (!_isAtacking & !_playerHealth.IsDead)
             {
                 _enemyAnimator.PlayAttack();
                 SetIsAttacking();
@@ -79,6 +84,7 @@ namespace Scripts.EnemyComponents
 
         private void SetParametrs()
         {
+            _playerHealth = _iGameFactory.Player.GetComponent<PlayerHealth>();
             _attackCooldown = _staticData.AttackCooldawn;
             _damage = _staticData.Damage;
             _currentAttackColldown = _attackCooldown;

@@ -1,5 +1,5 @@
-﻿using Agava.YandexGames;
-using Scripts.PlayerComponents;
+﻿using Scripts.EnemyComponents;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Logic
@@ -17,10 +17,7 @@ namespace Scripts.CodeBase.Logic
             _iGameFactory = allService.Get<IGameFactory>();
         }
 
-        public void Enter(string sceneName)
-        {
-            _sceneLoader.Load(sceneName, OnLoaded);
-        }
+        public void Enter(string sceneName) => _sceneLoader.Load(sceneName, OnLoaded);
 
         public void Exit()
         {
@@ -35,20 +32,35 @@ namespace Scripts.CodeBase.Logic
 
         private void CreateObjects()
         {
-            _iGameFactory.CreateSkeletons(_iGameFactory);
+            CreateCkeletons();
+
             _iGameFactory.CreateGraphy();
             _iGameFactory.CreateCanvasJoystick();
+
+            _iGameFactory.CreateGun();
+            _iGameFactory.CreateGunBullet();
+
             _iGameFactory.CreatePlayer();
-            _iGameFactory.CreateHealthBar(_iGameFactory.Player.GetComponent<PlayerHealth>());
+            _iGameFactory.CreatePlayerHealthBar();
         }
 
+        private void CreateCkeletons()
+        {
+            List<GameObject> skeletons = _iGameFactory.CreateSkeletons();
+
+            foreach (var skeleton in skeletons)
+            {
+                skeleton.GetComponent<AgentAttack>().Construct(_iGameFactory);
+            }
+        }
+        
         private void SetIsGameReadyforSDK()
         {
 #if !UNITY_EDITOR
             if (!Game.IsReady)
             {
                 YandexGamesSdk.GameReady();
-                Game.SetIsReadyTrue();
+                Game.SetIsReady();
             }
 #endif
         }

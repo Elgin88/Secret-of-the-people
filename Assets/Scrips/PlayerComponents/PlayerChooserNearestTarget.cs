@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using Scripts.StaticData;
+using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
     public class PlayerChooserNearestTarget : MonoBehaviour
     {
         [SerializeField] private LayerMask _targetLayerMask;
-        [SerializeField] private int _range;
+        [SerializeField] private PlayerStaticData _staticData;
 
+        private int _rangeToChooserNearestTarget;
         private Collider[] _targets;
         private Collider _nearestTarget;
         private const int maxTargetsCount = 10;
@@ -14,7 +16,11 @@ namespace Scripts.PlayerComponents
 
         public Collider NearestTarget => _nearestTarget;
 
-        private void Awake() => _targets = new Collider[maxTargetsCount];
+        private void Awake()
+        {
+            _targets = new Collider[maxTargetsCount];
+            _rangeToChooserNearestTarget = _staticData.RangeToChooserNearestTarget;
+        }
 
         public void FixedUpdate()
         {
@@ -41,11 +47,11 @@ namespace Scripts.PlayerComponents
             }
         }
 
-        private void FindTargets() => Physics.OverlapSphereNonAlloc(transform.position, _range, _targets, _targetLayerMask);
+        private void FindTargets() => Physics.OverlapSphereNonAlloc(transform.position, _rangeToChooserNearestTarget, _targets, _targetLayerMask);
 
         private float CalculateDistance(Collider target) => Vector3.Distance(transform.position, target.transform.position);
 
-        private void ResetMinDistance() => _minDistance = _range;
+        private void ResetMinDistance() => _minDistance = _rangeToChooserNearestTarget;
 
         private void ResetNearestTarget() => _nearestTarget = null;
     }

@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e1772b8848e499fb05745d6d914f1d, type: 3}
-  m_Name: PlayerStaticData
+  m_Script: {fileID: 11500000, guid: 7199f7d1072ee45519a41b3816e9c4c4, type: 3}
+  m_Name: GunBulletStaticData
   m_EditorClassIdentifier: 
-  Health: 100
-  RunSpeed: 6
-  RotationSpeed: 2000
-  CoefficientDownSpeedAfterHit: 0.2
-  AnimationBaseRunSpeed: 4.8
-  RangeToChooserNearestTarget: 10
+  Speed: 34.3

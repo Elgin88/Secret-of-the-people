@@ -10,15 +10,16 @@ namespace Scripts.PlayerComponents
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private PlayerAnimator _playerAnimator;
         [SerializeField] private PlayerStaticData _staticData;
+        [SerializeField] private PlayerHealth _playerHealth;
 
-        private float _startMoveSpeed;
-        private float _deltaRotation;
-        private float _hitSpeedCoefficient;
-        private float _currentSpeed;
         private AllServices _allServices;
         private Quaternion _targetRotaion;
         private Vector3 _targetDirection;
         private Vector2 _axis;
+        private float _startMoveSpeed;
+        private float _deltaRotation;
+        private float _hitSpeedCoefficient;
+        private float _currentSpeed;
 
         public float StartMoveSpeed => _startMoveSpeed;
 
@@ -35,15 +36,15 @@ namespace Scripts.PlayerComponents
             ResetCurrentSpeed();
             GetAxis();
 
-            if (_axis != Vector2.zero)
+            if (_axis != Vector2.zero & IsPlayerAlive())
             {
                 SetCurrentSpeed();
                 SetCurrentHitSpeed();
                 AnimatorPlayRun();
                 SetTargetDirection(_axis);
                 SetTargetRotation(_axis);
-                ChangePlayerPosition(_targetDirection, _currentSpeed);
-                ChangePlayerRotation(_targetRotaion, _deltaRotation);
+                ChangePosition(_targetDirection, _currentSpeed);
+                ChangeRotation(_targetRotaion, _deltaRotation);
             }
             else
             {
@@ -58,6 +59,8 @@ namespace Scripts.PlayerComponents
                 _currentSpeed = _currentSpeed * _hitSpeedCoefficient;
             }
         }
+
+        private bool IsPlayerAlive() => !_playerHealth.IsDead;
 
         private void SetAllServices() => _allServices = AllServices.Container;
 
@@ -77,9 +80,9 @@ namespace Scripts.PlayerComponents
 
         private void SetTargetDirection(Vector2 axis) => _targetDirection = new Vector3(axis.x, 0, axis.y);
 
-        private void ChangePlayerPosition(Vector3 targetDirection, float currentSpeed) => _characterController.Move(targetDirection * currentSpeed * Time.deltaTime);
+        private void ChangePosition(Vector3 targetDirection, float currentSpeed) => _characterController.Move(targetDirection * currentSpeed * Time.deltaTime);
 
-        private void ChangePlayerRotation(Quaternion targetRotation, float deltaRotation) => _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
+        private void ChangeRotation(Quaternion targetRotation, float deltaRotation) => _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
 
         private void SetHitSpeedCoefficient() => _hitSpeedCoefficient = _staticData.CoefficientDownSpeedAfterHit;
 

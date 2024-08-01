@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
-using Scripts.Weapons;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
     public class PlayerChooserWeapon : MonoBehaviour
     {
-        [SerializeField] private List<GameObject> _weapons;
+        [SerializeField] private PlayerInventory _playerInventory;
 
-        private Weapon _currentWeapon;
+        private GameObject _currentWeapon;
 
-        public Weapon CurrentWeapon => _currentWeapon;
+        private void Start() => SetStartWeapon();
 
-        private void Awake() => _currentWeapon = _weapons[0].GetComponent<Weapons.Weapon>();
+        private void SetStartWeapon() => _currentWeapon = _playerInventory.GetStartWeapon();
     }
 }

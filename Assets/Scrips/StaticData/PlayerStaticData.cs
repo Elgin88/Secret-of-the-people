@@ -15,5 +15,7 @@ namespace Scripts.StaticData
         [Range(0, 1f)] public float CoefficientDownSpeedAfterHit;
 
         [Range(0f, 10f)] public float AnimationBaseRunSpeed;
+
+        [Range(0f, 20f)] public int RangeToChooserNearestTarget;
     }
 }
