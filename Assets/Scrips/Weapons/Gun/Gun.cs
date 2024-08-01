@@ -1,34 +1,38 @@
 ﻿using System.Collections;
+using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.Weapons
 {
     public class Gun : Weapon
     {
-        [SerializeField] private float _delayBetweenShoots = 1;
-        [SerializeField] private float _durationReload = 2;
-        [SerializeField] private int _countBulletsInClip = 8;
+        [SerializeField] private WeaponStaticData _staticData;
         [SerializeField] private Bullet _bullet;
 
-        private WaitForSeconds _delay;
         private Transform _shootPoint;
-        private bool _isEndDelayBetweenShoots;
-
-        public override float DurationReload => _durationReload;
+        private float _delayBetweenShoots;
+        private float _durationReload;
+        private bool _isCanShoot = true;
+        private int _countBulletsInClip;
 
         public override float DelayBetweenShoots => _delayBetweenShoots;
 
+        public override float DurationReload => _durationReload;
+
         public override int CountBulletsInClip => _countBulletsInClip;
 
-        private void Awake()
+        public override bool IsCanShoot => _isCanShoot;
+
+        public override void Construct()
         {
-            SetDelayBetweenShots();
-            ResetDelay();
+            _delayBetweenShoots = _staticData.DelayBetweenShoots;
+            _durationReload = _staticData.DurationReload;
+            _countBulletsInClip = _staticData.CountBulletsInClip;
         }
 
         public override void Shoot()
         {
-            if (_isEndDelayBetweenShoots)
+            if (_isCanShoot)
             {
                 CreateBullet();
             }
@@ -38,25 +42,28 @@ namespace Scripts.Weapons
         {
         }
 
-        private void StartColldawn() => StartCoroutine(CalculateInterval());
-
-        private IEnumerator CalculateInterval()
+        private IEnumerator CalculateDelay()
         {
-            yield return _delay;
-            ResetDelay();
+            yield return new WaitForSeconds(_delayBetweenShoots);
+            SetIsCanShoot();
         }
 
         private void CreateBullet()
         {
             Instantiate(_bullet, _shootPoint.position, Quaternion.identity);
-            StartDelay();
-            StartColldawn();
+            ResetIsCanShoot();
+            StartCalculateDelay();
         }
 
-        private void SetDelayBetweenShots() => _delay = new WaitForSeconds(_delayBetweenShoots);
+        private void SetIsCanShoot()
+        {
+            _isCanShoot = true;
 
-        private void ResetDelay() => _isEndDelayBetweenShoots = true;
+            Debug.Log(_isCanShoot);
+        }
 
-        private void StartDelay() => _isEndDelayBetweenShoots = false;
+        private void ResetIsCanShoot() => _isCanShoot = false;
+
+        private void StartCalculateDelay() => StartCoroutine(CalculateDelay());
     }
 }

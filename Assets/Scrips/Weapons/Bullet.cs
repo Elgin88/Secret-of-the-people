@@ -4,6 +4,6 @@ namespace Scripts.Weapons
 {
     public abstract class Bullet : MonoBehaviour
     {
-        public abstract float Speed { get; }
+        public abstract float StartSpeed { get; }
     }
 }

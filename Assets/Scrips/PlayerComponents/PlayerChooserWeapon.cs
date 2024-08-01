@@ -12,6 +12,14 @@ namespace Scripts.PlayerComponents
 
         public Weapon CurrentWeapon => _currentWeapon;
 
-        private void Awake() => _currentWeapon = _weapons[0].GetComponent<Weapons.Weapon>();
+        private void Awake()
+        {
+            foreach (GameObject weapon in _weapons)
+            {
+                weapon.GetComponent<Weapon>().Construct();
+            }
+
+            _currentWeapon = _weapons[0].GetComponent<Weapon>();
+        }
     }
 }
