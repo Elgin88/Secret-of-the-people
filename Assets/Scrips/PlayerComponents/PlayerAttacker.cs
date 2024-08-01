@@ -9,13 +9,6 @@ namespace Scripts.PlayerComponents
 
         public Transform ShootPoint => _shootPoint;
 
-        private void FixedUpdate()
-        {
-            Attack();
-
-            //Debug.Log("Сделать выстрел, есть уже поиск цели");
-        }
-
         private void Attack()
         {
             _playerChooserWeapon.CurrentWeapon.Shoot();
