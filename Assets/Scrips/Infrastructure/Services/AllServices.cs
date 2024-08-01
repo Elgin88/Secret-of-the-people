@@ -11,10 +11,7 @@
             Implementation<TService>.Service = implementation;
         }
 
-        public TService Get<TService>() where TService : IService
-        {
-            return Implementation<TService>.Service;
-        }
+        public TService Get<TService>() where TService : IService => Implementation<TService>.Service;
 
         private static class Implementation<TService> where TService : IService
         {

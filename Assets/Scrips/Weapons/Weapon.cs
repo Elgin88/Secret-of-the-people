@@ -12,8 +12,6 @@ namespace Scripts.Weapons
 
         public abstract bool IsCanShoot { get; }
 
-        public abstract void Construct();
-
         public abstract void Shoot();
 
         public abstract void Reload();

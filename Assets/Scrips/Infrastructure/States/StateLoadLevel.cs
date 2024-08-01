@@ -43,6 +43,8 @@ namespace Scripts.CodeBase.Logic
             _iGameFactory.CreateCanvasJoystick();
             _iGameFactory.CreatePlayer();
             _iGameFactory.CreateHealthBar(GetPlayerHealth());
+            _iGameFactory.CreateGun();
+            _iGameFactory.CreateGunBullet();
         }
 
         private void CreateCkeletons()
@@ -63,7 +65,7 @@ namespace Scripts.CodeBase.Logic
             if (!Game.IsReady)
             {
                 YandexGamesSdk.GameReady();
-                Game.SetIsReadyTrue();
+                Game.SetIsReady();
             }
 #endif
         }

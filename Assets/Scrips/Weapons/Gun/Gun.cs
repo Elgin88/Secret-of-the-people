@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
 using UnityEngine;
 
@@ -6,14 +7,12 @@ namespace Scripts.Weapons
 {
     public class Gun : Weapon
     {
-        [SerializeField] private WeaponStaticData _staticData;
-        [SerializeField] private Bullet _bullet;
-
         private Transform _shootPoint;
         private float _delayBetweenShoots;
         private float _durationReload;
         private bool _isCanShoot = true;
         private int _countBulletsInClip;
+        private IGameFactory _iGameFactory;
 
         public override float DelayBetweenShoots => _delayBetweenShoots;
 
@@ -23,11 +22,9 @@ namespace Scripts.Weapons
 
         public override bool IsCanShoot => _isCanShoot;
 
-        public override void Construct()
+        public void Construct(IGameFactory gameFactory)
         {
-            _delayBetweenShoots = _staticData.DelayBetweenShoots;
-            _durationReload = _staticData.DurationReload;
-            _countBulletsInClip = _staticData.CountBulletsInClip;
+            _iGameFactory = gameFactory;
         }
 
         public override void Shoot()
@@ -50,17 +47,12 @@ namespace Scripts.Weapons
 
         private void CreateBullet()
         {
-            Instantiate(_bullet, _shootPoint.position, Quaternion.identity);
+            //Instantiate(_bullet, _shootPoint.position, Quaternion.identity);
             ResetIsCanShoot();
             StartCalculateDelay();
         }
 
-        private void SetIsCanShoot()
-        {
-            _isCanShoot = true;
-
-            Debug.Log(_isCanShoot);
-        }
+        private void SetIsCanShoot() => _isCanShoot = true;
 
         private void ResetIsCanShoot() => _isCanShoot = false;
 

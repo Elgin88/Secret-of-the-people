@@ -17,3 +17,4 @@ MonoBehaviour:
   RotationSpeed: 2000
   CoefficientDownSpeedAfterHit: 0.2
   AnimationBaseRunSpeed: 4.8
+  RangeToChooserNearestTarget: 10

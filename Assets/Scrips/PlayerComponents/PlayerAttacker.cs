@@ -11,7 +11,6 @@ namespace Scripts.PlayerComponents
 
         private void Attack()
         {
-            _playerChooserWeapon.CurrentWeapon.Shoot();
         }
     }
 }

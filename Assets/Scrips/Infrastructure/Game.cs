@@ -13,9 +13,6 @@ namespace Scripts.CodeBase.Logic
             gameStateMachine.Enter<StateBootStrapt>();
         }
 
-        public static void SetIsReadyTrue()
-        {
-            _isReadyGame = true;
-        }
+        public static void SetIsReady() => _isReadyGame = true;
     }
 }
