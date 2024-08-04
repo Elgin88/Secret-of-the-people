@@ -8,11 +8,11 @@ namespace Scripts.PlayerComponents
         [SerializeField] private LayerMask _targetLayerMask;
         [SerializeField] private PlayerStaticData _staticData;
 
-        private int _rangeToChooserNearestTarget;
         private Collider[] _targets;
         private Collider _nearestTarget;
         private const int maxTargetsCount = 10;
         private float _minDistance;
+        private int _rangeToChooserNearestTarget;
 
         public Collider NearestTarget => _nearestTarget;
 

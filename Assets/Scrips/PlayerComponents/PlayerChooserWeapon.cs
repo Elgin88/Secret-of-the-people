@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Scripts.Weapons;
+using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
@@ -7,6 +8,10 @@ namespace Scripts.PlayerComponents
         [SerializeField] private PlayerInventory _playerInventory;
 
         private GameObject _currentWeapon;
+
+        public GameObject CurrentWeapon => _currentWeapon;
+
+        public IWeapon ICurrentWeapon => _currentWeapon.GetComponent<IWeapon>();
 
         private void Start() => SetStartWeapon();
 
