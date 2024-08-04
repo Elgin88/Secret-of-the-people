@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978ff1482d7a244c1ac7db34a7e1c519, type: 3}
   m_Name: GunStaticData
   m_EditorClassIdentifier: 
-  DelayBetweenShoots: 0
-  DurationReload: 0
-  CountBulletsInClip: 0
+  DelayBetweenShoots: 1
+  DurationReload: 2
+  CountBulletsInClip: 8
