@@ -1,4 +1,5 @@
 ﻿using Scripts.CodeBase.Logic;
+using Scripts.StaticData;
 using System.Collections;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace Scripts.Weapons
 {
     public class Gun : MonoBehaviour, IWeapon
     {
+        [SerializeField] private WeaponStaticData _staticData;
+
         private Transform _shootPoint;
         private float _delayBetweenShoots;
         private float _durationReload;
@@ -20,6 +23,13 @@ namespace Scripts.Weapons
         public int CountBulletsInClip => _countBulletsInClip;
 
         public bool IsCanShoot => _isCanShoot;
+
+        private void Start()
+        {
+            _delayBetweenShoots = _staticData.DelayBetweenShoots;
+            _durationReload = _staticData.DurationReload;
+            _countBulletsInClip = _staticData.CountBulletsInClip;
+        }
 
         public void Construct(IGameFactory gameFactory) => _iGameFactory = gameFactory;
 

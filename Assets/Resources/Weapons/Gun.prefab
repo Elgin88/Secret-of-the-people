@@ -44,7 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef2ae63909d3274bb972beaf07b135f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delayBetweenShoots: 1
-  _durationReload: 2
-  _countBulletsInClip: 8
-  _bullet: {fileID: 96325958361394175, guid: d461d4dc1412f4181b66fce25eec2a20, type: 3}
+  _staticData: {fileID: 11400000, guid: 8f859de07b114df4ba384cbb2d6a64ea, type: 2}

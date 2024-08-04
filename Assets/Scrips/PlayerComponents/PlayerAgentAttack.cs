@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerAgentShoot : MonoBehaviour
+    public class PlayerAgentAttack : MonoBehaviour
     {
         [SerializeField] private PlayerChooserWeapon _playerChooserWeapon;
         [SerializeField] private Transform _shootPoint;
@@ -16,29 +16,27 @@ namespace Scripts.PlayerComponents
 
         private void FixedUpdate()
         {
-            Debug.Log("Сделать GunStaticData");
-
             SetCooldawn();
             UpdateColdawn();
-            ResetCooldawn();
+
+            if (IsCooldawnOut())
+            {
+                ResetCooldawn();
+                ResetIsAttack();
+            }
 
             if (!_isAttack)
             {
                 SetIsAttack();
-                Shoot();
+                Attack();
             }
         }
+
+        private bool IsCooldawnOut() => _currentCooldawn < 0;
 
         private void SetCooldawn() => _cooldawn = _playerChooserWeapon.CurrentWeapon.GetComponent<IWeapon>().DelayBetweenShoots;
 
-        private void ResetCooldawn()
-        {
-            if (_currentCooldawn < 0)
-            {
-                ResetIsAttack();
-                _currentCooldawn = _cooldawn;
-            }
-        }
+        private void ResetCooldawn() => _currentCooldawn = _cooldawn;
 
         private void UpdateColdawn() => _currentCooldawn -= Time.deltaTime;
 
@@ -46,6 +44,6 @@ namespace Scripts.PlayerComponents
         
         private void ResetIsAttack() => _isAttack = false;
 
-        private void Shoot() => _playerChooserWeapon.ICurrentWeapon.Shoot();
+        private void Attack() => _playerChooserWeapon.ICurrentWeapon.Shoot();
     }
 }
