@@ -15,7 +15,7 @@ namespace Scripts.PlayerComponents
             AddStartWeapon();
         }
 
-        public GameObject GetStartWeapon() => _iWeapons[0];
+        public GameObject GetStartWeaponGun() => _iWeapons[0];
 
         private void SetIGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
 

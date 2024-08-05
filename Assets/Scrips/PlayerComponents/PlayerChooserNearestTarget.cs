@@ -1,4 +1,6 @@
-﻿using Scripts.StaticData;
+﻿using System;
+using System.Collections.Generic;
+using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
@@ -10,16 +12,19 @@ namespace Scripts.PlayerComponents
 
         private Collider[] _targets;
         private Collider _nearestTarget;
-        private const int maxTargetsCount = 10;
+        private const int _maxTargetsCount = 10;
+        private int _currentCountTargets = 0;
         private float _minDistance;
         private int _rangeToChooserNearestTarget;
 
         public Collider NearestTarget => _nearestTarget;
 
+        public int CurrentTargetsCount => _currentCountTargets;
+
         private void Awake()
         {
-            _targets = new Collider[maxTargetsCount];
-            _rangeToChooserNearestTarget = _staticData.RangeToChooserNearestTarget;
+            CreateArrayTargets();
+            SetRangeFindTarget();
         }
 
         public void FixedUpdate()
@@ -47,12 +52,21 @@ namespace Scripts.PlayerComponents
             }
         }
 
-        private void FindTargets() => Physics.OverlapSphereNonAlloc(transform.position, _rangeToChooserNearestTarget, _targets, _targetLayerMask);
+        private void FindTargets()
+        {
+            _currentCountTargets = 0;
+
+            _currentCountTargets = Physics.OverlapSphereNonAlloc(transform.position, _rangeToChooserNearestTarget, _targets, _targetLayerMask);
+        }
 
         private float CalculateDistance(Collider target) => Vector3.Distance(transform.position, target.transform.position);
 
         private void ResetMinDistance() => _minDistance = _rangeToChooserNearestTarget;
 
         private void ResetNearestTarget() => _nearestTarget = null;
+
+        private void SetRangeFindTarget() => _rangeToChooserNearestTarget = _staticData.RangeToChooserNearestTarget;
+
+        private void CreateArrayTargets() => _targets = new Collider[_maxTargetsCount];
     }
 }

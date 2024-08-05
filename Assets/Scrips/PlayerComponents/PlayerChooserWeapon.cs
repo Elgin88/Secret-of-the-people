@@ -15,6 +15,6 @@ namespace Scripts.PlayerComponents
 
         private void Start() => SetStartWeapon();
 
-        private void SetStartWeapon() => _currentWeapon = _playerInventory.GetStartWeapon();
+        private void SetStartWeapon() => _currentWeapon = _playerInventory.GetStartWeaponGun();
     }
 }

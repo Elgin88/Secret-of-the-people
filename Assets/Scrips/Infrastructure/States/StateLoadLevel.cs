@@ -53,7 +53,7 @@ namespace Scripts.CodeBase.Logic
                 skeleton.GetComponent<AgentAttack>().Construct(_iGameFactory);
             }
         }
-        
+
         private void SetIsGameReadyforSDK()
         {
 #if !UNITY_EDITOR

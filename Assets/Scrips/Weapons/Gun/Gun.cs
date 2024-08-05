@@ -1,6 +1,7 @@
-﻿using Scripts.CodeBase.Logic;
+﻿using System.Collections;
+using Scripts.CodeBase.Logic;
+using Scripts.PlayerComponents;
 using Scripts.StaticData;
-using System.Collections;
 using UnityEngine;
 
 namespace Scripts.Weapons
@@ -9,12 +10,12 @@ namespace Scripts.Weapons
     {
         [SerializeField] private WeaponStaticData _staticData;
 
-        private Transform _shootPoint;
+        private IGameFactory _iGameFactory;
         private float _delayBetweenShoots;
         private float _durationReload;
+        private float _currentColldawn = 0;
         private bool _isCanShoot = true;
         private int _countBulletsInClip;
-        private IGameFactory _iGameFactory;
 
         public float DelayBetweenShoots => _delayBetweenShoots;
 
@@ -26,18 +27,29 @@ namespace Scripts.Weapons
 
         private void Start()
         {
-            _delayBetweenShoots = _staticData.DelayBetweenShoots;
-            _durationReload = _staticData.DurationReload;
-            _countBulletsInClip = _staticData.CountBulletsInClip;
+            SetParametrs();
         }
 
-        public void Construct(IGameFactory gameFactory) => _iGameFactory = gameFactory;
+        public void Construct(IGameFactory iGameFactory)
+        {
+            _iGameFactory = iGameFactory;
+        }
+
+        public void FixedUpdate()
+        {
+            UpdateColldawn();
+        }
 
         public void Shoot()
         {
-            if (_isCanShoot)
+            if (IsCooldawnOut())
             {
+                ResetCooldawn();
+
+                Debug.Log("Shoot");
+
                 CreateBullet();
+                RemoveBulltetFromClip();
             }
         }
 
@@ -45,15 +57,20 @@ namespace Scripts.Weapons
         {
         }
 
+        private void RemoveBulltetFromClip()
+        {
+        }
+
         private IEnumerator CalculateDelay()
         {
-            yield return new WaitForSeconds(_delayBetweenShoots);
+            yield return GetDelay();
+
             SetIsCanShoot();
         }
 
         private void CreateBullet()
         {
-            //Instantiate(_bullet, _shootPoint.position, Quaternion.identity);
+            Instantiate(SetBullet(), SetBulletPosition(), SetBulletRotation());
             ResetIsCanShoot();
             StartCalculateDelay();
         }
@@ -62,9 +79,27 @@ namespace Scripts.Weapons
 
         private void ResetIsCanShoot() => _isCanShoot = false;
 
-        private void StartCalculateDelay()
+        private void StartCalculateDelay() => StartCoroutine(CalculateDelay());
+
+        private bool IsCooldawnOut() => _currentColldawn < 0;
+
+        private void ResetCooldawn() => _currentColldawn = _delayBetweenShoots;
+
+        private void UpdateColldawn() => _currentColldawn -= Time.deltaTime;
+
+        private static Quaternion SetBulletRotation() => Quaternion.identity;
+
+        private Vector3 SetBulletPosition() => _iGameFactory.Player.GetComponentInChildren<PlayerShootPoint>().transform.position;
+
+        private GameObject SetBullet() => _iGameFactory.GunBullet;
+
+        private WaitForSeconds GetDelay() => new WaitForSeconds(_delayBetweenShoots);
+
+        private void SetParametrs()
         {
-            StartCoroutine(CalculateDelay());
+            _delayBetweenShoots = _staticData.DelayBetweenShoots;
+            _durationReload = _staticData.DurationReload;
+            _countBulletsInClip = _staticData.CountBulletsInClip;
         }
     }
 }
