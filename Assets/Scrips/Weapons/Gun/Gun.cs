@@ -28,11 +28,14 @@ namespace Scripts.Weapons
         private void Start()
         {
             SetParametrs();
+
+            Debug.Log(_iGameFactory);
+            Debug.Log(_iGameFactory.GunBullet);
         }
 
         public void Construct(IGameFactory iGameFactory)
         {
-            _iGameFactory = iGameFactory;
+            SetGameFactory(iGameFactory);
         }
 
         public void FixedUpdate()
@@ -74,6 +77,8 @@ namespace Scripts.Weapons
             ResetIsCanShoot();
             StartCalculateDelay();
         }
+
+        private void SetGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
 
         private void SetIsCanShoot() => _isCanShoot = true;
 
