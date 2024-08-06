@@ -1,4 +1,5 @@
-﻿using Scripts.EnemyComponents;
+﻿using Agava.YandexGames;
+using Scripts.EnemyComponents;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,10 +37,6 @@ namespace Scripts.CodeBase.Logic
 
             _iGameFactory.CreateGraphy();
             _iGameFactory.CreateCanvasJoystick();
-
-            _iGameFactory.CreateGun();
-            _iGameFactory.CreateGunBullet();
-
             _iGameFactory.CreatePlayer();
             _iGameFactory.CreatePlayerHealthBar();
         }

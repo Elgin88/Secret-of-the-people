@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Logic
+namespace Scripts.PlayerComponents
 {
-    public class CameraFollower : MonoBehaviour
+    public class PlayerCameraFollower : MonoBehaviour
     {
         private const float _diagonalOffset = 12;
         private const float _verticalOffset = 0;
@@ -25,8 +25,11 @@ namespace Scripts.Logic
         }
 
         private void SetCameraRotation() => _camera.transform.rotation.SetLookRotation(transform.position);
+
         private void SetCameraPosition() => _camera.transform.position = new Vector3(transform.position.x, transform.position.y + _horizontal + _verticalOffset, transform.position.z + _vertical);
+
         private void SetCamera() => _camera = Camera.main;
+
         private void Enabled() => enabled = true;
 
         private void CalculateOffsets()

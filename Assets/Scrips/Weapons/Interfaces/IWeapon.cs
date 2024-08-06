@@ -6,11 +6,7 @@
 
         public float DurationReload { get; }
 
-        public int CountBulletsInClip { get; }
-
-        public bool IsCanShoot { get; }
-
-        public void Shoot();
+        public void TryShoot();
 
         public void Reload();
     }

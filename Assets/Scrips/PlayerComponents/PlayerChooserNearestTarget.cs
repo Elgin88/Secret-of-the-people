@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Scripts.StaticData;
+﻿using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents

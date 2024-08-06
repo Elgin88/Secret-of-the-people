@@ -9,18 +9,21 @@ namespace Scripts.PlayerComponents
         private List<GameObject> _iWeapons = new List<GameObject>();
         private IGameFactory _iGameFactory;
 
+        private GameObject _gun;
+
         public void Construct(IGameFactory iGameFactory)
         {
             SetIGameFactory(iGameFactory);
-            AddStartWeapon();
+            CreateGun();
+            AddGunInInventory();
         }
 
         public GameObject GetStartWeaponGun() => _iWeapons[0];
 
         private void SetIGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
 
-        private void AddStartWeapon() => _iWeapons.Add(CreateGun());
+        private void AddGunInInventory() => _iWeapons.Add(_gun);
 
-        private GameObject CreateGun() => Instantiate(_iGameFactory.Gun);
+        private void CreateGun() => _gun = _iGameFactory.CreateGun();
     }
 }

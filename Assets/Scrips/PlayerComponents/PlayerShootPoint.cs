@@ -4,6 +4,5 @@ namespace Scripts.PlayerComponents
 {
     public class PlayerShootPoint : MonoBehaviour
     {
-
     }
 }

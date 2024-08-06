@@ -19,5 +19,10 @@ namespace Scripts.Weapons
         public void Construct(IGameFactory gameFactory) => _iGameFactory = gameFactory;
 
         private void SetStartSpeed() => _startSpeed = _staticData.Speed;
+
+        public void Start()
+        {
+            Debug.Log(name);
+        }
     }
 }
