@@ -7,14 +7,16 @@ namespace Scripts.PlayerComponents
     {
         [SerializeField] private PlayerInventory _playerInventory;
 
-        private GameObject _currentWeapon;
+        private IWeapon _iCurrentWeapon;
 
-        public GameObject CurrentWeapon => _currentWeapon;
+        public IWeapon ICurrentWeapon => _iCurrentWeapon;
 
-        public IWeapon ICurrentWeapon => _currentWeapon.GetComponent<IWeapon>();
+        public void SetCurrentWeapon(IWeapon iWeapon) => _iCurrentWeapon = iWeapon;
 
-        private void Start() => SetStartWeapon();
+        private void Update()
+        {
+            Debug.Log(_iCurrentWeapon);
+        }
 
-        private void SetStartWeapon() => _currentWeapon = _playerInventory.GetStartWeaponGun();
     }
 }

@@ -14,8 +14,8 @@
 
         public const string CanvasCurtain = "Canvas/Curtain";
 
-        public const string Gun = "Weapons/Gun";
+        public const string Gun = "Weapons/Gun/Gun";
 
-        public const string GunBullet = "Weapons/Bullets/GunBullet";
+        public const string GunBullet = "Weapons/Gun/GunBullet";
     }
 }
