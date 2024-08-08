@@ -88,7 +88,9 @@ namespace Scripts.CodeBase.Logic
         {
             GameObject gunClip = CreateClip(StaticAssetPath.GunClip);
 
-            gunClip.GetComponent<IClip>().Construct(this);
+            Debug.Log(gunClip);
+
+            gunClip.GetComponent<GunClip>().Construct(this);
 
             return gunClip;
         }
@@ -104,9 +106,9 @@ namespace Scripts.CodeBase.Logic
 
         private Vector3 GetPosition(string tag) => GameObject.FindGameObjectWithTag(tag).transform.position;
 
-        private GameObject CreateClip(string gunClip)
+        private GameObject CreateClip(string path)
         {
-            GameObject clip = CreateGameObject(gunClip);
+            GameObject clip = CreateGameObject(path);
 
             _clips.Add(clip);
 
