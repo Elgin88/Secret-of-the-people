@@ -86,7 +86,11 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreateGunClip()
         {
-            return CreateClip(StaticAssetPath.GunClip);
+            GameObject gunClip = CreateClip(StaticAssetPath.GunClip);
+
+            gunClip.GetComponent<IClip>().Construct(this);
+
+            return gunClip;
         }
 
         public GameObject CreateGunBullet()
@@ -109,15 +113,13 @@ namespace Scripts.CodeBase.Logic
             return clip;
         }
 
-        private GameObject CreateWeapon(string gunBullet)
+        private GameObject CreateWeapon(string path)
         {
-            GameObject bullet = _assetProvider.Instantiate(StaticAssetPath.GunBullet);
+            GameObject weapon = _assetProvider.Instantiate(path);
 
-            bullet.GetComponent<GunBullet>().Construct(this);
+            _bullets.Add(weapon);
 
-            _bullets.Add(bullet);
-
-            return bullet;
+            return weapon;
         }
     }
 }
