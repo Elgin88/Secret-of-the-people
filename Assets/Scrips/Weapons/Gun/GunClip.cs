@@ -7,23 +7,25 @@ namespace Scripts.Weapons
     {
         [SerializeField] private WeaponStaticData _staticData;
 
-        private int _countBulletsInClip;
+        private int _maxBulletCount;
+        private int _currentBulletCount;
 
-        public int CountBulletsInClip => _countBulletsInClip;
+        public int CountBulletsInClip => _maxBulletCount;
 
         private void Start()
         {
-            SetCountBulletsInClip();
+            SetMaxBulletCount();
         }
 
         public void Reload()
         {
+            _currentBulletCount = _maxBulletCount;
         }
 
         public void RemoveBullet()
         {
         }
 
-        private void SetCountBulletsInClip() => _countBulletsInClip = _staticData.CountBulletsInClip;
+        private void SetMaxBulletCount() => _maxBulletCount = _staticData.CountBulletsInClip;
     }
 }

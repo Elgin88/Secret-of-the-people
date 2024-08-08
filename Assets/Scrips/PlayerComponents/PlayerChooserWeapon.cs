@@ -12,11 +12,5 @@ namespace Scripts.PlayerComponents
         public IWeapon ICurrentWeapon => _iCurrentWeapon;
 
         public void SetCurrentWeapon(IWeapon iWeapon) => _iCurrentWeapon = iWeapon;
-
-        private void Update()
-        {
-            Debug.Log(_iCurrentWeapon);
-        }
-
     }
 }

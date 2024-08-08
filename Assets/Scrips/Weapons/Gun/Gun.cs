@@ -47,6 +47,7 @@ namespace Scripts.Weapons
 
         private void Shoot()
         {
+            Debug.Log("1");
         }
 
         public void Reload()
