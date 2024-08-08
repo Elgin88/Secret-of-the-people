@@ -14,7 +14,7 @@ namespace Scripts.Weapons
         private IGameFactory _iGameFactory;
         private float _delayBetweenShoots;
         private float _durationReload;
-        private float _currentColldawn = 0;
+        private float _currentColldawn;
 
         public float DelayBetweenShoots => _delayBetweenShoots;
 
@@ -47,7 +47,7 @@ namespace Scripts.Weapons
 
         private void Shoot()
         {
-            Debug.Log("1");
+            Debug.Log("Shoot");
         }
 
         public void Reload()

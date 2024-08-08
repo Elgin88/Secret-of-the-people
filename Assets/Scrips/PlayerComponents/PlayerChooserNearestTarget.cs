@@ -11,7 +11,7 @@ namespace Scripts.PlayerComponents
         private Collider[] _targets;
         private Collider _nearestTarget;
         private const int _maxTargetsCount = 10;
-        private int _currentCountTargets = 0;
+        private int _currentCountTargets;
         private float _minDistance;
         private int _rangeToChooserNearestTarget;
 

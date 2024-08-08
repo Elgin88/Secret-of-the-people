@@ -9,7 +9,7 @@ namespace Scripts.PlayerComponents
         [SerializeField] private Animator _animator;
         [SerializeField] private PlayerStaticData _staticData;
 
-        private float _baseSrunSpeedAnimation;
+        private float _baseRunSpeedAnimation;
         private readonly int _runHash = Animator.StringToHash(PlayerStatic
             .IsRun);
         private readonly int _runParametrHash
@@ -20,7 +20,10 @@ namespace Scripts.PlayerComponents
 
         public bool IsHiting => _isHiting;
 
-        private void Awake() => _baseSrunSpeedAnimation = _staticData.AnimationBaseRunSpeed;
+        private void Awake()
+        {
+            _baseRunSpeedAnimation = _staticData.AnimationBaseRunSpeed;
+        }
 
         public void PlayRunAnimation()
         {
@@ -48,6 +51,6 @@ namespace Scripts.PlayerComponents
 
         private void PlayRun() => _animator.SetBool(_runHash, true);
 
-        private void SetRunParametr() => _animator.SetFloat(_runParametrHash, _playerMover.StartMoveSpeed / _baseSrunSpeedAnimation);
+        private void SetRunParametr() => _animator.SetFloat(_runParametrHash, _playerMover.StartMoveSpeed / _baseRunSpeedAnimation);
     }
 }
