@@ -10,24 +10,25 @@ namespace Scripts.CodeBase.Logic
 {
     public class GameFactory : IGameFactory
     {
-        private List<GameObject> _skeletons;
         private IAssetProvider _assetProvider;
         private GameObject _player;
         private GameObject _healthBar;
-        private GameObject _gun;
-        private GameObject _gunBullet;
+        private List<GameObject> _bullets;
+        private List<GameObject> _clips;
 
         public GameObject Player => _player;
 
         public GameObject HealthBar => _healthBar;
 
-        public GameObject Gun => _gun;
+        public GameFactory(IAssetProvider assetProvider)
+        {
+            _assetProvider = assetProvider;
+        }
 
-        public GameObject GunBullet => _gunBullet;
-
-        public GameFactory(IAssetProvider assetProvider) => _assetProvider = assetProvider;
-
-        public GameObject CreateGraphy() => _assetProvider.Instantiate(StaticAssetPath.CanvasGraphy);
+        public GameObject CreateGraphy()
+        {
+            return _assetProvider.Instantiate(StaticAssetPath.CanvasGraphy);
+        }
 
         public GameObject CreatePlayer()
         {
@@ -37,7 +38,10 @@ namespace Scripts.CodeBase.Logic
             return _player;
         }
 
-        public GameObject CreateCanvasJoystick() => _assetProvider.Instantiate(StaticAssetPath.CanvasJoystick);
+        public GameObject CreateCanvasJoystick()
+        {
+            return _assetProvider.Instantiate(StaticAssetPath.CanvasJoystick);
+        }
 
         public GameObject CreatePlayerHealthBar()
         {
@@ -50,7 +54,7 @@ namespace Scripts.CodeBase.Logic
 
         public List<GameObject> CreateSkeletons()
         {
-            _skeletons = new List<GameObject>();
+            List<GameObject> skeletons = new List<GameObject>();
 
             GameObject[] skeletonInitialPoints = GameObject.FindGameObjectsWithTag(StaticTags.SkeletonSpawnPoint);
 
@@ -65,40 +69,55 @@ namespace Scripts.CodeBase.Logic
 
                 skeleton.GetComponent<AgentMoveToPlayer>().Construct(this);
 
-                _skeletons.Add(skeleton);
+                skeletons.Add(skeleton);
             }
 
-            return _skeletons;
+            return skeletons;
         }
 
         public GameObject CreateGun()
         {
-            _gun = _assetProvider.Instantiate(StaticAssetPath.Gun);
-            _gun.GetComponent<Gun>().Construct(this);
+            GameObject gun = _assetProvider.Instantiate(StaticAssetPath.Gun);
 
-            return _gun;
+            gun.GetComponent<Gun>().Construct(this);
+
+            return gun;
+        }
+
+        public GameObject CreateGunClip()
+        {
+            return CreateClip(StaticAssetPath.GunClip);
         }
 
         public GameObject CreateGunBullet()
         {
-            _gunBullet = _assetProvider.Instantiate(StaticAssetPath.GunBullet);
-            _gunBullet.GetComponent<GunBullet>().Construct(this);
-
-            return _gunBullet;
+            return CreateWeapon(StaticAssetPath.GunBullet);
         }
 
-        private GameObject CreateGameObject(string path, Vector3 position)
+        private GameObject CreateGameObject(string path, Vector3 position) => _assetProvider.Instantiate(path, position, Quaternion.identity);
+
+        private GameObject CreateGameObject(string path) => _assetProvider.Instantiate(path);
+
+        private Vector3 GetPosition(string tag) => GameObject.FindGameObjectWithTag(tag).transform.position;
+
+        private GameObject CreateClip(string gunClip)
         {
-            if (position != null)
-            {
-                return _assetProvider.Instantiate(path, position, Quaternion.identity);
-            }
-            else
-            {
-                return _assetProvider.Instantiate(path);
-            }
+            GameObject clip = CreateGameObject(gunClip);
+
+            _clips.Add(clip);
+
+            return clip;
         }
 
-        private static Vector3 GetPosition(string tag) => GameObject.FindGameObjectWithTag(tag).transform.position;
+        private GameObject CreateWeapon(string gunBullet)
+        {
+            GameObject bullet = _assetProvider.Instantiate(StaticAssetPath.GunBullet);
+
+            bullet.GetComponent<GunBullet>().Construct(this);
+
+            _bullets.Add(bullet);
+
+            return bullet;
+        }
     }
 }

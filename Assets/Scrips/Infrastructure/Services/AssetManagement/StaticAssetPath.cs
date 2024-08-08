@@ -17,5 +17,7 @@
         public const string Gun = "Weapons/Gun/Gun";
 
         public const string GunBullet = "Weapons/Gun/GunBullet";
+
+        public const string GunClip = "Weapons/Gun/GunClip";
     }
 }

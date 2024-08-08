@@ -1,4 +1,5 @@
 ﻿using Scripts.StaticData;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.Weapons
@@ -7,12 +8,13 @@ namespace Scripts.Weapons
     {
         [SerializeField] private WeaponStaticData _staticData;
 
+        private List<GameObject> _bullets;
         private int _maxBulletCount;
         private int _currentBulletCount;
 
         public int CountBulletsInClip => _maxBulletCount;
 
-        private void Start()
+        private void Awake()
         {
             SetMaxBulletCount();
         }

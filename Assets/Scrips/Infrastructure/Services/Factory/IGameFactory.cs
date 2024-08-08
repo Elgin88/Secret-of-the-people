@@ -9,10 +9,6 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject HealthBar { get; }
 
-        public GameObject Gun { get; }
-
-        public GameObject GunBullet { get; }
-
         public GameObject CreateGraphy();
 
         public GameObject CreatePlayer();
@@ -26,5 +22,7 @@ namespace Scripts.CodeBase.Logic
         public GameObject CreateGun();
 
         public GameObject CreateGunBullet();
+
+        public GameObject CreateGunClip();
     }
 }

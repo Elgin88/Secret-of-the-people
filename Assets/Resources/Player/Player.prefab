@@ -1277,6 +1277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerChooserWeapon: {fileID: 8772172121899702013}
+  _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
 --- !u!1 &7331202270206063638
 GameObject:
   m_ObjectHideFlags: 0
