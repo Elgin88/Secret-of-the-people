@@ -4,12 +4,9 @@ using UnityEngine;
 
 namespace Scripts.Weapons
 {
-    [RequireComponent(typeof(GunClip))]
-
     public class Gun : MonoBehaviour, IWeapon
     {
         [SerializeField] private WeaponStaticData _staticData;
-        [SerializeField] private GunClip _gunClip;
 
         private IGameFactory _iGameFactory;
         private float _delayBetweenShoots;
@@ -23,10 +20,6 @@ namespace Scripts.Weapons
         public void Construct(IGameFactory iGameFactory)
         {
             SetGameFactory(iGameFactory);
-        }
-
-        private void Start()
-        {
             SetParametrs();
         }
 
@@ -52,6 +45,7 @@ namespace Scripts.Weapons
 
         public void Reload()
         {
+            Debug.Log("Reload");
         }
 
         private void RemoveBulletFromClip()

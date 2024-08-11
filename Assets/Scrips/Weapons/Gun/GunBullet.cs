@@ -14,14 +14,17 @@ namespace Scripts.Weapons
 
         public float StartSpeed => _startSpeed;
 
-        private void Awake()
-        {
-            SetStartSpeed();
-        }
-
         public void Construct(IGameFactory gameFactory)
         {
             SetIGameFactory(gameFactory);
+            
+
+            Debug.Log("CreateBullet");
+        }
+
+        private void Awake()
+        {
+            SetStartSpeed();
         }
 
         private void SetIGameFactory(IGameFactory gameFactory) => _iGameFactory = gameFactory;
