@@ -1,5 +1,6 @@
 ﻿using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,14 +12,19 @@ namespace Scripts.Weapons
 
         private IGameFactory _iGameFactory;
         private List<GameObject> _bullets = new List<GameObject>();
-        private int _maxBulletCount;
+        private int _bulletCount;
 
-        public int MaxBulletsCount => _maxBulletCount;
+        public int BulletCount => _bulletCount;
 
         public void Construct(IGameFactory iGameFactory)
         {
             SetIGameFactory(iGameFactory);
-            SetMaxBulletCount();
+        }
+
+        private void Start()
+        {
+            SetBulletCount();
+            //FillClip();
         }
 
         public void Reload()
@@ -29,19 +35,20 @@ namespace Scripts.Weapons
         {
         }
 
-        private void AddBulletsInClip()
-        {
-            for (int i = 0; i < _maxBulletCount; i++)
-            {
-                GameObject bullet = _iGameFactory.CreateGunBullet();
-                bullet.GetComponent<GunBullet>().Construct(_iGameFactory);
-                _bullets.Add(bullet);
+        private GameObject CreateBullet() => _iGameFactory.CreateGunBullet();
 
-            }
-        }
+        private void AddBulletInClip(GameObject bullet) => _bullets.Add(bullet);
 
-        private void SetMaxBulletCount() => _maxBulletCount = _staticData.CountBulletsInClip;
+        private void SetBulletCount() => _bulletCount = _staticData.BulletCount;
 
         private void SetIGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
+
+        private void FillClip()
+        {
+            for (int i = 0; i < _bulletCount; i++)
+            {
+                AddBulletInClip(CreateBullet());
+            }
+        }
     }
 }

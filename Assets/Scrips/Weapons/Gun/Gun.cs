@@ -20,6 +20,10 @@ namespace Scripts.Weapons
         public void Construct(IGameFactory iGameFactory)
         {
             SetGameFactory(iGameFactory);
+        }
+
+        private void Awake()
+        {
             SetParametrs();
         }
 
@@ -50,6 +54,7 @@ namespace Scripts.Weapons
 
         private void RemoveBulletFromClip()
         {
+            Debug.Log("RemoveBulletFromClip");
         }
 
         private void SetGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;

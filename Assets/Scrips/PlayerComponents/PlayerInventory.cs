@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Scripts.CodeBase.Logic;
+﻿using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
 using Scripts.Weapons;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
@@ -14,41 +14,31 @@ namespace Scripts.PlayerComponents
         private IGameFactory _iGameFactory;
         private List<GameObject> _weapons = new List<GameObject>();
         private List<GameObject> _clips = new List<GameObject>();
-        private GameObject _gun;
-        private int _startGunClipCount;
+        private int _clipCount;
 
         public void Construct(IGameFactory iGameFactory)
         {
             SetIGameFactory(iGameFactory);
-
-            CreateGun();
-            AddGunToInventory();
-
-            SetStartClipsCount();
-            AddClipsToInventory();
-
-            SetStartWeapon(GetGun());
+            SetClipCount();
+            AddWeaponToInventory(CreateGun());
+            AddClipsToInventory(_clipCount);
         }
+
+        private GameObject CreateGun() => _iGameFactory.CreateGun();
+
+        private GameObject CreateClip() => _iGameFactory.CreateGunClip();
 
         private void SetIGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
 
-        private void AddGunToInventory() => _weapons.Add(_gun);
+        private void AddWeaponToInventory(GameObject weapon) => _weapons.Add(weapon);
 
-        private void CreateGun() => _gun = _iGameFactory.CreateGun();
+        private void SetClipCount() => _clipCount = _staticData.StartClipsCount;
 
-        private void SetStartClipsCount() => _startGunClipCount = _staticData.StartClipsCount;
-
-        private void SetStartWeapon(IWeapon weapon) => _playerChooserWeapon.SetCurrentWeapon(weapon);
-
-        private IWeapon GetGun() => _gun.GetComponent<IWeapon>();
-
-        private void AddClipsToInventory()
+        private void AddClipsToInventory(int clipCount)
         {
-            for (int i = 0; i < _startGunClipCount; i++)
+            for (int i = 0; i < clipCount; i++)
             {
-                GameObject clip = _iGameFactory.CreateGunClip();
-                clip.GetComponent<GunClip>().Construct(_iGameFactory);
-                _clips.Add(clip);
+                _clips.Add(CreateClip());
             }
         }
 

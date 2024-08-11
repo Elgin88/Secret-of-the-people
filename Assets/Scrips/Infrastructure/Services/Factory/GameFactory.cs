@@ -13,8 +13,6 @@ namespace Scripts.CodeBase.Logic
         private IAssetProvider _assetProvider;
         private GameObject _player;
         private GameObject _healthBar;
-        private List<GameObject> _weapons = new List<GameObject>();
-        private List<GameObject> _clips = new List<GameObject>();
 
         public GameObject Player => _player;
 
@@ -32,7 +30,7 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreatePlayer()
         {
-            _player = CreateGameObject(StaticAssetPath.Player, GetPosition(StaticTags.PlayerSpawnPoint));
+            _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
             _player.GetComponent<PlayerInventory>().Construct(this);
 
             return _player;
@@ -86,7 +84,7 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreateGunClip()
         {
-            GameObject gunClip = CreateClip(StaticAssetPath.GunClip);
+            GameObject gunClip = CreateGameObject(StaticAssetPath.GunClip);
 
             gunClip.GetComponent<GunClip>().Construct(this);
 
@@ -95,31 +93,17 @@ namespace Scripts.CodeBase.Logic
 
         public GameObject CreateGunBullet()
         {
-            return CreateWeapon(StaticAssetPath.GunBullet);
+            GameObject bullet = CreateGameObject(StaticAssetPath.GunBullet);
+
+            bullet.GetComponent<GunBullet>().Construct(this);
+
+            return bullet;
         }
 
         private GameObject CreateGameObject(string path, Vector3 position) => _assetProvider.Instantiate(path, position, Quaternion.identity);
 
         private GameObject CreateGameObject(string path) => _assetProvider.Instantiate(path);
 
-        private Vector3 GetPosition(string tag) => GameObject.FindGameObjectWithTag(tag).transform.position;
-
-        private GameObject CreateClip(string path)
-        {
-            GameObject clip = CreateGameObject(path);
-
-            _clips.Add(clip);
-
-            return clip;
-        }
-
-        private GameObject CreateWeapon(string path)
-        {
-            GameObject weapon = _assetProvider.Instantiate(path);
-
-            _weapons.Add(weapon);
-
-            return weapon;
-        }
+        private Vector3 GetPositionByTag(string tag) => GameObject.FindGameObjectWithTag(tag).transform.position;
     }
 }

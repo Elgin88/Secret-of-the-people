@@ -11,6 +11,11 @@ namespace Scripts.PlayerComponents
 
         public IWeapon ICurrentWeapon => _iCurrentWeapon;
 
-        public void SetCurrentWeapon(IWeapon iWeapon) => _iCurrentWeapon = iWeapon;
+        private void Start()
+        {
+            SetCurrentWeapon(_playerInventory.GetWeaponGun().GetComponent<IWeapon>());
+        }
+
+        private void SetCurrentWeapon(IWeapon iWeapon) => _iCurrentWeapon = iWeapon;
     }
 }

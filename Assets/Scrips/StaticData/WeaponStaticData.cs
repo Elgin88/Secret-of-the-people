@@ -10,6 +10,6 @@ namespace Scripts.StaticData
 
         [Range(0f, 3f)] public float DurationReload;
 
-        [Range(0f, 30f)] public int CountBulletsInClip;
+        [Range(0f, 30f)] public int BulletCount;
     }
 }

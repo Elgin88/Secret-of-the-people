@@ -17,12 +17,11 @@ namespace Scripts.Weapons
         public void Construct(IGameFactory gameFactory)
         {
             SetIGameFactory(gameFactory);
-            
 
             Debug.Log("CreateBullet");
         }
 
-        private void Awake()
+        private void Start()
         {
             SetStartSpeed();
         }

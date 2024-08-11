@@ -27,7 +27,7 @@ namespace Scripts.PlayerComponents
 
         public void FixedUpdate()
         {
-            ResetMinDistance();
+            SetMinDistance();
             ResetNearestTarget();
             FindTargets();
             SetNearestTarget();
@@ -39,7 +39,7 @@ namespace Scripts.PlayerComponents
             {
                 if (target != null)
                 {
-                    float distance = CalculateDistance(target);
+                    float distance = GetDistanceToTarget(target);
 
                     if (distance < _minDistance)
                     {
@@ -57,9 +57,9 @@ namespace Scripts.PlayerComponents
             _currentCountTargets = Physics.OverlapSphereNonAlloc(transform.position, _rangeToChooserNearestTarget, _targets, _targetLayerMask);
         }
 
-        private float CalculateDistance(Collider target) => Vector3.Distance(transform.position, target.transform.position);
+        private float GetDistanceToTarget(Collider target) => Vector3.Distance(transform.position, target.transform.position);
 
-        private void ResetMinDistance() => _minDistance = _rangeToChooserNearestTarget;
+        private void SetMinDistance() => _minDistance = _rangeToChooserNearestTarget;
 
         private void ResetNearestTarget() => _nearestTarget = null;
 
