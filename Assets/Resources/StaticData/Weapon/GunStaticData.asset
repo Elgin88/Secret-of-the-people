@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DelayBetweenShoots: 1
   DurationReload: 2
-  CountBulletsInClip: 8
+  BulletCount: 8

@@ -1,6 +1,5 @@
 ﻿using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,10 +19,6 @@ namespace Scripts.Weapons
         {
             SetIGameFactory(iGameFactory);
             SetBulletCount();
-        }
-
-        private void Start()
-        {
             FillClip();
         }
 

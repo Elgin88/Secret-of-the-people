@@ -60,8 +60,8 @@ namespace Scripts.PlayerComponents
             }
             else
             {
-                _currentHealth = 0;
                 _isDead = true;
+                _currentHealth = 0;
             }
         }
     }
