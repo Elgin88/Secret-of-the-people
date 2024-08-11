@@ -39,7 +39,7 @@ namespace Scripts.Canvas
 
         private void ResetBarSlider() => _slider.value = 1;
 
-        private void ResetBarValues() => _text.text = _playerHealth.StartHealth + "/" + _playerHealth.StartHealth;
+        private void ResetBarValues() => _text.text = _playerHealth.Health + "/" + _playerHealth.Health;
 
         private void SetSlider(float current, float max) => _slider.value = current / max;
 

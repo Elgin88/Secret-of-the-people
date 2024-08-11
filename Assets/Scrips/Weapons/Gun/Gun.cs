@@ -11,7 +11,7 @@ namespace Scripts.Weapons
         private IGameFactory _iGameFactory;
         private float _delayBetweenShoots;
         private float _durationReload;
-        private float _currentColldawn;
+        private float _сolldawn;
 
         public float DelayBetweenShoots => _delayBetweenShoots;
 
@@ -20,10 +20,6 @@ namespace Scripts.Weapons
         public void Construct(IGameFactory iGameFactory)
         {
             SetGameFactory(iGameFactory);
-        }
-
-        private void Awake()
-        {
             SetParametrs();
         }
 
@@ -49,21 +45,19 @@ namespace Scripts.Weapons
 
         public void Reload()
         {
-            Debug.Log("Reload");
         }
 
         private void RemoveBulletFromClip()
         {
-            Debug.Log("RemoveBulletFromClip");
         }
 
         private void SetGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
 
-        private bool IsCooldawnOut() => _currentColldawn < 0;
+        private bool IsCooldawnOut() => _сolldawn < 0;
 
-        private void ResetCooldawn() => _currentColldawn = _delayBetweenShoots;
+        private void ResetCooldawn() => _сolldawn = _delayBetweenShoots;
 
-        private void UpdateColldawn() => _currentColldawn -= Time.deltaTime;
+        private void UpdateColldawn() => _сolldawn -= Time.deltaTime;
 
         private void SetParametrs()
         {

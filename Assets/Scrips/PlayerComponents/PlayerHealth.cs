@@ -1,5 +1,5 @@
-﻿using System;
-using Scripts.StaticData;
+﻿using Scripts.StaticData;
+using System;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
@@ -8,17 +8,17 @@ namespace Scripts.PlayerComponents
     {
         [SerializeField] private PlayerStaticData _staticData;
 
-        private float _startHealth;
         private float _currentHealth;
+        private float _health;
         private bool _isDead = false;
 
         public Action<float, float> OnHealthChanged;
 
-        public bool IsDead => _isDead;
-
-        public float StartHealth => _startHealth;
+        public float Health => _health;
 
         public float CurrentHealth => _currentHealth;
+
+        public bool IsDead => _isDead;
 
         private void Awake()
         {
@@ -29,12 +29,9 @@ namespace Scripts.PlayerComponents
         public void AddHealth(float heal)
         {
             _currentHealth += heal;
-            InvokeOnHealthChanged();
 
-            if (_currentHealth > 0)
-            {
-                _isDead = false;
-            }
+            InvokeOnHealthChanged();
+            SetIsDead();
         }
 
         public void RemoveHealth(float damage)
@@ -42,22 +39,30 @@ namespace Scripts.PlayerComponents
             _currentHealth -= damage;
 
             InvokeOnHealthChanged();
+            SetIsDead();
+        }
 
-            if (_currentHealth <= 0)
+        private void InvokeOnHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, Health);
+
+        private void SetStartHealth() => _health = _staticData.Health;
+
+        private void ResetHealth()
+        {
+            _currentHealth = Health;
+            InvokeOnHealthChanged();
+        }
+
+        private void SetIsDead()
+        {
+            if (_currentHealth > 0)
+            {
+                _isDead = false;
+            }
+            else
             {
                 _currentHealth = 0;
                 _isDead = true;
             }
         }
-
-        private void ResetHealth()
-        {
-            _currentHealth = StartHealth;
-            InvokeOnHealthChanged();
-        }
-
-        private void InvokeOnHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, StartHealth);
-
-        private void SetStartHealth() => _startHealth = _staticData.Health;
     }
 }

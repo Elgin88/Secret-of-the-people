@@ -4,9 +4,9 @@ namespace Scripts.PlayerComponents
 {
     public class PlayerAgentAttack : MonoBehaviour
     {
+        [SerializeField] private PlayerChooserNearestTarget _playerChooserNearestTarget;
         [SerializeField] private PlayerChooserWeapon _playerChooserWeapon;
         [SerializeField] private Transform _shootPoint;
-        [SerializeField] private PlayerChooserNearestTarget _playerChooserNearestTarget;
 
         public Transform ShootPoint => _shootPoint;
 

@@ -19,12 +19,12 @@ namespace Scripts.Weapons
         public void Construct(IGameFactory iGameFactory)
         {
             SetIGameFactory(iGameFactory);
+            SetBulletCount();
         }
 
         private void Start()
         {
-            SetBulletCount();
-            //FillClip();
+            FillClip();
         }
 
         public void Reload()

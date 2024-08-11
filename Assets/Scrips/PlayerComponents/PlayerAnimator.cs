@@ -5,9 +5,9 @@ namespace Scripts.PlayerComponents
 {
     public class PlayerAnimator : MonoBehaviour
     {
+        [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private PlayerMover _playerMover;
         [SerializeField] private Animator _animator;
-        [SerializeField] private PlayerStaticData _staticData;
 
         private float _baseRunSpeedAnimation;
         private readonly int _runHash = Animator.StringToHash(PlayerStatic

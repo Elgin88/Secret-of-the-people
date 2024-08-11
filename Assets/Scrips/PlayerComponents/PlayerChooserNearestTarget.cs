@@ -5,15 +5,15 @@ namespace Scripts.PlayerComponents
 {
     public class PlayerChooserNearestTarget : MonoBehaviour
     {
-        [SerializeField] private LayerMask _targetLayerMask;
         [SerializeField] private PlayerStaticData _staticData;
+        [SerializeField] private LayerMask _targetLayerMask;
 
         private Collider[] _targets;
         private Collider _nearestTarget;
         private const int _maxTargetsCount = 10;
-        private int _currentCountTargets;
         private float _minDistance;
         private int _rangeToChooserNearestTarget;
+        private int _currentCountTargets;
 
         public Collider NearestTarget => _nearestTarget;
 

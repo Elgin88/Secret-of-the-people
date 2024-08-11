@@ -24,6 +24,19 @@ namespace Scripts.PlayerComponents
             AddClipsToInventory(_clipCount);
         }
 
+        public GameObject GetWeaponGun()
+        {
+            foreach (var weapon in _weapons)
+            {
+                if (weapon.GetComponent<Gun>() != null)
+                {
+                    return weapon;
+                }
+            }
+
+            return null;
+        }
+
         private GameObject CreateGun() => _iGameFactory.CreateGun();
 
         private GameObject CreateClip() => _iGameFactory.CreateGunClip();
@@ -40,19 +53,6 @@ namespace Scripts.PlayerComponents
             {
                 _clips.Add(CreateClip());
             }
-        }
-
-        public GameObject GetWeaponGun()
-        {
-            foreach (var weapon in _weapons)
-            {
-                if (weapon.GetComponent<Gun>() != null)
-                {
-                    return weapon;
-                }
-            }
-
-            return null;
         }
     }
 }
