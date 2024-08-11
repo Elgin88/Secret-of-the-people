@@ -1,5 +1,6 @@
 ﻿using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
+using System;
 using UnityEngine;
 
 namespace Scripts.Weapons
@@ -12,17 +13,11 @@ namespace Scripts.Weapons
 
         private float _startSpeed;
 
-        public float StartSpeed => _startSpeed;
+        public float Speed => _startSpeed;
 
         public void Construct(IGameFactory gameFactory)
         {
             SetIGameFactory(gameFactory);
-
-            Debug.Log("CreateBullet");
-        }
-
-        private void Start()
-        {
             SetStartSpeed();
         }
 

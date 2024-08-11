@@ -2,6 +2,6 @@
 {
     public interface IBullet
     {
-        public float StartSpeed { get; }
+        public float Speed { get; }
     }
 }
