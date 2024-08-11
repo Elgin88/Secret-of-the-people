@@ -1,6 +1,5 @@
 ﻿using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
-using System;
 using UnityEngine;
 
 namespace Scripts.Weapons
@@ -8,6 +7,7 @@ namespace Scripts.Weapons
     public class GunBullet : MonoBehaviour, IBullet
     {
         [SerializeField] private BulletStaticData _staticData;
+        [SerializeField] private GunBulletMover _gunBulletMover;
 
         private IGameFactory _iGameFactory;
 
@@ -19,6 +19,11 @@ namespace Scripts.Weapons
         {
             SetIGameFactory(gameFactory);
             SetStartSpeed();
+        }
+
+        public void Shoot()
+        {
+            _gunBulletMover.Enable();
         }
 
         private void SetIGameFactory(IGameFactory gameFactory) => _iGameFactory = gameFactory;

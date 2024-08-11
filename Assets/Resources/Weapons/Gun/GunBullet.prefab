@@ -114,8 +114,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3232565275760797073}
-  - component: {fileID: 1422652245900934384}
-  - component: {fileID: 6446419030101550563}
+  - component: {fileID: 11223690554343570}
+  - component: {fileID: 1432639116793107721}
   m_Layer: 0
   m_Name: GunBullet
   m_TagString: Untagged
@@ -139,7 +139,7 @@ Transform:
   - {fileID: 3636043465503149990}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1422652245900934384
+--- !u!114 &11223690554343570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,11 +148,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8365293725231920729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7295cecbf186649b1b7c112f0efeed82, type: 3}
+  m_Script: {fileID: 11500000, guid: b1342ce6d26f9b14f81fd4bbd72e19c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: 3e1978cd4dd41484aaa4178597b1ec34, type: 2}
---- !u!114 &6446419030101550563
+  _gunBulletMover: {fileID: 1432639116793107721}
+--- !u!114 &1432639116793107721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8365293725231920729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1cc7601d74dda6458337a921b8da275, type: 3}
+  m_Script: {fileID: 11500000, guid: 2600b01077e4b0b48816ea5cff9fbd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 1422652245900934384}
+  _gunBullet: {fileID: 11223690554343570}

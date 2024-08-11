@@ -45,5 +45,16 @@ namespace Scripts.Weapons
                 AddBulletInClip(CreateBullet());
             }
         }
+
+        public IBullet GetTopBullet()
+        {
+            GameObject topBullet = _bullets[0];
+            
+            RemoveTopBullet();
+
+            return topBullet.GetComponent<IBullet>();
+        }
+
+        private void RemoveTopBullet() => _bullets.Remove(_bullets[0]);
     }
 }

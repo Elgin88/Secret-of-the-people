@@ -7,8 +7,10 @@ namespace Scripts.Weapons
     public class Gun : MonoBehaviour, IWeapon
     {
         [SerializeField] private WeaponStaticData _staticData;
+        [SerializeField] private GunSetterCurrentClip _gunSetterCurrentClip;
 
         private IGameFactory _iGameFactory;
+        private IClip _currentClip;
         private float _delayBetweenShoots;
         private float _durationReload;
         private float _сolldawn;
@@ -16,6 +18,8 @@ namespace Scripts.Weapons
         public float DelayBetweenShoots => _delayBetweenShoots;
 
         public float DurationReload => _durationReload;
+
+        public IGameFactory IGameFactory => _iGameFactory;
 
         public void Construct(IGameFactory iGameFactory)
         {
@@ -41,6 +45,7 @@ namespace Scripts.Weapons
         private void Shoot()
         {
             Debug.Log("Shoot");
+            _gunSetterCurrentClip.CurrentClip.GetComponent<GunClip>().GetTopBullet().Shoot();
         }
 
         public void Reload()

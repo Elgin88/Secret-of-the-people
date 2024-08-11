@@ -9,5 +9,7 @@ namespace Scripts.Weapons
         public void Reload();
 
         public void Construct(IGameFactory iGameFactory);
+        
+        public IBullet GetTopBullet();
     }
 }
