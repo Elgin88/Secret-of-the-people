@@ -17,6 +17,7 @@ namespace Scripts.StaticData
         [Range(0f, 10f)] public float AnimationBaseRunSpeed;
 
         [Range(0f, 20f)] public int RangeToChooserNearestTarget;
-        internal int StartClipsCount;
+
+        [Range(0f, 10f)] public int StartClipsCount;
     }
 }

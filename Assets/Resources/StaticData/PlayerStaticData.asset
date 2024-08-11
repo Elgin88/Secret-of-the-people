@@ -18,3 +18,4 @@ MonoBehaviour:
   CoefficientDownSpeedAfterHit: 0.2
   AnimationBaseRunSpeed: 4.8
   RangeToChooserNearestTarget: 10
+  StartClipsCount: 2

@@ -21,15 +21,21 @@ namespace Scripts.Weapons
             SetIGameFactory(iGameFactory);
         }
 
-        private void Awake()
+        private void Start()
         {
             SetMaxBulletCount();
-
-            Debug.Log("Создать в интентаре магазин, а в обойме создать пулю");
+            CreateBulletsInClip();
         }
 
-        public void AddBulletsInClip()
+        private void CreateBulletsInClip()
         {
+            Debug.Log(_iGameFactory);
+            Debug.Log(_bullets);
+
+            for (int i = 0; i < _maxBulletCount; i++)
+            {
+                _bullets.Add(_iGameFactory.CreateGunBullet());
+            }
         }
 
         public void Reload()
@@ -43,9 +49,6 @@ namespace Scripts.Weapons
 
         private void SetMaxBulletCount() => _maxBulletCount = _staticData.CountBulletsInClip;
 
-        private void SetIGameFactory(IGameFactory iGameFactory)
-        {
-            _iGameFactory = iGameFactory;
-        }
+        private void SetIGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
     }
 }

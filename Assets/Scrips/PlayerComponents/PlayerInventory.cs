@@ -1,8 +1,7 @@
-﻿using Scripts.CodeBase.Logic;
+﻿using System.Collections.Generic;
+using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
 using Scripts.Weapons;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
@@ -19,25 +18,41 @@ namespace Scripts.PlayerComponents
 
         private GameObject _gun;
 
-        private void Awake()
-        {
-            SetStartClipsCount();
-        }
-
         public void Construct(IGameFactory iGameFactory)
         {
             SetIGameFactory(iGameFactory);
+        }
+
+        private void Start()
+        {
             CreateGun();
             AddGunToInventory();
+
+            SetStartClipsCount();
             AddClipsToInventory();
+
             SetStartWeapon(GetGun());
         }
+
+        private void SetIGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
+
+        private void AddGunToInventory() => _weapons.Add(_gun);
+
+        private void CreateGun() => _gun = _iGameFactory.CreateGun();
+
+        private IWeapon GetGun() => _gun.GetComponent<IWeapon>();
+
+        private void SetStartClipsCount() => _startClipsCount = _staticData.StartClipsCount;
+
+        private void SetStartWeapon(IWeapon weapon) => _playerChooserWeapon.SetCurrentWeapon(weapon);
 
         private void AddClipsToInventory()
         {
             for (int i = 0; i < _startClipsCount; i++)
             {
-                _clips.Add(GetClip());
+                GameObject clip = _iGameFactory.CreateGunClip();
+                clip.GetComponent<GunClip>().Construct(_iGameFactory);
+                _clips.Add(clip);
             }
         }
 
@@ -53,19 +68,5 @@ namespace Scripts.PlayerComponents
 
             return null;
         }
-
-        private void SetIGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
-
-        private void AddGunToInventory() => _weapons.Add(_gun);
-
-        private void CreateGun() => _gun = _iGameFactory.CreateGun();
-
-        private IWeapon GetGun() => _gun.GetComponent<IWeapon>();
-
-        private void SetStartClipsCount() => _startClipsCount = _staticData.StartClipsCount;
-
-        private GameObject GetClip() => _iGameFactory.CreateGunClip();
-
-        private void SetStartWeapon(IWeapon weapon) => _playerChooserWeapon.SetCurrentWeapon(weapon);
     }
 }

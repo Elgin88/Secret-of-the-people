@@ -6,12 +6,10 @@ namespace Scripts.Weapons
     {
         public int BulletsCount { get; }
 
-        public void AddBulletsInClip();
-
         public void RemoveBullet();
 
         public void Reload();
 
-        public void Construct(IGameFactory gameFactory);
+        public void Construct(IGameFactory iGameFactory);
     }
 }

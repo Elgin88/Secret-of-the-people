@@ -13,8 +13,8 @@ namespace Scripts.CodeBase.Logic
         private IAssetProvider _assetProvider;
         private GameObject _player;
         private GameObject _healthBar;
-        private List<GameObject> _bullets;
-        private List<GameObject> _clips;
+        private List<GameObject> _weapons = new List<GameObject>();
+        private List<GameObject> _clips = new List<GameObject>();
 
         public GameObject Player => _player;
 
@@ -88,8 +88,6 @@ namespace Scripts.CodeBase.Logic
         {
             GameObject gunClip = CreateClip(StaticAssetPath.GunClip);
 
-            Debug.Log(gunClip);
-
             gunClip.GetComponent<GunClip>().Construct(this);
 
             return gunClip;
@@ -119,7 +117,7 @@ namespace Scripts.CodeBase.Logic
         {
             GameObject weapon = _assetProvider.Instantiate(path);
 
-            _bullets.Add(weapon);
+            _weapons.Add(weapon);
 
             return weapon;
         }
