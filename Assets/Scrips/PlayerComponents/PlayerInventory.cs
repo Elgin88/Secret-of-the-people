@@ -1,8 +1,7 @@
-﻿using Scripts.CodeBase.Logic;
+﻿using System.Collections.Generic;
+using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
 using Scripts.Weapons;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
@@ -25,13 +24,28 @@ namespace Scripts.PlayerComponents
             AddClipsToInventory(_clipCount);
         }
 
-        public GameObject GetWeaponGun()
+        public IWeapon GetIWeaponGun()
         {
-            foreach (var weapon in _weapons)
+            foreach (GameObject weapon in _weapons)
             {
                 if (weapon.GetComponent<Gun>() != null)
                 {
-                    return weapon;
+                    return weapon.GetComponent<IWeapon>();
+                }
+            }
+
+            return null;
+        }
+
+        public IClip GetIGunClip()
+        {
+            foreach (GameObject clip in _clips)
+            {
+                if (clip.GetComponent<GunClip>() != null)
+                {
+                    _clips.Remove(clip);
+
+                    return clip.GetComponent<IClip>();
                 }
             }
 
@@ -54,20 +68,6 @@ namespace Scripts.PlayerComponents
             {
                 _clips.Add(CreateClip());
             }
-        }
-
-        internal GameObject GetGunClip()
-        {
-            foreach (GameObject clip in _clips)
-            {
-                if (clip.GetComponent<GunClip>() != null)
-                {
-                    _clips.Remove(clip);
-                    return clip;
-                }
-            }
-
-            return null;
         }
     }
 }

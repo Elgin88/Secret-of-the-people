@@ -1,6 +1,6 @@
-﻿using Scripts.CodeBase.Logic;
+﻿using System.Collections.Generic;
+using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.Weapons
@@ -30,6 +30,20 @@ namespace Scripts.Weapons
         {
         }
 
+        public IBullet GetTopBullet()
+        {
+            GameObject topBullet = _bullets[0];
+
+            if (topBullet == null)
+            {
+                return null;
+            }
+
+            RemoveTopBullet();
+
+            return topBullet.GetComponent<IBullet>();
+        }
+
         private GameObject CreateBullet() => _iGameFactory.CreateGunBullet();
 
         private void AddBulletInClip(GameObject bullet) => _bullets.Add(bullet);
@@ -44,15 +58,6 @@ namespace Scripts.Weapons
             {
                 AddBulletInClip(CreateBullet());
             }
-        }
-
-        public IBullet GetTopBullet()
-        {
-            GameObject topBullet = _bullets[0];
-            
-            RemoveTopBullet();
-
-            return topBullet.GetComponent<IBullet>();
         }
 
         private void RemoveTopBullet() => _bullets.Remove(_bullets[0]);

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: 8f859de07b114df4ba384cbb2d6a64ea, type: 2}
-  _gunSetterCurrentClip: {fileID: 2099806789135738548}
+  _gunSetterClip: {fileID: 2099806789135738548}
 --- !u!114 &2099806789135738548
 MonoBehaviour:
   m_ObjectHideFlags: 0
