@@ -4,6 +4,7 @@
     {
         public float Speed { get; }
 
-        public void Shoot();
+        public void Fly();
+        void SetStartPosition();
     }
 }

@@ -78,6 +78,7 @@ namespace Scripts.CodeBase.Logic
             GameObject gun = _assetProvider.Instantiate(StaticAssetPath.Gun);
 
             gun.GetComponent<Gun>().Construct(this);
+            gun.GetComponent<GunClipSetter>().Construct(this);
 
             return gun;
         }

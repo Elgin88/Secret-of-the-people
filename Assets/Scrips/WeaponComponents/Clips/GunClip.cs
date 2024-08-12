@@ -39,9 +39,12 @@ namespace Scripts.Weapons
                 return null;
             }
 
-            RemoveTopBullet();
-
             return topBullet.GetComponent<IBullet>();
+        }
+
+        public void RemoveTopBullet()
+        {
+            _bullets.Remove(_bullets[0]);
         }
 
         private GameObject CreateBullet() => _iGameFactory.CreateGunBullet();
@@ -59,7 +62,5 @@ namespace Scripts.Weapons
                 AddBulletInClip(CreateBullet());
             }
         }
-
-        private void RemoveTopBullet() => _bullets.Remove(_bullets[0]);
     }
 }

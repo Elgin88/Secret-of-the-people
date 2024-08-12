@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1416695367792107669}
   - component: {fileID: 2460729049461303031}
   - component: {fileID: -515779720248942174}
+  - component: {fileID: 2800332672176356330}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunShooter: {fileID: 2460729049461303031}
   _gunReloader: {fileID: -515779720248942174}
+  _gunClipSetter: {fileID: 2800332672176356330}
 --- !u!114 &2460729049461303031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: 8f859de07b114df4ba384cbb2d6a64ea, type: 2}
+  _gunClipSetter: {fileID: 2800332672176356330}
 --- !u!114 &-515779720248942174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,5 +74,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c3e7f44c8e2e4810a58b17ad5d75877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2800332672176356330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401313959486092404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5723914485bb14aa65c6645136a8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

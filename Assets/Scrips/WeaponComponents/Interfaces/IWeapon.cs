@@ -6,6 +6,8 @@ namespace Scripts.Weapons
     {
         public IGameFactory IGameFactory { get; }
 
+        public IClip IClip { get; }
+
         public void Shoot();
 
         public void Reload();

@@ -11,5 +11,7 @@ namespace Scripts.Weapons
         public void Construct(IGameFactory iGameFactory);
         
         public IBullet GetTopBullet();
+        
+        public void RemoveTopBullet();
     }
 }

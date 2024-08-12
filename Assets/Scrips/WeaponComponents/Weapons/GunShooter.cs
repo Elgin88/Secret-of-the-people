@@ -6,6 +6,7 @@ namespace Scripts.Weapons
     public class GunShooter : MonoBehaviour
     {
         [SerializeField] private WeaponStaticData _staticData;
+        [SerializeField] private GunClipSetter _gunClipSetter;
 
         private float _cooldawn;
         private float _delay;
@@ -25,9 +26,18 @@ namespace Scripts.Weapons
             if (IsCooldawnEnd())
             {
                 Debug.Log("Shoot");
+                IBullet bullet = GetBullet();
+                bullet.SetStartPosition();
+                bullet.Fly();
+                RemoveBulletFromClip();
+
                 ResetColldawn();
             }
         }
+
+        private void RemoveBulletFromClip() => _gunClipSetter.ICurrentClip.RemoveTopBullet();
+
+        private IBullet GetBullet() => _gunClipSetter.ICurrentClip.GetTopBullet();
 
         private void UpdateCooldawn() => _cooldawn -= Time.deltaTime;
 

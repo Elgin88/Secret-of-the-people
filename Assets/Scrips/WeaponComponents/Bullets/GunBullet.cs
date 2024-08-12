@@ -21,9 +21,13 @@ namespace Scripts.Weapons
             SetStartSpeed();
         }
 
-        public void Shoot()
+        public void Fly()
         {
             _gunBulletMover.Enable();
+        }
+
+        public void SetStartPosition()
+        {
         }
 
         private void SetIGameFactory(IGameFactory gameFactory) => _iGameFactory = gameFactory;

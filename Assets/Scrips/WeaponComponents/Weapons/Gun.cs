@@ -5,6 +5,7 @@ namespace Scripts.Weapons
 {
     [RequireComponent(typeof(GunReloader))]
     [RequireComponent(typeof(GunShooter))]
+    [RequireComponent(typeof(GunClipSetter))]
 
     public class Gun : MonoBehaviour, IWeapon
     {
@@ -12,8 +13,11 @@ namespace Scripts.Weapons
         [SerializeField] private GunReloader _gunReloader;
 
         private IGameFactory _iGameFactory;
+        private IClip _iClip;
 
         public IGameFactory IGameFactory => _iGameFactory;
+
+        public IClip IClip => _iClip;
 
         public void Construct(IGameFactory iGameFactory)
         {
@@ -27,7 +31,6 @@ namespace Scripts.Weapons
 
         public void Reload()
         {
-            _gunReloader.Reload();
         }
 
         private void SetGameFactory(IGameFactory gameFactory) => _iGameFactory = gameFactory;

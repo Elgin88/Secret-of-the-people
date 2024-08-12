@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Scripts.CodeBase.Logic;
+﻿using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
 using Scripts.Weapons;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
