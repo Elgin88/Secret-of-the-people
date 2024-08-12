@@ -1,13 +1,15 @@
-﻿namespace Scripts.Weapons
+﻿using Scripts.CodeBase.Logic;
+
+namespace Scripts.Weapons
 {
     public interface IWeapon
     {
-        public float DelayBetweenShoots { get; }
+        public IGameFactory IGameFactory { get; }
 
-        public float DurationReload { get; }
-
-        public void TryShoot();
+        public void Shoot();
 
         public void Reload();
+
+        public void Construct(IGameFactory iGameFactory);
     }
 }

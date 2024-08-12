@@ -20,6 +20,6 @@ namespace Scripts.PlayerComponents
 
         private bool TargetIsFind() => _playerChooserNearestTarget.CurrentTargetsCount != 0;
 
-        private void Attack() => _playerChooserWeapon.ICurrentWeapon.TryShoot();
+        private void Attack() => _playerChooserWeapon.ICurrentWeapon.Shoot();
     }
 }

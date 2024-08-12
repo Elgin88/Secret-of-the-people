@@ -1,72 +1,35 @@
-﻿using System;
-using Scripts.CodeBase.Logic;
-using Scripts.StaticData;
+﻿using Scripts.CodeBase.Logic;
 using UnityEngine;
 
 namespace Scripts.Weapons
 {
+    [RequireComponent(typeof(GunReloader))]
+    [RequireComponent(typeof(GunShooter))]
+
     public class Gun : MonoBehaviour, IWeapon
     {
-        [SerializeField] private WeaponStaticData _staticData;
-        [SerializeField] private GunSetterClip _gunSetterClip;
+        [SerializeField] private GunShooter _gunShooter;
+        [SerializeField] private GunReloader _gunReloader;
 
         private IGameFactory _iGameFactory;
-        private float _delayBetweenShoots;
-        private float _durationReload;
-        private float _сolldawn;
 
         public IGameFactory IGameFactory => _iGameFactory;
-
-        public float DelayBetweenShoots => _delayBetweenShoots;
-
-        public float DurationReload => _durationReload;
 
         public void Construct(IGameFactory iGameFactory)
         {
             SetGameFactory(iGameFactory);
-            SetParametrs();
         }
 
-        private void FixedUpdate()
+        public void Shoot()
         {
-            UpdateColldawn();
-        }
-
-        public void TryShoot()
-        {
-            if (IsCooldawnOut())
-            {
-                ResetCooldawn();
-                Shoot();
-                RemoveBulletFromClip();
-            }
-        }
-
-        private void Shoot()
-        {
-            Debug.Log("Shoot");
+            _gunShooter.Shoot();
         }
 
         public void Reload()
         {
+            _gunReloader.Reload();
         }
 
-        private void RemoveBulletFromClip()
-        {
-        }
-
-        private void SetGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
-
-        private bool IsCooldawnOut() => _сolldawn < 0;
-
-        private void ResetCooldawn() => _сolldawn = _delayBetweenShoots;
-
-        private void UpdateColldawn() => _сolldawn -= Time.deltaTime;
-
-        private void SetParametrs()
-        {
-            _delayBetweenShoots = _staticData.DelayBetweenShoots;
-            _durationReload = _staticData.DurationReload;
-        }
+        private void SetGameFactory(IGameFactory gameFactory) => _iGameFactory = gameFactory;
     }
 }

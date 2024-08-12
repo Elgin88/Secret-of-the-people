@@ -31,15 +31,20 @@ namespace Scripts.PlayerComponents
             _currentHealth += heal;
 
             InvokeOnHealthChanged();
-            SetIsDead();
+            SetStatusIsDead();
         }
 
         public void RemoveHealth(float damage)
         {
             _currentHealth -= damage;
 
+            if (_currentHealth < 0)
+            {
+                _currentHealth = 0;
+            }
+
             InvokeOnHealthChanged();
-            SetIsDead();
+            SetStatusIsDead();
         }
 
         private void InvokeOnHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, Health);
@@ -52,7 +57,7 @@ namespace Scripts.PlayerComponents
             InvokeOnHealthChanged();
         }
 
-        private void SetIsDead()
+        private void SetStatusIsDead()
         {
             if (_currentHealth > 0)
             {
@@ -61,7 +66,6 @@ namespace Scripts.PlayerComponents
             else
             {
                 _isDead = true;
-                _currentHealth = 0;
             }
         }
     }
