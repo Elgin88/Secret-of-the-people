@@ -2,7 +2,7 @@
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerHiter : MonoBehaviour
+    public class PlayerTakerHit : MonoBehaviour
     {
         [SerializeField] private PlayerAnimator _playerAnimator;
         [SerializeField] private PlayerHealth _playerHealth;

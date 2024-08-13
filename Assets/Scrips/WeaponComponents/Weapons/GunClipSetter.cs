@@ -19,7 +19,7 @@ namespace Scripts.Weapons
         
         public void SetICurrentClip()
         {
-            _iCurrentClip = _iGameFactory.Player.GetComponent<PlayerInventory>().GetIGunClip();
+            _iCurrentClip = _iGameFactory.Player.GetComponent<PlayerInventory>().GetGunClip();
         }
 
         private void Update()

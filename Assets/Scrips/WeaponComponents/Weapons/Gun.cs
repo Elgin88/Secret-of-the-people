@@ -12,12 +12,15 @@ namespace Scripts.Weapons
         [SerializeField] private GunShooter _gunShooter;
         [SerializeField] private GunReloader _gunReloader;
 
+        private string _name = StaticWeapon.WeaponGun;
         private IGameFactory _iGameFactory;
         private IClip _iClip;
 
         public IGameFactory IGameFactory => _iGameFactory;
 
         public IClip IClip => _iClip;
+
+        public string Name => _name;
 
         public void Construct(IGameFactory iGameFactory)
         {
@@ -35,4 +38,5 @@ namespace Scripts.Weapons
 
         private void SetGameFactory(IGameFactory gameFactory) => _iGameFactory = gameFactory;
     }
+
 }

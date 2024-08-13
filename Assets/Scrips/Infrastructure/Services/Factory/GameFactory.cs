@@ -31,6 +31,7 @@ namespace Scripts.CodeBase.Logic
         public GameObject CreatePlayer()
         {
             _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
+
             _player.GetComponent<PlayerInventory>().Construct(this);
 
             return _player;

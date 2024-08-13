@@ -9,9 +9,12 @@ namespace Scripts.Weapons
     {
         [SerializeField] private WeaponStaticData _staticData;
 
-        private IGameFactory _iGameFactory;
+        private readonly string _gunClip = StaticWeapon.GunClip;
         private List<GameObject> _bullets = new List<GameObject>();
+        private IGameFactory _iGameFactory;
         private int _bulletCount;
+
+        public string Name => _gunClip;
 
         public int BulletCount => _bulletCount;
 
@@ -22,7 +25,7 @@ namespace Scripts.Weapons
             FillClip();
         }
 
-        public void Reload()
+        public void Fill()
         {
         }
 
