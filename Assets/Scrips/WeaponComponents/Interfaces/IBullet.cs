@@ -1,10 +1,10 @@
 ﻿using Scripts.CodeBase.Logic;
 
-namespace Scripts.Weapons
+namespace Scripts.WeaponsComponents
 {
     public interface IBullet
     {
-        public float Speed { get; }
+        public float StartSpeed { get; }
 
         public void Fly();
 

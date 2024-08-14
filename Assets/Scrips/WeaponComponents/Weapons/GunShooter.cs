@@ -1,14 +1,16 @@
 ﻿using Scripts.CodeBase.Logic;
-using Scripts.PlayerComponents;
 using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.Weapons
+namespace Scripts.WeaponsComponents
 {
+    [RequireComponent(typeof(GunClip))]
+
     public class GunShooter : MonoBehaviour
     {
         [SerializeField] private WeaponStaticData _staticData;
+        [SerializeField] private GunClipSetter _clipSetter;
 
         private ChooserWeapon _chooserWeapon;
 
@@ -34,7 +36,8 @@ namespace Scripts.Weapons
         {
             if (IsCooldawnEnd())
             {
-                Debug.Log(_chooserWeapon);
+                _clipSetter.CurrentClip.GetTopBullet().Fly();
+                _clipSetter.CurrentClip.RemoveTopBullet();
 
                 ResetColldawn();
             }

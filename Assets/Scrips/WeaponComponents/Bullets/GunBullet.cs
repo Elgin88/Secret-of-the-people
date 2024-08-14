@@ -2,18 +2,18 @@
 using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.Weapons
+namespace Scripts.WeaponsComponents
 {
     public class GunBullet : MonoBehaviour, IBullet
     {
         [SerializeField] private BulletStaticData _staticData;
-        [SerializeField] private GunBulletMover _gunBulletMover;
+        [SerializeField] private GunBulletMover _mover;
 
-        private IGameFactory _iGameFactory;
+        private IGameFactory _gameFactory;
 
         private float _startSpeed;
 
-        public float Speed => _startSpeed;
+        public float StartSpeed => _startSpeed;
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -23,14 +23,14 @@ namespace Scripts.Weapons
 
         public void Fly()
         {
-            _gunBulletMover.Enable();
+            _mover.Enable();
         }
 
         public void SetStartPosition()
         {
         }
 
-        private void SetIGameFactory(IGameFactory gameFactory) => _iGameFactory = gameFactory;
+        private void SetIGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
         private void SetStartSpeed() => _startSpeed = _staticData.Speed;
     }

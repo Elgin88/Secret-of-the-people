@@ -2,7 +2,7 @@
 using Scripts.CodeBase.Logic;
 using UnityEngine;
 
-namespace Scripts.Weapons
+namespace Scripts.WeaponsComponents
 {
     public class GunReloader : MonoBehaviour
     {

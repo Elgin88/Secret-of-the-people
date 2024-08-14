@@ -1,12 +1,10 @@
 ﻿using Scripts.CodeBase.Logic;
 
-namespace Scripts.Weapons
+namespace Scripts.WeaponsComponents
 {
     public interface IClip
     {
         public string Name { get; }
-
-        public void RemoveBullet();
 
         public void Fill();
 

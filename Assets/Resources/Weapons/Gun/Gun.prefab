@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2460729049461303031}
   - component: {fileID: -515779720248942174}
   - component: {fileID: 2800332672176356330}
+  - component: {fileID: 5227913068042772277}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -47,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef2ae63909d3274bb972beaf07b135f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gunShooter: {fileID: 2460729049461303031}
-  _gunReloader: {fileID: -515779720248942174}
   _clipSetter: {fileID: 2800332672176356330}
+  _gunReloader: {fileID: -515779720248942174}
+  _gunShooter: {fileID: 2460729049461303031}
 --- !u!114 &2460729049461303031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: 8f859de07b114df4ba384cbb2d6a64ea, type: 2}
-  _gunClipSetter: {fileID: 2800332672176356330}
+  _clipSetter: {fileID: 2800332672176356330}
 --- !u!114 &-515779720248942174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,3 +89,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a5723914485bb14aa65c6645136a8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5227913068042772277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401313959486092404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92de2f1e498145f1af4881c513cf6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _staticData: {fileID: 11400000, guid: 8f859de07b114df4ba384cbb2d6a64ea, type: 2}

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: 3e1978cd4dd41484aaa4178597b1ec34, type: 2}
-  _gunBulletMover: {fileID: 1432639116793107721}
+  _mover: {fileID: 1432639116793107721}
 --- !u!114 &1432639116793107721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,4 +165,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2600b01077e4b0b48816ea5cff9fbd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gunBullet: {fileID: 11223690554343570}
+  _bullet: {fileID: 11223690554343570}

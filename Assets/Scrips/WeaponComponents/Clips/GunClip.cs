@@ -3,7 +3,7 @@ using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.Weapons
+namespace Scripts.WeaponsComponents
 {
     public class GunClip : MonoBehaviour, IClip
     {
@@ -26,10 +26,6 @@ namespace Scripts.Weapons
         }
 
         public void Fill()
-        {
-        }
-
-        public void RemoveBullet()
         {
         }
 

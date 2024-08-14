@@ -1,5 +1,5 @@
 ﻿using Scripts.CodeBase.Logic;
-using Scripts.Weapons;
+using Scripts.WeaponsComponents;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents.InventoryComponents

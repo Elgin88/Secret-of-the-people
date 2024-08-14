@@ -3,7 +3,7 @@ using Scripts.EnemyComponents;
 using Scripts.PlayerComponents;
 using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.Static;
-using Scripts.Weapons;
+using Scripts.WeaponsComponents;
 using System.Collections.Generic;
 using UnityEngine;
 

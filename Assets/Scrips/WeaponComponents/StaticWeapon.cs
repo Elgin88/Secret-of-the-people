@@ -1,4 +1,4 @@
-﻿namespace Scripts.Weapons
+﻿namespace Scripts.WeaponsComponents
 {
     public class StaticWeapon
     {
