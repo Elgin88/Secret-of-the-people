@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerChooserNearestTarget : MonoBehaviour
+    public class ChooserNearestTarget : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private LayerMask _targetLayerMask;

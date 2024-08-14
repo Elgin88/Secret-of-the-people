@@ -1,4 +1,7 @@
-﻿using Scripts.StaticData;
+﻿using Scripts.CodeBase.Logic;
+using Scripts.PlayerComponents;
+using Scripts.PlayerComponents.InventoryComponents;
+using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.Weapons
@@ -6,10 +9,16 @@ namespace Scripts.Weapons
     public class GunShooter : MonoBehaviour
     {
         [SerializeField] private WeaponStaticData _staticData;
-        [SerializeField] private GunClipSetter _gunClipSetter;
+
+        private ChooserWeapon _chooserWeapon;
 
         private float _cooldawn;
         private float _delay;
+
+        public void Construct(IGameFactory gameFactory)
+        {
+            _chooserWeapon = gameFactory.Player.GetComponent<ChooserWeapon>();
+        }
 
         private void Awake()
         {
@@ -25,7 +34,8 @@ namespace Scripts.Weapons
         {
             if (IsCooldawnEnd())
             {
-                Debug.Log("Shoot");
+                Debug.Log(_chooserWeapon);
+
                 ResetColldawn();
             }
         }

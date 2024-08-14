@@ -1,4 +1,6 @@
-﻿namespace Scripts.Weapons
+﻿using Scripts.CodeBase.Logic;
+
+namespace Scripts.Weapons
 {
     public interface IWeapon
     {
@@ -11,5 +13,7 @@
         public void Reload();
 
         public void SetClip(IClip clip);
+
+        public void Construct(IGameFactory iGameFactory);
     }
 }

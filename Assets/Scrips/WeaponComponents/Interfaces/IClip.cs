@@ -4,7 +4,7 @@ namespace Scripts.Weapons
 {
     public interface IClip
     {
-        string Name { get; }
+        public string Name { get; }
 
         public void RemoveBullet();
 

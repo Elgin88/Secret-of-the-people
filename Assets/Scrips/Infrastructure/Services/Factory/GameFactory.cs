@@ -1,6 +1,7 @@
 ﻿using Scripts.Canvas;
 using Scripts.EnemyComponents;
 using Scripts.PlayerComponents;
+using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.Static;
 using Scripts.Weapons;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace Scripts.CodeBase.Logic
         {
             _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
 
-            _player.GetComponent<PlayerInventory>().Construct(this);
+            _player.GetComponent<Inventory>().Construct(this);
 
             return _player;
         }
@@ -77,6 +78,8 @@ namespace Scripts.CodeBase.Logic
         public GameObject CreateGun()
         {
             GameObject gun = _assetProvider.Instantiate(StaticAssetPath.Gun);
+
+            gun.GetComponent<Gun>().Construct(this);
 
             return gun;
         }

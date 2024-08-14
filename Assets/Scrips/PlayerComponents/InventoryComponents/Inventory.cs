@@ -3,17 +3,18 @@ using Scripts.CodeBase.Logic;
 using Scripts.Weapons;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.PlayerComponents.InventoryComponents
 {
-    [RequireComponent(typeof(PlayerInventoryChooserWeapon))]
-    [RequireComponent(typeof(PlayerInventoryObjectsCreator))]
-    [RequireComponent(typeof(PlayerInventotyStartWeaponSetter))]
+    [RequireComponent(typeof(ChooserWeapon
+        ))]
+    [RequireComponent(typeof(ObjectsCreator))]
+    [RequireComponent(typeof(StartWeaponSetter))]
 
-    public class PlayerInventory : MonoBehaviour
+    public class Inventory : MonoBehaviour
     {
-        [SerializeField] private PlayerInventoryChooserWeapon _chooserWeapon;
-        [SerializeField] private PlayerInventoryObjectsCreator _objectsCreator;
-        [SerializeField] private PlayerInventotyStartWeaponSetter _startObjectsSetter;
+        [SerializeField] private ChooserWeapon _chooserWeapon;
+        [SerializeField] private ObjectsCreator _objectsCreator;
+        [SerializeField] private StartWeaponSetter _startObjectsSetter;
 
         private IGameFactory _gameFactory;
         private List<IWeapon> _weapons = new List<IWeapon>();

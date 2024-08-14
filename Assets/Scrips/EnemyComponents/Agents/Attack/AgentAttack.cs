@@ -20,7 +20,7 @@ namespace Scripts.EnemyComponents
         private bool _isAtacking = false;
         private Collider[] _resultOfHit = new Collider[1];
         private IGameFactory _iGameFactory;
-        private PlayerHealth _playerHealth;
+        private HealthSetter _playerHealth;
 
         private void Start()
         {
@@ -84,7 +84,7 @@ namespace Scripts.EnemyComponents
 
         private void SetParametrs()
         {
-            _playerHealth = _iGameFactory.Player.GetComponent<PlayerHealth>();
+            _playerHealth = _iGameFactory.Player.GetComponent<HealthSetter>();
             _attackCooldown = _staticData.AttackCooldawn;
             _damage = _staticData.Damage;
             _currentAttackColldown = _attackCooldown;
@@ -94,7 +94,7 @@ namespace Scripts.EnemyComponents
 
         private void Disable() => enabled = false;
 
-        private void PlayerTakeHit(Collider collider) => collider.GetComponent<PlayerHealth>().RemoveHealth(_damage);
+        private void PlayerTakeHit(Collider collider) => collider.GetComponent<HealthSetter>().RemoveHealth(_damage);
 
         private void UpdateCooldown() => _currentAttackColldown -= Time.deltaTime;
 

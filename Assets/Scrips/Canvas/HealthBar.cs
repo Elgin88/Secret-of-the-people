@@ -11,7 +11,7 @@ namespace Scripts.Canvas
         [SerializeField] private Text _text;
 
         private IGameFactory _gameFactory;
-        private PlayerHealth _playerHealth;
+        private HealthSetter _playerHealth;
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
@@ -31,7 +31,7 @@ namespace Scripts.Canvas
             SetValues(current, max);
         }
 
-        private void SetPlayerHealth() => _playerHealth = _gameFactory.Player.GetComponent<PlayerHealth>();
+        private void SetPlayerHealth() => _playerHealth = _gameFactory.Player.GetComponent<HealthSetter>();
 
         private void SubscribeOnHealthChanged() => _playerHealth.OnHealthChanged += OnHealthChanged;
 

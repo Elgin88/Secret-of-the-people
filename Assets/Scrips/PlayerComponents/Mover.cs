@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerMover : MonoBehaviour
+    public class Mover : MonoBehaviour
     {
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private PlayerStaticData _staticData;
-        [SerializeField] private PlayerAnimator _playerAnimator;
-        [SerializeField] private PlayerHealth _playerHealth;
+        [SerializeField] private AnimationsSetter _animationsSetter;
+        [SerializeField] private HealthSetter _healthSetter;
         [SerializeField] private Transform _transform;
 
         private AllServices _allServices;
@@ -60,7 +60,7 @@ namespace Scripts.PlayerComponents
             }
         }
 
-        private bool IsPlayerAlive() => !_playerHealth.IsDead;
+        private bool IsPlayerAlive() => !_healthSetter.IsDead;
 
         private void SetAllServices() => _allServices = AllServices.Container;
 
@@ -68,13 +68,13 @@ namespace Scripts.PlayerComponents
 
         private void ResetCurrentSpeed() => _currentSpeed = 0;
 
-        private void AnimatorStopPlayRun() => _playerAnimator.StopPlayRunAnimation();
+        private void AnimatorStopPlayRun() => _animationsSetter.StopPlayRunAnimation();
 
         private void SetCurrentSpeed() => _currentSpeed = _startMoveSpeed;
 
-        private void AnimatorPlayRun() => _playerAnimator.PlayRunAnimation();
+        private void AnimatorPlayRun() => _animationsSetter.PlayRunAnimation();
 
-        private bool PlayerIsHiting() => _playerAnimator.IsHiting;
+        private bool PlayerIsHiting() => _animationsSetter.IsHiting;
 
         private void SetTargetRotation(Vector2 axis) => _targetRotaion = Quaternion.LookRotation(new Vector3(axis.x, 0, axis.y));
 

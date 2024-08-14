@@ -2,7 +2,7 @@
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerShootPoint : MonoBehaviour
+    public class ShootPoint : MonoBehaviour
     {
     }
 }

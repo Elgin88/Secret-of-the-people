@@ -2,7 +2,7 @@
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerCameraFollower : MonoBehaviour
+    public class CameraFollower : MonoBehaviour
     {
         private const float _diagonalOffset = 12;
         private const float _verticalOffset = 0;

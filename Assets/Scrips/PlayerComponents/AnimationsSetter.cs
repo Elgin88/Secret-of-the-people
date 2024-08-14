@@ -4,13 +4,13 @@ using UnityEngine;
 namespace Scripts.PlayerComponents
 {
     [RequireComponent(typeof(PlayerStaticData))]
-    [RequireComponent(typeof(PlayerMover))]
+    [RequireComponent(typeof(Mover))]
     [RequireComponent(typeof(Animator))]
 
-    public class PlayerAnimator : MonoBehaviour
+    public class AnimationsSetter : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
-        [SerializeField] private PlayerMover _playerMover;
+        [SerializeField] private Mover _playerMover;
         [SerializeField] private Animator _animator;
 
         private float _baseRunSpeedAnimation;

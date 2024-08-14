@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerHealth : MonoBehaviour
+    public class HealthSetter : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
 

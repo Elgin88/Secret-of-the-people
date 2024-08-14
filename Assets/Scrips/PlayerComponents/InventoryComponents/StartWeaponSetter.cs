@@ -1,16 +1,16 @@
 ﻿using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.PlayerComponents.InventoryComponents
 {
-    [RequireComponent(typeof(PlayerInventoryObjectsCreator))]
-    [RequireComponent(typeof(PlayerInventory))]
+    [RequireComponent(typeof(ObjectsCreator))]
+    [RequireComponent(typeof(Inventory))]
 
-    public class PlayerInventotyStartWeaponSetter : MonoBehaviour
+    public class StartWeaponSetter : MonoBehaviour
     {
-        [SerializeField] private PlayerInventoryObjectsCreator _objectCreator;
         [SerializeField] private PlayerStaticData _staticData;
-        [SerializeField] private PlayerInventory _inventory;
+        [SerializeField] private ObjectsCreator _objectCreator;
+        [SerializeField] private Inventory _inventory;
 
         private int _startGunClipCount;
 

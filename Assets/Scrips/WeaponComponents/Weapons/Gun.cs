@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Scripts.CodeBase.Logic;
+using UnityEngine;
 
 namespace Scripts.Weapons
 {
@@ -12,11 +13,18 @@ namespace Scripts.Weapons
         [SerializeField] private GunReloader _gunReloader;
         [SerializeField] private GunShooter _gunShooter;
 
-        private string _name = StaticWeapon.Gun;
+        private const string _name = StaticWeapon.Gun;
 
         public string Name => _name;
 
         public IClip IClip => _clipSetter.CurrentClip;
+
+        public void Construct(IGameFactory gameFactory)
+        {
+            _clipSetter.Contruct(gameFactory);
+            _gunReloader.Construct(gameFactory);
+            _gunShooter.Construct(gameFactory);
+        }
 
         public void Shoot()
         {

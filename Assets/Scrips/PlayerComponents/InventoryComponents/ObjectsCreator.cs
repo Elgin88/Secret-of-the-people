@@ -2,9 +2,9 @@
 using Scripts.Weapons;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.PlayerComponents.InventoryComponents
 {
-    public class PlayerInventoryObjectsCreator : MonoBehaviour
+    public class ObjectsCreator : MonoBehaviour
     {
         private IGameFactory _gameFactory;
 

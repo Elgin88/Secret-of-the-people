@@ -1,4 +1,6 @@
-﻿namespace Scripts.Weapons
+﻿using Scripts.CodeBase.Logic;
+
+namespace Scripts.Weapons
 {
     public interface IBullet
     {
@@ -7,5 +9,7 @@
         public void Fly();
 
         public void SetStartPosition();
+
+        public void Construct(IGameFactory iGameFactory);
     }
 }

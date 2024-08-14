@@ -1,6 +1,5 @@
 ﻿using System;
 using Scripts.CodeBase.Logic;
-using Scripts.PlayerComponents;
 using UnityEngine;
 
 namespace Scripts.Weapons
@@ -11,7 +10,11 @@ namespace Scripts.Weapons
 
         public IClip CurrentClip => _iCurrentClip;
 
-        internal void SetClip(IClip clip)
+        public void Contruct(IGameFactory gameFactory)
+        {
+        }
+
+        public void SetClip(IClip clip)
         {
             _iCurrentClip = clip;
         }
