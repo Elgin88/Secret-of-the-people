@@ -2,19 +2,16 @@
 
 namespace Scripts.PlayerComponents
 {
-    public class PlayerAgentAttack : MonoBehaviour
+    public class PlayerAttacker : MonoBehaviour
     {
         [SerializeField] private PlayerChooserNearestTarget _playerChooserNearestTarget;
         [SerializeField] private PlayerInventoryChooserWeapon _playerChooserWeapon;
-        [SerializeField] private Transform _shootPoint;
-
-        public Transform ShootPoint => _shootPoint;
 
         private void FixedUpdate()
         {
             if (TargetIsFind())
             {
-
+                _playerChooserWeapon.CurrentWeapon.Shoot();
             }
         }
 

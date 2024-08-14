@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunShooter: {fileID: 2460729049461303031}
   _gunReloader: {fileID: -515779720248942174}
-  _gunClipSetter: {fileID: 2800332672176356330}
+  _clipSetter: {fileID: 2800332672176356330}
 --- !u!114 &2460729049461303031
 MonoBehaviour:
   m_ObjectHideFlags: 0

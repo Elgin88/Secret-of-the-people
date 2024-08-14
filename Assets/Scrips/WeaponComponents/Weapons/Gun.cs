@@ -3,29 +3,21 @@ using UnityEngine;
 
 namespace Scripts.Weapons
 {
+    [RequireComponent(typeof(GunClipSetter))]
     [RequireComponent(typeof(GunReloader))]
     [RequireComponent(typeof(GunShooter))]
-    [RequireComponent(typeof(GunClipSetter))]
 
     public class Gun : MonoBehaviour, IWeapon
     {
-        [SerializeField] private GunShooter _gunShooter;
+        [SerializeField] private GunClipSetter _clipSetter;
         [SerializeField] private GunReloader _gunReloader;
+        [SerializeField] private GunShooter _gunShooter;
 
-        private string _name = StaticWeapon.WeaponGun;
-        private IGameFactory _iGameFactory;
-        private IClip _iClip;
-
-        public IGameFactory IGameFactory => _iGameFactory;
-
-        public IClip IClip => _iClip;
+        private string _name = StaticWeapon.Gun;
 
         public string Name => _name;
 
-        public void Construct(IGameFactory iGameFactory)
-        {
-            SetGameFactory(iGameFactory);
-        }
+        public IClip IClip => _clipSetter.CurrentClip;
 
         public void Shoot()
         {
@@ -36,7 +28,10 @@ namespace Scripts.Weapons
         {
         }
 
-        private void SetGameFactory(IGameFactory gameFactory) => _iGameFactory = gameFactory;
+        public void SetClip(IClip clip)
+        {
+            _clipSetter.SetClip(clip);
+        }
     }
 
 }

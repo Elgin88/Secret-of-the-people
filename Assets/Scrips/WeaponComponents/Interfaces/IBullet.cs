@@ -5,6 +5,7 @@
         public float Speed { get; }
 
         public void Fly();
-        void SetStartPosition();
+
+        public void SetStartPosition();
     }
 }

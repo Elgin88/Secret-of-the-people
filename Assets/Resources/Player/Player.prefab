@@ -1236,7 +1236,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerChooserNearestTarget: {fileID: 2421022248477797470}
   _playerChooserWeapon: {fileID: 8772172121899702013}
-  _shootPoint: {fileID: 7649062014016374016}
 --- !u!114 &2421022248477797470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1265,6 +1264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79dd8c2d7d0b4fc6a561d668ea2c9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerInventory: {fileID: 3647133345412031945}
 --- !u!114 &3647133345412031945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1304,6 +1304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b27875897e1741c0b91d8705bccc2b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objectCreator: {fileID: 8457482411815597920}
+  _inventory: {fileID: 3647133345412031945}
   _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
 --- !u!1 &7331202270206063638
 GameObject:

@@ -7,13 +7,13 @@ namespace Scripts.PlayerComponents
 {
     [RequireComponent(typeof(PlayerInventoryChooserWeapon))]
     [RequireComponent(typeof(PlayerInventoryObjectsCreator))]
-    [RequireComponent(typeof(PlayerInventotyStartObjectsSetter))]
+    [RequireComponent(typeof(PlayerInventotyStartWeaponSetter))]
 
     public class PlayerInventory : MonoBehaviour
     {
         [SerializeField] private PlayerInventoryChooserWeapon _chooserWeapon;
         [SerializeField] private PlayerInventoryObjectsCreator _objectsCreator;
-        [SerializeField] private PlayerInventotyStartObjectsSetter _startObjectsSetter;
+        [SerializeField] private PlayerInventotyStartWeaponSetter _startObjectsSetter;
 
         private IGameFactory _gameFactory;
         private List<IWeapon> _weapons = new List<IWeapon>();
@@ -24,13 +24,14 @@ namespace Scripts.PlayerComponents
             _gameFactory = gameFactory;
             _objectsCreator.Construct(_gameFactory);
             _startObjectsSetter.Construct();
+            _chooserWeapon.Construct();
         }
 
-        public IWeapon GetWeaponGun()
+        public IWeapon GetGun()
         {
             foreach (IWeapon weapon in _weapons)
             {
-                if (weapon.Name == StaticWeapon.WeaponGun)
+                if (weapon.Name == StaticWeapon.Gun)
                 {
                     return weapon;
                 }
@@ -54,12 +55,12 @@ namespace Scripts.PlayerComponents
             return null;
         }
 
-        public void AddWeaponToInventory(IWeapon weapon)
+        public void AddWeapon(IWeapon weapon)
         {
             _weapons.Add(weapon);
         }
 
-        public void AddClipsToInventory(IClip clip)
+        public void AddClip(IClip clip)
         {
             _clips.Add(clip);
         }
