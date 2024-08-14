@@ -6,11 +6,11 @@ namespace Scripts.PlayerComponents
 {
     public class PlayerMover : MonoBehaviour
     {
-        [SerializeField] private Transform _transform;
         [SerializeField] private CharacterController _characterController;
-        [SerializeField] private PlayerAnimator _playerAnimator;
         [SerializeField] private PlayerStaticData _staticData;
+        [SerializeField] private PlayerAnimator _playerAnimator;
         [SerializeField] private PlayerHealth _playerHealth;
+        [SerializeField] private Transform _transform;
 
         private AllServices _allServices;
         private Quaternion _targetRotaion;

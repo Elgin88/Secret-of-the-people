@@ -1,5 +1,4 @@
-﻿using Scripts.CodeBase.Logic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.Weapons
 {
@@ -33,5 +32,4 @@ namespace Scripts.Weapons
             _clipSetter.SetClip(clip);
         }
     }
-
 }

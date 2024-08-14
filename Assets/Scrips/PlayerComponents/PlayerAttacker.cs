@@ -2,10 +2,13 @@
 
 namespace Scripts.PlayerComponents
 {
+    [RequireComponent(typeof(PlayerInventoryChooserWeapon))]
+    [RequireComponent(typeof(PlayerChooserNearestTarget))]
+
     public class PlayerAttacker : MonoBehaviour
     {
-        [SerializeField] private PlayerChooserNearestTarget _playerChooserNearestTarget;
         [SerializeField] private PlayerInventoryChooserWeapon _playerChooserWeapon;
+        [SerializeField] private PlayerChooserNearestTarget _playerChooserNearestTarget;
 
         private void FixedUpdate()
         {

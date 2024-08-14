@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
+    [RequireComponent(typeof(PlayerStaticData))]
+    [RequireComponent(typeof(PlayerMover))]
+    [RequireComponent(typeof(Animator))]
+
     public class PlayerAnimator : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;

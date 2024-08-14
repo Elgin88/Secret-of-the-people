@@ -1,7 +1,4 @@
-﻿using Scripts.CodeBase.Logic;
-using Scripts.StaticData;
-using Scripts.Weapons;
-using System;
+﻿using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents
@@ -12,8 +9,8 @@ namespace Scripts.PlayerComponents
     public class PlayerInventotyStartWeaponSetter : MonoBehaviour
     {
         [SerializeField] private PlayerInventoryObjectsCreator _objectCreator;
-        [SerializeField] private PlayerInventory _inventory;
         [SerializeField] private PlayerStaticData _staticData;
+        [SerializeField] private PlayerInventory _inventory;
 
         private int _startGunClipCount;
 
@@ -25,16 +22,11 @@ namespace Scripts.PlayerComponents
             AddClipInGun();
         }
 
-        private void AddClipInGun()
-        {
-            IClip clip = _inventory.GetGunClip();
-            _inventory.GetGun().SetClip(clip);
-        }
+        private void SetStartClipCount() => _startGunClipCount = _staticData.StartGunClipsCount;
 
-        private void AddGunInInventory()
-        {
-            _inventory.AddWeapon(_objectCreator.GetGun());
-        }
+        private void AddClipInGun() => _inventory.GetGun().SetClip(_inventory.GetGunClip());
+
+        private void AddGunInInventory() => _inventory.AddWeapon(_objectCreator.GetGun());
 
         private void AddGunClipsInInventory()
         {
@@ -43,7 +35,5 @@ namespace Scripts.PlayerComponents
                 _inventory.AddClip(_objectCreator.GetGunClip());
             }
         }
-
-        private void SetStartClipCount() => _startGunClipCount = _staticData.StartGunClipsCount;
     }
 }

@@ -2,6 +2,9 @@
 
 namespace Scripts.PlayerComponents
 {
+    [RequireComponent(typeof(PlayerAnimator))]
+    [RequireComponent(typeof(PlayerHealth))]
+
     public class PlayerDeath : MonoBehaviour
     {
         [SerializeField] private PlayerAnimator _playerAnimator;

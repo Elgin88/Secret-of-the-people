@@ -9,13 +9,13 @@ namespace Scripts.PlayerComponents
     {
         [SerializeField] private PlayerInventory _playerInventory;
 
-        public IWeapon CurrentWeapon;
+        private IWeapon _currentWeapon;
+
+        public IWeapon CurrentWeapon => _currentWeapon;
 
         public void Construct()
         {
-            CurrentWeapon = _playerInventory.GetGun();
-
-            Debug.Log(CurrentWeapon);
+            _currentWeapon = _playerInventory.GetGun();
         }
     }
 }
