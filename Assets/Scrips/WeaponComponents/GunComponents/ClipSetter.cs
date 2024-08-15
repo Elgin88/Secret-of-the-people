@@ -2,9 +2,9 @@
 using Scripts.CodeBase.Logic;
 using UnityEngine;
 
-namespace Scripts.WeaponsComponents
+namespace Scripts.WeaponsComponents.GunComponents
 {
-    public class GunClipSetter : MonoBehaviour
+    public class ClipSetter : MonoBehaviour
     {
         private IClip _iCurrentClip;
 

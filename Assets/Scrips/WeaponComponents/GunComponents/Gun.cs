@@ -1,17 +1,17 @@
 ﻿using Scripts.CodeBase.Logic;
 using UnityEngine;
 
-namespace Scripts.WeaponsComponents
+namespace Scripts.WeaponsComponents.GunComponents
 {
-    [RequireComponent(typeof(GunClipSetter))]
-    [RequireComponent(typeof(GunReloader))]
-    [RequireComponent(typeof(GunShooter))]
+    [RequireComponent(typeof(ClipSetter))]
+    [RequireComponent(typeof(Reloader))]
+    [RequireComponent(typeof(Shooter))]
 
     public class Gun : MonoBehaviour, IWeapon
     {
-        [SerializeField] private GunClipSetter _clipSetter;
-        [SerializeField] private GunReloader _gunReloader;
-        [SerializeField] private GunShooter _gunShooter;
+        [SerializeField] private ClipSetter _clipSetter;
+        [SerializeField] private Reloader _gunReloader;
+        [SerializeField] private Shooter _gunShooter;
 
         private const string _name = StaticWeapon.Gun;
 

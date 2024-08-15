@@ -50,6 +50,8 @@ namespace Scripts.WeaponsComponents
             }
         }
 
+        public int GetBulletCurrentCount() => _bullets.Count;
+
         private GameObject CreateBullet() => _gameFactory.CreateGunBullet();
 
         private void AddBulletInClip(GameObject bullet) => _bullets.Add(bullet);

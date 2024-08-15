@@ -12,6 +12,8 @@ namespace Scripts.WeaponsComponents
 
         public void RemoveTopBullet();
 
+        public int GetBulletCurrentCount();
+
         public IBullet GetTopBullet();
     }
 }

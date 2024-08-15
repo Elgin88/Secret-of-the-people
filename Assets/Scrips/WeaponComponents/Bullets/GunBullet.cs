@@ -23,6 +23,7 @@ namespace Scripts.WeaponsComponents
 
         public void Fly()
         {
+            Debug.Log("Shoot");
             Destroy(gameObject);
             _mover.Enable();
         }
