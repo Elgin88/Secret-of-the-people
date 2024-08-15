@@ -33,6 +33,7 @@ namespace Scripts.WeaponsComponents
 
         public void Reload()
         {
+            _gunReloader.Reload();
         }
 
         public void SetClip(IClip clip)

@@ -6,11 +6,13 @@ using UnityEngine;
 namespace Scripts.WeaponsComponents
 {
     [RequireComponent(typeof(GunClip))]
+    [RequireComponent(typeof(GunReloader))]
 
     public class GunShooter : MonoBehaviour
     {
         [SerializeField] private WeaponStaticData _staticData;
         [SerializeField] private GunClipSetter _clipSetter;
+        [SerializeField] private GunReloader _reloader;
 
         private ChooserWeapon _chooserWeapon;
 

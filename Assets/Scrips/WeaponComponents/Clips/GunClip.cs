@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Scripts.CodeBase.Logic;
+using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.StaticData;
 using UnityEngine;
 
@@ -11,16 +12,16 @@ namespace Scripts.WeaponsComponents
 
         private readonly string _gunClip = StaticWeapon.GunClip;
         private List<GameObject> _bullets = new List<GameObject>();
-        private IGameFactory _iGameFactory;
+        private IGameFactory _gameFactory;
         private int _bulletCount;
 
         public string Name => _gunClip;
 
         public int BulletCount => _bulletCount;
 
-        public void Construct(IGameFactory iGameFactory)
+        public void Construct(IGameFactory gameFactory)
         {
-            SetIGameFactory(iGameFactory);
+            SetIGameFactory(gameFactory);
             SetBulletCount();
             FillClip();
         }
@@ -31,28 +32,31 @@ namespace Scripts.WeaponsComponents
 
         public IBullet GetTopBullet()
         {
-            GameObject topBullet = _bullets[0];
-
-            if (topBullet == null)
+            if (_bullets.Count == 0)
             {
                 return null;
             }
 
-            return topBullet.GetComponent<IBullet>();
+            return _bullets[0].GetComponent<IBullet>();
         }
 
         public void RemoveTopBullet()
         {
             _bullets.Remove(_bullets[0]);
+
+            if (_bullets.Count == 0)
+            {
+                _gameFactory.Player.GetComponent<ChooserWeapon>().CurrentWeapon.Reload();
+            }
         }
 
-        private GameObject CreateBullet() => _iGameFactory.CreateGunBullet();
+        private GameObject CreateBullet() => _gameFactory.CreateGunBullet();
 
         private void AddBulletInClip(GameObject bullet) => _bullets.Add(bullet);
 
         private void SetBulletCount() => _bulletCount = _staticData.BulletCount;
 
-        private void SetIGameFactory(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
+        private void SetIGameFactory(IGameFactory iGameFactory) => _gameFactory = iGameFactory;
 
         private void FillClip()
         {
