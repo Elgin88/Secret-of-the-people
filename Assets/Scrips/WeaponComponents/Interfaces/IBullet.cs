@@ -6,9 +6,7 @@ namespace Scripts.WeaponsComponents
     {
         public float StartSpeed { get; }
 
-        public void Fly();
-
-        public void SetStartPosition();
+        public void Move();
 
         public void Construct(IGameFactory iGameFactory);
     }

@@ -67,7 +67,7 @@ namespace Scripts.WeaponsComponents.GunComponents
 
         private void FlyBullet()
         {
-            _clipSetter.CurrentClip.GetTopBullet().Fly();
+            _clipSetter.CurrentClip.GetTopBullet().Move();
             _clipSetter.CurrentClip.RemoveTopBullet();
         }
     }

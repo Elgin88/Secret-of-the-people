@@ -16,7 +16,6 @@ namespace Scripts.WeaponsComponents.GunComponents
         public void Reload()
         {
             _isReloading = true;
-            Debug.Log("Reload");
         }
     }
 }

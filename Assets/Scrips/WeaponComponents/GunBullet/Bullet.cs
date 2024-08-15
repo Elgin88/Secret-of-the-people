@@ -1,13 +1,14 @@
 ﻿using Scripts.CodeBase.Logic;
+using Scripts.PlayerComponents;
 using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.WeaponsComponents
+namespace Scripts.WeaponsComponents.GunBullet
 {
-    public class GunBullet : MonoBehaviour, IBullet
+    public class Bullet : MonoBehaviour, IBullet
     {
         [SerializeField] private BulletStaticData _staticData;
-        [SerializeField] private GunBulletMover _mover;
+        [SerializeField] private Mover _mover;
 
         private IGameFactory _gameFactory;
 
@@ -18,19 +19,22 @@ namespace Scripts.WeaponsComponents
         public void Construct(IGameFactory gameFactory)
         {
             SetIGameFactory(gameFactory);
+            _mover.Construct(gameFactory);
+        }
+
+        private void Awake()
+        {
             SetStartSpeed();
         }
 
-        public void Fly()
+        public void Move()
         {
-            Debug.Log("Shoot");
-            Destroy(gameObject);
-            _mover.Enable();
+            Debug.Log("Дописать здесь");
+            SetStartPosition();
+            _mover.StartMove();
         }
 
-        public void SetStartPosition()
-        {
-        }
+        private void SetStartPosition() => transform.position = _gameFactory.Player.GetComponent<ShootPointSetter>().ShootPoint.transform.position;
 
         private void SetIGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
 

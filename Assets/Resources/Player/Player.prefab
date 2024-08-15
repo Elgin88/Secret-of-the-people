@@ -514,7 +514,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7649062014016374016}
-  - component: {fileID: 2705318270778458368}
   m_Layer: 12
   m_Name: ShootPoint
   m_TagString: Untagged
@@ -537,18 +536,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6420625687517408906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2705318270778458368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4474241759001567764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa92f9b96493e4365b87eaefc3c198d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4828385306615857306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1003,7 @@ GameObject:
   - component: {fileID: 3647133345412031945}
   - component: {fileID: 8457482411815597920}
   - component: {fileID: 1587643035875642885}
+  - component: {fileID: 4579514238997190499}
   m_Layer: 12
   m_Name: Player
   m_TagString: Untagged
@@ -1165,7 +1153,6 @@ MonoBehaviour:
   _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
   _animationsSetter: {fileID: 2980337302151610088}
   _healthSetter: {fileID: 8273102346166442749}
-  _transform: {fileID: 6420625687517408906}
 --- !u!114 &2980337302151610088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,6 +1294,19 @@ MonoBehaviour:
   _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
   _objectCreator: {fileID: 8457482411815597920}
   _inventory: {fileID: 3647133345412031945}
+--- !u!114 &4579514238997190499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225614166488677920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa92f9b96493e4365b87eaefc3c198d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootPoint: {fileID: 7649062014016374016}
 --- !u!1 &7331202270206063638
 GameObject:
   m_ObjectHideFlags: 0

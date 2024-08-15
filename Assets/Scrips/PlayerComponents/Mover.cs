@@ -10,7 +10,6 @@ namespace Scripts.PlayerComponents
         [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private AnimationsSetter _animationsSetter;
         [SerializeField] private HealthSetter _healthSetter;
-        [SerializeField] private Transform _transform;
 
         private AllServices _allServices;
         private Quaternion _targetRotaion;
@@ -82,7 +81,7 @@ namespace Scripts.PlayerComponents
 
         private void ChangePosition(Vector3 targetDirection, float currentSpeed) => _characterController.Move(targetDirection * currentSpeed * Time.deltaTime);
 
-        private void ChangeRotation(Quaternion targetRotation, float deltaRotation) => _transform.rotation = Quaternion.RotateTowards(_transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
+        private void ChangeRotation(Quaternion targetRotation, float deltaRotation) => transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
 
         private void SetHitSpeedCoefficient() => _hitSpeedCoefficient = _staticData.CoefficientDownSpeedAfterHit;
 

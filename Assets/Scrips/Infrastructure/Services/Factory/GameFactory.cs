@@ -4,6 +4,7 @@ using Scripts.EnemyComponents;
 using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.Static;
 using Scripts.WeaponsComponents;
+using Scripts.WeaponsComponents.GunBullet;
 using Scripts.WeaponsComponents.GunComponents;
 using UnityEngine;
 
@@ -47,7 +48,7 @@ namespace Scripts.CodeBase.Logic
         {
             _healthBar = _assetProvider.Instantiate(StaticAssetPath.CanvasHealthBar);
 
-            _healthBar.GetComponent<HealthBar>().Construct(this);
+            _healthBar.GetComponent<PlayerHealthBar>().Construct(this);
 
             return _healthBar;
         }
@@ -97,7 +98,7 @@ namespace Scripts.CodeBase.Logic
         {
             GameObject bullet = CreateGameObject(StaticAssetPath.GunBullet);
 
-            bullet.GetComponent<GunBullet>().Construct(this);
+            bullet.GetComponent<Bullet>().Construct(this);
 
             return bullet;
         }

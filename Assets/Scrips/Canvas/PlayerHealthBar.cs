@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Scripts.Canvas
 {
-    public class HealthBar : MonoBehaviour
+    public class PlayerHealthBar : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
         [SerializeField] private Text _text;
