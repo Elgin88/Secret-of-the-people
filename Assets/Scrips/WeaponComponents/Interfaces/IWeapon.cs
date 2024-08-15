@@ -6,13 +6,13 @@ namespace Scripts.WeaponsComponents
     {
         public string Name { get; }
 
-        public IClip IClip { get; }
+        public IClip CurrentClip { get; }
 
         public void Shoot();
 
         public void Reload();
 
-        public void SetClip(IClip clip);
+        public void SetcCurrentClip(IClip clip);
 
         public void Construct(IGameFactory iGameFactory);
     }

@@ -14,7 +14,7 @@ namespace Scripts.WeaponsComponents.GunComponents
         {
         }
 
-        public void SetClip(IClip clip)
+        public void SetCurrentClip(IClip clip)
         {
             _iCurrentClip = clip;
         }

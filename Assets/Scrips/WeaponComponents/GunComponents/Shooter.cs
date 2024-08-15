@@ -40,7 +40,7 @@ namespace Scripts.WeaponsComponents.GunComponents
         {
             if (IsCooldawnEnd() & IsNotReloading() & TargetIsFind())
             {
-                FlyBullet();
+                StartMoveBullet();
                 ResetColldawn();
             }
 
@@ -64,7 +64,7 @@ namespace Scripts.WeaponsComponents.GunComponents
 
         private bool IsCooldawnEnd() => _cooldawn <= 0;
 
-        private IClip GetCurrentClip(IGameFactory gameFactory) => gameFactory.Player.GetComponent<ChooserWeapon>().CurrentWeapon.IClip;
+        private IClip GetCurrentClip(IGameFactory gameFactory) => gameFactory.Player.GetComponent<ChooserWeapon>().CurrentWeapon.CurrentClip;
 
         private void SetGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
@@ -72,7 +72,7 @@ namespace Scripts.WeaponsComponents.GunComponents
 
         private void SetNextTargetFinder() => _nextTargetFinder = _gameFactory.Player.GetComponent<NextTargetFinder>();
 
-        private void FlyBullet()
+        private void StartMoveBullet()
         {
             _clipSetter.CurrentClip.GetTopBullet().Move();
             _clipSetter.CurrentClip.RemoveTopBullet();

@@ -24,7 +24,7 @@ namespace Scripts.PlayerComponents.InventoryComponents
 
         private void SetStartClipCount() => _startGunClipCount = _staticData.StartGunClipsCount;
 
-        private void AddClipInGun() => _inventory.GetGun().SetClip(_inventory.GetGunClip());
+        private void AddClipInGun() => _inventory.GetGun().SetcCurrentClip(_inventory.GetGunClip());
 
         private void AddGunInInventory() => _inventory.AddWeapon(_objectCreator.GetGun());
 

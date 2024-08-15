@@ -17,7 +17,7 @@ namespace Scripts.WeaponsComponents.GunComponents
 
         public string Name => _name;
 
-        public IClip IClip => _clipSetter.CurrentClip;
+        public IClip CurrentClip => _clipSetter.CurrentClip;
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -36,9 +36,9 @@ namespace Scripts.WeaponsComponents.GunComponents
             _gunReloader.Reload();
         }
 
-        public void SetClip(IClip clip)
+        public void SetcCurrentClip(IClip clip)
         {
-            _clipSetter.SetClip(clip);
+            _clipSetter.SetCurrentClip(clip);
         }
     }
 }

@@ -4,9 +4,13 @@ using UnityEngine;
 
 namespace Scripts.WeaponsComponents.GunBullet
 {
+    [RequireComponent(typeof(Bullet))]
+    [RequireComponent(typeof(Destroyer))]
+
     public class Mover : MonoBehaviour
     {
         [SerializeField] private Bullet _bullet;
+        [SerializeField] private Destroyer _destroySetter;
 
         private NextTargetFinder _chooserTarget;
         private IGameFactory _gameFactory;
@@ -17,39 +21,43 @@ namespace Scripts.WeaponsComponents.GunBullet
         {
             SetGameFactory(gameFactory);
             SetChooserNearestTarget();
-            Disable();
         }
 
         private void FixedUpdate()
         {
             Move();
+
+            if (IsEndMove())
+            {
+                Destroy();
+            }
         }
 
         public void StartMove()
         {
-            Enable();
+            EnableGameObject();
             SetRotation();
             SetTargetPositon();
         }
 
-        public void Enable() => enabled = true;
+        private void EnableGameObject() => gameObject.SetActive(true);
 
-        public void Disable() => enabled = false;
+        private float Speed() => _bullet.StartSpeed * Time.deltaTime;
+
+        private void SetGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
+
+        private void SetRotation() => transform.rotation = _gameFactory.Player.GetComponent<ShootPointSetter>().ShootPoint.transform.rotation;
+
+        private void SetChooserNearestTarget() => _chooserTarget = _gameFactory.Player.GetComponent<NextTargetFinder>();
+
+        private void Destroy() => _destroySetter.Destroy();
+
+        private bool IsEndMove() => transform.position == _targetPosition;
 
         private void Move()
         {
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, Speed());
         }
-
-        private float Speed() => _bullet.StartSpeed * Time.deltaTime;
-
-        private Quaternion SetShootPointRotation() => _gameFactory.Player.GetComponent<ShootPointSetter>().ShootPoint.transform.rotation;
-
-        private void SetGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
-
-        private void SetRotation() => transform.rotation = SetShootPointRotation();
-
-        private void SetChooserNearestTarget() => _chooserTarget = _gameFactory.Player.GetComponent<NextTargetFinder>();
 
         private void SetTargetPositon()
         {

@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace Scripts.WeaponsComponents.GunBullet
 {
+    [RequireComponent(typeof(Mover))]
+
     public class Bullet : MonoBehaviour, IBullet
     {
         [SerializeField] private BulletStaticData _staticData;
@@ -19,24 +21,31 @@ namespace Scripts.WeaponsComponents.GunBullet
         public void Construct(IGameFactory gameFactory)
         {
             SetIGameFactory(gameFactory);
-            _mover.Construct(gameFactory);
+            ConstructMover(gameFactory);
         }
 
         private void Awake()
         {
             SetStartSpeed();
+            DisableGameObject();
         }
 
         public void Move()
         {
             SetStartPosition();
-            _mover.StartMove();
+            StartMove();
         }
+
+        private void StartMove() => _mover.StartMove();
+
+        private void DisableGameObject() => gameObject.SetActive(false);
 
         private void SetStartPosition() => transform.position = _gameFactory.Player.GetComponent<ShootPointSetter>().ShootPoint.transform.position;
 
         private void SetIGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
         private void SetStartSpeed() => _startSpeed = _staticData.Speed;
+
+        private void ConstructMover(IGameFactory gameFactory) => _mover.Construct(gameFactory);
     }
 }
