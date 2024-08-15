@@ -8,6 +8,7 @@ TagManager:
   - SkeletonSpawnPoint
   - PlayerInitialPoint
   - SkeletonInitialPoint
+  - Enemy
   layers:
   - Default
   - TransparentFX

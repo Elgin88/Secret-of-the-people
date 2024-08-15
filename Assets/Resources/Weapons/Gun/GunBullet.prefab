@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6878408020487662240}
   - component: {fileID: 2712970438217305104}
   - component: {fileID: 3425933680694078396}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,8 @@ GameObject:
   - component: {fileID: 11223690554343570}
   - component: {fileID: 1432639116793107721}
   - component: {fileID: 7522343153246668620}
-  m_Layer: 0
+  - component: {fileID: 4677575570481448411}
+  m_Layer: 12
   m_Name: GunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,3 +181,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5e38ab6939f44c5944a58f1d63e879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &4677575570481448411
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365293725231920729}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

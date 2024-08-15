@@ -26,11 +26,6 @@ namespace Scripts.WeaponsComponents.GunBullet
         private void FixedUpdate()
         {
             Move();
-
-            if (IsEndMove())
-            {
-                Destroy();
-            }
         }
 
         public void StartMove()
@@ -49,8 +44,6 @@ namespace Scripts.WeaponsComponents.GunBullet
         private void SetRotation() => transform.rotation = _gameFactory.Player.GetComponent<ShootPointSetter>().ShootPoint.transform.rotation;
 
         private void SetChooserNearestTarget() => _chooserTarget = _gameFactory.Player.GetComponent<NextTargetFinder>();
-
-        private void Destroy() => _destroySetter.Destroy();
 
         private bool IsEndMove() => transform.position == _targetPosition;
 
