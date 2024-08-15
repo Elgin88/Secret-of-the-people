@@ -1,4 +1,5 @@
 ﻿using Scripts.CodeBase.Logic;
+using Scripts.PlayerComponents;
 using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.StaticData;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace Scripts.WeaponsComponents.GunComponents
         [SerializeField] private ClipSetter _clipSetter;
         [SerializeField] private Reloader _reloader;
 
+        private NextTargetFinder _nextTargetFinder;
         private IGameFactory _gameFactory;
         private float _cooldawn;
         private float _delay;
@@ -21,6 +23,7 @@ namespace Scripts.WeaponsComponents.GunComponents
         public void Construct(IGameFactory gameFactory)
         {
             SetGameFactory(gameFactory);
+            SetNextTargetFinder();
         }
 
         private void Awake()
@@ -35,7 +38,7 @@ namespace Scripts.WeaponsComponents.GunComponents
 
         public void Shoot()
         {
-            if (IsCooldawnEnd() & IsNotReloading())
+            if (IsCooldawnEnd() & IsNotReloading() & TargetIsFind())
             {
                 FlyBullet();
                 ResetColldawn();
@@ -46,6 +49,8 @@ namespace Scripts.WeaponsComponents.GunComponents
                 Reload();
             }
         }
+
+        private bool TargetIsFind() => _nextTargetFinder.CurrentTarget != null;
 
         private bool IsNotReloading() => _reloader.IsReloading == false;
 
@@ -64,6 +69,8 @@ namespace Scripts.WeaponsComponents.GunComponents
         private void SetGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
         private int BulletCount() => GetCurrentClip(_gameFactory).GetBulletCurrentCount();
+
+        private void SetNextTargetFinder() => _nextTargetFinder = _gameFactory.Player.GetComponent<NextTargetFinder>();
 
         private void FlyBullet()
         {

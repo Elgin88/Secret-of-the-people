@@ -3,19 +3,19 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
-    public class ChooserNearestTarget : MonoBehaviour
+    public class NextTargetFinder : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private LayerMask _targetLayerMask;
 
         private Collider[] _targets;
-        private Collider _nearestTarget;
+        private Collider _currentTarget;
         private const int _maxTargetsCount = 10;
         private float _minDistance;
         private int _rangeToChooserNearestTarget;
         private int _currentCountTargets;
 
-        public Collider NearestTarget => _nearestTarget;
+        public Collider CurrentTarget => _currentTarget;
 
         public int CurrentTargetsCount => _currentCountTargets;
 
@@ -30,10 +30,10 @@ namespace Scripts.PlayerComponents
             SetMinDistance();
             ResetNearestTarget();
             FindTargets();
-            SetNearestTarget();
+            SetCurrentTarget();
         }
 
-        private void SetNearestTarget()
+        private void SetCurrentTarget()
         {
             foreach (Collider target in _targets)
             {
@@ -44,7 +44,7 @@ namespace Scripts.PlayerComponents
                     if (distance < _minDistance)
                     {
                         _minDistance = distance;
-                        _nearestTarget = target;
+                        _currentTarget = target;
                     }
                 }
             }
@@ -61,7 +61,7 @@ namespace Scripts.PlayerComponents
 
         private void SetMinDistance() => _minDistance = _rangeToChooserNearestTarget;
 
-        private void ResetNearestTarget() => _nearestTarget = null;
+        private void ResetNearestTarget() => _currentTarget = null;
 
         private void SetRangeFindTarget() => _rangeToChooserNearestTarget = _staticData.RangeToChooserNearestTarget;
 

@@ -4,12 +4,12 @@ using UnityEngine;
 namespace Scripts.PlayerComponents
 {
     [RequireComponent(typeof(ChooserWeapon))]
-    [RequireComponent(typeof(ChooserNearestTarget))]
+    [RequireComponent(typeof(NextTargetFinder))]
 
     public class Attacker : MonoBehaviour
     {
         [SerializeField] private ChooserWeapon _chooserWeapon;
-        [SerializeField] private ChooserNearestTarget _chooserNearestTarget;
+        [SerializeField] private NextTargetFinder _chooserNearestTarget;
 
         private void FixedUpdate()
         {

@@ -29,7 +29,6 @@ namespace Scripts.WeaponsComponents.GunBullet
 
         public void Move()
         {
-            Debug.Log("Дописать здесь");
             SetStartPosition();
             _mover.StartMove();
         }
