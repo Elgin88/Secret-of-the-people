@@ -1,5 +1,5 @@
 ﻿using Agava.YandexGames;
-using Scripts.EnemyComponents;
+using Scripts.Enemy;
 using System.Collections.Generic;
 using UnityEngine;
 

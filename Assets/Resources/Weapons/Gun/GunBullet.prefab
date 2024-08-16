@@ -217,8 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2600b01077e4b0b48816ea5cff9fbd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collisionSetter: {fileID: 7522343153246668620}
+  _destroyer: {fileID: 497221802775788473}
   _bullet: {fileID: 11223690554343570}
-  _destroySetter: {fileID: 7522343153246668620}
 --- !u!114 &7522343153246668620
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7199f7d1072ee45519a41b3816e9c4c4, type: 3}
   m_Name: GunBulletStaticData
   m_EditorClassIdentifier: 
-  Speed: 34.3
+  Damage: 50
+  Speed: 50

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Scripts.Canvas;
-using Scripts.EnemyComponents;
+using Scripts.Enemy;
 using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.Static;
 using Scripts.Weapons;
