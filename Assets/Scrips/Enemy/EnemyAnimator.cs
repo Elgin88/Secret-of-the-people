@@ -38,4 +38,5 @@ namespace Scripts.Enemy
         private void SetMoveAnimationSpeed(float currentSpeed) => _animator.SetFloat(_speedParametr, GetNormalizeMoveSpeed(currentSpeed));
         private float GetNormalizeMoveSpeed(float currentMoveSpeed) => currentMoveSpeed / _baseAnimationMoveSpeed;
     }
+
 }

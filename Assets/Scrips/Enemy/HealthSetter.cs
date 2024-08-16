@@ -21,6 +21,10 @@ namespace Scripts.Enemy
             SetCurrentHealth(_startHealth);
         }
 
+        public void SetCurrentHealth(int health) => _currentHealth = health;
+
+        public void SetStartHealth(int health) => _startHealth = health;
+
         public void Heal(int heal)
         {
             _currentHealth += heal;
@@ -30,10 +34,6 @@ namespace Scripts.Enemy
                 SetCurrentHealth(_startHealth);
             }
         }
-
-        public void SetCurrentHealth(int health) => _currentHealth = health;
-
-        public void SetStartHealth(int health) => _startHealth = health;
 
         public void TakeDamage(int damage)
         {
