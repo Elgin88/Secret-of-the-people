@@ -3,8 +3,10 @@ using Scripts.PlayerComponents;
 using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.WeaponsComponents.GunBullet
+namespace Scripts.Weapons.GunBullet
 {
+    [RequireComponent(typeof(CollisionSetter))]
+    [RequireComponent(typeof(Destroyer))]
     [RequireComponent(typeof(Mover))]
 
     public class Bullet : MonoBehaviour, IBullet

@@ -3,9 +3,9 @@ using Scripts.Canvas;
 using Scripts.EnemyComponents;
 using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.Static;
-using Scripts.WeaponsComponents;
-using Scripts.WeaponsComponents.GunBullet;
-using Scripts.WeaponsComponents.GunComponents;
+using Scripts.Weapons;
+using Scripts.Weapons.GunBullet;
+using Scripts.Weapons.GunComponents;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Logic

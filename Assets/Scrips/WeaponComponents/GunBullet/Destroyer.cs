@@ -1,18 +1,15 @@
-﻿using Scripts.EnemyComponents;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Scripts.WeaponsComponents.GunBullet
+namespace Scripts.Weapons.GunBullet
 {
     public class Destroyer : MonoBehaviour
     {
-        private void OnTriggerEnter(Collider other)
-        {
-            Debug.Log("Дописать здесь");
-        }
+        [SerializeField] private CollisionSetter _collision;
 
-        private void Destroy()
-        {
-            Destroy(gameObject);
-        }
+        private void Awake() => _collision.OnBulletEnter += OnBulletEnter;
+
+        private void OnDestroy() => _collision.OnBulletEnter -= OnBulletEnter;
+
+        private void OnBulletEnter() => Destroy(gameObject);
     }
 }

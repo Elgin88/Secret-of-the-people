@@ -4,7 +4,7 @@ using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.WeaponsComponents
+namespace Scripts.Weapons
 {
     public class GunClip : MonoBehaviour, IClip
     {

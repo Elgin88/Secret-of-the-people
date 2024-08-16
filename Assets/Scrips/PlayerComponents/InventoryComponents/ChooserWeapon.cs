@@ -1,4 +1,4 @@
-﻿using Scripts.WeaponsComponents;
+﻿using Scripts.Weapons;
 using UnityEngine;
 
 namespace Scripts.PlayerComponents.InventoryComponents

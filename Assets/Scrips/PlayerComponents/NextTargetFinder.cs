@@ -3,8 +3,11 @@ using UnityEngine;
 
 namespace Scripts.PlayerComponents
 {
+    [RequireComponent(typeof(ChooserSectorAttack))]
+
     public class NextTargetFinder : MonoBehaviour
     {
+        [SerializeField] private ChooserSectorAttack _sectorAttack;
         [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private LayerMask _targetLayerMask;
 
@@ -30,25 +33,35 @@ namespace Scripts.PlayerComponents
             SetMinDistance();
             ResetNearestTarget();
             FindTargets();
-            SetCurrentTarget();
+            SetNearestTarget();
         }
 
-        private void SetCurrentTarget()
+        private void SetNearestTarget()
         {
             foreach (Collider target in _targets)
             {
-                if (target != null)
+                if (IsFind(target))
                 {
-                    float distance = GetDistanceToTarget(target);
-
-                    if (distance < _minDistance)
+                    if (InSector(target))
                     {
-                        _minDistance = distance;
-                        _currentTarget = target;
+                        float distance = GetDistanceToTarget(target);
+
+                        if (distance < _minDistance)
+                        {
+                            _minDistance = distance;
+                            _currentTarget = target;
+                        }
                     }
                 }
             }
         }
+
+        private bool InSector(Collider target)
+        {
+            return _sectorAttack.GetTargetInSector(target);
+        }
+
+        private static bool IsFind(Collider target) => target != null;
 
         private void FindTargets()
         {

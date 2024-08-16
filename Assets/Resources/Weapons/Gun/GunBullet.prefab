@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6878408020487662240}
   - component: {fileID: 2712970438217305104}
   - component: {fileID: 3425933680694078396}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,11 +114,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3232565275760797073}
+  - component: {fileID: 904220651763219613}
+  - component: {fileID: 4405986957446700903}
   - component: {fileID: 11223690554343570}
   - component: {fileID: 1432639116793107721}
   - component: {fileID: 7522343153246668620}
-  - component: {fileID: 4677575570481448411}
-  m_Layer: 12
+  - component: {fileID: 497221802775788473}
+  m_Layer: 17
   m_Name: GunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,6 +143,54 @@ Transform:
   - {fileID: 3636043465503149990}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &904220651763219613
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365293725231920729}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4405986957446700903
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365293725231920729}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &11223690554343570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,24 +231,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5e38ab6939f44c5944a58f1d63e879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &4677575570481448411
-SphereCollider:
+--- !u!114 &497221802775788473
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8365293725231920729}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40769e5fca0134c64b9d48f84ec5ed90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collision: {fileID: 7522343153246668620}

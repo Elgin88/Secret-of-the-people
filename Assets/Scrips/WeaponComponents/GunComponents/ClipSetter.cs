@@ -2,7 +2,7 @@
 using Scripts.CodeBase.Logic;
 using UnityEngine;
 
-namespace Scripts.WeaponsComponents.GunComponents
+namespace Scripts.Weapons.GunComponents
 {
     public class ClipSetter : MonoBehaviour
     {

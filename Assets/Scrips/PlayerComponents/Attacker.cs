@@ -5,19 +5,21 @@ namespace Scripts.PlayerComponents
 {
     [RequireComponent(typeof(ChooserWeapon))]
     [RequireComponent(typeof(NextTargetFinder))]
+    [RequireComponent(typeof(ChooserSectorAttack))]
 
     public class Attacker : MonoBehaviour
     {
-        [SerializeField] private ChooserWeapon _chooserWeapon;
         [SerializeField] private NextTargetFinder _chooserNearestTarget;
+        [SerializeField] private ChooserWeapon _chooserWeapon;
 
         private void FixedUpdate()
         {
             if (TargetIsFind())
             {
-                _chooserWeapon.CurrentWeapon.Shoot();
+                Shoot();
             }
         }
+        private void Shoot() => _chooserWeapon.CurrentWeapon.Shoot();
 
         private bool TargetIsFind() => _chooserNearestTarget.CurrentTargetsCount != 0;
     }

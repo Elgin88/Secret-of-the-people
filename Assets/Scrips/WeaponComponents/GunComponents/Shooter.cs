@@ -4,7 +4,7 @@ using Scripts.PlayerComponents.InventoryComponents;
 using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.WeaponsComponents.GunComponents
+namespace Scripts.Weapons.GunComponents
 {
     [RequireComponent(typeof(GunClip))]
     [RequireComponent(typeof(Reloader))]

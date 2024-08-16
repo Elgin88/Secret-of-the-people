@@ -1004,6 +1004,7 @@ GameObject:
   - component: {fileID: 8457482411815597920}
   - component: {fileID: 1587643035875642885}
   - component: {fileID: 4579514238997190499}
+  - component: {fileID: 9007285489459674476}
   m_Layer: 12
   m_Name: Player
   m_TagString: Untagged
@@ -1221,8 +1222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6940bba4e2b01e4799774d0c620c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chooserWeapon: {fileID: 8772172121899702013}
   _chooserNearestTarget: {fileID: 2421022248477797470}
+  _chooserWeapon: {fileID: 8772172121899702013}
 --- !u!114 &2421022248477797470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,6 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8a7dc45f3842647934539face8feff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sectorAttack: {fileID: 9007285489459674476}
   _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
   _targetLayerMask:
     serializedVersion: 2
@@ -1307,6 +1309,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 7649062014016374016}
+--- !u!114 &9007285489459674476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225614166488677920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760c3e8320ff243249d48b7df4ea3e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetFinder: {fileID: 2421022248477797470}
 --- !u!1 &7331202270206063638
 GameObject:
   m_ObjectHideFlags: 0

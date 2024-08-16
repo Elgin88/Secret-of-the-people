@@ -1,6 +1,6 @@
 ﻿using Scripts.CodeBase.Logic;
 
-namespace Scripts.WeaponsComponents
+namespace Scripts.Weapons
 {
     public interface IBullet
     {
