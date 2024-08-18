@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using Scripts.Canvas;
+﻿using Scripts.Canvas;
 using Scripts.Enemy;
-using Scripts.PlayerComponents.InventoryComponents;
+using Scripts.Player;
 using Scripts.Static;
 using Scripts.Weapons;
 using Scripts.Weapons.GunBullet;
 using Scripts.Weapons.GunComponents;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.CodeBase.Logic

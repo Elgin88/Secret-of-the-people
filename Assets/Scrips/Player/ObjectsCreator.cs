@@ -2,7 +2,7 @@
 using Scripts.Weapons;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents.InventoryComponents
+namespace Scripts.Player
 {
     public class ObjectsCreator : MonoBehaviour
     {

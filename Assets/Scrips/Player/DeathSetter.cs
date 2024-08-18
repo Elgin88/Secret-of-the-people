@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Player
 {
-    [RequireComponent(typeof(AnimationsSetter))]
-    [RequireComponent(typeof(HealthSetter))]
-
     public class DeathSetter : MonoBehaviour
     {
         [SerializeField] private AnimationsSetter _animationsSetter;

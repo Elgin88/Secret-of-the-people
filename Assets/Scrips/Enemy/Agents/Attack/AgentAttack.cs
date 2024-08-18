@@ -19,7 +19,7 @@ namespace Scripts.Enemy
         private int _damage;
         private Collider[] _resultOfHit = new Collider[1];
         private IGameFactory _iGameFactory;
-        private PlayerComponents.HealthSetter _playerHealth;
+        private Player.HealthSetter _playerHealth;
 
         private void Start()
         {
@@ -83,7 +83,7 @@ namespace Scripts.Enemy
 
         private void SetParametrs()
         {
-            _playerHealth = _iGameFactory.Player.GetComponent<PlayerComponents.HealthSetter>();
+            _playerHealth = _iGameFactory.Player.GetComponent<Player.HealthSetter>();
             _attackCooldown = _staticData.AttackCooldawn;
             _damage = _staticData.Damage;
             _currentAttackColldown = _attackCooldown;

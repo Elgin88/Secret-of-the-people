@@ -1,7 +1,7 @@
-﻿using Scripts.PlayerComponents.InventoryComponents;
+﻿using Scripts.Player;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Player
 {
     [RequireComponent(typeof(AnimationsSetter))]
     [RequireComponent(typeof(Attacker))]

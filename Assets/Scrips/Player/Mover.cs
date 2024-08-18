@@ -2,7 +2,7 @@
 using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Player
 {
     public class Mover : MonoBehaviour
     {

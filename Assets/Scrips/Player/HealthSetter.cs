@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Player
 {
     public class HealthSetter : MonoBehaviour
     {

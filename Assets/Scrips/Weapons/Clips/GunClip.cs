@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Scripts.CodeBase.Logic;
-using Scripts.PlayerComponents.InventoryComponents;
+using Scripts.Player;
 using Scripts.StaticData;
 using UnityEngine;
 

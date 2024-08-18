@@ -1,12 +1,8 @@
-﻿using Scripts.PlayerComponents.InventoryComponents;
+﻿using Scripts.Player;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Player
 {
-    [RequireComponent(typeof(ChooserWeapon))]
-    [RequireComponent(typeof(NextTargetFinder))]
-    [RequireComponent(typeof(ChooserSectorAttack))]
-
     public class Attacker : MonoBehaviour
     {
         [SerializeField] private NextTargetFinder _chooserNearestTarget;

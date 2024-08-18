@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Player
 {
     public class HitTaker : MonoBehaviour
     {

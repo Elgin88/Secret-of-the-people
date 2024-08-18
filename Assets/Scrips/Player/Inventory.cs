@@ -3,13 +3,8 @@ using Scripts.CodeBase.Logic;
 using Scripts.Weapons;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents.InventoryComponents
+namespace Scripts.Player
 {
-    [RequireComponent(typeof(ChooserWeapon
-        ))]
-    [RequireComponent(typeof(ObjectsCreator))]
-    [RequireComponent(typeof(StartWeaponSetter))]
-
     public class Inventory : MonoBehaviour
     {
         [SerializeField] private ChooserWeapon _chooserWeapon;

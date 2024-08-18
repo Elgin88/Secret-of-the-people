@@ -1,5 +1,5 @@
 ﻿using Scripts.CodeBase.Logic;
-using Scripts.PlayerComponents;
+using Scripts.Player;
 using Scripts.StaticData;
 using UnityEngine;
 

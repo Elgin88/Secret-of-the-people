@@ -1,10 +1,8 @@
 ﻿using Scripts.Weapons;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents.InventoryComponents
+namespace Scripts.Player
 {
-    [RequireComponent(typeof(Inventory))]
-
     public class ChooserWeapon : MonoBehaviour
     {
         [SerializeField] private Inventory _inventory;

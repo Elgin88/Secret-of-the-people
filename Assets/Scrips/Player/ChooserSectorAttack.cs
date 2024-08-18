@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Player
 {
-    [RequireComponent(typeof(NextTargetFinder))]
-
     public class ChooserSectorAttack : MonoBehaviour
     {
         private const float _maxAngle = 45;

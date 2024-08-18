@@ -1,10 +1,8 @@
 ﻿using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Player
 {
-    [RequireComponent(typeof(ChooserSectorAttack))]
-
     public class NextTargetFinder : MonoBehaviour
     {
         [SerializeField] private ChooserSectorAttack _sectorAttack;

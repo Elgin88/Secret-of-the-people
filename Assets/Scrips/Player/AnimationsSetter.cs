@@ -1,12 +1,8 @@
 ﻿using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents
+namespace Scripts.Player
 {
-    [RequireComponent(typeof(PlayerStaticData))]
-    [RequireComponent(typeof(Mover))]
-    [RequireComponent(typeof(Animator))]
-
     public class AnimationsSetter : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
@@ -35,7 +31,10 @@ namespace Scripts.PlayerComponents
             PlayRun();
         }
 
-        public void StopPlayRunAnimation() => _animator.SetBool(_runHash, false);
+        public void StopPlayRunAnimation()
+        {
+            _animator.SetBool(_runHash, false);
+        }
 
         public void PlayHitAnimation()
         {
@@ -43,7 +42,10 @@ namespace Scripts.PlayerComponents
             PlayHit();
         }
 
-        public void PlayDead() => _animator.Play(_deadHash);
+        public void PlayDead()
+        {
+            _animator.Play(_deadHash);
+        }
 
         private void OnHitEnded() => ResetIsHiting();
 

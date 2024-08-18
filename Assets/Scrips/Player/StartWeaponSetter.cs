@@ -1,11 +1,8 @@
 ﻿using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.PlayerComponents.InventoryComponents
+namespace Scripts.Player
 {
-    [RequireComponent(typeof(ObjectsCreator))]
-    [RequireComponent(typeof(Inventory))]
-
     public class StartWeaponSetter : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
