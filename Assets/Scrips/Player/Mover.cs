@@ -8,7 +8,7 @@ namespace Scripts.Player
     {
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private PlayerStaticData _staticData;
-        [SerializeField] private AnimationsSetter _animationsSetter;
+        [SerializeField] private AnimationSetter _animationsSetter;
         [SerializeField] private HealthChanger _healthSetter;
 
         private AllServices _allServices;
@@ -45,18 +45,10 @@ namespace Scripts.Player
                 ChangePosition(_targetDirection, _currentSpeed);
                 ChangeRotation(_targetRotaion, _deltaRotation);
             }
-            else
-            {
-                AnimatorStopPlayRun();
-            }
         }
 
         private void SetCurrentHitSpeed()
         {
-            if (PlayerIsHiting())
-            {
-                _currentSpeed = _currentSpeed * _hitSpeedCoefficient;
-            }
         }
 
         private void SetAllServices() => _allServices = AllServices.Container;
@@ -65,13 +57,9 @@ namespace Scripts.Player
 
         private void ResetCurrentSpeed() => _currentSpeed = 0;
 
-        private void AnimatorStopPlayRun() => _animationsSetter.StopPlayRunAnimation();
-
         private void SetCurrentSpeed() => _currentSpeed = _startMoveSpeed;
 
         private void AnimatorPlayRun() => _animationsSetter.PlayRunAnimation();
-
-        private bool PlayerIsHiting() => _animationsSetter.IsHiting;
 
         private void SetTargetRotation() => _targetRotaion = Quaternion.LookRotation(new Vector3(_axis.x, 0, _axis.y));
 

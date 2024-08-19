@@ -1,23 +1,23 @@
-﻿namespace Scripts.Player
+﻿using UnityEngine;
+
+namespace Scripts.Player
 {
     public static class Static
     {
-        public const string AnimatorDeadParametr = "DeadParametr";
+        public static int DeathAHash = Animator.StringToHash("DeathA");
 
-        public const string AnimatorDeadA = "DeadA";
+        public static int DeathBHash = Animator.StringToHash("DeathB");
 
-        public const string AnimatorDeadB = "DeadB";
+        public static int DeathCHash = Animator.StringToHash("DeathC");
 
-        public const string AnimatorDeadC = "DeadC";
+        public static int DeathDHash = Animator.StringToHash("DeathD");
 
-        public const string AnimatorDeadD = "DeadD";
+        public static int DeathEHash = Animator.StringToHash("DeathE");
 
-        public const string IsRun = "IsRun";
+        public static int IsRunHash = Animator.StringToHash("IsRun");
 
-        public const string Dead = "Dead";
+        public static int HitHash = Animator.StringToHash("Hit");
 
-        public const string Hit = "Hit";
-
-        public static string AnimatorRunParametr = "RunParametr";
+        public static int RunParametrHash = Animator.StringToHash("RunParametr");
     }
 }

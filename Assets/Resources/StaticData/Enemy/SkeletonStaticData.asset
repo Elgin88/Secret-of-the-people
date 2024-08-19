@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ca741866d33444abf62f8b1036c6b8, type: 3}
   m_Name: SkeletonStaticData
   m_EditorClassIdentifier: 
-  Health: 100
-  Damage: 10
+  StartHealth: 1
+  Damage: 30
   AttackRange: 1
   AgroRange: 8
   AttackCooldawn: 0.5
@@ -22,5 +22,5 @@ MonoBehaviour:
   PatrolSpeed: 1
   MaxPatrolRange: 10
   MinPatrolRange: -10
-  MinDistanceToPlayer: 2
+  MinDistanceToPlayer: 1
   AnimationBaseMoveSpeed: 0.6
