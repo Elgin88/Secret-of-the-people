@@ -6,12 +6,12 @@ namespace Scripts.StaticData
 
     public class EnemyStaticData : ScriptableObject
     {
-        [Range(0f, 100f)] public int StartHealth;
+        [Range(0f, 100f)] public int StartHealth = 1;
 
-        [Range(0f, 3f)] public float DelayBetweenShoots;
+        [Range(0f, 3f)] public float DelayBetweenShoots = 0.5f;
 
-        [Range(0f, 3f)] public float DurationReload;
+        [Range(0f, 3f)] public float DurationReload = 1;
 
-        [Range(0f, 30f)] public int BulletCount;
+        [Range(0f, 30f)] public int BulletCount = 8;
     }
 }
