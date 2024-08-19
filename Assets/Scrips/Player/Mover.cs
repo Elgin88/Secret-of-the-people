@@ -8,8 +8,8 @@ namespace Scripts.Player
     public class Mover : MonoBehaviour
     {
         [SerializeField] private CharacterController _characterController;
+        [SerializeField] private AnimamationSetter _animationsSetter;
         [SerializeField] private PlayerStaticData _staticData;
-        [SerializeField] private RunAnimation _animationsSetter;
         [SerializeField] private HealthChanger _healthSetter;
 
         private AllServices _allServices;

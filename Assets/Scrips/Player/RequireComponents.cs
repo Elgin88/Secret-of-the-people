@@ -2,8 +2,9 @@
 
 namespace Scripts.Player
 {
-    [RequireComponent(typeof(RunAnimation))]
+    [RequireComponent(typeof(AnimamationSetter))]
     [RequireComponent(typeof(AnimationChooserDeathHash))]
+    [RequireComponent(typeof(HitAnimation))]
     [RequireComponent(typeof(RunAnimation))]
     [RequireComponent(typeof(Attacker))]
     [RequireComponent(typeof(CameraFollower))]
@@ -20,7 +21,5 @@ namespace Scripts.Player
     [RequireComponent(typeof(StartWeaponSetter))]
     [RequireComponent(typeof(DamageTaker))]
 
-    public class RequireComponents : MonoBehaviour
-    {
-    }
+    public class RequireComponents : MonoBehaviour { }
 }

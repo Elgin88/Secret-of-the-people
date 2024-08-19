@@ -6,7 +6,5 @@ namespace Scripts.Enemy
     [RequireComponent(typeof(EnemyAnimator))]
     [RequireComponent(typeof(HealthChanger))]
 
-    public class RequireComponents : MonoBehaviour
-    {
-    }
+    public class RequireComponents : MonoBehaviour { }
 }

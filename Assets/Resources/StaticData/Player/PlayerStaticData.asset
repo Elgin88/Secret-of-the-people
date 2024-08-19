@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e1772b8848e499fb05745d6d914f1d, type: 3}
   m_Name: PlayerStaticData
   m_EditorClassIdentifier: 
-  Health: 100
+  StartHealth: 100
   RunSpeed: 6
   RotationSpeed: 2000
   CoefficientDownSpeedAfterHit: 0.2
-  AnimationBaseRunSpeed: 4.8
+  AnimationBaseRunSpeed: 4.4
   RangeToChooserNearestTarget: 10
-  StartClipsCount: 1
+  StartGunClipsCount: 2
