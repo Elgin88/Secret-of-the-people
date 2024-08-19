@@ -5,17 +5,18 @@ namespace Scripts.Player
 {
     public class AnimationsSetter : MonoBehaviour
     {
+        [SerializeField] private AnimationChooserDeathParametr _deathParametr;
         [SerializeField] private PlayerStaticData _staticData;
-        [SerializeField] private Mover _playerMover;
         [SerializeField] private Animator _animator;
+        [SerializeField] private Mover _playerMover;
 
         private float _baseRunSpeedAnimation;
-        private readonly int _runHash = Animator.StringToHash(PlayerStatic
+        private readonly int _runHash = Animator.StringToHash(Static
             .IsRun);
         private readonly int _runParametrHash
-            = Animator.StringToHash(PlayerStatic.RunParametr);
-        private readonly int _hitHash = Animator.StringToHash(PlayerStatic.Hit);
-        private readonly int _deadHash = Animator.StringToHash(PlayerStatic.Dead);
+            = Animator.StringToHash(Static.AnimatorRunParametr);
+        private readonly int _hitHash = Animator.StringToHash(Static.Hit);
+        private readonly int _deadHash = Animator.StringToHash(Static.Dead);
         private bool _isHiting;
 
         public bool IsHiting => _isHiting;
@@ -42,9 +43,15 @@ namespace Scripts.Player
             PlayHit();
         }
 
-        public void PlayDead()
+        public void PlayDeadAnimation()
         {
+            _animator.SetFloat(_deathParametr.GetDeathHash(), 1);
             _animator.Play(_deadHash);
+        }
+
+        public void StopPlayDeadAnimation()
+        {
+            _animator.SetFloat(_deathParametr.GetDeathHash(), 0);
         }
 
         private void OnHitEnded() => ResetIsHiting();

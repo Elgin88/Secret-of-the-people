@@ -2,6 +2,7 @@
 
 namespace Scripts.Player
 {
+    [RequireComponent(typeof(AnimationChooserDeathParametr))]
     [RequireComponent(typeof(AnimationsSetter))]
     [RequireComponent(typeof(Attacker))]
     [RequireComponent(typeof(CameraFollower))]

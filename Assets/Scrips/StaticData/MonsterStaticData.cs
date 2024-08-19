@@ -10,13 +10,13 @@ namespace Scripts.StaticData
 
         [Range(1f, 30f)] public int Damage;
 
-        [Range(1f, 10f)] public float AttackRange;
+        [Range(0f, 10f)] public float AttackRange;
 
-        [Range(1f, 40f)] public int AgroRange;
+        [Range(0f, 40f)] public int AgroRange;
 
         [Range(0f, 2f)] public float AttackCooldawn;
 
-        [Range(0f, 1f)] public float RadiusOfHitSphere;
+        [Range(0f, 2f)] public float RadiusOfHitSphere;
 
         [Range(1f, 10f)] public float MoveToPlayerSpeed;
 
