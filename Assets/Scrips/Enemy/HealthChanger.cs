@@ -1,10 +1,10 @@
-﻿using Scripts.Interfaces;
+﻿using System;
 using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.Enemy
 {
-    public class HealthSetter : MonoBehaviour, IHealth
+    public class HealthChanger : MonoBehaviour, IHealthChanger
     {
         [SerializeField] private EnemyStaticData _staticData;
 
@@ -15,17 +15,27 @@ namespace Scripts.Enemy
 
         public int CurrentHealth => _currentHealth;
 
+        public Action<int, int> OnHealthChanged;
+
         private void Awake()
         {
-            SetStartHealth(GetStartHealth());
+            SetStartHealth(_staticData.StartHealth);
             SetCurrentHealth(_startHealth);
         }
 
-        public void SetCurrentHealth(int health) => _currentHealth = health;
+        public void SetStartHealth(int health)
+        {
+            _startHealth = health;
+            InvokeHealthChanged();
+        }
 
-        public void SetStartHealth(int health) => _startHealth = health;
+        public void SetCurrentHealth(int health)
+        {
+            _currentHealth = health;
+            InvokeHealthChanged();
+        }
 
-        public void Heal(int heal)
+        public void AddCurrentHealth(int heal)
         {
             _currentHealth += heal;
 
@@ -33,9 +43,11 @@ namespace Scripts.Enemy
             {
                 SetCurrentHealth(_startHealth);
             }
+
+            InvokeHealthChanged();
         }
 
-        public void TakeDamage(int damage)
+        public void RemoveCurrentHealth(int damage)
         {
             _currentHealth -= damage;
 
@@ -43,8 +55,10 @@ namespace Scripts.Enemy
             {
                 _currentHealth = 0;
             }
+
+            InvokeHealthChanged();
         }
 
-        private int GetStartHealth() => _staticData.StartHealth;
+        public void InvokeHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, _startHealth);
     }
 }

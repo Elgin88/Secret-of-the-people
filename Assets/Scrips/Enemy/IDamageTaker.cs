@@ -1,4 +1,4 @@
-﻿namespace Scripts.Interfaces
+﻿namespace Scripts.Enemy
 {
     public interface IDamageTaker
     {

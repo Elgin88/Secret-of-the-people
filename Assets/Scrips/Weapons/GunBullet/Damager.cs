@@ -1,5 +1,4 @@
-﻿using System;
-using Scripts.Interfaces;
+﻿using Scripts.Enemy;
 using Scripts.StaticData;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ namespace Scripts.Weapons.GunBullet
 {
     public class Damager : MonoBehaviour
     {
-        [SerializeField] private CollisionSetter _collisionSetter;
+        [SerializeField] private CollisionChecker _collisionSetter;
         [SerializeField] private BulletStaticData _staticData;
 
         private int _currentDamage;
@@ -21,7 +20,7 @@ namespace Scripts.Weapons.GunBullet
 
         private void GiveDamage(Collider collider)
         {
-            collider.GetComponent<IHealth>().TakeDamage(_currentDamage);
+            collider.GetComponent<IHealthChanger>().RemoveCurrentHealth(_currentDamage);
         }
 
         private void OnDestroy()

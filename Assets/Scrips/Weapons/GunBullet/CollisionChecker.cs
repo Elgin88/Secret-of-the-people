@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scripts.Weapons.GunBullet
 {
-    public class CollisionSetter : MonoBehaviour
+    public class CollisionChecker : MonoBehaviour
     {
         public Action<Collider> OnBulletEnter;
 

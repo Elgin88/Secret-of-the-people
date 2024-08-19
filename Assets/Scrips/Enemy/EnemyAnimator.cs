@@ -10,7 +10,7 @@ namespace Scripts.Enemy
 
         private readonly int _attack = Animator.StringToHash(StaticEnemy.IsAttack);
         private readonly int _move = Animator.StringToHash(StaticEnemy.IsMove);
-        private readonly int _speedParametr = Animator.StringToHash(StaticEnemy.MoveParametr);
+        private readonly int _speedParametr = Animator.StringToHash(StaticEnemy.AnimatorMoveParametr);
         private float _baseAnimationMoveSpeed;
 
         private void Awake()
@@ -35,7 +35,9 @@ namespace Scripts.Enemy
         }
 
         private void PlayAnimationMove() => _animator.SetBool(_move, true);
+
         private void SetMoveAnimationSpeed(float currentSpeed) => _animator.SetFloat(_speedParametr, GetNormalizeMoveSpeed(currentSpeed));
+
         private float GetNormalizeMoveSpeed(float currentMoveSpeed) => currentMoveSpeed / _baseAnimationMoveSpeed;
     }
 

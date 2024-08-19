@@ -8,9 +8,9 @@
 
         public const string IsHit = "IsHit";
 
-        public const string MoveParametr = "MoveParametr";
+        public const string AnimatorMoveParametr = "MoveParametr";
 
-        public const string AttackParametr = "AttackParametr";
+        public const string AnimatorAttackParametr = "AttackParametr";
 
         public const string Enemy = "Enemy";
     }

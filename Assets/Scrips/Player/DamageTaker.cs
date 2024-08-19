@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Enemy
+namespace Scripts.Player
 {
     public class DamageTaker : MonoBehaviour, IDamageTaker
     {

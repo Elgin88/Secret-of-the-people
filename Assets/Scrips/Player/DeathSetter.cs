@@ -5,13 +5,13 @@ namespace Scripts.Player
     public class DeathSetter : MonoBehaviour
     {
         [SerializeField] private AnimationsSetter _animationsSetter;
-        [SerializeField] private HealthSetter _healthSetter;
+        [SerializeField] private HealthChanger _healthSetter;
 
-        private void Awake() => _healthSetter.OnHealthChanged += OnPlayerChanged;
+        private void Awake() => _healthSetter.HealthChanged += OnHealthChanged;
 
-        private void OnDestroy() => _healthSetter.OnHealthChanged -= OnPlayerChanged;
+        private void OnDestroy() => _healthSetter.HealthChanged -= OnHealthChanged;
 
-        private void OnPlayerChanged(float current, float max)
+        private void OnHealthChanged(int current, int max)
         {
             if (current <= 0)
             {

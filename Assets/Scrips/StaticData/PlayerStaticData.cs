@@ -6,7 +6,7 @@ namespace Scripts.StaticData
 
     public class PlayerStaticData : ScriptableObject
     {
-        [Range(1, 100)] public int Health = 100;
+        [Range(1, 100)] public int StartHealth = 100;
 
         [Range(1, 10)] public float RunSpeed = 6;
 

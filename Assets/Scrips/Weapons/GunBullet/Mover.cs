@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Scripts.Weapons.GunBullet
 {
-    [RequireComponent(typeof(CollisionSetter))]
+    [RequireComponent(typeof(CollisionChecker))]
     [RequireComponent(typeof(Destroyer))]
     [RequireComponent(typeof(Bullet))]
 
     public class Mover : MonoBehaviour
     {
-        [SerializeField] private CollisionSetter _collisionSetter;
+        [SerializeField] private CollisionChecker _collisionSetter;
         [SerializeField] private Destroyer _destroyer;
         [SerializeField] private Bullet _bullet;
 

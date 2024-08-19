@@ -4,9 +4,9 @@ namespace Scripts.Enemy
 {
     [RequireComponent(typeof(DamageTaker))]
     [RequireComponent(typeof(EnemyAnimator))]
-    [RequireComponent(typeof(HealthSetter))]
+    [RequireComponent(typeof(HealthChanger))]
 
-    public class EnemyRequireComponents : MonoBehaviour
+    public class RequireComponents : MonoBehaviour
     {
     }
 }

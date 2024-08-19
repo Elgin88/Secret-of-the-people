@@ -5,13 +5,13 @@ namespace Scripts.Player
     public class HitTaker : MonoBehaviour
     {
         [SerializeField] private AnimationsSetter _animationsSetter;
-        [SerializeField] private HealthSetter _healthSetter;
+        [SerializeField] private HealthChanger _healthSetter;
 
-        private void Awake() => _healthSetter.OnHealthChanged += OnPlayerHealthChanged;
+        private void Awake() => _healthSetter.HealthChanged += OnPlayerHealthChanged;
 
-        private void OnDestroy() => _healthSetter.OnHealthChanged -= OnPlayerHealthChanged;
+        private void OnDestroy() => _healthSetter.HealthChanged -= OnPlayerHealthChanged;
 
-        private void OnPlayerHealthChanged(float current, float start) => Hit();
+        private void OnPlayerHealthChanged(int current, int start) => Hit();
         private void Hit() => _animationsSetter.PlayHitAnimation();
     }
 }

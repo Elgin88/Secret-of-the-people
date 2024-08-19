@@ -1,5 +1,4 @@
-﻿using Scripts.Player;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Scripts.Player
 {
@@ -9,7 +8,7 @@ namespace Scripts.Player
     [RequireComponent(typeof(ChooserSectorAttack))]
     [RequireComponent(typeof(ChooserWeapon))]
     [RequireComponent(typeof(DeathSetter))]
-    [RequireComponent(typeof(HealthSetter))]
+    [RequireComponent(typeof(HealthChanger))]
     [RequireComponent(typeof(HitTaker))]
     [RequireComponent(typeof(Inventory))]
     [RequireComponent(typeof(Mover))]
@@ -17,8 +16,9 @@ namespace Scripts.Player
     [RequireComponent(typeof(ObjectsCreator))]
     [RequireComponent(typeof(ShootPointSetter))]
     [RequireComponent(typeof(StartWeaponSetter))]
+    [RequireComponent(typeof(DamageTaker))]
 
-    public class PlayerRequireComponents : MonoBehaviour
+    public class RequireComponents : MonoBehaviour
     {
     }
 }

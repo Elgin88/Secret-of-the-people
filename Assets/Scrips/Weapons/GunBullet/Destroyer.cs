@@ -4,7 +4,7 @@ namespace Scripts.Weapons.GunBullet
 {
     public class Destroyer : MonoBehaviour
     {
-        [SerializeField] private CollisionSetter _collision;
+        [SerializeField] private CollisionChecker _collision;
 
         private void Awake() => _collision.OnBulletEnter += OnBulletEnter;
 

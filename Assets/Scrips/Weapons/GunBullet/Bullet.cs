@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Scripts.Weapons.GunBullet
 {
-    [RequireComponent(typeof(CollisionSetter))]
+    [RequireComponent(typeof(CollisionChecker))]
     [RequireComponent(typeof(Destroyer))]
     [RequireComponent(typeof(Mover))]
 

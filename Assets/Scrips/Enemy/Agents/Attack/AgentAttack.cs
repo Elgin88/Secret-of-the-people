@@ -13,13 +13,13 @@ namespace Scripts.Enemy
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] private HitSphere _hitArea;
 
-        private float _currentAttackColldown;
+        private Player.IHealthChanger _healthChanger;
+        private IGameFactory _gameFactory;
+        private Collider[] _resultOfHit = new Collider[1];
+        private float _currentCooldawn;
         private float _attackCooldown;
         private bool _isAtacking = false;
         private int _damage;
-        private Collider[] _resultOfHit = new Collider[1];
-        private IGameFactory _iGameFactory;
-        private Player.HealthSetter _playerHealth;
 
         private void Start()
         {
@@ -27,7 +27,7 @@ namespace Scripts.Enemy
             Disable();
         }
 
-        public void Construct(IGameFactory iGameFactory) => _iGameFactory = iGameFactory;
+        public void Construct(IGameFactory iGameFactory) => _gameFactory = iGameFactory;
 
         public void EnableAgent()
         {
@@ -49,7 +49,7 @@ namespace Scripts.Enemy
 
         private IEnumerator AttackAfterCooldown()
         {
-            while (_currentAttackColldown > 0)
+            while (_currentCooldawn > 0)
             {
                 UpdateCooldown();
 
@@ -74,33 +74,35 @@ namespace Scripts.Enemy
 
         private void PlayAttackAnimation()
         {
-            if (!_isAtacking & !_playerHealth.IsDead)
+            if (!_isAtacking & IsAlive())
             {
                 _enemyAnimator.PlayAttack();
                 SetIsAttacking();
             }
         }
 
-        private void SetParametrs()
-        {
-            _playerHealth = _iGameFactory.Player.GetComponent<Player.HealthSetter>();
-            _attackCooldown = _staticData.AttackCooldawn;
-            _damage = _staticData.Damage;
-            _currentAttackColldown = _attackCooldown;
-        }
+        private bool IsAlive() => _healthChanger.CurrentHealth > 0;
 
         private void Enable() => enabled = true;
 
         private void Disable() => enabled = false;
 
-        private void PlayerTakeHit(Collider collider) => collider.GetComponent<HealthSetter>().TakeDamage(_damage);
+        private void PlayerTakeHit(Collider collider) => collider.GetComponent<Player.IHealthChanger>().RemoveCurrentHealth(_damage);
 
-        private void UpdateCooldown() => _currentAttackColldown -= Time.deltaTime;
+        private void UpdateCooldown() => _currentCooldawn -= Time.deltaTime;
 
-        private void ResetCooldown() => _currentAttackColldown = _attackCooldown;
+        private void ResetCooldown() => _currentCooldawn = _attackCooldown;
 
         private void SetIsAttacking() => _isAtacking = true;
 
         private void ResetIsAttacking() => _isAtacking = false;
+
+        private void SetParametrs()
+        {
+            _healthChanger = _gameFactory.Player.GetComponent<Player.IHealthChanger>();
+            _attackCooldown = _staticData.AttackCooldawn;
+            _damage = _staticData.Damage;
+            _currentCooldawn = _attackCooldown;
+        }
     }
 }
