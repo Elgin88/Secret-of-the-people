@@ -4,7 +4,7 @@ namespace Scripts.Player
 {
     public class HitTaker : MonoBehaviour
     {
-        [SerializeField] private AnimationSetter _animationsSetter;
+        [SerializeField] private RunAnimation _animationsSetter;
         [SerializeField] private HealthChanger _healthSetter;
 
         private void Awake()
@@ -19,7 +19,6 @@ namespace Scripts.Player
 
         private void OnPlayerHealthChanged(int current, int start)
         {
-            _animationsSetter.PlayHitAnimation();
         }
     }
 }

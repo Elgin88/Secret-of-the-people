@@ -1,4 +1,5 @@
-﻿using Scripts.CodeBase.Logic;
+﻿using System;
+using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace Scripts.Player
     {
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private PlayerStaticData _staticData;
-        [SerializeField] private AnimationSetter _animationsSetter;
+        [SerializeField] private RunAnimation _animationsSetter;
         [SerializeField] private HealthChanger _healthSetter;
 
         private AllServices _allServices;
@@ -39,13 +40,21 @@ namespace Scripts.Player
             {
                 SetCurrentSpeed();
                 SetCurrentHitSpeed();
-                AnimatorPlayRun();
                 SetTargetDirection();
                 SetTargetRotation();
                 ChangePosition(_targetDirection, _currentSpeed);
                 ChangeRotation(_targetRotaion, _deltaRotation);
+                PlayAnimationRun();
+            }
+            else
+            {
+                StopPlayAnimationRun();
             }
         }
+
+        private void PlayAnimationRun() => _animationsSetter.PlayRun();
+
+        private void StopPlayAnimationRun() => _animationsSetter.StopPlayRun();
 
         private void SetCurrentHitSpeed()
         {
@@ -58,8 +67,6 @@ namespace Scripts.Player
         private void ResetCurrentSpeed() => _currentSpeed = 0;
 
         private void SetCurrentSpeed() => _currentSpeed = _startMoveSpeed;
-
-        private void AnimatorPlayRun() => _animationsSetter.PlayRunAnimation();
 
         private void SetTargetRotation() => _targetRotaion = Quaternion.LookRotation(new Vector3(_axis.x, 0, _axis.y));
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scripts.Player
 {
-    public class ChooserDeathHash : MonoBehaviour
+    public class AnimationChooserDeathHash : MonoBehaviour
     {
         private List<int> _parametrs = new List<int>();
 

@@ -2,9 +2,9 @@
 
 namespace Scripts.Player
 {
-    [RequireComponent(typeof(ChooserDeathHash))]
-    [RequireComponent(typeof(AnimationSetter))]
-    [RequireComponent(typeof(AnimationStateMaschine))]
+    [RequireComponent(typeof(RunAnimation))]
+    [RequireComponent(typeof(AnimationChooserDeathHash))]
+    [RequireComponent(typeof(RunAnimation))]
     [RequireComponent(typeof(Attacker))]
     [RequireComponent(typeof(CameraFollower))]
     [RequireComponent(typeof(ChooserSectorAttack))]

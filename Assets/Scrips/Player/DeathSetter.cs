@@ -4,7 +4,7 @@ namespace Scripts.Player
 {
     public class DeathSetter : MonoBehaviour
     {
-        [SerializeField] private AnimationSetter _animationsSetter;
+        [SerializeField] private RunAnimation _animationsSetter;
         [SerializeField] private HealthChanger _healthChanger;
 
         private Coroutine _playAnimation;
@@ -23,7 +23,6 @@ namespace Scripts.Player
         {
             if (current <= 0)
             {
-                _animationsSetter.PlayDeadAnimation();
             }
         }
     }

@@ -993,7 +993,6 @@ GameObject:
   - component: {fileID: 5193581567777604041}
   - component: {fileID: 7018014577060641258}
   - component: {fileID: 4514310339694569846}
-  - component: {fileID: 2980337302151610088}
   - component: {fileID: 6164656869465644589}
   - component: {fileID: 8273102346166442749}
   - component: {fileID: 1530984592792637890}
@@ -1156,21 +1155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterController: {fileID: 439951020451176731}
   _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
-  _animationsSetter: {fileID: 2980337302151610088}
+  _animationsSetter: {fileID: 9052203039927481712}
   _healthSetter: {fileID: 8273102346166442749}
---- !u!114 &2980337302151610088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7225614166488677920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90d39c4195622e24c8a51069bb3df7eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animatorStateMashine: {fileID: 9052203039927481712}
 --- !u!114 &6164656869465644589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1183,7 +1169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423ce373eab622a439a86209c4d95869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationsSetter: {fileID: 2980337302151610088}
+  _animationsSetter: {fileID: 9052203039927481712}
   _healthSetter: {fileID: 8273102346166442749}
 --- !u!114 &8273102346166442749
 MonoBehaviour:
@@ -1210,7 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc836ce12ad94b4bb38579e25dcd43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationsSetter: {fileID: 2980337302151610088}
+  _animationsSetter: {fileID: 9052203039927481712}
   _healthChanger: {fileID: 8273102346166442749}
 --- !u!114 &-2642847492547277256
 MonoBehaviour:
@@ -1372,6 +1358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35293f8539ba641ec9cc1f4518141260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
+  _animator: {fileID: 3234086052328686819}
+  _mover: {fileID: 4514310339694569846}
 --- !u!1 &7331202270206063638
 GameObject:
   m_ObjectHideFlags: 0
