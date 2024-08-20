@@ -23,7 +23,11 @@ namespace Scripts.Player
             }
         }
 
-        public void PlayHit() => _hitAnimation.PlayHit();
+        public void PlayHit()
+        {
+            PlayEdle();
+            _hitAnimation.PlayHit();
+        }
 
         public void StopPlayHit() => _hitAnimation.StopPlayHit();
 

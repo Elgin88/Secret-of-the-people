@@ -1096,11 +1096,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.35
   m_Height: 2.8
   m_Direction: 1
   m_Center: {x: 0, y: 1.2, z: 0}
@@ -1172,7 +1172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationsSetter: {fileID: 8163660721231533018}
-  _healthSetter: {fileID: 8273102346166442749}
 --- !u!114 &8273102346166442749
 MonoBehaviour:
   m_ObjectHideFlags: 0

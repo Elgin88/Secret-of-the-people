@@ -15,8 +15,6 @@ namespace Scripts.Player
         {
             if (!_isHit)
             {
-                Debug.Log("PlayHit");
-
                 _animator.SetBool(Static.IsHitHash, GetIsHit(true));
             }
         }
@@ -25,8 +23,6 @@ namespace Scripts.Player
         {
             if (_isHit)
             {
-                Debug.Log("StopHit");
-
                 _animator.SetBool(Static.IsHitHash, GetIsHit(false));
             }
         }
@@ -35,8 +31,6 @@ namespace Scripts.Player
         {
             if (_isHit)
             {
-                Debug.Log("OnHitEnded");
-
                 StopPlayHit();
             }
         }
