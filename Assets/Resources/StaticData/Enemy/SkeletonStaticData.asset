@@ -22,5 +22,5 @@ MonoBehaviour:
   PatrolSpeed: 1
   MaxPatrolRange: 10
   MinPatrolRange: -10
-  MinDistanceToPlayer: 1
+  MinDistanceToPlayer: 2
   AnimationBaseMoveSpeed: 0.6
