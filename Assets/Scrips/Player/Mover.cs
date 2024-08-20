@@ -1,5 +1,4 @@
-﻿using System;
-using Scripts.CodeBase.Logic;
+﻿using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ namespace Scripts.Player
     public class Mover : MonoBehaviour
     {
         [SerializeField] private CharacterController _characterController;
-        [SerializeField] private AnimamationSetter _animationsSetter;
+        [SerializeField] private AnimationSetter _animationsSetter;
         [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private HealthChanger _healthSetter;
 

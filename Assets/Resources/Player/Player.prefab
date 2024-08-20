@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423ce373eab622a439a86209c4d95869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationsSetter: {fileID: 9052203039927481712}
+  _animationsSetter: {fileID: 8163660721231533018}
   _healthSetter: {fileID: 8273102346166442749}
 --- !u!114 &8273102346166442749
 MonoBehaviour:
@@ -1389,6 +1389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fefecb0ace9414aa40eb238759a4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 3234086052328686819}
 --- !u!1 &7331202270206063638
 GameObject:
   m_ObjectHideFlags: 0

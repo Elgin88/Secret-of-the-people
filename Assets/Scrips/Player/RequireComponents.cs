@@ -2,7 +2,7 @@
 
 namespace Scripts.Player
 {
-    [RequireComponent(typeof(AnimamationSetter))]
+    [RequireComponent(typeof(AnimationSetter))]
     [RequireComponent(typeof(AnimationChooserDeathHash))]
     [RequireComponent(typeof(HitAnimation))]
     [RequireComponent(typeof(RunAnimation))]

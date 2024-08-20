@@ -87,7 +87,11 @@ namespace Scripts.Enemy
 
         private void Disable() => enabled = false;
 
-        private void PlayerTakeHit(Collider collider) => collider.GetComponent<Player.IHealthChanger>().RemoveCurrentHealth(_damage);
+        private void PlayerTakeHit(Collider collider)
+        {
+            collider.GetComponent<Player.IHealthChanger>().RemoveCurrentHealth(_damage);
+            collider.GetComponent<Player.HitTaker>().TakeHit();
+        }
 
         private void UpdateCooldown() => _currentCooldawn -= Time.deltaTime;
 

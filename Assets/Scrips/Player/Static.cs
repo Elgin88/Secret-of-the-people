@@ -16,6 +16,8 @@ namespace Scripts.Player
 
         public static int IsRunHash = Animator.StringToHash("IsRun");
 
+        public static int IsHitHash = Animator.StringToHash("IsHit");
+
         public static int HitHash = Animator.StringToHash("Hit");
 
         public static int RunParametrHash = Animator.StringToHash("RunParametr");

@@ -19,12 +19,16 @@ namespace Scripts.Player
 
         public void PlayRun()
         {
+            StopCurrentAnimation();
             SetIsRunTrue();
             SetRunParametr();
         }
 
+        private void StopCurrentAnimation() => _animator.StopPlayback();
+
         public void StopPlayRun()
         {
+            StopCurrentAnimation();
             SetIsRunFalse();
         }
 
