@@ -28,6 +28,8 @@ namespace Scripts.StaticData
 
         [Range(0f, 3f)] public int MinDistanceToPlayer = 2;
 
-        [Range(0f, 1f)] public float AnimationBaseMoveSpeed = 0.6f;
+        [Range(0f, 3f)] public float MoveAnimationSpeed = 1f;
+
+        [Range(0f, 3f)] public float AttackAnimationSpeed = 1f;
     }
 }

@@ -9,7 +9,7 @@ namespace Scripts.Enemy
     {
         [SerializeField] private AgentMoveToPlayer _agentMoverToPlayer;
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private EnemyAnimator _enemyAnimator;
+        [SerializeField] private AnimationSetter _enemyAnimator;
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] private HitSphere _hitArea;
 
@@ -65,7 +65,7 @@ namespace Scripts.Enemy
 
         private bool IsHit(out Collider hitCollider)
         {
-            int count = Physics.OverlapSphereNonAlloc(_hitArea.transform.position, _hitArea.RadiusOfHitSphere, _resultOfHit, _layerMask);
+            int count = Physics.OverlapSphereNonAlloc(_hitArea.transform.position, _hitArea.Radius, _resultOfHit, _layerMask);
 
             hitCollider = _resultOfHit[0];
 

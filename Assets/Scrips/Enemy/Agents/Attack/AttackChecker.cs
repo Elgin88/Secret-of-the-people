@@ -4,9 +4,9 @@ namespace Scripts.Enemy
 {
     public class AttackChecker : MonoBehaviour
     {
+        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
         [SerializeField] private AgentAttack _agentAttack;
         [SerializeField] private AttackZone _attackZone;
-        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
 
         private void Awake()
         {

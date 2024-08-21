@@ -10,6 +10,7 @@ namespace Scripts.Player
         [SerializeField] private AnimationSetter _animationsSetter;
         [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private HealthChanger _healthSetter;
+        [SerializeField] private HitTaker _hitTaker;
 
         private AllServices _allServices;
         private Quaternion _targetRotaion;
@@ -38,11 +39,11 @@ namespace Scripts.Player
             if (_axis != Vector2.zero & IsAlive())
             {
                 SetCurrentSpeed();
-                SetCurrentHitSpeed();
+                TrySetCurrentHitSpeed();
                 SetTargetDirection();
                 SetTargetRotation();
-                ChangePosition(_targetDirection, _currentSpeed);
-                ChangeRotation(_targetRotaion, _deltaRotation);
+                ChangePosition();
+                ChangeRotation();
                 PlayAnimationRun();
             }
             else
@@ -54,10 +55,6 @@ namespace Scripts.Player
         private void PlayAnimationRun() => _animationsSetter.PlayRun();
 
         private void StopPlayAnimationRun() => _animationsSetter.StopPlayRun();
-
-        private void SetCurrentHitSpeed()
-        {
-        }
 
         private void SetAllServices() => _allServices = AllServices.Container;
 
@@ -71,9 +68,9 @@ namespace Scripts.Player
 
         private void SetTargetDirection() => _targetDirection = new Vector3(_axis.x, 0, _axis.y);
 
-        private void ChangePosition(Vector3 targetDirection, float currentSpeed) => _characterController.Move(targetDirection * currentSpeed * Time.deltaTime);
+        private void ChangePosition() => _characterController.Move(_targetDirection * _currentSpeed * Time.deltaTime);
 
-        private void ChangeRotation(Quaternion targetRotation, float deltaRotation) => transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, deltaRotation * Time.deltaTime);
+        private void ChangeRotation() => transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotaion, _deltaRotation * Time.deltaTime);
 
         private void SetHitSpeedCoefficient() => _hitSpeedCoefficient = _staticData.CoefficientDownSpeedAfterHit;
 
@@ -82,5 +79,13 @@ namespace Scripts.Player
         private void SetStartMoveSpeed() => _startMoveSpeed = _staticData.RunSpeed;
 
         private bool IsAlive() => _healthSetter.CurrentHealth > 0;
+
+        private void TrySetCurrentHitSpeed()
+        {
+            if (_hitTaker.IsHit)
+            {
+                _currentSpeed *= _hitSpeedCoefficient;
+            }
+        }
     }
 }

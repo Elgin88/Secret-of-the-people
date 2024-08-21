@@ -7,26 +7,28 @@ namespace Scripts.Enemy
 {
     public class AgentPatrol : MonoBehaviour, IAgent
     {
-        [SerializeField] private NavMeshAgent _navMeshAgent;
-        [SerializeField] private EnemyAnimator _enemyAnimator;
         [SerializeField] private MonsterStaticData _staticData;
+        [SerializeField] private AnimationSetter _animationSetter;
+        [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private LayerMask _groundMask;
 
-        private const int rayLength = 5;
-        private float _patrolSpeed;
-        private int _maxPatrolRange;
-        private int _minPatrolRange;
-        private int _minDistanceToPlayer;
+        private const int _rayLength = 5;
         private Vector3 _targetPosition;
+        private float _patrolSpeed;
+        private int _maxRange;
+        private int _minRange;
+        private int _minDistanceToPlayer;
+
+        public float PatrolSpeed => _patrolSpeed;
 
         private void Awake() => SetParametrs();
 
         private void Start() => EnableAgent();
 
-        private void Update()
+        private void FixedUpdate()
         {
             Move();
-            PlayAnimationMove(GetCurrentSpeed());
+            PlayAnimationMove();
 
             if (IsMinDistanceToTarget())
             {
@@ -38,7 +40,7 @@ namespace Scripts.Enemy
         {
             Enable();
             SetIsMovedInNavMesh();
-            SetMaxSpeedInNavMesh(_patrolSpeed);
+            SetSpeedInNavMesh(_patrolSpeed);
             SetTargetPosition();
         }
 
@@ -52,8 +54,8 @@ namespace Scripts.Enemy
         private void SetParametrs()
         {
             _patrolSpeed = _staticData.PatrolSpeed;
-            _maxPatrolRange = _staticData.MaxPatrolRange;
-            _minPatrolRange = _staticData.MinPatrolRange;
+            _maxRange = _staticData.MaxPatrolRange;
+            _minRange = _staticData.MinPatrolRange;
             _minDistanceToPlayer = _staticData.MinDistanceToPlayer;
         }
 
@@ -77,11 +79,9 @@ namespace Scripts.Enemy
             _targetPosition = new Vector3(transform.position.x + deltaX, transform.position.y, transform.position.z + deltaZ);
         }
 
-        private bool TargetIsOnGround() => Physics.Raycast(_targetPosition, Vector3.down, rayLength, _groundMask);
+        private bool TargetIsOnGround() => Physics.Raycast(_targetPosition, Vector3.down, _rayLength, _groundMask);
 
-        private float GetCurrentSpeed() => _navMeshAgent.speed;
-
-        private int GetRandomDelta() => Random.Range(_minPatrolRange, _maxPatrolRange);
+        private int GetRandomDelta() => Random.Range(_minRange, _maxRange);
 
         private bool IsMinDistanceToTarget() => Vector3.Distance(transform.position, _targetPosition) < _minDistanceToPlayer;
 
@@ -95,10 +95,10 @@ namespace Scripts.Enemy
 
         private void SetIsStopedInNavMesh() => _navMeshAgent.isStopped = true;
 
-        private void SetMaxSpeedInNavMesh(float speed) => _navMeshAgent.speed = speed;
+        private void SetSpeedInNavMesh(float speed) => _navMeshAgent.speed = speed;
 
-        private void PlayAnimationMove(float speed) => _enemyAnimator.PlayMove(speed);
+        private void PlayAnimationMove() => _animationSetter.PlayRun();
 
-        private void StopAnimationOfMove() => _enemyAnimator.StopPlayMove();
+        private void StopAnimationOfMove() => _animationSetter.StopPlayRun();
     }
 }

@@ -7,9 +7,9 @@ namespace Scripts.Enemy
 {
     public class AgentMoveToPlayer : MonoBehaviour, IAgent
     {
-        [SerializeField] private EnemyAnimator _enemyAnimator;
-        [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private MonsterStaticData _staticData;
+        [SerializeField] private AnimationSetter _enemyAnimator;
+        [SerializeField] private NavMeshAgent _navMeshAgent;
 
         private IGameFactory _iGameFactory;
         private Transform _playerTransform;
@@ -35,19 +35,19 @@ namespace Scripts.Enemy
             Enable();
             SetMoveSpeed();
             NavMeshMoveOn();
-            PlayAnimationMove();
+            PlayAnimationRun();
         }
 
         public void DisableAgent()
         {
             NavMeshMoveOff();
-            PlayAnimationIdle();
+            StopPlayAnimationRun();
             Disable();
         }
 
         private void SetComponents()
         {
-            _enemyAnimator = GetComponent<EnemyAnimator>();
+            _enemyAnimator = GetComponent<AnimationSetter>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
 
             _moveToPlayerSpeed = _staticData.MoveToPlayerSpeed;
@@ -66,9 +66,9 @@ namespace Scripts.Enemy
 
         private void Disable() => enabled = false;
 
-        private void PlayAnimationMove() => _enemyAnimator.PlayMove(_moveToPlayerSpeed);
+        private void PlayAnimationRun() => _enemyAnimator.PlayRun();
 
-        private void PlayAnimationIdle() => _enemyAnimator.StopPlayMove();
+        private void StopPlayAnimationRun() => _enemyAnimator.StopPlayRun();
 
         private void MoveToTarget() => _navMeshAgent.destination = _playerTransform.position;
 

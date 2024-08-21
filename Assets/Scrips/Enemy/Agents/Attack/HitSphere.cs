@@ -7,10 +7,10 @@ namespace Scripts.Enemy
     {
         [SerializeField] private MonsterStaticData _staticData;
 
-        private float _radiusOfHitSphere;
+        private float _radius;
 
-        public float RadiusOfHitSphere => _radiusOfHitSphere;
+        public float Radius => _radius;
 
-        private void Awake() => _radiusOfHitSphere = _staticData.RadiusOfHitSphere;
+        private void Awake() => _radius = _staticData.RadiusOfHitSphere;
     }
 }

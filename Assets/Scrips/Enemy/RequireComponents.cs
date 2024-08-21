@@ -2,9 +2,11 @@
 
 namespace Scripts.Enemy
 {
-    [RequireComponent(typeof(DamageTaker))]
-    [RequireComponent(typeof(EnemyAnimator))]
+    [RequireComponent(typeof(AnimationSetter))]
+    [RequireComponent(typeof(AttackAnimation))]
     [RequireComponent(typeof(HealthChanger))]
+    [RequireComponent(typeof(RunAnimation))]
+    [RequireComponent(typeof(HitAnimation))]
 
     public class RequireComponents : MonoBehaviour { }
 }
