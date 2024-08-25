@@ -8,7 +8,7 @@ namespace Scripts.StaticData
     {
         [Range(1, 100)] public int StartHealth = 100;
 
-        [Range(1, 10)] public float RunSpeed = 6;
+        [Range(1, 10)] public float StarMovementSpeed = 6;
 
         [Range(1, 2000)] public int RotationSpeed = 2000;
 

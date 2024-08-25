@@ -76,7 +76,7 @@ namespace Scripts.Player
 
         private void SetDeltaRotation() => _deltaRotation = _staticData.RotationSpeed;
 
-        private void SetStartMoveSpeed() => _startMoveSpeed = _staticData.RunSpeed;
+        private void SetStartMoveSpeed() => _startMoveSpeed = _staticData.StarMovementSpeed;
 
         private bool IsAlive() => _healthSetter.CurrentHealth > 0;
 

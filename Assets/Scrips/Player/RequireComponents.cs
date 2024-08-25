@@ -18,6 +18,7 @@ namespace Scripts.Player
     [RequireComponent(typeof(NextTargetFinder))]
     [RequireComponent(typeof(ObjectsCreator))]
     [RequireComponent(typeof(ShootPointSetter))]
+    [RequireComponent(typeof(MovementSpeedSetter))]
     [RequireComponent(typeof(StartWeaponSetter))]
     [RequireComponent(typeof(DamageTaker))]
 
