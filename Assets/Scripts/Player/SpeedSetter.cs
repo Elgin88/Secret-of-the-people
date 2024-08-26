@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class MovementSpeedSetter : MonoBehaviour
+    public class SpeedSetter : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
 

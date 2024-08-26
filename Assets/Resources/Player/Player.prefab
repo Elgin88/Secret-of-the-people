@@ -1157,10 +1157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterController: {fileID: 439951020451176731}
-  _animationsSetter: {fileID: 8163660721231533018}
   _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
+  _animationsSetter: {fileID: 8163660721231533018}
   _healthSetter: {fileID: 8273102346166442749}
-  _hitTaker: {fileID: 6164656869465644589}
+  _speedSetter: {fileID: 1951468822783296256}
 --- !u!114 &6164656869465644589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,7 +1175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationsSetter: {fileID: 8163660721231533018}
   _hitAnimation: {fileID: 1142652382718053714}
-  _mover: {fileID: 4514310339694569846}
 --- !u!114 &8273102346166442749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1339,6 +1338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 8273102346166442749}
+  _hitTaker: {fileID: 6164656869465644589}
 --- !u!114 &8338876285206282230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,8 +1364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
+  _speedSetter: {fileID: 1951468822783296256}
   _animator: {fileID: 3234086052328686819}
-  _mover: {fileID: 4514310339694569846}
 --- !u!114 &8163660721231533018
 MonoBehaviour:
   m_ObjectHideFlags: 0

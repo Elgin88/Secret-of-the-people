@@ -6,8 +6,8 @@ namespace Player.Animations
     public class RunAnimation : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
+        [SerializeField] private SpeedSetter _speedSetter;
         [SerializeField] private Animator _animator;
-        [SerializeField] private Mover _mover;
 
         public void PlayRun()
         {
@@ -20,6 +20,6 @@ namespace Player.Animations
             _animator.SetBool(Static.IsRunHash, false);
         }
 
-        private void SetAnimationSpeed() => _animator.SetFloat(Static.RunHash, _mover.StartMoveSpeed / _staticData.AnimationBaseRunSpeed);
+        private void SetAnimationSpeed() => _animator.SetFloat(Static.RunHash, _speedSetter.CurrentSpeed / _staticData.AnimationBaseRunSpeed);
     }
 }

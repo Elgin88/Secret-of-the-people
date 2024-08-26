@@ -1400,12 +1400,12 @@
               <e p="IHealthChanger.cs" t="Include" />
             </e>
             <e p="Inventory.cs" t="Include" />
-            <e p="MovementSpeedSetter.cs" t="Include" />
             <e p="Mover.cs" t="Include" />
             <e p="NextTargetFinder.cs" t="Include" />
             <e p="ObjectsCreator.cs" t="Include" />
             <e p="RequireComponents.cs" t="Include" />
             <e p="ShootPointSetter.cs" t="Include" />
+            <e p="SpeedSetter.cs" t="Include" />
             <e p="StartWeaponSetter.cs" t="Include" />
             <e p="Static.cs" t="Include" />
           </e>
