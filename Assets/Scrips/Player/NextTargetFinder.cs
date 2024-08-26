@@ -74,7 +74,7 @@ namespace Scripts.Player
 
         private void ResetNearestTarget() => _currentTarget = null;
 
-        private void SetRangeFindTarget() => _rangeToChooserNearestTarget = _staticData.RangeToChooserNearestTarget;
+        private void SetRangeFindTarget() => _rangeToChooserNearestTarget = _staticData.RangeToNearestTarget;
 
         private void CreateArrayTargets() => _targets = new Collider[_maxTargetsCount];
     }

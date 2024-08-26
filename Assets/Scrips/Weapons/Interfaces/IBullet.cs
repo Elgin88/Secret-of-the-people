@@ -6,7 +6,7 @@ namespace Scripts.Weapons
     {
         public float StartSpeed { get; }
 
-        public void Move();
+        public void Fly();
 
         public void Construct(IGameFactory iGameFactory);
     }

@@ -32,7 +32,7 @@ namespace Scripts.Weapons.GunBullet
             DisableGameObject();
         }
 
-        public void Move()
+        public void Fly()
         {
             SetStartPosition();
             StartMove();

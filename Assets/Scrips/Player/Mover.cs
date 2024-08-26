@@ -27,7 +27,6 @@ namespace Scripts.Player
         {
             SetStartMoveSpeed();
             SetDeltaRotation();
-            SetHitSpeedCoefficient();
             SetAllServices();
         }
 
@@ -71,8 +70,6 @@ namespace Scripts.Player
         private void ChangePosition() => _characterController.Move(_targetDirection * _currentSpeed * Time.deltaTime);
 
         private void ChangeRotation() => transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotaion, _deltaRotation * Time.deltaTime);
-
-        private void SetHitSpeedCoefficient() => _hitSpeedCoefficient = _staticData.CoefficientDownSpeedAfterHit;
 
         private void SetDeltaRotation() => _deltaRotation = _staticData.RotationSpeed;
 

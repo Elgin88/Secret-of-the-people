@@ -1,46 +1,53 @@
-﻿using System;
+﻿using Scripts.StaticData;
 using System.Collections;
-using Scripts.StaticData;
 using UnityEngine;
 
 namespace Scripts.Player
 {
-    public class MovementSpeedSetter : MonoBehaviour, IMovementSpeedSetter
+    public class MovementSpeedSetter : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
 
+        private Coroutine _setCurrentHitSpeed;
         private float _startSpeed;
+        private float _hitSpeed;
         private float _currentSpeed;
+        private float _durationHit;
 
         public float CurrentSpeed => _currentSpeed;
 
         private void Awake()
         {
-            SetStartSpeed();
+            SetParametrs();
             SetCurrentSpeed(_startSpeed);
         }
 
-        public void SetCurrentSpeed(float speed)
+        public void SetCurrentHitSpeed()
         {
-            _currentSpeed = speed;
+            if (_setCurrentHitSpeed == null)
+            {
+                _setCurrentHitSpeed = StartCoroutine(SetHitSpeedForDuration());
+            }
         }
 
-        public void SetCurrentHitSpeed(float hitSpeed, float duration)
-        {
-            _currentSpeed = hitSpeed;
+        private void SetCurrentSpeed(float speed) => _currentSpeed = speed;
 
-            ComebackCurrentSpeed(duration);
+        private void SetParametrs()
+        {
+            _startSpeed = _staticData.StarMovementSpeed;
+            _hitSpeed = _staticData.HitSpeed;
+            _durationHit = _staticData.DurationHit;
         }
 
-        private void ComebackCurrentSpeed(float duration) => StartCoroutine(SetCurrentSpeedAfterDelay(duration));
-
-        private IEnumerator SetCurrentSpeedAfterDelay(float duration)
+        private IEnumerator SetHitSpeedForDuration()
         {
-            yield return new WaitForSeconds(duration);
+            float currentSpeed = _currentSpeed;
 
-            SetCurrentSpeed(_startSpeed);
+            SetCurrentSpeed(_hitSpeed);
+
+            yield return new WaitForSeconds(_durationHit);
+
+            SetCurrentSpeed(currentSpeed);
         }
-
-        private void SetStartSpeed() => _startSpeed = _staticData.StarMovementSpeed;
     }
 }
