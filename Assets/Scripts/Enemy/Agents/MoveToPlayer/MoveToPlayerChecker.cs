@@ -12,14 +12,14 @@ namespace Enemy.Agents.MoveToPlayer
 
         private void Awake()
         {
-            SubPlayerEnter();
-            SubPlayerExit();
+            _agroZone.Enter += OnPlayerEnter;
+            _agroZone.Exit += OnPlayerExit;
         }
 
         private void OnDisable()
         {
-            UnsubPlayerEnter();
-            UnsubPlayerExit();
+            _agroZone.Enter -= OnPlayerEnter;
+            _agroZone.Exit -= OnPlayerExit;
         }
 
         private void OnPlayerEnter(Collider player)
@@ -38,9 +38,5 @@ namespace Enemy.Agents.MoveToPlayer
         private void DisableAgentMove() => _agentMoveToPlayer.DisableAgent();
         private void EnableAgentPatrol() => _agentPatrol.EnableAgent();
         private void DisableAgentPatrol() => _agentPatrol.DisableAgent();
-        private void SubPlayerEnter() => _agroZone.TriggeredEnter += OnPlayerEnter;
-        private void SubPlayerExit() => _agroZone.TriggeredExit += OnPlayerExit;
-        private void UnsubPlayerExit() => _agroZone.TriggeredExit -= OnPlayerExit;
-        private void UnsubPlayerEnter() => _agroZone.TriggeredEnter -= OnPlayerEnter;
     }
 }
