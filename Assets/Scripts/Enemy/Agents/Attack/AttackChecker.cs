@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Scripts.Enemy;
+using UnityEngine;
 
-namespace Scripts.Enemy
+namespace Enemy.Agents.Attack
 {
     public class AttackChecker : MonoBehaviour
     {

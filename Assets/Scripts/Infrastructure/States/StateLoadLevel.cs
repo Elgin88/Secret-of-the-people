@@ -1,6 +1,7 @@
 ﻿using Agava.YandexGames;
 using Scripts.Enemy;
 using System.Collections.Generic;
+using Enemy.Agents.Attack;
 using Infrastructure;
 using Infrastructure.Services;
 using UnityEngine;

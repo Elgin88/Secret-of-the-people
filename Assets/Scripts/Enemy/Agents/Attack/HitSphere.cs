@@ -1,7 +1,7 @@
 ﻿using Scripts.StaticData;
 using UnityEngine;
 
-namespace Scripts.Enemy
+namespace Enemy.Agents.Attack
 {
     public class HitSphere : MonoBehaviour
     {
