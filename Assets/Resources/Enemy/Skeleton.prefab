@@ -1647,10 +1647,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0029479e97c74959a3484cffcb12304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agentMoverToPlayer: {fileID: 5211133151828398334}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
   _enemyAnimator: {fileID: 3327770237539775674}
-  _layerMask:
+  _targetMask:
     serializedVersion: 2
     m_Bits: 4096
   _hitArea: {fileID: 4483631623858313544}

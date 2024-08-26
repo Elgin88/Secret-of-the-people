@@ -1324,8 +1324,8 @@
               <e p="IAgent.cs" t="Include" />
               <e p="MoveToPlayer" t="Include">
                 <e p="AgentMoveToPlayer.cs" t="Include" />
-                <e p="AgroChecker.cs" t="Include" />
                 <e p="AgroZone.cs" t="Include" />
+                <e p="MoveToPlayerChecker.cs" t="Include" />
               </e>
               <e p="Patrol" t="Include">
                 <e p="AgentPatrol.cs" t="Include" />

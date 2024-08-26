@@ -27,7 +27,7 @@ namespace Enemy.Agents.Attack
             EnableAgentAttack();
         }
 
-        private void OnPlayerExit(Collider collider)
+        private void OnPlayerExit(Collider player)
         {
             DisableAgentAttack();
             EnableAgentMove();

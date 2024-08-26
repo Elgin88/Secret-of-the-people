@@ -20,13 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/HitSphere.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/HitSphere.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/StateLoadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/StateLoadLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroChecker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +68,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/DamageTaker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animations/RunAnimation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChacher.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChacker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs" />
       </list>
     </option>
   </component>
@@ -120,6 +123,7 @@
       <workItem from="1724669187676" duration="653000" />
       <workItem from="1724670097548" duration="1683000" />
       <workItem from="1724672648710" duration="2335000" />
+      <workItem from="1724682648369" duration="1995000" />
     </task>
     <servers />
   </component>

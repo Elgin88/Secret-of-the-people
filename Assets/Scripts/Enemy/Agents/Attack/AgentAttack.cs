@@ -3,6 +3,7 @@ using Scripts.CodeBase.Logic;
 using Scripts.Enemy;
 using Scripts.StaticData;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Enemy.Agents.Attack
 {
@@ -10,7 +11,7 @@ namespace Enemy.Agents.Attack
     {
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private AnimationSetter _enemyAnimator;
-        [SerializeField] private LayerMask _layerMask;
+        [SerializeField] private LayerMask _targetMask;
         [SerializeField] private HitSphere _hitArea;
 
         private Player.Interfaces.IHealthChanger _healthChanger;
@@ -55,7 +56,7 @@ namespace Enemy.Agents.Attack
 
         private bool IsHit(out Collider hitCollider)
         {
-            int count = Physics.OverlapSphereNonAlloc(_hitArea.transform.position, _hitArea.Radius, _resultOfHit, _layerMask);
+            int count = Physics.OverlapSphereNonAlloc(_hitArea.transform.position, _hitArea.Radius, _resultOfHit, _targetMask);
 
             hitCollider = _resultOfHit[0];
 
