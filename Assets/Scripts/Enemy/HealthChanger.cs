@@ -9,40 +9,28 @@ namespace Enemy
     {
         [SerializeField] private EnemyStaticData _staticData;
 
-        private int _startHealth;
+        private int _maxHealth;
         private int _currentHealth;
 
-        public int StartHealth => _startHealth;
+        public int StartHealth => _maxHealth;
 
         public int CurrentHealth => _currentHealth;
 
         public Action<int, int> OnHealthChanged;
-        
+
         private void Awake()
         {
-            SetStartHealth(_staticData.StartHealth);
-            SetCurrentHealth(_startHealth);
-        }
-
-        public void SetStartHealth(int health)
-        {
-            _startHealth = health;
-            InvokeHealthChanged();
-        }
-
-        public void SetCurrentHealth(int health)
-        {
-            _currentHealth = health;
-            InvokeHealthChanged();
+            SetMaxHealth(_staticData.MaxHealth);
+            SetCurrentHealth(_maxHealth);
         }
 
         public void AddCurrentHealth(int heal)
         {
             _currentHealth += heal;
 
-            if (_staticData.StartHealth < _currentHealth)
+            if (_staticData.MaxHealth < _currentHealth)
             {
-                SetCurrentHealth(_startHealth);
+                SetCurrentHealth(_maxHealth);
             }
 
             InvokeHealthChanged();
@@ -60,6 +48,18 @@ namespace Enemy
             InvokeHealthChanged();
         }
 
-        public void InvokeHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, _startHealth);
+        private void SetMaxHealth(int health)
+        {
+            _maxHealth = health;
+            InvokeHealthChanged();
+        }
+
+        private void SetCurrentHealth(int health)
+        {
+            _currentHealth = health;
+            InvokeHealthChanged();
+        }
+
+        public void InvokeHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
     }
 }

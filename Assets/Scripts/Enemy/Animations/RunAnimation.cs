@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Enemy
+namespace Enemy.Animations
 {
-    public class RunAnimation : MonoBehaviour, IAnimation
+    public class RunAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
 
@@ -10,20 +10,14 @@ namespace Scripts.Enemy
 
         public bool IsRun => _isRun;
 
-        public void Play()
-        {
-            SetRun(true);
-        }
+        public void Play() => SetRun(true);
 
-        public void StopPlay()
-        {
-            SetRun(false);
-        }
+        public void StopPlay() => SetRun(false);
 
         private void SetRun(bool status)
         {
             _isRun = status;
-            _animator.SetBool(global::Enemy.Static.IsRun, status);
+            _animator.SetBool(Static.IsRun, status);
         }
     }
 }

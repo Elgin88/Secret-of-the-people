@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Enemy.Animations;
 using Scripts.StaticData;
 using UnityEngine;
 using UnityEngine.AI;

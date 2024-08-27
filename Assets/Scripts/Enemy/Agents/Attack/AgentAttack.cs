@@ -1,9 +1,9 @@
 ﻿using System.Collections;
+using Enemy.Animations;
 using Scripts.CodeBase.Logic;
 using Scripts.Enemy;
 using Scripts.StaticData;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Enemy.Agents.Attack
 {
@@ -17,6 +17,7 @@ namespace Enemy.Agents.Attack
         private Player.Interfaces.IHealthChanger _healthChanger;
         private IGameFactory _gameFactory;
         private Collider[] _resultOfHit = new Collider[1];
+        private Coroutine _attackAfterCooldown;
         private float _currentCooldown;
         private float _attackCooldown;
         private bool _isAtacking = false;
@@ -37,8 +38,6 @@ namespace Enemy.Agents.Attack
         }
 
         public void DisableAgent() => enabled = false;
-
-        private void OnAttackEnded() => StartCoroutine(AttackAfterCooldown());
 
         private bool IsAlive() => _healthChanger.CurrentHealth > 0;
 
@@ -94,6 +93,14 @@ namespace Enemy.Agents.Attack
             }
         }
 
+        private void OnAttackEnded()
+        {
+            if (_attackAfterCooldown == null)
+            {
+                _attackAfterCooldown = StartCoroutine(AttackAfterCooldown());
+            }
+        }
+
         private IEnumerator AttackAfterCooldown()
         {
             while (_currentCooldown > 0)
@@ -105,7 +112,7 @@ namespace Enemy.Agents.Attack
 
             ResetCooldown();
             ResetIsAttacking();
-            PlayAnimationAttack();
+            DisableAgent();
         }
     }
 }

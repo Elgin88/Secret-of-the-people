@@ -1,4 +1,4 @@
-﻿namespace Scripts.Enemy
+﻿namespace Enemy.Animations
 {
     internal interface IAnimationSetter
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Enemy
+namespace Enemy.Animations
 {
     public class AnimationSetter : MonoBehaviour, IAnimationSetter
     {
@@ -8,10 +8,7 @@ namespace Scripts.Enemy
         [SerializeField] private RunAnimation _runAnimation;
         [SerializeField] private HitAnimation _hitAnimation;
 
-        private void Start()
-        {
-            PlayIdle();
-        }
+        private void Start() => PlayIdle();
 
         public void PlayIdle()
         {

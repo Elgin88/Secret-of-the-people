@@ -1,4 +1,4 @@
-﻿using Scripts.Enemy;
+﻿using Enemy.Animations;
 using UnityEngine;
 
 namespace Enemy

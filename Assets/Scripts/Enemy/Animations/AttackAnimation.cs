@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Enemy
+namespace Enemy.Animations
 {
-    public class AttackAnimation : MonoBehaviour, IAnimation
+    public class AttackAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
 
@@ -10,15 +10,9 @@ namespace Scripts.Enemy
 
         public bool IsAttack => _isAttack;
 
-        public void Play()
-        {
-            SetAttack(true);
-        }
+        public void Play() => SetAttack(true);
 
-        public void StopPlay()
-        {
-            SetAttack(false);
-        }
+        public void StopPlay() => SetAttack(false);
 
         private void SetAttack(bool status)
         {

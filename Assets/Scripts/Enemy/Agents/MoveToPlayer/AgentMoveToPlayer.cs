@@ -1,4 +1,5 @@
-﻿using Scripts.CodeBase.Logic;
+﻿using Enemy.Animations;
+using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
 using UnityEngine;
 using UnityEngine.AI;
