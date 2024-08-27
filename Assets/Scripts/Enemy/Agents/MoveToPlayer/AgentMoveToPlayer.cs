@@ -1,10 +1,10 @@
 ﻿using Enemy.Animations;
-using Scripts.CodeBase.Logic;
-using Scripts.StaticData;
+using Infrastructure.Services.Factory;
+using StaticData;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Scripts.Enemy
+namespace Enemy.Agents.MoveToPlayer
 {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(AnimationSetter))]

@@ -1,4 +1,4 @@
-﻿namespace Scripts.CodeBase.Logic
+﻿namespace Infrastructure.Services.AssetManagement
 {
     public static class StaticAssetPath
     {

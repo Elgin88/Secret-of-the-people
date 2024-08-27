@@ -1,8 +1,10 @@
-﻿using System;
-using Infrastructure.Services;
+﻿using Infrastructure.Services;
+using Infrastructure.Services.AssetManagement;
+using Infrastructure.Services.Factory;
+using Infrastructure.Services.Input;
 using UnityEngine;
 
-namespace Scripts.CodeBase.Logic
+namespace Infrastructure.States
 {
     public class StateBootStrapt : IState, IEnterableState
     {

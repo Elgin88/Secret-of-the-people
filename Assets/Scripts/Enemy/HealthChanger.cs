@@ -1,6 +1,5 @@
 ﻿using System;
-using Scripts.Enemy;
-using Scripts.StaticData;
+using StaticData;
 using UnityEngine;
 
 namespace Enemy

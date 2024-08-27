@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using Infrastructure.Services.Factory;
 using Player;
-using Scripts.CodeBase.Logic;
-using Scripts.StaticData;
+using StaticData;
 using UnityEngine;
+using Weapons.Interfaces;
 
-namespace Scripts.Weapons
+namespace Weapons.Clips
 {
     public class GunClip : MonoBehaviour, IClip
     {

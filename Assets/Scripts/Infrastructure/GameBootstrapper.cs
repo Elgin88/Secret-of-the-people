@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using Agava.YandexGames;
 using Infrastructure.Services;
-using Scripts.CodeBase.Logic;
+using Infrastructure.States;
 using UnityEngine;
 
 namespace Infrastructure

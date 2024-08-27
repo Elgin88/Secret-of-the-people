@@ -1,8 +1,8 @@
-﻿using Scripts.CodeBase.Logic;
+﻿using Infrastructure.Services.Factory;
 using UnityEngine;
-using Weapons.GunComponents;
+using Weapons.Interfaces;
 
-namespace Scripts.Weapons.GunComponents
+namespace Weapons.GunComponents
 {
     [RequireComponent(typeof(ClipSetter))]
     [RequireComponent(typeof(Reloader))]

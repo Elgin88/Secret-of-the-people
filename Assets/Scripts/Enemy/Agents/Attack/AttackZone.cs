@@ -1,5 +1,5 @@
 using System;
-using Scripts.StaticData;
+using StaticData;
 using UnityEngine;
 
 namespace Enemy.Agents.Attack

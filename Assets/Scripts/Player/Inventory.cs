@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
-using Scripts.CodeBase.Logic;
-using Scripts.Weapons;
+using Infrastructure.Services.Factory;
 using UnityEngine;
+using Weapons;
+using Weapons.Interfaces;
 
 namespace Player
 {

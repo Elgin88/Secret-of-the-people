@@ -1,12 +1,10 @@
-﻿using Agava.YandexGames;
-using Scripts.Enemy;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Enemy.Agents.Attack;
-using Infrastructure;
 using Infrastructure.Services;
+using Infrastructure.Services.Factory;
 using UnityEngine;
 
-namespace Scripts.CodeBase.Logic
+namespace Infrastructure.States
 {
     public class StateLoadLevel : IEnterablePayloadedState<string>
     {

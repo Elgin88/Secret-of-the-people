@@ -1,6 +1,6 @@
 ﻿using System;
 using Player.Interfaces;
-using Scripts.StaticData;
+using StaticData;
 using UnityEngine;
 
 namespace Player

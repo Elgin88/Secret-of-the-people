@@ -1,13 +1,13 @@
 ﻿using System;
-using Scripts.StaticData;
+using StaticData;
 using UnityEngine;
 
-namespace Scripts.Enemy
+namespace Enemy.Agents.MoveToPlayer
 {
     public class AgroZone : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private SphereCollider _collider;
+        [SerializeField] private SphereCollider _agroZone;
 
         private float _radius;
         private bool _isEnter = false;
@@ -45,6 +45,6 @@ namespace Scripts.Enemy
         }
 
         private void SetRadius() => _radius = _staticData.AgroRange;
-        private void SetRadiusCollider() => _collider.radius = _radius;
+        private void SetRadiusCollider() => _agroZone.radius = _radius;
     }
 }

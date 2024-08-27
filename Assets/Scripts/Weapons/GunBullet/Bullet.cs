@@ -1,9 +1,10 @@
-﻿using Player;
-using Scripts.CodeBase.Logic;
-using Scripts.StaticData;
+﻿using Infrastructure.Services.Factory;
+using Player;
+using StaticData;
 using UnityEngine;
+using Weapons.Interfaces;
 
-namespace Scripts.Weapons.GunBullet
+namespace Weapons.GunBullet
 {
     [RequireComponent(typeof(CollisionChecker))]
     [RequireComponent(typeof(Destroyer))]

@@ -1,7 +1,7 @@
-﻿using Scripts.CodeBase.Logic;
+﻿using Infrastructure.Services.Factory;
 using UnityEngine;
 
-namespace Scripts.Weapons.GunComponents
+namespace Weapons.GunComponents
 {
     public class Reloader : MonoBehaviour
     {

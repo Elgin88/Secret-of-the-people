@@ -1,9 +1,9 @@
-﻿using Player;
-using Scripts.CodeBase.Logic;
+﻿using Infrastructure.Services.Factory;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Scripts.Canvas
+namespace Canvas
 {
     public class PlayerHealthBar : MonoBehaviour
     {

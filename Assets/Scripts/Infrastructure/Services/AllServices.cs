@@ -1,6 +1,4 @@
-﻿using Scripts.CodeBase.Logic;
-
-namespace Infrastructure.Services
+﻿namespace Infrastructure.Services
 {
     public class AllServices
     {

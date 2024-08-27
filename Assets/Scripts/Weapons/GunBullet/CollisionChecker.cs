@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Scripts.Weapons.GunBullet
+namespace Weapons.GunBullet
 {
     public class CollisionChecker : MonoBehaviour
     {

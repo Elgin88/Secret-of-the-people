@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Infrastructure;
 using Infrastructure.Services;
 
-namespace Scripts.CodeBase.Logic
+namespace Infrastructure.States
 {
     public class GameStateMachine
     {

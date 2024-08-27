@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using Enemy.Animations;
-using Scripts.StaticData;
+using StaticData;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Scripts.Enemy
+namespace Enemy.Agents.Patrol
 {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(AnimationSetter))]

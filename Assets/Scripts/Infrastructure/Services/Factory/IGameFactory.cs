@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using Infrastructure.Services;
 using UnityEngine;
 
-namespace Scripts.CodeBase.Logic
+namespace Infrastructure.Services.Factory
 {
     public interface IGameFactory : IService
     {

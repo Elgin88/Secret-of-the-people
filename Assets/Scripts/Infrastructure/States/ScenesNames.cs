@@ -1,4 +1,4 @@
-﻿namespace Scripts.CodeBase.Logic
+﻿namespace Infrastructure.States
 {
     public static class ScenesNames
     {

@@ -1,6 +1,4 @@
-﻿using Scripts.CodeBase.Logic;
-
-namespace Scripts.Weapons
+﻿namespace Weapons.Interfaces
 {
     public interface IWeapon
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.CodeBase.Logic
+namespace Infrastructure.Services.Input
 {
     public class MobileInputService : InputService, IInputService
     {

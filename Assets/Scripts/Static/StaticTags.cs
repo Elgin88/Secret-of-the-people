@@ -1,4 +1,4 @@
-﻿namespace Scripts.Static
+﻿namespace Static
 {
     public static class StaticTags
     {

@@ -1,14 +1,15 @@
-﻿using Scripts.Canvas;
-using Scripts.Enemy;
-using Scripts.Static;
-using Scripts.Weapons;
-using Scripts.Weapons.GunBullet;
-using Scripts.Weapons.GunComponents;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Canvas;
+using Enemy.Agents.MoveToPlayer;
+using Infrastructure.Services.AssetManagement;
 using Player;
+using Static;
 using UnityEngine;
+using Weapons.Clips;
+using Weapons.GunBullet;
+using Weapons.GunComponents;
 
-namespace Scripts.CodeBase.Logic
+namespace Infrastructure.Services.Factory
 {
     public class GameFactory : IGameFactory
     {

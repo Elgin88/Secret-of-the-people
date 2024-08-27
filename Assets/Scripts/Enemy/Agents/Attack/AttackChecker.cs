@@ -1,4 +1,4 @@
-﻿using Scripts.Enemy;
+﻿using Enemy.Agents.MoveToPlayer;
 using UnityEngine;
 
 namespace Enemy.Agents.Attack

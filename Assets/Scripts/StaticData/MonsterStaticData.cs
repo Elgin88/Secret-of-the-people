@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.StaticData
+namespace StaticData
 {
     [CreateAssetMenu(fileName = "MonsterStaticData", menuName = "StaticData/Monster")]
 

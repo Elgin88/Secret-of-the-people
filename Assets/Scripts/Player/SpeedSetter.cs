@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Scripts.StaticData;
+using StaticData;
 using UnityEngine;
 
 namespace Player

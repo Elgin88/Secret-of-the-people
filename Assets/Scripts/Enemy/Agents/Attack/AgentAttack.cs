@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using Enemy.Animations;
-using Scripts.CodeBase.Logic;
-using Scripts.Enemy;
-using Scripts.StaticData;
+using Infrastructure.Services.Factory;
+using StaticData;
 using UnityEngine;
 
 namespace Enemy.Agents.Attack
@@ -22,7 +21,7 @@ namespace Enemy.Agents.Attack
         private float _attackCooldown;
         private int _damage;
 
-        private void Awake()
+        private void Start()
         {
             SetParameters();
             Disable();

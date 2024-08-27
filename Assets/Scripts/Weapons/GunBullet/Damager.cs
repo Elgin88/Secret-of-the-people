@@ -1,9 +1,8 @@
 ﻿using Enemy;
-using Scripts.Enemy;
-using Scripts.StaticData;
+using StaticData;
 using UnityEngine;
 
-namespace Scripts.Weapons.GunBullet
+namespace Weapons.GunBullet
 {
     public class Damager : MonoBehaviour
     {

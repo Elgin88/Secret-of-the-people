@@ -1,6 +1,6 @@
-﻿using Scripts.CodeBase.Logic;
-using Scripts.Weapons;
+﻿using Infrastructure.Services.Factory;
 using UnityEngine;
+using Weapons.Interfaces;
 
 namespace Player
 {

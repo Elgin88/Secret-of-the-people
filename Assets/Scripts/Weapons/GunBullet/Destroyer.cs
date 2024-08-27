@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Weapons.GunBullet
+namespace Weapons.GunBullet
 {
     public class Destroyer : MonoBehaviour
     {

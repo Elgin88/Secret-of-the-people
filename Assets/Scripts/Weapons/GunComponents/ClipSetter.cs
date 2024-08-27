@@ -1,8 +1,8 @@
-﻿using System;
-using Scripts.CodeBase.Logic;
+﻿using Infrastructure.Services.Factory;
 using UnityEngine;
+using Weapons.Interfaces;
 
-namespace Scripts.Weapons.GunComponents
+namespace Weapons.GunComponents
 {
     public class ClipSetter : MonoBehaviour
     {

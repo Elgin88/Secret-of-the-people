@@ -1,7 +1,6 @@
-﻿using Infrastructure.Services;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Scripts.CodeBase.Logic
+namespace Infrastructure.Services.Input
 {
     public interface IInputService : IService
     {

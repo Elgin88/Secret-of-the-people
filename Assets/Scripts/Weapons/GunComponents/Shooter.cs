@@ -1,9 +1,9 @@
-﻿using Player;
-using Scripts.CodeBase.Logic;
-using Scripts.StaticData;
-using Scripts.Weapons;
-using Scripts.Weapons.GunComponents;
+﻿using Infrastructure.Services.Factory;
+using Player;
+using StaticData;
 using UnityEngine;
+using Weapons.Clips;
+using Weapons.Interfaces;
 
 namespace Weapons.GunComponents
 {

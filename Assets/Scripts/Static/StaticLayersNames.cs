@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Static
+namespace Static
 {
     public static class StaticLayersNames
     {

@@ -1,5 +1,5 @@
-﻿using Scripts.Weapons;
-using UnityEngine;
+﻿using UnityEngine;
+using Weapons.Interfaces;
 
 namespace Player
 {

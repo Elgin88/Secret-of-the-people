@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.CodeBase.Logic
+namespace Infrastructure.Services.Input
 {
     public abstract class InputService : IInputService
     {
@@ -11,6 +11,6 @@ namespace Scripts.CodeBase.Logic
 
         protected Vector2 GetMobileAxis() => new Vector2(SimpleInput.GetAxisRaw(_horizontal), SimpleInput.GetAxisRaw(_vertical));
 
-        protected Vector2 GetUnityAxis() => new Vector2(Input.GetAxisRaw(_horizontal), Input.GetAxisRaw(_vertical));
+        protected Vector2 GetUnityAxis() => new Vector2(UnityEngine.Input.GetAxisRaw(_horizontal), UnityEngine.Input.GetAxisRaw(_vertical));
     }
 }

@@ -1,4 +1,4 @@
-﻿using Scripts.Enemy;
+﻿using Enemy.Agents.Patrol;
 using UnityEngine;
 
 

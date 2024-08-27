@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Services;
+using Infrastructure.Services.Input;
 using Player.Animations;
-using Scripts.CodeBase.Logic;
-using Scripts.StaticData;
+using StaticData;
 using UnityEngine;
 
 namespace Player
