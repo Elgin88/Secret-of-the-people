@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6940bba4e2b01e4799774d0c620c1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chooserNearestTarget: {fileID: 2421022248477797470}
+  _nextTargetFinder: {fileID: 2421022248477797470}
   _chooserWeapon: {fileID: 3762273360412053513}
 --- !u!114 &2421022248477797470
 MonoBehaviour:

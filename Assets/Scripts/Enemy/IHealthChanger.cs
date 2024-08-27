@@ -6,8 +6,8 @@
         
         public int CurrentHealth { get; }
 
-        public void AddCurrentHealth(int heal);
+        public void AddHealth(int heal);
 
-        public void RemoveCurrentHealth(int damage);
+        public void RemoveHealth(int damage);
     }
 }

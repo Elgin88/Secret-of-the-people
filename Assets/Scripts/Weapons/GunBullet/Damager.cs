@@ -20,7 +20,7 @@ namespace Weapons.GunBullet
 
         private void GiveDamage(Collider collider)
         {
-            collider.GetComponent<IHealthChanger>().RemoveCurrentHealth(_currentDamage);
+            collider.GetComponent<IHealthChanger>().RemoveHealth(_currentDamage);
         }
 
         private void OnDestroy()

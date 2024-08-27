@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
-  _collider: {fileID: 4206345260115878526}
+  _agroZone: {fileID: 4206345260115878526}
 --- !u!1 &3402871146048972335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,6 +1513,7 @@ GameObject:
   - component: {fileID: 8509568553172309415}
   - component: {fileID: 4899319783602193635}
   - component: {fileID: 3253833624716427207}
+  - component: {fileID: 8543786449745758624}
   m_Layer: 13
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1766,7 +1767,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
-  _collider: {fileID: 4206345260115878526}
+  _agroZone: {fileID: 4206345260115878526}
+--- !u!114 &8543786449745758624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0d83ac6d3a145f991f81202b0875d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
+  _collider: {fileID: 6221118972931903433}
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0

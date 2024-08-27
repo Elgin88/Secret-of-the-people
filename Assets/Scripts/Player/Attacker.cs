@@ -6,7 +6,7 @@ namespace Player
     [RequireComponent(typeof(NextTargetFinder))]
     public class Attacker : MonoBehaviour
     {
-        [SerializeField] private NextTargetFinder _chooserNearestTarget;
+        [SerializeField] private NextTargetFinder _nextTargetFinder;
         [SerializeField] private ChooserWeapon _chooserWeapon;
 
         private void FixedUpdate()
@@ -18,6 +18,6 @@ namespace Player
         }
         private void Shoot() => _chooserWeapon.CurrentWeapon.Shoot();
 
-        private bool TargetIsFind() => _chooserNearestTarget.CurrentTargetsCount != 0;
+        private bool TargetIsFind() => _nextTargetFinder.CurrentTargetsCount != 0;
     }
 }

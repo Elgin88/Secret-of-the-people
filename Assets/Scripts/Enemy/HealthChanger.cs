@@ -23,7 +23,7 @@ namespace Enemy
             SetCurrentHealth(_maxHealth);
         }
 
-        public void AddCurrentHealth(int heal)
+        public void AddHealth(int heal)
         {
             _currentHealth += heal;
 
@@ -35,7 +35,7 @@ namespace Enemy
             InvokeHealthChanged();
         }
 
-        public void RemoveCurrentHealth(int damage)
+        public void RemoveHealth(int damage)
         {
             _currentHealth -= damage;
 
