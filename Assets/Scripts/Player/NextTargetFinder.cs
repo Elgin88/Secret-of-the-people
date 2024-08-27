@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Player
 {
+    [RequireComponent(typeof(ChooserSectorAttack))]
     public class NextTargetFinder : MonoBehaviour
     {
         [SerializeField] private ChooserSectorAttack _sectorAttack;

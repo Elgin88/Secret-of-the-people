@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace Player.Animations
 {
+    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(SpeedSetter))]
     public class RunAnimation : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;

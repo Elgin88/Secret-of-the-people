@@ -6,10 +6,10 @@ namespace Enemy.Agents.Attack
 {
     public class AttackZone : MonoBehaviour
     {
-        [SerializeField] private SphereCollider _collider;
         [SerializeField] private MonsterStaticData _staticData;
+        [SerializeField] private SphereCollider _collider;
 
-        private float _radius;
+        private float _attackRange;
 
         public Action<Collider> PlayerEnter;
 
@@ -21,12 +21,9 @@ namespace Enemy.Agents.Attack
             SetRadiusOfRadius();
         }
 
-        private void OnTriggerEnter(Collider collider) => PlayerEnter?.Invoke(collider);
-
-        private void OnTriggerExit(Collider collider) => PlayerExit?.Invoke(collider);
-
-        private void SetRadius() => _radius = _staticData.AttackRange;
-
-        private void SetRadiusOfRadius() => _collider.radius = _radius;
+        private void OnTriggerEnter(Collider player) => PlayerEnter?.Invoke(player);
+        private void OnTriggerExit(Collider player) => PlayerExit?.Invoke(player);
+        private void SetRadius() => _attackRange = _staticData.AttackRange;
+        private void SetRadiusOfRadius() => _collider.radius = _attackRange;
     }
 }

@@ -5,14 +5,17 @@ using UnityEngine;
 
 namespace Player
 {
+    [RequireComponent(typeof(StartWeaponSetter))]
+    [RequireComponent(typeof(ObjectsCreator))]
+    [RequireComponent(typeof(ChooserWeapon))]
     public class Inventory : MonoBehaviour
     {
-        [SerializeField] private ChooserWeapon _chooserWeapon;
-        [SerializeField] private ObjectsCreator _objectsCreator;
         [SerializeField] private StartWeaponSetter _startObjectsSetter;
+        [SerializeField] private ObjectsCreator _objectsCreator;
+        [SerializeField] private ChooserWeapon _chooserWeapon;
 
-        private IGameFactory _gameFactory;
         private List<IWeapon> _weapons = new List<IWeapon>();
+        private IGameFactory _gameFactory;
         private List<IClip> _clips = new List<IClip>();
 
         public void Construct(IGameFactory gameFactory)

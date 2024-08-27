@@ -1,11 +1,10 @@
-﻿using Player.Animations;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Player
 {
+    [RequireComponent(typeof(HealthChanger))]
     public class DeathSetter : MonoBehaviour
     {
-        [SerializeField] private RunAnimation _animationsSetter;
         [SerializeField] private HealthChanger _healthChanger;
 
         private Coroutine _playAnimation;

@@ -12,8 +12,6 @@ namespace Scripts.Weapons
 
         public void Reload();
 
-        public void SetcCurrentClip(IClip clip);
-
-        public void Construct(IGameFactory iGameFactory);
+        public void SetCurrentClip(IClip clip);
     }
 }

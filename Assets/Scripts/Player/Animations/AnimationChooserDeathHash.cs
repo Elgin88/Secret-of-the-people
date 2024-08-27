@@ -1,28 +1,30 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Player.Animations
 {
     public class AnimationChooserDeathHash : MonoBehaviour
     {
-        private List<int> _parametrs = new List<int>();
+        private List<int> _hashs = new List<int>();
 
-        public int GetRandomDeathHash()
+        private void Awake()
         {
-            AddParametrs();
-
-            return _parametrs[GetRandomIndex()];
+            AddParameters();
         }
 
-        private int GetRandomIndex() => Random.Range(0, _parametrs.Count - 1);
+        public int GetRandomDeathHash() => _hashs[GetRandomIndex()];
 
-        private void AddParametrs()
+        private int GetRandomIndex() => Random.Range(0, _hashs.Count - 1);
+
+        private void AddParameters()
         {
-            _parametrs.Add(Static.DeathAHash);
-            _parametrs.Add(Static.DeathBHash);
-            _parametrs.Add(Static.DeathCHash);
-            _parametrs.Add(Static.DeathDHash);
-            _parametrs.Add(Static.DeathEHash);
+            _hashs.Add(Static.DeathAHash);
+            _hashs.Add(Static.DeathBHash);
+            _hashs.Add(Static.DeathCHash);
+            _hashs.Add(Static.DeathDHash);
+            _hashs.Add(Static.DeathEHash);
         }
     }
 }

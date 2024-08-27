@@ -2,6 +2,7 @@
 
 namespace Enemy.Animations
 {
+    [RequireComponent(typeof(Animator))]
     public class AttackAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;

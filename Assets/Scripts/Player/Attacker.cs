@@ -2,6 +2,8 @@
 
 namespace Player
 {
+    [RequireComponent(typeof(ChooserWeapon))]
+    [RequireComponent(typeof(NextTargetFinder))]
     public class Attacker : MonoBehaviour
     {
         [SerializeField] private NextTargetFinder _chooserNearestTarget;

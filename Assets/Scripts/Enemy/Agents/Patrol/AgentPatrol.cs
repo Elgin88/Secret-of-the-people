@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 namespace Scripts.Enemy
 {
+    [RequireComponent(typeof(NavMeshAgent))]
+    [RequireComponent(typeof(AnimationSetter))]
     public class AgentPatrol : MonoBehaviour, IAgent
     {
         [SerializeField] private MonsterStaticData _staticData;

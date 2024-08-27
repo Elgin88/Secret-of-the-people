@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Enemy.Agents.MoveToPlayer
 {
+    [RequireComponent(typeof(AgroZone))]
+    [RequireComponent(typeof(AgentPatrol))]
+    [RequireComponent(typeof(AgentMoveToPlayer))]
     public class MoveToPlayerChecker : MonoBehaviour
     {
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;

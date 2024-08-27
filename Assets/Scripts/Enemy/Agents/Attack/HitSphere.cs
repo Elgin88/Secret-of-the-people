@@ -7,10 +7,8 @@ namespace Enemy.Agents.Attack
     {
         [SerializeField] private MonsterStaticData _staticData;
 
-        private float _radius;
+        public float Radius { get; private set; }
 
-        public float Radius => _radius;
-
-        private void Awake() => _radius = _staticData.RadiusOfHitSphere;
+        private void Awake() => Radius = _staticData.RadiusOfHitSphere;
     }
 }

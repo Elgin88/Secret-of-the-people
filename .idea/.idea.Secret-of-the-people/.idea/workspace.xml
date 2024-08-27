@@ -22,12 +22,42 @@
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Canvas/PlayerHealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Canvas/PlayerHealthBar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/HitSphere.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/HitSphere.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Patrol/AgentPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Patrol/AgentPatrol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AnimationSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AnimationSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/HitAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/HitAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/RunAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/RunAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/IHealthChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/IHealthChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/RequireComponents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/RequireComponents.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/AnimationChooserDeathHash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/AnimationChooserDeathHash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/AnimationSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/AnimationSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/HitAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/HitAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/RunAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/RunAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attacker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attacker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ChooserWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ChooserWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DamageTaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/DamageTaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DeathSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/DeathSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/HitTaker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/HitTaker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/NextTargetFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/NextTargetFinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ObjectsCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ObjectsCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/RequireComponents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/RequireComponents.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/StartWeaponSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/StartWeaponSetter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/GunComponents/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/GunComponents/Gun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/GunComponents/Shooter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/GunComponents/Shooter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IClip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IClip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IWeapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +71,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scrips/Canvas/PlayerHealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemySpawner/EnemySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/HealthChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/GameBootstrapper.cs" />
@@ -49,34 +78,49 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/SceneLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AllServices.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/IService.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/IHealthChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/RequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Static.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animations/AnimationChooserDeathHash.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animations/AnimationSetter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animations/HitAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Interfaces/IDamageTaker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attacker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Static.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/StartWeaponSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ChooserSectorAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/ChooserWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/HealthChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/HitTaker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/MovementSpeedSetter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/DeathSetter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/DamageTaker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animations/RunAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChacher.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChacker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Canvas/PlayerHealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/GunComponents/Shooter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/HitSphere.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/RequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Patrol/AgentPatrol.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AnimationSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/HitAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/RunAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/IHealthChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemySpawner/EnemySpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animations/AnimationChooserDeathHash.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animations/AnimationSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animations/HitAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Animations/RunAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attacker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/ChooserWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/DamageTaker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/DeathSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Mover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/NextTargetFinder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/ObjectsCreator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/StartWeaponSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IBullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IClip.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IWeapon.cs" />
       </list>
     </option>
   </component>
@@ -129,7 +173,8 @@
       <workItem from="1724672648710" duration="2335000" />
       <workItem from="1724682648369" duration="3602000" />
       <workItem from="1724687651982" duration="12000" />
-      <workItem from="1724757069404" duration="1420000" />
+      <workItem from="1724757069404" duration="1868000" />
+      <workItem from="1724758977158" duration="2337000" />
     </task>
     <servers />
   </component>
@@ -162,9 +207,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724671374671" />
-    <state x="624" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1724757759639">
+    <state x="626" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1724758852161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724757759639" />
+    <state x="626" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724758852161" />
   </component>
 </project>

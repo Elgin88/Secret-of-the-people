@@ -2,7 +2,5 @@
 
 namespace EnemySpawner
 {
-    public class EnemySpawner : MonoBehaviour
-    {
-    }
+    public class EnemySpawner : MonoBehaviour { }
 }

@@ -37,7 +37,7 @@ namespace Scripts.Weapons.GunComponents
             _gunReloader.Reload();
         }
 
-        public void SetcCurrentClip(IClip clip)
+        public void SetCurrentClip(IClip clip)
         {
             _clipSetter.SetCurrentClip(clip);
         }

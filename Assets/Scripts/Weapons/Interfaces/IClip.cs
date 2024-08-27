@@ -8,8 +8,6 @@ namespace Scripts.Weapons
 
         public void Fill();
 
-        public void Construct(IGameFactory iGameFactory);
-
         public void RemoveTopBullet();
 
         public int GetBulletCurrentCount();

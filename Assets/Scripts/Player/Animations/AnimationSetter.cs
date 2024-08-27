@@ -2,6 +2,8 @@
 
 namespace Player.Animations
 {
+    [RequireComponent(typeof(HitAnimation))]
+    [RequireComponent(typeof(RunAnimation))]
     public class AnimationSetter : MonoBehaviour
     {
         [SerializeField] private RunAnimation _runAnimation;

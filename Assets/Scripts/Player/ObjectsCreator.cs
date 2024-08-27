@@ -8,10 +8,7 @@ namespace Player
     {
         private IGameFactory _gameFactory;
 
-        public void Construct(IGameFactory gameFactory)
-        {
-            _gameFactory = gameFactory;
-        }
+        public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
         public IWeapon GetGun() => _gameFactory.CreateGun().GetComponent<IWeapon>();
 

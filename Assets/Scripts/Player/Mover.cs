@@ -6,6 +6,10 @@ using UnityEngine;
 
 namespace Player
 {
+    [RequireComponent(typeof(SpeedSetter))]
+    [RequireComponent(typeof(HealthChanger))]
+    [RequireComponent(typeof(AnimationSetter))]
+    [RequireComponent(typeof(CharacterController))]
     public class Mover : MonoBehaviour
     {
         [SerializeField] private CharacterController _characterController;

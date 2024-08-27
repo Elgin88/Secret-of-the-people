@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace Enemy.Agents.Attack
 {
+    [RequireComponent(typeof(AgentAttack))]
+    [RequireComponent(typeof(AgentMoveToPlayer))]
     public class AttackChecker : MonoBehaviour
     {
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;

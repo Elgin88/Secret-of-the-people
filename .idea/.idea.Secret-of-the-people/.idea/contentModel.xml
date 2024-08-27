@@ -1340,7 +1340,6 @@
             </e>
             <e p="HealthChanger.cs" t="Include" />
             <e p="IHealthChanger.cs" t="Include" />
-            <e p="RequireComponents.cs" t="Include" />
             <e p="Static.cs" t="Include" />
           </e>
           <e p="EnemySpawner" t="Include">
@@ -1393,7 +1392,6 @@
             <e p="DamageTaker.cs" t="Include" />
             <e p="DeathSetter.cs" t="Include" />
             <e p="HealthChanger.cs" t="Include" />
-            <e p="HitTaker.cs" t="Include" />
             <e p="Interfaces" t="Include">
               <e p="IDamageTaker.cs" t="Include" />
               <e p="IHealthChanger.cs" t="Include" />
@@ -1402,7 +1400,6 @@
             <e p="Mover.cs" t="Include" />
             <e p="NextTargetFinder.cs" t="Include" />
             <e p="ObjectsCreator.cs" t="Include" />
-            <e p="RequireComponents.cs" t="Include" />
             <e p="ShootPointSetter.cs" t="Include" />
             <e p="SpeedSetter.cs" t="Include" />
             <e p="StartWeaponSetter.cs" t="Include" />

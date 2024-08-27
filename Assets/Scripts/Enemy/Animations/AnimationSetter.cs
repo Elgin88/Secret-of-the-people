@@ -2,6 +2,9 @@
 
 namespace Enemy.Animations
 {
+    [RequireComponent(typeof(HitAnimation))]
+    [RequireComponent(typeof(RunAnimation))]
+    [RequireComponent(typeof(AttackAnimation))]
     public class AnimationSetter : MonoBehaviour, IAnimationSetter
     {
         [SerializeField] private AttackAnimation _attackAnimation;
