@@ -1,9 +1,11 @@
 ﻿using Player;
 using Scripts.CodeBase.Logic;
 using Scripts.StaticData;
+using Scripts.Weapons;
+using Scripts.Weapons.GunComponents;
 using UnityEngine;
 
-namespace Scripts.Weapons.GunComponents
+namespace Weapons.GunComponents
 {
     [RequireComponent(typeof(GunClip))]
     [RequireComponent(typeof(Reloader))]
@@ -16,8 +18,7 @@ namespace Scripts.Weapons.GunComponents
 
         private NextTargetFinder _nextTargetFinder;
         private IGameFactory _gameFactory;
-        private float _cooldawn;
-        private float _delay;
+        private float _cooldown;
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -25,22 +26,11 @@ namespace Scripts.Weapons.GunComponents
             SetNextTargetFinder();
         }
 
-        private void Awake()
-        {
-            SetDelay();
-        }
-
-        private void FixedUpdate()
-        {
-            UpdateCooldawn();
-        }
-
         public void Shoot()
         {
-            if (IsCooldawnEnd() & IsNotReloading() & TargetIsFind())
+            if (IsCooldownEnd() & IsNotReloading() & TargetIsFind())
             {
                 StartMoveBullet();
-                ResetColldawn();
             }
 
             if (BulletCount() == 0)
@@ -55,13 +45,7 @@ namespace Scripts.Weapons.GunComponents
 
         private void Reload() => _reloader.Reload();
 
-        private void UpdateCooldawn() => _cooldawn -= Time.deltaTime;
-
-        private void SetDelay() => _delay = _staticData.DelayBetweenShoots;
-
-        private void ResetColldawn() => _cooldawn = _delay;
-
-        private bool IsCooldawnEnd() => _cooldawn <= 0;
+        private bool IsCooldownEnd() => _cooldown <= 0;
 
         private IClip GetCurrentClip(IGameFactory gameFactory) => gameFactory.Player.GetComponent<ChooserWeapon>().CurrentWeapon.CurrentClip;
 

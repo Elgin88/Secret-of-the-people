@@ -15,12 +15,11 @@ namespace Enemy.Agents.Attack
         [SerializeField] private HitSphere _hitArea;
 
         private Player.Interfaces.IHealthChanger _healthChanger;
+        private readonly Collider[] _resultOfHit = new Collider[1];
         private IGameFactory _gameFactory;
-        private Collider[] _resultOfHit = new Collider[1];
         private Coroutine _attackAfterCooldown;
         private float _currentCooldown;
         private float _attackCooldown;
-        private bool _isAtacking = false;
         private int _damage;
 
         private void Start()
@@ -49,10 +48,6 @@ namespace Enemy.Agents.Attack
 
         private void ResetCooldown() => _currentCooldown = _attackCooldown;
 
-        private void SetIsAttacking() => _isAtacking = true;
-
-        private void ResetIsAttacking() => _isAtacking = false;
-
         private bool IsHit(out Collider hitCollider)
         {
             int count = Physics.OverlapSphereNonAlloc(_hitArea.transform.position, _hitArea.Radius, _resultOfHit, _targetMask);
@@ -64,19 +59,19 @@ namespace Enemy.Agents.Attack
 
         private void SetParameters()
         {
-            _currentCooldown = _attackCooldown;
             _attackCooldown = _staticData.AttackCooldawn;
-            _healthChanger = _gameFactory.Player.GetComponent<Player.Interfaces.IHealthChanger>();
+            _currentCooldown = _attackCooldown;
             _damage = _staticData.Damage;
+            
+            _healthChanger = _gameFactory.Player.GetComponent<Player.Interfaces.IHealthChanger>();
         }
 
         private void PlayAnimationAttack()
         {
-            if (!_isAtacking & IsAlive())
-            {
-                _enemyAnimator.PlayAttack();
-                SetIsAttacking();
-            }
+            if (!IsAlive())
+                return;
+            
+            _enemyAnimator.PlayAttack();
         }
 
         private void PlayerTakeHit(Collider player)
@@ -93,25 +88,12 @@ namespace Enemy.Agents.Attack
             }
         }
 
-        private void OnAttackEnded()
-        {
-            if (_attackAfterCooldown == null)
-            {
-                _attackAfterCooldown = StartCoroutine(AttackAfterCooldown());
-            }
-        }
+        private void OnAttackEnded() => _attackAfterCooldown ??= StartCoroutine(AttackAfterCooldown());
 
         private IEnumerator AttackAfterCooldown()
         {
-            while (_currentCooldown > 0)
-            {
-                UpdateCooldown();
+            yield return new WaitForSeconds(_currentCooldown);
 
-                yield return null;
-            }
-
-            ResetCooldown();
-            ResetIsAttacking();
             DisableAgent();
         }
     }

@@ -20,10 +20,10 @@ namespace Scripts.Canvas
             SetPlayerHealth();
             ResetBarValues();
             ResetBarSlider();
-            SubscribeOnHealthChanged();
+            SubOnHealthChanged();
         }
 
-        private void OnDestroy() => UnsubscribeOnHealthChanged();
+        private void OnDestroy() => UnsubOnHealthChanged();
 
         private void OnHealthChanged(int current, int max)
         {
@@ -33,9 +33,9 @@ namespace Scripts.Canvas
 
         private void SetPlayerHealth() => _healthChanger = _gameFactory.Player.GetComponent<Player.HealthChanger>();
 
-        private void SubscribeOnHealthChanged() => _healthChanger.HealthChanged += OnHealthChanged;
+        private void SubOnHealthChanged() => _healthChanger.HealthChanged += OnHealthChanged;
 
-        private void UnsubscribeOnHealthChanged() => _healthChanger.HealthChanged -= OnHealthChanged;
+        private void UnsubOnHealthChanged() => _healthChanger.HealthChanged -= OnHealthChanged;
 
         private void ResetBarSlider() => _slider.value = 1;
 

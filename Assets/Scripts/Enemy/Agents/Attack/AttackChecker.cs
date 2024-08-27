@@ -11,14 +11,14 @@ namespace Enemy.Agents.Attack
 
         private void Awake()
         {
-            _attackZone.IsPlayerEnter += OnPlayerEnter;
-            _attackZone.IsPlayerExit += OnPlayerExit;
+            _attackZone.PlayerEnter += OnPlayerEnter;
+            _attackZone.PlayerExit += OnPlayerExit;
         }
 
         private void OnDestroy()
         {
-            _attackZone.IsPlayerExit -= OnPlayerExit;
-            _attackZone.IsPlayerEnter -= OnPlayerEnter;
+            _attackZone.PlayerExit -= OnPlayerExit;
+            _attackZone.PlayerEnter -= OnPlayerEnter;
         }
 
         private void OnPlayerEnter(Collider player)

@@ -1,5 +1,6 @@
 ﻿using Scripts.CodeBase.Logic;
 using UnityEngine;
+using Weapons.GunComponents;
 
 namespace Scripts.Weapons.GunComponents
 {

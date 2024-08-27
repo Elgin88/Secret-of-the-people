@@ -1335,7 +1335,6 @@
               <e p="AnimationSetter.cs" t="Include" />
               <e p="AttackAnimation.cs" t="Include" />
               <e p="HitAnimation.cs" t="Include" />
-              <e p="IAnimation.cs" t="Include" />
               <e p="IAnimationSetter.cs" t="Include" />
               <e p="RunAnimation.cs" t="Include" />
             </e>
