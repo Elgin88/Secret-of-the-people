@@ -21,15 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Canvas/PlayerHealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Canvas/PlayerHealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/HealthChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/HealthChanger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/IHealthChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/IHealthChanger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attacker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attacker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/GunBullet/Damager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/GunBullet/Damager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +139,7 @@
       <workItem from="1724757069404" duration="1868000" />
       <workItem from="1724758977158" duration="2337000" />
       <workItem from="1724762221374" duration="2028000" />
+      <workItem from="1724765163194" duration="4000" />
     </task>
     <servers />
   </component>
