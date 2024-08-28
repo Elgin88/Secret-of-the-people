@@ -13,19 +13,16 @@ namespace Enemy.Agents.MoveToPlayer
     public class AgentMoveToPlayer : MonoBehaviour, IEnemyAgent
     {
         [SerializeField] private EnemyAnimationsSetter _enemyAnimator;
-        [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private SpeedSetter _speedSetter;
 
         private IGameFactory _gameFactory;
         private Transform _playerTransform;
-        private float _moveSpeed => _speedSetter.CurrentSpeed;
 
         private void Start()
         {
             SetComponents();
             Disable();
-            SetRunSpeed();
         }
 
         private void FixedUpdate() => MoveToTarget();
@@ -35,9 +32,9 @@ namespace Enemy.Agents.MoveToPlayer
         public void EnableAgent()
         {
             Enable();
-            SetMoveSpeed();
             NavMeshMoveOn();
-            PlayAnimationRun();
+            SetNavMeshRunSpeed();
+            PlayAnimation();
         }
 
         public void DisableAgent()
@@ -55,18 +52,16 @@ namespace Enemy.Agents.MoveToPlayer
 
         private void Disable() => enabled = false;
 
-        private void PlayAnimationRun() => _enemyAnimator.PlayRun();
+        private void PlayAnimation() => _enemyAnimator.PlayRun();
 
         private void StopPlayAnimationRun() => _enemyAnimator.StopPlayRun();
 
         private void MoveToTarget() => _navMeshAgent.destination = _playerTransform.position;
 
-        private void SetMoveSpeed() => _navMeshAgent.speed = _moveSpeed;
-
-        private void SetRunSpeed()
+        private void SetNavMeshRunSpeed()
         {
             _speedSetter.SetRunSpeed();
-            _navMeshAgent.speed = _moveSpeed;
+            _navMeshAgent.speed = _speedSetter.CurrentSpeed;
         }
 
         private void SetComponents()

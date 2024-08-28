@@ -17,6 +17,7 @@ namespace Enemy.Agents.Attack
         [SerializeField] private HitSphere _hitArea;
 
         private readonly Collider[] _resultOfHit = new Collider[1];
+        private Coroutine _attackAfterCooldown;
         private float _attackCooldown => _staticData.AttackCooldown;
         private int _damage => _staticData.Damage;
 
@@ -77,7 +78,10 @@ namespace Enemy.Agents.Attack
 
         private void OnAttackEnded()
         {
-            StartCoroutine(AttackAfterCooldown());
+            if (_attackAfterCooldown==null)
+            {
+                _attackAfterCooldown = StartCoroutine(AttackAfterCooldown());
+            }
         }
     }
 }

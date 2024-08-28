@@ -8,8 +8,7 @@ namespace Enemy.Agents.MoveToPlayer
     {
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private SphereCollider _agroZone;
-
-        private float _radius;
+        
         private bool _isEnter = false;
 
         public event Action<Collider> Enter;
@@ -18,7 +17,6 @@ namespace Enemy.Agents.MoveToPlayer
 
         private void Awake()
         {
-            SetRadius();
             SetRadiusCollider();
         }
 
@@ -43,8 +41,7 @@ namespace Enemy.Agents.MoveToPlayer
             Exit?.Invoke(player);
             _isEnter = false;
         }
-
-        private void SetRadius() => _radius = _staticData.AgroRange;
-        private void SetRadiusCollider() => _agroZone.radius = _radius;
+        
+        private void SetRadiusCollider() => _agroZone.radius = _staticData.AgroRange;
     }
 }

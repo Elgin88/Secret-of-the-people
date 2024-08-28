@@ -1256,7 +1256,7 @@
                 <e p="AttackZone.cs" t="Include" />
                 <e p="HitSphere.cs" t="Include" />
               </e>
-              <e p="IAgent.cs" t="Include" />
+              <e p="IEnemyAgent.cs" t="Include" />
               <e p="MoveToPlayer" t="Include">
                 <e p="AgentMoveToPlayer.cs" t="Include" />
                 <e p="AgroZone.cs" t="Include" />
@@ -1267,15 +1267,18 @@
               </e>
             </e>
             <e p="Animations" t="Include">
-              <e p="AnimationSetter.cs" t="Include" />
               <e p="AttackAnimation.cs" t="Include" />
+              <e p="EnemyAnimationsSetter.cs" t="Include" />
               <e p="HitAnimation.cs" t="Include" />
-              <e p="IAnimationSetter.cs" t="Include" />
+              <e p="IEnemyAnimationSetter.cs" t="Include" />
               <e p="RunAnimation.cs" t="Include" />
             </e>
-            <e p="HealthChanger.cs" t="Include" />
-            <e p="IHealthChanger.cs" t="Include" />
-            <e p="Static.cs" t="Include" />
+            <e p="EnemyStatic.cs" t="Include" />
+            <e p="Logic" t="Include">
+              <e p="HealthChanger.cs" t="Include" />
+              <e p="IHealthChanger.cs" t="Include" />
+              <e p="SpeedSetter.cs" t="Include" />
+            </e>
           </e>
           <e p="EnemySpawner" t="Include">
             <e p="EnemySpawner.cs" t="Include" />
@@ -1316,29 +1319,30 @@
           <e p="Player" t="Include">
             <e p="Animations" t="Include">
               <e p="AnimationChooserDeathHash.cs" t="Include" />
-              <e p="AnimationSetter.cs" t="Include" />
               <e p="HitAnimation.cs" t="Include" />
+              <e p="IPlayerAnimationsSetter.cs" t="Include" />
+              <e p="PlayerAnimationsSetter.cs" t="Include" />
               <e p="RunAnimation.cs" t="Include" />
             </e>
-            <e p="Attacker.cs" t="Include" />
             <e p="CameraFollower.cs" t="Include" />
-            <e p="ChooserSectorAttack.cs" t="Include" />
-            <e p="ChooserWeapon.cs" t="Include" />
-            <e p="DamageTaker.cs" t="Include" />
             <e p="DeathSetter.cs" t="Include" />
             <e p="HealthChanger.cs" t="Include" />
-            <e p="Interfaces" t="Include">
-              <e p="IDamageTaker.cs" t="Include" />
-              <e p="IHealthChanger.cs" t="Include" />
+            <e p="IHealthChanger.cs" t="Include" />
+            <e p="InventoryComponents" t="Include">
+              <e p="ChooserWeapon.cs" t="Include" />
+              <e p="Inventory.cs" t="Include" />
+              <e p="ObjectsCreator.cs" t="Include" />
+              <e p="StartWeaponSetter.cs" t="Include" />
             </e>
-            <e p="Inventory.cs" t="Include" />
+            <e p="Logic" t="Include">
+              <e p="Attacker.cs" t="Include" />
+              <e p="ChooserSectorAttack.cs" t="Include" />
+              <e p="SpeedMovementSetter.cs" t="Include" />
+              <e p="TargetFinder.cs" t="Include" />
+            </e>
             <e p="Mover.cs" t="Include" />
-            <e p="NextTargetFinder.cs" t="Include" />
-            <e p="ObjectsCreator.cs" t="Include" />
+            <e p="PlayerStatic.cs" t="Include" />
             <e p="ShootPointSetter.cs" t="Include" />
-            <e p="SpeedSetter.cs" t="Include" />
-            <e p="StartWeaponSetter.cs" t="Include" />
-            <e p="Static.cs" t="Include" />
           </e>
           <e p="Static" t="Include">
             <e p="StaticLayersNames.cs" t="Include" />

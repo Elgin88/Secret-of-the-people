@@ -20,7 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroZone.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +38,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scrips/Canvas/PlayerHealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/HealthChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/GameBootstrapper.cs" />
@@ -56,7 +60,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/HitSphere.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/RequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Patrol/AgentPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AnimationSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" />
@@ -78,12 +81,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IBullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IClip.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroZone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/MoveToPlayerChecker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Attacker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Canvas/PlayerHealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/IHealthChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Idle/Idle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" />
       </list>
     </option>
   </component>
@@ -140,6 +145,7 @@
       <workItem from="1724758977158" duration="2337000" />
       <workItem from="1724762221374" duration="2028000" />
       <workItem from="1724765163194" duration="4000" />
+      <workItem from="1724841658889" duration="1622000" />
     </task>
     <servers />
   </component>
@@ -168,6 +174,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="345" key="#Notifications/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724757079295" />
+    <state x="792" y="222" key="RiderGenerateDialog" timestamp="1724841797061">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="792" y="222" key="RiderGenerateDialog/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724841797061" />
     <state x="463" y="165" key="SettingsEditor" timestamp="1724671374671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
