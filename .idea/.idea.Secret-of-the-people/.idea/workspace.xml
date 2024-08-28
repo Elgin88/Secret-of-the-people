@@ -20,12 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttackSetter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttackSetter.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttackChecker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttackChecker.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackZone.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackZone.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/HitSphere.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/HitSphere.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +44,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/HealthChanger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Game.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/GameBootstrapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ICoroutineRunner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/SceneLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AllServices.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/IService.cs" />
@@ -59,7 +61,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/HitSphere.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/RequireComponents.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Patrol/AgentPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AnimationSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" />
@@ -86,9 +87,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Canvas/PlayerHealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/IHealthChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Idle/Idle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgroZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/MoveToPlayer/AgentMoveToPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AttackChecker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/AgentsDisabler/AgentsDisabler1.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Disabler/AgentsDisabler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttackSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Attack/AgentAttackChecker.cs" />
       </list>
     </option>
   </component>
@@ -145,7 +151,7 @@
       <workItem from="1724758977158" duration="2337000" />
       <workItem from="1724762221374" duration="2028000" />
       <workItem from="1724765163194" duration="4000" />
-      <workItem from="1724841658889" duration="1622000" />
+      <workItem from="1724841658889" duration="8053000" />
     </task>
     <servers />
   </component>
@@ -170,18 +176,26 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="537" y="165" key="#Inspection_severity" timestamp="1724849192683">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="537" y="165" key="#Inspection_severity/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724849192683" />
     <state x="707" y="345" key="#Notifications" timestamp="1724757079295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="345" key="#Notifications/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724757079295" />
-    <state x="792" y="222" key="RiderGenerateDialog" timestamp="1724841797061">
+    <state x="792" y="222" key="RiderGenerateDialog" timestamp="1724845188819">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="792" y="222" key="RiderGenerateDialog/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724841797061" />
+    <state x="792" y="222" key="RiderGenerateDialog/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724845188819" />
     <state x="463" y="165" key="SettingsEditor" timestamp="1724671374671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724671374671" />
+    <state x="567" y="132" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1724848571855">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="567" y="132" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1724848571855" />
     <state x="626" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1724758852161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

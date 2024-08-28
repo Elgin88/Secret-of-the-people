@@ -1252,9 +1252,8 @@
             <e p="Agents" t="Include">
               <e p="Attack" t="Include">
                 <e p="AgentAttack.cs" t="Include" />
-                <e p="AttackChecker.cs" t="Include" />
-                <e p="AttackZone.cs" t="Include" />
-                <e p="HitSphere.cs" t="Include" />
+                <e p="AgentAttackChecker.cs" t="Include" />
+                <e p="AgentAttackSetter.cs" t="Include" />
               </e>
               <e p="IEnemyAgent.cs" t="Include" />
               <e p="MoveToPlayer" t="Include">

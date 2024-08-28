@@ -8,16 +8,19 @@ using UnityEngine;
 namespace Enemy.Agents.Attack
 {
     [RequireComponent(typeof(EnemyAnimationsSetter))]
+    [RequireComponent(typeof(AgentAttackChecker))]
+    [RequireComponent(typeof(AgentAttackSetter))]
 
     public class AgentAttack : MonoBehaviour, IEnemyAgent
     {
         [SerializeField] private EnemyAnimationsSetter _enemyAnimationSetter;
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private LayerMask _targetMask;
-        [SerializeField] private HitSphere _hitArea;
+        [SerializeField] private Transform _hitPoin;
+        [SerializeField] private LayerMask _target;
 
         private readonly Collider[] _resultOfHit = new Collider[1];
         private Coroutine _attackAfterCooldown;
+        private const float _radiusHitPoint = 0.3f;
         private float _attackCooldown => _staticData.AttackCooldown;
         private int _damage => _staticData.Damage;
 
@@ -48,7 +51,7 @@ namespace Enemy.Agents.Attack
 
         private bool IsHit(out Collider hitCollider)
         {
-            int count = Physics.OverlapSphereNonAlloc(_hitArea.transform.position, _hitArea.Radius, _resultOfHit, _targetMask);
+            int count = Physics.OverlapSphereNonAlloc(_hitPoin.position, _radiusHitPoint, _resultOfHit, _target);
 
             hitCollider = _resultOfHit[0];
 
