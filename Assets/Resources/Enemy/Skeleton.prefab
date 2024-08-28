@@ -1653,6 +1653,7 @@ MonoBehaviour:
   _enemyAnimationSetter: {fileID: 3327770237539775674}
   _moveToPlayerChecker: {fileID: 3736759000335435549}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
+  _agentPatrol: {fileID: 1111474936639502434}
   _targetMask:
     serializedVersion: 2
     m_Bits: 4096

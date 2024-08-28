@@ -1,22 +1,20 @@
-﻿using System.Collections.Generic;
-using Enemy.Agents.Attack;
+﻿using Agava.YandexGames;
 using Infrastructure.Services;
 using Infrastructure.Services.Factory;
-using UnityEngine;
 
 namespace Infrastructure.States
 {
     public class StateLoadLevel : IEnterablePayloadedState<string>
     {
         private GameStateMachine _gameStateMachine;
+        private IGameFactory _gameFactory;
         private SceneLoader _sceneLoader;
-        private IGameFactory _iGameFactory;
 
         public StateLoadLevel(GameStateMachine gameStateMachine, SceneLoader sceneLoader, AllServices allService)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
-            _iGameFactory = allService.Get<IGameFactory>();
+            _gameFactory = allService.Get<IGameFactory>();
         }
 
         public void Enter(string sceneName) => _sceneLoader.Load(sceneName, OnLoaded);
@@ -34,22 +32,11 @@ namespace Infrastructure.States
 
         private void CreateObjects()
         {
-            CreateCkeletons();
-
-            _iGameFactory.CreateGraphy();
-            _iGameFactory.CreateCanvasJoystick();
-            _iGameFactory.CreatePlayer();
-            _iGameFactory.CreatePlayerHealthBar();
-        }
-
-        private void CreateCkeletons()
-        {
-            List<GameObject> skeletons = _iGameFactory.CreateSkeletons();
-
-            foreach (var skeleton in skeletons)
-            {
-                skeleton.GetComponent<AgentAttack>().Construct(_iGameFactory);
-            }
+            _gameFactory.CreateSkeletons();
+            _gameFactory.CreateGraphy();
+            _gameFactory.CreateCanvasJoystick();
+            _gameFactory.CreatePlayer();
+            _gameFactory.CreatePlayerHealthBar();
         }
 
         private void SetIsGameReadyforSDK()

@@ -15,10 +15,10 @@ namespace Weapons.GunBullet
 
         private void OnDestroy() => UnsubBulletEnter();
 
-        private void GiveDamage(Collider collider) => collider.GetComponent<IEnemyHealthChanger>().RemoveHealth(_currentDamage);
-
         private void SubBulletEnter() => _collisionSetter.BulletEnter += GiveDamage;
 
         private void UnsubBulletEnter() => _collisionSetter.BulletEnter -= GiveDamage;
+
+        private void GiveDamage(Collider collider) => collider.GetComponent<IEnemyHealthChanger>().RemoveHealth(_currentDamage);
     }
 }
