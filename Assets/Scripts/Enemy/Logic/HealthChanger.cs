@@ -2,9 +2,9 @@
 using StaticData;
 using UnityEngine;
 
-namespace Enemy
+namespace Enemy.Logic
 {
-    public class HealthChanger : MonoBehaviour, IHealthChanger
+    public class HealthChanger : MonoBehaviour, IEnemyHealthChanger
     {
         [SerializeField] private EnemyStaticData _staticData;
 

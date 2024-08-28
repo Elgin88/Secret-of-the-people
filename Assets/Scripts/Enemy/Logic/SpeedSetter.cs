@@ -1,7 +1,7 @@
 ﻿using StaticData;
 using UnityEngine;
 
-namespace Enemy
+namespace Enemy.Logic
 {
     public class SpeedSetter : MonoBehaviour
     {

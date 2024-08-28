@@ -1,4 +1,5 @@
 ﻿using Enemy.Animations;
+using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using StaticData;
 using UnityEngine;

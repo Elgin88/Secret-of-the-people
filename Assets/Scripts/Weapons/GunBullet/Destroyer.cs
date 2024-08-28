@@ -6,9 +6,9 @@ namespace Weapons.GunBullet
     {
         [SerializeField] private CollisionChecker _collision;
 
-        private void Awake() => _collision.OnBulletEnter += OnBulletEnter;
+        private void Awake() => _collision.BulletEnter += OnBulletEnter;
 
-        private void OnDestroy() => _collision.OnBulletEnter -= OnBulletEnter;
+        private void OnDestroy() => _collision.BulletEnter -= OnBulletEnter;
 
         public void OnBulletEnter(Collider collider) => Destroy();
 

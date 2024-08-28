@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Enemy.Animations;
+using Enemy.Logic;
 using StaticData;
 using UnityEngine;
 using UnityEngine.AI;

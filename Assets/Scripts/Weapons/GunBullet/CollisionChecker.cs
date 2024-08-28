@@ -5,11 +5,11 @@ namespace Weapons.GunBullet
 {
     public class CollisionChecker : MonoBehaviour
     {
-        public Action<Collider> OnBulletEnter;
+        public Action<Collider> BulletEnter;
 
         private void OnTriggerEnter(Collider collider)
         {
-            OnBulletEnter.Invoke(collider);
+            BulletEnter.Invoke(collider);
         }
     }
 }

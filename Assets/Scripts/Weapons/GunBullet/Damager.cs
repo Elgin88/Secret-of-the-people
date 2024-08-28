@@ -1,4 +1,4 @@
-﻿using Enemy;
+﻿using Enemy.Logic;
 using StaticData;
 using UnityEngine;
 
@@ -9,23 +9,16 @@ namespace Weapons.GunBullet
         [SerializeField] private CollisionChecker _collisionSetter;
         [SerializeField] private BulletStaticData _staticData;
 
-        private int _currentDamage;
+        private int _currentDamage => _staticData.Damage;
 
-        private void Awake()
-        {
-            _currentDamage = _staticData.Damage;
+        private void Awake() => SubBulletEnter();
 
-            _collisionSetter.OnBulletEnter += GiveDamage;
-        }
+        private void OnDestroy() => UnsubBulletEnter();
 
-        private void GiveDamage(Collider collider)
-        {
-            collider.GetComponent<IHealthChanger>().RemoveHealth(_currentDamage);
-        }
+        private void GiveDamage(Collider collider) => collider.GetComponent<IEnemyHealthChanger>().RemoveHealth(_currentDamage);
 
-        private void OnDestroy()
-        {
-            _collisionSetter.OnBulletEnter -= GiveDamage;
-        }
+        private void SubBulletEnter() => _collisionSetter.BulletEnter += GiveDamage;
+
+        private void UnsubBulletEnter() => _collisionSetter.BulletEnter -= GiveDamage;
     }
 }

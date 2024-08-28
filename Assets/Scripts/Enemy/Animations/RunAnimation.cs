@@ -1,4 +1,5 @@
-﻿using StaticData;
+﻿using Enemy.Logic;
+using StaticData;
 using UnityEngine;
 
 namespace Enemy.Animations
