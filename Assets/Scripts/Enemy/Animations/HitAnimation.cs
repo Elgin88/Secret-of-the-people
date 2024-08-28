@@ -3,6 +3,7 @@
 namespace Enemy.Animations
 {
     [RequireComponent(typeof(Animator))]
+
     public class HitAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
@@ -18,7 +19,7 @@ namespace Enemy.Animations
         private void SetHit(bool status)
         {
             _isHit = status;
-            _animator.SetBool(global::Enemy.Static.IsHit, status);
+            _animator.SetBool(EnemyStatic.IsHit, status);
         }
     }
 }

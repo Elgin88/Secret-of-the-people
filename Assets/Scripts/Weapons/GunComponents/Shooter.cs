@@ -16,7 +16,7 @@ namespace Weapons.GunComponents
         [SerializeField] private ClipSetter _clipSetter;
         [SerializeField] private Reloader _reloader;
 
-        private NextTargetFinder _nextTargetFinder;
+        private TargetFinder _nextTargetFinder;
         private IGameFactory _gameFactory;
         private float _cooldown;
 
@@ -53,7 +53,7 @@ namespace Weapons.GunComponents
 
         private int BulletCount() => GetCurrentClip(_gameFactory).GetBulletCurrentCount();
 
-        private void SetNextTargetFinder() => _nextTargetFinder = _gameFactory.Player.GetComponent<NextTargetFinder>();
+        private void SetNextTargetFinder() => _nextTargetFinder = _gameFactory.Player.GetComponent<TargetFinder>();
 
         private void StartMoveBullet()
         {

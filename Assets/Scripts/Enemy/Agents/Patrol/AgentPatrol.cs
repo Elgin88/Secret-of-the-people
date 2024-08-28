@@ -7,11 +7,12 @@ using UnityEngine.AI;
 namespace Enemy.Agents.Patrol
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    [RequireComponent(typeof(AnimationSetter))]
-    public class AgentPatrol : MonoBehaviour, IAgent
+    [RequireComponent(typeof(EnemyAnimationsSetter))]
+
+    public class AgentPatrol : MonoBehaviour, IEnemyAgent
     {
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private AnimationSetter _animationSetter;
+        [SerializeField] private EnemyAnimationsSetter _animationSetter;
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private LayerMask _groundMask;
 

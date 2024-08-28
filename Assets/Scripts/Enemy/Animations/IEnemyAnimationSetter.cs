@@ -1,9 +1,7 @@
 ﻿namespace Enemy.Animations
 {
-    internal interface IAnimationSetter
+    internal interface IEnemyAnimationSetter
     {
-        public void PlayIdle();
-
         public void PlayRun();
 
         public void PlayAttack();

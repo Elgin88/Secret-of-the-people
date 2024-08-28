@@ -22,8 +22,11 @@ namespace Enemy.Agents.Attack
         }
 
         private void OnTriggerEnter(Collider player) => PlayerEnter?.Invoke(player);
+
         private void OnTriggerExit(Collider player) => PlayerExit?.Invoke(player);
+
         private void SetRadius() => _attackRange = _staticData.AttackRange;
+
         private void SetRadiusOfRadius() => _collider.radius = _attackRange;
     }
 }

@@ -2,10 +2,11 @@
 
 namespace Enemy.Animations
 {
+    [RequireComponent(typeof(AttackAnimation))]
     [RequireComponent(typeof(HitAnimation))]
     [RequireComponent(typeof(RunAnimation))]
-    [RequireComponent(typeof(AttackAnimation))]
-    public class AnimationSetter : MonoBehaviour, IAnimationSetter
+
+    public class EnemyAnimationsSetter : MonoBehaviour, IEnemyAnimationSetter
     {
         [SerializeField] private AttackAnimation _attackAnimation;
         [SerializeField] private RunAnimation _runAnimation;
@@ -13,37 +14,21 @@ namespace Enemy.Animations
 
         private void Start() => PlayIdle();
 
-        public void PlayIdle()
-        {
-            StopPlayRun();
-            StopPlayAttack();
-            StopPlayHit();
-        }
-
         public void PlayRun()
         {
-            if (!_hitAnimation.IsHit)
-            {
-                PlayIdle();
-
-                _runAnimation.Play();
-            }
+            PlayIdle();
+            _runAnimation.Play();
         }
 
         public void PlayAttack()
         {
-            if (!_hitAnimation.IsHit)
-            {
-                PlayIdle();
-
-                _attackAnimation.Play();
-            }
+            PlayIdle();
+            _attackAnimation.Play();
         }
 
         public void PlayHit()
         {
             PlayIdle();
-
             _hitAnimation.Play();
         }
 
@@ -52,5 +37,12 @@ namespace Enemy.Animations
         public void StopPlayAttack() => _attackAnimation.StopPlay();
 
         public void StopPlayHit() => _hitAnimation.StopPlay();
+
+        private void PlayIdle()
+        {
+            StopPlayRun();
+            StopPlayAttack();
+            StopPlayHit();
+        }
     }
 }

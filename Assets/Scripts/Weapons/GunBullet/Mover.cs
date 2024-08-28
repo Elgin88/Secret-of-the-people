@@ -14,7 +14,7 @@ namespace Weapons.GunBullet
         [SerializeField] private Destroyer _destroyer;
         [SerializeField] private Bullet _bullet;
 
-        private NextTargetFinder _chooserTarget;
+        private TargetFinder _chooserTarget;
         private IGameFactory _gameFactory;
         private const float _moveUpValue = 1.5f;
         private Vector3 _targetPosition;
@@ -46,7 +46,7 @@ namespace Weapons.GunBullet
 
         private void SetRotation() => transform.rotation = _gameFactory.Player.GetComponent<ShootPointSetter>().ShootPoint.transform.rotation;
 
-        private void SetChooserNearestTarget() => _chooserTarget = _gameFactory.Player.GetComponent<NextTargetFinder>();
+        private void SetChooserNearestTarget() => _chooserTarget = _gameFactory.Player.GetComponent<TargetFinder>();
 
         private void Move()
         {

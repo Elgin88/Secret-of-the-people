@@ -3,6 +3,7 @@
 namespace Player
 {
     [RequireComponent(typeof(HealthChanger))]
+
     public class DeathSetter : MonoBehaviour
     {
         [SerializeField] private HealthChanger _healthChanger;

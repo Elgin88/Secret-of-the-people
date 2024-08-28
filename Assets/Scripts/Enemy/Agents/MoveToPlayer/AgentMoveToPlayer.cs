@@ -7,11 +7,12 @@ using UnityEngine.AI;
 namespace Enemy.Agents.MoveToPlayer
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    [RequireComponent(typeof(AnimationSetter))]
-    public class AgentMoveToPlayer : MonoBehaviour, IAgent
+    [RequireComponent(typeof(EnemyAnimationsSetter))]
+
+    public class AgentMoveToPlayer : MonoBehaviour, IEnemyAgent
     {
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private AnimationSetter _enemyAnimator;
+        [SerializeField] private EnemyAnimationsSetter _enemyAnimator;
         [SerializeField] private NavMeshAgent _navMeshAgent;
 
         private IGameFactory _iGameFactory;
@@ -50,7 +51,7 @@ namespace Enemy.Agents.MoveToPlayer
 
         private void SetComponents()
         {
-            _enemyAnimator = GetComponent<AnimationSetter>();
+            _enemyAnimator = GetComponent<EnemyAnimationsSetter>();
             _navMeshAgent = GetComponent<NavMeshAgent>();
 
             _moveToPlayerSpeed = _staticData.MoveToPlayerSpeed;

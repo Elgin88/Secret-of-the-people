@@ -4,6 +4,7 @@ using Weapons.Interfaces;
 namespace Player
 {
     [RequireComponent(typeof(Inventory))]
+
     public class ChooserWeapon : MonoBehaviour
     {
         [SerializeField] private Inventory _inventory;

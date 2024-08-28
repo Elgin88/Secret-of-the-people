@@ -1,6 +1,6 @@
 ﻿namespace Enemy
 {
-    public static class Static
+    public static class EnemyStatic
     {
         public const string Enemy = "Enemy";
 

@@ -3,6 +3,7 @@
 namespace Enemy.Animations
 {
     [RequireComponent(typeof(Animator))]
+
     public class RunAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
@@ -18,7 +19,7 @@ namespace Enemy.Animations
         private void SetRun(bool status)
         {
             _isRun = status;
-            _animator.SetBool(Static.IsRun, status);
+            _animator.SetBool(EnemyStatic.IsRun, status);
         }
     }
 }

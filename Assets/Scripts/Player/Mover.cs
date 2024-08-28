@@ -8,13 +8,14 @@ namespace Player
 {
     [RequireComponent(typeof(SpeedSetter))]
     [RequireComponent(typeof(HealthChanger))]
-    [RequireComponent(typeof(AnimationSetter))]
+    [RequireComponent(typeof(PlayerAnimationsSetter))]
     [RequireComponent(typeof(CharacterController))]
+
     public class Mover : MonoBehaviour
     {
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private PlayerStaticData _staticData;
-        [SerializeField] private AnimationSetter _animationsSetter;
+        [SerializeField] private PlayerAnimationsSetter _animationsSetter;
         [SerializeField] private HealthChanger _healthSetter;
         [SerializeField] private SpeedSetter _speedSetter;
 
@@ -23,7 +24,7 @@ namespace Player
         private Vector3 _targetDirection;
         private Vector2 _axis;
         private float _deltaRotation;
-        
+
         private void Awake()
         {
             SetDeltaRotation();

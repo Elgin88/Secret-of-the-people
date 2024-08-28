@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class HealthChanger : MonoBehaviour, IHealthChanger
+    public class HealthChanger : MonoBehaviour, IPlayerHealthChanger
     {
         [SerializeField] private PlayerStaticData _staticData;
 
@@ -33,7 +33,7 @@ namespace Player
             InvokeHealthChanged();
         }
 
-        public void AddCurrentHealth(int heal)
+        public void AddHealth(int heal)
         {
             CurrentHealth += heal;
 
@@ -45,7 +45,7 @@ namespace Player
             InvokeHealthChanged();
         }
 
-        public void RemoveCurrentHealth(int damage)
+        public void RemoveHealth(int damage)
         {
             CurrentHealth -= damage;
 

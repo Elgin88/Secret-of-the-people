@@ -9,6 +9,7 @@ namespace Player
     [RequireComponent(typeof(StartWeaponSetter))]
     [RequireComponent(typeof(ObjectsCreator))]
     [RequireComponent(typeof(ChooserWeapon))]
+
     public class Inventory : MonoBehaviour
     {
         [SerializeField] private StartWeaponSetter _startObjectsSetter;

@@ -6,6 +6,7 @@ namespace Enemy.Agents.MoveToPlayer
 {
     [RequireComponent(typeof(AgentPatrol))]
     [RequireComponent(typeof(AgentMoveToPlayer))]
+
     public class MoveToPlayerChecker : MonoBehaviour
     {
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
@@ -18,11 +19,15 @@ namespace Enemy.Agents.MoveToPlayer
             _agroZone.Exit += OnPlayerExit;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _agroZone.Enter -= OnPlayerEnter;
             _agroZone.Exit -= OnPlayerExit;
         }
+
+        public void Enable() => enabled = true;
+
+        public void Disable() => enabled = false;
 
         private void OnPlayerEnter(Collider player)
         {

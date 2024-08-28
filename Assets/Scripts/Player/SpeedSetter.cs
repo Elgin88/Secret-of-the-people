@@ -24,7 +24,10 @@ namespace Player
 
         public void SetCurrentHitSpeed()
         {
-            _setCurrentHitSpeed ??= StartCoroutine(SetHitSpeedForDuration());
+            if (_setCurrentHitSpeed == null)
+            {
+                _setCurrentHitSpeed = StartCoroutine(SetHitSpeedForDuration());
+            }
         }
 
         private void SetCurrentSpeed(float speed) => _currentSpeed = speed;

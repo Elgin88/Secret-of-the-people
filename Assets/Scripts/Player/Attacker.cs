@@ -3,10 +3,11 @@
 namespace Player
 {
     [RequireComponent(typeof(ChooserWeapon))]
-    [RequireComponent(typeof(NextTargetFinder))]
+    [RequireComponent(typeof(TargetFinder))]
+
     public class Attacker : MonoBehaviour
     {
-        [SerializeField] private NextTargetFinder _nextTargetFinder;
+        [SerializeField] private TargetFinder _nextTargetFinder;
         [SerializeField] private ChooserWeapon _chooserWeapon;
 
         private void FixedUpdate()

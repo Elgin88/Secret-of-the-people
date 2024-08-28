@@ -5,6 +5,7 @@ namespace Player
 {
     [RequireComponent(typeof(Inventory))]
     [RequireComponent(typeof(ObjectsCreator))]
+
     public class StartWeaponSetter : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;

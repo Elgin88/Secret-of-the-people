@@ -1,19 +1,17 @@
 ﻿namespace Player.Interfaces
 {
-    public interface IHealthChanger
+    public interface IPlayerHealthChanger
     {
         public int StartHealth { get; }
 
         public int CurrentHealth { get; }
 
-        public void AddCurrentHealth(int heal);
+        public void AddHealth(int heal);
 
-        public void RemoveCurrentHealth(int damage);
+        public void RemoveHealth(int damage);
 
         public void SetCurrentHealth(int currentHeath);
 
         public void SetStartHealth(int startHealth);
-
-        public void InvokeHealthChanged();
     }
 }

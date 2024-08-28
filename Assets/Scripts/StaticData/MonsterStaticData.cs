@@ -30,6 +30,6 @@ namespace StaticData
 
         [Range(0f, 3f)] public float MoveAnimationSpeed = 1f;
 
-        [Range(0f, 3f)] public float AttackAnimationSpeed = 1f;
+        [Range(0f, 3f)] public float AttackAnimationSpeed = 1.75f;
     }
 }

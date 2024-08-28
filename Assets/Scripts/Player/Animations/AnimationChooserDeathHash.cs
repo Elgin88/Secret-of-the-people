@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Player.Animations
 {
@@ -20,11 +18,11 @@ namespace Player.Animations
 
         private void AddParameters()
         {
-            _hashs.Add(Static.DeathAHash);
-            _hashs.Add(Static.DeathBHash);
-            _hashs.Add(Static.DeathCHash);
-            _hashs.Add(Static.DeathDHash);
-            _hashs.Add(Static.DeathEHash);
+            _hashs.Add(PlayerStatic.DeathAHash);
+            _hashs.Add(PlayerStatic.DeathBHash);
+            _hashs.Add(PlayerStatic.DeathCHash);
+            _hashs.Add(PlayerStatic.DeathDHash);
+            _hashs.Add(PlayerStatic.DeathEHash);
         }
     }
 }

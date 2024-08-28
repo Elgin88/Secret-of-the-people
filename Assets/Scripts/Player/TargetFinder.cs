@@ -4,7 +4,8 @@ using UnityEngine;
 namespace Player
 {
     [RequireComponent(typeof(ChooserSectorAttack))]
-    public class NextTargetFinder : MonoBehaviour
+
+    public class TargetFinder : MonoBehaviour
     {
         [SerializeField] private ChooserSectorAttack _sectorAttack;
         [SerializeField] private PlayerStaticData _staticData;

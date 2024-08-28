@@ -5,6 +5,7 @@ namespace Player.Animations
 {
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(SpeedSetter))]
+
     public class RunAnimation : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
@@ -14,14 +15,14 @@ namespace Player.Animations
         public void PlayRun()
         {
             SetAnimationSpeed();
-            _animator.SetBool(Static.IsRunHash, true);
+            _animator.SetBool(PlayerStatic.IsRunHash, true);
         }
 
         public void StopPlayRun()
         {
-            _animator.SetBool(Static.IsRunHash, false);
+            _animator.SetBool(PlayerStatic.IsRunHash, false);
         }
 
-        private void SetAnimationSpeed() => _animator.SetFloat(Static.RunHash, _speedSetter.CurrentSpeed / _staticData.AnimationBaseRunSpeed);
+        private void SetAnimationSpeed() => _animator.SetFloat(PlayerStatic.RunHash, _speedSetter.CurrentSpeed / _staticData.AnimationBaseRunSpeed);
     }
 }

@@ -7,6 +7,7 @@ namespace Player
         private const float _diagonalOffset = 12;
         private const float _verticalOffset = 0;
         private const float _angleInRadian = 45 * Mathf.PI / 180;
+        private Vector3 _position => transform.position;
         private Camera _camera;
         private float _horizontal;
         private float _vertical;
@@ -24,9 +25,9 @@ namespace Player
             SetCameraRotation();
         }
 
-        private void SetCameraRotation() => _camera.transform.rotation.SetLookRotation(transform.position);
+        private void SetCameraRotation() => _camera.transform.rotation.SetLookRotation(_position);
 
-        private void SetCameraPosition() => _camera.transform.position = new Vector3(transform.position.x, transform.position.y + _horizontal + _verticalOffset, transform.position.z + _vertical);
+        private void SetCameraPosition() => _camera.transform.position = new Vector3(_position.x, _position.y + _horizontal + _verticalOffset, _position.z + _vertical);
 
         private void SetCamera() => _camera = Camera.main;
 

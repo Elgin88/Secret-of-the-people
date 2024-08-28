@@ -1,6 +1,6 @@
 ﻿namespace Enemy.Agents
 {
-    public interface IAgent
+    public interface IEnemyAgent
     {
         public abstract void EnableAgent();
 

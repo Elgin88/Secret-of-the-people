@@ -2,7 +2,7 @@
 
 namespace Player
 {
-    public static class Static
+    public static class PlayerStatic
     {
         public static readonly int DeathAHash = Animator.StringToHash("DeathA");
 

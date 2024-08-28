@@ -1,24 +1,35 @@
-﻿using UnityEngine;
+﻿using StaticData;
+using UnityEngine;
 
 namespace Enemy.Animations
 {
     [RequireComponent(typeof(Animator))]
+
     public class AttackAnimation : MonoBehaviour
     {
+        [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private Animator _animator;
 
-        private bool _isAttack = false;
+        private float _baseSpeed;
 
-        public bool IsAttack => _isAttack;
-
-        public void Play() => SetAttack(true);
-
-        public void StopPlay() => SetAttack(false);
-
-        private void SetAttack(bool status)
+        private void Awake()
         {
-            _isAttack = status;
-            _animator.SetBool(global::Enemy.Static.IsAttack, status);
+            _baseSpeed = _staticData.AttackAnimationSpeed;
         }
+
+        public void Play()
+        {
+            SetAnimationSpeed();
+            SetAttack(true);
+        }
+
+        public void StopPlay()
+        {
+            SetAttack(false);
+        }
+
+        private void SetAttack(bool status) => _animator.SetBool(EnemyStatic.IsAttack, status);
+
+        private void SetAnimationSpeed() => _animator.SetFloat(EnemyStatic.AttackAnimationSpeed, _baseSpeed);
     }
 }
