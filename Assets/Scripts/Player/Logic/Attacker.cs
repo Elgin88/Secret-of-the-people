@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player
+namespace Player.Logic
 {
     [RequireComponent(typeof(ChooserWeapon))]
     [RequireComponent(typeof(TargetFinder))]

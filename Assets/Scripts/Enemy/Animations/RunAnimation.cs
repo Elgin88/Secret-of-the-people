@@ -1,25 +1,33 @@
-﻿using UnityEngine;
+﻿using StaticData;
+using UnityEngine;
 
 namespace Enemy.Animations
 {
+    [RequireComponent(typeof(SpeedSetter))]
     [RequireComponent(typeof(Animator))]
 
     public class RunAnimation : MonoBehaviour
     {
+        [SerializeField] private MonsterStaticData _staticData;
+        [SerializeField] private SpeedSetter _speedSetter;
         [SerializeField] private Animator _animator;
 
-        private bool _isRun = false;
-
-        public bool IsRun => _isRun;
-
-        public void Play() => SetRun(true);
-
-        public void StopPlay() => SetRun(false);
-
-        private void SetRun(bool status)
+        public void Play()
         {
-            _isRun = status;
-            _animator.SetBool(EnemyStatic.IsRun, status);
+            SetAnimationSpeed();
+            PlayAnimation(true);
+        }
+
+        public void StopPlay()
+        {
+            PlayAnimation(false);
+        }
+
+        private void PlayAnimation(bool status) => _animator.SetBool(EnemyStatic.IsRun, status);
+
+        private void SetAnimationSpeed()
+        {
+            _animator.SetFloat(EnemyStatic.RunAnimationSpeed, _speedSetter.CurrentSpeed / _staticData.RunAnimationSpeed);
         }
     }
 }

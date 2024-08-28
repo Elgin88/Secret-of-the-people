@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Services.Factory;
 using Player;
+using Player.Logic;
 using StaticData;
 using UnityEngine;
 using Weapons.Clips;

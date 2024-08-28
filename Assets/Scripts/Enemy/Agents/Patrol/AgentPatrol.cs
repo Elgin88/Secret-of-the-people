@@ -6,24 +6,25 @@ using UnityEngine.AI;
 
 namespace Enemy.Agents.Patrol
 {
-    [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(EnemyAnimationsSetter))]
+    [RequireComponent(typeof(NavMeshAgent))]
+    [RequireComponent(typeof(SpeedSetter))]
 
     public class AgentPatrol : MonoBehaviour, IEnemyAgent
     {
-        [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private EnemyAnimationsSetter _animationSetter;
+        [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private NavMeshAgent _navMeshAgent;
+        [SerializeField] private SpeedSetter _speedSetter;
         [SerializeField] private LayerMask _groundMask;
 
-        private const int _rayLength = 5;
+        private const int _rayLength = 2;
         private Vector3 _targetPosition;
-        private float _patrolSpeed;
+        private Vector3 _position => transform.position;
+        private float _patrolSpeed => _staticData.PatrolSpeed;
         private int _maxRange;
         private int _minRange;
         private int _minDistanceToPlayer;
-
-        public float PatrolSpeed => _patrolSpeed;
 
         private void Awake() => SetParametrs();
 
@@ -31,8 +32,8 @@ namespace Enemy.Agents.Patrol
 
         private void FixedUpdate()
         {
-            Move();
-            PlayAnimationMove();
+            MoveNavMesh();
+            PlayAnimation();
 
             if (IsMinDistanceToTarget())
             {
@@ -43,24 +44,45 @@ namespace Enemy.Agents.Patrol
         public void EnableAgent()
         {
             Enable();
-            SetIsMovedInNavMesh();
-            SetSpeedInNavMesh(_patrolSpeed);
+            SetIsMoved();
+            SetSpeed();
             SetTargetPosition();
         }
 
         public void DisableAgent()
         {
-            SetIsStopedInNavMesh();
-            StopAnimationOfMove();
+            SetIsStoped();
+            StopAnimation();
             Disable();
         }
 
+        private bool TargetIsOnGround() => Physics.Raycast(_targetPosition, Vector3.down, _rayLength, _groundMask);
+
+        private int GetRandom() => Random.Range(_minRange, _maxRange);
+
+        private bool IsMinDistanceToTarget() => Vector3.Distance(transform.position, _targetPosition) < _minDistanceToPlayer;
+
+        private void Enable() => enabled = true;
+
+        private void Disable() => enabled = false;
+
+        private void MoveNavMesh() => _navMeshAgent.destination = _targetPosition;
+
+        private void SetIsMoved() => _navMeshAgent.isStopped = false;
+
+        private void SetIsStoped() => _navMeshAgent.isStopped = true;
+
+        private void SetSpeed() => _navMeshAgent.speed = _patrolSpeed;
+
+        private void PlayAnimation() => _animationSetter.PlayRun();
+
+        private void StopAnimation() => _animationSetter.StopPlayRun();
+
         private void SetParametrs()
         {
-            _patrolSpeed = _staticData.PatrolSpeed;
+            _minDistanceToPlayer = _staticData.MinDistanceToPlayer;
             _maxRange = _staticData.MaxPatrolRange;
             _minRange = _staticData.MinPatrolRange;
-            _minDistanceToPlayer = _staticData.MinDistanceToPlayer;
         }
 
         private IEnumerator SetTargetPosition()
@@ -77,32 +99,10 @@ namespace Enemy.Agents.Patrol
 
         private void SetRandomTargetPosition()
         {
-            float deltaX = GetRandomDelta();
-            float deltaZ = GetRandomDelta();
+            float deltaX = GetRandom();
+            float deltaZ = GetRandom();
 
-            _targetPosition = new Vector3(transform.position.x + deltaX, transform.position.y, transform.position.z + deltaZ);
+            _targetPosition = new Vector3(_position.x + deltaX, _position.y, _position.z + deltaZ);
         }
-
-        private bool TargetIsOnGround() => Physics.Raycast(_targetPosition, Vector3.down, _rayLength, _groundMask);
-
-        private int GetRandomDelta() => Random.Range(_minRange, _maxRange);
-
-        private bool IsMinDistanceToTarget() => Vector3.Distance(transform.position, _targetPosition) < _minDistanceToPlayer;
-
-        private void Enable() => enabled = true;
-
-        private void Disable() => enabled = false;
-
-        private void Move() => _navMeshAgent.destination = _targetPosition;
-
-        private void SetIsMovedInNavMesh() => _navMeshAgent.isStopped = false;
-
-        private void SetIsStopedInNavMesh() => _navMeshAgent.isStopped = true;
-
-        private void SetSpeedInNavMesh(float speed) => _navMeshAgent.speed = speed;
-
-        private void PlayAnimationMove() => _animationSetter.PlayRun();
-
-        private void StopAnimationOfMove() => _animationSetter.StopPlayRun();
     }
 }

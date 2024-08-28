@@ -10,7 +10,7 @@
 
         public const string IsHit = "IsHit";
 
-        public const string MoveAnimationSpeed = "MoveSpeed";
+        public const string RunAnimationSpeed = "MoveSpeed";
 
         public const string AttackAnimationSpeed = "AttackSpeed";
     }

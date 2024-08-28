@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SkeletonStaticData
   m_EditorClassIdentifier: 
   StartHealth: 1
-  Damage: 30
+  Damage: 1
   AttackRange: 1
   AgroRange: 8
   AttackCooldawn: 0.5
@@ -23,4 +23,5 @@ MonoBehaviour:
   MaxPatrolRange: 10
   MinPatrolRange: -10
   MinDistanceToPlayer: 2
-  AnimationBaseMoveSpeed: 0.6
+  MoveAnimationSpeed: 1
+  AttackAnimationSpeed: 1.75

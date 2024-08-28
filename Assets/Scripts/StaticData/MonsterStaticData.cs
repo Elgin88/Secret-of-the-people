@@ -14,7 +14,7 @@ namespace StaticData
 
         [Range(0f, 40f)] public int AgroRange = 8;
 
-        [Range(0f, 2f)] public float AttackCooldawn = 0.5f;
+        [Range(0f, 2f)] public float AttackCooldown = 0.5f;
 
         [Range(0f, 2f)] public float RadiusOfHitSphere = 0.5f;
 
@@ -28,7 +28,7 @@ namespace StaticData
 
         [Range(0f, 3f)] public int MinDistanceToPlayer = 2;
 
-        [Range(0f, 3f)] public float MoveAnimationSpeed = 1f;
+        [Range(0f, 3f)] public float RunAnimationSpeed = 0.9f;
 
         [Range(0f, 3f)] public float AttackAnimationSpeed = 1.75f;
     }

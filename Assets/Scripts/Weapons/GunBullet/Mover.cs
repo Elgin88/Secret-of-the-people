@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Services.Factory;
 using Player;
+using Player.Logic;
 using UnityEngine;
 
 namespace Weapons.GunBullet

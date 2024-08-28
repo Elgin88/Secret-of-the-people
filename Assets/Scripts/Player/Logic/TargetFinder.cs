@@ -1,7 +1,7 @@
 ﻿using StaticData;
 using UnityEngine;
 
-namespace Player
+namespace Player.Logic
 {
     [RequireComponent(typeof(ChooserSectorAttack))]
 

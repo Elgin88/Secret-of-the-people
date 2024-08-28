@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player
+namespace Player.Logic
 {
     public class ChooserSectorAttack : MonoBehaviour
     {

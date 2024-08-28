@@ -2,9 +2,9 @@
 using StaticData;
 using UnityEngine;
 
-namespace Player
+namespace Player.Logic
 {
-    public class SpeedSetter : MonoBehaviour
+    public class SpeedMovementSetter : MonoBehaviour
     {
         [SerializeField] private PlayerStaticData _staticData;
 

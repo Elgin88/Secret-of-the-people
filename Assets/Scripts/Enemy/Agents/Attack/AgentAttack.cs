@@ -60,7 +60,7 @@ namespace Enemy.Agents.Attack
 
         private void SetParameters()
         {
-            _attackCooldown = _staticData.AttackCooldawn;
+            _attackCooldown = _staticData.AttackCooldown;
             _damage = _staticData.Damage;
 
             _playerHealthChanger = _gameFactory.Player.GetComponent<IPlayerHealthChanger>();

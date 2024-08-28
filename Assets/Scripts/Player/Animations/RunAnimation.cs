@@ -1,15 +1,16 @@
-﻿using StaticData;
+﻿using Player.Logic;
+using StaticData;
 using UnityEngine;
 
 namespace Player.Animations
 {
     [RequireComponent(typeof(Animator))]
-    [RequireComponent(typeof(SpeedSetter))]
+    [RequireComponent(typeof(SpeedMovementSetter))]
 
     public class RunAnimation : MonoBehaviour
     {
+        [SerializeField] private SpeedMovementSetter _speedSetter;
         [SerializeField] private PlayerStaticData _staticData;
-        [SerializeField] private SpeedSetter _speedSetter;
         [SerializeField] private Animator _animator;
 
         public void PlayRun()

@@ -1,23 +1,24 @@
 ﻿using Infrastructure.Services;
 using Infrastructure.Services.Input;
 using Player.Animations;
+using Player.Logic;
 using StaticData;
 using UnityEngine;
 
 namespace Player
 {
-    [RequireComponent(typeof(SpeedSetter))]
-    [RequireComponent(typeof(HealthChanger))]
     [RequireComponent(typeof(PlayerAnimationsSetter))]
     [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(SpeedMovementSetter))]
+    [RequireComponent(typeof(HealthChanger))]
 
     public class Mover : MonoBehaviour
     {
-        [SerializeField] private CharacterController _characterController;
-        [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private PlayerAnimationsSetter _animationsSetter;
+        [SerializeField] private CharacterController _characterController;
+        [SerializeField] private SpeedMovementSetter _speedSetter;
+        [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private HealthChanger _healthSetter;
-        [SerializeField] private SpeedSetter _speedSetter;
 
         private AllServices _allServices;
         private Quaternion _targetRotation;
