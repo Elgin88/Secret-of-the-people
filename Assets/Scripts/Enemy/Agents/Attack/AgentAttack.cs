@@ -8,8 +8,8 @@ using UnityEngine;
 namespace Enemy.Agents.Attack
 {
     [RequireComponent(typeof(EnemyAnimationsSetter))]
-    [RequireComponent(typeof(AgentAttackChecker))]
-    [RequireComponent(typeof(AgentAttackSetter))]
+    [RequireComponent(typeof(TargetFindChecker))]
+    [RequireComponent(typeof(AgentAttackLauncher))]
 
     public class AgentAttack : MonoBehaviour, IEnemyAgent
     {

@@ -11,6 +11,7 @@ namespace Enemy.Animations
         [SerializeField] private Animator _animator;
 
         private float _baseSpeed;
+        public bool IsAttack { get; set; }
 
         private void Awake()
         {
@@ -21,6 +22,7 @@ namespace Enemy.Animations
         {
             SetAnimationSpeed();
             SetAttack(true);
+            IsAttack = true;
         }
 
         public void StopPlay()
@@ -31,5 +33,7 @@ namespace Enemy.Animations
         private void SetAttack(bool status) => _animator.SetBool(EnemyStatic.IsAttack, status);
 
         private void SetAnimationSpeed() => _animator.SetFloat(EnemyStatic.AttackAnimationSpeed, _baseSpeed);
+
+        private void OnAttackEnded() => IsAttack = false;
     }
 }

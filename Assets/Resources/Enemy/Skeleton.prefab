@@ -1618,8 +1618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96841a1218fe04c218c3317f99170c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackSetter: {fileID: 6543521841988050893}
-  _agentAttack: {fileID: 84307021098974875}
+  _attackAnimation: {fileID: 309231018445043860}
   _hitPoint: {fileID: 9044219706593725082}
   _target:
     serializedVersion: 2
@@ -1718,6 +1717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97397fa475564c6f93957f5ea7428c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetFindChecker: {fileID: 5126608844793043368}
+  _agentAttack: {fileID: 84307021098974875}
+  _agentMoveToPlayer: {fileID: 5211133151828398334}
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0
