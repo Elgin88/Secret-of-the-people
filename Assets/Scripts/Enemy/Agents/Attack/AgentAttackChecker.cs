@@ -3,26 +3,34 @@
 namespace Enemy.Agents.Attack
 {
     [RequireComponent(typeof(AgentAttackSetter))]
-    
+    [RequireComponent(typeof(AgentAttack))]
+
     public class AgentAttackChecker : MonoBehaviour
     {
         [SerializeField] private AgentAttackSetter _attackSetter;
+        [SerializeField] private AgentAttack _agentAttack;
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;
 
         private readonly Collider[] _results = new Collider[1];
         private const float _radius = 0.3f;
         private int _targetCount;
+        private bool _isFind;
 
         private void FixedUpdate()
         {
-            if (GetIsFind())
+            _isFind = GetIsFind();
+            Debug.Log("1");
+
+            if (!_agentAttack.enabled & _isFind)
             {
                 _attackSetter.EnableAgent();
-                Debug.Log("Упростить, слишком дорого");
+                Debug.Log("2");
             }
-            else
+
+            if (_agentAttack.enabled & !_isFind)
             {
+                Debug.Log("3");
                 _attackSetter.DisableAgentAttack();
             }
         }

@@ -1619,6 +1619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackSetter: {fileID: 6543521841988050893}
+  _agentAttack: {fileID: 84307021098974875}
   _hitPoint: {fileID: 9044219706593725082}
   _target:
     serializedVersion: 2
