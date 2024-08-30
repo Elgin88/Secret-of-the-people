@@ -1551,7 +1551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b080d5eb897452ca8b45e5b4c57e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyAnimator: {fileID: 3327770237539775674}
+  _animationsSetter: {fileID: 3327770237539775674}
   _navMeshAgent: {fileID: 6423952209126061127}
   _speedSetter: {fileID: 3157147941812564663}
 --- !u!114 &84307021098974875
@@ -1567,8 +1567,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyAnimationSetter: {fileID: 3327770237539775674}
+  _agentAttackLauncher: {fileID: 6543521841988050893}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
-  _hitPoin: {fileID: 9044219706593725082}
+  _hitPoint: {fileID: 9044219706593725082}
   _target:
     serializedVersion: 2
     m_Bits: 4096
@@ -1717,9 +1718,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97397fa475564c6f93957f5ea7428c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetFindChecker: {fileID: 5126608844793043368}
-  _agentAttack: {fileID: 84307021098974875}
   _agentMoveToPlayer: {fileID: 5211133151828398334}
+  _findTargetChecker: {fileID: 5126608844793043368}
+  _agentAttack: {fileID: 84307021098974875}
+  _agentPatrol: {fileID: 1111474936639502434}
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0

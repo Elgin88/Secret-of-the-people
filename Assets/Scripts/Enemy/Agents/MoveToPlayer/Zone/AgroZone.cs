@@ -8,40 +8,34 @@ namespace Enemy.Agents.MoveToPlayer
     {
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private SphereCollider _agroZone;
-        
+
         private bool _isEnter = false;
 
         public event Action<Collider> Enter;
 
         public event Action<Collider> Exit;
 
-        private void Awake()
-        {
-            SetRadiusCollider();
-        }
+        private void Awake() => SetRadiusCollider();
 
         private void OnTriggerEnter(Collider player)
         {
-            if (_isEnter)
+            if (!_isEnter)
             {
-                return;
+                Enter?.Invoke(player);
+                SetIsEnter(true);
             }
-            
-            Enter?.Invoke(player);
-            _isEnter = true;
         }
 
         private void OnTriggerExit(Collider player)
         {
-            if (!_isEnter)
+            if (_isEnter)
             {
-                return;
+                Exit?.Invoke(player);
+                SetIsEnter(false);
             }
-            
-            Exit?.Invoke(player);
-            _isEnter = false;
         }
-        
+
+        private void SetIsEnter(bool status) => _isEnter = status;
         private void SetRadiusCollider() => _agroZone.radius = _staticData.AgroRange;
     }
 }

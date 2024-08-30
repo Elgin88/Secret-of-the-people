@@ -1,30 +1,36 @@
-﻿using System;
-using Enemy.Agents.MoveToPlayer;
-using Enemy.Animations;
+﻿using Enemy.Agents.MoveToPlayer;
+using Enemy.Agents.Patrol;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Enemy.Agents.Attack
 {
+    [RequireComponent(typeof(TargetChecker))]
     [RequireComponent(typeof(AgentAttack))]
-    [RequireComponent(typeof(TargetFindChecker))]
-    
+
     public class AgentAttackLauncher : MonoBehaviour
     {
-        [SerializeField] private TargetFindChecker _targetFindChecker;
-        [SerializeField] private AgentAttack _agentAttack;
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
+        [SerializeField] private TargetChecker _findTargetChecker;
+        [SerializeField] private AgentAttack _agentAttack;
+        [SerializeField] private AgentPatrol _agentPatrol;
 
-        private void Awake() => _targetFindChecker.TargetFound += OnTargetFound;
+        private void Awake() => SubTargetFound();
 
-        private void OnDestroy() => _targetFindChecker.TargetFound -= OnTargetFound;
+        private void OnDestroy() => UnsubTargetFound();
 
-        private void OnTargetFound()
+        public void AgentOn()
         {
-            Debug.Log("AgentAttackLauncher");
-            
             _agentMoveToPlayer.DisableAgent();
             _agentAttack.EnableAgent();
         }
+
+        public void AgentOff()
+        {
+            _agentAttack.DisableAgent();
+            _agentMoveToPlayer.EnableAgent();
+        }
+
+        private void SubTargetFound() => _findTargetChecker.IsTargetFound += AgentOn;
+        private void UnsubTargetFound() => _findTargetChecker.IsTargetFound -= AgentOn;
     }
 }

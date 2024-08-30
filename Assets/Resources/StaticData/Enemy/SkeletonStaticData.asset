@@ -16,12 +16,11 @@ MonoBehaviour:
   Damage: 1
   AttackRange: 1
   AgroRange: 8
-  AttackCooldawn: 0.5
   RadiusOfHitSphere: 0.5
   MoveToPlayerSpeed: 2
   PatrolSpeed: 1
   MaxPatrolRange: 10
   MinPatrolRange: -10
   MinDistanceToPlayer: 2
-  MoveAnimationSpeed: 1
+  RunAnimationSpeed: 0.9
   AttackAnimationSpeed: 1.75

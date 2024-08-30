@@ -1,4 +1,5 @@
-﻿using Enemy.Animations;
+﻿using System;
+using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using StaticData;
@@ -10,65 +11,46 @@ namespace Enemy.Agents.MoveToPlayer
     [RequireComponent(typeof(EnemyAnimationsSetter))]
     [RequireComponent(typeof(NavMeshAgent))]
 
-    public class AgentMoveToPlayer : MonoBehaviour, IEnemyAgent
+    public class AgentMoveToPlayer : MonoBehaviour
     {
-        [SerializeField] private EnemyAnimationsSetter _enemyAnimator;
+        [SerializeField] private EnemyAnimationsSetter _animationsSetter;
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private SpeedSetter _speedSetter;
 
         private IGameFactory _gameFactory;
-        private Transform _playerTransform;
-
-        private void Start()
-        {
-            SetComponents();
-            Disable();
-        }
-
-        private void FixedUpdate() => MoveToTarget();
+        private Transform _target => _gameFactory.Player.transform;
 
         public void Construct(IGameFactory iGameFactory) => _gameFactory = iGameFactory;
 
+        private void Start() => DisableAgent();
+
+        private void FixedUpdate() => MoveToTarget();
+
         public void EnableAgent()
         {
-            Enable();
-            NavMeshMoveOn();
+            SetEnabled(true);
+            SetNavMesnEnabled(true);
             SetNavMeshRunSpeed();
             PlayAnimation();
         }
 
         public void DisableAgent()
         {
-            NavMeshMoveOff();
-            StopPlayAnimationRun();
-            Disable();
+            SetEnabled(false);
+            SetNavMesnEnabled(false);
+            StopPlayAnimation();
         }
 
-        private void NavMeshMoveOn() => _navMeshAgent.isStopped = false;
-
-        private void NavMeshMoveOff() => _navMeshAgent.isStopped = true;
-
-        private void Enable() => enabled = true;
-
-        private void Disable() => enabled = false;
-
-        private void PlayAnimation() => _enemyAnimator.PlayRun();
-
-        private void StopPlayAnimationRun() => _enemyAnimator.StopPlayRun();
-
-        private void MoveToTarget() => _navMeshAgent.destination = _playerTransform.position;
+        private void SetNavMesnEnabled(bool status) => _navMeshAgent.isStopped = !status;
+        private void SetEnabled(bool status) => enabled = status;
+        private void PlayAnimation() => _animationsSetter.PlayRun();
+        private void StopPlayAnimation() => _animationsSetter.StopPlayRun();
+        private void MoveToTarget() => _navMeshAgent.destination = _target.position;
 
         private void SetNavMeshRunSpeed()
         {
             _speedSetter.SetRunSpeed();
             _navMeshAgent.speed = _speedSetter.CurrentSpeed;
-        }
-
-        private void SetComponents()
-        {
-            _enemyAnimator = GetComponent<EnemyAnimationsSetter>();
-            _navMeshAgent = GetComponent<NavMeshAgent>();
-            _playerTransform = _gameFactory.Player.transform;
         }
     }
 }
