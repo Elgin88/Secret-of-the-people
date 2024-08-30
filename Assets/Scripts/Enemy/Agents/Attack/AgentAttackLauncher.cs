@@ -4,33 +4,29 @@ using UnityEngine;
 
 namespace Enemy.Agents.Attack
 {
+    [RequireComponent(typeof(AgentMoveToPlayerLauncher))]
     [RequireComponent(typeof(AgentAttackTargetFinder))]
     [RequireComponent(typeof(AgentAttack))]
 
     public class AgentAttackLauncher : MonoBehaviour
     {
-        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
-        [SerializeField] private AgentAttackTargetFinder _targetChecker;
+        [SerializeField] private AgentMoveToPlayerLauncher _moveToPlayerLauncher;
+        [SerializeField] private AgentAttackTargetFinder _attackTargetFinder;
+        [SerializeField] private AgentPatrolLauncher _patrolLauncher;
         [SerializeField] private AgentAttack _agentAttack;
-        [SerializeField] private AgentPatrol _agentPatrol;
 
-        private void Awake() => SubTargetFound();
+        private void Awake() => _attackTargetFinder.TargetIsFound += AgentOn;
 
-        private void OnDestroy() => UnsubTargetFound();
+        private void OnDestroy() => _attackTargetFinder.TargetIsFound -= AgentOn;
 
         public void AgentOn()
         {
-            _agentMoveToPlayer.DisableAgent();
+            _moveToPlayerLauncher.AgentOff();
+            _patrolLauncher.AgentOff();
+
             _agentAttack.EnableAgent();
         }
 
-        public void AgentOff()
-        {
-            _agentAttack.DisableAgent();
-            _agentMoveToPlayer.EnableAgent();
-        }
-
-        private void SubTargetFound() => _targetChecker.TargetIsFound += AgentOn;
-        private void UnsubTargetFound() => _targetChecker.TargetIsFound -= AgentOn;
+        public void AgentOff() => _agentAttack.DisableAgent();
     }
 }

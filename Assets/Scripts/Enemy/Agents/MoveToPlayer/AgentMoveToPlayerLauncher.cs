@@ -26,14 +26,14 @@ namespace Enemy.Agents.MoveToPlayer
             UnsubPlayerExit();
         }
 
-        private void AgentOn(Collider player)
+        public void AgentOn()
         {
             DisableAgentPatrol();
             EnableAgentMove();
             EnableTargetChecker();
         }
 
-        private void AgentOff(Collider player)
+        public void AgentOff()
         {
             DisableAgentMove();
             EnableAgentPatrol();

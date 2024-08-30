@@ -11,9 +11,9 @@ namespace Enemy.Agents.MoveToPlayer
 
         private bool _isEnter = false;
 
-        public event Action<Collider> Enter;
+        public event Action Enter;
 
-        public event Action<Collider> Exit;
+        public event Action Exit;
 
         private void Awake() => SetRadiusCollider();
 
@@ -21,7 +21,7 @@ namespace Enemy.Agents.MoveToPlayer
         {
             if (!_isEnter)
             {
-                Enter?.Invoke(player);
+                Enter?.Invoke();
                 SetIsEnter(true);
             }
         }
@@ -30,7 +30,7 @@ namespace Enemy.Agents.MoveToPlayer
         {
             if (_isEnter)
             {
-                Exit?.Invoke(player);
+                Exit?.Invoke();
                 SetIsEnter(false);
             }
         }

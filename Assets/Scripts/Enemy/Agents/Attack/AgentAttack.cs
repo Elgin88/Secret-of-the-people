@@ -22,6 +22,8 @@ namespace Enemy.Agents.Attack
         private const float _radiusHitPoint = 0.3f;
         private int _damage => _staticData.Damage;
 
+        private void Start() => SetEnabled(false);
+
         private void FixedUpdate()
         {
         }
@@ -51,7 +53,6 @@ namespace Enemy.Agents.Attack
             StopPlayAnimation();
             AgentAttackOff();
         }
-
 
         private void SetEnabled(bool status) => enabled = status;
         private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
