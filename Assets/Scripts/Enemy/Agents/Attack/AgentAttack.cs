@@ -22,33 +22,47 @@ namespace Enemy.Agents.Attack
         private const float _radiusHitPoint = 0.3f;
         private int _damage => _staticData.Damage;
 
-        public void EnableAgent() => PlayAnimation();
+        private void Update()
+        {
+        }
 
-        public void DisableAgent() => StopPlayAnimation();
+        public void EnableAgent()
+        {
+            SetEnabled(true);
+            PlayAnimation();
+        }
+
+        public void DisableAgent()
+        {
+            StopPlayAnimation();
+            SetEnabled(false);
+        }
 
         private void OnAttack()
         {
-            if (IsHit(out Collider player))
+            if (IsHit(out Collider target))
             {
-                GiveHit(player);
+                GiveHit(target);
             }
         }
 
         private void OnAttackEnded()
         {
             StopPlayAnimation();
-            _agentAttackLauncher.AgentOff();
+            AgentAttackOff();
         }
 
+
+        private void SetEnabled(bool status) => enabled = status;
+        private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
+        private void AgentAttackOff() => _agentAttackLauncher.AgentOff();
         private void StopPlayAnimation() => _enemyAnimationSetter.StopPlayAttack();
 
-        private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
-
-        private bool IsHit(out Collider hitCollider)
+        private bool IsHit(out Collider target)
         {
             int count = Physics.OverlapSphereNonAlloc(_hitPoint.position, _radiusHitPoint, _resultOfHit, _target);
 
-            hitCollider = _resultOfHit[0];
+            target = _resultOfHit[0];
 
             return count > 0;
         }

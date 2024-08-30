@@ -10,7 +10,7 @@ namespace Enemy.Agents.Attack
     public class AgentAttackLauncher : MonoBehaviour
     {
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
-        [SerializeField] private TargetChecker _findTargetChecker;
+        [SerializeField] private TargetChecker _targetChecker;
         [SerializeField] private AgentAttack _agentAttack;
         [SerializeField] private AgentPatrol _agentPatrol;
 
@@ -30,7 +30,7 @@ namespace Enemy.Agents.Attack
             _agentMoveToPlayer.EnableAgent();
         }
 
-        private void SubTargetFound() => _findTargetChecker.IsTargetFound += AgentOn;
-        private void UnsubTargetFound() => _findTargetChecker.IsTargetFound -= AgentOn;
+        private void SubTargetFound() => _targetChecker.IsTargetFound += AgentOn;
+        private void UnsubTargetFound() => _targetChecker.IsTargetFound -= AgentOn;
     }
 }

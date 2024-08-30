@@ -12,12 +12,7 @@ namespace Enemy.Animations
 
         private float _baseSpeed => _staticData.AttackAnimationSpeed;
 
-        public bool IsAttack { get; private set; }
-
-        private void Awake()
-        {
-            SetAnimationSpeed();
-        }
+        private void Awake() => SetAnimationSpeed();
 
         public void Play()
         {
@@ -31,10 +26,6 @@ namespace Enemy.Animations
 
         private void SetAnimationSpeed() => _animator.SetFloat(EnemyStatic.AttackAnimationSpeed, _baseSpeed);
 
-        private void SetAttack(bool status)
-        {
-            _animator.SetBool(EnemyStatic.IsAttack, status);
-            IsAttack = status;
-        }
+        private void SetAttack(bool status) => _animator.SetBool(EnemyStatic.IsAttack, status);
     }
 }

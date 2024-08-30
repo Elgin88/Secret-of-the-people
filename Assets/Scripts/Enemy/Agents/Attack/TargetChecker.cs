@@ -15,14 +15,19 @@ namespace Enemy.Agents.Attack
 
         public Action IsTargetFound;
 
+        public void Enable() => enabled = true;
+
+        public void Disable() => enabled = false;
+
         private void FixedUpdate()
         {
-            if (TargetIsFind() & !IsPlayAttack())
+            if (TargetIsFind())
             {
                 IsTargetFound.Invoke();
             }
+
+            Debug.Log("Убрать постоянный поиск");
         }
-        private bool IsPlayAttack() => _attackAnimation.IsAttack;
 
         private bool TargetIsFind() => GetTargetCount() > 0;
 

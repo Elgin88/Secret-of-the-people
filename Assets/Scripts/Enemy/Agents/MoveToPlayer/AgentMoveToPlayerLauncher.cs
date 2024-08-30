@@ -42,7 +42,7 @@ namespace Enemy.Agents.MoveToPlayer
         private void UnsubPlayerEnter() => _agroZone.Enter -= AgentOn;
         private void EnableAgentMove() => _agentMoveToPlayer.EnableAgent();
         private void DisableAgentMove() => _agentMoveToPlayer.DisableAgent();
-        private void EnableAgentPatrol() => _agentPatrol.EnableAgent();
-        private void DisableAgentPatrol() => _agentPatrol.DisableAgent();
+        private void EnableAgentPatrol() => _agentPatrol.AgentEnable();
+        private void DisableAgentPatrol() => _agentPatrol.AgentDisable();
     }
 }

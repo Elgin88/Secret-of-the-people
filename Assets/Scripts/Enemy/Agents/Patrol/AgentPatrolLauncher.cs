@@ -1,12 +1,17 @@
-﻿using UnityEngine;
+﻿using Enemy.Agents.Attack;
+using UnityEngine;
 
 namespace Enemy.Agents.Patrol
 {
-    public partial class AgentPatrol
+    public class AgentPatrolLauncher : MonoBehaviour
     {
-        public class AgentPatrolLauncher : MonoBehaviour
-        {
+        [SerializeField] private AgentAttack _agentAttack;
+        [SerializeField] private AgentPatrol _agentPatrol;
 
+        private void Start()
+        {
+            _agentPatrol.AgentEnable();
+            _agentAttack.DisableAgent();
         }
     }
 }
