@@ -1,4 +1,5 @@
-﻿using Enemy.Agents.Patrol;
+﻿using Enemy.Agents.Attack;
+using Enemy.Agents.Patrol;
 using UnityEngine;
 
 namespace Enemy.Agents.MoveToPlayer
@@ -9,8 +10,9 @@ namespace Enemy.Agents.MoveToPlayer
     public class AgentMoveToPlayerLauncher : MonoBehaviour
     {
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
+        [SerializeField] private AgentAttackTargetFinder _targetChecker;
         [SerializeField] private AgentPatrol _agentPatrol;
-        [SerializeField] private AgroZone _agroZone;
+        [SerializeField] private AgroSetter _agroZone;
 
         private void Awake()
         {
@@ -28,14 +30,18 @@ namespace Enemy.Agents.MoveToPlayer
         {
             DisableAgentPatrol();
             EnableAgentMove();
+            EnableTargetChecker();
         }
 
         private void AgentOff(Collider player)
         {
             DisableAgentMove();
             EnableAgentPatrol();
+            DisableTargetChecker();
         }
 
+        private void EnableTargetChecker() => _targetChecker.Enable();
+        private void DisableTargetChecker() => _targetChecker.Disable();
         private void SubPlayerExit() => _agroZone.Exit += AgentOff;
         private void SubPlayerEnter() => _agroZone.Enter += AgentOn;
         private void UnsubPlayerExit() => _agroZone.Exit -= AgentOff;

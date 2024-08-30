@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Enemy.Agents.Attack
 {
-    [RequireComponent(typeof(TargetChecker))]
+    [RequireComponent(typeof(AgentAttackTargetFinder))]
     [RequireComponent(typeof(AgentAttack))]
 
     public class AgentAttackLauncher : MonoBehaviour
     {
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
-        [SerializeField] private TargetChecker _targetChecker;
+        [SerializeField] private AgentAttackTargetFinder _targetChecker;
         [SerializeField] private AgentAttack _agentAttack;
         [SerializeField] private AgentPatrol _agentPatrol;
 
@@ -30,7 +30,7 @@ namespace Enemy.Agents.Attack
             _agentMoveToPlayer.EnableAgent();
         }
 
-        private void SubTargetFound() => _targetChecker.IsTargetFound += AgentOn;
-        private void UnsubTargetFound() => _targetChecker.IsTargetFound -= AgentOn;
+        private void SubTargetFound() => _targetChecker.TargetIsFound += AgentOn;
+        private void UnsubTargetFound() => _targetChecker.TargetIsFound -= AgentOn;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Enemy.Agents.MoveToPlayer
 {
-    public class AgroZone : MonoBehaviour
+    public class AgroSetter : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private SphereCollider _agroZone;

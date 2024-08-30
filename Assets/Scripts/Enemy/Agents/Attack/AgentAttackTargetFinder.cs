@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Enemy.Agents.Attack
 {
-    public class TargetChecker : MonoBehaviour
+    public class AgentAttackTargetFinder : MonoBehaviour
     {
         [SerializeField] private AttackAnimation _attackAnimation;
         [SerializeField] private Transform _hitPoint;
@@ -13,7 +13,9 @@ namespace Enemy.Agents.Attack
         private readonly Collider[] _results = new Collider[1];
         private readonly float _radius = 0.3f;
 
-        public Action IsTargetFound;
+        public Action TargetIsFound;
+
+        private void Start() => Disable();
 
         public void Enable() => enabled = true;
 
@@ -23,10 +25,8 @@ namespace Enemy.Agents.Attack
         {
             if (TargetIsFind())
             {
-                IsTargetFound.Invoke();
+                TargetIsFound.Invoke();
             }
-
-            Debug.Log("Убрать постоянный поиск");
         }
 
         private bool TargetIsFind() => GetTargetCount() > 0;

@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace Enemy.Agents.Attack
 {
-    [RequireComponent(typeof(EnemyAnimationsSetter))]
     [RequireComponent(typeof(AgentAttackLauncher))]
-    [RequireComponent(typeof(TargetChecker))]
+    [RequireComponent(typeof(AgentAttackTargetFinder))]
+    [RequireComponent(typeof(EnemyAnimationsSetter))]
 
     public class AgentAttack : MonoBehaviour
     {
@@ -22,7 +22,7 @@ namespace Enemy.Agents.Attack
         private const float _radiusHitPoint = 0.3f;
         private int _damage => _staticData.Damage;
 
-        private void Update()
+        private void FixedUpdate()
         {
         }
 

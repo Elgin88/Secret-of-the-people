@@ -1606,6 +1606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agentMoveToPlayer: {fileID: 5211133151828398334}
+  _targetChecker: {fileID: 5126608844793043368}
   _agentPatrol: {fileID: 1111474936639502434}
   _agroZone: {fileID: 3534666128362834738}
 --- !u!114 &5126608844793043368

@@ -1,13 +1,13 @@
-﻿using System;
-using Enemy.Animations;
+﻿using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
-using StaticData;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Enemy.Agents.MoveToPlayer
 {
+    [RequireComponent(typeof(AgentMoveToPlayerLauncher))]
+    [RequireComponent(typeof(AgroSetter))]
     [RequireComponent(typeof(EnemyAnimationsSetter))]
     [RequireComponent(typeof(NavMeshAgent))]
 
