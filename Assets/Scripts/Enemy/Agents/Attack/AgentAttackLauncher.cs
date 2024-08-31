@@ -23,13 +23,6 @@ namespace Enemy.Agents.Attack
 
         private void OnDestroy() => OnsubTargetFound();
 
-        public void AgentOn()
-        {
-            _moveToPlayerLauncher.AgentOff();
-            _patrolLauncher.AgentOff();
-            _agentAttack.EnableAgent();
-        }
-
         public void AgentOff() => _agentAttack.DisableAgent();
 
         private void SubTargetFound() => _attackTargetFinder.TargetIsFound += AgentOn;
@@ -41,6 +34,13 @@ namespace Enemy.Agents.Attack
             _attackTargetFinder = GetComponent<AgentAttackTargetFinder>();
             _patrolLauncher = GetComponent<AgentPatrolLauncher>();
             _agentAttack = GetComponent<AgentAttack>();
+        }
+
+        private void AgentOn()
+        {
+            _moveToPlayerLauncher.AgentOff();
+            _patrolLauncher.AgentOff();
+            _agentAttack.EnableAgent();
         }
     }
 }

@@ -65,12 +65,13 @@ namespace Infrastructure.Services.Factory
                 return null;
             }
 
-            foreach (var sceletonInitialPoint in skeletonInitialPoints)
+            foreach (var point in skeletonInitialPoints)
             {
-                GameObject skeleton = CreateGameObject(StaticAssetPath.Sceleton, sceletonInitialPoint.transform.position);
+                GameObject skeleton = CreateGameObject(StaticAssetPath.Sceleton, point.transform.position);
 
                 skeleton.GetComponent<AgentMoveToPlayer>().Construct(this);
-
+                skeleton.GetComponent<AgroSetter>().Construct(this);
+                
                 skeletons.Add(skeleton);
             }
 

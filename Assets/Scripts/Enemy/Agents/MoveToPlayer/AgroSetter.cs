@@ -1,4 +1,5 @@
 ﻿using System;
+using Infrastructure.Services.Factory;
 using StaticData;
 using UnityEngine;
 
@@ -7,39 +8,22 @@ namespace Enemy.Agents.MoveToPlayer
     public class AgroSetter : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private SphereCollider _agroZone;
 
-        private bool _isEnter = false;
+        private IGameFactory _gameFactory;
+        private float _agroRange => _staticData.AgroRange;
+        
+        public bool IsAgro { get; private set; }
+        
+        public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
-        public event Action Enter;
+        private void FixedUpdate() => SetIsAgro(IsMinDistance());
 
-        public event Action Exit;
+        public void Enable() => enabled = true;
 
-        private void Awake()
-        {
-            Debug.Log("Переделать этот скрипт без физики, проверка должна быть через дистанцию, а не через физику");
-            SetRadiusCollider();
-        }
+        public void Disable() => enabled = false;
 
-        private void OnTriggerEnter(Collider player)
-        {
-            if (!_isEnter)
-            {
-                Enter?.Invoke();
-                SetIsEnter(true);
-            }
-        }
+        private void SetIsAgro(bool status) => IsAgro = status;
 
-        private void OnTriggerExit(Collider player)
-        {
-            if (_isEnter)
-            {
-                Exit?.Invoke();
-                SetIsEnter(false);
-            }
-        }
-
-        private void SetIsEnter(bool status) => _isEnter = status;
-        private void SetRadiusCollider() => _agroZone.radius = _staticData.AgroRange;
+        private bool IsMinDistance() => Vector3.Distance(transform.position, _gameFactory.Player.transform.position) < _agroRange;
     }
 }

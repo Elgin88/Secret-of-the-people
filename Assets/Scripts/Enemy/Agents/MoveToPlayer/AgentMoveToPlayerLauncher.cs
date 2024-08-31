@@ -1,7 +1,6 @@
 ﻿using Enemy.Agents.Attack;
 using Enemy.Agents.Patrol;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Enemy.Agents.MoveToPlayer
 {
@@ -17,22 +16,29 @@ namespace Enemy.Agents.MoveToPlayer
 
         private void Awake()
         {
-            _targetChecker = GetComponent<AgentAttackTargetFinder>();
-            _agentMoveToPlayer = GetComponent<AgentMoveToPlayer>();
-            _agentPatrol = GetComponent<AgentPatrol>();
-            _agroSetter = GetComponent<AgroSetter>();
-            
-            SubPlayerEnter();
-            SubPlayerExit();
+            GetComponents();
         }
 
-        private void OnDestroy()
+        private void FixedUpdate()
         {
-            UnsubPlayerEnter();
-            UnsubPlayerExit();
+            if (_agroSetter.IsAgro)
+            {
+                AgentOn();
+            }
+            else
+            {
+                AgentOff();
+            }
         }
 
-        public void AgentOn()
+        private void EnableTargetChecker() => _targetChecker.Enable();
+        private void DisableTargetChecker() => _targetChecker.Disable();
+        private void EnableAgentMove() => _agentMoveToPlayer.EnableAgent();
+        private void DisableAgentMove() => _agentMoveToPlayer.DisableAgent();
+        private void EnableAgentPatrol() => _agentPatrol.AgentEnable();
+        private void DisableAgentPatrol() => _agentPatrol.AgentDisable();
+
+        private void AgentOn()
         {
             DisableAgentPatrol();
             EnableAgentMove();
@@ -46,15 +52,12 @@ namespace Enemy.Agents.MoveToPlayer
             DisableTargetChecker();
         }
 
-        private void EnableTargetChecker() => _targetChecker.Enable();
-        private void DisableTargetChecker() => _targetChecker.Disable();
-        private void SubPlayerExit() => _agroSetter.Exit += AgentOff;
-        private void SubPlayerEnter() => _agroSetter.Enter += AgentOn;
-        private void UnsubPlayerExit() => _agroSetter.Exit -= AgentOff;
-        private void UnsubPlayerEnter() => _agroSetter.Enter -= AgentOn;
-        private void EnableAgentMove() => _agentMoveToPlayer.EnableAgent();
-        private void DisableAgentMove() => _agentMoveToPlayer.DisableAgent();
-        private void EnableAgentPatrol() => _agentPatrol.AgentEnable();
-        private void DisableAgentPatrol() => _agentPatrol.AgentDisable();
+        private void GetComponents()
+        {
+            _targetChecker = GetComponent<AgentAttackTargetFinder>();
+            _agentMoveToPlayer = GetComponent<AgentMoveToPlayer>();
+            _agentPatrol = GetComponent<AgentPatrol>();
+            _agroSetter = GetComponent<AgroSetter>();
+        }
     }
 }

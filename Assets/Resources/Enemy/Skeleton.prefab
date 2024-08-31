@@ -606,74 +606,6 @@ Transform:
   - {fileID: 2045917292186559333}
   m_Father: {fileID: 3850623580777976833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3372880269063273216
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9115283724332310692}
-  - component: {fileID: 4206345260115878526}
-  - component: {fileID: 3534666128362834738}
-  m_Layer: 14
-  m_Name: AgroZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9115283724332310692
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3372880269063273216}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7171436434876198669}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4206345260115878526
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3372880269063273216}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 8
-  m_Center: {x: 0, y: 0.8, z: 0}
---- !u!114 &3534666128362834738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3372880269063273216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f367b51371ef904aab84de338525ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
-  _agroZone: {fileID: 4206345260115878526}
 --- !u!1 &3402871146048972335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,7 +1386,6 @@ Transform:
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 9115283724332310692}
   - {fileID: 9044219706593725082}
   - {fileID: 5694402581887639071}
   m_Father: {fileID: 0}
@@ -1537,9 +1468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266851c8c9b4646d4b1a1b80b72bc071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackAnimation: {fileID: 309231018445043860}
-  _runAnimation: {fileID: 8509568553172309415}
-  _hitAnimation: {fileID: 4899319783602193635}
 --- !u!114 &5211133151828398334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1552,9 +1480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b080d5eb897452ca8b45e5b4c57e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationsSetter: {fileID: 3327770237539775674}
-  _navMeshAgent: {fileID: 6423952209126061127}
-  _speedSetter: {fileID: 3157147941812564663}
 --- !u!114 &84307021098974875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,8 +1492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0029479e97c74959a3484cffcb12304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyAnimationSetter: {fileID: 3327770237539775674}
-  _agentAttackLauncher: {fileID: 6543521841988050893}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
   _hitPoint: {fileID: 9044219706593725082}
   _target:
@@ -1586,10 +1509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22741b2e89784b599a8abd1e50ad240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationSetter: {fileID: 3327770237539775674}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
-  _navMeshAgent: {fileID: 6423952209126061127}
-  _speedSetter: {fileID: 3157147941812564663}
   _groundMask:
     serializedVersion: 2
     m_Bits: 65536
@@ -1605,10 +1525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793227f1f109243aab207bfe909b0c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agentMoveToPlayer: {fileID: 5211133151828398334}
-  _targetChecker: {fileID: 5126608844793043368}
-  _agentPatrol: {fileID: 1111474936639502434}
-  _agroZone: {fileID: 3534666128362834738}
 --- !u!114 &5126608844793043368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,7 +1537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96841a1218fe04c218c3317f99170c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackAnimation: {fileID: 309231018445043860}
   _hitPoint: {fileID: 9044219706593725082}
   _target:
     serializedVersion: 2
@@ -1652,7 +1567,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
-  _animator: {fileID: 3847802125550302583}
 --- !u!114 &8509568553172309415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1666,8 +1580,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
-  _speedSetter: {fileID: 3157147941812564663}
-  _animator: {fileID: 3847802125550302583}
 --- !u!114 &4899319783602193635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1694,7 +1606,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
-  _agroZone: {fileID: 4206345260115878526}
 --- !u!114 &3157147941812564663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,10 +1631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97397fa475564c6f93957f5ea7428c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveToPlayerLauncher: {fileID: 3736759000335435549}
-  _attackTargetFinder: {fileID: 5126608844793043368}
-  _patrolLauncher: {fileID: 717682111826112868}
-  _agentAttack: {fileID: 84307021098974875}
 --- !u!114 &717682111826112868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1736,7 +1643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b10295bb8989418a9526b15cdc58803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agentPatrol: {fileID: 1111474936639502434}
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0

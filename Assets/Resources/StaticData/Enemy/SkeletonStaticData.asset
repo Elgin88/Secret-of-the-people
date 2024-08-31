@@ -15,7 +15,7 @@ MonoBehaviour:
   StartHealth: 1
   Damage: 1
   AttackRange: 1
-  AgroRange: 8
+  AgroRange: 10
   RadiusOfHitSphere: 0.5
   MoveToPlayerSpeed: 2
   PatrolSpeed: 1
