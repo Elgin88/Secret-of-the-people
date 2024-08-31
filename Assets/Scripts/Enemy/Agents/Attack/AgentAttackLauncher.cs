@@ -1,4 +1,5 @@
-﻿using Enemy.Agents.MoveToPlayer;
+﻿using System;
+using Enemy.Agents.MoveToPlayer;
 using Enemy.Agents.Patrol;
 using UnityEngine;
 
@@ -18,6 +19,11 @@ namespace Enemy.Agents.Attack
         private void Awake() => _attackTargetFinder.TargetIsFound += AgentOn;
 
         private void OnDestroy() => _attackTargetFinder.TargetIsFound -= AgentOn;
+
+        private void Update()
+        {
+            Debug.Log("1");
+        }
 
         public void AgentOn()
         {

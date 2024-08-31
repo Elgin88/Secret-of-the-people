@@ -1253,16 +1253,16 @@
               <e p="Attack" t="Include">
                 <e p="AgentAttack.cs" t="Include" />
                 <e p="AgentAttackLauncher.cs" t="Include" />
-                <e p="TargetFindChecker.cs" t="Include" />
+                <e p="AgentAttackTargetFinder.cs" t="Include" />
               </e>
-              <e p="IEnemyAgent.cs" t="Include" />
               <e p="MoveToPlayer" t="Include">
                 <e p="AgentMoveToPlayer.cs" t="Include" />
-                <e p="AgroZone.cs" t="Include" />
-                <e p="MoveToPlayerChecker.cs" t="Include" />
+                <e p="AgentMoveToPlayerLauncher.cs" t="Include" />
+                <e p="AgroSetter.cs" t="Include" />
               </e>
               <e p="Patrol" t="Include">
                 <e p="AgentPatrol.cs" t="Include" />
+                <e p="AgentPatrolLauncher.cs" t="Include" />
               </e>
             </e>
             <e p="Animations" t="Include">
@@ -1272,8 +1272,8 @@
               <e p="IEnemyAnimationSetter.cs" t="Include" />
               <e p="RunAnimation.cs" t="Include" />
             </e>
-            <e p="EnemyStatic.cs" t="Include" />
             <e p="Logic" t="Include">
+              <e p="EnemyStatic.cs" t="Include" />
               <e p="HealthChanger.cs" t="Include" />
               <e p="IHealthChanger.cs" t="Include" />
               <e p="SpeedSetter.cs" t="Include" />
