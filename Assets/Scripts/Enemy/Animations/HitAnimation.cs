@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Enemy.Animations
 {
@@ -15,6 +16,11 @@ namespace Enemy.Animations
         public void Play() => SetHit(true);
 
         public void StopPlay() => SetHit(false);
+
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+        }
 
         private void SetHit(bool status)
         {

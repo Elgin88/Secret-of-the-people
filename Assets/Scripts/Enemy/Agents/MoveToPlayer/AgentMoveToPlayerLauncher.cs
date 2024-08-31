@@ -1,6 +1,7 @@
 ﻿using Enemy.Agents.Attack;
 using Enemy.Agents.Patrol;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Enemy.Agents.MoveToPlayer
 {
@@ -9,13 +10,18 @@ namespace Enemy.Agents.MoveToPlayer
 
     public class AgentMoveToPlayerLauncher : MonoBehaviour
     {
-        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
-        [SerializeField] private AgentAttackTargetFinder _targetChecker;
-        [SerializeField] private AgentPatrol _agentPatrol;
-        [SerializeField] private AgroSetter _agroZone;
+        private AgentAttackTargetFinder _targetChecker;
+        private AgentMoveToPlayer _agentMoveToPlayer;
+        private AgentPatrol _agentPatrol;
+        private AgroSetter _agroSetter;
 
         private void Awake()
         {
+            _targetChecker = GetComponent<AgentAttackTargetFinder>();
+            _agentMoveToPlayer = GetComponent<AgentMoveToPlayer>();
+            _agentPatrol = GetComponent<AgentPatrol>();
+            _agroSetter = GetComponent<AgroSetter>();
+            
             SubPlayerEnter();
             SubPlayerExit();
         }
@@ -42,10 +48,10 @@ namespace Enemy.Agents.MoveToPlayer
 
         private void EnableTargetChecker() => _targetChecker.Enable();
         private void DisableTargetChecker() => _targetChecker.Disable();
-        private void SubPlayerExit() => _agroZone.Exit += AgentOff;
-        private void SubPlayerEnter() => _agroZone.Enter += AgentOn;
-        private void UnsubPlayerExit() => _agroZone.Exit -= AgentOff;
-        private void UnsubPlayerEnter() => _agroZone.Enter -= AgentOn;
+        private void SubPlayerExit() => _agroSetter.Exit += AgentOff;
+        private void SubPlayerEnter() => _agroSetter.Enter += AgentOn;
+        private void UnsubPlayerExit() => _agroSetter.Exit -= AgentOff;
+        private void UnsubPlayerEnter() => _agroSetter.Enter -= AgentOn;
         private void EnableAgentMove() => _agentMoveToPlayer.EnableAgent();
         private void DisableAgentMove() => _agentMoveToPlayer.DisableAgent();
         private void EnableAgentPatrol() => _agentPatrol.AgentEnable();

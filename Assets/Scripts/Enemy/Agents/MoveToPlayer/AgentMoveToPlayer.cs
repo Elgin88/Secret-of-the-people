@@ -1,4 +1,5 @@
-﻿using Enemy.Animations;
+﻿using System;
+using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using UnityEngine;
@@ -13,14 +14,21 @@ namespace Enemy.Agents.MoveToPlayer
 
     public class AgentMoveToPlayer : MonoBehaviour
     {
-        [SerializeField] private EnemyAnimationsSetter _animationsSetter;
-        [SerializeField] private NavMeshAgent _navMeshAgent;
-        [SerializeField] private SpeedSetter _speedSetter;
-
+        private EnemyAnimationsSetter _animationsSetter;
+        private NavMeshAgent _navMeshAgent;
+        private SpeedSetter _speedSetter;
+        
         private IGameFactory _gameFactory;
         private Transform _target => _gameFactory.Player.transform;
 
         public void Construct(IGameFactory iGameFactory) => _gameFactory = iGameFactory;
+
+        private void Awake()
+        {
+            _animationsSetter = GetComponent<EnemyAnimationsSetter>();
+            _navMeshAgent = GetComponent<NavMeshAgent>();
+            _speedSetter = GetComponent<SpeedSetter>();
+        }
 
         private void Start() => DisableAgent();
 

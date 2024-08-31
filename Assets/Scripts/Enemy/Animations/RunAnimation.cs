@@ -1,4 +1,5 @@
-﻿using Enemy.Logic;
+﻿using System;
+using Enemy.Logic;
 using StaticData;
 using UnityEngine;
 
@@ -10,8 +11,15 @@ namespace Enemy.Animations
     public class RunAnimation : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private SpeedSetter _speedSetter;
-        [SerializeField] private Animator _animator;
+        
+        private SpeedSetter _speedSetter;
+        private Animator _animator;
+
+        private void Awake()
+        {
+            _speedSetter = GetComponent<SpeedSetter>();
+            _animator = GetComponent<Animator>();
+        }
 
         public void Play()
         {

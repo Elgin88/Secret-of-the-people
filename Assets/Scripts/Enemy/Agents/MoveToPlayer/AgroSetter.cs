@@ -15,7 +15,11 @@ namespace Enemy.Agents.MoveToPlayer
 
         public event Action Exit;
 
-        private void Awake() => SetRadiusCollider();
+        private void Awake()
+        {
+            Debug.Log("Переделать этот скрипт без физики, проверка должна быть через дистанцию, а не через физику");
+            SetRadiusCollider();
+        }
 
         private void OnTriggerEnter(Collider player)
         {

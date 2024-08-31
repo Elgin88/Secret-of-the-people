@@ -15,7 +15,7 @@ namespace Enemy.Logic
 
         public int CurrentHealth => _currentHealth;
 
-        public Action<int, int> OnHealthChanged;
+        public Action<int, int> HealthChanged;
 
         private void Awake()
         {
@@ -59,6 +59,6 @@ namespace Enemy.Logic
             InvokeHealthChanged();
         }
 
-        public void InvokeHealthChanged() => OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
+        public void InvokeHealthChanged() => HealthChanged?.Invoke(_currentHealth, _maxHealth);
     }
 }

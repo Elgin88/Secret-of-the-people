@@ -1,4 +1,5 @@
-﻿using Enemy.Animations;
+﻿using System;
+using Enemy.Animations;
 using Player.Animations;
 using Player.Interfaces;
 using StaticData;
@@ -12,21 +13,23 @@ namespace Enemy.Agents.Attack
 
     public class AgentAttack : MonoBehaviour
     {
-        [SerializeField] private EnemyAnimationsSetter _enemyAnimationSetter;
-        [SerializeField] private AgentAttackLauncher _agentAttackLauncher;
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;
 
+        private EnemyAnimationsSetter _enemyAnimationSetter;
+        private AgentAttackLauncher _agentAttackLauncher;
         private readonly Collider[] _resultOfHit = new Collider[1];
         private const float _radiusHitPoint = 0.3f;
         private int _damage => _staticData.Damage;
 
-        private void Start() => SetEnabled(false);
-
-        private void FixedUpdate()
+        private void Awake()
         {
+            _enemyAnimationSetter = GetComponent<EnemyAnimationsSetter>();
+            _agentAttackLauncher = GetComponent<AgentAttackLauncher>();
         }
+
+        private void Start() => SetEnabled(false);
 
         public void EnableAgent()
         {

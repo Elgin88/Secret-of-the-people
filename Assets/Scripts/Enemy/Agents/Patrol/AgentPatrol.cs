@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Enemy.Animations;
 using Enemy.Logic;
 using StaticData;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Enemy.Agents.Patrol
 {
@@ -14,11 +16,12 @@ namespace Enemy.Agents.Patrol
 
     public partial class AgentPatrol : MonoBehaviour
     {
-        [SerializeField] private EnemyAnimationsSetter _animationSetter;
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private NavMeshAgent _navMeshAgent;
-        [SerializeField] private SpeedSetter _speedSetter;
         [SerializeField] private LayerMask _groundMask;
+        
+        private EnemyAnimationsSetter _animationSetter;
+        private NavMeshAgent _navMeshAgent;
+        private SpeedSetter _speedSetter;
 
         private const int _rayLength = 2;
         private Vector3 _targetPosition;
@@ -26,6 +29,13 @@ namespace Enemy.Agents.Patrol
         private int _maxRange => _staticData.MaxPatrolRange;
         private int _minRange => _staticData.MinPatrolRange;
         private int _minDistanceToPlayer => _staticData.MinDistanceToPlayer;
+
+        private void Awake()
+        {
+            _animationSetter = GetComponent<EnemyAnimationsSetter>();
+            _navMeshAgent = GetComponent<NavMeshAgent>();
+            _speedSetter = GetComponent<SpeedSetter>();
+        }
 
         public void AgentEnable()
         {

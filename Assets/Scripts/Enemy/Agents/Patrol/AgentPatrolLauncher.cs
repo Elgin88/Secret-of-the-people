@@ -6,7 +6,12 @@ namespace Enemy.Agents.Patrol
 {
     public class AgentPatrolLauncher : MonoBehaviour
     {
-        [SerializeField] private AgentPatrol _agentPatrol;
+        private AgentPatrol _agentPatrol;
+
+        private void Awake()
+        {
+            _agentPatrol = GetComponent<AgentPatrol>();
+        }
 
         public void AgentOn()
         {

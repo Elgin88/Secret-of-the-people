@@ -6,7 +6,6 @@ namespace Enemy.Agents.Attack
 {
     public class AgentAttackTargetFinder : MonoBehaviour
     {
-        [SerializeField] private AttackAnimation _attackAnimation;
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;
 

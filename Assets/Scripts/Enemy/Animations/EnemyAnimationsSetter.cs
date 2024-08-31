@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Enemy.Animations
 {
@@ -8,11 +9,18 @@ namespace Enemy.Animations
 
     public class EnemyAnimationsSetter : MonoBehaviour, IEnemyAnimationSetter
     {
-        [SerializeField] private AttackAnimation _attackAnimation;
-        [SerializeField] private RunAnimation _runAnimation;
-        [SerializeField] private HitAnimation _hitAnimation;
+        private AttackAnimation _attackAnimation;
+        private RunAnimation _runAnimation;
+        private HitAnimation _hitAnimation;
 
         private void Start() => PlayIdle();
+
+        private void Awake()
+        {
+            _attackAnimation = GetComponent<AttackAnimation>();
+            _runAnimation = GetComponent<RunAnimation>();
+            _hitAnimation = GetComponent<HitAnimation>();
+        }
 
         public void PlayRun()
         {

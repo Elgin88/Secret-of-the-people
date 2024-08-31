@@ -8,11 +8,17 @@ namespace Enemy.Animations
     public class AttackAnimation : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private Animator _animator;
+        
+        private Animator _animator;
 
         private float _baseSpeed => _staticData.AttackAnimationSpeed;
 
-        private void Awake() => SetAnimationSpeed();
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+            
+            SetAnimationSpeed();
+        }
 
         public void Play()
         {
