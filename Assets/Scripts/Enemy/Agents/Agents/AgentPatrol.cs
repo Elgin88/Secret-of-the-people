@@ -32,7 +32,7 @@ namespace Enemy.Agents.Agents
         public void On()
         {
             SetEnabled(true);
-            SetEnabledNavMesh(true);
+            SetIsEnabledNavMesh(true);
             SetPatrolSpeed();
             FindPosition();
             PlayAnimationRun();
@@ -42,7 +42,7 @@ namespace Enemy.Agents.Agents
         public void Off()
         {
             StopAnimationRun();
-            SetEnabledNavMesh(false);
+            SetIsEnabledNavMesh(false);
             SetEnabled(false);
         }
 
@@ -58,7 +58,7 @@ namespace Enemy.Agents.Agents
         
         private void PlayAnimationRun() => _animationSetter.PlayRun();
         private void StopAnimationRun() => _animationSetter.StopPlayRun();
-        private void SetEnabledNavMesh(bool status) => _navMeshAgent.isStopped = !status;
+        private void SetIsEnabledNavMesh(bool status) => _navMeshAgent.isStopped = !status;
         private bool IsOnGround() => Physics.Raycast(_targetPosition, Vector3.down, _rayLength, _groundMask);
         private int GetRandomValue() => Random.Range(_minRange, _maxRange);
         private bool IsMinDistance() => Vector3.Distance(_position, _targetPosition) < _minDistanceToPlayer;
