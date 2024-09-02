@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Canvas;
-using Enemy.Agents.AgentMoveToPlayer;
+using Enemy.Agents.Agents;
 using Enemy.Agents.AgentsCheckers;
 using Infrastructure.Services.AssetManagement;
 using Player;
@@ -70,7 +70,7 @@ namespace Infrastructure.Services.Factory
             {
                 GameObject skeleton = CreateGameObject(StaticAssetPath.Sceleton, point.transform.position);
 
-                skeleton.GetComponent<MoveToPlayer>().Construct(this);
+                skeleton.GetComponent<AgentMoveToPlayer>().Construct(this);
                 skeleton.GetComponent<Agro>().Construct(this);
                 
                 skeletons.Add(skeleton);

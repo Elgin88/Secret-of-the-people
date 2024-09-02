@@ -40,18 +40,18 @@ namespace Enemy.Animations
 
         public void StopPlayHit() => _hitAnimation.StopPlay();
 
-        private void PlayIdle()
-        {
-            StopPlayRun();
-            StopPlayAttack();
-            StopPlayHit();
-        }
-
         private void GetComponents()
         {
             _attackAnimation = GetComponent<AttackAnimation>();
             _runAnimation = GetComponent<RunAnimation>();
             _hitAnimation = GetComponent<HitAnimation>();
+        }
+
+        private void PlayIdle()
+        {
+            StopPlayRun();
+            StopPlayAttack();
+            StopPlayHit();
         }
     }
 }

@@ -1250,21 +1250,19 @@
           </e>
           <e p="Enemy" t="Include">
             <e p="Agents" t="Include">
-              <e p="AgentAttack" t="Include">
-                <e p="Attack.cs" t="Include" />
-                <e p="AttackLauncher.cs" t="Include" />
-              </e>
-              <e p="AgentMoveToPlayer" t="Include">
-                <e p="MoveToPlayer.cs" t="Include" />
-                <e p="MoveToPlayerLauncher.cs" t="Include" />
-              </e>
-              <e p="AgentPatrol" t="Include">
-                <e p="Patrol.cs" t="Include" />
-                <e p="PatrolLauncher.cs" t="Include" />
+              <e p="Agents" t="Include">
+                <e p="AgentAttack.cs" t="Include" />
+                <e p="AgentMoveToPlayer.cs" t="Include" />
+                <e p="AgentPatrol.cs" t="Include" />
               </e>
               <e p="AgentsCheckers" t="Include">
                 <e p="Agro.cs" t="Include" />
                 <e p="CanAttacker.cs" t="Include" />
+              </e>
+              <e p="AgentsLaunchers" t="Include">
+                <e p="LauncherAttack.cs" t="Include" />
+                <e p="LauncherMoveToPlayer.cs" t="Include" />
+                <e p="LauncherPatrol.cs" t="Include" />
               </e>
             </e>
             <e p="Animations" t="Include">

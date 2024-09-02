@@ -1,18 +1,18 @@
 ﻿using Enemy.Agents.AgentsCheckers;
+using Enemy.Agents.AgentsLaunchers;
 using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Enemy.Agents.AgentMoveToPlayer
+namespace Enemy.Agents.Agents
 {
-    [RequireComponent(typeof(MoveToPlayerLauncher))]
-    [RequireComponent(typeof(Agro))]
     [RequireComponent(typeof(EnemyAnimationsSetter))]
     [RequireComponent(typeof(NavMeshAgent))]
+    [RequireComponent(typeof(SpeedSetter))]
 
-    public class MoveToPlayer : MonoBehaviour
+    public class AgentMoveToPlayer : MonoBehaviour
     {
         private EnemyAnimationsSetter _animationsSetter;
         private NavMeshAgent _navMeshAgent;
@@ -24,7 +24,10 @@ namespace Enemy.Agents.AgentMoveToPlayer
 
         private void Awake() => GetComponents();
 
-        private void Start() => Off();
+        private void Start()
+        {
+            Off();
+        }
 
         private void FixedUpdate()
         {

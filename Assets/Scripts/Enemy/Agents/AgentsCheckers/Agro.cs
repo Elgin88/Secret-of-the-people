@@ -23,7 +23,6 @@ namespace Enemy.Agents.AgentsCheckers
             if (IsAgroRange())
             {
                 Agred?.Invoke();
-                Debug.Log(Agred);
             }
         }
 

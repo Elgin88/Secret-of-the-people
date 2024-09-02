@@ -1,17 +1,18 @@
 ﻿using Enemy.Agents.AgentsCheckers;
+using Enemy.Agents.AgentsLaunchers;
 using Enemy.Animations;
 using Player.Animations;
 using Player.Interfaces;
 using StaticData;
 using UnityEngine;
 
-namespace Enemy.Agents.AgentAttack
+namespace Enemy.Agents.Agents
 {
-    [RequireComponent(typeof(AttackLauncher))]
+    [RequireComponent(typeof(LauncherAttack))]
     [RequireComponent(typeof(CanAttacker))]
     [RequireComponent(typeof(EnemyAnimationsSetter))]
 
-    public class Attack : MonoBehaviour
+    public class AgentAttack : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private Transform _hitPoint;
@@ -19,7 +20,7 @@ namespace Enemy.Agents.AgentAttack
 
         private EnemyAnimationsSetter _enemyAnimationSetter;
         private readonly Collider[] _resultOfHit = new Collider[1];
-        private AttackLauncher _attackLauncher;
+        private LauncherAttack _launcherAttack;
         private const float _radiusHitPoint = 0.3f;
         private int _damage => _staticData.Damage;
 
@@ -46,8 +47,10 @@ namespace Enemy.Agents.AgentAttack
         private void OnAttackEnded()
         {
             StopPlayAnimation();
+            AgentAttackOff();
         }
 
+        private void AgentAttackOff() => _launcherAttack.Off();
         private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
         private void StopPlayAnimation() => _enemyAnimationSetter.StopPlayAttack();
 
@@ -69,7 +72,7 @@ namespace Enemy.Agents.AgentAttack
         private void GetComponents()
         {
             _enemyAnimationSetter = GetComponent<EnemyAnimationsSetter>();
-            _attackLauncher = GetComponent<AttackLauncher>();
+            _launcherAttack = GetComponent<LauncherAttack>();
         }
     }
 }

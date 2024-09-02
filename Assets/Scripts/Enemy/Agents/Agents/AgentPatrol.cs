@@ -4,16 +4,14 @@ using Enemy.Logic;
 using StaticData;
 using UnityEngine;
 using UnityEngine.AI;
-using Random = UnityEngine.Random;
 
-namespace Enemy.Agents.AgentPatrol
+namespace Enemy.Agents.Agents
 {
     [RequireComponent(typeof(EnemyAnimationsSetter))]
-    [RequireComponent(typeof(PatrolLauncher))]
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(SpeedSetter))]
 
-    public partial class Patrol : MonoBehaviour
+    public class AgentPatrol : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private LayerMask _groundMask;
@@ -22,7 +20,7 @@ namespace Enemy.Agents.AgentPatrol
         private NavMeshAgent _navMeshAgent;
         private SpeedSetter _speedSetter;
 
-        private const int _rayLength = 2;
+        private const int _rayLength = 1;
         private Vector3 _targetPosition;
         private Vector3 _position => transform.position;
         private int _maxRange => _staticData.MaxPatrolRange;
@@ -33,39 +31,40 @@ namespace Enemy.Agents.AgentPatrol
 
         public void On()
         {
-            Enabled(true);
-            IsMoveNavMesh(true);
+            SetEnabled(true);
+            SetEnabledNavMesh(true);
             SetPatrolSpeed();
             FindPosition();
-            PlayAnimation();
+            PlayAnimationRun();
         }
+
 
         public void Off()
         {
-            StopAnimation();
-            IsMoveNavMesh(false);
-            Enabled(false);
+            StopAnimationRun();
+            SetEnabledNavMesh(false);
+            SetEnabled(false);
         }
 
         private void FixedUpdate()
         {
-            MoveNavMesh();
+            Move();
 
             if (IsMinDistance())
             {
                 FindPosition();
             }
         }
-
-        private void IsMoveNavMesh(bool status) => _navMeshAgent.isStopped = !status;
+        
+        private void PlayAnimationRun() => _animationSetter.PlayRun();
+        private void StopAnimationRun() => _animationSetter.StopPlayRun();
+        private void SetEnabledNavMesh(bool status) => _navMeshAgent.isStopped = !status;
         private bool IsOnGround() => Physics.Raycast(_targetPosition, Vector3.down, _rayLength, _groundMask);
-        private int GetRandom() => Random.Range(_minRange, _maxRange);
-        private bool IsMinDistance() => Vector3.Distance(transform.position, _targetPosition) < _minDistanceToPlayer;
-        private void Enabled(bool status) => enabled = status;
-        private void MoveNavMesh() => _navMeshAgent.destination = _targetPosition;
-        private void PlayAnimation() => _animationSetter.PlayRun();
-        private void StopAnimation() => _animationSetter.StopPlayRun();
-        private void SetTargetPosition() => _targetPosition = new Vector3(_position.x + GetRandom(), _position.y, _position.z + GetRandom());
+        private int GetRandomValue() => Random.Range(_minRange, _maxRange);
+        private bool IsMinDistance() => Vector3.Distance(_position, _targetPosition) < _minDistanceToPlayer;
+        private void SetEnabled(bool status) => enabled = status;
+        private void Move() => _navMeshAgent.destination = _targetPosition;
+        private void SetTargetPosition() => _targetPosition = new Vector3(_position.x + GetRandomValue(), _position.y, _position.z + GetRandomValue());
         private void FindPosition() => StartCoroutine(SetPosition());
 
         private void GetComponents()

@@ -22,5 +22,5 @@ MonoBehaviour:
   MaxPatrolRange: 10
   MinPatrolRange: -10
   MinDistanceToPlayer: 2
-  RunAnimationSpeed: 0.9
+  RunAnimationSpeed: 1.5
   AttackAnimationSpeed: 1.75
