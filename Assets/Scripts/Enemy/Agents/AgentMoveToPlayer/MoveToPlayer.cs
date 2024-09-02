@@ -1,40 +1,37 @@
-﻿using System;
+﻿using Enemy.Agents.AgentsCheckers;
 using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Enemy.Agents.MoveToPlayer
+namespace Enemy.Agents.AgentMoveToPlayer
 {
-    [RequireComponent(typeof(AgentMoveToPlayerLauncher))]
-    [RequireComponent(typeof(AgroSetter))]
+    [RequireComponent(typeof(MoveToPlayerLauncher))]
+    [RequireComponent(typeof(Agro))]
     [RequireComponent(typeof(EnemyAnimationsSetter))]
     [RequireComponent(typeof(NavMeshAgent))]
 
-    public class AgentMoveToPlayer : MonoBehaviour
+    public class MoveToPlayer : MonoBehaviour
     {
         private EnemyAnimationsSetter _animationsSetter;
         private NavMeshAgent _navMeshAgent;
         private SpeedSetter _speedSetter;
         
         private IGameFactory _gameFactory;
-        private Transform _target => _gameFactory.Player.transform;
 
         public void Construct(IGameFactory iGameFactory) => _gameFactory = iGameFactory;
 
-        private void Awake()
+        private void Awake() => GetComponents();
+
+        private void Start() => Off();
+
+        private void FixedUpdate()
         {
-            _animationsSetter = GetComponent<EnemyAnimationsSetter>();
-            _navMeshAgent = GetComponent<NavMeshAgent>();
-            _speedSetter = GetComponent<SpeedSetter>();
+            MoveToTarget();
         }
 
-        private void Start() => DisableAgent();
-
-        private void FixedUpdate() => MoveToTarget();
-
-        public void EnableAgent()
+        public void On()
         {
             SetEnabled(true);
             SetNavMesnEnabled(true);
@@ -42,10 +39,10 @@ namespace Enemy.Agents.MoveToPlayer
             PlayAnimation();
         }
 
-        public void DisableAgent()
+        public void Off()
         {
             SetEnabled(false);
-            SetNavMesnEnabled(false);
+            SetNavMesnEnabled(true);
             StopPlayAnimation();
         }
 
@@ -53,7 +50,14 @@ namespace Enemy.Agents.MoveToPlayer
         private void SetEnabled(bool status) => enabled = status;
         private void PlayAnimation() => _animationsSetter.PlayRun();
         private void StopPlayAnimation() => _animationsSetter.StopPlayRun();
-        private void MoveToTarget() => _navMeshAgent.destination = _target.position;
+        private void MoveToTarget() => _navMeshAgent.destination = _gameFactory.Player.transform.position;
+
+        private void GetComponents()
+        {
+            _animationsSetter = GetComponent<EnemyAnimationsSetter>();
+            _navMeshAgent = GetComponent<NavMeshAgent>();
+            _speedSetter = GetComponent<SpeedSetter>();
+        }
 
         private void SetNavMeshRunSpeed()
         {

@@ -1,46 +1,38 @@
-﻿using System;
+﻿using Enemy.Agents.AgentsCheckers;
 using Enemy.Animations;
 using Player.Animations;
 using Player.Interfaces;
 using StaticData;
 using UnityEngine;
 
-namespace Enemy.Agents.Attack
+namespace Enemy.Agents.AgentAttack
 {
-    [RequireComponent(typeof(AgentAttackLauncher))]
-    [RequireComponent(typeof(AgentAttackTargetFinder))]
+    [RequireComponent(typeof(AttackLauncher))]
+    [RequireComponent(typeof(CanAttacker))]
     [RequireComponent(typeof(EnemyAnimationsSetter))]
 
-    public class AgentAttack : MonoBehaviour
+    public class Attack : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;
 
         private EnemyAnimationsSetter _enemyAnimationSetter;
-        private AgentAttackLauncher _agentAttackLauncher;
         private readonly Collider[] _resultOfHit = new Collider[1];
+        private AttackLauncher _attackLauncher;
         private const float _radiusHitPoint = 0.3f;
         private int _damage => _staticData.Damage;
 
-        private void Awake()
-        {
-            _enemyAnimationSetter = GetComponent<EnemyAnimationsSetter>();
-            _agentAttackLauncher = GetComponent<AgentAttackLauncher>();
-        }
+        private void Awake() => GetComponents();
 
-        private void Start() => SetEnabled(false);
-
-        public void EnableAgent()
+        public void On()
         {
-            SetEnabled(true);
             PlayAnimation();
         }
 
-        public void DisableAgent()
+        public void Off()
         {
             StopPlayAnimation();
-            SetEnabled(false);
         }
 
         private void OnAttack()
@@ -54,12 +46,9 @@ namespace Enemy.Agents.Attack
         private void OnAttackEnded()
         {
             StopPlayAnimation();
-            AgentAttackOff();
         }
 
-        private void SetEnabled(bool status) => enabled = status;
         private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
-        private void AgentAttackOff() => _agentAttackLauncher.AgentOff();
         private void StopPlayAnimation() => _enemyAnimationSetter.StopPlayAttack();
 
         private bool IsHit(out Collider target)
@@ -75,6 +64,12 @@ namespace Enemy.Agents.Attack
         {
             player.GetComponent<IPlayerHealthChanger>().RemoveHealth(_damage);
             player.GetComponent<IPlayerAnimationsSetter>().PlayHit();
+        }
+
+        private void GetComponents()
+        {
+            _enemyAnimationSetter = GetComponent<EnemyAnimationsSetter>();
+            _attackLauncher = GetComponent<AttackLauncher>();
         }
     }
 }

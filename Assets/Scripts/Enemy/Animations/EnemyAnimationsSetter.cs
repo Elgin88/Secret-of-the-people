@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemy.Animations
 {
@@ -7,7 +6,7 @@ namespace Enemy.Animations
     [RequireComponent(typeof(HitAnimation))]
     [RequireComponent(typeof(RunAnimation))]
 
-    public class EnemyAnimationsSetter : MonoBehaviour, IEnemyAnimationSetter
+    public class EnemyAnimationsSetter : MonoBehaviour
     {
         private AttackAnimation _attackAnimation;
         private RunAnimation _runAnimation;
@@ -15,12 +14,7 @@ namespace Enemy.Animations
 
         private void Start() => PlayIdle();
 
-        private void Awake()
-        {
-            _attackAnimation = GetComponent<AttackAnimation>();
-            _runAnimation = GetComponent<RunAnimation>();
-            _hitAnimation = GetComponent<HitAnimation>();
-        }
+        private void Awake() => GetComponents();
 
         public void PlayRun()
         {
@@ -51,6 +45,13 @@ namespace Enemy.Animations
             StopPlayRun();
             StopPlayAttack();
             StopPlayHit();
+        }
+
+        private void GetComponents()
+        {
+            _attackAnimation = GetComponent<AttackAnimation>();
+            _runAnimation = GetComponent<RunAnimation>();
+            _hitAnimation = GetComponent<HitAnimation>();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Player
         public static readonly int IsRunHash = Animator.StringToHash("IsRun");
 
         public static readonly int IsHitHash = Animator.StringToHash("IsHit");
-
-        public static readonly int RunHash = Animator.StringToHash("Run");
+        
+        public static readonly int RunParametrHash = Animator.StringToHash("RunParametr");
     }
 }

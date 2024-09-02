@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Enemy.Animations;
 using Enemy.Logic;
 using StaticData;
@@ -7,14 +6,14 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-namespace Enemy.Agents.Patrol
+namespace Enemy.Agents.AgentPatrol
 {
     [RequireComponent(typeof(EnemyAnimationsSetter))]
-    [RequireComponent(typeof(AgentPatrolLauncher))]
+    [RequireComponent(typeof(PatrolLauncher))]
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(SpeedSetter))]
 
-    public partial class AgentPatrol : MonoBehaviour
+    public partial class Patrol : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private LayerMask _groundMask;
@@ -30,14 +29,9 @@ namespace Enemy.Agents.Patrol
         private int _minRange => _staticData.MinPatrolRange;
         private int _minDistanceToPlayer => _staticData.MinDistanceToPlayer;
 
-        private void Awake()
-        {
-            _animationSetter = GetComponent<EnemyAnimationsSetter>();
-            _navMeshAgent = GetComponent<NavMeshAgent>();
-            _speedSetter = GetComponent<SpeedSetter>();
-        }
+        private void Awake() => GetComponents();
 
-        public void AgentEnable()
+        public void On()
         {
             Enabled(true);
             IsMoveNavMesh(true);
@@ -46,7 +40,7 @@ namespace Enemy.Agents.Patrol
             PlayAnimation();
         }
 
-        public void AgentDisable()
+        public void Off()
         {
             StopAnimation();
             IsMoveNavMesh(false);
@@ -59,7 +53,7 @@ namespace Enemy.Agents.Patrol
 
             if (IsMinDistance())
             {
-                StartCoroutine(FindPosition());
+                FindPosition();
             }
         }
 
@@ -72,6 +66,14 @@ namespace Enemy.Agents.Patrol
         private void PlayAnimation() => _animationSetter.PlayRun();
         private void StopAnimation() => _animationSetter.StopPlayRun();
         private void SetTargetPosition() => _targetPosition = new Vector3(_position.x + GetRandom(), _position.y, _position.z + GetRandom());
+        private void FindPosition() => StartCoroutine(SetPosition());
+
+        private void GetComponents()
+        {
+            _animationSetter = GetComponent<EnemyAnimationsSetter>();
+            _navMeshAgent = GetComponent<NavMeshAgent>();
+            _speedSetter = GetComponent<SpeedSetter>();
+        }
 
         private void SetPatrolSpeed()
         {
@@ -79,7 +81,7 @@ namespace Enemy.Agents.Patrol
             _navMeshAgent.speed = _speedSetter.CurrentSpeed;
         }
 
-        private IEnumerator FindPosition()
+        private IEnumerator SetPosition()
         {
             SetTargetPosition();
 

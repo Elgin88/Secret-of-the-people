@@ -30,8 +30,8 @@ namespace Enemy.Animations
             SetAttack(false);
         }
 
-        private void SetAnimationSpeed() => _animator.SetFloat(EnemyStatic.AttackAnimationSpeed, _baseSpeed);
+        private void SetAnimationSpeed() => _animator?.SetFloat(EnemyStatic.AttackAnimationSpeed, _baseSpeed);
 
-        private void SetAttack(bool status) => _animator.SetBool(EnemyStatic.IsAttack, status);
+        private void SetAttack(bool status) => _animator?.SetBool(EnemyStatic.IsAttack, status);
     }
 }

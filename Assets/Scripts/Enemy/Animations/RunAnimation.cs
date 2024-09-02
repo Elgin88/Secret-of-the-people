@@ -15,11 +15,7 @@ namespace Enemy.Animations
         private SpeedSetter _speedSetter;
         private Animator _animator;
 
-        private void Awake()
-        {
-            _speedSetter = GetComponent<SpeedSetter>();
-            _animator = GetComponent<Animator>();
-        }
+        private void Start() => GetComponents();
 
         public void Play()
         {
@@ -32,11 +28,13 @@ namespace Enemy.Animations
             PlayAnimation(false);
         }
 
-        private void PlayAnimation(bool status) => _animator.SetBool(EnemyStatic.IsRun, status);
+        private void PlayAnimation(bool status) => _animator?.SetBool(EnemyStatic.IsRun, status);
+        private void SetAnimationSpeed() => _animator?.SetFloat(EnemyStatic.RunAnimationSpeed, _speedSetter.CurrentSpeed * _staticData.RunAnimationSpeed);
 
-        private void SetAnimationSpeed()
+        private void GetComponents()
         {
-            _animator.SetFloat(EnemyStatic.RunAnimationSpeed, _speedSetter.CurrentSpeed / _staticData.RunAnimationSpeed);
+            _speedSetter = GetComponent<SpeedSetter>();
+            _animator = GetComponent<Animator>();
         }
     }
 }

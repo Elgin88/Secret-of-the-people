@@ -24,6 +24,6 @@ namespace Player.Animations
             _animator.SetBool(PlayerStatic.IsRunHash, false);
         }
 
-        private void SetAnimationSpeed() => _animator.SetFloat(PlayerStatic.RunHash, _speedSetter.CurrentSpeed / _staticData.AnimationBaseRunSpeed);
+        private void SetAnimationSpeed() => _animator.SetFloat(PlayerStatic.RunParametrHash, _speedSetter.CurrentSpeed / _staticData.AnimationBaseRunSpeed);
     }
 }
