@@ -9,23 +9,16 @@ namespace Enemy.Animations
     {
         [SerializeField] private Animator _animator;
 
-        private bool _isHit = false;
-
-        public bool IsHit => _isHit;
-
-        public void Play() => SetHit(true);
-
-        public void StopPlay() => SetHit(false);
-
-        private void Awake()
+        public void Play()
         {
-            _animator = GetComponent<Animator>();
+            SetHit(true);
         }
 
-        private void SetHit(bool status)
+        public void StopPlay()
         {
-            _isHit = status;
-            _animator.SetBool(EnemyStatic.IsHit, status);
+            SetHit(false);
         }
+
+        private void SetHit(bool status) => _animator.SetBool(EnemyStatic.IsHit, status);
     }
 }

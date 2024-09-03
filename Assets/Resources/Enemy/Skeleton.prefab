@@ -1468,6 +1468,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266851c8c9b4646d4b1a1b80b72bc071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackAnimation: {fileID: 309231018445043860}
+  _runAnimation: {fileID: 8509568553172309415}
+  _hitAnimation: {fileID: 4899319783602193635}
 --- !u!114 &5211133151828398334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1480,6 +1483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b080d5eb897452ca8b45e5b4c57e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationsSetter: {fileID: 3327770237539775674}
+  _navMeshAgent: {fileID: 6423952209126061127}
+  _speedSetter: {fileID: 3157147941812564663}
 --- !u!114 &84307021098974875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1492,6 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0029479e97c74959a3484cffcb12304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyAnimationSetter: {fileID: 3327770237539775674}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
   _hitPoint: {fileID: 9044219706593725082}
   _target:
@@ -1509,7 +1516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22741b2e89784b599a8abd1e50ad240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animationSetter: {fileID: 3327770237539775674}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
+  _navMeshAgent: {fileID: 6423952209126061127}
+  _speedSetter: {fileID: 3157147941812564663}
   _groundMask:
     serializedVersion: 2
     m_Bits: 65536
@@ -1571,6 +1581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
+  _animator: {fileID: 3847802125550302583}
 --- !u!114 &8509568553172309415
 MonoBehaviour:
   m_ObjectHideFlags: 0

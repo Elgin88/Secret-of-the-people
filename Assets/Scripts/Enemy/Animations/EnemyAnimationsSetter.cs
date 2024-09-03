@@ -8,13 +8,9 @@ namespace Enemy.Animations
 
     public class EnemyAnimationsSetter : MonoBehaviour
     {
-        private AttackAnimation _attackAnimation;
-        private RunAnimation _runAnimation;
-        private HitAnimation _hitAnimation;
-
-        private void Start() => PlayIdle();
-
-        private void Awake() => GetComponents();
+        [SerializeField] private AttackAnimation _attackAnimation;
+        [SerializeField] private RunAnimation _runAnimation;
+        [SerializeField] private HitAnimation _hitAnimation;
 
         public void PlayRun()
         {
@@ -39,13 +35,6 @@ namespace Enemy.Animations
         public void StopPlayAttack() => _attackAnimation.StopPlay();
 
         public void StopPlayHit() => _hitAnimation.StopPlay();
-
-        private void GetComponents()
-        {
-            _attackAnimation = GetComponent<AttackAnimation>();
-            _runAnimation = GetComponent<RunAnimation>();
-            _hitAnimation = GetComponent<HitAnimation>();
-        }
 
         private void PlayIdle()
         {

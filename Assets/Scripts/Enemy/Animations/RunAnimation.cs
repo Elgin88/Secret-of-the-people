@@ -11,11 +11,8 @@ namespace Enemy.Animations
     public class RunAnimation : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
-        
-        private SpeedSetter _speedSetter;
-        private Animator _animator;
-
-        private void Start() => GetComponents();
+        [SerializeField] private SpeedSetter _speedSetter;
+        [SerializeField] private Animator _animator;
 
         public void Play()
         {
@@ -30,11 +27,5 @@ namespace Enemy.Animations
 
         private void PlayAnimation(bool status) => _animator?.SetBool(EnemyStatic.IsRun, status);
         private void SetAnimationSpeed() => _animator?.SetFloat(EnemyStatic.RunAnimationSpeed, _speedSetter.CurrentSpeed * _staticData.RunAnimationSpeed);
-
-        private void GetComponents()
-        {
-            _speedSetter = GetComponent<SpeedSetter>();
-            _animator = GetComponent<Animator>();
-        }
     }
 }

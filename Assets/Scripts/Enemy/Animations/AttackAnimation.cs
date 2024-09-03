@@ -8,15 +8,12 @@ namespace Enemy.Animations
     public class AttackAnimation : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
-        
-        private Animator _animator;
+        [SerializeField] private Animator _animator;
 
         private float _baseSpeed => _staticData.AttackAnimationSpeed;
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
-            
             SetAnimationSpeed();
         }
 
@@ -30,8 +27,8 @@ namespace Enemy.Animations
             SetAttack(false);
         }
 
-        private void SetAnimationSpeed() => _animator?.SetFloat(EnemyStatic.AttackAnimationSpeed, _baseSpeed);
+        private void SetAnimationSpeed() => _animator.SetFloat(EnemyStatic.AttackAnimationSpeed, _baseSpeed);
 
-        private void SetAttack(bool status) => _animator?.SetBool(EnemyStatic.IsAttack, status);
+        private void SetAttack(bool status) => _animator.SetBool(EnemyStatic.IsAttack, status);
     }
 }

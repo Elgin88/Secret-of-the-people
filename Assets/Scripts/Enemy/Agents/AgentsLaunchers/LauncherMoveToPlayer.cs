@@ -16,10 +16,10 @@ namespace Enemy.Agents.AgentsLaunchers
         [SerializeField] private LauncherPatrol _launcherPatrol;
         [SerializeField] private AgroChecker _agroChecker;
 
-        private void Awake()
+        private void Start()
         {
-            Off();
             SubAgro();
+            Off();
         }
 
         private void OnDestroy()

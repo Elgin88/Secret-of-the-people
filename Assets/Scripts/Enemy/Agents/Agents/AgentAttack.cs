@@ -1,5 +1,4 @@
-﻿using Enemy.Agents.AgentsCheckers;
-using Enemy.Agents.AgentsLaunchers;
+﻿using Enemy.Agents.AgentsLaunchers;
 using Enemy.Animations;
 using Player.Animations;
 using Player.Interfaces;
@@ -8,32 +7,43 @@ using UnityEngine;
 
 namespace Enemy.Agents.Agents
 {
-    [RequireComponent(typeof(LauncherAttack))]
-    [RequireComponent(typeof(CanAttackChecker))]
     [RequireComponent(typeof(EnemyAnimationsSetter))]
 
     public class AgentAttack : MonoBehaviour
     {
+        [SerializeField] private EnemyAnimationsSetter _enemyAnimationSetter;
         [SerializeField] private MonsterStaticData _staticData;
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;
 
-        private EnemyAnimationsSetter _enemyAnimationSetter;
         private readonly Collider[] _resultOfHit = new Collider[1];
         private LauncherAttack _launcherAttack;
         private const float _radiusHitPoint = 0.3f;
         private int _damage => _staticData.Damage;
 
-        private void Awake() => GetComponents();
-
-        public void On()
+        private void OnEnable()
         {
             PlayAnimation();
         }
 
-        public void Off()
+        private void OnDisable()
         {
             StopPlayAnimation();
+        }
+
+        private void FixedUpdate()
+        {
+            PlayAnimation();
+        }
+
+        public void On()
+        {
+            enabled = true;
+        }
+
+        public void Off()
+        {
+            enabled = false;
         }
 
         private void OnAttack()
@@ -67,12 +77,6 @@ namespace Enemy.Agents.Agents
         {
             player.GetComponent<IPlayerHealthChanger>().RemoveHealth(_damage);
             player.GetComponent<IPlayerAnimationsSetter>().PlayHit();
-        }
-
-        private void GetComponents()
-        {
-            _enemyAnimationSetter = GetComponent<EnemyAnimationsSetter>();
-            _launcherAttack = GetComponent<LauncherAttack>();
         }
     }
 }

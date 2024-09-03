@@ -12,53 +12,43 @@ namespace Enemy.Agents.Agents
 
     public class AgentMoveToPlayer : MonoBehaviour
     {
-        private EnemyAnimationsSetter _animationsSetter;
-        private NavMeshAgent _navMeshAgent;
-        private SpeedSetter _speedSetter;
+        [SerializeField] private EnemyAnimationsSetter _animationsSetter;
+        [SerializeField] private NavMeshAgent _navMeshAgent;
+        [SerializeField] private SpeedSetter _speedSetter;
 
         private IGameFactory _gameFactory;
 
         public void Construct(IGameFactory iGameFactory) => _gameFactory = iGameFactory;
 
-        private void Awake() => GetComponents();
-
-        private void Start()
+        private void OnEnable()
         {
-            Off();
-        }
-
-        private void FixedUpdate()
-        {
-            MoveToTarget();
-        }
-
-        public void On()
-        {
-            SetEnabled(true);
-            SetNavMesnEnabled(true);
             SetNavMeshRunSpeed();
             PlayAnimation();
         }
 
-        public void Off()
+        private void OnDisable()
         {
-            SetEnabled(false);
-            SetNavMesnEnabled(true);
             StopPlayAnimation();
         }
 
-        private void SetNavMesnEnabled(bool status) => _navMeshAgent.isStopped = !status;
-        private void SetEnabled(bool status) => enabled = status;
+        private void FixedUpdate()
+        {
+            MoveToPlayer();
+        }
+
+        public void On()
+        {
+            enabled = true;
+        }
+
+        public void Off()
+        {
+            enabled = false;
+        }
+
         private void PlayAnimation() => _animationsSetter.PlayRun();
         private void StopPlayAnimation() => _animationsSetter.StopPlayRun();
-        private void MoveToTarget() => _navMeshAgent.destination = _gameFactory.Player.transform.position;
-
-        private void GetComponents()
-        {
-            _animationsSetter = GetComponent<EnemyAnimationsSetter>();
-            _navMeshAgent = GetComponent<NavMeshAgent>();
-            _speedSetter = GetComponent<SpeedSetter>();
-        }
+        private void MoveToPlayer() => _navMeshAgent.destination = _gameFactory.Player.transform.position;
 
         private void SetNavMeshRunSpeed()
         {
