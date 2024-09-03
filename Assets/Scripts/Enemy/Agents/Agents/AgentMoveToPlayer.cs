@@ -36,12 +36,12 @@ namespace Enemy.Agents.Agents
             MoveToPlayer();
         }
 
-        public void On()
+        public void Enable()
         {
             SetEnabled(true);
         }
 
-        public void Off()
+        public void Disable()
         {
             SetEnabled(false);
         }

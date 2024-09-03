@@ -12,18 +12,20 @@ namespace Enemy.Agents.AgentsCheckers
         private readonly float _radius = 0.3f;
 
         public Action IsCanAttack;
+        
+        public Action IsNotCanAttack;
 
         private void Start()
         {
-            Off();
+            Disable();
         }
 
-        public void On()
+        public void Enable()
         {
             SetEnabled(true);
         }
 
-        public void Off()
+        public void Disable()
         {
             SetEnabled(false);
         }
@@ -32,7 +34,7 @@ namespace Enemy.Agents.AgentsCheckers
         {
             if (TargetCount() > 0)
             {
-                IsCanAttack.Invoke();
+                IsCanAttack?.Invoke();
             }
         }
 

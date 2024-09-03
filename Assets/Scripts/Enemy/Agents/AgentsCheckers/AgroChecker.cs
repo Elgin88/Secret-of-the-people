@@ -10,9 +10,9 @@ namespace Enemy.Agents.AgentsCheckers
         [SerializeField] private MonsterStaticData _staticData;
 
         private IGameFactory _gameFactory;
-        private float _agroRange => _staticData.AgroRange;
-        private Vector3 _position => transform.position;
         private Vector3 _playerPosition => _gameFactory.Player.transform.position;
+        private Vector3 _position => transform.position;
+        private float _agroRange => _staticData.AgroRange;
 
         public Action Agred;
 
@@ -32,12 +32,12 @@ namespace Enemy.Agents.AgentsCheckers
             }
         }
 
-        public void On()
+        public void Enabled()
         {
             SetEnabled(true);
         }
 
-        public void Off()
+        public void Disable()
         {
             SetEnabled(false);
         }

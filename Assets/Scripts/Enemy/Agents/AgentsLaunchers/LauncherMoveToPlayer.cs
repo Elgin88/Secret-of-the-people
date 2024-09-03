@@ -27,12 +27,12 @@ namespace Enemy.Agents.AgentsLaunchers
         
         public void StartAgent()
         {
-            _agentMoveToPlayer.On();
+            _agentMoveToPlayer.Enable();
         }
 
         public void StopAgent()
         {
-            _agentMoveToPlayer.Off();
+            _agentMoveToPlayer.Disable();
         }
 
         private void OnAgro() => StartAgent();
