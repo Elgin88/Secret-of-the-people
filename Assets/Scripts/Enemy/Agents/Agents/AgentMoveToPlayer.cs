@@ -18,12 +18,11 @@ namespace Enemy.Agents.Agents
 
         private IGameFactory _gameFactory;
 
-        public void Construct(IGameFactory iGameFactory) => _gameFactory = iGameFactory;
+        public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
         private void OnEnable()
         {
             SetNavMeshRunSpeed();
-            PlayAnimation();
         }
 
         private void OnDisable()
@@ -33,19 +32,21 @@ namespace Enemy.Agents.Agents
 
         private void FixedUpdate()
         {
+            PlayAnimation();
             MoveToPlayer();
         }
 
         public void On()
         {
-            enabled = true;
+            SetEnabled(true);
         }
 
         public void Off()
         {
-            enabled = false;
+            SetEnabled(false);
         }
 
+        private void SetEnabled(bool status) => enabled = status;
         private void PlayAnimation() => _animationsSetter.PlayRun();
         private void StopPlayAnimation() => _animationsSetter.StopPlayRun();
         private void MoveToPlayer() => _navMeshAgent.destination = _gameFactory.Player.transform.position;

@@ -19,7 +19,7 @@ namespace Enemy.Agents.AgentsLaunchers
         private void Start()
         {
             SubIsCanAttack();
-            Off();
+            StopAgent();
         }
 
         private void OnDestroy()
@@ -27,17 +27,15 @@ namespace Enemy.Agents.AgentsLaunchers
             OnsubIsCanAttack();
         }
 
-        public void On()
+        public void StartAgent()
         {
         }
 
-        public void Off()
+        public void StopAgent()
         {
-            _agentAttack.Off();
-            enabled = false;
         }
 
-        private void SubIsCanAttack() => _canAttackChecker.IsCanAttack += On;
-        private void OnsubIsCanAttack() => _canAttackChecker.IsCanAttack -= On;
+        private void SubIsCanAttack() => _canAttackChecker.IsCanAttack += StartAgent;
+        private void OnsubIsCanAttack() => _canAttackChecker.IsCanAttack -= StartAgent;
     }
 }

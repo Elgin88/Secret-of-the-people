@@ -13,12 +13,12 @@ namespace Enemy.Agents.Agents
     {
         [SerializeField] private EnemyAnimationsSetter _enemyAnimationSetter;
         [SerializeField] private MonsterStaticData _staticData;
+        [SerializeField] private LauncherAttack _launcherAttack;
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;
 
         private readonly Collider[] _resultOfHit = new Collider[1];
-        private LauncherAttack _launcherAttack;
-        private const float _radiusHitPoint = 0.3f;
+        private const float _radiusHitSphere = 0.3f;
         private int _damage => _staticData.Damage;
 
         private void OnEnable()
@@ -38,13 +38,14 @@ namespace Enemy.Agents.Agents
 
         public void On()
         {
-            enabled = true;
+            SetEnabled(true);
         }
 
         public void Off()
         {
-            enabled = false;
+            SetEnabled(false);
         }
+
 
         private void OnAttack()
         {
@@ -59,14 +60,15 @@ namespace Enemy.Agents.Agents
             StopPlayAnimation();
             AgentAttackOff();
         }
-
-        private void AgentAttackOff() => _launcherAttack.Off();
+        
+        private void SetEnabled(bool status) => enabled = status;
+        private void AgentAttackOff() => _launcherAttack.StopAgent();
         private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
         private void StopPlayAnimation() => _enemyAnimationSetter.StopPlayAttack();
 
         private bool IsHit(out Collider target)
         {
-            int count = Physics.OverlapSphereNonAlloc(_hitPoint.position, _radiusHitPoint, _resultOfHit, _target);
+            int count = Physics.OverlapSphereNonAlloc(_hitPoint.position, _radiusHitSphere, _resultOfHit, _target);
 
             target = _resultOfHit[0];
 

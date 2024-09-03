@@ -1500,6 +1500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyAnimationSetter: {fileID: 3327770237539775674}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
+  _launcherAttack: {fileID: 6543521841988050893}
   _hitPoint: {fileID: 9044219706593725082}
   _target:
     serializedVersion: 2
@@ -1595,6 +1596,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
+  _speedSetter: {fileID: 3157147941812564663}
+  _animator: {fileID: 3847802125550302583}
 --- !u!114 &4899319783602193635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,8 +1650,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _launcherMoveToPlayer: {fileID: 3736759000335435549}
-  _launcherPatrol: {fileID: 717682111826112868}
   _canAttackChecker: {fileID: 5126608844793043368}
+  _launcherPatrol: {fileID: 717682111826112868}
   _agentAttack: {fileID: 84307021098974875}
 --- !u!114 &717682111826112868
 MonoBehaviour:

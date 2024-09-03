@@ -16,6 +16,8 @@ namespace Enemy.Agents.AgentsCheckers
 
         public Action Agred;
 
+        public Action NotAgred;
+
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
         private void FixedUpdate()
@@ -24,18 +26,23 @@ namespace Enemy.Agents.AgentsCheckers
             {
                 Agred?.Invoke();
             }
+            else
+            {
+                NotAgred?.Invoke();
+            }
         }
 
         public void On()
         {
-            enabled = true;
+            SetEnabled(true);
         }
 
         public void Off()
         {
-            enabled = false;
+            SetEnabled(false);
         }
 
+        private void SetEnabled(bool status) => enabled = status;
         private bool IsAgroRange() => Vector3.Distance(_position, _playerPosition) < _agroRange;
     }
 }

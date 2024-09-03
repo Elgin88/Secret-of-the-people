@@ -1256,8 +1256,8 @@
                 <e p="AgentPatrol.cs" t="Include" />
               </e>
               <e p="AgentsCheckers" t="Include">
-                <e p="Agro.cs" t="Include" />
-                <e p="CanAttacker.cs" t="Include" />
+                <e p="AgroChecker.cs" t="Include" />
+                <e p="CanAttackChecker.cs" t="Include" />
               </e>
               <e p="AgentsLaunchers" t="Include">
                 <e p="LauncherAttack.cs" t="Include" />

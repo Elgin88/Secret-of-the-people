@@ -1,4 +1,5 @@
-﻿using Enemy.Agents.Agents;
+﻿using System;
+using Enemy.Agents.Agents;
 using UnityEngine;
 
 namespace Enemy.Agents.AgentsLaunchers
@@ -9,27 +10,17 @@ namespace Enemy.Agents.AgentsLaunchers
 
         private void Start()
         {
-            On();
+            StartAgent();
         }
 
-        private void OnEnable()
+        public void StartAgent()
         {
             _agentPatrol.On();
         }
 
-        private void OnDisable()
+        public void StopAgent()
         {
             _agentPatrol.Off();
-        }
-
-        public void On()
-        {
-            enabled = true;
-        }
-
-        public void Off()
-        {
-            enabled = false;
         }
     }
 }

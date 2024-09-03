@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Enemy.Agents.AgentsCheckers;
 using Enemy.Animations;
 using Enemy.Logic;
 using StaticData;
@@ -28,29 +29,29 @@ namespace Enemy.Agents.Agents
 
         private void OnEnable()
         {
-            SetPatrolSpeed();
             FindPosition();
+            SetPatrolSpeed();
         }
 
         private void OnDisable()
         {
             StopAnimationRun();
         }
-
+        
         public void On()
         {
-            enabled = true;
+            SetEnabled(true);
         }
-
+        
         public void Off()
         {
-            enabled = false;
+            SetEnabled(false);
         }
 
         private void FixedUpdate()
         {
-            Patrol();
-            PlayAnimationRun();
+            Move();
+            PlayAnimation();
 
             if (IsMinDistance())
             {
@@ -58,14 +59,15 @@ namespace Enemy.Agents.Agents
             }
         }
 
-        private void PlayAnimationRun() => _animationSetter.PlayRun();
+        private void PlayAnimation() => _animationSetter.PlayRun();
         private void StopAnimationRun() => _animationSetter.StopPlayRun();
         private bool IsOnGround() => Physics.Raycast(_targetPosition, Vector3.down, _rayLength, _groundMask);
         private int GetRandomValue() => Random.Range(_minRange, _maxRange);
         private bool IsMinDistance() => Vector3.Distance(_position, _targetPosition) < _minDistanceToPlayer;
-        private void Patrol() => _navMeshAgent.destination = _targetPosition;
+        private void Move() => _navMeshAgent.destination = _targetPosition;
         private void SetTargetPosition() => _targetPosition = new Vector3(_position.x + GetRandomValue(), _position.y, _position.z + GetRandomValue());
         private void FindPosition() => StartCoroutine(SetPosition());
+        private void SetEnabled(bool status) => enabled = status;
 
         private void SetPatrolSpeed()
         {

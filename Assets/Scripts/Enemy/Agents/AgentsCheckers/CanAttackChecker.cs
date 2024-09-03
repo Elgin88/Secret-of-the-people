@@ -20,14 +20,14 @@ namespace Enemy.Agents.AgentsCheckers
 
         public void On()
         {
-            enabled = true;
+            SetEnabled(true);
         }
 
         public void Off()
         {
-            enabled = false;
+            SetEnabled(false);
         }
-
+        
         private void FixedUpdate()
         {
             if (TargetCount() > 0)
@@ -37,5 +37,6 @@ namespace Enemy.Agents.AgentsCheckers
         }
 
         private int TargetCount() => Physics.OverlapSphereNonAlloc(_hitPoint.position, _radius, _results, _target);
+        private void SetEnabled(bool status) => enabled = status;
     }
 }

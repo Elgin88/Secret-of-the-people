@@ -168,7 +168,7 @@ namespace DevionGames
                         onSelectCallback?.Invoke(null);
                         Close();
                     }
-                    GUI.Label(new Rect(rect2.x, rect2.y, 20f, 20f), EditorGUIUtility.LoadRequired("d_ScriptableObject On Icon") as Texture2D);
+                    GUI.Label(new Rect(rect2.x, rect2.y, 20f, 20f), EditorGUIUtility.LoadRequired("d_ScriptableObject StartAgent Icon") as Texture2D);
                 }
 
                 GUIContent createContent = new GUIContent("Create New " + this.m_Type.Name);
@@ -180,7 +180,7 @@ namespace DevionGames
                     onCreateCallback?.Invoke();
                     Close();
                 }
-                GUI.Label(new Rect(rect1.x, rect1.y, 20f, 20f), EditorGUIUtility.LoadRequired("d_ScriptableObject On Icon") as Texture2D);
+                GUI.Label(new Rect(rect1.x, rect1.y, 20f, 20f), EditorGUIUtility.LoadRequired("d_ScriptableObject StartAgent Icon") as Texture2D);
 
 
             }
