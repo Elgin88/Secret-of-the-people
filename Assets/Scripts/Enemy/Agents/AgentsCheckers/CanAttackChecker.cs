@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Enemy.Agents.AgentsCheckers
 {
-    public class CanAttacker : MonoBehaviour
+    public class CanAttackChecker : MonoBehaviour
     {
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;

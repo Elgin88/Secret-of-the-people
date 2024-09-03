@@ -1,6 +1,4 @@
-﻿using Enemy.Agents.AgentsCheckers;
-using Enemy.Agents.AgentsLaunchers;
-using Enemy.Animations;
+﻿using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using UnityEngine;
@@ -17,7 +15,7 @@ namespace Enemy.Agents.Agents
         private EnemyAnimationsSetter _animationsSetter;
         private NavMeshAgent _navMeshAgent;
         private SpeedSetter _speedSetter;
-        
+
         private IGameFactory _gameFactory;
 
         public void Construct(IGameFactory iGameFactory) => _gameFactory = iGameFactory;

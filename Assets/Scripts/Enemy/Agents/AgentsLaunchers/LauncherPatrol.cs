@@ -1,28 +1,28 @@
-﻿using Enemy.Agents.Agents;
+﻿using System;
+using Enemy.Agents.Agents;
 using UnityEngine;
 
 namespace Enemy.Agents.AgentsLaunchers
 {
     public class LauncherPatrol : MonoBehaviour
     {
-        private AgentPatrol _agentPatrol;
+        [SerializeField] private AgentPatrol _agentPatrol;
 
         private void Start()
         {
-            SetComponents();
             On();
         }
 
-        private void On()
+        public void On()
         {
             _agentPatrol.On();
+            enabled = true;
         }
 
-        private void Off()
+        public void Off()
         {
             _agentPatrol.Off();
+            enabled = false;
         }
-
-        private void SetComponents() => _agentPatrol = GetComponent<AgentPatrol>();
     }
 }

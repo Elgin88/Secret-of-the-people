@@ -5,20 +5,19 @@ using UnityEngine;
 namespace Enemy.Agents.AgentsLaunchers
 {
     [RequireComponent(typeof(LauncherMoveToPlayer))]
-    [RequireComponent(typeof(CanAttacker))]
+    [RequireComponent(typeof(CanAttackChecker))]
     [RequireComponent(typeof(LauncherPatrol))]
     [RequireComponent(typeof(AgentAttack))]
 
     public class LauncherAttack : MonoBehaviour
     {
-        private LauncherMoveToPlayer _launcherMoveToPlayer;
-        private LauncherPatrol _launcherPatrol;
-        private CanAttacker _canAttacker;
-        private AgentAttack _agentAttack;
+        [SerializeField] private LauncherMoveToPlayer _launcherMoveToPlayer;
+        [SerializeField] private LauncherPatrol _launcherPatrol;
+        [SerializeField] private CanAttackChecker _canAttackChecker;
+        [SerializeField] private AgentAttack _agentAttack;
 
         private void Awake()
         {
-            GetComponents();
             SubIsCanAttack();
         }
 
@@ -35,15 +34,7 @@ namespace Enemy.Agents.AgentsLaunchers
         {
         }
 
-        private void SubIsCanAttack() => _canAttacker.IsCanAttack += On;
-        private void OnsubIsCanAttack() => _canAttacker.IsCanAttack -= On;
-
-        private void GetComponents()
-        {
-            _launcherMoveToPlayer = GetComponent<LauncherMoveToPlayer>();
-            _canAttacker = GetComponent<CanAttacker>();
-            _launcherPatrol = GetComponent<LauncherPatrol>();
-            _agentAttack = GetComponent<AgentAttack>();
-        }
+        private void SubIsCanAttack() => _canAttackChecker.IsCanAttack += On;
+        private void OnsubIsCanAttack() => _canAttackChecker.IsCanAttack -= On;
     }
 }

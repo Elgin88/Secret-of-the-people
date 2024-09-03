@@ -9,7 +9,7 @@ using UnityEngine;
 namespace Enemy.Agents.Agents
 {
     [RequireComponent(typeof(LauncherAttack))]
-    [RequireComponent(typeof(CanAttacker))]
+    [RequireComponent(typeof(CanAttackChecker))]
     [RequireComponent(typeof(EnemyAnimationsSetter))]
 
     public class AgentAttack : MonoBehaviour

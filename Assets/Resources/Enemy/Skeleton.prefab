@@ -1525,6 +1525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793227f1f109243aab207bfe909b0c6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _agentMoveToPlayer: {fileID: 5211133151828398334}
+  _canAttackChecker: {fileID: 5126608844793043368}
+  _launcherPatrol: {fileID: 717682111826112868}
+  _agroChecker: {fileID: 3253833624716427207}
 --- !u!114 &5126608844793043368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,6 +1635,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97397fa475564c6f93957f5ea7428c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _launcherMoveToPlayer: {fileID: 3736759000335435549}
+  _launcherPatrol: {fileID: 717682111826112868}
+  _canAttackChecker: {fileID: 5126608844793043368}
+  _agentAttack: {fileID: 84307021098974875}
 --- !u!114 &717682111826112868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,6 +1651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b10295bb8989418a9526b15cdc58803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _agentPatrol: {fileID: 1111474936639502434}
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,46 +4,45 @@ using UnityEngine;
 
 namespace Enemy.Agents.AgentsLaunchers
 {
-    [RequireComponent(typeof(CanAttacker))]
-    [RequireComponent(typeof(LauncherPatrol))]
     [RequireComponent(typeof(AgentMoveToPlayer))]
-    
+    [RequireComponent(typeof(CanAttackChecker))]
+    [RequireComponent(typeof(LauncherPatrol))]
+    [RequireComponent(typeof(AgroChecker))]
+
     public class LauncherMoveToPlayer : MonoBehaviour
     {
-        private AgentMoveToPlayer _agentMoveToPlayer;
-        private LauncherPatrol _launcherPatrol;
-        private CanAttacker _canAttacker;
-        private Agro _agro;
+        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
+        [SerializeField] private CanAttackChecker _canAttackChecker;
+        [SerializeField] private LauncherPatrol _launcherPatrol;
+        [SerializeField] private AgroChecker _agroChecker;
 
         private void Awake()
         {
-            GetComponents();
             Off();
             SubAgro();
         }
 
         private void OnDestroy()
         {
-            OnsubAgro();
+            UnsubAgro();
         }
 
-        private void On()
+        public void On()
         {
+            _agentMoveToPlayer.On();
+            _canAttackChecker.On();
+            _launcherPatrol.Off();
         }
 
-        private void Off()
+        public void Off()
         {
+            _agentMoveToPlayer.Off();
+            _canAttackChecker.Off();
+            _launcherPatrol.On();
         }
 
         private void OnAgro() => On();
-        private void SubAgro() => _agro.Agred += OnAgro;
-        private void OnsubAgro() => _agro.Agred -= OnAgro;
-        private void GetComponents()
-        {
-            _agentMoveToPlayer = GetComponent<AgentMoveToPlayer>();
-            _launcherPatrol = GetComponent<LauncherPatrol>();
-            _canAttacker = GetComponent<CanAttacker>();
-            _agro = GetComponent<Agro>();
-        }
+        private void SubAgro() => _agroChecker.Agred += OnAgro;
+        private void UnsubAgro() => _agroChecker.Agred -= OnAgro;
     }
 }

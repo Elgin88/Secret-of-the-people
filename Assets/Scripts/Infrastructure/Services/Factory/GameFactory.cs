@@ -71,7 +71,7 @@ namespace Infrastructure.Services.Factory
                 GameObject skeleton = CreateGameObject(StaticAssetPath.Sceleton, point.transform.position);
 
                 skeleton.GetComponent<AgentMoveToPlayer>().Construct(this);
-                skeleton.GetComponent<Agro>().Construct(this);
+                skeleton.GetComponent<AgroChecker>().Construct(this);
                 
                 skeletons.Add(skeleton);
             }

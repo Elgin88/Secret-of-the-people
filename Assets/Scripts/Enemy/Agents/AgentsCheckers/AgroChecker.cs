@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Enemy.Agents.AgentsCheckers
 {
-    public class Agro : MonoBehaviour
+    public class AgroChecker : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
 
@@ -15,7 +15,7 @@ namespace Enemy.Agents.AgentsCheckers
         private Vector3 _playerPosition => _gameFactory.Player.transform.position;
 
         public Action Agred;
-        
+
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
         private void FixedUpdate()
