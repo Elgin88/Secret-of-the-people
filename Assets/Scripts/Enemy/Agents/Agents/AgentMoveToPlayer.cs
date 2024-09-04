@@ -20,9 +20,9 @@ namespace Enemy.Agents.Agents
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
-        private void OnEnable()
+        private void Start()
         {
-            SetNavMeshRunSpeed();
+            Off();
         }
 
         private void OnDisable()
@@ -32,16 +32,17 @@ namespace Enemy.Agents.Agents
 
         private void FixedUpdate()
         {
+            SetNavMeshRunSpeed();
             PlayAnimation();
             MoveToPlayer();
         }
 
-        public void Enable()
+        public void On()
         {
             SetEnabled(true);
         }
 
-        public void Disable()
+        public void Off()
         {
             SetEnabled(false);
         }

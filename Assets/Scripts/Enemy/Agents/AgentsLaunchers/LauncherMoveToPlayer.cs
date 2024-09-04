@@ -11,28 +11,29 @@ namespace Enemy.Agents.AgentsLaunchers
     {
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
         [SerializeField] private AgroChecker _agroChecker;
+        [SerializeField] private CanAttackChecker _canAttackChecker;
 
-        private void Start()
+        private void Awake()
         {
             SubAgro();
             SubNotAgro();
-            StopAgent();
         }
-        
+
         private void OnDestroy()
         {
             UnsubAgro();
             UnsubNotAgro();
         }
-        
+
         public void StartAgent()
         {
-            _agentMoveToPlayer.Enable();
+            _agentMoveToPlayer.On();
+            _canAttackChecker.On();
         }
 
         public void StopAgent()
         {
-            _agentMoveToPlayer.Disable();
+            _agentMoveToPlayer.Off();
         }
 
         private void OnAgro() => StartAgent();

@@ -6,39 +6,43 @@ namespace Enemy.Agents.AgentsCheckers
     public class CanAttackChecker : MonoBehaviour
     {
         [SerializeField] private Transform _hitPoint;
-        [SerializeField] private LayerMask _target;
+        [SerializeField] private LayerMask _playerMask;
 
         private readonly Collider[] _results = new Collider[1];
         private readonly float _radius = 0.3f;
 
         public Action IsCanAttack;
-        
+
         public Action IsNotCanAttack;
 
         private void Start()
         {
-            Disable();
+            Off();
         }
 
-        public void Enable()
-        {
-            SetEnabled(true);
-        }
-
-        public void Disable()
-        {
-            SetEnabled(false);
-        }
-        
         private void FixedUpdate()
         {
             if (TargetCount() > 0)
             {
                 IsCanAttack?.Invoke();
             }
+            else
+            {
+                IsNotCanAttack?.Invoke();
+            }
         }
 
-        private int TargetCount() => Physics.OverlapSphereNonAlloc(_hitPoint.position, _radius, _results, _target);
+        public void On()
+        {
+            SetEnabled(true);
+        }
+
+        public void Off()
+        {
+            SetEnabled(false);
+        }
+
+        private int TargetCount() => Physics.OverlapSphereNonAlloc(_hitPoint.position, _radius, _results, _playerMask);
         private void SetEnabled(bool status) => enabled = status;
     }
 }

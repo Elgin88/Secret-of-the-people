@@ -21,10 +21,7 @@ namespace Enemy.Agents.Agents
         private const float _radiusHitSphere = 0.3f;
         private int _damage => _staticData.Damage;
 
-        private void OnEnable()
-        {
-            PlayAnimation();
-        }
+        private void Start() => Off();
 
         private void OnDisable()
         {
@@ -46,23 +43,19 @@ namespace Enemy.Agents.Agents
             SetEnabled(false);
         }
 
-
         private void OnAttack()
         {
-            if (IsHit(out Collider target))
+            if (IsHit(out Collider player))
             {
-                GiveHit(target);
+                GiveHit(player);
             }
         }
 
         private void OnAttackEnded()
         {
-            StopPlayAnimation();
-            AgentAttackOff();
         }
-        
+
         private void SetEnabled(bool status) => enabled = status;
-        private void AgentAttackOff() => _launcherAttack.StopAgent();
         private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
         private void StopPlayAnimation() => _enemyAnimationSetter.StopPlayAttack();
 

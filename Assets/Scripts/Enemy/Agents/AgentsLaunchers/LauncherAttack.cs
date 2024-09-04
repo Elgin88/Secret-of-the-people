@@ -4,11 +4,6 @@ using UnityEngine;
 
 namespace Enemy.Agents.AgentsLaunchers
 {
-    [RequireComponent(typeof(LauncherMoveToPlayer))]
-    [RequireComponent(typeof(CanAttackChecker))]
-    [RequireComponent(typeof(LauncherPatrol))]
-    [RequireComponent(typeof(AgentAttack))]
-
     public class LauncherAttack : MonoBehaviour
     {
         [SerializeField] private LauncherMoveToPlayer _launcherMoveToPlayer;
@@ -16,19 +11,22 @@ namespace Enemy.Agents.AgentsLaunchers
         [SerializeField] private LauncherPatrol _launcherPatrol;
         [SerializeField] private AgentAttack _agentAttack;
 
-        private void Start()
+        private void Awake()
         {
             SubIsCanAttack();
-            StopAgent();
         }
 
         private void OnDestroy()
         {
-            OnsubIsCanAttack();
+            UnsubIsCanAttack();
         }
 
         public void StartAgent()
         {
+            _agentAttack.On();
+
+            _launcherMoveToPlayer.StopAgent();
+            _launcherPatrol.StopAgent();
         }
 
         public void StopAgent()
@@ -36,6 +34,6 @@ namespace Enemy.Agents.AgentsLaunchers
         }
 
         private void SubIsCanAttack() => _canAttackChecker.IsCanAttack += StartAgent;
-        private void OnsubIsCanAttack() => _canAttackChecker.IsCanAttack -= StartAgent;
+        private void UnsubIsCanAttack() => _canAttackChecker.IsCanAttack -= StartAgent;
     }
 }

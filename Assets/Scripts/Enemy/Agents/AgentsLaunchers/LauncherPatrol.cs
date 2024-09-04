@@ -1,5 +1,4 @@
-﻿using System;
-using Enemy.Agents.Agents;
+﻿using Enemy.Agents.Agents;
 using UnityEngine;
 
 namespace Enemy.Agents.AgentsLaunchers
@@ -7,11 +6,6 @@ namespace Enemy.Agents.AgentsLaunchers
     public class LauncherPatrol : MonoBehaviour
     {
         [SerializeField] private AgentPatrol _agentPatrol;
-
-        private void Start()
-        {
-            StartAgent();
-        }
 
         public void StartAgent()
         {

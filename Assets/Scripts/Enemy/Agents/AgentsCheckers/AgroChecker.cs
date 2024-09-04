@@ -32,17 +32,17 @@ namespace Enemy.Agents.AgentsCheckers
             }
         }
 
-        public void Enabled()
+        public void On()
         {
             SetEnabled(true);
         }
 
-        public void Disable()
+        public void Off()
         {
             SetEnabled(false);
         }
 
-        private void SetEnabled(bool status) => enabled = status;
         private bool IsAgroRange() => Vector3.Distance(_position, _playerPosition) < _agroRange;
+        private void SetEnabled(bool status) => enabled = status;
     }
 }

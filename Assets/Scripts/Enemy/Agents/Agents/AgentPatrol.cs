@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Enemy.Agents.AgentsCheckers;
 using Enemy.Animations;
 using Enemy.Logic;
 using StaticData;
@@ -27,22 +26,26 @@ namespace Enemy.Agents.Agents
         private int _minRange => _staticData.MinPatrolRange;
         private int _minDistanceToPlayer => _staticData.MinDistanceToPlayer;
 
+        private void Start()
+        {
+            On();
+        }
+
         private void OnEnable()
         {
             FindPosition();
-            SetPatrolSpeed();
         }
 
         private void OnDisable()
         {
             StopAnimationRun();
         }
-        
+
         public void On()
         {
             SetEnabled(true);
         }
-        
+
         public void Off()
         {
             SetEnabled(false);
@@ -50,8 +53,9 @@ namespace Enemy.Agents.Agents
 
         private void FixedUpdate()
         {
-            Move();
+            SetPatrolSpeed();
             PlayAnimation();
+            Move();
 
             if (IsMinDistance())
             {
