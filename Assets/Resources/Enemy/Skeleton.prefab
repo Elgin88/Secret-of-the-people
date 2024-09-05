@@ -1566,6 +1566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agentMoveToPlayer: {fileID: 5211133151828398334}
+  _launcherPatrol: {fileID: 717682111826112868}
   _agroChecker: {fileID: 3253833624716427207}
   _canAttackChecker: {fileID: 5126608844793043368}
 --- !u!114 &1841295503379036359

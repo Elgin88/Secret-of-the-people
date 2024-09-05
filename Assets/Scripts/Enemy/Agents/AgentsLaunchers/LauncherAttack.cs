@@ -23,10 +23,6 @@ namespace Enemy.Agents.AgentsLaunchers
 
         public void StartAgent()
         {
-            _agentAttack.On();
-
-            _launcherMoveToPlayer.StopAgent();
-            _launcherPatrol.StopAgent();
         }
 
         public void StopAgent()

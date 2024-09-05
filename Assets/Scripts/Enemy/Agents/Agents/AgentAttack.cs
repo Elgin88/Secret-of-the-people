@@ -1,5 +1,6 @@
 ﻿using Enemy.Agents.AgentsLaunchers;
 using Enemy.Animations;
+using Infrastructure.Services.Factory;
 using Player.Animations;
 using Player.Interfaces;
 using StaticData;
@@ -18,8 +19,15 @@ namespace Enemy.Agents.Agents
         [SerializeField] private LayerMask _target;
 
         private readonly Collider[] _resultOfHit = new Collider[1];
+        private IGameFactory _gameFactory;
         private const float _radiusHitSphere = 0.3f;
+        private Vector3 _playerPosition => _gameFactory.Player.transform.position;
         private int _damage => _staticData.Damage;
+
+        public void Construct(IGameFactory gameFactory)
+        {
+            _gameFactory = gameFactory;
+        }
 
         private void Start() => Off();
 
@@ -31,6 +39,7 @@ namespace Enemy.Agents.Agents
         private void FixedUpdate()
         {
             PlayAnimation();
+            SetRotation();
         }
 
         public void On()
@@ -53,11 +62,13 @@ namespace Enemy.Agents.Agents
 
         private void OnAttackEnded()
         {
+            _launcherAttack.StopAgent();
         }
 
         private void SetEnabled(bool status) => enabled = status;
         private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
         private void StopPlayAnimation() => _enemyAnimationSetter.StopPlayAttack();
+        private void SetRotation() => transform.rotation = Quaternion.LookRotation(_playerPosition);
 
         private bool IsHit(out Collider target)
         {

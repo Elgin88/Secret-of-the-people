@@ -10,6 +10,7 @@ namespace Enemy.Agents.AgentsLaunchers
     public class LauncherMoveToPlayer : MonoBehaviour
     {
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
+        [SerializeField] private LauncherPatrol _launcherPatrol;
         [SerializeField] private AgroChecker _agroChecker;
         [SerializeField] private CanAttackChecker _canAttackChecker;
 
@@ -27,13 +28,10 @@ namespace Enemy.Agents.AgentsLaunchers
 
         public void StartAgent()
         {
-            _agentMoveToPlayer.On();
-            _canAttackChecker.On();
         }
 
         public void StopAgent()
         {
-            _agentMoveToPlayer.Off();
         }
 
         private void OnAgro() => StartAgent();

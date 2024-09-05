@@ -72,7 +72,8 @@ namespace Infrastructure.Services.Factory
 
                 skeleton.GetComponent<AgentMoveToPlayer>().Construct(this);
                 skeleton.GetComponent<AgroChecker>().Construct(this);
-                
+                skeleton.GetComponent<AgentAttack>().Construct(this);
+
                 skeletons.Add(skeleton);
             }
 
