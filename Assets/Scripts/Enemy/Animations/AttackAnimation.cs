@@ -3,8 +3,6 @@ using UnityEngine;
 
 namespace Enemy.Animations
 {
-    [RequireComponent(typeof(Animator))]
-
     public class AttackAnimation : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;

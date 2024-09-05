@@ -6,10 +6,6 @@ using UnityEngine.AI;
 
 namespace Enemy.Agents.Agents
 {
-    [RequireComponent(typeof(EnemyAnimationsSetter))]
-    [RequireComponent(typeof(NavMeshAgent))]
-    [RequireComponent(typeof(SpeedSetter))]
-
     public class AgentMoveToPlayer : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _animationsSetter;

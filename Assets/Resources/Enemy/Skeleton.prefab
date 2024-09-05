@@ -1358,14 +1358,13 @@ GameObject:
   - component: {fileID: 5126608844793043368}
   - component: {fileID: 3253833624716427207}
   - component: {fileID: 3327770237539775674}
-  - component: {fileID: 3736759000335435549}
   - component: {fileID: 1841295503379036359}
   - component: {fileID: 309231018445043860}
   - component: {fileID: 8509568553172309415}
   - component: {fileID: 4899319783602193635}
   - component: {fileID: 3157147941812564663}
-  - component: {fileID: 6543521841988050893}
-  - component: {fileID: 717682111826112868}
+  - component: {fileID: 6138920319417051994}
+  - component: {fileID: 8827095795011028713}
   m_Layer: 13
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1485,11 +1484,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyAnimationSetter: {fileID: 3327770237539775674}
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
-  _launcherAttack: {fileID: 6543521841988050893}
   _hitPoint: {fileID: 9044219706593725082}
   _target:
     serializedVersion: 2
     m_Bits: 4096
+  _endAttackChecker: {fileID: 8827095795011028713}
 --- !u!114 &1111474936639502434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,22 +1552,6 @@ MonoBehaviour:
   _attackAnimation: {fileID: 309231018445043860}
   _runAnimation: {fileID: 8509568553172309415}
   _hitAnimation: {fileID: 4899319783602193635}
---- !u!114 &3736759000335435549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7551938292944909751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 793227f1f109243aab207bfe909b0c6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _agentMoveToPlayer: {fileID: 5211133151828398334}
-  _launcherPatrol: {fileID: 717682111826112868}
-  _agroChecker: {fileID: 3253833624716427207}
-  _canAttackChecker: {fileID: 5126608844793043368}
 --- !u!114 &1841295503379036359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1637,7 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
---- !u!114 &6543521841988050893
+--- !u!114 &6138920319417051994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1646,14 +1629,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7551938292944909751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97397fa475564c6f93957f5ea7428c66, type: 3}
+  m_Script: {fileID: 11500000, guid: 5aabc189b958d4979ada53cbb2e6342f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _launcherMoveToPlayer: {fileID: 3736759000335435549}
-  _canAttackChecker: {fileID: 5126608844793043368}
-  _launcherPatrol: {fileID: 717682111826112868}
   _agentAttack: {fileID: 84307021098974875}
---- !u!114 &717682111826112868
+--- !u!114 &8827095795011028713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1662,10 +1642,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7551938292944909751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b10295bb8989418a9526b15cdc58803, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dcb0565a10bd453ead6d5372825d011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agentPatrol: {fileID: 1111474936639502434}
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0

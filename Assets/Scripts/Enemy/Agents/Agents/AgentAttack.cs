@@ -1,4 +1,4 @@
-﻿using Enemy.Agents.AgentsLaunchers;
+﻿using Enemy.Agents.AgentsCheckers;
 using Enemy.Animations;
 using Infrastructure.Services.Factory;
 using Player.Animations;
@@ -8,20 +8,17 @@ using UnityEngine;
 
 namespace Enemy.Agents.Agents
 {
-    [RequireComponent(typeof(EnemyAnimationsSetter))]
-
     public class AgentAttack : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _enemyAnimationSetter;
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private LauncherAttack _launcherAttack;
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;
+        [SerializeField] private EndAttackChecker _endAttackChecker;
 
         private readonly Collider[] _resultOfHit = new Collider[1];
         private IGameFactory _gameFactory;
         private const float _radiusHitSphere = 0.3f;
-        private Vector3 _playerPosition => _gameFactory.Player.transform.position;
         private int _damage => _staticData.Damage;
 
         public void Construct(IGameFactory gameFactory)
@@ -39,7 +36,6 @@ namespace Enemy.Agents.Agents
         private void FixedUpdate()
         {
             PlayAnimation();
-            SetRotation();
         }
 
         public void On()
@@ -52,6 +48,10 @@ namespace Enemy.Agents.Agents
             SetEnabled(false);
         }
 
+        private void OnStartAttack()
+        {
+        }
+
         private void OnAttack()
         {
             if (IsHit(out Collider player))
@@ -62,13 +62,12 @@ namespace Enemy.Agents.Agents
 
         private void OnAttackEnded()
         {
-            _launcherAttack.StopAgent();
+            _endAttackChecker.InvokeOnAttackEnded();
         }
 
         private void SetEnabled(bool status) => enabled = status;
         private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
         private void StopPlayAnimation() => _enemyAnimationSetter.StopPlayAttack();
-        private void SetRotation() => transform.rotation = Quaternion.LookRotation(_playerPosition);
 
         private bool IsHit(out Collider target)
         {

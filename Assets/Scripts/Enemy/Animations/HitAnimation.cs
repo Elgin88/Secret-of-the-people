@@ -1,10 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemy.Animations
 {
-    [RequireComponent(typeof(Animator))]
-
     public class HitAnimation : MonoBehaviour
     {
         [SerializeField] private Animator _animator;

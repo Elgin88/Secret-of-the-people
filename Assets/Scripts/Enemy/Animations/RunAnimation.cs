@@ -1,5 +1,4 @@
-﻿using System;
-using Enemy.Logic;
+﻿using Enemy.Logic;
 using StaticData;
 using UnityEngine;
 
