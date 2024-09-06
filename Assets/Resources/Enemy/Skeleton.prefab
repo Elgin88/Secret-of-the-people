@@ -1365,6 +1365,9 @@ GameObject:
   - component: {fileID: 3157147941812564663}
   - component: {fileID: 6138920319417051994}
   - component: {fileID: 8827095795011028713}
+  - component: {fileID: 3937660637264418013}
+  - component: {fileID: 8604013414276835189}
+  - component: {fileID: 8059922044090753081}
   m_Layer: 13
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1643,6 +1646,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dcb0565a10bd453ead6d5372825d011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3937660637264418013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7fff27ed4c0479983fc4f6e43c1248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8604013414276835189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01329bec78bac49b88257dfb6f856541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agentMoveToPlayer: {fileID: 5211133151828398334}
+  _agroChecker: {fileID: 3253833624716427207}
+--- !u!114 &8059922044090753081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1347465db8d544d44b07a9c8d20b8882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7816076442647639175
