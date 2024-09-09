@@ -20,45 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/EnemyAIRequireComponents.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/EnemyAIRequireComponents.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Bite Attack.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Bite Attack.FBX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Starters/StarterAgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Starters/StarterAgentMoveToPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Starters/StarterAgentPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Starters/StarterAgentPatrol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentMoveToPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentPatrol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/CheckerAgro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/CheckerAgro.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/CheckerAttacking.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/CheckerAttacking.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/CheckerCanAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/CheckerCanAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/CheckerEndAttack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/CheckerEndAttack.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerAgro.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerAgro.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerAttacking.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerAttacking.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerCanAttack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerCanAttack.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerEndAttack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerEndAttack.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerAgro.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerAgro.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerAttacking.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerAttacking.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerCanAttack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerCanAttack.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerEndAttack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerEndAttack.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +35,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Stoppers/AgentAttackStopper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Stoppers/AgentMoveToPlayerStopper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Starters/AgentMoveToPlayerStarter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Starters/AgentPatrolStarter.cs" />
@@ -119,9 +82,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentMoveToPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" />
       </list>
     </option>
   </component>
@@ -191,7 +155,7 @@
       <workItem from="1725371347004" duration="714000" />
       <workItem from="1725852136899" duration="14624000" />
       <workItem from="1725876952452" duration="10000" />
-      <workItem from="1725876984830" duration="9383000" />
+      <workItem from="1725876984830" duration="9814000" />
     </task>
     <servers />
   </component>

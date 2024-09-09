@@ -52,8 +52,8 @@ namespace Enemy.AI.Agents
             }
             
             SetPatrolSpeed();
-            Move();
             PlayAnimation();
+            Move();
         }
 
         private bool IsNotTargetPosition() => _targetPosition == null;
