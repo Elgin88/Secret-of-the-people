@@ -1,11 +1,15 @@
-﻿using Enemy.Animations;
+﻿using Enemy.AI.Agents.Starters;
+using Enemy.AI.Agents.Stoppers;
+using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Enemy.Agents.Agents
+namespace Enemy.AI.Agents
 {
+    [RequireComponent(typeof(StarterAgentMoveToPlayer))]
+    [RequireComponent(typeof(StopperAgentMoveToPlayer))]
     public class AgentMoveToPlayer : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _animationsSetter;
@@ -16,9 +20,9 @@ namespace Enemy.Agents.Agents
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
-        private void Start()
+        private void OnEnable()
         {
-            Off();
+            PlayAnimation();
         }
 
         private void OnDisable()
@@ -35,12 +39,18 @@ namespace Enemy.Agents.Agents
 
         public void On()
         {
-            SetEnabled(true);
+            if (!enabled)
+            {
+                SetEnabled(true);
+            }
         }
 
         public void Off()
         {
-            SetEnabled(false);
+            if (enabled)
+            {
+                SetEnabled(false);
+            }
         }
 
         private void SetEnabled(bool status) => enabled = status;

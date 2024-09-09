@@ -1,12 +1,16 @@
 ﻿using System.Collections;
+using Enemy.AI.Agents.Starters;
+using Enemy.AI.Agents.Stoppers;
 using Enemy.Animations;
 using Enemy.Logic;
 using StaticData;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Enemy.Agents.Agents
+namespace Enemy.AI.Agents
 {
+    [RequireComponent(typeof(StarterAgentPatrol))]
+    [RequireComponent(typeof(StopperAgentPatrol))]
     public class AgentPatrol : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _animationSetter;
@@ -22,19 +26,22 @@ namespace Enemy.Agents.Agents
         private int _minRange => _staticData.MinPatrolRange;
         private int _minDistanceToPlayer => _staticData.MinDistanceToPlayer;
 
-        private void OnEnable()
-        {
-            SetPatrolSpeed();
-        }
+        private void OnEnable() => SetPatrolSpeed();
 
         public void On()
         {
-            SetEnabled(true);
+            if (!enabled)
+            {
+                SetEnabled(true);
+            }
         }
 
         public void Off()
         {
-            SetEnabled(false);
+            if (enabled)
+            {
+                SetEnabled(false);
+            }
         }
 
         private void FixedUpdate()
@@ -43,7 +50,8 @@ namespace Enemy.Agents.Agents
             {
                 FindPosition();
             }
-
+            
+            SetPatrolSpeed();
             Move();
             PlayAnimation();
         }

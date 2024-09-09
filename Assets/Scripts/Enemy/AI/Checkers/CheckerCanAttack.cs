@@ -1,9 +1,14 @@
 ﻿using System;
+using Enemy.AI.Checkers.Starters;
+using Enemy.AI.Checkers.Stoppers;
 using UnityEngine;
 
-namespace Enemy.Agents.AgentsCheckers
+namespace Enemy.AI.Checkers
 {
-    public class CanAttackChecker : MonoBehaviour
+    [RequireComponent(typeof(StarterCheckerCanAttack))]
+    [RequireComponent(typeof(StopperCheckerCanAttack))]
+    
+    public class CheckerCanAttack : MonoBehaviour
     {
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _playerMask;
@@ -11,35 +16,36 @@ namespace Enemy.Agents.AgentsCheckers
         private readonly Collider[] _results = new Collider[1];
         private readonly float _radius = 0.3f;
 
-        public Action IsCanAttack;
+        public Action OnCanAttack;
 
-        public Action IsNotCanAttack;
-
-        private void Start()
-        {
-            Off();
-        }
-
+        public Action OnNotCanAttack;
+        
         private void FixedUpdate()
         {
             if (TargetCount() > 0)
             {
-                IsCanAttack?.Invoke();
+                OnCanAttack?.Invoke();
             }
             else
             {
-                IsNotCanAttack?.Invoke();
+                OnNotCanAttack?.Invoke();
             }
         }
 
         public void On()
         {
-            SetEnabled(true);
+            if (!enabled)
+            {
+                SetEnabled(true);
+            }
         }
 
         public void Off()
         {
-            SetEnabled(false);
+            if (enabled)
+            {
+                SetEnabled(false);
+            }
         }
 
         private int TargetCount() => Physics.OverlapSphereNonAlloc(_hitPoint.position, _radius, _results, _playerMask);

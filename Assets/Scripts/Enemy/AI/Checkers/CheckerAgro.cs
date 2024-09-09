@@ -1,11 +1,16 @@
 ﻿using System;
+using Enemy.AI.Checkers.Starters;
+using Enemy.AI.Checkers.Stoppers;
 using Infrastructure.Services.Factory;
 using StaticData;
 using UnityEngine;
 
-namespace Enemy.Agents.AgentsCheckers
+namespace Enemy.AI.Checkers
 {
-    public class AgroChecker : MonoBehaviour
+    [RequireComponent(typeof(StarterCheckerAgro))]
+    [RequireComponent(typeof(StopperCheckerAgro))]
+    
+    public class CheckerAgro : MonoBehaviour
     {
         [SerializeField] private MonsterStaticData _staticData;
 
@@ -14,9 +19,9 @@ namespace Enemy.Agents.AgentsCheckers
         private Vector3 _position => transform.position;
         private float _agroRange => _staticData.AgroRange;
 
-        public Action Agred;
+        public Action OnAgred;
 
-        public Action NotAgred;
+        public Action OnNotAgred;
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
@@ -24,22 +29,28 @@ namespace Enemy.Agents.AgentsCheckers
         {
             if (IsAgroRange())
             {
-                Agred?.Invoke();
+                OnAgred?.Invoke();
             }
             else
             {
-                NotAgred?.Invoke();
+                OnNotAgred?.Invoke();
             }
         }
 
         public void On()
         {
-            SetEnabled(true);
+            if (!enabled)
+            {
+                SetEnabled(true);
+            }
         }
 
         public void Off()
         {
-            SetEnabled(false);
+            if (enabled)
+            {
+                SetEnabled(false);
+            }
         }
 
         private bool IsAgroRange() => Vector3.Distance(_position, _playerPosition) < _agroRange;

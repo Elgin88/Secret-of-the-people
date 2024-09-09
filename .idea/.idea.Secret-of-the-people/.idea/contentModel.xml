@@ -1249,20 +1249,39 @@
             <e p="PlayerHealthBar.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
-            <e p="Agents" t="Include">
+            <e p="AI" t="Include">
               <e p="Agents" t="Include">
                 <e p="AgentAttack.cs" t="Include" />
                 <e p="AgentMoveToPlayer.cs" t="Include" />
                 <e p="AgentPatrol.cs" t="Include" />
+                <e p="Starters" t="Include">
+                  <e p="StarterAgentAttack.cs" t="Include" />
+                  <e p="StarterAgentMoveToPlayer.cs" t="Include" />
+                  <e p="StarterAgentPatrol.cs" t="Include" />
+                </e>
+                <e p="Stoppers" t="Include">
+                  <e p="StopperAgentAttack.cs" t="Include" />
+                  <e p="StopperAgentMoveToPlayer.cs" t="Include" />
+                  <e p="StopperAgentPatrol.cs" t="Include" />
+                </e>
               </e>
-              <e p="AgentsCheckers" t="Include">
-                <e p="AgroChecker.cs" t="Include" />
-                <e p="CanAttackChecker.cs" t="Include" />
-              </e>
-              <e p="AgentsLaunchers" t="Include">
-                <e p="LauncherAttack.cs" t="Include" />
-                <e p="LauncherMoveToPlayer.cs" t="Include" />
-                <e p="LauncherPatrol.cs" t="Include" />
+              <e p="Checkers" t="Include">
+                <e p="CheckerAgro.cs" t="Include" />
+                <e p="CheckerAttacking.cs" t="Include" />
+                <e p="CheckerCanAttack.cs" t="Include" />
+                <e p="CheckerEndAttack.cs" t="Include" />
+                <e p="Starters" t="Include">
+                  <e p="StarterCheckerAgro.cs" t="Include" />
+                  <e p="StarterCheckerAttacking.cs" t="Include" />
+                  <e p="StarterCheckerCanAttack.cs" t="Include" />
+                  <e p="StarterCheckerEndAttack.cs" t="Include" />
+                </e>
+                <e p="Stoppers" t="Include">
+                  <e p="StopperCheckerAgro.cs" t="Include" />
+                  <e p="StopperCheckerAttacking.cs" t="Include" />
+                  <e p="StopperCheckerCanAttack.cs" t="Include" />
+                  <e p="StopperCheckerEndAttack.cs" t="Include" />
+                </e>
               </e>
             </e>
             <e p="Animations" t="Include">

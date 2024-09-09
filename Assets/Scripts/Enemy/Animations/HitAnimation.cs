@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Enemy.Logic;
+using UnityEngine;
 
 namespace Enemy.Animations
 {
