@@ -19,17 +19,7 @@ namespace Enemy.AI.Agents
         private IGameFactory _gameFactory;
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
-
-        private void OnEnable()
-        {
-            PlayAnimation();
-        }
-
-        private void OnDisable()
-        {
-            StopPlayAnimation();
-        }
-
+        
         private void FixedUpdate()
         {
             SetNavMeshRunSpeed();

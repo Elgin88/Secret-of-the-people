@@ -10,19 +10,16 @@ namespace Enemy.Animations
 
         public void PlayRun()
         {
-            PlayIdle();
             _runAnimation.Play();
         }
 
         public void PlayAttack()
         {
-            PlayIdle();
             _attackAnimation.Play();
         }
 
         public void PlayHit()
         {
-            PlayIdle();
             _hitAnimation.Play();
         }
 

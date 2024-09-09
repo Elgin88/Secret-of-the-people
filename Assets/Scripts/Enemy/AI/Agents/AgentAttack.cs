@@ -1,6 +1,5 @@
 ﻿using Enemy.AI.Agents.Starters;
 using Enemy.AI.Agents.Stoppers;
-using Enemy.AI.Checkers;
 using Enemy.Animations;
 using Player.Animations;
 using Player.Interfaces;
@@ -11,11 +10,11 @@ namespace Enemy.AI.Agents
 {
     [RequireComponent(typeof(StarterAgentAttack))]
     [RequireComponent(typeof(StopperAgentAttack))]
+    
     public class AgentAttack : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _enemyAnimationSetter;
         [SerializeField] private MonsterStaticData _staticData;
-        [SerializeField] private CheckerEndAttack _checkerEndAttack;
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;
 
@@ -59,7 +58,6 @@ namespace Enemy.AI.Agents
 
         private void OnAttackEnded()
         {
-            _checkerEndAttack.InvokeOnAttackEnded();
         }
 
         private void SetEnabled(bool status) => enabled = status;

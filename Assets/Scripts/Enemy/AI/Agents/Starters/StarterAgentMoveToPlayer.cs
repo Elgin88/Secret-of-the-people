@@ -5,8 +5,9 @@ namespace Enemy.AI.Agents.Starters
 {
     public class StarterAgentMoveToPlayer : MonoBehaviour
     {
-        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
         [SerializeField] private CheckerAgro _checkerAgro;
+        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
+        [SerializeField] private CheckerCanAttack _checkerCanAttack;
 
         private void Awake()
         {
@@ -20,6 +21,7 @@ namespace Enemy.AI.Agents.Starters
 
         private void OnAgred()
         {
+            _checkerCanAttack.On();
             _agentMoveToPlayer.On();
         }
     }
