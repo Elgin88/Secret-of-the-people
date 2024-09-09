@@ -22,11 +22,10 @@ namespace Enemy.AI.Agents
         private const float _radiusOfHitSphere = 0.3f;
         private int _damage => _staticData.Damage;
 
-        private void OnEnable() => PlayAnimation();
-
-        private void OnDisable() => StopPlayAnimation();
-
-        private void FixedUpdate() => PlayAnimation();
+        private void FixedUpdate()
+        {
+            PlayAnimation();
+        }
 
         public void On()
         {

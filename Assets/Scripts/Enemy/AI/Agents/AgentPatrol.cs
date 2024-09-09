@@ -26,7 +26,17 @@ namespace Enemy.AI.Agents
         private int _minRange => _staticData.MinPatrolRange;
         private int _minDistanceToPlayer => _staticData.MinDistanceToPlayer;
 
-        private void OnEnable() => SetPatrolSpeed();
+        private void FixedUpdate()
+        {
+            if (IsMinDistance() || IsNotTargetPosition())
+            {
+                FindPosition();
+            }
+            
+            SetPatrolSpeed();
+            PlayAnimation();
+            Move();
+        }
 
         public void On()
         {
@@ -42,18 +52,6 @@ namespace Enemy.AI.Agents
             {
                 SetEnabled(false);
             }
-        }
-
-        private void FixedUpdate()
-        {
-            if (IsMinDistance() || IsNotTargetPosition())
-            {
-                FindPosition();
-            }
-            
-            SetPatrolSpeed();
-            PlayAnimation();
-            Move();
         }
 
         private bool IsNotTargetPosition() => _targetPosition == null;
