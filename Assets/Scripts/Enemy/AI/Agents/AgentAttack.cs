@@ -41,7 +41,7 @@ namespace Enemy.AI.Agents
             {
                 SetEnabled(true);
 
-                UnityEngine.Debug.Log("StartAgentAttack");
+                Debug.Log("AttackStart");
             }
         }
 
@@ -51,7 +51,7 @@ namespace Enemy.AI.Agents
             {
                 SetEnabled(false);
 
-                UnityEngine.Debug.Log("StopAgentAttack");
+                Debug.Log("AttackStop");
             }
         }
 

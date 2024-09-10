@@ -45,7 +45,7 @@ namespace Enemy.AI.Agents
             {
                 SetEnabled(true);
 
-                Debug.Log("StartAgentPatrol");
+                Debug.Log("PatrolStart");
             }
         }
 
@@ -55,7 +55,7 @@ namespace Enemy.AI.Agents
             {
                 SetEnabled(false);
 
-                Debug.Log("StopAgentPatrol");
+                Debug.Log("PatrolStop");
             }
         }
 

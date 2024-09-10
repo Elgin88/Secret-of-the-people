@@ -39,7 +39,7 @@ namespace Enemy.AI.Agents
             {
                 SetEnabled(true);
 
-                Debug.Log("StartMoveToPlayer");
+                Debug.Log("MoveStart");
             }
         }
 
@@ -49,7 +49,7 @@ namespace Enemy.AI.Agents
             {
                 SetEnabled(false);
 
-                Debug.Log("StopMoveToPlayer");
+                Debug.Log("MoveStop");
             }
         }
 
