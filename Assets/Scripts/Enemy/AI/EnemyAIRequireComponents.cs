@@ -14,5 +14,6 @@ namespace Enemy.AI
     [RequireComponent(typeof(AgentAttack))]
     [RequireComponent(typeof(AgentMoveToPlayer))]
     [RequireComponent(typeof(AgentPatrol))]
+
     public class EnemyAIRequireComponents : MonoBehaviour { }
 }

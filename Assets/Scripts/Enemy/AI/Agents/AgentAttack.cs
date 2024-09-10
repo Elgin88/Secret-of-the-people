@@ -1,4 +1,5 @@
-﻿using Enemy.AI.Agents.Starters;
+﻿using System.Collections;
+using Enemy.AI.Agents.Starters;
 using Enemy.AI.Agents.Stoppers;
 using Enemy.Animations;
 using Player.Animations;
@@ -10,7 +11,7 @@ namespace Enemy.AI.Agents
 {
     [RequireComponent(typeof(StarterAgentAttack))]
     [RequireComponent(typeof(StopperAgentAttack))]
-    
+
     public class AgentAttack : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _enemyAnimationSetter;
@@ -21,10 +22,17 @@ namespace Enemy.AI.Agents
         private readonly Collider[] _resultOfHit = new Collider[1];
         private const float _radiusOfHitSphere = 0.3f;
         private int _damage => _staticData.Damage;
+        private float _delay;
 
-        private void FixedUpdate()
+        private void Awake()
         {
-            PlayAnimation();
+            SetDelay();
+        }
+
+        private void OnEnable()
+        {
+            PlayAnimationIdle();
+            PlayAnimationAttack();
         }
 
         public void On()
@@ -32,6 +40,8 @@ namespace Enemy.AI.Agents
             if (!enabled)
             {
                 SetEnabled(true);
+
+                UnityEngine.Debug.Log("StartAgentAttack");
             }
         }
 
@@ -40,6 +50,8 @@ namespace Enemy.AI.Agents
             if (enabled)
             {
                 SetEnabled(false);
+
+                UnityEngine.Debug.Log("StopAgentAttack");
             }
         }
 
@@ -57,11 +69,14 @@ namespace Enemy.AI.Agents
 
         private void OnAttackEnded()
         {
+            PlayAttackAfterDelay();
         }
 
+
+        private void PlayAnimationAttack() => _enemyAnimationSetter.PlayAttack();
+        private void PlayAnimationIdle() => _enemyAnimationSetter.PlayIdle();
         private void SetEnabled(bool status) => enabled = status;
-        private void PlayAnimation() => _enemyAnimationSetter.PlayAttack();
-        private void StopPlayAnimation() => _enemyAnimationSetter.StopPlayAttack();
+        private void SetDelay() => _delay = _staticData.DelayBetweenAttack;
 
         private bool IsHit(out Collider target)
         {
@@ -76,6 +91,19 @@ namespace Enemy.AI.Agents
         {
             player.GetComponent<IPlayerHealthChanger>().RemoveHealth(_damage);
             player.GetComponent<IPlayerAnimationsSetter>().PlayHit();
+        }
+
+        private void PlayAttackAfterDelay()
+        {
+            StartCoroutine(StartDelay());
+        }
+
+        private IEnumerator StartDelay()
+        {
+            yield return new WaitForSeconds(_delay);
+
+            PlayAnimationIdle();
+            PlayAnimationAttack();
         }
     }
 }

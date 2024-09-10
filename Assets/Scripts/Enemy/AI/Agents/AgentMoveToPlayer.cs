@@ -10,6 +10,7 @@ namespace Enemy.AI.Agents
 {
     [RequireComponent(typeof(StarterAgentMoveToPlayer))]
     [RequireComponent(typeof(StopperAgentMoveToPlayer))]
+
     public class AgentMoveToPlayer : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _animationsSetter;
@@ -19,11 +20,16 @@ namespace Enemy.AI.Agents
         private IGameFactory _gameFactory;
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
-        
+
+        private void OnDisable()
+        {
+            PlayAnimationIdle();
+        }
+
         private void FixedUpdate()
         {
             SetNavMeshRunSpeed();
-            PlayAnimation();
+            PlayAnimationRun();
             MoveToPlayer();
         }
 
@@ -32,6 +38,8 @@ namespace Enemy.AI.Agents
             if (!enabled)
             {
                 SetEnabled(true);
+
+                Debug.Log("StartMoveToPlayer");
             }
         }
 
@@ -40,12 +48,14 @@ namespace Enemy.AI.Agents
             if (enabled)
             {
                 SetEnabled(false);
+
+                Debug.Log("StopMoveToPlayer");
             }
         }
 
         private void SetEnabled(bool status) => enabled = status;
-        private void PlayAnimation() => _animationsSetter.PlayRun();
-        private void StopPlayAnimation() => _animationsSetter.StopPlayRun();
+        private void PlayAnimationRun() => _animationsSetter.PlayRun();
+        private void PlayAnimationIdle() => _animationsSetter.PlayIdle();
         private void MoveToPlayer() => _navMeshAgent.destination = _gameFactory.Player.transform.position;
 
         private void SetNavMeshRunSpeed()

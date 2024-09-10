@@ -11,6 +11,7 @@ namespace Enemy.AI.Agents.Stoppers
         private void Awake()
         {
             _checkerAgro.OnAgred += OnAgred;
+            _agentPatrol.Off();
         }
 
         private void OnDestroy()

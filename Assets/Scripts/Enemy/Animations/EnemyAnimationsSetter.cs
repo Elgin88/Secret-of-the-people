@@ -8,20 +8,11 @@ namespace Enemy.Animations
         [SerializeField] private RunAnimation _runAnimation;
         [SerializeField] private HitAnimation _hitAnimation;
 
-        public void PlayRun()
-        {
-            _runAnimation.Play();
-        }
+        public void PlayRun() => _runAnimation.Play();
 
-        public void PlayAttack()
-        {
-            _attackAnimation.Play();
-        }
+        public void PlayAttack() => _attackAnimation.Play();
 
-        public void PlayHit()
-        {
-            _hitAnimation.Play();
-        }
+        public void PlayHit() => _hitAnimation.Play();
 
         public void StopPlayRun() => _runAnimation.StopPlay();
 
@@ -29,7 +20,7 @@ namespace Enemy.Animations
 
         public void StopPlayHit() => _hitAnimation.StopPlay();
 
-        private void PlayIdle()
+        public void PlayIdle()
         {
             StopPlayRun();
             StopPlayAttack();

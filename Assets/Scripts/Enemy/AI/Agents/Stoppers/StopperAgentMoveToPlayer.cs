@@ -7,18 +7,18 @@ namespace Enemy.AI.Agents.Stoppers
     {
         [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
         [SerializeField] private CheckerCanAttack _checkerCanAttack;
-        [SerializeField] private CheckerAgro _checkerAgro;
 
         private void Awake()
         {
             _agentMoveToPlayer.Off();
-            _checkerAgro.OnNotAgred += OnNotAgred;
+            _checkerCanAttack.OnCanAttack += OnCanAttack;
         }
 
-        private void OnNotAgred()
+        private void OnDestroy()
         {
-            _checkerCanAttack.Off();
-            _agentMoveToPlayer.Off();
+            _checkerCanAttack.OnCanAttack -= OnCanAttack;
         }
+
+        private void OnCanAttack() => _agentMoveToPlayer.Off();
     }
 }

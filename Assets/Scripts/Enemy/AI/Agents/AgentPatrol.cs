@@ -11,6 +11,7 @@ namespace Enemy.AI.Agents
 {
     [RequireComponent(typeof(StarterAgentPatrol))]
     [RequireComponent(typeof(StopperAgentPatrol))]
+
     public class AgentPatrol : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _animationSetter;
@@ -32,7 +33,7 @@ namespace Enemy.AI.Agents
             {
                 FindPosition();
             }
-            
+
             SetPatrolSpeed();
             PlayAnimation();
             Move();
@@ -43,6 +44,8 @@ namespace Enemy.AI.Agents
             if (!enabled)
             {
                 SetEnabled(true);
+
+                Debug.Log("StartAgentPatrol");
             }
         }
 
@@ -51,6 +54,8 @@ namespace Enemy.AI.Agents
             if (enabled)
             {
                 SetEnabled(false);
+
+                Debug.Log("StopAgentPatrol");
             }
         }
 

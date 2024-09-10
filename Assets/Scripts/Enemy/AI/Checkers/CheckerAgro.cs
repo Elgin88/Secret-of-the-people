@@ -13,7 +13,6 @@ namespace Enemy.AI.Checkers
         private Vector3 _playerPosition => _gameFactory.Player.transform.position;
         private Vector3 _position => transform.position;
         private float _agroRange => _staticData.AgroRange;
-        private float _deltaAgroRange = 1;
 
         public Action OnAgred;
 
@@ -23,16 +22,13 @@ namespace Enemy.AI.Checkers
 
         private void FixedUpdate()
         {
-            if (IsAgroRange())
+            if (InAgroRange())
             {
                 OnAgred?.Invoke();
             }
             else
             {
-                if(IsAgroRange(_deltaAgroRange))
-                {
-                    OnNotAgred?.Invoke();
-                }
+                OnNotAgred?.Invoke();
             }
         }
 
@@ -52,8 +48,7 @@ namespace Enemy.AI.Checkers
             }
         }
 
-        private bool IsAgroRange() => Vector3.Distance(_position, _playerPosition) < _agroRange;
-        private bool IsAgroRange(float range) => Vector3.Distance(_position, _playerPosition) < _agroRange + range;
+        private bool InAgroRange() => Vector3.Distance(_position, _playerPosition) < _agroRange;
         private void SetEnabled(bool status) => enabled = status;
     }
 }
