@@ -1,9 +1,8 @@
-﻿using System;
-using Infrastructure.Services.Factory;
+﻿using Infrastructure.Services.Factory;
 using StaticData;
 using UnityEngine;
 
-namespace Enemy.AI.Checkers
+namespace Enemy.AI.Agents.Checkers
 {
     public class CheckerAgro : MonoBehaviour
     {
@@ -14,9 +13,9 @@ namespace Enemy.AI.Checkers
         private Vector3 _position => transform.position;
         private float _agroRange => _staticData.AgroRange;
 
-        public Action OnAgred;
+        public bool IsAgred { get; private set; }
 
-        public Action OnNotAgred;
+        public bool IsNotAgred { get; private set; }
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
@@ -24,11 +23,11 @@ namespace Enemy.AI.Checkers
         {
             if (InAgroRange())
             {
-                OnAgred?.Invoke();
+                IsAgred = true;
             }
             else
             {
-                OnNotAgred?.Invoke();
+                IsNotAgred = false;
             }
         }
 

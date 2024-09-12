@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using Enemy.AI.Agents.Starters;
-using Enemy.AI.Agents.Stoppers;
 using Enemy.Animations;
 using Player.Animations;
 using Player.Interfaces;
@@ -9,9 +7,6 @@ using UnityEngine;
 
 namespace Enemy.AI.Agents
 {
-    [RequireComponent(typeof(StarterAgentAttack))]
-    [RequireComponent(typeof(StopperAgentAttack))]
-
     public class AgentAttack : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _enemyAnimationSetter;
@@ -41,7 +36,7 @@ namespace Enemy.AI.Agents
             {
                 SetEnabled(true);
 
-                Debug.Log("AttackStart");
+                //Debug.Log("AttackStart");
             }
         }
 
@@ -51,7 +46,7 @@ namespace Enemy.AI.Agents
             {
                 SetEnabled(false);
 
-                Debug.Log("AttackStop");
+                //Debug.Log("AttackStop");
             }
         }
 

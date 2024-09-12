@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Canvas;
 using Enemy.AI.Agents;
-using Enemy.AI.Checkers;
+using Enemy.AI.Agents.Checkers;
 using Infrastructure.Services.AssetManagement;
 using Player;
 using Static;

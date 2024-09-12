@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using Enemy.AI.Agents.Starters;
-using Enemy.AI.Agents.Stoppers;
 using Enemy.Animations;
 using Enemy.Logic;
 using StaticData;
@@ -9,9 +7,6 @@ using UnityEngine.AI;
 
 namespace Enemy.AI.Agents
 {
-    [RequireComponent(typeof(StarterAgentPatrol))]
-    [RequireComponent(typeof(StopperAgentPatrol))]
-
     public class AgentPatrol : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _animationSetter;

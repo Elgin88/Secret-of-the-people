@@ -1,6 +1,4 @@
-﻿using Enemy.AI.Agents.Starters;
-using Enemy.AI.Agents.Stoppers;
-using Enemy.Animations;
+﻿using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using UnityEngine;
@@ -8,9 +6,6 @@ using UnityEngine.AI;
 
 namespace Enemy.AI.Agents
 {
-    [RequireComponent(typeof(StarterAgentMoveToPlayer))]
-    [RequireComponent(typeof(StopperAgentMoveToPlayer))]
-
     public class AgentMoveToPlayer : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _animationsSetter;

@@ -1366,9 +1366,6 @@ GameObject:
   - component: {fileID: 3937660637264418013}
   - component: {fileID: 8604013414276835189}
   - component: {fileID: 8059922044090753081}
-  - component: {fileID: 6032198211190297085}
-  - component: {fileID: 3682962397756741002}
-  - component: {fileID: 3492845084697458799}
   - component: {fileID: 3766811436536162409}
   m_Layer: 13
   m_Name: Skeleton
@@ -1637,6 +1634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _checkerCanAttack: {fileID: 5126608844793043368}
+  _checkeAgro: {fileID: 3253833624716427207}
   _agentAttack: {fileID: 84307021098974875}
 --- !u!114 &8604013414276835189
 MonoBehaviour:
@@ -1666,48 +1664,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _checkerCanAttack: {fileID: 5126608844793043368}
-  _agentPatrol: {fileID: 1111474936639502434}
-  _checkerAgro: {fileID: 3253833624716427207}
---- !u!114 &6032198211190297085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7551938292944909751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eda7cbf97f74bff860aa51bb8635908, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _checkerCanAttack: {fileID: 5126608844793043368}
-  _agentAttack: {fileID: 84307021098974875}
---- !u!114 &3682962397756741002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7551938292944909751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b09f60178c49acb5f8e39986dee184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _agentMoveToPlayer: {fileID: 5211133151828398334}
-  _checkerCanAttack: {fileID: 5126608844793043368}
---- !u!114 &3492845084697458799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7551938292944909751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23dd7c4f1c624eb7841c2608d6c79858, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _agentPatrol: {fileID: 1111474936639502434}
   _checkerAgro: {fileID: 3253833624716427207}
 --- !u!114 &3766811436536162409
