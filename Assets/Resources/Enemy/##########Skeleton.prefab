@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 8059922044090753081}
   - component: {fileID: 3766811436536162409}
   m_Layer: 13
-  m_Name: Skeleton
+  m_Name: '##########Skeleton'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7fff27ed4c0479983fc4f6e43c1248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkerCanAttack: {fileID: 5126608844793043368}
+  _checkerCanHit: {fileID: 5126608844793043368}
   _checkeAgro: {fileID: 3253833624716427207}
   _agentAttack: {fileID: 84307021098974875}
 --- !u!114 &8604013414276835189
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agentMoveToPlayer: {fileID: 5211133151828398334}
-  _checkerCanAttack: {fileID: 5126608844793043368}
+  _checkerCanHit: {fileID: 5126608844793043368}
   _checkerAgro: {fileID: 3253833624716427207}
 --- !u!114 &8059922044090753081
 MonoBehaviour:
@@ -1663,7 +1663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1347465db8d544d44b07a9c8d20b8882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkerCanAttack: {fileID: 5126608844793043368}
+  _checkerCanHit: {fileID: 5126608844793043368}
   _agentPatrol: {fileID: 1111474936639502434}
   _checkerAgro: {fileID: 3253833624716427207}
 --- !u!114 &3766811436536162409

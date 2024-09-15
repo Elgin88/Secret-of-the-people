@@ -15,39 +15,13 @@ namespace Enemy.AI.Agents.Checkers
 
         public bool IsAgred { get; private set; }
 
-        public bool IsNotAgred { get; private set; }
-
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
         private void FixedUpdate()
         {
-            if (InAgroRange())
-            {
-                IsAgred = true;
-            }
-            else
-            {
-                IsNotAgred = false;
-            }
+            IsAgred = TargetInAgroRange();
         }
 
-        public void On()
-        {
-            if (!enabled)
-            {
-                SetEnabled(true);
-            }
-        }
-
-        public void Off()
-        {
-            if (enabled)
-            {
-                SetEnabled(false);
-            }
-        }
-
-        private bool InAgroRange() => Vector3.Distance(_position, _playerPosition) < _agroRange;
-        private void SetEnabled(bool status) => enabled = status;
+        private bool TargetInAgroRange() => Vector3.Distance(_position, _playerPosition) < _agroRange;
     }
 }

@@ -34,9 +34,7 @@ namespace Enemy.AI.Agents
         {
             if (!enabled)
             {
-                SetEnabled(true);
-
-                //Debug.Log("AttackStart");
+                enabled = true;
             }
         }
 
@@ -44,9 +42,7 @@ namespace Enemy.AI.Agents
         {
             if (enabled)
             {
-                SetEnabled(false);
-
-                //Debug.Log("AttackStop");
+                enabled = false;
             }
         }
 
@@ -72,6 +68,7 @@ namespace Enemy.AI.Agents
         private void PlayAnimationIdle() => _enemyAnimationSetter.PlayIdle();
         private void SetEnabled(bool status) => enabled = status;
         private void SetDelay() => _delay = _staticData.DelayBetweenAttack;
+        private void PlayAttackAfterDelay() => StartCoroutine(StartDelay());
 
         private bool IsHit(out Collider target)
         {
@@ -87,12 +84,7 @@ namespace Enemy.AI.Agents
             player.GetComponent<IPlayerHealthChanger>().RemoveHealth(_damage);
             player.GetComponent<IPlayerAnimationsSetter>().PlayHit();
         }
-
-        private void PlayAttackAfterDelay()
-        {
-            StartCoroutine(StartDelay());
-        }
-
+        
         private IEnumerator StartDelay()
         {
             yield return new WaitForSeconds(_delay);

@@ -1,4 +1,5 @@
-﻿using Enemy.Animations;
+﻿using System;
+using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using UnityEngine;
@@ -16,15 +17,21 @@ namespace Enemy.AI.Agents
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
+        private void OnEnable()
+        {
+            NavMeshOn();
+        }
+
         private void OnDisable()
         {
-            PlayAnimationIdle();
+            NavMeshOff();
         }
 
         private void FixedUpdate()
         {
             SetNavMeshRunSpeed();
             PlayAnimationRun();
+            NavMeshOn();
             MoveToPlayer();
         }
 
@@ -32,9 +39,7 @@ namespace Enemy.AI.Agents
         {
             if (!enabled)
             {
-                SetEnabled(true);
-
-                Debug.Log("MoveStart");
+                enabled = true;
             }
         }
 
@@ -42,13 +47,10 @@ namespace Enemy.AI.Agents
         {
             if (enabled)
             {
-                SetEnabled(false);
-
-                Debug.Log("MoveStop");
+                enabled = false;
             }
         }
 
-        private void SetEnabled(bool status) => enabled = status;
         private void PlayAnimationRun() => _animationsSetter.PlayRun();
         private void PlayAnimationIdle() => _animationsSetter.PlayIdle();
         private void MoveToPlayer() => _navMeshAgent.destination = _gameFactory.Player.transform.position;
@@ -57,6 +59,22 @@ namespace Enemy.AI.Agents
         {
             _speedSetter.SetRunSpeed();
             _navMeshAgent.speed = _speedSetter.CurrentSpeed;
+        }
+
+        private void NavMeshOn()
+        {
+            if (_navMeshAgent.isOnNavMesh)
+            {
+                _navMeshAgent.isStopped = false;
+            }
+        }
+
+        private void NavMeshOff()
+        {
+            if (_navMeshAgent.isOnNavMesh)
+            {
+                _navMeshAgent.isStopped = true;
+            }
         }
     }
 }
