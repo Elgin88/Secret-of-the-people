@@ -22,7 +22,7 @@ namespace Enemy.AI.Agents
         private int _minRange => _staticData.MinPatrolRange;
         private int _minDistanceToPlayer => _staticData.MinDistanceToPlayer;
         private RaycastHit[] _results = new RaycastHit[5];
-        private const int _length = 2;
+        private const float _length = 5;
 
         private void OnEnable()
         {
@@ -70,7 +70,7 @@ namespace Enemy.AI.Agents
         private void NavMeshMove() => _navMeshAgent.destination = _targetPosition;
         private void SetTargetPosition() => _targetPosition = new Vector3(_position.x + GetRandomValue(), _position.y, _position.z + GetRandomValue());
         private void FindPosition() => StartCoroutine(StartFindTargetPosition());
-        private bool IsNotOnGround() => Physics.RaycastNonAlloc(transform.position, Vector3.down, _results, _groundMask) > 0;
+        private bool IsOnGround() => Physics.RaycastNonAlloc(transform.position, Vector3.down, _results, _length, _groundMask) > 0;
 
         private void SetPatrolSpeed()
         {
@@ -82,7 +82,7 @@ namespace Enemy.AI.Agents
         {
             SetTargetPosition();
 
-            while (IsNotOnGround())
+            while (!IsOnGround())
             {
                 SetTargetPosition();
 

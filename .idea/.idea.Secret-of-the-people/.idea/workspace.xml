@@ -20,21 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerCanHit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAgro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAgro.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerCanAttack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerCanAttack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerCanHit.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentMoveToPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentPatrol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AssetManagement/StaticAssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AssetManagement/StaticAssetPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StaticData/MonsterStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StaticData/MonsterStaticData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +35,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Stoppers/AgentPatrolStopper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Starters/StarterAgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Checkers/CheckerAgro.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/Checkers/CheckerEndAttack.cs" />
@@ -97,6 +84,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentMoveToPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StaticData/MonsterStaticData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" />
       </list>
     </option>
@@ -168,7 +156,7 @@
       <workItem from="1725852136899" duration="14624000" />
       <workItem from="1725876952452" duration="10000" />
       <workItem from="1725876984830" duration="10562000" />
-      <workItem from="1726373199377" duration="5717000" />
+      <workItem from="1726373199377" duration="6820000" />
     </task>
     <servers />
   </component>

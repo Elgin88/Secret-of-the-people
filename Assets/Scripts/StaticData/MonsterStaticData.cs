@@ -22,9 +22,9 @@ namespace StaticData
 
         [Range(1f, 5f)] public float PatrolSpeed = 1;
 
-        [Range(0f, 10f)] public int MaxPatrolRange = 10;
+        [Range(5f, 10f)] public int MaxPatrolRange = 10;
 
-        [Range(-10f, 0f)] public int MinPatrolRange = -10;
+        [Range(-10f, -5f)] public int MinPatrolRange = -10;
 
         [Range(0f, 3f)] public int MinDistanceToPlayer = 2;
 
