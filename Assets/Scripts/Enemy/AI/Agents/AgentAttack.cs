@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Enemy.Animations;
 using Player.Animations;
 using Player.Interfaces;
@@ -14,23 +15,63 @@ namespace Enemy.AI.Agents
         [SerializeField] private Transform _hitPoint;
         [SerializeField] private LayerMask _target;
 
-        private readonly Collider[] _resultOfHit = new Collider[1];
-        private const float _radiusOfHitSphere = 0.3f;
-        private int _damage => _staticData.Damage;
-        private float _delay;
-
-        private void Awake()
-        {
-            SetDelay();
-        }
-
-        private void OnEnable()
-        {
-            PlayAnimationIdle();
-            PlayAnimationAttack();
-        }
+        private float _attackRange => _staticData.AttackRange;
+        private float _coodown => _staticData.DelayBetweenAttack;
+        private float _currentCooldown;
 
         public void On()
+        {
+            Enabled();
+        }
+
+        public void Off()
+        {
+            Disabled();
+        }
+
+        private void FixedUpdate()
+        {
+            UpdateCooldown();
+
+            if (IsCooldownEnd())
+            {
+                PlayAnimationAttack();
+            }
+        }
+
+        private void OnHit()
+        {
+            CheckCanIsHit(out Collider target);
+            Hit(target);
+        }
+
+
+
+
+        private void CheckCanIsHit(out Collider target)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Hit(Collider target)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
+
+        private void OnAttackEnded()
+        {
+            _enemyAnimationSetter.StopPlayAttack();
+        }
+
+        private void UpdateCooldown() => _currentCooldown -= Time.deltaTime;
+        private bool IsCooldownEnd() => _currentCooldown > _coodown;
+        private void PlayAnimationAttack() => _enemyAnimationSetter.PlayAttack();
+
+        private void Enabled()
         {
             if (!enabled)
             {
@@ -38,59 +79,12 @@ namespace Enemy.AI.Agents
             }
         }
 
-        public void Off()
+        private void Disabled()
         {
             if (enabled)
             {
                 enabled = false;
             }
-        }
-
-        private void OnStartAttack()
-        {
-        }
-
-        private void OnAttack()
-        {
-            if (IsHit(out Collider player))
-            {
-                GiveHit(player);
-            }
-        }
-
-        private void OnAttackEnded()
-        {
-            PlayAttackAfterDelay();
-        }
-
-
-        private void PlayAnimationAttack() => _enemyAnimationSetter.PlayAttack();
-        private void PlayAnimationIdle() => _enemyAnimationSetter.PlayIdle();
-        private void SetEnabled(bool status) => enabled = status;
-        private void SetDelay() => _delay = _staticData.DelayBetweenAttack;
-        private void PlayAttackAfterDelay() => StartCoroutine(StartDelay());
-
-        private bool IsHit(out Collider target)
-        {
-            int count = Physics.OverlapSphereNonAlloc(_hitPoint.position, _radiusOfHitSphere, _resultOfHit, _target);
-
-            target = _resultOfHit[0];
-
-            return count > 0;
-        }
-
-        private void GiveHit(Collider player)
-        {
-            player.GetComponent<IPlayerHealthChanger>().RemoveHealth(_damage);
-            player.GetComponent<IPlayerAnimationsSetter>().PlayHit();
-        }
-        
-        private IEnumerator StartDelay()
-        {
-            yield return new WaitForSeconds(_delay);
-
-            PlayAnimationIdle();
-            PlayAnimationAttack();
         }
     }
 }

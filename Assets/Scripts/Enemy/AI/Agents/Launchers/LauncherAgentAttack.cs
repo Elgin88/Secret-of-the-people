@@ -1,15 +1,18 @@
-﻿using System;
-using Enemy.AI.Agents.Checkers;
+﻿using Enemy.AI.Agents.Checkers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Enemy.AI.Agents.Launchers
 {
     public class LauncherAgentAttack : MonoBehaviour
     {
         [SerializeField] private CheckerCanHit _checkerCanHit;
-        [SerializeField] private CheckerAgro _checkeAgro;
         [SerializeField] private AgentAttack _agentAttack;
+        [SerializeField] private CheckerAgro _checkeAgro;
+
+        private void Awake()
+        {
+            _agentAttack.Off();
+        }
 
         private void FixedUpdate()
         {

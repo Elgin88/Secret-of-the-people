@@ -1,5 +1,4 @@
-﻿using System;
-using Enemy.Animations;
+﻿using Enemy.Animations;
 using Enemy.Logic;
 using Infrastructure.Services.Factory;
 using UnityEngine;
