@@ -1,18 +1,17 @@
 ﻿using Enemy.AI.Agents.Checkers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Enemy.AI.Agents.Launchers
 {
     public class LauncherAgentPatrol : MonoBehaviour
     {
         [SerializeField] private CheckerCanHit _checkerCanHit;
-        [SerializeField] private AgentPatrol _agentPatrol;
         [SerializeField] private CheckerAgro _checkerAgro;
+        [SerializeField] private AgentPatrol _agentPatrol;
 
         private void FixedUpdate()
         {
-            if (!_checkerAgro.IsAgred & !_checkerCanHit.IsCanHit)
+            if (IsNotAgred() & IsNotCanHit())
             {
                 _agentPatrol.On();
             }
@@ -21,5 +20,9 @@ namespace Enemy.AI.Agents.Launchers
                 _agentPatrol.Off();
             }
         }
+
+        private bool IsNotCanHit() => !_checkerCanHit.IsCanHit;
+
+        private bool IsNotAgred() => !_checkerAgro.IsAgred;
     }
 }

@@ -5,18 +5,14 @@ namespace Enemy.AI.Agents.Launchers
 {
     public class LauncherAgentAttack : MonoBehaviour
     {
+        [SerializeField] private CheckerAttackEnded _checkerAttackEnded;
         [SerializeField] private CheckerCanHit _checkerCanHit;
         [SerializeField] private AgentAttack _agentAttack;
         [SerializeField] private CheckerAgro _checkeAgro;
 
-        private void Awake()
-        {
-            _agentAttack.Off();
-        }
-
         private void FixedUpdate()
         {
-            if (_checkeAgro.IsAgred & _checkerCanHit.IsCanHit)
+            if (IsAgred() & IsCanHit() & IsNotAttackEnded())
             {
                 _agentAttack.On();
             }
@@ -25,5 +21,11 @@ namespace Enemy.AI.Agents.Launchers
                 _agentAttack.Off();
             }
         }
+
+        private bool IsNotAttackEnded() => !_checkerAttackEnded.IsAttackEnded;
+
+        private bool IsCanHit() => _checkerCanHit.IsCanHit;
+
+        private bool IsAgred() => _checkeAgro.IsAgred;
     }
 }

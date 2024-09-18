@@ -51,7 +51,9 @@ namespace Enemy.AI.Agents
         }
 
         private void PlayAnimationRun() => _animationsSetter.PlayRun();
+
         private void PlayAnimationIdle() => _animationsSetter.PlayIdle();
+
         private void MoveToPlayer() => _navMeshAgent.destination = _gameFactory.Player.transform.position;
 
         private void SetNavMeshRunSpeed()

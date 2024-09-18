@@ -2,7 +2,6 @@
 using Enemy.Animations;
 using Enemy.Logic;
 using StaticData;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -64,12 +63,19 @@ namespace Enemy.AI.Agents
         }
 
         private bool IsNotTargetPosition() => _targetPosition == null;
+
         private void PlayAnimation() => _animationSetter.PlayRun();
+
         private int GetRandomValue() => Random.Range(_minRange, _maxRange);
+
         private bool IsMinDistanceToPlayer() => Vector3.Distance(_position, _targetPosition) < _minDistanceToPlayer;
+
         private void NavMeshMove() => _navMeshAgent.destination = _targetPosition;
+
         private void SetTargetPosition() => _targetPosition = new Vector3(_position.x + GetRandomValue(), _position.y, _position.z + GetRandomValue());
+
         private void FindPosition() => StartCoroutine(StartFindTargetPosition());
+
         private bool IsOnGround() => Physics.RaycastNonAlloc(transform.position, Vector3.down, _results, _length, _groundMask) > 0;
 
         private void SetPatrolSpeed()

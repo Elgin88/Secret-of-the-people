@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using Enemy.AI.Agents.Checkers;
 using Enemy.Animations;
-using Player.Animations;
 using Player.Interfaces;
 using StaticData;
 using UnityEngine;
@@ -12,66 +10,56 @@ namespace Enemy.AI.Agents
     {
         [SerializeField] private EnemyAnimationsSetter _enemyAnimationSetter;
         [SerializeField] private MonsterStaticData _staticData;
+        [SerializeField] private CheckerAttackEnded _checkerEndHit;
         [SerializeField] private Transform _hitPoint;
-        [SerializeField] private LayerMask _target;
+        [SerializeField] private LayerMask _targetMask;
 
-        private float _attackRange => _staticData.AttackRange;
-        private float _coodown => _staticData.DelayBetweenAttack;
-        private float _currentCooldown;
+        private Collider[] _results = new Collider[1];
+        private Collider _target;
+        private float _radiusHit = 1;
+        private int _damage => _staticData.Damage;
+
+        public bool IsEndHit { get; internal set; }
+
+        private void FixedUpdate()
+        {
+            PlayAttackAnimation();
+        }
 
         public void On()
         {
-            Enabled();
+            Enable();
         }
 
         public void Off()
         {
-            Disabled();
-        }
-
-        private void FixedUpdate()
-        {
-            UpdateCooldown();
-
-            if (IsCooldownEnd())
-            {
-                PlayAnimationAttack();
-            }
+            Disable();
         }
 
         private void OnHit()
         {
-            CheckCanIsHit(out Collider target);
-            Hit(target);
+            SetTarget();
+            HitTarget();
         }
 
+        private void PlayAttackAnimation() => _enemyAnimationSetter.PlayAttack();
 
-
-
-        private void CheckCanIsHit(out Collider target)
+        private void HitTarget()
         {
-            throw new NotImplementedException();
+            if (_target != null)
+            {
+                _target.GetComponent<IPlayerHealthChanger>().RemoveHealth(_damage);
+            }
         }
 
-        private void Hit(Collider target)
+        private void SetTarget()
         {
-            throw new NotImplementedException();
+            Physics.OverlapSphereNonAlloc(_hitPoint.transform.position, _radiusHit, _results, _targetMask);
+
+            _target = _results[0];
         }
 
-
-
-
-
-        private void OnAttackEnded()
-        {
-            _enemyAnimationSetter.StopPlayAttack();
-        }
-
-        private void UpdateCooldown() => _currentCooldown -= Time.deltaTime;
-        private bool IsCooldownEnd() => _currentCooldown > _coodown;
-        private void PlayAnimationAttack() => _enemyAnimationSetter.PlayAttack();
-
-        private void Enabled()
+        private void Enable()
         {
             if (!enabled)
             {
@@ -79,7 +67,7 @@ namespace Enemy.AI.Agents
             }
         }
 
-        private void Disabled()
+        private void Disable()
         {
             if (enabled)
             {

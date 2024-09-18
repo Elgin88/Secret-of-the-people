@@ -1,6 +1,5 @@
 ﻿using Enemy.AI.Agents.Checkers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Enemy.AI.Agents.Launchers
 {
@@ -12,7 +11,7 @@ namespace Enemy.AI.Agents.Launchers
 
         private void FixedUpdate()
         {
-            if (_checkerAgro.IsAgred & !_checkerCanHit.IsCanHit)
+            if (IsAgred() & IsNotCanHit())
             {
                 _agentMoveToPlayer.On();
             }
@@ -21,5 +20,9 @@ namespace Enemy.AI.Agents.Launchers
                 _agentMoveToPlayer.Off();
             }
         }
+
+        private bool IsNotCanHit() => !_checkerCanHit.IsCanHit;
+
+        private bool IsAgred() => _checkerAgro.IsAgred;
     }
 }

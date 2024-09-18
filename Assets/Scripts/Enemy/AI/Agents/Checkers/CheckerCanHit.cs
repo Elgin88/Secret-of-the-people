@@ -16,7 +16,33 @@ namespace Enemy.AI.Agents.Checkers
         {
             IsCanHit = EnemyIsCanHit();
         }
-        
+
+        public void On()
+        {
+            Enable();
+        }
+
+        public void Off()
+        {
+            Disable();
+        }
+
         private bool EnemyIsCanHit() => Physics.OverlapSphereNonAlloc(_hitPoint.position, _radiusAttackSphere, _results, _playerMask) > 0;
+
+        private void Enable()
+        {
+            if (!enabled)
+            {
+                enabled = true;
+            }
+        }
+
+        private void Disable()
+        {
+            if (enabled)
+            {
+                enabled = false;
+            }
+        }
     }
 }
