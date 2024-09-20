@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Canvas;
 using Enemy.AI.Agents;
-using Enemy.AI.Agents.Checkers;
 using Infrastructure.Services.AssetManagement;
 using Player;
 using Static;
@@ -71,7 +70,6 @@ namespace Infrastructure.Services.Factory
                 GameObject skeleton = CreateGameObject(StaticAssetPath.Sceleton, point.transform.position);
 
                 skeleton.GetComponent<AgentMoveToPlayer>().Construct(this);
-                skeleton.GetComponent<CheckerAgro>().Construct(this);
 
                 skeletons.Add(skeleton);
             }
