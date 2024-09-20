@@ -22,6 +22,7 @@
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemy/##########Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemy/##########Skeleton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1/Level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAgro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAgro.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,6 +160,7 @@
       <workItem from="1726373199377" duration="7414000" />
       <workItem from="1726827249487" duration="5451000" />
       <workItem from="1726837719495" duration="126000" />
+      <workItem from="1726838758665" duration="1875000" />
     </task>
     <servers />
   </component>
