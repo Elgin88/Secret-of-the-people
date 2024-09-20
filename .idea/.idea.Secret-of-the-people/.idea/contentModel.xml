@@ -1254,8 +1254,14 @@
                 <e p="AgentEdle.cs" t="Include" />
                 <e p="AgentMoveToPlayer.cs" t="Include" />
                 <e p="AgentPatrol.cs" t="Include" />
-                <e p="Checkers" t="Include" />
-                <e p="Launchers" t="Include" />
+                <e p="Checkers" t="Include">
+                  <e p="CheckerAgro.cs" t="Include" />
+                </e>
+                <e p="Launchers" t="Include">
+                  <e p="LauncherAgentIdle.cs" t="Include" />
+                  <e p="LauncherAgentMoveToPlayer.cs" t="Include" />
+                  <e p="LauncherAgentPatrol.cs" t="Include" />
+                </e>
               </e>
               <e p="EnemyAIRequireComponents.cs" t="Include" />
             </e>
