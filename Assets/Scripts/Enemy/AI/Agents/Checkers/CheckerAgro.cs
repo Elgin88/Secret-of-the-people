@@ -1,18 +1,16 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using Infrastructure.Services.Factory;
+﻿using Infrastructure.Services.Factory;
 using UnityEngine;
 
 namespace Enemy.AI.Agents.Checkers
 {
     public class CheckerAgro : MonoBehaviour
     {
-        private Transform _playerTransform;
+        private IGameFactory _gameFactory;
         public bool IsAgro { get; private set; }
 
         public void Construct(IGameFactory gameFactory)
         {
-            _playerTransform = gameFactory.Player.transform;
+            _gameFactory = gameFactory;
         }
 
         private void FixedUpdate()
