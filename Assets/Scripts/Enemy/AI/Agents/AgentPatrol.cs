@@ -15,13 +15,13 @@ namespace Enemy.AI.Agents
         [SerializeField] private SpeedSetter _speedSetter;
         [SerializeField] private LayerMask _groundMask;
 
+        private RaycastHit[] _results = new RaycastHit[5];
         private Vector3 _targetPosition;
         private Vector3 _position => transform.position;
-        private int _maxRange => _staticData.MaxPatrolRange;
-        private int _minRange => _staticData.MinPatrolRange;
-        private int _minDistanceToPlayer => _staticData.MinDistanceToPlayer;
-        private RaycastHit[] _results = new RaycastHit[5];
-        private const float _length = 5;
+        private const float _length = 2;
+        private const int _maxPatrolRange = 10;
+        private const int _minPatrolRange = -10;
+        private float AttackRange => _staticData.AttackRange;
 
         private void OnEnable()
         {
@@ -66,9 +66,9 @@ namespace Enemy.AI.Agents
 
         private void PlayAnimation() => _animationSetter.PlayRun();
 
-        private int GetRandomValue() => Random.Range(_minRange, _maxRange);
+        private int GetRandomValue() => Random.Range(_minPatrolRange, _maxPatrolRange);
 
-        private bool IsMinDistanceToPlayer() => Vector3.Distance(_position, _targetPosition) < _minDistanceToPlayer;
+        private bool IsMinDistanceToPlayer() => Vector3.Distance(_position, _targetPosition) < AttackRange;
 
         private void NavMeshMove() => _navMeshAgent.destination = _targetPosition;
 

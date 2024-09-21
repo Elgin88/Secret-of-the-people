@@ -1256,6 +1256,7 @@
                 <e p="AgentPatrol.cs" t="Include" />
                 <e p="Checkers" t="Include">
                   <e p="CheckerAgro.cs" t="Include" />
+                  <e p="CheckerIsInAttackRange.cs" t="Include" />
                 </e>
                 <e p="Launchers" t="Include">
                   <e p="LauncherAgentIdle.cs" t="Include" />

@@ -68,10 +68,11 @@ namespace Infrastructure.Services.Factory
 
             foreach (var point in skeletonInitialPoints)
             {
-                GameObject skeleton = CreateGameObject(StaticAssetPath.Sceleton, point.transform.position);
+                GameObject skeleton = CreateGameObject(StaticAssetPath.Skeleton, point.transform.position);
 
                 skeleton.GetComponent<AgentMoveToPlayer>().Construct(this);
                 skeleton.GetComponent<CheckerAgro>().Construct(this);
+                skeleton.GetComponent<CheckerIsInAttackRange>().Construct(this);
 
                 skeletons.Add(skeleton);
             }

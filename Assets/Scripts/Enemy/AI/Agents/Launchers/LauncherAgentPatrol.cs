@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Enemy.AI.Agents.Checkers;
 using UnityEngine;
 
 namespace Enemy.AI.Agents.Launchers
@@ -6,10 +6,18 @@ namespace Enemy.AI.Agents.Launchers
     public class LauncherAgentPatrol : MonoBehaviour
     {
         [SerializeField] private AgentPatrol _agentPatrol;
+        [SerializeField] private CheckerAgro _checkerAgro;
 
-        private void Awake()
+        private void FixedUpdate()
         {
-            _agentPatrol.Off();
+            if (_checkerAgro.IsAgro)
+            {
+                _agentPatrol.Off();
+            }
+            else
+            {
+                _agentPatrol.On();
+            }
         }
     }
 }

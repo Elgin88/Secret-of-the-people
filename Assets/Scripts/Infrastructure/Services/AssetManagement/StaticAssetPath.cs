@@ -4,7 +4,7 @@
     {
         public const string Player = "Player/Player";
 
-        public const string Sceleton = "Enemy/##########Skeleton";
+        public const string Skeleton = "Enemy/Skeleton";
 
         public const string CanvasGraphy = "Canvas/Graphy";
 

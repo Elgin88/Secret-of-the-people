@@ -1,9 +1,13 @@
 ﻿using Enemy.AI.Agents;
+using Enemy.AI.Agents.Checkers;
 using Enemy.AI.Agents.Launchers;
 using UnityEngine;
 
 namespace Enemy.AI
 {
+    [RequireComponent(typeof(CheckerAgro))]
+    [RequireComponent(typeof(CheckerIsInAttackRange))]
+    
     [RequireComponent(typeof(LauncherAgentIdle))]
     [RequireComponent(typeof(LauncherAgentMoveToPlayer))]
     [RequireComponent(typeof(LauncherAgentPatrol))]

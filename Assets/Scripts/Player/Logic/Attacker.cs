@@ -2,9 +2,6 @@
 
 namespace Player.Logic
 {
-    [RequireComponent(typeof(ChooserWeapon))]
-    [RequireComponent(typeof(TargetFinder))]
-
     public class Attacker : MonoBehaviour
     {
         [SerializeField] private TargetFinder _nextTargetFinder;
@@ -14,7 +11,7 @@ namespace Player.Logic
         {
             if (TargetIsFind())
             {
-                Shoot();
+                //Shoot();
             }
         }
         private void Shoot() => _chooserWeapon.CurrentWeapon.Shoot();
