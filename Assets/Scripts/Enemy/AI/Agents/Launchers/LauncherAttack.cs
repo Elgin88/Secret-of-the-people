@@ -1,4 +1,5 @@
-﻿using Enemy.AI.Agents.Checkers;
+﻿using System;
+using Enemy.AI.Agents.Checkers;
 using UnityEngine;
 
 namespace Enemy.AI.Agents.Launchers
@@ -8,6 +9,9 @@ namespace Enemy.AI.Agents.Launchers
         [SerializeField] private CheckerIsInAttackRange _checkerIsInAttackRange;
         [SerializeField] private AgentAttack _agentAttack;
         [SerializeField] private CheckerAgro _checkerAgro;
+
+        private void Awake() => _agentAttack.Off();
+
         private void FixedUpdate()
         {
             if (IsAgro() & IsInAttackRange())

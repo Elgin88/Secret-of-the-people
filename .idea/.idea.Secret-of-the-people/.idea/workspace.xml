@@ -21,85 +21,25 @@
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Bite Attack.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Bite Attack.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Cast Spell.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Cast Spell.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Creep Dash Forward In Place.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Creep Dash Forward In Place.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Creep Dash Forward W Root.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Creep Dash Forward W Root.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Creep Walk Forward In Place.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Creep Walk Forward In Place.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Creep Walk Forward W Root.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Creep Walk Forward W Root.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Die.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Die.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Idle.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Idle.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Jump In Place.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Jump In Place.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Jump W Root.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Jump W Root.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Left Slash Attack.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Left Slash Attack.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Projectile Attack.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Projectile Attack.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Resurrect.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Resurrect.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Right Slash Attack.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Right Slash Attack.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Take Damage.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Take Damage.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Turn Left.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Turn Left.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Turn Right.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/Skeleton@Turn Right.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/SkeletonTrue.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemy/Skeleton/SkeletonTrue.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAnimatorController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAnimatorController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_draw.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_draw.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_idle.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_idle.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_reload.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_reload.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_run.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_run.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_shoot.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_shoot.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_shoot_burst.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_combat_shoot_burst.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_A.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_A.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_B.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_B.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_C.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_C.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_D.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_D.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_E.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_death_E.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_interact_A.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_interact_A.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_interact_B.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_interact_B.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_take_damage.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_take_damage.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_throw_grenade.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/handgun_throw_grenade.FBX.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemy/Skeleton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Enemy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Enemy/SkeletonStaticData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Enemy/SkeletonStaticData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Player/PlayerStaticData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Player/PlayerStaticData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Weapon.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Weapon/GunBulletStaticData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Weapon/GunBulletStaticData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Weapon/GunStaticData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Weapon/GunStaticData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentEdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentEdle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAgro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAgro.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherIdle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherMoveToPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +72,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentMoveToPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentPatrol.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerCanAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAttacking.cs" />
@@ -151,18 +90,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAgentAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentEdle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/EnemyAIRequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerIsInAttackRange.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAgro.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherIdle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherMoveToPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentEdle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" />
       </list>
     </option>
   </component>
@@ -238,6 +178,7 @@
       <workItem from="1726837719495" duration="126000" />
       <workItem from="1726838758665" duration="1875000" />
       <workItem from="1726884115769" duration="20851000" />
+      <workItem from="1726920193357" duration="2765000" />
     </task>
     <servers />
   </component>

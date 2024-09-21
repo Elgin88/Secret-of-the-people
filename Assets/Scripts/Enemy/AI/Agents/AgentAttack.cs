@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Enemy.Animations;
 using UnityEngine;
 
 namespace Enemy.AI.Agents
 {
     public class AgentAttack : MonoBehaviour
     {
+        [SerializeField] private EnemyAnimationsSetter _enemyAnimationsSetter;
+        
         private void FixedUpdate()
         {
-            Debug.Log("AgentAttack");
+            Debug.Log("Attack");
+            _enemyAnimationsSetter.PlayAttack();
         }
 
         public void On()
@@ -24,6 +27,18 @@ namespace Enemy.AI.Agents
             {
                 enabled = false;
             }
+        }
+
+        private void OnAttackStarted()
+        {
+        }
+
+        private void OnHit()
+        {
+        }
+
+        private void OnAttackEnded()
+        {
         }
     }
 }

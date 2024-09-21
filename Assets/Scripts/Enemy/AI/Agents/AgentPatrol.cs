@@ -18,24 +18,17 @@ namespace Enemy.AI.Agents
         private RaycastHit[] _results = new RaycastHit[5];
         private Vector3 _targetPosition;
         private Vector3 _position => transform.position;
-        private const float _rayLength = 1;
+        private const float _maxRayDistance = 1;
         private const int _maxPatrolRange = 10;
         private const int _minPatrolRange = -10;
         private float AttackRange => _staticData.AttackRange;
 
-        private void OnEnable()
-        {
-            NavMeshOn();
-        }
+        private void OnEnable() => NavMeshOn();
 
-        private void OnDisable()
-        {
-            NavMeshOff();
-        }
+        private void OnDisable() => NavMeshOff();
 
         private void FixedUpdate()
         {
-            Debug.Log("AgentPatrol");
             if (IsMinDistanceToPlayer() || IsNotTargetPosition())
             {
                 FindTargetPosition();
@@ -70,7 +63,7 @@ namespace Enemy.AI.Agents
         private void NavMeshMove() => _navMeshAgent.destination = _targetPosition;
         private void SetTargetPosition() => _targetPosition = new Vector3(_position.x + GetRandomValue(), _position.y, _position.z + GetRandomValue());
         private void FindTargetPosition() => StartCoroutine(StartFindTargetPosition());
-        private bool IsOnGround() => Physics.RaycastNonAlloc(transform.position, Vector3.down, _results, _rayLength, _groundMask) > 0;
+        private bool IsOnGround() => Physics.RaycastNonAlloc(transform.position, Vector3.down, _results, _maxRayDistance, _groundMask) > 0;
         
         private void SetPatrolSpeed()
         {

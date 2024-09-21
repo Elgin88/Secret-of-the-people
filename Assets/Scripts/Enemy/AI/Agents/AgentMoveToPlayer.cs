@@ -28,7 +28,6 @@ namespace Enemy.AI.Agents
 
         private void FixedUpdate()
         {
-            Debug.Log("AgentMoveToPlayer");
             SetNavMeshRunSpeed();
             PlayAnimationRun();
             NavMeshOn();
