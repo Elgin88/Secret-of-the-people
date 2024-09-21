@@ -15,9 +15,9 @@ MonoBehaviour:
   StartHealth: 1
   Damage: 1
   DelayBetweenAttack: 0.75
-  AgroRange: 10
+  AgroRange: 15
   MoveToPlayerSpeed: 2
   PatrolSpeed: 1
-  AttackRange: 2.5
+  AttackRange: 1
   RunAnimationSpeed: 1.5
   AttackAnimationSpeed: 1.75

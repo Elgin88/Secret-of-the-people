@@ -12,7 +12,7 @@ namespace Enemy.AI.Agents.Launchers
 
         private void FixedUpdate()
         {
-            if (_checkerAgro.IsAgro & _checkerIsInAttackRange.IsInAttackRange & _checkerIdle.IsIdle)
+            if (IsAgro() & IsInAttackRange() & IsIdle())
             {
                 _agentEdle.On();
             }
@@ -21,5 +21,9 @@ namespace Enemy.AI.Agents.Launchers
                 _agentEdle.Off();
             }
         }
+
+        private bool IsIdle() => _checkerIdle.IsIdle;
+        private bool IsInAttackRange() => _checkerIsInAttackRange.IsInAttackRange;
+        private bool IsAgro() => _checkerAgro.IsAgro;
     }
 }

@@ -11,7 +11,7 @@ namespace Enemy.AI.Agents.Launchers
 
         private void FixedUpdate()
         {
-            if (_checkerAgro.IsAgro & !_checkerIsInAttackRange.IsInAttackRange)
+            if (IsAgro() & !IsInAttackRange())
             {
                 _agentMoveToPlayer.On();
             }
@@ -20,5 +20,8 @@ namespace Enemy.AI.Agents.Launchers
                 _agentMoveToPlayer.Off();
             }
         }
+
+        private bool IsInAttackRange() => _checkerIsInAttackRange.IsInAttackRange;
+        private bool IsAgro() => _checkerAgro.IsAgro;
     }
 }

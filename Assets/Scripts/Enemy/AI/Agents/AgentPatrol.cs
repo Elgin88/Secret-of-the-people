@@ -18,7 +18,7 @@ namespace Enemy.AI.Agents
         private RaycastHit[] _results = new RaycastHit[5];
         private Vector3 _targetPosition;
         private Vector3 _position => transform.position;
-        private const float _length = 2;
+        private const float _rayLength = 1;
         private const int _maxPatrolRange = 10;
         private const int _minPatrolRange = -10;
         private float AttackRange => _staticData.AttackRange;
@@ -38,7 +38,7 @@ namespace Enemy.AI.Agents
             Debug.Log("AgentPatrol");
             if (IsMinDistanceToPlayer() || IsNotTargetPosition())
             {
-                FindPosition();
+                FindTargetPosition();
             }
 
             SetPatrolSpeed();
@@ -64,21 +64,14 @@ namespace Enemy.AI.Agents
         }
 
         private bool IsNotTargetPosition() => _targetPosition == null;
-
         private void PlayPatrolAnimation() => _animationSetter.PlayRun();
-
         private int GetRandomValue() => Random.Range(_minPatrolRange, _maxPatrolRange);
-
         private bool IsMinDistanceToPlayer() => Vector3.Distance(_position, _targetPosition) < AttackRange;
-
         private void NavMeshMove() => _navMeshAgent.destination = _targetPosition;
-
         private void SetTargetPosition() => _targetPosition = new Vector3(_position.x + GetRandomValue(), _position.y, _position.z + GetRandomValue());
-
-        private void FindPosition() => StartCoroutine(StartFindTargetPosition());
-
-        private bool IsOnGround() => Physics.RaycastNonAlloc(transform.position, Vector3.down, _results, _length, _groundMask) > 0;
-
+        private void FindTargetPosition() => StartCoroutine(StartFindTargetPosition());
+        private bool IsOnGround() => Physics.RaycastNonAlloc(transform.position, Vector3.down, _results, _rayLength, _groundMask) > 0;
+        
         private void SetPatrolSpeed()
         {
             _speedSetter.SetPatrolSpeed();

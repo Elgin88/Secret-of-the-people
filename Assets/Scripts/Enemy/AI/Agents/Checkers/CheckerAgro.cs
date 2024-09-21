@@ -10,7 +10,7 @@ namespace Enemy.AI.Agents.Checkers
         
         private IGameFactory _gameFactory;
         private Transform _playerTransform => _gameFactory.Player.transform;
-        private const float _delta = 0.2f;
+        private const float _delta = 0.1f;
 
         public bool IsAgro { get; private set; }
 

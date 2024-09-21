@@ -6,11 +6,11 @@ namespace Enemy.AI.Agents.Launchers
     public class LauncherAttack : MonoBehaviour
     {
         [SerializeField] private CheckerIsInAttackRange _checkerIsInAttackRange;
-        [SerializeField] private CheckerAgro _checkerAgro;
         [SerializeField] private AgentAttack _agentAttack;
+        [SerializeField] private CheckerAgro _checkerAgro;
         private void FixedUpdate()
         {
-            if (_checkerAgro.IsAgro & _checkerIsInAttackRange.IsInAttackRange)
+            if (IsAgro() & IsInAttackRange())
             {
                 _agentAttack.On();
             }
@@ -19,5 +19,9 @@ namespace Enemy.AI.Agents.Launchers
                 _agentAttack.Off();
             }
         }
+
+        private bool IsInAttackRange() => _checkerIsInAttackRange.IsInAttackRange;
+
+        private bool IsAgro() => _checkerAgro.IsAgro;
     }
 }
