@@ -18,6 +18,6 @@ MonoBehaviour:
   AgroRange: 15
   MoveToPlayerSpeed: 2
   PatrolSpeed: 1
-  AttackRange: 1
+  AttackRange: 1.7
   RunAnimationSpeed: 1.5
   AttackAnimationSpeed: 1.75
