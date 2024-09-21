@@ -3,21 +3,20 @@ using UnityEngine;
 
 namespace Enemy.AI.Agents.Launchers
 {
-    public class LauncherAgentMoveToPlayer : MonoBehaviour
+    public class LauncherAttack : MonoBehaviour
     {
         [SerializeField] private CheckerIsInAttackRange _checkerIsInAttackRange;
-        [SerializeField] private AgentMoveToPlayer _agentMoveToPlayer;
         [SerializeField] private CheckerAgro _checkerAgro;
-
+        [SerializeField] private AgentAttack _agentAttack;
         private void FixedUpdate()
         {
-            if (_checkerAgro.IsAgro & !_checkerIsInAttackRange.IsAttackRange)
+            if (_checkerAgro.IsAgro & _checkerIsInAttackRange.IsInAttackRange)
             {
-                _agentMoveToPlayer.On();
+                _agentAttack.On();
             }
             else
             {
-                _agentMoveToPlayer.Off();
+                _agentAttack.Off();
             }
         }
     }

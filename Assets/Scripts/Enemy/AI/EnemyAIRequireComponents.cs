@@ -6,12 +6,15 @@ using UnityEngine;
 namespace Enemy.AI
 {
     [RequireComponent(typeof(CheckerAgro))]
+    [RequireComponent(typeof(CheckerIdle))]
     [RequireComponent(typeof(CheckerIsInAttackRange))]
     
-    [RequireComponent(typeof(LauncherAgentIdle))]
-    [RequireComponent(typeof(LauncherAgentMoveToPlayer))]
-    [RequireComponent(typeof(LauncherAgentPatrol))]
+    [RequireComponent(typeof(LauncherAttack))]
+    [RequireComponent(typeof(LauncherIdle))]
+    [RequireComponent(typeof(LauncherMoveToPlayer))]
+    [RequireComponent(typeof(LauncherPatrol))]
     
+    [RequireComponent(typeof(AgentAttack))]
     [RequireComponent(typeof(AgentEdle))]
     [RequireComponent(typeof(AgentMoveToPlayer))]
     [RequireComponent(typeof(AgentPatrol))]

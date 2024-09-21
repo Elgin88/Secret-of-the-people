@@ -35,13 +35,14 @@ namespace Enemy.AI.Agents
 
         private void FixedUpdate()
         {
+            Debug.Log("AgentPatrol");
             if (IsMinDistanceToPlayer() || IsNotTargetPosition())
             {
                 FindPosition();
             }
 
             SetPatrolSpeed();
-            PlayAnimation();
+            PlayPatrolAnimation();
             NavMeshOn();
             NavMeshMove();
         }
@@ -64,7 +65,7 @@ namespace Enemy.AI.Agents
 
         private bool IsNotTargetPosition() => _targetPosition == null;
 
-        private void PlayAnimation() => _animationSetter.PlayRun();
+        private void PlayPatrolAnimation() => _animationSetter.PlayRun();
 
         private int GetRandomValue() => Random.Range(_minPatrolRange, _maxPatrolRange);
 

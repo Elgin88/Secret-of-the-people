@@ -9,9 +9,9 @@ namespace Enemy.AI.Agents.Checkers
         [SerializeField] private MonsterStaticData _staticData;
 
         private IGameFactory _gameFactory;
-        private float _delta = 0.1f;
+        private const float _delta = 0.1f;
         
-        public bool IsAttackRange { get; private set; }
+        public bool IsInAttackRange { get; private set; }
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 
@@ -19,11 +19,11 @@ namespace Enemy.AI.Agents.Checkers
         {
             if (GetIsAttackRange())
             {
-                IsAttackRange = true;
+                IsInAttackRange = true;
             }
             else if (GetIsNotAttackRange())
             {
-                IsAttackRange = false;
+                IsInAttackRange = false;
             }
         }
 

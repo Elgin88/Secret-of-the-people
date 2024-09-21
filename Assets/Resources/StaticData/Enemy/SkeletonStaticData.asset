@@ -14,13 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 1
   Damage: 1
-  AttackRange: 1
+  DelayBetweenAttack: 0.75
   AgroRange: 10
-  RadiusOfHitSphere: 0.5
   MoveToPlayerSpeed: 2
   PatrolSpeed: 1
-  MaxPatrolRange: 10
-  MinPatrolRange: -10
-  MinDistanceToPlayer: 2
+  AttackRange: 2.5
   RunAnimationSpeed: 1.5
   AttackAnimationSpeed: 1.75

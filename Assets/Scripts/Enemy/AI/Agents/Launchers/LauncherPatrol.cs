@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Enemy.AI.Agents.Launchers
 {
-    public class LauncherAgentPatrol : MonoBehaviour
+    public class LauncherPatrol : MonoBehaviour
     {
         [SerializeField] private AgentPatrol _agentPatrol;
         [SerializeField] private CheckerAgro _checkerAgro;

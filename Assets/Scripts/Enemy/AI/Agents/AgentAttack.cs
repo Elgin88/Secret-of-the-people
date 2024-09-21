@@ -1,16 +1,13 @@
-﻿using Enemy.Animations;
+﻿using System;
 using UnityEngine;
 
 namespace Enemy.AI.Agents
 {
-    public class AgentEdle : MonoBehaviour
+    public class AgentAttack : MonoBehaviour
     {
-        [SerializeField] private EnemyAnimationsSetter _enemyAnimationsSetter;
-
         private void FixedUpdate()
         {
-            Debug.Log("AgentEdle");
-            _enemyAnimationsSetter.PlayIdle();
+            Debug.Log("AgentAttack");
         }
 
         public void On()
