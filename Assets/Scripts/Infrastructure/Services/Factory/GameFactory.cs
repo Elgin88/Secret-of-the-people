@@ -72,7 +72,7 @@ namespace Infrastructure.Services.Factory
 
                 skeleton.GetComponent<AgentMoveToPlayer>().Construct(this);
                 skeleton.GetComponent<CheckerAgro>().Construct(this);
-                skeleton.GetComponent<CheckerIsInAttackRange>().Construct(this);
+                skeleton.GetComponent<CheckerAttackRange>().Construct(this);
 
                 skeletons.Add(skeleton);
             }

@@ -4,21 +4,30 @@ namespace Enemy.AI.Agents.Checkers
 {
     public class CheckerIdle : MonoBehaviour
     {
-        public bool IsIdle { get; private set; }
+        [SerializeField] private CkeckerAttackCooldown _checkerCooldownAttack;
+        [SerializeField] private AgentAttack _agentAttack;
+        [SerializeField] private CheckerAttackRange _checkerAttackRange;
 
-        private void Awake()
+        private bool _isIdle = false;
+
+        public bool IsIdle => _isIdle;
+
+        private void FixedUpdate()
         {
-            IsIdle = false;
+            if (!_checkerAttackRange.IsRange)
+            {
+                SetIsNotIdle();
+            }
         }
 
         public void SetIsIdle()
         {
-            IsIdle = true;
+            _isIdle = true;
         }
 
         public void SetIsNotIdle()
         {
-            IsIdle = false;
+            _isIdle = false;
         }
     }
 }

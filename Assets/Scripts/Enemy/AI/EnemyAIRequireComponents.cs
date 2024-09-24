@@ -7,13 +7,15 @@ namespace Enemy.AI
 {
     [RequireComponent(typeof(CheckerAgro))]
     [RequireComponent(typeof(CheckerIdle))]
-    [RequireComponent(typeof(CheckerIsInAttackRange))]
-    
+    [RequireComponent(typeof(CheckerIsAttacking))]
+    [RequireComponent(typeof(CheckerAttackRange))]
+    [RequireComponent(typeof(CkeckerAttackCooldown))]
+
     [RequireComponent(typeof(LauncherAttack))]
     [RequireComponent(typeof(LauncherIdle))]
     [RequireComponent(typeof(LauncherMoveToPlayer))]
     [RequireComponent(typeof(LauncherPatrol))]
-    
+
     [RequireComponent(typeof(AgentAttack))]
     [RequireComponent(typeof(AgentEdle))]
     [RequireComponent(typeof(AgentMoveToPlayer))]

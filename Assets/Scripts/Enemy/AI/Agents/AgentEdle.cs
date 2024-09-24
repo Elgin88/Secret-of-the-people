@@ -9,6 +9,8 @@ namespace Enemy.AI.Agents
 
         private void FixedUpdate()
         {
+            Debug.Log("AgentEdle");
+
             _enemyAnimationsSetter.PlayIdle();
         }
 

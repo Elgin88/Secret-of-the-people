@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Enemy.AI.Agents.Checkers;
 using Enemy.Animations;
-using StaticData;
 using UnityEngine;
 
 namespace Enemy.AI.Agents
@@ -8,28 +7,19 @@ namespace Enemy.AI.Agents
     public class AgentAttack : MonoBehaviour
     {
         [SerializeField] private EnemyAnimationsSetter _enemyAnimationsSetter;
-        [SerializeField] private EnemyStaticData _enemyStaticData;
+        [SerializeField] private CkeckerAttackCooldown _checkerAttackCooldown;
+        [SerializeField] private CheckerIdle _checkerIdle;
 
-        private float _startCooldown => _enemyStaticData.DelayBetweenShoots;
-        private float _currentCooldown;
-
-        private void Awake() => _currentCooldown = 0;
+        private void OnEnable()
+        {
+            _checkerIdle.SetIsNotIdle();
+        }
 
         private void FixedUpdate()
         {
-            UpdateCooldown();
+            Debug.Log("AgentAttack");
 
-            if (IsCooldownEnd())
-            {
-                _enemyAnimationsSetter.PlayAttack();
-            }
-        }
-
-        private void UpdateCooldown() => _currentCooldown -= Time.deltaTime;
-
-        private bool IsCooldownEnd()
-        {
-            return _currentCooldown <= 0;
+            PlayAttackAnimation();
         }
 
         public void On()
@@ -48,16 +38,12 @@ namespace Enemy.AI.Agents
             }
         }
 
-        private void OnAttackStarted()
-        {
-        }
-
         private void OnHit()
         {
+            _checkerIdle.SetIsIdle();
+            _checkerAttackCooldown.ResetCooldown();
         }
 
-        private void OnAttackEnded()
-        {
-        }
+        private void PlayAttackAnimation() => _enemyAnimationsSetter.PlayAttack();
     }
 }

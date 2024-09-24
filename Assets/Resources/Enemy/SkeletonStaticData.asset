@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 1
   Damage: 1
-  DelayBetweenAttack: 0.75
+  AttackCooldown: 1.5
   AgroRange: 15
   MoveToPlayerSpeed: 2
   PatrolSpeed: 1

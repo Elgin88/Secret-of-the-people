@@ -1371,6 +1371,8 @@ GameObject:
   - component: {fileID: 3809911370874153679}
   - component: {fileID: 8472833882740688324}
   - component: {fileID: 2867935538914699837}
+  - component: {fileID: 5986399974105051172}
+  - component: {fileID: 1897081393260095831}
   m_Layer: 13
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1548,6 +1550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyAnimationsSetter: {fileID: 3327770237539775674}
+  _checkerAttackCooldown: {fileID: 5986399974105051172}
+  _checkerIdle: {fileID: 2867935538914699837}
 --- !u!114 &3327770237539775674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,6 +1660,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _checkerIsInAttackRange: {fileID: 3809911370874153679}
+  _checkerCooldownAttack: {fileID: 5986399974105051172}
+  _checkerIsAttacking: {fileID: 1897081393260095831}
   _checkerAgro: {fileID: 2558199671035760375}
   _checkerIdle: {fileID: 2867935538914699837}
   _agentEdle: {fileID: 1833438975344154305}
@@ -1726,9 +1732,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbab6374bc594db39733054b8142ad70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkerIsInAttackRange: {fileID: 3809911370874153679}
+  _checkerAttackCooldown: {fileID: 5986399974105051172}
+  _checkerAttackRange: {fileID: 3809911370874153679}
   _agentAttack: {fileID: 6292723070904102291}
   _checkerAgro: {fileID: 2558199671035760375}
+  _checkerIdle: {fileID: 2867935538914699837}
 --- !u!114 &2867935538914699837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,6 +1749,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1730fae0ff4045b6b9e68b657a10df5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _checkerCooldownAttack: {fileID: 5986399974105051172}
+  _agentAttack: {fileID: 6292723070904102291}
+  _checkerAttackRange: {fileID: 3809911370874153679}
+--- !u!114 &5986399974105051172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64002863e12c14a23b3d616e2bf3f6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterStaticData: {fileID: 11400000, guid: b268c58ff6e0f4fd9b04a3c77f0b8a34, type: 2}
+--- !u!114 &1897081393260095831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551938292944909751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4ab717ecb7c492fa0fbe0cc794f5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agentAttack: {fileID: 6292723070904102291}
 --- !u!1 &7816076442647639175
 GameObject:
   m_ObjectHideFlags: 0

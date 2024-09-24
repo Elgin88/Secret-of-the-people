@@ -11,7 +11,7 @@ namespace StaticData
 
         [Range(1f, 30f)] public int Damage = 30;
 
-        [Range(0f, 2f)] public float DelayBetweenAttack = 0.75f;
+        [Range(0f, 2f)] public float AttackCooldown = 0.75f;
 
         [Range(1f, 40f)] public int AgroRange = 8;
 
