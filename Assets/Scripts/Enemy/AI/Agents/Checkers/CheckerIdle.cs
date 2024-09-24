@@ -8,9 +8,7 @@ namespace Enemy.AI.Agents.Checkers
         [SerializeField] private AgentAttack _agentAttack;
         [SerializeField] private CheckerAttackRange _checkerAttackRange;
 
-        private bool _isIdle = false;
-
-        public bool IsIdle => _isIdle;
+        public bool IsIdle;
 
         private void FixedUpdate()
         {
@@ -22,12 +20,12 @@ namespace Enemy.AI.Agents.Checkers
 
         public void SetIsIdle()
         {
-            _isIdle = true;
+            IsIdle = true;
         }
 
         public void SetIsNotIdle()
         {
-            _isIdle = false;
+            IsIdle = false;
         }
     }
 }
