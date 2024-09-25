@@ -57,12 +57,12 @@ namespace Enemy.AI.Agents
         }
 
         private bool IsNotTargetPosition() => _targetPosition == null;
-        private void PlayPatrolAnimation() => _animationSetter.PlayRun();
-        private int GetRandomValue() => Random.Range(_minPatrolRange, _maxPatrolRange);
+        private bool IsOnGround() => Physics.RaycastNonAlloc(transform.position, Vector3.down, _results, _maxRayDistance, _groundMask) > 0;
         private bool IsMinDistance() => Vector3.Distance(_position, _targetPosition) < AttackRange;
+        private void PlayPatrolAnimation() => _animationSetter.PlayRun();
         private void SetTargetPosition() => _targetPosition = new Vector3(_position.x + GetRandomValue(), _position.y, _position.z + GetRandomValue());
         private void FindTargetPosition() => StartCoroutine(StartFindTargetPosition());
-        private bool IsOnGround() => Physics.RaycastNonAlloc(transform.position, Vector3.down, _results, _maxRayDistance, _groundMask) > 0;
+        private int GetRandomValue() => Random.Range(_minPatrolRange, _maxPatrolRange);
 
         private void MoveToTargetPosition()
         {

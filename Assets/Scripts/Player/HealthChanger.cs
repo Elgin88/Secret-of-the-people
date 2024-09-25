@@ -23,7 +23,7 @@ namespace Player
 
         public void SetStartHealth(int health)
         {
-            StartHealth = health;
+            StartHealth = _staticData.StartHealth;
             InvokeHealthChanged();
         }
 

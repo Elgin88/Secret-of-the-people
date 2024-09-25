@@ -1,6 +1,4 @@
-﻿using Enemy.Logic;
-using Player.Interfaces;
-using Unity.VisualScripting;
+﻿using Player.Interfaces;
 using UnityEngine;
 
 namespace Enemy.AI.Agents.Checkers
@@ -13,8 +11,17 @@ namespace Enemy.AI.Agents.Checkers
         private Collider[] _results = new Collider[2];
         private const float _radius = 1f;
 
-        public bool GetIsHit() => Physics.OverlapSphereNonAlloc(_hitPoint.position, _radius, _results, _targetMask) > 0;
+        public bool IsHit { get; private set; }
 
-        public IPlayerHealthChanger GetTargetHealth() => _results[0].GetComponent<IPlayerHealthChanger>();
+        public bool GetIsHit(out Collider target)
+        {
+            target = null;
+
+            IsHit = Physics.OverlapSphereNonAlloc(_hitPoint.position, _radius, _results, _targetMask) > 0;
+
+            target = _results[0];
+
+            return IsHit;
+        }
     }
 }
