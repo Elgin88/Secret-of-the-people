@@ -6,7 +6,7 @@ namespace Enemy.Logic
 {
     public class HealthChanger : MonoBehaviour, IEnemyHealthChanger
     {
-        [SerializeField] private EnemyStaticData _staticData;
+        [SerializeField] private MonsterStaticData _staticData;
 
         private int _maxHealth;
         private int _currentHealth;
@@ -19,7 +19,6 @@ namespace Enemy.Logic
 
         private void Awake()
         {
-            SetMaxHealth(_staticData.MaxHealth);
             SetCurrentHealth(_maxHealth);
         }
 
@@ -27,7 +26,7 @@ namespace Enemy.Logic
         {
             _currentHealth += heal;
 
-            if (_staticData.MaxHealth < _currentHealth)
+            if (_staticData.StartHealth < _currentHealth)
             {
                 SetCurrentHealth(_maxHealth);
             }

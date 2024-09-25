@@ -1,7 +1,6 @@
-﻿using System;
-using Enemy.AI.Agents.Checkers;
+﻿using Enemy.AI.Agents.Checkers;
 using Enemy.Animations;
-using Player.Animations;
+using Player.Animations.Logic;
 using Player.Interfaces;
 using StaticData;
 using UnityEngine;
@@ -25,8 +24,6 @@ namespace Enemy.AI.Agents
 
         private void FixedUpdate()
         {
-            Debug.Log("AgentAttack");
-
             PlayAttackAnimation();
         }
 

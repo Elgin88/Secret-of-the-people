@@ -28,8 +28,6 @@ namespace Enemy.AI.Agents
 
         private void FixedUpdate()
         {
-            Debug.Log("AgentMoveToPlayer");
-
             PlayAnimationRun();
             MoveToPlayer();
         }

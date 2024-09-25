@@ -3,12 +3,9 @@ using Canvas;
 using Enemy.AI.Agents;
 using Enemy.AI.Agents.Checkers;
 using Infrastructure.Services.AssetManagement;
-using Player;
+using Player.Inventory;
 using Static;
 using UnityEngine;
-using Weapons.Clips;
-using Weapons.GunBullet;
-using Weapons.GunComponents;
 
 namespace Infrastructure.Services.Factory
 {
@@ -36,7 +33,8 @@ namespace Infrastructure.Services.Factory
         {
             _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
 
-            _player.GetComponent<Inventory>().Construct(this);
+            _player.GetComponent<WeaponContainer>().Construct(this);
+            _player.GetComponent<WeaponAdder>().Construct();
 
             return _player;
         }
@@ -82,29 +80,17 @@ namespace Infrastructure.Services.Factory
 
         public GameObject CreateGun()
         {
-            GameObject gun = _assetProvider.Instantiate(StaticAssetPath.Gun);
-
-            gun.GetComponent<Gun>().Construct(this);
-
-            return gun;
-        }
-
-        public GameObject CreateGunClip()
-        {
-            GameObject gunClip = CreateGameObject(StaticAssetPath.GunClip);
-
-            gunClip.GetComponent<GunClip>().Construct(this);
-
-            return gunClip;
+            return CreateGameObject(StaticAssetPath.Gun);
         }
 
         public GameObject CreateGunBullet()
         {
-            GameObject bullet = CreateGameObject(StaticAssetPath.GunBullet);
+            return CreateGameObject(StaticAssetPath.GunBullet);
+        }
 
-            bullet.GetComponent<Bullet>().Construct(this);
-
-            return bullet;
+        public GameObject CreateGunClip()
+        {
+            return CreateGameObject(StaticAssetPath.GunClip);
         }
 
         private GameObject CreateGameObject(string path, Vector3 position) => _assetProvider.Instantiate(path, position, Quaternion.identity);

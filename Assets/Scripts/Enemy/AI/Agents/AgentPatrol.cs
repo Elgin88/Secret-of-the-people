@@ -29,8 +29,6 @@ namespace Enemy.AI.Agents
 
         private void FixedUpdate()
         {
-            Debug.Log("AgentPatrol");
-
             if (IsMinDistance() || IsNotTargetPosition())
             {
                 FindTargetPosition();
