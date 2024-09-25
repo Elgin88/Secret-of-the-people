@@ -9,6 +9,7 @@ namespace Enemy.AI
     [RequireComponent(typeof(CheckerIdle))]
     [RequireComponent(typeof(CheckerIsAttacking))]
     [RequireComponent(typeof(CheckerAttackRange))]
+    [RequireComponent(typeof(CheckerIsHit))]
     [RequireComponent(typeof(CkeckerAttackCooldown))]
 
     [RequireComponent(typeof(LauncherAttack))]
