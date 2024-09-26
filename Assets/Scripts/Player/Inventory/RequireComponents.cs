@@ -2,8 +2,9 @@
 
 namespace Player.Inventory
 {
+    [RequireComponent(typeof(ChooserWeapon))]
     [RequireComponent(typeof(WeaponAdder))]
     [RequireComponent(typeof(WeaponContainer))]
 
-    public class InventoryRequireComponents : MonoBehaviour { }
+    public class RequireComponents : MonoBehaviour { }
 }

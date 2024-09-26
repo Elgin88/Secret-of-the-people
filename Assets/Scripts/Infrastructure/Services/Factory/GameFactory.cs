@@ -6,6 +6,7 @@ using Infrastructure.Services.AssetManagement;
 using Player.Inventory;
 using Static;
 using UnityEngine;
+using Weapons.Gun;
 
 namespace Infrastructure.Services.Factory
 {
@@ -35,6 +36,7 @@ namespace Infrastructure.Services.Factory
 
             _player.GetComponent<WeaponContainer>().Construct(this);
             _player.GetComponent<WeaponAdder>().Construct();
+            _player.GetComponent<ChooserWeapon>().Construct();
 
             return _player;
         }
@@ -90,7 +92,11 @@ namespace Infrastructure.Services.Factory
 
         public GameObject CreateGunClip()
         {
-            return CreateGameObject(StaticAssetPath.GunClip);
+            GameObject gunClip = CreateGameObject(StaticAssetPath.GunClip);
+
+            gunClip.GetComponent<GunClip>().Construct(this);
+
+            return gunClip;
         }
 
         private GameObject CreateGameObject(string path, Vector3 position) => _assetProvider.Instantiate(path, position, Quaternion.identity);

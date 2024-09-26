@@ -1,5 +1,4 @@
-﻿using Infrastructure.Services.Factory;
-using StaticData;
+﻿using StaticData;
 using UnityEngine;
 
 namespace Player.Inventory
@@ -14,7 +13,7 @@ namespace Player.Inventory
         public void Construct()
         {
             _weaponContainer.AddGun();
-            _weaponContainer.AddGunClip(_clipCount);
+            _weaponContainer.AddFullGunClip(_clipCount);
         }
     }
 }

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Infrastructure.Services.Factory;
-using StaticData;
 using UnityEngine;
+using Weapons.Gun;
+using Weapons.Interfaces;
 
 namespace Player.Inventory
 {
     public class WeaponContainer : MonoBehaviour
     {
-        private List<GameObject> _container = new List<GameObject>();
+        private List<GameObject> _weapons = new List<GameObject>();
         private IGameFactory _gameFactory;
 
         public void Construct(IGameFactory gameFactory)
@@ -16,16 +16,35 @@ namespace Player.Inventory
             SetGameFactory(gameFactory);
         }
 
-        public void AddGun()
+        public IWeapon GetGun()
         {
-            _container.Add(_gameFactory.CreateGun());
+            IWeapon iWeapon = null;
+
+            foreach (GameObject weapon in _weapons)
+            {
+                if (weapon.GetComponent<Gun>())
+                {
+                    iWeapon = weapon.GetComponent<IWeapon>();
+                }
+            }
+
+            return iWeapon;
         }
 
-        public void AddGunClip(int clipCount)
+        public void AddGun()
+        {
+            _weapons.Add(_gameFactory.CreateGun());
+        }
+
+        public void AddFullGunClip(int clipCount)
         {
             for (int i = 0; i < clipCount; i++)
             {
-                _container.Add(_gameFactory.CreateGunClip());
+                GameObject gunClip = _gameFactory.CreateGunClip();
+
+                gunClip.GetComponent<IClip>().Fill();
+
+                _weapons.Add(gunClip);
             }
         }
 

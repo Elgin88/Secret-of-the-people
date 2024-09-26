@@ -4,10 +4,8 @@ namespace StaticData
 {
     [CreateAssetMenu(fileName = "WeaponStaticData", menuName = "StaticData/WeaponStaticData")]
 
-    public class EnemyStaticData : ScriptableObject
+    public class WeaponStaticData : ScriptableObject
     {
-        [Range(0f, 100f)] public int MaxHealth = 1;
-
         [Range(0f, 3f)] public float DelayBetweenShoots = 0.5f;
 
         [Range(0f, 3f)] public float DurationReload = 1;
