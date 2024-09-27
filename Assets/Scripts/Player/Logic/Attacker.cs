@@ -1,18 +1,22 @@
-﻿using UnityEngine;
+﻿using Player.Inventory;
+using UnityEngine;
 
 namespace Player.Logic
 {
     public class Attacker : MonoBehaviour
     {
+        [SerializeField] private ChooserWeapon _chooserWeapon;
         [SerializeField] private TargetFinder _nextTargetFinder;
 
         private void FixedUpdate()
         {
             if (TargetIsFind())
             {
-                //Shoot();
+                Attack();
             }
         }
+
+        private void Attack() => _chooserWeapon.CurrentWeapon.Attack(_nextTargetFinder.CurrentTarget);
 
         private bool TargetIsFind() => _nextTargetFinder.CurrentTargetsCount != 0;
     }
