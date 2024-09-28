@@ -20,8 +20,192 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Secret.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Canvas.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Canvas/PlayerHealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Canvas/PlayerHealthBar.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentAttack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentEdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentEdle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentEdle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentEdle.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentMoveToPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentMoveToPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentMoveToPlayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentPatrol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentPatrol.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentPatrol.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAgro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAgro.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAgro.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAgro.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAttackRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAttackRange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAttackRange.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAttackRange.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerIdle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerIdle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerIdle.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerIsAttacking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerIsAttacking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerIsAttacking.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerIsAttacking.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerIsHit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerIsHit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerIsHit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerIsHit.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CkeckerAttackCooldown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CkeckerAttackCooldown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CkeckerAttackCooldown.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CkeckerAttackCooldown.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Launchers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Launchers/LauncherAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAttack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Launchers/LauncherAttack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Launchers/LauncherIdle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherIdle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Launchers/LauncherIdle.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Launchers/LauncherMoveToPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherMoveToPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Launchers/LauncherMoveToPlayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Launchers/LauncherPatrol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherPatrol.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Launchers/LauncherPatrol.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/EnemyAIRequireComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/EnemyAIRequireComponents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/EnemyAIRequireComponents.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/EnemyAIRequireComponents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Animations.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Animations/AttackAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Animations/AttackAnimation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Animations/EnemyAnimationsSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Animations/EnemyAnimationsSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/HitAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Animations/HitAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/HitAnimation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Animations/HitAnimation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/RunAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Animations/RunAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/RunAnimation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Animations/RunAnimation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/EnemySpawner.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/EnemySpawner/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner/EnemySpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/EnemySpawner/EnemySpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Interfaces.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Interfaces.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Interfaces/IHealthChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Interfaces/IHealthChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Interfaces/IHealthChanger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Interfaces/IHealthChanger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Logic.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Logic.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Logic/EnemyStatic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Logic/EnemyStatic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Logic/EnemyStatic.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Logic/EnemyStatic.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Logic/HealthChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Logic/HealthChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Logic/HealthChanger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Logic/HealthChanger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Logic/SpeedSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Logic/SpeedSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Logic/SpeedSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/Logic/SpeedSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/StaticData.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/StaticData.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/StaticData/MonsterStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/StaticData/MonsterStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/StaticData/MonsterStaticData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/StaticData/MonsterStaticData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Game.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Game.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/GameBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/GameBootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/GameBootstrapper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/GameBootstrapper.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ICoroutineRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/ICoroutineRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ICoroutineRunner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/ICoroutineRunner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/SceneLoader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/SceneLoader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AllServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/AllServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AllServices.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/AllServices.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AssetManagement.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/AssetManagement.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AssetManagement/AssetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/AssetManagement/AssetProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AssetManagement/AssetProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/AssetManagement/AssetProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AssetManagement/IAssetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/AssetManagement/IAssetProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AssetManagement/IAssetProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/AssetManagement/IAssetProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AssetManagement/StaticAssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/AssetManagement/StaticAssetPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/AssetManagement/StaticAssetPath.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/AssetManagement/StaticAssetPath.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Factory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Factory/GameFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Factory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/IGameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Factory/IGameFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/IGameFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/IService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/IService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/IService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/IService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Input.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Input.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Input/IInputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Input/IInputService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Input/IInputService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Input/IInputService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Input/InputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Input/InputService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Input/InputService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Input/InputService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Input/MobileInputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Input/MobileInputService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Input/MobileInputService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Input/MobileInputService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Input/StandAloneInputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Input/StandAloneInputService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Services/Input/StandAloneInputService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Input/StandAloneInputService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/GameStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/GameStateMachine.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/GameStateMachine.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/IState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/IState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/IState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/ScenesNames.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/ScenesNames.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/ScenesNames.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/ScenesNames.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/StateBootStrapt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateBootStrapt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/StateBootStrapt.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateBootStrapt.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/StateGameLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateGameLoop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/StateGameLoop.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateGameLoop.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/StateLoadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/States/StateLoadLevel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/HitAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations/HitAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/HitAnimation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations/HitAnimation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/Logic.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations/Logic.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/Logic/AnimationChooserDeathHash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations/Logic/AnimationChooserDeathHash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/Logic/AnimationChooserDeathHash.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations/Logic/AnimationChooserDeathHash.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/Logic/PlayerAnimationsSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations/Logic/PlayerAnimationsSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/Logic/PlayerAnimationsSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations/Logic/PlayerAnimationsSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/RunAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations/RunAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Animations/RunAnimation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Animations/RunAnimation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Interfaces.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Interfaces.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Interfaces/IPlayerAnimationsSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Interfaces/IPlayerAnimationsSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Interfaces/IPlayerAnimationsSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Interfaces/IPlayerAnimationsSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Interfaces/IPlayerHealthChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Interfaces/IPlayerHealthChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Interfaces/IPlayerHealthChanger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Interfaces/IPlayerHealthChanger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory/ChooserWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/ChooserWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory/ChooserWeapon.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/ChooserWeapon.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory/RequireComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/RequireComponents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory/RequireComponents.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/RequireComponents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory/WeaponAdder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponAdder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory/WeaponAdder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponAdder.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory/WeaponContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Inventory/WeaponContainer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponContainer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/Attacker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/Attacker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/Attacker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/Attacker.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/CameraFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/CameraFollower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/CameraFollower.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/CameraFollower.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/ChooserSectorAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/ChooserSectorAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/ChooserSectorAttack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/ChooserSectorAttack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/DeathSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/DeathSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/DeathSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/DeathSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/HealthChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/HealthChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/HealthChanger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/HealthChanger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/Mover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/Mover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/Mover.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/Mover.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/PlayerStatic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/PlayerStatic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/PlayerStatic.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/PlayerStatic.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/ShootPointSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/ShootPointSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/ShootPointSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/ShootPointSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/SpeedMovementSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/SpeedMovementSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/SpeedMovementSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/SpeedMovementSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/TargetFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/TargetFinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Logic/TargetFinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Logic/TargetFinder.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/StaticData.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/StaticData.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/StaticData/PlayerStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/StaticData/PlayerStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/StaticData/PlayerStaticData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/StaticData/PlayerStaticData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Static.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Static.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Static/StaticLayersNames.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Static/StaticLayersNames.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Static/StaticLayersNames.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Static/StaticLayersNames.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Static/StaticTags.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Static/StaticTags.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Static/StaticTags.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Static/StaticTags.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Gun.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Gun/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/Gun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Gun/Gun.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/Gun.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Gun/GunBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Gun/GunBullet.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunBullet.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Gun/GunClip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunClip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Gun/GunClip.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunClip.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Interfaces.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Interfaces/IBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IBullet.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Interfaces/IBullet.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IClip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Interfaces/IClip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IClip.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Interfaces/IClip.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Interfaces/IWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Interfaces/IWeapon.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Interfaces/IWeapon.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/StaticData.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/StaticData.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/StaticData/BulletStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/StaticData/BulletStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/StaticData/BulletStaticData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/StaticData/BulletStaticData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/StaticData/WeaponStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/StaticData/WeaponStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/StaticData/WeaponStaticData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/StaticData/WeaponStaticData.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Agents/AgentsCheckers/CheckerAttacking.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerAttacking.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerEndAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerAgro.cs" />
@@ -85,6 +268,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Launchers/LauncherAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentAttack.cs" />
       </list>
     </option>
   </component>
@@ -161,6 +345,7 @@
       <workItem from="1726838758665" duration="1875000" />
       <workItem from="1726884115769" duration="20851000" />
       <workItem from="1726920193357" duration="4209000" />
+      <workItem from="1727519160397" duration="208000" />
     </task>
     <servers />
   </component>
