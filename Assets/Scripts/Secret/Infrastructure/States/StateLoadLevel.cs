@@ -1,5 +1,6 @@
 ﻿using Secret.Infrastructure.Services;
 using Secret.Infrastructure.Services.Factory;
+using Agava.YandexGames;
 
 namespace Secret.Infrastructure.States
 {
@@ -24,7 +25,7 @@ namespace Secret.Infrastructure.States
 
         private void OnLoaded()
         {
-            SetIsGameReadyforSDK();
+            SetIsGameReadyForSDK();
             CreateObjects();
             SetNextState();
         }
@@ -38,7 +39,7 @@ namespace Secret.Infrastructure.States
             _gameFactory.CreatePlayerHealthBar();
         }
 
-        private void SetIsGameReadyforSDK()
+        private void SetIsGameReadyForSDK()
         {
 #if !UNITY_EDITOR
             if (!Game.IsReady)

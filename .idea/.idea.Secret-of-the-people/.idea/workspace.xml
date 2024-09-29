@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +35,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerAttacking.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerEndAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerAgro.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerEndAttack.cs" />
@@ -84,6 +85,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/EnemyAnimationsSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" />
       </list>
     </option>
   </component>
@@ -161,6 +163,7 @@
       <workItem from="1726884115769" duration="20851000" />
       <workItem from="1726920193357" duration="4209000" />
       <workItem from="1727519160397" duration="238000" />
+      <workItem from="1727519965561" duration="680000" />
     </task>
     <servers />
   </component>
