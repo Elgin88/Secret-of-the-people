@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="" />
+    <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponAdder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponAdder.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,12 +33,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunBulletMover.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerEndAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerAgro.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerEndAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/CheckerEndAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Starters/StarterCheckerCanAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Checkers/Stoppers/StopperCheckerAttacking.cs" />
@@ -82,6 +87,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/AgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponAdder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunClip.cs" />
       </list>
     </option>
   </component>
@@ -161,6 +169,8 @@
       <workItem from="1727519160397" duration="238000" />
       <workItem from="1727519965561" duration="680000" />
       <workItem from="1727608935549" duration="1000" />
+      <workItem from="1727697851734" duration="60000" />
+      <workItem from="1727697933128" duration="238000" />
     </task>
     <servers />
   </component>

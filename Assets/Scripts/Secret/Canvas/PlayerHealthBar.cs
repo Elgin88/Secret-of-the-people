@@ -10,8 +10,8 @@ namespace Secret.Canvas
         [SerializeField] private Slider _slider;
         [SerializeField] private Text _text;
 
-        private IGameFactory _gameFactory;
         private HealthChanger _healthChanger;
+        private IGameFactory _gameFactory;
 
         public void Construct(IGameFactory gameFactory) => _gameFactory = gameFactory;
 

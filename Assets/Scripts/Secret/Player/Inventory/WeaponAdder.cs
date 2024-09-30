@@ -8,12 +8,12 @@ namespace Secret.Player.Inventory
         [SerializeField] private WeaponContainer _weaponContainer;
         [SerializeField] private PlayerStaticData _staticData;
 
-        private int _clipCount => _staticData.StartGunClipsCount;
+        private int _startClipCount => _staticData.StartGunClipsCount;
 
         public void Construct()
         {
             _weaponContainer.AddGun();
-            _weaponContainer.AddFullGunClip(_clipCount);
+            _weaponContainer.AddFullGunClip(_startClipCount);
         }
     }
 }

@@ -1370,6 +1370,7 @@
               <e p="Gun" t="Include">
                 <e p="Gun.cs" t="Include" />
                 <e p="GunBullet.cs" t="Include" />
+                <e p="GunBulletMover.cs" t="Include" />
                 <e p="GunClip.cs" t="Include" />
               </e>
               <e p="Interfaces" t="Include">
