@@ -4,11 +4,11 @@ namespace Secret.Player.Logic
 {
     public class CameraFollower : MonoBehaviour
     {
+        private Vector3 _position => transform.position;
+        private Camera _camera;
         private const float _diagonalOffset = 12;
         private const float _verticalOffset = 0;
         private const float _angleInRadian = 45 * Mathf.PI / 180;
-        private Vector3 _position => transform.position;
-        private Camera _camera;
         private float _horizontal;
         private float _vertical;
 

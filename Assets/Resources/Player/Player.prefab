@@ -1198,6 +1198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chooserWeapon: {fileID: 2083519749325536213}
   _nextTargetFinder: {fileID: 2421022248477797470}
+  _shootPoint: {fileID: 7649062014016374016}
 --- !u!114 &2421022248477797470
 MonoBehaviour:
   m_ObjectHideFlags: 0

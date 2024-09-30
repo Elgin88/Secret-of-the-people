@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785352395838452795}
   - component: {fileID: 1212265845212153139}
+  - component: {fileID: 4805660689702451146}
   m_Layer: 0
   m_Name: GunBullet
   m_TagString: Untagged
@@ -42,5 +43,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79d662be1f7ed4e0594a86649b59e04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gunBulletMover: {fileID: 4805660689702451146}
+--- !u!114 &4805660689702451146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6214534571668938255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93146895040e4915ad6b9de0dfbe1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
