@@ -5,5 +5,7 @@
         public int BulletCount { get; }
 
         public void Fill();
+
+        public IBullet GetTopBullet();
     }
 }

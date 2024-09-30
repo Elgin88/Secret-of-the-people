@@ -10,10 +10,17 @@ namespace Secret.Weapons.Gun
         private IClip _currentClip;
         private bool _isCooldownEnd = true;
 
-        public void Attack(Collider target, Transform shootPoint, IBullet bullet)
+        public void Attack(Collider target, Transform shootPoint)
         {
+            Debug.Log(target);
+            Debug.Log(shootPoint);
+            Debug.Log(_currentClip);
+
+
             if (_isCooldownEnd)
             {
+                IBullet bullet = _currentClip.GetTopBullet();
+
                 SetStartBulletPosition(bullet, shootPoint);
                 SetStartBulletRotation(bullet, target);
                 StartFlyBullet(bullet, target, shootPoint);

@@ -1,4 +1,5 @@
-﻿using Secret.Player.Inventory;
+﻿using System;
+using Secret.Player.Inventory;
 using Secret.Weapons.Interfaces;
 using UnityEngine;
 
@@ -10,21 +11,18 @@ namespace Secret.Player.Logic
         [SerializeField] private TargetFinder _nextTargetFinder;
         [SerializeField] private Transform _shootPoint;
 
-        private IBullet _bullet;
-
         private void FixedUpdate()
         {
             if (TargetIsFind())
             {
-                Attack();
+                AttackTarget(GetTarget(), _shootPoint);
             }
         }
 
-        private void Attack()
-        {
-            _chooserWeapon.CurrentWeapon.Attack(_nextTargetFinder.CurrentTarget, _shootPoint, _bullet);
-        }
+        private Collider GetTarget() => _nextTargetFinder.CurrentTarget;
 
-        private bool TargetIsFind() => _nextTargetFinder.CurrentTargetsCount != 0;
+        private bool TargetIsFind() => _nextTargetFinder.CurrentTarget != null;
+
+        private void AttackTarget(Collider target, Transform shootPoint) => _chooserWeapon.CurrentWeapon.Attack(target, shootPoint);
     }
 }

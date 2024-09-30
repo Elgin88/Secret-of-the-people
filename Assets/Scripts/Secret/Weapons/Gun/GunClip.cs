@@ -30,5 +30,10 @@ namespace Secret.Weapons.Gun
         }
 
         private GameObject CreateBullet() => _gameFactory.CreateGunBullet();
+
+        public IBullet GetTopBullet()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

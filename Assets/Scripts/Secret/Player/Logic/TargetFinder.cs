@@ -3,30 +3,17 @@ using UnityEngine;
 
 namespace Secret.Player.Logic
 {
-    [RequireComponent(typeof(ChooserSectorAttack))]
-
     public class TargetFinder : MonoBehaviour
     {
-        [SerializeField] private ChooserSectorAttack _sectorAttack;
+        [SerializeField] private ChooserSectorAttack _chooserSectorAttack;
         [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private LayerMask _targetLayerMask;
 
-        private Collider[] _targets;
-        private Collider _currentTarget;
-        private const int _maxTargetsCount = 10;
+        private Collider[] _targets = new Collider[1];
         private float _minDistance;
-        private int _rangeToChooserNearestTarget;
-        private int _currentCountTargets;
+        private int _rangeToTarget => _staticData.RangeToNearestTarget;
 
-        public Collider CurrentTarget => _currentTarget;
-
-        public int CurrentTargetsCount => _currentCountTargets;
-
-        private void Awake()
-        {
-            CreateArrayTargets();
-            SetRangeFindTarget();
-        }
+        public Collider CurrentTarget { get; private set; }
 
         public void FixedUpdate()
         {
@@ -40,7 +27,7 @@ namespace Secret.Player.Logic
         {
             foreach (Collider target in _targets)
             {
-                if (IsFind(target))
+                if (target != null)
                 {
                     if (InSector(target))
                     {
@@ -49,35 +36,21 @@ namespace Secret.Player.Logic
                         if (distance < _minDistance)
                         {
                             _minDistance = distance;
-                            _currentTarget = target;
+                            CurrentTarget = target;
                         }
                     }
                 }
             }
         }
 
-        private bool InSector(Collider target)
-        {
-            return _sectorAttack.GetTargetInSector(target);
-        }
-
-        private static bool IsFind(Collider target) => target != null;
-
-        private void FindTargets()
-        {
-            _currentCountTargets = 0;
-
-            _currentCountTargets = Physics.OverlapSphereNonAlloc(transform.position, _rangeToChooserNearestTarget, _targets, _targetLayerMask);
-        }
+        private bool InSector(Collider target) => _chooserSectorAttack.GetTargetInSector(target);
 
         private float GetDistanceToTarget(Collider target) => Vector3.Distance(transform.position, target.transform.position);
 
-        private void SetMinDistance() => _minDistance = _rangeToChooserNearestTarget;
+        private void SetMinDistance() => _minDistance = _rangeToTarget;
 
-        private void ResetNearestTarget() => _currentTarget = null;
+        private void ResetNearestTarget() => CurrentTarget = null;
 
-        private void SetRangeFindTarget() => _rangeToChooserNearestTarget = _staticData.RangeToNearestTarget;
-
-        private void CreateArrayTargets() => _targets = new Collider[_maxTargetsCount];
+        private void FindTargets() => Physics.OverlapSphereNonAlloc(transform.position, _rangeToTarget, _targets, _targetLayerMask);
     }
 }

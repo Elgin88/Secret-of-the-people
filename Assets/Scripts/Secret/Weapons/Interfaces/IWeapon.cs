@@ -4,8 +4,8 @@ namespace Secret.Weapons.Interfaces
 {
     public interface IWeapon
     {
-        public void Attack(Collider target, Transform shootPoint, IBullet bullet);
+        public void Attack(Collider target, Transform shootPoint);
 
-        public void Reload(IClip iclip);
+        public void Reload(IClip iClip);
     }
 }
