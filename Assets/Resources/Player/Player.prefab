@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8a7dc45f3842647934539face8feff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sectorAttack: {fileID: 9007285489459674476}
+  _chooserSectorAttack: {fileID: 9007285489459674476}
   _staticData: {fileID: 11400000, guid: 08b94b58668644c7da51af6d23627f7b, type: 2}
   _targetLayerMask:
     serializedVersion: 2

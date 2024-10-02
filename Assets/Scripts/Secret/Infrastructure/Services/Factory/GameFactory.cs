@@ -82,7 +82,9 @@ namespace Secret.Infrastructure.Services.Factory
 
         public GameObject CreateGun()
         {
-            return CreateGameObject(StaticAssetPath.Gun);
+            GameObject gun = CreateGameObject(StaticAssetPath.Gun);
+
+            return gun;
         }
 
         public GameObject CreateGunBullet()

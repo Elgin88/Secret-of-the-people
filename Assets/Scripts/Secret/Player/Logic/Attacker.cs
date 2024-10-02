@@ -1,6 +1,4 @@
-﻿using System;
-using Secret.Player.Inventory;
-using Secret.Weapons.Interfaces;
+﻿using Secret.Player.Inventory;
 using UnityEngine;
 
 namespace Secret.Player.Logic

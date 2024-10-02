@@ -23,7 +23,7 @@ namespace Secret.Player.Inventory
 
             foreach (GameObject weapon in _weapons)
             {
-                if (weapon.GetComponent<Gun>())
+                if (weapon.GetComponent<GunAttacker>())
                 {
                     iWeapon = weapon.GetComponent<IWeapon>();
                 }
@@ -50,5 +50,10 @@ namespace Secret.Player.Inventory
         }
 
         private void SetGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
+
+        public IClip GetClip()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

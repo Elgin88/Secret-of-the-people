@@ -9,29 +9,36 @@ namespace Secret.Player.Logic
         [SerializeField] private PlayerStaticData _staticData;
         [SerializeField] private LayerMask _targetLayerMask;
 
-        private Collider[] _targets = new Collider[1];
+        private Collider[] _targets = new Collider[5];
         private float _minDistance;
-        private int _rangeToTarget => _staticData.RangeToNearestTarget;
+        private int _range => _staticData.RangeToNearestTarget;
 
         public Collider CurrentTarget { get; private set; }
 
         public void FixedUpdate()
         {
-            SetMinDistance();
-            ResetNearestTarget();
-            FindTargets();
-            SetNearestTarget();
+            FindTarget();
+            SetTarget();
         }
 
-        private void SetNearestTarget()
+        private bool InSector(Collider target) => _chooserSectorAttack.GetTargetInSector(target);
+
+        private float GetDistance(Collider target) => Vector3.Distance(transform.position, target.transform.position);
+
+        private void FindTarget() => Physics.OverlapSphereNonAlloc(transform.position, _range, _targets, _targetLayerMask);
+
+        private void SetTarget()
         {
+            CurrentTarget = null;
+            _minDistance = _range;
+
             foreach (Collider target in _targets)
             {
                 if (target != null)
                 {
                     if (InSector(target))
                     {
-                        float distance = GetDistanceToTarget(target);
+                        float distance = GetDistance(target);
 
                         if (distance < _minDistance)
                         {
@@ -42,15 +49,5 @@ namespace Secret.Player.Logic
                 }
             }
         }
-
-        private bool InSector(Collider target) => _chooserSectorAttack.GetTargetInSector(target);
-
-        private float GetDistanceToTarget(Collider target) => Vector3.Distance(transform.position, target.transform.position);
-
-        private void SetMinDistance() => _minDistance = _rangeToTarget;
-
-        private void ResetNearestTarget() => CurrentTarget = null;
-
-        private void FindTargets() => Physics.OverlapSphereNonAlloc(transform.position, _rangeToTarget, _targets, _targetLayerMask);
     }
 }

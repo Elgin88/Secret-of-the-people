@@ -6,6 +6,6 @@
 
         public void Fill();
 
-        public IBullet GetTopBullet();
+        public IBullet GetBullet();
     }
 }

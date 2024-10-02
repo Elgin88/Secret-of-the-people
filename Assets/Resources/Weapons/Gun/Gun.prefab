@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 785352395838452795}
   - component: {fileID: 2359310946109056220}
+  - component: {fileID: 8269734634284374682}
+  - component: {fileID: 6097255938647998583}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -42,5 +44,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaeccd818fb9d4b3590c07ae92413733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8269734634284374682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6214534571668938255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5eb5dbe22b14f40932531c9cd09cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6097255938647998583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6214534571668938255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c7be3e6b18e455ab1ac354f77ab3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
