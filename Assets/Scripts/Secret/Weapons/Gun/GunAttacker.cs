@@ -16,50 +16,52 @@ namespace Secret.Weapons.Gun
         {
             TryReload();
 
-            if (_gunContainer.Clip == null)
+            if (NoClip())
             {
                 return;
             }
 
-            if (_gunContainer.Clip.BulletCount == 0)
+            if (NoBulletInClip())
             {
                 return;
             }
 
             if (_isCooldownEnd)
             {
-                IBullet bullet = _gunContainer.Clip.GetBullet();
-
-                SetStartBulletPosition(bullet, shootPoint);
-                SetStartBulletRotation(bullet, target);
-                StartFlyBullet(bullet, target, shootPoint);
+                StartFlyBullet(GetBullet(), target, shootPoint);
                 StartUpdateCooldown();
-                SetIsCooldownEnd(false);
             }
         }
 
-        private void SetStartBulletPosition(IBullet bullet, Transform shootPoint) => bullet.SetPosition(shootPoint.position);
+        private IBullet GetBullet() => _gunContainer.CurrentClip.GetBullet();
 
-        private void SetStartBulletRotation(IBullet bullet, Collider target) => bullet.SetRotation(Quaternion.LookRotation(target.transform.position));
+        private bool NoBulletInClip() => _gunContainer.CurrentClip.MaxBulletCount == 0;
 
-        private void StartFlyBullet(IBullet bullet, Collider target, Transform shootPoint) => bullet.Fly(target);
+        private bool NoClip() => _gunContainer.CurrentClip == null;
 
-        private void SetIsCooldownEnd(bool status) => _isCooldownEnd = status;
+        private void Reload() => _gunReloader.Reload();
+
+        private void StartFlyBullet(IBullet bullet, Collider target, Transform shootPoint)
+        {
+            bullet.SetPosition(shootPoint.position);
+            bullet.SetRotation(Quaternion.LookRotation(target.transform.position));
+
+            bullet.Fly(target);
+        }
 
         private void TryReload()
         {
-            if (_gunContainer.Clip == null)
+            if (_gunContainer.CurrentClip == null)
             {
-                if (_gunContainer.Clip.BulletCount == 0)
-                {
-                    _gunReloader.Reload();
-                }
+                Reload();
             }
         }
 
         private void StartUpdateCooldown()
         {
-            throw new NotImplementedException();
+            _isCooldownEnd = false;
+
+            Debug.Log("Add StartUpdateCooldown");
         }
     }
 }

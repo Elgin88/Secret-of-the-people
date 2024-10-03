@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Secret.Weapons.Gun
 {
-    public class GunBullet : MonoBehaviour, IBullet
+    public class BulletGun : MonoBehaviour, IBullet
     {
-        [SerializeField] private GunBulletMover _gunBulletMover;
+        [SerializeField] private BulletMoverGun _gunBulletMover;
 
         public void Fly(Collider target)
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Add Fly");
         }
 
         public void SetPosition(Vector3 position)

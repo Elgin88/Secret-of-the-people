@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Secret.Infrastructure.Services.Factory;
+using Secret.Player.Interfaces;
 using Secret.Weapons.Gun;
 using Secret.Weapons.Interfaces;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
 {
-    public class WeaponContainer : MonoBehaviour
+    public class WeaponContainer : MonoBehaviour, IPlayerWeaponContainer
     {
         private List<GameObject> _weapons = new List<GameObject>();
+        private List<GameObject> _clips = new List<GameObject>();
         private IGameFactory _gameFactory;
 
         public void Construct(IGameFactory gameFactory)
         {
-            SetGameFactory(gameFactory);
+            _gameFactory = gameFactory;
         }
 
         public IWeapon GetGun()
@@ -45,15 +46,25 @@ namespace Secret.Player.Inventory
 
                 gunClip.GetComponent<IClip>().Fill();
 
-                _weapons.Add(gunClip);
+                _clips.Add(gunClip);
             }
         }
 
-        private void SetGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
-
         public IClip GetClip()
         {
-            throw new NotImplementedException();
+            IClip iClip;
+
+            foreach (GameObject clip in _clips)
+            {
+                iClip = clip.GetComponent<IClip>();
+
+                if (iClip != null)
+                {
+                    return iClip;
+                }
+            }
+
+            return null;
         }
     }
 }

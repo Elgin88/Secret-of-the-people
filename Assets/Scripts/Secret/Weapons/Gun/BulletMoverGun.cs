@@ -2,8 +2,7 @@
 
 namespace Secret.Weapons.Gun
 {
-    public class GunBulletMover: MonoBehaviour
+    public class BulletMoverGun : MonoBehaviour
     {
-
     }
 }

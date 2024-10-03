@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Secret.Infrastructure.Services.Factory;
+using Secret.Player.Interfaces;
+using Secret.Weapons.Interfaces;
 using UnityEngine;
 
 namespace Secret.Weapons.Gun
@@ -7,9 +9,18 @@ namespace Secret.Weapons.Gun
     {
         [SerializeField] private GunContainer _gunContainer;
 
-        internal void Reload()
+        private IGameFactory _gameFactory;
+
+        public void Construct(IGameFactory gameFactory)
         {
-            throw new NotImplementedException();
+            _gameFactory = gameFactory;
         }
+
+        public void Reload()
+        {
+            _gunContainer.SetCurrentClip(GetClip());
+        }
+
+        private IClip GetClip() => _gameFactory.Player.GetComponent<IPlayerWeaponContainer>().GetClip();
     }
 }

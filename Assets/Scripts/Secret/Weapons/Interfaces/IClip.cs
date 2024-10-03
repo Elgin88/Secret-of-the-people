@@ -2,10 +2,12 @@
 {
     public interface IClip
     {
-        public int BulletCount { get; }
+        public int MaxBulletCount { get; }
 
-        public void Fill();
+        public int CurrentBulletCount { get; }
 
         public IBullet GetBullet();
+
+        public void Fill();
     }
 }

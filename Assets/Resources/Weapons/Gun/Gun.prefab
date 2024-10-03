@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaeccd818fb9d4b3590c07ae92413733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gunContainer: {fileID: 6097255938647998583}
+  _gunReloader: {fileID: 8269734634284374682}
 --- !u!114 &8269734634284374682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5eb5dbe22b14f40932531c9cd09cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gunContainer: {fileID: 6097255938647998583}
 --- !u!114 &6097255938647998583
 MonoBehaviour:
   m_ObjectHideFlags: 0

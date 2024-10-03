@@ -5,16 +5,16 @@ namespace Secret.Weapons.Gun
 {
     public class GunContainer : MonoBehaviour
     {
-        public IClip Clip { get; private set; }
+        public IClip CurrentClip { get; private set; }
 
-        public void SetClip(IClip clip)
+        public void SetCurrentClip(IClip clip)
         {
-            Clip = clip;
+            CurrentClip = clip;
         }
 
-        public void RemoveClip()
+        public void RemoveCurrentClip()
         {
-            Clip = null;
+            CurrentClip = null;
         }
     }
 }

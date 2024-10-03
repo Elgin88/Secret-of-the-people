@@ -6,15 +6,16 @@ using UnityEngine;
 
 namespace Secret.Weapons.Gun
 {
-    public class GunClip : MonoBehaviour, IClip
+    public class ClipGun : MonoBehaviour, IClip
     {
         [SerializeField] private WeaponStaticData _staticData;
 
         private List<GameObject> _bullets = new List<GameObject>();
         private IGameFactory _gameFactory;
-        private int _bulletCount => _staticData.BulletCount;
 
-        public int BulletCount => _bulletCount;
+        public int MaxBulletCount => _staticData.MaxBulletCount;
+
+        public int CurrentBulletCount => _bullets.Count;
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -23,23 +24,36 @@ namespace Secret.Weapons.Gun
 
         public void Fill()
         {
-            for (int i = 0; i < BulletCount; i++)
+            for (int i = 0; i < MaxBulletCount; i++)
             {
                 _bullets.Add(CreateBullet());
             }
         }
 
-        private GameObject CreateBullet() => _gameFactory.CreateGunBullet();
-
         public IBullet GetBullet()
         {
-            RemoveTopBullet();
-            throw new System.NotImplementedException();
+            IBullet iBullet = GetBulletFromClip();
+            TryDestroyClip();
+
+            return iBullet;
         }
 
-        private void RemoveTopBullet()
+        private GameObject CreateBullet() => _gameFactory.CreateGunBullet();
+
+        private IBullet GetBulletFromClip()
         {
-            throw new System.NotImplementedException();
+            IBullet iBullet = _bullets[0].GetComponent<IBullet>();
+            _bullets.Remove(_bullets[0]);
+
+            return iBullet;
+        }
+
+        private void TryDestroyClip()
+        {
+            if (CurrentBulletCount == 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -84,6 +84,8 @@ namespace Secret.Infrastructure.Services.Factory
         {
             GameObject gun = CreateGameObject(StaticAssetPath.Gun);
 
+            gun.GetComponent<GunReloader>().Construct(this);
+
             return gun;
         }
 
@@ -96,7 +98,7 @@ namespace Secret.Infrastructure.Services.Factory
         {
             GameObject gunClip = CreateGameObject(StaticAssetPath.GunClip);
 
-            gunClip.GetComponent<GunClip>().Construct(this);
+            gunClip.GetComponent<ClipGun>().Construct(this);
 
             return gunClip;
         }
