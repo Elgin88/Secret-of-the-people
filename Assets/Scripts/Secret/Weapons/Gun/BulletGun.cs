@@ -9,7 +9,7 @@ namespace Secret.Weapons.Gun
 
         public void Fly(Collider target)
         {
-            Debug.Log("Add Fly");
+            _gunBulletMover.Enable();
         }
 
         public void SetPosition(Vector3 position)
