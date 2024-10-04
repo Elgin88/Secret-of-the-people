@@ -24,13 +24,7 @@ namespace Secret.Player.Inventory
 
         private void FillClips()
         {
-            foreach (GameObject clip in _clips)
-            {
-
-            }
-
-
-            throw new NotImplementedException();
+            Debug.Log("Сделать заполнение пулей");
         }
 
         private void AddGun() => _weapons.Add(_gameFactory.CreateGun());
