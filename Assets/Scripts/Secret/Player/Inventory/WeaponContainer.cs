@@ -1,70 +1,46 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Secret.Infrastructure.Services.Factory;
-using Secret.Player.Interfaces;
-using Secret.Weapons.Gun;
-using Secret.Weapons.Interfaces;
+using Secret.Weapons.StaticData;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
 {
-    public class WeaponContainer : MonoBehaviour, IPlayerWeaponContainer
+    public class WeaponContainer : MonoBehaviour
     {
         private List<GameObject> _weapons = new List<GameObject>();
         private List<GameObject> _clips = new List<GameObject>();
         private IGameFactory _gameFactory;
+        private const int _clipCount = 2;
 
         public void Construct(IGameFactory gameFactory)
         {
             _gameFactory = gameFactory;
+
+            AddGun();
+            AddGunClips();
+            FillClips();
         }
 
-        public IWeapon GetGun()
+        private void FillClips()
         {
-            IWeapon iWeapon = null;
-
-            foreach (GameObject weapon in _weapons)
-            {
-                if (weapon.GetComponent<GunAttacker>())
-                {
-                    iWeapon = weapon.GetComponent<IWeapon>();
-                }
-            }
-
-            return iWeapon;
-        }
-
-        public void AddGun()
-        {
-            _weapons.Add(_gameFactory.CreateGun());
-        }
-
-        public void AddFullGunClip(int clipCount)
-        {
-            for (int i = 0; i < clipCount; i++)
-            {
-                GameObject gunClip = _gameFactory.CreateGunClip();
-
-                gunClip.GetComponent<IClip>().Fill();
-
-                _clips.Add(gunClip);
-            }
-        }
-
-        public IClip GetClip()
-        {
-            IClip iClip;
-
             foreach (GameObject clip in _clips)
             {
-                iClip = clip.GetComponent<IClip>();
 
-                if (iClip != null)
-                {
-                    return iClip;
-                }
             }
 
-            return null;
+
+            throw new NotImplementedException();
+        }
+
+        private void AddGun() => _weapons.Add(_gameFactory.CreateGun());
+
+        private void AddGunClips()
+        {
+            for (int i = 0; i < _clipCount; i++)
+            {
+                _clips.Add(_gameFactory.CreateGunClip());
+            }
         }
     }
 }

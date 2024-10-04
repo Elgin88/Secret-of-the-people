@@ -12,8 +12,6 @@ namespace Secret.Player.Inventory
 
         public void Construct()
         {
-            _weaponContainer.AddGun();
-            _weaponContainer.AddFullGunClip(_startClipCount);
         }
     }
 }

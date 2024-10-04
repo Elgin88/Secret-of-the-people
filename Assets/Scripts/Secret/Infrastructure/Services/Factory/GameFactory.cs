@@ -34,9 +34,13 @@ namespace Secret.Infrastructure.Services.Factory
         {
             _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
 
-            _player.GetComponent<WeaponContainer>().Construct(this);
             _player.GetComponent<WeaponAdder>().Construct();
-            _player.GetComponent<ChooserWeapon>().Construct();
+            _player.GetComponent<WeaponContainer>().Construct(this);
+
+
+
+
+
 
             return _player;
         }
@@ -84,8 +88,6 @@ namespace Secret.Infrastructure.Services.Factory
         {
             GameObject gun = CreateGameObject(StaticAssetPath.Gun);
 
-            gun.GetComponent<GunReloader>().Construct(this);
-
             return gun;
         }
 
@@ -97,8 +99,6 @@ namespace Secret.Infrastructure.Services.Factory
         public GameObject CreateGunClip()
         {
             GameObject gunClip = CreateGameObject(StaticAssetPath.GunClip);
-
-            gunClip.GetComponent<ClipGun>().Construct(this);
 
             return gunClip;
         }
