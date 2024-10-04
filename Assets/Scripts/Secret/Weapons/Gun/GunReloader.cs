@@ -1,6 +1,5 @@
-﻿using Secret.Infrastructure.Services.Factory;
-using Secret.Player.Interfaces;
-using Secret.Weapons.Interfaces;
+﻿using System;
+using Secret.Infrastructure.Services.Factory;
 using UnityEngine;
 
 namespace Secret.Weapons.Gun
@@ -18,9 +17,7 @@ namespace Secret.Weapons.Gun
 
         public void Reload()
         {
-            _gunContainer.SetCurrentClip(GetClip());
+            _gunContainer.SetCurrentClip();
         }
-
-        private IClip GetClip() => _gameFactory.Player.GetComponent<IPlayerWeaponContainer>().GetClip();
     }
 }

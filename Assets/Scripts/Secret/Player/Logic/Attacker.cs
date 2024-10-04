@@ -13,9 +13,11 @@ namespace Secret.Player.Logic
         {
             if (TargetIsFind())
             {
-                AttackTarget(GetTargetCollider(), _shootPoint);
+                AttackTarget(GetTargetCollider(), ShootPoint());
             }
         }
+
+        private Transform ShootPoint() => _shootPoint;
 
         private Collider GetTargetCollider() => _nextTargetFinder.CurrentTarget;
 

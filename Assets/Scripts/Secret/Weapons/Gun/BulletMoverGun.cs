@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Secret.Weapons.Gun
 {
@@ -12,7 +11,6 @@ namespace Secret.Weapons.Gun
 
         private void FixedUpdate()
         {
-            Debug.Log("Add BulletMoverGun");
         }
 
         public void Enable()

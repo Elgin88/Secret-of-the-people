@@ -9,7 +9,6 @@ namespace Secret.Weapons.Gun
         [SerializeField] private GunContainer _gunContainer;
         [SerializeField] private GunReloader _gunReloader;
 
-        private Coroutine _checkCooldown;
         private bool _isCooldownEnd = true;
 
         public void Attack(Collider target, Transform shootPoint)
@@ -33,9 +32,15 @@ namespace Secret.Weapons.Gun
             }
         }
 
-        private IBullet GetBullet() => _gunContainer.CurrentClip.GetBullet();
+        private bool NoBulletInClip()
+        {
+            throw new NotImplementedException();
+        }
 
-        private bool NoBulletInClip() => _gunContainer.CurrentClip.MaxBulletCount == 0;
+        private IBullet GetBullet()
+        {
+            throw new NotImplementedException();
+        }
 
         private bool NoClip() => _gunContainer.CurrentClip == null;
 
@@ -60,8 +65,6 @@ namespace Secret.Weapons.Gun
         private void StartUpdateCooldown()
         {
             _isCooldownEnd = false;
-
-            Debug.Log("Add StartUpdateCooldown");
         }
     }
 }

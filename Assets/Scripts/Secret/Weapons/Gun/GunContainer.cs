@@ -1,15 +1,13 @@
-﻿using Secret.Weapons.Interfaces;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Secret.Weapons.Gun
 {
     public class GunContainer : MonoBehaviour
     {
-        public IClip CurrentClip { get; private set; }
+        public GameObject CurrentClip { get; private set; }
 
-        public void SetCurrentClip(IClip clip)
+        public void SetCurrentClip()
         {
-            CurrentClip = clip;
         }
 
         public void RemoveCurrentClip()
