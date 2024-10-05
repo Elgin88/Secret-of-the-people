@@ -17,24 +17,20 @@ namespace Secret.Player.Inventory
         {
             _gameFactory = gameFactory;
 
-            AddGun();
-            AddGunClips();
-            FillClips();
+            Debug.Log("Добавить Gun and Clips через GameFactory");
         }
 
-        private void FillClips()
-        {
-            Debug.Log("Сделать заполнение пулей");
-        }
-
-        private void AddGun() => _weapons.Add(_gameFactory.CreateGun());
-
-        private void AddGunClips()
+        public void AddClips(GameObject clip)
         {
             for (int i = 0; i < _clipCount; i++)
             {
-                _clips.Add(_gameFactory.CreateGunClip());
+                _clips.Add(clip);
             }
+        }
+
+        public void AddGun()
+        {
+            _weapons.Add(_gameFactory.CreateGun());
         }
     }
 }
