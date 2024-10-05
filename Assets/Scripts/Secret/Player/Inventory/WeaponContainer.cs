@@ -11,21 +11,15 @@ namespace Secret.Player.Inventory
         private List<GameObject> _weapons = new List<GameObject>();
         private List<GameObject> _clips = new List<GameObject>();
         private IGameFactory _gameFactory;
-        private const int _clipCount = 2;
 
         public void Construct(IGameFactory gameFactory)
         {
             _gameFactory = gameFactory;
-
-            Debug.Log("Добавить Gun and Clips через GameFactory");
         }
 
-        public void AddClips(GameObject clip)
+        public void AddClip()
         {
-            for (int i = 0; i < _clipCount; i++)
-            {
-                _clips.Add(clip);
-            }
+            _clips.Add(_gameFactory.CreateGunClip());
         }
 
         public void AddGun()

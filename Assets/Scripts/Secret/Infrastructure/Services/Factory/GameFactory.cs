@@ -36,11 +36,11 @@ namespace Secret.Infrastructure.Services.Factory
 
             _player.GetComponent<WeaponAdder>().Construct();
             _player.GetComponent<WeaponContainer>().Construct(this);
-
-
-
-
-
+            _player.GetComponent<WeaponContainer>().AddGun();
+            
+            _player.GetComponent<WeaponContainer>().AddClip();
+            _player.GetComponent<WeaponContainer>().AddClip();
+            _player.GetComponent<WeaponContainer>().AddClip();
 
             return _player;
         }
@@ -55,7 +55,8 @@ namespace Secret.Infrastructure.Services.Factory
             _healthBar = _assetProvider.Instantiate(StaticAssetPath.CanvasHealthBar);
 
             _healthBar.GetComponent<PlayerHealthBar>().Construct(this);
-
+            
+            
             return _healthBar;
         }
 
