@@ -1339,7 +1339,6 @@
               <e p="Interfaces" t="Include">
                 <e p="IPlayerAnimationsSetter.cs" t="Include" />
                 <e p="IPlayerHealthChanger.cs" t="Include" />
-                <e p="IPlayerWeaponContainer.cs" t="Include" />
               </e>
               <e p="Inventory" t="Include">
                 <e p="ChooserWeapon.cs" t="Include" />
@@ -1369,17 +1368,19 @@
             </e>
             <e p="Weapons" t="Include">
               <e p="Gun" t="Include">
-                <e p="BulletGun.cs" t="Include" />
-                <e p="BulletMoverGun.cs" t="Include" />
-                <e p="ClipGun.cs" t="Include" />
                 <e p="GunAttacker.cs" t="Include" />
                 <e p="GunContainer.cs" t="Include" />
                 <e p="GunReloader.cs" t="Include" />
+                <e p="GunRequireComponents.cs" t="Include" />
               </e>
-              <e p="Interfaces" t="Include">
-                <e p="IBullet.cs" t="Include" />
-                <e p="IClip.cs" t="Include" />
-                <e p="IWeapon.cs" t="Include" />
+              <e p="GunBullet" t="Include">
+                <e p="GunBullet.cs" t="Include" />
+                <e p="GunBulletMover.cs" t="Include" />
+                <e p="GunBulletRequireComponents.cs" t="Include" />
+              </e>
+              <e p="GunClip" t="Include">
+                <e p="GunClip.cs" t="Include" />
+                <e p="GunClipRequireComponents.cs" t="Include" />
               </e>
               <e p="StaticData" t="Include">
                 <e p="BulletStaticData.cs" t="Include" />

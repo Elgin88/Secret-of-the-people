@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785352395838452795}
   - component: {fileID: 12139305343243283}
+  - component: {fileID: 6435395188085618206}
   m_Layer: 0
   m_Name: GunClip
   m_TagString: Untagged
@@ -44,4 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679745bfc5aca488781e8d63fae17982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _staticData: {fileID: 11400000, guid: 2c80ad6e56f7345bb9fa7ea4a1599a73, type: 2}
+--- !u!114 &6435395188085618206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6214534571668938255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6af4df4b38475ab99eded80942af08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
