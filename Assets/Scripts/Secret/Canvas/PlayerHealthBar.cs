@@ -1,4 +1,4 @@
-﻿using Secret.Infrastructure.Services.Factory;
+﻿using Secret.Infrastructure.Factory;
 using Secret.Player.Logic;
 using UnityEngine;
 using UnityEngine.UI;

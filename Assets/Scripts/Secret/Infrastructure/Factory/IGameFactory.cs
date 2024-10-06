@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Secret.Infrastructure.Services;
 using UnityEngine;
 
-namespace Secret.Infrastructure.Services.Factory
+namespace Secret.Infrastructure.Factory
 {
     public interface IGameFactory : IService
     {

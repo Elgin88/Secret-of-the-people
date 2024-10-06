@@ -5,10 +5,9 @@ using Secret.Enemy.AI.Agents.Checkers;
 using Secret.Infrastructure.Services.AssetManagement;
 using Secret.Player.Inventory;
 using Secret.Static;
-using Secret.Weapons.Gun;
 using UnityEngine;
 
-namespace Secret.Infrastructure.Services.Factory
+namespace Secret.Infrastructure.Factory
 {
     public class GameFactory : IGameFactory
     {
@@ -41,6 +40,8 @@ namespace Secret.Infrastructure.Services.Factory
             _player.GetComponent<WeaponContainer>().AddClip();
             _player.GetComponent<WeaponContainer>().AddClip();
             _player.GetComponent<WeaponContainer>().AddClip();
+
+            _player.GetComponent<WeaponContainer>().AddBulletsInClip();
 
             return _player;
         }

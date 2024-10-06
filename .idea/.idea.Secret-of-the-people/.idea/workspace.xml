@@ -20,9 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipContainer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentMoveToPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAgro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAgro.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAttackRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAttackRange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/GameFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/IGameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/IGameFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/IGameFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateBootStrapt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateBootStrapt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipRequireComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipRequireComponents.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +49,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentMoveToPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Stoppers/StopperAgentPatrol.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerCanAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAttacking.cs" />
@@ -83,8 +94,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBulletRequreComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBulletRequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBullet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipRequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/GameFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClip.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipRequireComponents.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponContainer.cs" />
       </list>
     </option>
@@ -171,6 +185,7 @@
       <workItem from="1728103288025" duration="535000" />
       <workItem from="1728103886963" duration="266000" />
       <workItem from="1728134149584" duration="701000" />
+      <workItem from="1728213337161" duration="412000" />
     </task>
     <servers />
   </component>

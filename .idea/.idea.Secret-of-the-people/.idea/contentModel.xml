@@ -1295,6 +1295,10 @@
               </e>
             </e>
             <e p="Infrastructure" t="Include">
+              <e p="Factory" t="Include">
+                <e p="GameFactory.cs" t="Include" />
+                <e p="IGameFactory.cs" t="Include" />
+              </e>
               <e p="Game.cs" t="Include" />
               <e p="GameBootstrapper.cs" t="Include" />
               <e p="ICoroutineRunner.cs" t="Include" />
@@ -1305,10 +1309,6 @@
                   <e p="AssetProvider.cs" t="Include" />
                   <e p="IAssetProvider.cs" t="Include" />
                   <e p="StaticAssetPath.cs" t="Include" />
-                </e>
-                <e p="Factory" t="Include">
-                  <e p="GameFactory.cs" t="Include" />
-                  <e p="IGameFactory.cs" t="Include" />
                 </e>
                 <e p="Input" t="Include">
                   <e p="IInputService.cs" t="Include" />
@@ -1380,6 +1380,7 @@
               </e>
               <e p="GunClip" t="Include">
                 <e p="GunClip.cs" t="Include" />
+                <e p="GunClipContainer.cs" t="Include" />
                 <e p="GunClipRequireComponents.cs" t="Include" />
               </e>
               <e p="StaticData" t="Include">

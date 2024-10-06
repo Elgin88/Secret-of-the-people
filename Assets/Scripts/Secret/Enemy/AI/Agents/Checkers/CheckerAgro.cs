@@ -1,5 +1,5 @@
 ﻿using Secret.Enemy.StaticData;
-using Secret.Infrastructure.Services.Factory;
+using Secret.Infrastructure.Factory;
 using UnityEngine;
 
 namespace Secret.Enemy.AI.Agents.Checkers

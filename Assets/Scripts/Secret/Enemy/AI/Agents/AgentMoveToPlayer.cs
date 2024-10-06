@@ -1,6 +1,6 @@
 ﻿using Secret.Enemy.Animations;
 using Secret.Enemy.Logic;
-using Secret.Infrastructure.Services.Factory;
+using Secret.Infrastructure.Factory;
 using UnityEngine;
 using UnityEngine.AI;
 

@@ -1,6 +1,6 @@
-﻿using Secret.Infrastructure.Services;
+﻿using Secret.Infrastructure.Factory;
+using Secret.Infrastructure.Services;
 using Secret.Infrastructure.Services.AssetManagement;
-using Secret.Infrastructure.Services.Factory;
 using Secret.Infrastructure.Services.Input;
 using UnityEngine;
 
