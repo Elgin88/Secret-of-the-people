@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Secret.Infrastructure.Factory;
 using Secret.Weapons.GunClip;
-using Secret.Weapons.StaticData;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
