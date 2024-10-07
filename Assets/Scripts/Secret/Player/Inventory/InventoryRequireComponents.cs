@@ -6,5 +6,5 @@ namespace Secret.Player.Inventory
     [RequireComponent(typeof(WeaponAdder))]
     [RequireComponent(typeof(WeaponContainer))]
 
-    public class RequireComponents : MonoBehaviour { }
+    public class InventoryRequireComponents : MonoBehaviour { }
 }

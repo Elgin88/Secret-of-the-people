@@ -9,7 +9,7 @@ namespace Secret.Weapons.GunClip
     {
         [SerializeField] private WeaponStaticData _staticData;
 
-        public IGameFactory _gameFactory;
+        private IGameFactory _gameFactory;
         public List<GameObject> _bullets = new List<GameObject>();
         public int _maxBulletCount => _staticData.MaxBulletCount;
         public int _currentBulletCount => _bullets.Count;

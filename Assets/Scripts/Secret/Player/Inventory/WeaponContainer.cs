@@ -1,37 +1,26 @@
 ﻿using System.Collections.Generic;
-using Secret.Infrastructure.Factory;
-using Secret.Weapons.GunClip;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
 {
     public class WeaponContainer : MonoBehaviour
     {
-        private List<GameObject> _weapons = new List<GameObject>();
-        private List<GameObject> _gunClips = new List<GameObject>();
-        private IGameFactory _gameFactory;
+        public List<GameObject> _weapons = new List<GameObject>();
+        public List<GameObject> _gunClips = new List<GameObject>();
 
-        public void Construct(IGameFactory gameFactory)
+        public void AddClip(GameObject clip)
         {
-            _gameFactory = gameFactory;
+            _gunClips.Add(clip);
         }
 
-        public void AddClip()
+        public void AddGun(GameObject gun)
         {
-            _gunClips.Add(_gameFactory.CreateGunClip());
+            _weapons.Add(gun);
         }
 
-        public void AddGun()
+        public void AddBulletsInClips()
         {
-            _weapons.Add(_gameFactory.CreateGun());
-        }
-
-        public void AddBulletsInClip()
-        {
-            foreach (GameObject gunClip in _gunClips)
-            {
-                gunClip.GetComponent<GunClipContainer>().CreateBullets();
-            }
+            throw new System.NotImplementedException();
         }
     }
 }

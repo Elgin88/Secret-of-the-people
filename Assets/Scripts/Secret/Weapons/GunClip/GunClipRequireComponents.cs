@@ -4,5 +4,7 @@ namespace Secret.Weapons.GunClip
 {
     [RequireComponent(typeof(GunClipContainer))]
 
-    public class GunClipRequireComponents : MonoBehaviour { }
+    public class GunClipRequireComponents : MonoBehaviour
+    {
+    }
 }

@@ -6,5 +6,7 @@ namespace Secret.Weapons.Gun
     [RequireComponent(typeof(GunContainer))]
     [RequireComponent(typeof(GunReloader))]
 
-    public class GunRequireComponents : MonoBehaviour { }
+    public class GunRequireComponents : MonoBehaviour
+    {
+    }
 }

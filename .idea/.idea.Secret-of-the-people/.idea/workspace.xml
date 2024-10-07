@@ -20,22 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aef7a0ce-a580-47c7-933e-fcb9a4aa2a53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipContainer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secret-of-the-people/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentMoveToPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentMoveToPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAgro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAgro.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAttackRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/Checkers/CheckerAttackRange.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/GameFactory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/IGameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/IGameFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/IGameFactory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateBootStrapt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateBootStrapt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Weapons/Gun/GunBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Weapons/Gun/GunBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/RequireComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/InventoryRequireComponents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/RequireComponents.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/InventoryRequireComponents.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponAdder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponAdder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunRequireComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunRequireComponents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBullet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBullet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBulletRequireComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBulletRequireComponents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipContainer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipRequireComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipRequireComponents.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +47,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Animations/AttackAnimation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerCanAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckerAttacking.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckersLaunchers.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/AI/Agents/Checkers/CheckersLauncher.cs" />
@@ -83,23 +79,25 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Enemy/AI/Agents/AgentAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/States/StateLoadLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Canvas/PlayerHealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponAdder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunClip.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/BulletGun.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/BulletMoverGun.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunAttacker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunRequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/BulletMoverGun.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBulletMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBulletRequreComponents.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBulletRequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Services/Factory/GameFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/GameFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClip.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipRequireComponents.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Infrastructure/Factory/GameFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/InventoryRequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunBullet/GunBulletRequireComponents.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/GunClip/GunClipRequireComponents.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Weapons/Gun/GunRequireComponents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Secret/Player/Inventory/WeaponAdder.cs" />
       </list>
     </option>
   </component>
@@ -186,6 +184,7 @@
       <workItem from="1728103886963" duration="266000" />
       <workItem from="1728134149584" duration="701000" />
       <workItem from="1728213337161" duration="431000" />
+      <workItem from="1728302964307" duration="2850000" />
     </task>
     <servers />
   </component>
