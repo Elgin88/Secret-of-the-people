@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Secret.Weapons.GunClip;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
@@ -20,7 +22,19 @@ namespace Secret.Player.Inventory
 
         public void AddBulletsInClips()
         {
-            throw new System.NotImplementedException();
+            foreach (var gunClip in _gunClips)
+            {
+                gunClip.GetComponent<GunClipContainer>().AddBullets();
+            }
+        }
+
+        public GameObject GetGunClip()
+        {
+            GameObject gunClip = _gunClips[0];
+
+            _gunClips.Remove(gunClip);
+
+            return gunClip;
         }
     }
 }

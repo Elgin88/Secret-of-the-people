@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Secret.Weapons.GunClip;
+using UnityEngine;
 
 namespace Secret.Weapons.Gun
 {

@@ -5,6 +5,8 @@ using Secret.Enemy.AI.Agents.Checkers;
 using Secret.Infrastructure.Services.AssetManagement;
 using Secret.Player.Inventory;
 using Secret.Static;
+using Secret.Weapons.Gun;
+using Secret.Weapons.GunBullet;
 using Secret.Weapons.GunClip;
 using UnityEngine;
 
@@ -33,7 +35,7 @@ namespace Secret.Infrastructure.Factory
         public GameObject CreatePlayer()
         {
             _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
-            
+
             _player.GetComponent<WeaponAdder>().Construct(this);
 
             return _player;
@@ -49,8 +51,8 @@ namespace Secret.Infrastructure.Factory
             _healthBar = _assetProvider.Instantiate(StaticAssetPath.CanvasHealthBar);
 
             _healthBar.GetComponent<PlayerHealthBar>().Construct(this);
-            
-            
+
+
             return _healthBar;
         }
 
@@ -82,21 +84,27 @@ namespace Secret.Infrastructure.Factory
         public GameObject CreateGun()
         {
             GameObject gun = CreateGameObject(StaticAssetPath.Gun);
-            
+
+            gun.GetComponent<GunContainer>().Construct(this);
+
             return gun;
         }
 
         public GameObject CreateGunBullet()
         {
-            return CreateGameObject(StaticAssetPath.GunBullet);
+            GameObject gunBullet = CreateGameObject(StaticAssetPath.GunBullet);
+
+            gunBullet.GetComponent<GunBulletMover>().Construct(this);
+
+            return gunBullet;
         }
 
         public GameObject CreateGunClip()
         {
             GameObject gunClip = CreateGameObject(StaticAssetPath.GunClip);
-            
+
             gunClip.GetComponent<GunClipContainer>().Construct(this);
-            
+
             return gunClip;
         }
 
