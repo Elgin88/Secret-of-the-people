@@ -1,6 +1,7 @@
 ﻿using Secret.Infrastructure.Services;
 using Agava.YandexGames;
 using Secret.Infrastructure.Factory;
+using Secret.Infrastructure.Game;
 
 namespace Secret.Infrastructure.States
 {

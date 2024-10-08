@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Secret.Weapons.Gun;
 using Secret.Weapons.GunClip;
+using Secret.Weapons.Interfaces;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
@@ -38,19 +39,17 @@ namespace Secret.Player.Inventory
             return gunClip;
         }
 
-        public IWeapon GetIWeaponGun()
+        public IWeaponAttacker GetGunIWeaponAttacker()
         {
-            IWeapon iWeapon = null;
-
             foreach (var weapon in _weapons)
             {
                 if (weapon.GetComponent<IGun>() != null)
                 {
-                    return weapon.GetComponent<IWeapon>();
+                    return weapon.GetComponent<IWeaponAttacker>();
                 }
             }
 
-            return iWeapon;
+            return null;
         }
     }
 }

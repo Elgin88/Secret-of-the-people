@@ -5,7 +5,7 @@ using Secret.Infrastructure.Services;
 using Secret.Infrastructure.States;
 using UnityEngine;
 
-namespace Secret.Infrastructure
+namespace Secret.Infrastructure.Game
 {
     public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
     {

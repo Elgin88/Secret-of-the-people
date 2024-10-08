@@ -1,5 +1,6 @@
 ﻿using Secret.Player.Inventory;
 using Secret.Weapons.GunClip;
+using Secret.Weapons.Interfaces;
 using UnityEngine;
 
 namespace Secret.Weapons.Gun

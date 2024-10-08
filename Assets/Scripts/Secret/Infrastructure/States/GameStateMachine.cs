@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Secret.Infrastructure.Game;
 using Secret.Infrastructure.Services;
 
 namespace Secret.Infrastructure.States

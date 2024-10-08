@@ -1,4 +1,5 @@
 ﻿using Secret.Player.Inventory;
+using Secret.Weapons.Interfaces;
 using UnityEngine;
 
 namespace Secret.Weapons.Gun

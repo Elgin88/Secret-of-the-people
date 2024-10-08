@@ -12,6 +12,9 @@ namespace Secret.Player.Logic
         {
             if (TargetIsFind())
             {
+                _chooserWeapon.CurrentIWeaponAttacker.Attack();
+                
+                Debug.Log("Attack");
             }
         }
 

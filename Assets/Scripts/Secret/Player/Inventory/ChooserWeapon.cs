@@ -1,4 +1,5 @@
 ﻿using Secret.Weapons.Gun;
+using Secret.Weapons.Interfaces;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
@@ -7,11 +8,11 @@ namespace Secret.Player.Inventory
     {
         [SerializeField] private WeaponContainer _weaponContainer;
 
-        public IWeapon _currentWeapon;
+        public IWeaponAttacker CurrentIWeaponAttacker;
 
         public void Construct()
         {
-            _currentWeapon = _weaponContainer.GetIWeaponGun();
+            CurrentIWeaponAttacker = _weaponContainer.GetGunIWeaponAttacker();
         }
     }
 }

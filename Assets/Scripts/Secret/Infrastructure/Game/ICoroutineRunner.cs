@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Secret.Infrastructure
+namespace Secret.Infrastructure.Game
 {
     public interface ICoroutineRunner
     {

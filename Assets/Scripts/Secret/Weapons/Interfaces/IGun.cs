@@ -1,4 +1,4 @@
-﻿namespace Secret.Player.Inventory
+﻿namespace Secret.Weapons.Interfaces
 {
     public interface IGun
     {

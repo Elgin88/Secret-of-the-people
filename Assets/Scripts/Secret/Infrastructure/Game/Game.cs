@@ -1,7 +1,7 @@
 using Secret.Infrastructure.Services.Input;
 using Secret.Infrastructure.States;
 
-namespace Secret.Infrastructure
+namespace Secret.Infrastructure.Game
 {
     public class Game
     {

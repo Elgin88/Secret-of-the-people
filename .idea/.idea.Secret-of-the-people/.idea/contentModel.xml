@@ -1299,10 +1299,12 @@
                 <e p="GameFactory.cs" t="Include" />
                 <e p="IGameFactory.cs" t="Include" />
               </e>
-              <e p="Game.cs" t="Include" />
-              <e p="GameBootstrapper.cs" t="Include" />
-              <e p="ICoroutineRunner.cs" t="Include" />
-              <e p="SceneLoader.cs" t="Include" />
+              <e p="Game" t="Include">
+                <e p="Game.cs" t="Include" />
+                <e p="GameBootstrapper.cs" t="Include" />
+                <e p="ICoroutineRunner.cs" t="Include" />
+                <e p="SceneLoader.cs" t="Include" />
+              </e>
               <e p="Services" t="Include">
                 <e p="AllServices.cs" t="Include" />
                 <e p="AssetManagement" t="Include">
@@ -1380,6 +1382,11 @@
               <e p="GunClip" t="Include">
                 <e p="GunClipContainer.cs" t="Include" />
                 <e p="GunClipRequireComponents.cs" t="Include" />
+              </e>
+              <e p="Interfaces" t="Include">
+                <e p="IGun.cs" t="Include" />
+                <e p="IWeapon.cs" t="Include" />
+                <e p="IWeaponAttacker.cs" t="Include" />
               </e>
               <e p="StaticData" t="Include">
                 <e p="BulletStaticData.cs" t="Include" />

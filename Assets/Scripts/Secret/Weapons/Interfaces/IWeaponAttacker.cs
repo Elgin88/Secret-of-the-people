@@ -1,4 +1,4 @@
-﻿namespace Secret.Weapons.Gun
+﻿namespace Secret.Weapons.Interfaces
 {
     public interface IWeaponAttacker
     {
