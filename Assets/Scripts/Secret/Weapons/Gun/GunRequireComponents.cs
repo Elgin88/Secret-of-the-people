@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Secret.Player.Inventory;
+using UnityEngine;
 
 namespace Secret.Weapons.Gun
 {
@@ -6,7 +7,7 @@ namespace Secret.Weapons.Gun
     [RequireComponent(typeof(GunContainer))]
     [RequireComponent(typeof(GunReloader))]
 
-    public class GunRequireComponents : MonoBehaviour
+    public class GunRequireComponents : MonoBehaviour, IWeapon, IGun
     {
     }
 }

@@ -6,12 +6,7 @@ using UnityEngine;
 
 namespace Secret.Player.Logic
 {
-    [RequireComponent(typeof(PlayerAnimationsSetter))]
-    [RequireComponent(typeof(CharacterController))]
-    [RequireComponent(typeof(SpeedMovementSetter))]
-    [RequireComponent(typeof(HealthChanger))]
-
-    public class Mover : MonoBehaviour
+    public class PlayerMover : MonoBehaviour
     {
         [SerializeField] private PlayerAnimationsSetter _animationsSetter;
         [SerializeField] private CharacterController _characterController;

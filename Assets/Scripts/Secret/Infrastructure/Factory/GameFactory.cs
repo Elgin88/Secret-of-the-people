@@ -4,6 +4,7 @@ using Secret.Enemy.AI.Agents;
 using Secret.Enemy.AI.Agents.Checkers;
 using Secret.Infrastructure.Services.AssetManagement;
 using Secret.Player.Inventory;
+using Secret.Player.Logic;
 using Secret.Static;
 using Secret.Weapons.Gun;
 using Secret.Weapons.GunBullet;
@@ -17,10 +18,16 @@ namespace Secret.Infrastructure.Factory
         private IAssetProvider _assetProvider;
         private GameObject _player;
         private GameObject _healthBar;
+        private Transform _playerShootPointTransform;
+        private WeaponContainer _playerWeaponContainer;
 
         public GameObject Player => _player;
 
         public GameObject HealthBar => _healthBar;
+
+        public Transform PlayerShootPointTransform => _playerShootPointTransform;
+
+        public WeaponContainer PlayerWeaponContainer => _playerWeaponContainer;
 
         public GameFactory(IAssetProvider assetProvider)
         {
@@ -37,6 +44,12 @@ namespace Secret.Infrastructure.Factory
             _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
 
             _player.GetComponent<WeaponAdder>().Construct(this);
+
+            _playerShootPointTransform = _player.GetComponent<ShootPointSetter>().ShootPoint;
+
+            _playerWeaponContainer = _player.GetComponent<WeaponContainer>();
+
+            _player.GetComponent<ChooserWeapon>().Construct();
 
             return _player;
         }

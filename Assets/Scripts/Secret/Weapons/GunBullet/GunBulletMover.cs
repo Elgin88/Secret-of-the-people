@@ -6,16 +6,19 @@ namespace Secret.Weapons.GunBullet
 {
     public class GunBulletMover : MonoBehaviour
     {
-        [SerializeField] private GunBullet _gunBullet;
-
         private IGameFactory _gameFactory;
         private Transform _shootPointTransform;
         private bool _isSetStartPosition = false;
 
         public void Construct(IGameFactory gameFactory)
         {
-            SetGameFactory(gameFactory);
-            SetShootPointTransform();
+            _gameFactory = gameFactory;
+            _shootPointTransform = _gameFactory.PlayerShootPointTransform;
+        }
+
+        private void Awake()
+        {
+            gameObject.SetActive(false);
         }
 
         private void FixedUpdate()
@@ -24,6 +27,9 @@ namespace Secret.Weapons.GunBullet
             {
                 SetStartPosition();
             }
+
+            Debug.Log("Move");
+            Debug.Log(_shootPointTransform.position);
         }
 
         public void StartMove()
@@ -36,12 +42,8 @@ namespace Secret.Weapons.GunBullet
             enabled = false;
         }
 
-        private void SetShootPointTransform() => _shootPointTransform = _gameFactory.Player.GetComponent<ShootPointSetter>().ShootPoint.transform;
-        private void SetGameFactory(IGameFactory gameFactory) => _gameFactory = gameFactory;
-
         private void SetStartPosition()
         {
-            _gunBullet.SetPosition(_shootPointTransform.position);
             _isSetStartPosition = true;
         }
     }

@@ -223,7 +223,6 @@ GameObject:
   - component: {fileID: 7208813138574536703}
   - component: {fileID: 2592620957579630515}
   - component: {fileID: 8396534018974990681}
-  - component: {fileID: 383030917465662715}
   m_Layer: 0
   m_Name: GunBullet
   m_TagString: Untagged
@@ -270,18 +269,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a93146895040e4915ad6b9de0dfbe1db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gunBullet: {fileID: 383030917465662715}
---- !u!114 &383030917465662715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7208813138574111711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79d662be1f7ed4e0594a86649b59e04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

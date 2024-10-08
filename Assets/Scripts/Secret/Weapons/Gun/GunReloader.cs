@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Secret.Player.Inventory;
+using UnityEngine;
 
 namespace Secret.Weapons.Gun
 {
-    public class GunReloader : MonoBehaviour
+    public class GunReloader : MonoBehaviour, IWeapon, IGun
     {
         [SerializeField] private GunContainer _gunContainer;
 

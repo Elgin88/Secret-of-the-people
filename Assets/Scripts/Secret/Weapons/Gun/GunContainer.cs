@@ -5,32 +5,22 @@ using UnityEngine;
 
 namespace Secret.Weapons.Gun
 {
-    public class GunContainer : MonoBehaviour
+    public class GunContainer : MonoBehaviour, IWeapon, IGun
     {
         private IGameFactory _gameFactory;
         private WeaponContainer _weaponContainer;
 
-        public GameObject CurrentClip { get; private set; }
+        public GameObject GunClip { get; private set; }
 
         public void Construct(IGameFactory gameFactory)
         {
             _gameFactory = gameFactory;
-            _weaponContainer = _gameFactory.Player.GetComponent<WeaponContainer>();
-        }
-
-        public void SetCurrentClip(GameObject currentClip)
-        {
-            CurrentClip = currentClip;
+            _weaponContainer = _gameFactory.PlayerWeaponContainer;
         }
 
         public void AddClipFromInventory()
         {
-            CurrentClip = _weaponContainer.GetGunClip();
-        }
-
-        public GunClipContainer GetGunClipContainer()
-        {
-            return CurrentClip.GetComponent<GunClipContainer>();
+            GunClip = _weaponContainer.GetGunClipFromInventory();
         }
     }
 }

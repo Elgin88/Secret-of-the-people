@@ -7,7 +7,6 @@ namespace Secret.Player.Logic
     {
         [SerializeField] private ChooserWeapon _chooserWeapon;
         [SerializeField] private TargetFinder _nextTargetFinder;
-        [SerializeField] private Transform _shootPoint;
 
         private void FixedUpdate()
         {
@@ -15,10 +14,6 @@ namespace Secret.Player.Logic
             {
             }
         }
-
-        private Transform ShootPoint() => _shootPoint;
-
-        private Collider GetTargetCollider() => _nextTargetFinder.CurrentTarget;
 
         private bool TargetIsFind() => _nextTargetFinder.CurrentTarget != null;
     }
