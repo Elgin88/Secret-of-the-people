@@ -11,7 +11,7 @@ namespace Secret.Weapons.Gun
         private IGameFactory _gameFactory;
         private WeaponContainer _weaponContainer;
 
-        public GameObject GunClip { get; private set; }
+        public GameObject CurrentGunClip { get; private set; }
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -21,7 +21,7 @@ namespace Secret.Weapons.Gun
 
         public void AddClipFromInventory()
         {
-            GunClip = _weaponContainer.GetGunClipFromInventory();
+            CurrentGunClip = _weaponContainer.GetGunClipFromInventory();
         }
     }
 }
