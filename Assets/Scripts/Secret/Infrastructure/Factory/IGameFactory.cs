@@ -9,7 +9,7 @@ namespace Secret.Infrastructure.Factory
     {
         public GameObject Player { get; }
 
-        public Transform PlayerShootPointTransform { get; }
+        public Transform PlayerShootPoint { get; }
 
         public WeaponContainer PlayerWeaponContainer { get; }
 

@@ -25,7 +25,7 @@ namespace Secret.Infrastructure.Factory
 
         public GameObject HealthBar => _healthBar;
 
-        public Transform PlayerShootPointTransform => _playerShootPointTransform;
+        public Transform PlayerShootPoint => _playerShootPointTransform;
 
         public WeaponContainer PlayerWeaponContainer => _playerWeaponContainer;
 

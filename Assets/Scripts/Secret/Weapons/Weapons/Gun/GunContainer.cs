@@ -9,7 +9,7 @@ namespace Secret.Weapons.Gun
 
         public GameObject CurrentGunClip { get; private set; }
 
-        public IClip ICurrentClip { get; set; }
+        public IBulletMover IBulletMover => CurrentGunClip.GetComponent<IBulletMover>();
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -19,14 +19,11 @@ namespace Secret.Weapons.Gun
         public void AddClipFromInventory()
         {
             CurrentGunClip = _gameFactory.PlayerWeaponContainer.GetGunClipFromInventory();
-
-
-            ICurrentClip = CurrentGunClip.GetComponent<IClip>();
         }
 
         public IBulletMover GetTopIBulletMover()
         {
-            return CurrentGunClip.GetComponent<IBulletMover>();
+            throw new System.NotImplementedException();
         }
     }
 }

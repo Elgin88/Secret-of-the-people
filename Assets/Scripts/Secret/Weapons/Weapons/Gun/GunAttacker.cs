@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Secret.Weapons.Gun
 {
@@ -22,14 +21,12 @@ namespace Secret.Weapons.Gun
 
         private void StartBulletMovement()
         {
-            _iWeaponContainer.GetTopIBulletMover()?.StartMove();
-
-            Debug.Log(_iWeaponContainer.GetTopIBulletMover());
+            _iWeaponContainer.IBulletMover?.StartMove();
         }
 
         private void TryReload()
         {
-            if (_iWeaponContainer.ICurrentClip == null)
+            if (_iWeaponContainer.IBulletMover == null)
             {
                 _iWeaponReloader.Reload();
             }

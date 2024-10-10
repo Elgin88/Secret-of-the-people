@@ -2,10 +2,8 @@
 {
     public interface IWeaponContainer
     {
+        public IBulletMover IBulletMover { get; }
+
         public void AddClipFromInventory();
-
-        public IClip ICurrentClip { get; }
-
-        public IBulletMover GetTopIBulletMover();
     }
 }
