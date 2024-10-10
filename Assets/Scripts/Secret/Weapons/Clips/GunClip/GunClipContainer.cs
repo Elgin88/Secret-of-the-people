@@ -21,6 +21,8 @@ namespace Secret.Weapons.Clips.GunClip
         public void Construct(IGameFactory gameFactory)
         {
             _gameFactory = gameFactory;
+            
+            Debug.Log("Удалить эту строчку");
         }
 
         public void AddBullets()
