@@ -1,4 +1,4 @@
-﻿namespace Secret.Weapons.Interfaces
+﻿namespace Secret.Weapons.Gun
 {
     public interface IGun
     {

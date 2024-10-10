@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Secret.Weapons;
 using Secret.Weapons.Gun;
 using Secret.Weapons.GunClip;
-using Secret.Weapons.Interfaces;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
 {
     public class WeaponContainer : MonoBehaviour
     {
-        public List<GameObject> _weapons = new List<GameObject>();
-        public List<GameObject> _gunClips = new List<GameObject>();
+        private List<GameObject> _weapons = new List<GameObject>();
+        private List<GameObject> _gunClips = new List<GameObject>();
 
         public void AddClip(GameObject clip)
         {

@@ -1,10 +1,10 @@
 ﻿using Secret.Infrastructure.Factory;
-using Secret.Weapons.Interfaces;
+using Secret.Weapons.Gun;
 using UnityEngine;
 
 namespace Secret.Weapons.GunBullet
 {
-    public class GunBulletMover : MonoBehaviour, IGunBulletMover
+    public class GunBulletMover : MonoBehaviour, IBulletMover, IBullet
     {
         private IGameFactory _gameFactory;
         private Transform _shootPointTransform;
@@ -29,12 +29,14 @@ namespace Secret.Weapons.GunBullet
             }
         }
 
-        public void StartFly()
+        public void StartMove()
         {
+            Debug.Log("StartMove");
+
             enabled = true;
         }
 
-        public void StopFly()
+        public void StopMove()
         {
             enabled = false;
         }

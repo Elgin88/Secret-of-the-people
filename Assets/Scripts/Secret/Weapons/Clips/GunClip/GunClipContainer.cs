@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Secret.Weapons.GunClip
 {
-    public class GunClipContainer : MonoBehaviour
+    public class GunClipContainer : MonoBehaviour, IClip, IClipContainer
     {
         [SerializeField] private WeaponStaticData _staticData;
 
@@ -35,8 +35,6 @@ namespace Secret.Weapons.GunClip
 
             if (_bullets.Count > 0)
             {
-                Debug.Log(_bullets.Count);
-
                 gunBulletMover = _bullets[0].GetComponent<GunBulletMover>();
                 _bullets.Remove(_bullets[0]);
             }
