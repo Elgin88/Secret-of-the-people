@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using Secret.Weapons;
-using Secret.Weapons.Gun;
-using Secret.Weapons.GunClip;
+using Secret.Weapons.Clips.GunClip;
+using Secret.Weapons.Weapons;
+using Secret.Weapons.Weapons.Gun;
 using UnityEngine;
 
 namespace Secret.Player.Inventory

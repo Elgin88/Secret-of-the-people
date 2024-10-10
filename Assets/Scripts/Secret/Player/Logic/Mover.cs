@@ -1,7 +1,7 @@
 ﻿using Secret.Infrastructure.Services;
 using Secret.Infrastructure.Services.Input;
 using Secret.Player.Animations.Logic;
-using Secret.Player.StaticData;
+using Secret.StaticData;
 using UnityEngine;
 
 namespace Secret.Player.Logic

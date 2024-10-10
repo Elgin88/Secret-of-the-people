@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Secret.Weapons.Gun
+namespace Secret.Weapons.Weapons.Gun
 {
     public class GunReloader : MonoBehaviour, IWeapon, IGun, IWeaponReloader
     {

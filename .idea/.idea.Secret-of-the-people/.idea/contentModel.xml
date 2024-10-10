@@ -1360,38 +1360,45 @@
                 <e p="SpeedMovementSetter.cs" t="Include" />
                 <e p="TargetFinder.cs" t="Include" />
               </e>
-              <e p="StaticData" t="Include">
-                <e p="PlayerStaticData.cs" t="Include" />
-              </e>
             </e>
             <e p="Static" t="Include">
               <e p="StaticLayersNames.cs" t="Include" />
               <e p="StaticTags.cs" t="Include" />
             </e>
+            <e p="StaticData" t="Include">
+              <e p="BulletStaticData.cs" t="Include" />
+              <e p="PlayerStaticData.cs" t="Include" />
+              <e p="WeaponStaticData.cs" t="Include" />
+            </e>
             <e p="Weapons" t="Include">
-              <e p="Gun" t="Include">
-                <e p="GunAttacker.cs" t="Include" />
-                <e p="GunContainer.cs" t="Include" />
-                <e p="GunReloader.cs" t="Include" />
-                <e p="GunRequireComponents.cs" t="Include" />
+              <e p="Bullets" t="Include">
+                <e p="GunBullet" t="Include">
+                  <e p="GunBulletMover.cs" t="Include" />
+                  <e p="GunBulletRequireComponents.cs" t="Include" />
+                </e>
+                <e p="IBullet.cs" t="Include" />
+                <e p="IBulletMover.cs" t="Include" />
               </e>
-              <e p="GunBullet" t="Include">
-                <e p="GunBulletMover.cs" t="Include" />
-                <e p="GunBulletRequireComponents.cs" t="Include" />
+              <e p="Clips" t="Include">
+                <e p="GunClip" t="Include">
+                  <e p="GunClipContainer.cs" t="Include" />
+                  <e p="GunClipRequireComponents.cs" t="Include" />
+                </e>
+                <e p="IClip.cs" t="Include" />
+                <e p="IClipContainer.cs" t="Include" />
               </e>
-              <e p="GunClip" t="Include">
-                <e p="GunClipContainer.cs" t="Include" />
-                <e p="GunClipRequireComponents.cs" t="Include" />
-              </e>
-              <e p="Interfaces" t="Include">
-                <e p="IGun.cs" t="Include" />
-                <e p="IGunBulletMover.cs" t="Include" />
+              <e p="Weapons" t="Include">
+                <e p="Gun" t="Include">
+                  <e p="GunAttacker.cs" t="Include" />
+                  <e p="GunContainer.cs" t="Include" />
+                  <e p="GunReloader.cs" t="Include" />
+                  <e p="GunRequireComponents.cs" t="Include" />
+                  <e p="IGun.cs" t="Include" />
+                </e>
                 <e p="IWeapon.cs" t="Include" />
                 <e p="IWeaponAttacker.cs" t="Include" />
-              </e>
-              <e p="StaticData" t="Include">
-                <e p="BulletStaticData.cs" t="Include" />
-                <e p="WeaponStaticData.cs" t="Include" />
+                <e p="IWeaponContainer.cs" t="Include" />
+                <e p="IWeaponReloader.cs" t="Include" />
               </e>
             </e>
           </e>

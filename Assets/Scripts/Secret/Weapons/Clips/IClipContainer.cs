@@ -1,4 +1,4 @@
-﻿namespace Secret.Weapons.GunClip
+﻿namespace Secret.Weapons.Clips
 {
     internal interface IClipContainer
     {

@@ -1,7 +1,9 @@
 ﻿using Secret.Infrastructure.Factory;
+using Secret.Weapons.Bullets;
+using Secret.Weapons.Clips;
 using UnityEngine;
 
-namespace Secret.Weapons.Gun
+namespace Secret.Weapons.Weapons.Gun
 {
     public class GunContainer : MonoBehaviour, IWeapon, IGun, IWeaponContainer
     {
@@ -9,7 +11,8 @@ namespace Secret.Weapons.Gun
 
         public GameObject CurrentGunClip { get; private set; }
 
-        public IBulletMover IBulletMover => CurrentGunClip.GetComponent<IBulletMover>();
+        public IClip ICurrentClip { get; set; }
+        public IBulletMover IBulletMover { get; set; }
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -19,6 +22,9 @@ namespace Secret.Weapons.Gun
         public void AddClipFromInventory()
         {
             CurrentGunClip = _gameFactory.PlayerWeaponContainer.GetGunClipFromInventory();
+            ICurrentClip = CurrentGunClip.GetComponent<IClip>();
+            
+            Debug.Log("Передать сюда интерфейс, а не GameObject");
         }
 
         public IBulletMover GetTopIBulletMover()

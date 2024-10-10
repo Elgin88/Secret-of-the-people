@@ -1,6 +1,6 @@
 ﻿using System;
 using Secret.Player.Interfaces;
-using Secret.Player.StaticData;
+using Secret.StaticData;
 using UnityEngine;
 
 namespace Secret.Player.Logic

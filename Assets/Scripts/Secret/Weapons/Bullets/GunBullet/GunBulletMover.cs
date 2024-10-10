@@ -1,7 +1,7 @@
 ﻿using Secret.Infrastructure.Factory;
 using UnityEngine;
 
-namespace Secret.Weapons.GunBullet
+namespace Secret.Weapons.Bullets.GunBullet
 {
     public class GunBulletMover : MonoBehaviour, IBulletMover, IBullet
     {

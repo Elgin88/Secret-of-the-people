@@ -1,5 +1,5 @@
 ﻿using Secret.Player.Logic;
-using Secret.Player.StaticData;
+using Secret.StaticData;
 using UnityEngine;
 
 namespace Secret.Player.Animations

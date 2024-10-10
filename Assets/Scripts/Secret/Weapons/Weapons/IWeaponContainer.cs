@@ -1,8 +1,12 @@
-﻿namespace Secret.Weapons
+﻿using Secret.Weapons.Bullets;
+using Secret.Weapons.Clips;
+
+namespace Secret.Weapons.Weapons
 {
     public interface IWeaponContainer
     {
-        public IBulletMover IBulletMover { get; }
+        public IClip ICurrentClip { get; set; }
+        public IBulletMover IBulletMover { get; set; }
 
         public void AddClipFromInventory();
     }

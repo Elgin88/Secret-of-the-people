@@ -6,9 +6,9 @@ using Secret.Infrastructure.Services.AssetManagement;
 using Secret.Player.Inventory;
 using Secret.Player.Logic;
 using Secret.Static;
-using Secret.Weapons.Gun;
-using Secret.Weapons.GunBullet;
-using Secret.Weapons.GunClip;
+using Secret.Weapons.Bullets.GunBullet;
+using Secret.Weapons.Clips.GunClip;
+using Secret.Weapons.Weapons.Gun;
 using UnityEngine;
 
 namespace Secret.Infrastructure.Factory

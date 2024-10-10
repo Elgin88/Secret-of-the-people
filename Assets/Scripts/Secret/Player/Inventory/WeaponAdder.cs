@@ -1,5 +1,5 @@
 ﻿using Secret.Infrastructure.Factory;
-using Secret.Player.StaticData;
+using Secret.StaticData;
 using UnityEngine;
 
 namespace Secret.Player.Inventory

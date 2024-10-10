@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Secret.Weapons.GunBullet
+namespace Secret.Weapons.Bullets.GunBullet
 {
     [RequireComponent(typeof(GunBulletMover))]
 

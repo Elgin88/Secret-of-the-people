@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Secret.Weapons.GunClip
+namespace Secret.Weapons.Clips.GunClip
 {
     [RequireComponent(typeof(GunClipContainer))]
 

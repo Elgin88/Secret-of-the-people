@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Secret.Player.StaticData
+namespace Secret.StaticData
 {
     [CreateAssetMenu(fileName = "PlayerStaticData", menuName = "StaticData/Player")]
 

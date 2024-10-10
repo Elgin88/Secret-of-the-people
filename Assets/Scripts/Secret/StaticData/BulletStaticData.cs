@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Secret.Weapons.StaticData
+namespace Secret.StaticData
 {
     [CreateAssetMenu(fileName = "BulletStaticData", menuName = "StaticData/BulletStaticData")]
 

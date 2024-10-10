@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Secret.Infrastructure.Factory;
-using Secret.Weapons.GunBullet;
-using Secret.Weapons.StaticData;
+using Secret.StaticData;
+using Secret.Weapons.Bullets.GunBullet;
 using UnityEngine;
 
-namespace Secret.Weapons.GunClip
+namespace Secret.Weapons.Clips.GunClip
 {
     public class GunClipContainer : MonoBehaviour, IClip, IClipContainer
     {
@@ -15,6 +15,8 @@ namespace Secret.Weapons.GunClip
         private int _maxBulletCount => _staticData.MaxBulletCount;
 
         public int BulletCount => _bullets.Count;
+        
+        public int CurrentBulletCount { get; set; }
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -41,5 +43,7 @@ namespace Secret.Weapons.GunClip
 
             return gunBulletMover;
         }
+
+        
     }
 }

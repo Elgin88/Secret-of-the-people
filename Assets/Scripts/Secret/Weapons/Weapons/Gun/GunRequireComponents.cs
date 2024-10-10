@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Secret.Weapons.Gun
+namespace Secret.Weapons.Weapons.Gun
 {
     [RequireComponent(typeof(GunAttacker))]
     [RequireComponent(typeof(GunContainer))]
