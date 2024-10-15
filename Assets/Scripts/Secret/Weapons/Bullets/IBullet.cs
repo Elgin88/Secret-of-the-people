@@ -2,5 +2,6 @@
 {
     public interface IBullet
     {
+        public IBulletMover ICurrentBulletMover { get; }
     }
 }

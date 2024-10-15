@@ -43,7 +43,7 @@ namespace Secret.Infrastructure.Factory
         {
             _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
 
-            _player.GetComponent<WeaponAdder>().Construct(this);
+            _player.GetComponent<WeaponCreator>().Construct(this);
 
             _playerShootPointTransform = _player.GetComponent<ShootPointSetter>().ShootPoint;
 

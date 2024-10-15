@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Secret.Player.Inventory
 {
-    public class WeaponAdder : MonoBehaviour
+    public class WeaponCreator : MonoBehaviour
     {
         [SerializeField] private WeaponContainer _weaponContainer;
         [SerializeField] private PlayerStaticData _staticData;
-        
+
         private IGameFactory _gameFactory;
         private int _startGunClipsCount => _staticData.StartGunClipsCount;
 
@@ -18,23 +18,24 @@ namespace Secret.Player.Inventory
 
             CreateStartWeapons();
         }
-        
-        private void AddGun() => _weaponContainer.AddGun(_gameFactory.CreateGun());
+
+        private void AddGunToInventory() => _weaponContainer.AddGun(_gameFactory.CreateGun());
+
         private void AddBulletsInClips() => _weaponContainer.AddBulletsInClips();
 
         private void CreateStartWeapons()
         {
-            AddGun();
-            AddClips();
+            AddGunToInventory();
+            AddClipsToInventory();
         }
 
-        private void AddClips()
+        private void AddClipsToInventory()
         {
             for (int i = 0; i < _startGunClipsCount; i++)
             {
                 _weaponContainer.AddClip(_gameFactory.CreateGunClip());
             }
-            
+
             AddBulletsInClips();
         }
     }

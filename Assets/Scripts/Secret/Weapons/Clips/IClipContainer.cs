@@ -1,6 +1,11 @@
-﻿namespace Secret.Weapons.Clips
+﻿using Secret.Weapons.Bullets;
+
+namespace Secret.Weapons.Clips
 {
-    internal interface IClipContainer
+    public interface IClipContainer
     {
+        public IBullet ICurrentBullet { get; }
+
+        public void SetICurrentBullet();
     }
 }

@@ -1,51 +1,37 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using Secret.Infrastructure.Factory;
 using Secret.StaticData;
-using Secret.Weapons.Bullets.GunBullet;
+using Secret.Weapons.Bullets;
 using UnityEngine;
 
 namespace Secret.Weapons.Clips.GunClip
 {
-    public class GunClipContainer : MonoBehaviour, IClip, IClipContainer
+    public class GunClipContainer : MonoBehaviour, IClipContainer, IClip
     {
         [SerializeField] private WeaponStaticData _staticData;
 
         private IGameFactory _gameFactory;
-        private List<GameObject> _bullets = new List<GameObject>();
-        private int _maxBulletCount => _staticData.MaxBulletCount;
+        private IBullet _iCurrentBullet;
+        private IBulletMover _iCurrentBulletMover;
+        private int _currentBulletCount;
 
-        public int BulletCount => _bullets.Count;
-        
-        public int CurrentBulletCount { get; set; }
+        public IBullet ICurrentBullet => _iCurrentBullet;
+
+        public IBulletMover ICurrentBulletMover => _iCurrentBulletMover;
+
+        public int CurrentBulletCount => _currentBulletCount;
 
         public void Construct(IGameFactory gameFactory)
         {
             _gameFactory = gameFactory;
-            
-            Debug.Log("Удалить эту строчку");
+        }
+
+        public void SetICurrentBullet()
+        {
         }
 
         public void AddBullets()
         {
-            for (int i = 0; i < _maxBulletCount; i++)
-            {
-                _bullets.Add(_gameFactory.CreateGunBullet());
-            }
         }
-
-        public GunBulletMover GetBulletMover()
-        {
-            GunBulletMover gunBulletMover = null;
-
-            if (_bullets.Count > 0)
-            {
-                gunBulletMover = _bullets[0].GetComponent<GunBulletMover>();
-                _bullets.Remove(_bullets[0]);
-            }
-
-            return gunBulletMover;
-        }
-
-        
     }
 }

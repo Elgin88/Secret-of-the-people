@@ -8,6 +8,6 @@ namespace Secret.StaticData
     {
         [Range(0, 100)] public int Damage = 50;
 
-        [Range(0, 100)] public int Speed = 50;
+        [Range(0, 100)] public int MoveSpeed = 50;
     }
 }
