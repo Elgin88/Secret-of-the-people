@@ -5,10 +5,10 @@ namespace Secret.Weapons.Weapons
 {
     public interface IWeaponContainer
     {
-        public IClip ICurrentClip { get; set; }
+        public IClip CurrentClip { get; set; }
 
-        public IBulletMover IBulletMover { get; set; }
+        public IBulletMover BulletMover { get; set; }
 
-        public void AddClipFromInventory();
+        public void SetCurrentClip();
     }
 }

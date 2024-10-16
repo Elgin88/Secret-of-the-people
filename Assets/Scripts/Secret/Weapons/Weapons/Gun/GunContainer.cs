@@ -5,21 +5,15 @@ using UnityEngine;
 
 namespace Secret.Weapons.Weapons.Gun
 {
-    public class GunContainer : MonoBehaviour, IWeapon, IGun, IWeaponContainer
+    public class GunContainer : MonoBehaviour, IGun, IWeaponContainer
     {
-        private IGameFactory _gameFactory;
+        public IClip CurrentClip { get; set; }
 
-        public IClip ICurrentClip { get; set; }
+        public IBulletMover BulletMover { get; set; }
 
-        public IBulletMover IBulletMover { get; set; }
-
-        public void Construct(IGameFactory gameFactory)
+        public void SetCurrentClip()
         {
-            _gameFactory = gameFactory;
-        }
-
-        public void AddClipFromInventory()
-        {
+            Debug.Log("Попытка заменить Clip");
         }
     }
 }

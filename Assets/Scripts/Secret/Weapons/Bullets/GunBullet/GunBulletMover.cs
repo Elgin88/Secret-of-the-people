@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace Secret.Weapons.Bullets.GunBullet
 {
-    public class GunBulletMover : MonoBehaviour, IBulletMover, IBullet, IGun
+    public class GunBulletMover : MonoBehaviour, IBulletMover, IGun
     {
         [SerializeField] private BulletStaticData _staticData;
 
         private IGameFactory _gameFactory;
-        private IBulletMover _iCurrentBulletMover;
+        private IBulletMover _currentBulletMover;
         private Transform _shootPoint => _gameFactory.PlayerShootPoint;
         private bool _inStartPosition = false;
 
         public float MoveSpeed => _staticData.MoveSpeed;
 
-        public IBulletMover ICurrentBulletMover => _iCurrentBulletMover;
+        public IBulletMover CurrentBulletMover => _currentBulletMover;
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -27,7 +27,7 @@ namespace Secret.Weapons.Bullets.GunBullet
 
         private void Awake()
         {
-            _iCurrentBulletMover = GetComponent<IBulletMover>();
+            _currentBulletMover = GetComponent<IBulletMover>();
         }
 
         private void FixedUpdate()

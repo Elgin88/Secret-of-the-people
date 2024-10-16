@@ -11,7 +11,7 @@ namespace Secret.Infrastructure.Factory
 
         public Transform PlayerShootPoint { get; }
 
-        public WeaponContainer PlayerWeaponContainer { get; }
+        public Container PlayerContainer { get; }
 
         public GameObject HealthBar { get; }
 

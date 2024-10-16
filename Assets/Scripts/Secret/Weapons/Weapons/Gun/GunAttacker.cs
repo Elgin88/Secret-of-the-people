@@ -2,22 +2,29 @@
 
 namespace Secret.Weapons.Weapons.Gun
 {
-    public class GunAttacker : MonoBehaviour, IWeapon, IGun, IWeaponAttacker
+    public class GunAttacker : MonoBehaviour, IGun, IWeaponAttacker, IWeapon
     {
-        private IWeaponContainer _iWeaponContainer;
+        private IWeaponContainer _weaponContainer;
+        private IWeaponAttacker _weaponAttacker;
+
+        public IWeaponAttacker WeaponAttacker => _weaponAttacker;
 
         private void Awake()
         {
-            _iWeaponContainer = GetComponent<IWeaponContainer>();
+            _weaponContainer = GetComponent<IWeaponContainer>();
+            _weaponAttacker = GetComponent<IWeaponAttacker>();
         }
 
         public void Attack()
         {
-            if (_iWeaponContainer.ICurrentClip == null)
+            if (_weaponContainer.CurrentClip == null)
             {
                 Debug.Log("Нет обоймы");
+
+                return;
             }
-            _iWeaponContainer.ICurrentClip?.ICurrentBullet?.ICurrentBulletMover?.StartMove();
+
+            Debug.Log("Attack");
         }
     }
 }

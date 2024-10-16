@@ -1,6 +1,6 @@
 ﻿namespace Secret.Weapons.Bullets
 {
-    public interface IBulletMover
+    public interface IBulletMover : IBullet
     {
         public float MoveSpeed { get; }
 

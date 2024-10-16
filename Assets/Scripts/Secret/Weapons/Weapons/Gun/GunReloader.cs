@@ -2,27 +2,25 @@
 
 namespace Secret.Weapons.Weapons.Gun
 {
-    public class GunReloader : MonoBehaviour, IWeapon, IGun, IWeaponReloader
+    public class GunReloader : MonoBehaviour, IGun, IWeaponReloader
     {
-        private IWeaponContainer _iWeaponContainer;
+        private IWeaponContainer _weaponContainer;
 
         private void Awake()
         {
-            _iWeaponContainer = GetComponent<IWeaponContainer>();
+            _weaponContainer = GetComponent<IWeaponContainer>();
         }
 
         private void FixedUpdate()
         {
-            //if (NoClips() || NoBulletsInClip())
-            //{
-            //    Reload();
-            //}
+            if (NoClipInWeapon())
+            {
+                Reload();
+            }
         }
 
-        private bool NoClips() => _iWeaponContainer.ICurrentClip == null;
+        private void Reload() => _weaponContainer.SetCurrentClip();
 
-        private bool NoBulletsInClip() => _iWeaponContainer.ICurrentClip?.ICurrentBullet == null;
-
-        private void Reload() => _iWeaponContainer.AddClipFromInventory();
+        private bool NoClipInWeapon() => _weaponContainer.CurrentClip == null;
     }
 }

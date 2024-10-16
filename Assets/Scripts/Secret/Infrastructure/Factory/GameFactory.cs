@@ -19,7 +19,7 @@ namespace Secret.Infrastructure.Factory
         private GameObject _player;
         private GameObject _healthBar;
         private Transform _playerShootPointTransform;
-        private WeaponContainer _playerWeaponContainer;
+        private Container _playerContainer;
 
         public GameObject Player => _player;
 
@@ -27,7 +27,7 @@ namespace Secret.Infrastructure.Factory
 
         public Transform PlayerShootPoint => _playerShootPointTransform;
 
-        public WeaponContainer PlayerWeaponContainer => _playerWeaponContainer;
+        public Container PlayerContainer => _playerContainer;
 
         public GameFactory(IAssetProvider assetProvider)
         {
@@ -43,11 +43,13 @@ namespace Secret.Infrastructure.Factory
         {
             _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
 
-            _player.GetComponent<WeaponCreator>().Construct(this);
-
             _playerShootPointTransform = _player.GetComponent<ShootPointSetter>().ShootPoint;
 
-            _playerWeaponContainer = _player.GetComponent<WeaponContainer>();
+            _playerContainer = _player.GetComponent<Container>();
+
+            _playerContainer.Construct(this);
+
+            _player.GetComponent<StartWeaponAdder>().Construct();
 
             _player.GetComponent<ChooserWeapon>().Construct();
 
@@ -97,8 +99,6 @@ namespace Secret.Infrastructure.Factory
         public GameObject CreateGun()
         {
             GameObject gun = CreateGameObject(StaticAssetPath.Gun);
-
-            gun.GetComponent<GunContainer>().Construct(this);
 
             return gun;
         }
