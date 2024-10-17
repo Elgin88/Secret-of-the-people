@@ -2,14 +2,15 @@
 using Secret.Infrastructure.Factory;
 using Secret.Weapons.Clips;
 using Secret.Weapons.Weapons;
+using Secret.Weapons.Weapons.Gun;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
 {
     public class Container : MonoBehaviour, IContainer
     {
-        private List<IWeapon> _weapons = new List<IWeapon>();
-        private List<IClip> _clips = new List<IClip>();
+        private List<GameObject> _weapons = new List<GameObject>();
+        private List<GameObject> _clips = new List<GameObject>();
         private IGameFactory _gameFactory;
 
         public void Construct(IGameFactory gameFactory)
@@ -19,20 +20,33 @@ namespace Secret.Player.Inventory
 
         public void AddGun()
         {
-            _weapons.Add(_gameFactory.CreateGun().GetComponent<IWeapon>());
+            _weapons.Add(_gameFactory.CreateGun());
         }
 
         public void AddGunClips()
         {
-            _clips.Add(_gameFactory.CreateGunClip().GetComponent<IClip>());
+            _clips.Add(_gameFactory.CreateGunClip());
         }
 
         public void AddBulletsInAllClips()
         {
-            foreach (IClip clip in _clips)
+            foreach (GameObject clip in _clips)
             {
-                clip.ClipContainer.Fill();
+                clip.GetComponent<IClip>().ClipContainer.Fill();
             }
+        }
+
+        public IWeapon GetGun()
+        {
+            foreach (GameObject weapon in _weapons)
+            {
+                if (weapon.GetComponent<IGun>() != null)
+                {
+                    return weapon.GetComponent<IWeapon>();
+                }
+            }
+
+            return null;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Secret.Player.Logic
             }
         }
 
-        private void Attack() => _chooserWeapon.CurrentWeapon.WeaponAttacker.Attack();
+        private void Attack() => _chooserWeapon.CurrentWeapon?.WeaponAttacker.Attack();
 
         private bool TargetIsFind() => _targetFinder.CurrentTarget != null;
 

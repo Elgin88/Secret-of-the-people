@@ -8,7 +8,6 @@ using Secret.Player.Logic;
 using Secret.Static;
 using Secret.Weapons.Bullets.GunBullet;
 using Secret.Weapons.Clips.GunClip;
-using Secret.Weapons.Weapons.Gun;
 using UnityEngine;
 
 namespace Secret.Infrastructure.Factory
@@ -18,14 +17,14 @@ namespace Secret.Infrastructure.Factory
         private IAssetProvider _assetProvider;
         private GameObject _player;
         private GameObject _healthBar;
-        private Transform _playerShootPointTransform;
+        private Transform _playerShootPoint;
         private Container _playerContainer;
 
         public GameObject Player => _player;
 
         public GameObject HealthBar => _healthBar;
 
-        public Transform PlayerShootPoint => _playerShootPointTransform;
+        public Transform PlayerShootPoint => _playerShootPoint;
 
         public Container PlayerContainer => _playerContainer;
 
@@ -43,7 +42,7 @@ namespace Secret.Infrastructure.Factory
         {
             _player = CreateGameObject(StaticAssetPath.Player, GetPositionByTag(StaticTags.PlayerSpawnPoint));
 
-            _playerShootPointTransform = _player.GetComponent<ShootPointSetter>().ShootPoint;
+            _playerShootPoint = _player.GetComponent<ShootPointSetter>().ShootPoint;
 
             _playerContainer = _player.GetComponent<Container>();
 
@@ -51,7 +50,7 @@ namespace Secret.Infrastructure.Factory
 
             _player.GetComponent<StartWeaponAdder>().Construct();
 
-            _player.GetComponent<ChooserWeapon>().Construct();
+            _player.GetComponent<StartWeaponSetter>().Construct();
 
             return _player;
         }

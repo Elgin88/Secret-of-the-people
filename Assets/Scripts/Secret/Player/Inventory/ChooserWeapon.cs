@@ -1,27 +1,24 @@
 ﻿using Secret.Weapons.Weapons;
+using Secret.Weapons.Weapons.Gun;
 using UnityEngine;
 
 namespace Secret.Player.Inventory
 {
-    public class ChooserWeapon : MonoBehaviour
+    public class ChooserWeapon : MonoBehaviour, IChooserWeapon
     {
-        private Container _container;
+        private IContainer _container;
+        private IWeapon _currentWeapon;
 
-        public IWeapon CurrentWeapon;
-
-        public void Construct()
-        {
-            SetCurrentWeapon();
-        }
+        public IWeapon CurrentWeapon => _currentWeapon;
 
         private void Awake()
         {
-            _container = GetComponent<Container>();
+            _container = GetComponent<IContainer>();
         }
 
-        private void SetCurrentWeapon()
+        public void SetCurrentWeapon(IWeapon weapon)
         {
-            Debug.Log("Дописать выбор оружия");
+            _currentWeapon = weapon;
         }
     }
 }

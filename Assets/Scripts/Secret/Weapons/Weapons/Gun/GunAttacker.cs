@@ -19,12 +19,10 @@ namespace Secret.Weapons.Weapons.Gun
         {
             if (_weaponContainer.CurrentClip == null)
             {
-                Debug.Log("Нет обоймы");
+                Debug.Log("Made add clip in gun");
 
                 return;
             }
-
-            Debug.Log("Attack");
         }
     }
 }

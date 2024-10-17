@@ -1,5 +1,4 @@
-﻿using Secret.Infrastructure.Factory;
-using Secret.Weapons.Bullets;
+﻿using Secret.Weapons.Bullets;
 using Secret.Weapons.Clips;
 using UnityEngine;
 
@@ -13,7 +12,6 @@ namespace Secret.Weapons.Weapons.Gun
 
         public void SetCurrentClip()
         {
-            Debug.Log("Попытка заменить Clip");
         }
     }
 }
