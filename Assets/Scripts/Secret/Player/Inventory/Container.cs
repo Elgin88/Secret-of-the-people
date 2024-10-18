@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Secret.Infrastructure.Factory;
 using Secret.Weapons.Clips;
 using Secret.Weapons.Weapons;
@@ -9,9 +10,9 @@ namespace Secret.Player.Inventory
 {
     public class Container : MonoBehaviour, IContainer
     {
-        private List<GameObject> _weapons = new List<GameObject>();
-        private List<GameObject> _clips = new List<GameObject>();
-        private IGameFactory _gameFactory;
+        public List<GameObject> _weapons = new List<GameObject>();
+        public List<GameObject> _clips = new List<GameObject>();
+        public IGameFactory _gameFactory;
 
         public void Construct(IGameFactory gameFactory)
         {
@@ -47,6 +48,13 @@ namespace Secret.Player.Inventory
             }
 
             return null;
+        }
+
+        public GameObject GetClip()
+        {
+            GameObject clip = _clips[0];
+
+            return clip;
         }
     }
 }

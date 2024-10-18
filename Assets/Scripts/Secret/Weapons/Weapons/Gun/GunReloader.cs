@@ -19,8 +19,8 @@ namespace Secret.Weapons.Weapons.Gun
             }
         }
 
-        private void Reload() => _weaponContainer.SetCurrentClip();
+        public void Reload() => _weaponContainer.SetCurrentClip();
 
-        private bool NoClipInWeapon() => _weaponContainer.CurrentClip == null;
+        private bool NoClipInWeapon() => _weaponContainer.ICurrentClip == null;
     }
 }

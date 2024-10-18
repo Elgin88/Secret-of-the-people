@@ -8,6 +8,7 @@ using Secret.Player.Logic;
 using Secret.Static;
 using Secret.Weapons.Bullets.GunBullet;
 using Secret.Weapons.Clips.GunClip;
+using Secret.Weapons.Weapons.Gun;
 using UnityEngine;
 
 namespace Secret.Infrastructure.Factory
@@ -98,6 +99,8 @@ namespace Secret.Infrastructure.Factory
         public GameObject CreateGun()
         {
             GameObject gun = CreateGameObject(StaticAssetPath.Gun);
+
+            gun.GetComponent<GunContainer>().Construct(this);
 
             return gun;
         }

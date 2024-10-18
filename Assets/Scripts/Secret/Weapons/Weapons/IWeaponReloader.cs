@@ -2,5 +2,6 @@
 {
     public interface IWeaponReloader
     {
+        void Reload();
     }
 }

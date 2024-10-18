@@ -2,6 +2,8 @@
 {
     public interface IClipContainer
     {
+        public int BulletCount { get; }
+
         public void Fill();
     }
 }
